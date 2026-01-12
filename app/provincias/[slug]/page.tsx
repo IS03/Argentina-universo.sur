@@ -33,19 +33,19 @@ export default async function ProvinciaPage({ params }: PageProps) {
             {provincia.provincia}
           </h1>
 
-          {/* Carrusel */}
-          {provincia.fotos.length > 0 && (
-            <div className="mb-8">
-              <Carrusel fotos={provincia.fotos} alt={provincia.provincia} />
-            </div>
-          )}
-
           {/* Descripción */}
-          <div className="mb-12">
+          <div className="mb-8">
             <p className="text-gray-300 text-lg leading-relaxed whitespace-pre-line">
               {provincia.descripcion}
             </p>
           </div>
+
+          {/* Carrusel */}
+          {provincia.fotos.length > 0 && (
+            <div className="mb-12">
+              <Carrusel fotos={provincia.fotos} alt={provincia.provincia} />
+            </div>
+          )}
 
           {/* CTA: Ver qué hacer */}
           <div className="text-center">
