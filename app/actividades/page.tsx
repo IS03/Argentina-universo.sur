@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import Navbar from "@/components/Navbar";
 import ActividadCard from "@/components/ActividadCard";
 // Tipos
@@ -20,7 +20,7 @@ interface Provincia {
 }
 import { useSearchParams } from "next/navigation";
 
-export default function ActividadesPage() {
+function ActividadesContent() {
   const searchParams = useSearchParams();
   const provinciaFiltro = searchParams.get("provincia");
   
@@ -173,5 +173,24 @@ export default function ActividadesPage() {
         </div>
       </main>
     </>
+  );
+}
+
+export default function ActividadesPage() {
+  return (
+    <Suspense fallback={
+      <>
+        <Navbar />
+        <main className="min-h-screen pt-32 pb-16 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center py-12">
+              <p className="text-gray-400 text-lg">Cargando actividades...</p>
+            </div>
+          </div>
+        </main>
+      </>
+    }>
+      <ActividadesContent />
+    </Suspense>
   );
 }
