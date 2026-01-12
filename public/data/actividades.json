@@ -1,0 +1,92 @@
+[
+  {
+    "PROVINCIA": "Buenos Aires",
+    "SLUG": "buenos_aires",
+    "ACTIVIDAD": "Conocer la tradición gauchesca y criolla",
+    "LOCALIZACION": "San Antonio de Areco, provincia de Buenos Aires",
+    "DESCRPICION": "Llegar a los pagos de Areco es entrar en una ciudad nacida del campo, donde la vida cotidiana todavía respira cultura rural.\nEn torno a la plaza principal de San Antonio de Areco se despliegan la iglesia, las cafeterías, el Museo Taller Draghi y el edificio municipal, desde donde parten visitas guiadas a pie.\nLa experiencia se completa con talleres artesanales dictados por maestros arequeros, en grupos reducidos, para acercarse al universo pampeano y gauchesco y elaborar piezas en metal de alpaca.\nEl río Areco articula otro núcleo de vida: su ribera reúne restaurantes, alojamientos, camping y un área recreativa. La parrilla es protagonista y hay propuestas para todos los gustos.\nUna postal inevitable es el Puente Viejo, que permite cruzar hacia el Museo Gauchesco Ricardo Güiraldes, donde se homenajea la vida rural y la literatura gauchesca argentina. En la casona y el parque se exhiben aperos, carretas, vestimenta y utensilios, además de fotos y cuadros que evocan la época de las pulperías.",
+    "FOTO_1": "/img/actividades/bs/bs1/1.png",
+    "FOTO_2": "/img/actividades/bs/bs1/2.png",
+    "FOTO_3": "/img/actividades/bs/bs1/3.png"
+  },
+  {
+    "PROVINCIA": "Buenos Aires",
+    "SLUG": "buenos_aires",
+    "ACTIVIDAD": "Aprender sobre arquitectura moderna",
+    "LOCALIZACION": "La Plata, Provincia de Buenos Aires",
+    "DESCRPICION": "La Casa Curutchet es una obra maestra del renombrado arquitecto suizo Le Corbusier. Además, es la única de sus construcciones en toda América Latina y fue declarada Patrimonio Mundial por la UNESCO en 2016. La casa, construida entre 1949 y 1953, es un ícono del movimiento moderno y un testamento de la visión de Le Corbusier. La vivienda fue diseñada para el cirujano Pedro Curutchet con la particularidad de integrar una clínica médica en la planta baja. Su diseño no solo cumple una función práctica, sino que también es una manifestación de los \"cinco puntos de la arquitectura moderna\" de Le Corbusier. La casa es notable por cómo se integra en el entorno a través de un ingenioso diseño e incorporando un árbol preexistente en su patio central. Hoy en día la Casa Curuchet funciona como centro cultural donde es posible realizar talleres y presenciar conciertos y charlas.",
+    "FOTO_1": "/img/actividades/bs/bs2/1.png",
+    "FOTO_2": "/img/actividades/bs/bs2/2.png",
+    "FOTO_3": "/img/actividades/bs/bs2/3.png"
+  },
+  {
+    "PROVINCIA": "Buenos Aires",
+    "SLUG": "buenos_aires",
+    "ACTIVIDAD": "Pasear en una isla con historia",
+    "LOCALIZACION": "Isla Martín García, provincia de Buenos Aires",
+    "DESCRPICION": "Entre naturaleza, historia y desconexión, la isla Martín García es reserva natural y sitio histórico provincial. Se puede navegar hasta el medio del Río de la Plata y desembarcar para recorrerla durante el día o pernoctar en sus hospedajes o campings. Se puede visitar todo el año aunque la mejor época es la primavera y el verano cuando se observa más cantidad y variedad de flora y fauna.",
+    "FOTO_1": "/img/actividades/bs/bs3/1.png",
+    "FOTO_2": "/img/actividades/bs/bs3/2.png",
+    "FOTO_3": "/img/actividades/bs/bs3/3.png"
+  },
+  {
+    "PROVINCIA": "Ciudad Autónoma de Buenos Aires",
+    "SLUG": "caba",
+    "ACTIVIDAD": "Conectarse con el cielo en el Planetario de la Ciudad",
+    "LOCALIZACION": "Buenos Aires Ciudad",
+    "DESCRPICION": "El Planetario de la ciudad de Buenos Aires el principal centro de divulgación de astronomía. Tiene una imponente cúpula de 20 metros de diámetro para observar más de 8.900 estrellas, planetas y satélites del universo. La experiencia es única ya que en su sala de proyección semiesférica con 360 butacas reclinables, se puede disfrutar de propuestas impactantes. Se puede ver el cielo de una manera diferente mediante las visitas guiadas, cursos y espectáculos de ciencia.",
+    "FOTO_1": "/img/actividades/caba/caba1/1.png",
+    "FOTO_2": "/img/actividades/caba/caba1/2.png",
+    "FOTO_3": "/img/actividades/caba/caba1/3.png"
+  },
+  {
+    "PROVINCIA": "Ciudad Autónoma de Buenos Aires",
+    "SLUG": "caba",
+    "ACTIVIDAD": "Conocer el legado del General San Martín",
+    "LOCALIZACION": "Buenos Aires Ciudad",
+    "DESCRPICION": "En Retiro, la Plaza General San Martín recuerda el lugar donde en 1812 comenzó la instrucción del Regimiento de Granaderos a Caballo. Muy cerca, en la Catedral Metropolitana, la Capilla Nuestra Señora de la Paz resguarda el Mausoleo de San Martín, un santuario que honra al Libertador de Argentina, Chile y Perú. El Instituto Nacional Sanmartiniano, inaugurado en 1933, es un homenaje al General San Martín. Inspirado en su residencia francesa de Grand Bourg, funciona como centro de investigación y homenaje a su figura. A su vez, el Museo Histórico Nacional conserva un valioso patrimonio sanmartiniano, entre ellos el sable corvo, el catre-cofre, una frazada, el escritorio de campaña y un sextante. Este lugar forma parte de la iniciativa Caminos de la Libertad - Pasaporte Nacional Sanmartiniano que incluye 83 sitios históricos a lo largo del país. Se puede adquirir el Pasaporte, sellarlo en cada destino y una vez completo, participar por distintos premios.",
+    "FOTO_1": "/img/actividades/caba/caba2/1.png",
+    "FOTO_2": "/img/actividades/caba/caba2/2.png",
+    "FOTO_3": "/img/actividades/caba/caba2/3.png"
+  },
+  {
+    "PROVINCIA": "Ciudad Autónoma de Buenos Aires",
+    "SLUG": "caba",
+    "ACTIVIDAD": "Vivir la magia del Teatro Colón",
+    "LOCALIZACION": "Paso obligado en la ciudad, reconocida arquitectura y acústica única",
+    "DESCRPICION": "Con una de las salas de ópera más prestigiosas del mundo y declarada Monumento Histórico Nacional, el teatro Colón es el lugar perfecto para disfrutar de espectáculos de ópera, ballet y música en vivo. Tener el privilegio de aprender y disfrutar de los más grandes talentos y dejarse sorprender por su acústica excepcional, comparable a los más grandes teatros como la Scala de Milán, la Ópera de Viena, la Ópera de París y el Metropolitan de Nueva York. A lo largo de sus 110 años de historia, artistas legendarios como Enrico Caruso, María Callas, Plácido Domingo, Luciano Pavarotti, y bailarines icónicos como Vaslav Nijinski, Margot Fonteyn y Mikhail Baryshnikov, entre muchos otros, han brillado en su escenario.",
+    "FOTO_1": "/img/actividades/caba/caba3/1.png",
+    "FOTO_2": "/img/actividades/caba/caba3/2.png",
+    "FOTO_3": "/img/actividades/caba/caba3/3.png"
+  },
+  {
+    "PROVINCIA": "Catamarca",
+    "SLUG": "catamarca",
+    "ACTIVIDAD": "Explorar la Cordillera de los Andes",
+    "LOCALIZACION": "Fiambalá, Catamarca",
+    "DESCRPICION": "En el oeste de la provincia de Catamarca se ubica uno de los sectores más elevados de la majestuosa Cordillera de los Andes. La ruta nacional 60, que conecta la localidad de Fiambalá con el paso internacional de San Francisco, atraviesa una región dominada por casi 20 cumbres que superan los 6.000 metros de altura sobre el nivel del mar, los Seismiles. Este corredor es un punto de atracción para montañistas de todo el mundo, así como para aficionados al trekking y a las travesías en vehículos 4x4. El recorrido puede realizarse en vehículos 4x4 durante el día, con paradas perfectas para apreciar espectaculares vistas panorámicas de la cordillera. Estas excursiones permiten acceder a sitios destacados como el Balcón del Pissis, la Laguna Verde y la Laguna Azul. Además, es posible contratar caminatas guiadas hacia cerros que superan los 4.000 metros de altura sobre el nivel del mar. Para personas con mayor experiencia en montaña existen expediciones de varios días, con pernocte en carpa, que permiten intentar el ascenso a alguno de estos picos.",
+    "FOTO_1": "/img/actividades/catamarca/cata1/1.png",
+    "FOTO_2": "/img/actividades/catamarca/cata1/2.png",
+    "FOTO_3": "/img/actividades/catamarca/cata1/3.png"
+  },
+  {
+    "PROVINCIA": "Catamarca",
+    "SLUG": "catamarca",
+    "ACTIVIDAD": "Visitar museos de historia y arte",
+    "LOCALIZACION": "San Fernando del Valle de Catamarca, Catamarca",
+    "DESCRPICION": "La ciudad de San Fernando del Valle de Catamarca ofrece espacios culturales y religiosos que permiten conocer en profundidad su historia y tradiciones. En torno a la Plaza 25 de Mayo su casco céntrico reúne edificios de gran valor arquitectónico como la Catedral Basílica Nuestra Señora del Valle, centro de la devoción mariana en la provincia y sede del Museo de la Virgen, donde se exhibe patrimonio religioso, histórico y artístico vinculado a esta figura. El Museo Caravati resguarda objetos donados por vecinos y comunidades religiosas que reflejan la vida cotidiana, la historia social y la religiosidad de la ciudad.",
+    "FOTO_1": "/img/actividades/catamarca/cata2/1.png",
+    "FOTO_2": "/img/actividades/catamarca/cata2/2.png",
+    "FOTO_3": "/img/actividades/catamarca/cata2/3.png"
+  },
+  {
+    "PROVINCIA": "Catamarca",
+    "SLUG": "catamarca",
+    "ACTIVIDAD": "Explorar el Pueblo Perdido de la Quebrada",
+    "LOCALIZACION": "San Fernando del Valle de Catamarca, Catamarca",
+    "DESCRPICION": "El Pueblo Perdido de la Quebrada está ubicado a 4 kilómetros al oeste del centro de San Fernando del Valle de Catamarca, sobre la ruta provincial 4, en la Quebrada del Tala. Es un sitio arqueológico que conserva construcciones y elementos de la cultura de La Aguada en su fase inicial. Se trató de un conjunto de más de 40 recintos levantados con piedra y techos de torta de barro o ramas entretejidas, agrupados alrededor de un espacio común o plaza. Este lugar tiene un Centro de Interpretación que invita a conocer lo que quedó de una civilización que dominó las tierras de La Quebrada hace más de 1500 años. Este centro cuenta con una innovadora experiencia inmersiva en la que se incorpora tecnología de realidad virtual y realidad aumentada para enriquecer la visita al sitio.",
+    "FOTO_1": "/img/actividades/catamarca/cata3/1.png",
+    "FOTO_2": "/img/actividades/catamarca/cata3/2.png",
+    "FOTO_3": "/img/actividades/catamarca/cata3/3.png"
+  }
+]

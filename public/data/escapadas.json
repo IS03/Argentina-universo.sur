@@ -1,0 +1,30 @@
+[
+  {
+    "ID": "esc_01",
+    "TITULO": "El Calafate y El Chaltén",
+    "PROVINCIAS": "Santa Cruz",
+    "DURACION": "3 Días",
+    "PDF": "/pdf/cañafate.pdf"
+  },
+  {
+    "ID": "esc_02",
+    "TITULO": "Puerto Iguazú",
+    "PROVINCIAS": "Misiones",
+    "DURACION": "3 Días",
+    "PDF": "/pdf/iguazu_2.pdf"
+  },
+  {
+    "ID": "esc_03",
+    "TITULO": "Pinamar",
+    "PROVINCIAS": "Buenos Aires",
+    "DURACION": "3 Días",
+    "PDF": "/pdf/pinamar.pdf"
+  },
+  {
+    "ID": "esc_04",
+    "TITULO": "Puerti Madryn",
+    "PROVINCIAS": "Chubut",
+    "DURACION": "3 Días",
+    "PDF": "/pdf/pto_madryn_1.pdf"
+  }
+]

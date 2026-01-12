@@ -1,0 +1,57 @@
+import Navbar from "@/components/Navbar";
+import Carrusel from "@/components/Carrusel";
+import { getActividadBySlug, getActividades } from "@/lib/data";
+import { notFound } from "next/navigation";
+
+interface PageProps {
+  params: Promise<{ slug: string }>;
+}
+
+export async function generateStaticParams() {
+  const actividades = await getActividades();
+  return actividades.map((actividad) => ({
+    slug: actividad.actividadSlug,
+  }));
+}
+
+export default async function ActividadPage({ params }: PageProps) {
+  const { slug } = await params;
+  const actividad = await getActividadBySlug(slug);
+
+  if (!actividad) {
+    notFound();
+  }
+
+  return (
+    <>
+      <Navbar />
+      <main className="min-h-screen pt-32 pb-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto">
+          {/* Título */}
+          <h1 className="text-4xl md:text-5xl font-semibold uppercase tracking-widest mb-4 text-center">
+            {actividad.actividad}
+          </h1>
+
+          {/* Localización */}
+          <p className="text-gray-400 text-center mb-8 text-lg">
+            {actividad.localizacion}
+          </p>
+
+          {/* Carrusel */}
+          {actividad.fotos.length > 0 && (
+            <div className="mb-8">
+              <Carrusel fotos={actividad.fotos} alt={actividad.actividad} />
+            </div>
+          )}
+
+          {/* Descripción */}
+          <div className="mb-12">
+            <p className="text-gray-300 text-lg leading-relaxed whitespace-pre-line">
+              {actividad.descripcion}
+            </p>
+          </div>
+        </div>
+      </main>
+    </>
+  );
+}

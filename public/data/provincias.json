@@ -1,0 +1,26 @@
+[
+  {
+    "PROVINCIA": "Buenos Aires",
+    "SLUG": "buenos_aires",
+    "DESCIPCION": "La provincia de Buenos Aires combina grandes centros urbanos como el Gran Buenos Aires y Mar del Plata, con una amplia oferta turística. Sus playas y llanuras son ideales para escapadas o vacaciones, mientras que las estancias ofrecen experiencias rurales. Al sur, Tandil y Sierra de la Ventana invitan a la aventura, y las aguas termales del río Salado y la laguna Epecuén brindan relax y bienestar.",
+    "FOTO_1": "/provincias/img/buenos-aires/1.jpg",
+    "FOTO_2": "/provincias/img/buenos-aires/2.jpg",
+    "FOTO_3": "/provincias/img/buenos-aires/3.jpg"
+  },
+  {
+    "PROVINCIA": "Ciudad Autónoma de Buenos Aires",
+    "SLUG": "caba",
+    "DESCIPCION": "La Ciudad de Buenos Aires es la vibrante capital de Argentina y cautiva a los viajeros con su mezcla de tradición y modernidad. Es famosa por ser la cuna del tango y por su gran oferta cultural: teatros, museos, arte, historia y música. La ciudad invita a disfrutar de una experiencia gastronómica inigualable, desde una tradicional parrilla argentina hasta propuestas gourmet y cocina de autor. Sus emblemáticas cafeterías son puntos de encuentro con la esencia porteña.",
+    "FOTO_1": "/provincias/img/ciudad-autonoma-de-buenos-aires/1.jpg",
+    "FOTO_2": "/provincias/img/ciudad-autonoma-de-buenos-aires/2.jpg",
+    "FOTO_3": "/provincias/img/ciudad-autonoma-de-buenos-aires/3.jpg"
+  },
+  {
+    "PROVINCIA": "Catamarca",
+    "SLUG": "catamarca",
+    "DESCIPCION": "Con salares, volcanes, dunas, termas, valles y grandes montañas Catamarca ofrece viajes bajo cielos plenamente azules. El turismo aventura está presente en senderos, lagos y laderas. La cultura ancestral se mantiene viva en sus tradiciones, plasmadas en trabajos en telares, casas de adobe y el recuerdo del pasado Inca. La provincia se caracteriza por la producción de olivos y vinos. Su capital, San Fernando del Valle de Catamarca, es el lugar donde cada invierno se realiza la Fiesta Nacional e Internacional del Poncho.",
+    "FOTO_1": "/provincias/img/catamarca/1.jpg",
+    "FOTO_2": "/provincias/img/catamarca/2.jpg",
+    "FOTO_3": "/provincias/img/catamarca/3.jpg"
+  }
+]
