@@ -49,9 +49,16 @@ export default async function ActividadPage({ params }: PageProps) {
 
           {/* Descripción */}
           <div className="mb-12">
-            <p className="text-[#6B5D47] text-lg leading-relaxed whitespace-pre-line">
-              {actividad.descripcion}
-            </p>
+            {actividad.des_1 && (
+              <p className="text-[#6B5D47] text-lg leading-relaxed mb-4">
+                {actividad.des_1}
+              </p>
+            )}
+            {actividad.des_2 && (
+              <p className="text-[#6B5D47] text-lg leading-relaxed">
+                {actividad.des_2}
+              </p>
+            )}
           </div>
         </div>
       </main>

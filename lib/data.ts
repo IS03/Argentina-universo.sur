@@ -5,7 +5,9 @@ import { join } from "path";
 export interface Provincia {
   provincia: string;
   slug: string;
-  descripcion: string;
+  des_1: string;
+  des_2: string;
+  des_3: string;
   fotos: string[];
 }
 
@@ -14,7 +16,8 @@ export interface Actividad {
   slug: string;
   actividad: string;
   localizacion: string;
-  descripcion: string;
+  des_1: string;
+  des_2: string;
   fotos: string[];
   actividadSlug: string; // Slug único para la actividad
 }
@@ -53,7 +56,9 @@ export async function getProvincias(): Promise<Provincia[]> {
     return {
       provincia: item.PROVINCIA,
       slug: item.SLUG,
-      descripcion: item.DESCIPCION || item.DESCRIPCION || "",
+      des_1: item.des_1 || "",
+      des_2: item.des_2 || "",
+      des_3: item.des_3 || "",
       fotos: [
         normalizarRuta(item.FOTO_1 || ""),
         normalizarRuta(item.FOTO_2 || ""),
@@ -86,7 +91,8 @@ export async function getActividades(): Promise<Actividad[]> {
     slug: item.SLUG,
     actividad: item.ACTIVIDAD,
     localizacion: item.LOCALIZACION,
-    descripcion: item.DESCRPICION || item.DESCRIPCION || "",
+    des_1: item.des_1 || "",
+    des_2: item.des_2 || "",
     fotos: [
       corregirExtension(item.FOTO_1 || ""),
       corregirExtension(item.FOTO_2 || ""),

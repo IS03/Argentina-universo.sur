@@ -196,7 +196,9 @@ export default function Home() {
         const provinciasNormalizadas: Provincia[] = provinciasData.map((item: any) => ({
           provincia: item.PROVINCIA,
           slug: item.SLUG,
-          descripcion: item.DESCIPCION || item.DESCRIPCION || "",
+          des_1: item.des_1 || "",
+          des_2: item.des_2 || "",
+          des_3: item.des_3 || "",
           fotos: [
             normalizarRutaProvincia(item.FOTO_1 || ""),
             normalizarRutaProvincia(item.FOTO_2 || ""),
@@ -226,7 +228,8 @@ export default function Home() {
           slug: item.SLUG,
           actividad: item.ACTIVIDAD,
           localizacion: item.LOCALIZACION,
-          descripcion: item.DESCRPICION || item.DESCRIPCION || "",
+          des_1: item.des_1 || "",
+          des_2: item.des_2 || "",
           fotos: [
             corregirExtension(item.FOTO_1 || ""),
             corregirExtension(item.FOTO_2 || ""),

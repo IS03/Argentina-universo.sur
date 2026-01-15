@@ -38,9 +38,21 @@ export default async function ProvinciaPage({ params }: PageProps) {
 
           {/* Descripción */}
           <div className="mb-8">
-            <p className="text-[#6B5D47] text-lg leading-relaxed whitespace-pre-line">
-              {provincia.descripcion}
-            </p>
+            {provincia.des_1 && (
+              <p className="text-[#6B5D47] text-lg leading-relaxed mb-4">
+                {provincia.des_1}
+              </p>
+            )}
+            {provincia.des_2 && (
+              <p className="text-[#6B5D47] text-lg leading-relaxed mb-4">
+                {provincia.des_2}
+              </p>
+            )}
+            {provincia.des_3 && (
+              <p className="text-[#6B5D47] text-lg leading-relaxed">
+                {provincia.des_3}
+              </p>
+            )}
           </div>
 
           {/* Carrusel */}

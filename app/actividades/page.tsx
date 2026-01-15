@@ -10,7 +10,8 @@ interface Actividad {
   slug: string;
   actividad: string;
   localizacion: string;
-  descripcion: string;
+  des_1: string;
+  des_2: string;
   fotos: string[];
   actividadSlug: string;
 }
@@ -67,7 +68,8 @@ function ActividadesContent() {
           slug: item.SLUG,
           actividad: item.ACTIVIDAD,
           localizacion: item.LOCALIZACION,
-          descripcion: item.DESCRPICION || item.DESCRIPCION || "",
+          des_1: item.des_1 || "",
+          des_2: item.des_2 || "",
           fotos: [
             corregirExtension(item.FOTO_1 || ""),
             corregirExtension(item.FOTO_2 || ""),
