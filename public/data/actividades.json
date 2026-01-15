@@ -4,7 +4,7 @@
     "SLUG": "buenos_aires",
     "ACTIVIDAD": "Conocer la tradición gauchesca y criolla",
     "LOCALIZACION": "San Antonio de Areco, provincia de Buenos Aires",
-    "DESCRPICION": "Llegar a los pagos de Areco es entrar en una ciudad nacida del campo, donde la vida cotidiana todavía respira cultura rural.\nEn torno a la plaza principal de San Antonio de Areco se despliegan la iglesia, las cafeterías, el Museo Taller Draghi y el edificio municipal, desde donde parten visitas guiadas a pie.\nLa experiencia se completa con talleres artesanales dictados por maestros arequeros, en grupos reducidos, para acercarse al universo pampeano y gauchesco y elaborar piezas en metal de alpaca.\nEl río Areco articula otro núcleo de vida: su ribera reúne restaurantes, alojamientos, camping y un área recreativa. La parrilla es protagonista y hay propuestas para todos los gustos.\nUna postal inevitable es el Puente Viejo, que permite cruzar hacia el Museo Gauchesco Ricardo Güiraldes, donde se homenajea la vida rural y la literatura gauchesca argentina. En la casona y el parque se exhiben aperos, carretas, vestimenta y utensilios, además de fotos y cuadros que evocan la época de las pulperías.",
+    "DESCRPICION": "Llegar a los pagos de Areco es entrar en una ciudad nacida del campo, donde la vida cotidiana todavía respira cultura rural.\r\nEn torno a la plaza principal de San Antonio de Areco se despliegan la iglesia, las cafeterías, el Museo Taller Draghi y el edificio municipal, desde donde parten visitas guiadas a pie.\r\n\r\nLa experiencia se completa con talleres artesanales dictados por maestros arequeros, en grupos reducidos, para acercarse al universo pampeano y gauchesco y elaborar piezas en metal de alpaca.\r\n\r\nEl río Areco articula otro núcleo de vida: su ribera reúne restaurantes, alojamientos, camping y un área recreativa. La parrilla es protagonista y hay propuestas para todos los gustos.\r\n\r\nUna postal inevitable es el Puente Viejo, que permite cruzar hacia el Museo Gauchesco Ricardo Güiraldes, donde se homenajea la vida rural y la literatura gauchesca argentina. En la casona y el parque se exhiben aperos, carretas, vestimenta y utensilios, además de fotos y cuadros que evocan la época de las pulperías.",
     "FOTO_1": "/img/actividades/bs/bs1/1.png",
     "FOTO_2": "/img/actividades/bs/bs1/2.png",
     "FOTO_3": "/img/actividades/bs/bs1/3.png"
@@ -84,9 +84,219 @@
     "SLUG": "catamarca",
     "ACTIVIDAD": "Explorar el Pueblo Perdido de la Quebrada",
     "LOCALIZACION": "San Fernando del Valle de Catamarca, Catamarca",
-    "DESCRPICION": "El Pueblo Perdido de la Quebrada está ubicado a 4 kilómetros al oeste del centro de San Fernando del Valle de Catamarca, sobre la ruta provincial 4, en la Quebrada del Tala. Es un sitio arqueológico que conserva construcciones y elementos de la cultura de La Aguada en su fase inicial. Se trató de un conjunto de más de 40 recintos levantados con piedra y techos de torta de barro o ramas entretejidas, agrupados alrededor de un espacio común o plaza. Este lugar tiene un Centro de Interpretación que invita a conocer lo que quedó de una civilización que dominó las tierras de La Quebrada hace más de 1500 años. Este centro cuenta con una innovadora experiencia inmersiva en la que se incorpora tecnología de realidad virtual y realidad aumentada para enriquecer la visita al sitio.",
+    "DESCRPICION": "El Pueblo Perdido de la Quebrada está ubicado a 4 kilómetros al oeste del centro de San Fernando del Valle de Catamarca, sobre la ruta provincial 4, en la Quebrada del Tala. Es un sitio arqueológico que conserva construcciones y elementos de la cultura de La Aguada en su fase inicial. Se trató de un conjunto de más de 40 recintos levantados con piedra y techos de torta de barro o ramas entretejidas, agrupados alrededor de un espacio común o plaza. Este lugar tiene un Centro de Interpretación que invita a conocer lo que quedó de una civilización que dominó las tierras de La Quebrada hace más de 1500 años. Este centro cuenta con una innovadora experiencia inmersiva en la que se incorpora tecnología de realidad virtual y realidad aumentada para enriquecer la visita al sitio.\r\n",
     "FOTO_1": "/img/actividades/catamarca/cata3/1.png",
     "FOTO_2": "/img/actividades/catamarca/cata3/2.png",
     "FOTO_3": "/img/actividades/catamarca/cata3/3.png"
+  },
+  {
+    "PROVINCIA": "Chaco",
+    "SLUG": "chaco",
+    "ACTIVIDAD": "Disfrutar las aguas termales",
+    "LOCALIZACION": "Presidencia Roque Sáez Peña, Chaco\r\n",
+    "DESCRPICION": "El principal atractivo de la ciudad de Roque Saez Peña es el Complejo Termal Doctor José Pavlotzky. Sus aguas termales con altas propiedades medicinales son las únicas en esta zona de la llanura chaco-paranaense.\r\nDentro del complejo termal se puede disfrutar del sauna, masajes, tratamientos estéticos y cosmetológicos. Tiene 20 boxes individuales para baño de inmersión, una piscina con agua termal y otra interior climatizada.\r\nSe brindan servicios de masoterapia y tratamientos de estética para que el visitante alcance un estado de total relajación. Además, se ofrece una experiencia de flotario, en donde se flota dentro de un tanque.\r\n",
+    "FOTO_1": "/img/actividades/chaco/1.png",
+    "FOTO_2": "/img/actividades/chaco/2.png",
+    "FOTO_3": "/img/actividades/chaco/3.png"
+  },
+  {
+    "PROVINCIA": "Chaco",
+    "SLUG": "chaco",
+    "ACTIVIDAD": "Conocer los meteoritos en el campo del cielo",
+    "LOCALIZACION": "Secretos del cielo y de los meteoritos en Gancedo\r\n",
+    "DESCRPICION": "Conocida coloquialmente como la capital del meteorito, Gancedo se caracteriza por su principal atractivo: la Reserva Natural Cultural Pigüen N'Onaxá - Campo del Cielo.\r\nEn este lugar hace unos 4000 años impactó una lluvia de meteoritos, de los que se destacan dos de los más grandes del mundo: El Chaco y Gancedo. Además, en este sitio se encuentra el Parque Científico y Educativo Campo del Cielo, un parque temático y museo a cielo abierto. Tiene un centro de interpretación que explica distintos aspectos de este fenómeno astronómico que conjuga ciencia, mitos y leyendas.De esta forma se facilita la comprensión de los fenómenos astronómicos y la cosmovisión de los pueblos originarios de la zona.\r\n\r\nDurante el año se realizan dos eventos importantes, el Día Internacional del Asteroide en junio y la Fiesta Nacional del Meteorito en Septiembre.",
+    "FOTO_1": "/img/actividades/chaco/4.png",
+    "FOTO_2": "/img/actividades/chaco/5.png",
+    "FOTO_3": "/img/actividades/chaco/6.png"
+  },
+  {
+    "PROVINCIA": "Chaco",
+    "SLUG": "chaco",
+    "ACTIVIDAD": "Pescar en la Isla del Cerrito",
+    "LOCALIZACION": "Isla del Cerrito, Chaco",
+    "DESCRPICION": "Este lugar es uno de los más pintorescos de la provincia del Chaco y convoca a turistas y lugareños a disfrutar de la pesca deportiva dentro de un marco de naturaleza. Todos los años se realiza el Torneo Internacional de Pesca del Dorado con Devolución, una de las mayores competencias de esta índole. También es posible disfrutar de caminatas por sus senderos, observar aves y fauna, realizar cabalgatas y paseos en bicicleta o en lancha.\r\nIsla del Cerrito cuenta con camping, hostería y cabañas, entre otras opciones, además de restaurantes y almacenes.\r\n",
+    "FOTO_1": "/img/actividades/chaco/7.png",
+    "FOTO_2": "/img/actividades/chaco/8.png",
+    "FOTO_3": "/img/actividades/chaco/9.png"
+  },
+  {
+    "PROVINCIA": "Chubut",
+    "SLUG": "chubut",
+    "ACTIVIDAD": "Esquiar fuera de pista en La Hoya",
+    "LOCALIZACION": "Cerro La Hoya, Esquel, Chubut\r\n",
+    "DESCRPICION": "A 12 kilómetros de Esquel, el histórico centro de esquí La Hoya es ideal para aprender a esquiar ya que su pista de principiantes es amplia y segura. Para esquiadores más avanzados, hay cañadones fuera de pista con gran calidad y condición de la nieve debido a la orientación de la montaña que asegura la nieve en polvo.\r\nTambién se puede disfrutar de esquí alpino, snowboard, pista de trineos y caminata con raquetas. Cuenta con 30 pistas, 8 medios de elevación, escuela de esquí y snowboard y alquiler de equipo.\r\n",
+    "FOTO_1": "/img/actividades/chubut/1.png",
+    "FOTO_2": "/img/actividades/chubut/2.png",
+    "FOTO_3": "/img/actividades/chubut/3.png"
+  },
+  {
+    "PROVINCIA": "Chubut",
+    "SLUG": "chubut",
+    "ACTIVIDAD": "Viajar en el tren La Trochita",
+    "LOCALIZACION": "Esquel y El Maitén, Chubut\r\n",
+    "DESCRPICION": "El Viejo Expreso patagónico La Trochita fue reconocido como Monumento Histórico Nacional y es un ícono en la región. Se distingue por sus pequeños vagones y su trocha angosta, características que lo hacen único y transforman el recorrido en una experiencia singular.\r\nEl trayecto desde Esquel hasta Nahuel Pan abarca 18 kilómetros y tiene una duración total de tres horas.\r\nEn Nahuel Pan es posible visitar el Museo de Culturas Originarias, que resguarda el patrimonio cultural de sus comunidades acompañado de valiosos relatos. También se pueden visitar los puestos de artesanías elaboradas por los habitantes de la región. Desde la localidad de El Maitén es posible realizar otro recorrido de 52 kilómetros (ida y vuelta) hasta Ingeniero Bruno Thomae. El trayecto tiene una duración aproximada de tres horas. El servicio incluye visitas guiadas en las que se brinda información sobre la historia del tren y del museo.\r\n",
+    "FOTO_1": "/img/actividades/chubut/4.png",
+    "FOTO_2": "/img/actividades/chubut/5.png",
+    "FOTO_3": "/img/actividades/chubut/6.png"
+  },
+  {
+    "PROVINCIA": "Chubut",
+    "SLUG": "chubut",
+    "ACTIVIDAD": "Avistar ballenas en Península Valdés",
+    "LOCALIZACION": "Disfrutar las ballenas y sentir la naturaleza viva\r\n",
+    "DESCRPICION": "La Península Valdés es una de las grandes maravillas naturales de la Argentina, declarada Patrimonio Mundial por la UNESCO.\r\nLa estrella es la ballena franca austral que llega a sus costas para aparearse y tener sus crías. También hay pingüinos, orcas, delfines, elefantes y lobos marinos, guanacos, choiques, zorros, maras y gran diversidad de aves, un verdadero paraíso natural.\r\nEn la entrada a Península Valdés, en el istmo Ameghino, se encuentra el centro interpretativo. Es ideal para conocer sobre la zona y organizar la visita, teniendo en cuenta el calendario de la fauna y el horario de las mareas.\r\n",
+    "FOTO_1": "/img/actividades/chubut/7.png",
+    "FOTO_2": "/img/actividades/chubut/8.png",
+    "FOTO_3": "/img/actividades/chubut/9.png"
+  },
+  {
+    "PROVINCIA": "Córdoba",
+    "SLUG": "cordoba",
+    "ACTIVIDAD": "Descubrir la cultura de la docta",
+    "LOCALIZACION": "Ciudad de Córdoba\r\n",
+    "DESCRPICION": "La ciudad de Córdoba se distingue por su valioso legado histórico, religioso y académico. Reconocida tanto a nivel nacional como internacional, fue sede de la primera universidad pública del país, lo que la consolidó como referente en materia de educación superior.\r\nSu vida cultural es activa y diversa, con propuestas para todos los intereses. La ciudad alberga una amplia variedad de museos dedicados a la historia, el arte, la religión, las ciencias naturales y la antropología. A esto se suman galerías de arte, centros de exposiciones, ferias de artesanos y una nutrida agenda de festivales musicales que se desarrollan a lo largo del año.\r\nOtro punto de interés es la Iglesia de los Capuchinos, una obra emblemática del estilo neogótico, que sorprende por la riqueza de su interior y representa una parada obligada para quienes aprecian el arte y la historia.\r\n",
+    "FOTO_1": "/img/actividades/cba/1.png",
+    "FOTO_2": "/img/actividades/cba/2.png",
+    "FOTO_3": "/img/actividades/cba/3.png"
+  },
+  {
+    "PROVINCIA": "Córdoba",
+    "SLUG": "cordoba",
+    "ACTIVIDAD": "Disfrutar del río en el Valle de Traslasierra",
+    "LOCALIZACION": "Nono y Mina Clavero, Córdoba",
+    "DESCRPICION": "Desde Córdoba capital se transita el Camino de las Altas Cumbres por la ruta provincial 34 y se llega a las localidades del Valle de Traslasierra. La oferta de alojamiento es numerosa y variada. La invitación es a adentrarse en la naturaleza de las sierras y disfrutar de las zonas ribereñas y la frescura de los ríos entre las rocas.\r\nLa localidad de Nono se ve acompañada por los cauces de los ríos Chico de Nono y De los Sauces. Ambos ríos se unen hasta desembocar en el Dique La Viña y su lago. Hay numerosos balnearios con servicios o bajadas solitarias a los ríos, con amplias playas y corriente serena o con ollas para nadar. En el lago se practican deportes náuticos.\r\nEl río Panaholma tiene la fama de ser muy cristalino. Para disfrutarlo hay área de picnic en su orilla y las playas tienen arena y mayormente poca correntada. El ingreso al pueblo homónimo tiene el monumento a una india del pueblo comechingón, protagonista de una leyenda.\r\nEn Mina Clavero su río homónimo se destaca por sus toboganes naturales. Éste y otros ríos y arroyos tienen balnearios con servicios. Un badén en el río forma la pileta municipal con las riberas cubiertas con baldosas.\r\n",
+    "FOTO_1": "/img/actividades/cba/4.png",
+    "FOTO_2": "/img/actividades/cba/5.png",
+    "FOTO_3": "/img/actividades/cba/6.png"
+  },
+  {
+    "PROVINCIA": "Córdoba",
+    "SLUG": "cordoba",
+    "ACTIVIDAD": "Visitar las estancias jesuíticas",
+    "LOCALIZACION": "Conocer el gran legado histórico cultural jesuita\r\n",
+    "DESCRPICION": "La Compañía de Jesús ha dejado huellas arquitectónicas y culturales invaluables en toda la provincia de Córdoba y las Estancias Jesuíticas son la muestra de ello, declaradas en el año 2000 por la UNESCO como Patrimonio Mundial.\r\nLas cinco Estancias Jesuíticas son: Colonia Caroya (1616), Jesús María (1618), Santa Catalina (1622), Alta Gracia (1643), y La Candelaria (1678) que, junto con la Manzana Jesuítica de la ciudad de Córdoba, conforman el Circuito Turístico Jesuítico de la provincia.\r\nLa Manzana Jesuítica de Córdoba se sitúa actualmente en pleno centro histórico de la ciudad donde es posible vislumbrar una ejemplo del arte barroco en Latinoamérica, como es el caso de las bóvedas pintadas y los retablos de la Iglesia y la Capilla Doméstica.\r\nDescubrir los valores patrimoniales y la importancia mundial de estos lugares históricos, junto con paisajes, tradiciones y costumbres, marcan la identidad de Córdoba.\r\n",
+    "FOTO_1": "/img/actividades/cba/7.png",
+    "FOTO_2": "/img/actividades/cba/8.png",
+    "FOTO_3": "/img/actividades/cba/9.png"
+  },
+  {
+    "PROVINCIA": "Corrientes",
+    "SLUG": "corrientes",
+    "ACTIVIDAD": "Descubrir la armonía entre naturaleza y comunidad",
+    "LOCALIZACION": "Concepción del Yaguareté Corá, Corrientes\r\n",
+    "DESCRPICION": "La ciudad de Concepción de Yaguareté Corá se encuentra en el norte de la provincia de Corrientes, a 183 kilómetros de la capital. Es uno de los portales de acceso del Parque Nacional Iberá lo que asegura el contacto directo con la vida silvestre.\r\nPropone una inmersión en el Iberá desde un enfoque educativo y comunitario. Las experiencias son auténticas, no tan masivas y con un fuerte enfoque a la regeneración del ecosistema.\r\nAllí se puede avistar fauna en libertad en safaris terrestres guiados. También realizar paseos en kayak o canoa y cabalgatas guiadas por baqueanos locales.\r\nAdemás, visitar el Centro de Reintroducción del Yaguareté, gestionado por Rewilding Argentina donde trabajan para reintroducir al yaguareté en su hábitat natural.\r\n",
+    "FOTO_1": "/img/actividades/corrientes/1.png",
+    "FOTO_2": "/img/actividades/corrientes/2.png",
+    "FOTO_3": "/img/actividades/corrientes/3.png"
+  },
+  {
+    "PROVINCIA": "Corrientes",
+    "SLUG": "corrientes",
+    "ACTIVIDAD": "Conocer los comienzos del General San Martin",
+    "LOCALIZACION": "Yapeyú, Corrientes\r\n",
+    "DESCRPICION": "Visitar Yapeyú es adentrarse en las raíces de la historia argentina y descubrir los primeros pasos del Libertador. En el Templete Casa Natal del General San Martín, a orillas del río Uruguay, se conservan las ruinas de la humilde vivienda donde nació el 25 de febrero de 1778. Este sitio, protegido desde 1938 por un templete neocolonial y custodiado por los Granaderos a Caballo, guarda también los restos de sus padres. Frente a él, la plaza principal conserva un retoño de la higuera bajo cuya sombra jugaba de niño.\r\nEl recorrido continúa en el Museo Histórico de Yapeyú, que atesora piezas de las épocas prehispánica y jesuítico-guaraní, además de un homenaje a la vida y legado del prócer.\r\nFinalmente, en el Museo Histórico de San Martín, dentro del Regimiento de Granaderos, se exhiben réplicas del Sable Corvo y de sus muebles, así como una maqueta del Combate de San Lorenzo, acercando al visitante a su gesta libertadora.\r\n",
+    "FOTO_1": "/img/actividades/corrientes/4.png",
+    "FOTO_2": "/img/actividades/corrientes/5.png",
+    "FOTO_3": "/img/actividades/corrientes/6.png"
+  },
+  {
+    "PROVINCIA": "Corrientes",
+    "SLUG": "corrientes",
+    "ACTIVIDAD": "Descubrir paisajes y fósiles en el sur de Corrientes",
+    "LOCALIZACION": "Empedrado y Bella Vista, Corrientes\r\n",
+    "DESCRPICION": "El sur de la provincia de Corrientes alberga dos localidades con atractivos naturales e históricos destacados: Empedrado y Bella Vista.\r\nEmpedrado ofrece un singular conjunto de barrancas y declives. Estas formaciones naturales presentan cavernas y salientes que funcionan como un mirador privilegiado hacia el río Paraná.\r\nLa ciudad de Bella Vista es sede del yacimiento paleontológico Toropí, reconocido por el hallazgo de restos fósiles en excelente estado de conservación que incluyen especies extintas como mastodontes y gliptodontes. El área cuenta con un museo que exhibe parte de las piezas recuperadas y ofrece la posibilidad de coordinar visitas guiadas para conocer el yacimiento.\r\nAmbas localidades complementan su oferta con una propuesta de sol y playa a orillas del río, ideal para quienes buscan descanso y el disfrute en su entorno natural.\r\n",
+    "FOTO_1": "/img/actividades/corrientes/7.png",
+    "FOTO_2": "/img/actividades/corrientes/8.png",
+    "FOTO_3": "/img/actividades/corrientes/9.png"
+  },
+  {
+    "PROVINCIA": "Entre Rios",
+    "SLUG": "entre_rios",
+    "ACTIVIDAD": "Conocer el carnaval y sus colores",
+    "LOCALIZACION": "Gualeguaychú, Entre Ríos\r\n",
+    "DESCRPICION": "El carnaval es una expresión popular digna de conocer. Todos los años los equipos de las comparsas se preparan para desfilar en el llamado Carnaval del País, recientemente declarada Fiesta Nacional. El objetivo es ganar el título y la copa de campeona otorgada por un jurado de expertos. Renuevan el tema que plasman en sus canciones y su puesta en escena.\r\nMás de 1.000 personas participan de este evento, con 12 carrozas, 4 comparsas, y más de 50.000 plumas en todo el carnaval.\r\nAdemás, el Museo del Carnaval está abierto todo el año lleno de color, máscaras y trajes. Hay esculturas enormes de las carrozas de carnavales anteriores. Es posible conocer todo el proceso realizado por los integrantes de las comparsas y sus historias.\r\n",
+    "FOTO_1": "/img/actividades/entre-rios/1.png",
+    "FOTO_2": "/img/actividades/entre-rios/2.png",
+    "FOTO_3": "/img/actividades/entre-rios/3.png"
+  },
+  {
+    "PROVINCIA": "Entre Rios",
+    "SLUG": "entre_rios",
+    "ACTIVIDAD": "Disfrutar los beneficios de las Termas",
+    "LOCALIZACION": "Relajarse, recuperar el bienestar y contemplar el entorno\r\n",
+    "DESCRPICION": "Numerosas localidades cuentan con parques termales que brindan experiencias sensitivas muy relajantes.\r\nEl parque Termal de Villa Elisa tiene 10 piletas de agua mineral medicinal. Las de mayor temperatura tienen una recomendación de tiempo máximo para estar sumergido. Los chorros de agua sirven para el relax y también se pueden reservar turnos para sesiones de masajes con profesionales.\r\nLas menos cálidas cuentan con espacio para nadar y ofrecen actividades recreativas, como aquagym y elongación para mayores de 15 años, o manualidades y juegos para menores. También hay una pileta de olas para divertirse o asomarse a la playa del lago dentro del parque.\r\nNo faltan propuestas gastronómicas en un entorno de arboledas, aves y apacibles atardeceres.\r\n",
+    "FOTO_1": "/img/actividades/entre-rios/4.png",
+    "FOTO_2": "/img/actividades/entre-rios/5.png",
+    "FOTO_3": "/img/actividades/entre-rios/6.png"
+  },
+  {
+    "PROVINCIA": "Entre Rios",
+    "SLUG": "entre_rios",
+    "ACTIVIDAD": "Caminar en el Parque Nacional El Palmar",
+    "LOCALIZACION": "Senderos, canto de aves y palmeras Butia yatay\r\n",
+    "DESCRPICION": "En el sudoeste de la provincia, con acceso por la ruta nacional 14, se protege el ambiente de Espinal y Pampa con humedales. Entre senderos de pastizales y ambientes ribereños se pueden avistar 270 aves que ya han sido identificadas.\r\nTambién se pueden descubrir los retoños de las palmeras y comprender la cantidad de años que tardan en alcanzar su altura. Para conocer la vegetación local es ideal el sendero Yatay.\r\nAdemás, caminando se llega hasta los restos de la antigua calera, donde se extraía cal y canto rodado, aparte de haber sido una estancia ganadera.\r\n",
+    "FOTO_1": "/img/actividades/entre-rios/7.png",
+    "FOTO_2": "/img/actividades/entre-rios/8.png",
+    "FOTO_3": "/img/actividades/entre-rios/9.png"
+  },
+  {
+    "PROVINCIA": "Formosa",
+    "SLUG": "formosa",
+    "ACTIVIDAD": "Hacer un safari fotográfico en el Bañado La Estrella",
+    "LOCALIZACION": "Explorar los bañados, navegar y observar flora y fauna\r\n",
+    "DESCRPICION": "Desde Fortín Soledad, en Formosa, se ingresa al Bañado La Estrella. Hay servicios de boteros, lanchas o a caballo que ofrecen safaris fotográficos. Los ambientes son muy diversos, tanto por el fluir del agua como por las tonalidades que forma la luz solar.Para avisar fauna hay yacarés, carpinchos, boas curiyú, corzuelas y más de 300 especies de aves. Algunas de ellas en ciertas épocas del año, se congregan de a miles para alimentarse de peces.\r\nSu refugio de fauna silvestre y testigo de deslumbrantes atardeceres fue elegido como una de las Maravillas Naturales de la Argentina. Se recomienda explorar y descubrir especies en sus 400 mil hectáreas de lagunas, bañados, palmares y “champales” (bosques inundados cubiertos por enredaderas).\r\n",
+    "FOTO_1": "/img/actividades/formosa/1.png",
+    "FOTO_2": "/img/actividades/formosa/2.png",
+    "FOTO_3": "/img/actividades/formosa/3.png"
+  },
+  {
+    "PROVINCIA": "Formosa",
+    "SLUG": "formosa",
+    "ACTIVIDAD": "Degustar la gastronomía formoseña",
+    "LOCALIZACION": "Sabores que nacen del río y del monte\r\n",
+    "DESCRPICION": "La gastronomía formoseña es el fiel reflejo de su diversidad cultural y su estrecha relación con el río, la tierra y la tradición guaranítica. Combina ingredientes autóctonos con técnicas ancestrales y sabores que se transmiten de generación en generación.\r\nEntre los platos más representativos se destacan el mbeyú, el chipá cuerito, la sopa paraguaya y el reviro, elaboraciones típicas a base de harina de maíz o mandioca que forman parte del día a día de las familias formoseñas.\r\nEl pacú y el surubí, pescados de río por excelencia, se preparan asados, fritos o en caldos especiados que resaltan su sabor natural.\r\nEl asado se realiza tradicionalmente a las brasas, muchas veces con leña de monte como quebracho blanco o algarrobo que aportan un sabor particular.\r\n",
+    "FOTO_1": "/img/actividades/formosa/4.png",
+    "FOTO_2": "/img/actividades/formosa/5.png",
+    "FOTO_3": "/img/actividades/formosa/6.png"
+  },
+  {
+    "PROVINCIA": "Formosa",
+    "SLUG": "formosa",
+    "ACTIVIDAD": "Caminar por las pasarelas del Parque Nacional Río Pilcomayo",
+    "LOCALIZACION": "Laguna Blanca, Formosa\r\n",
+    "DESCRPICION": "El acceso a la laguna se realiza desde la localidad de Laguna Blanca, ubicada a 18 kilómetros del Parque Nacional Río Pilcomayo. En esta zona el parque ofrece un sistema de pasarelas peatonales con dos senderos de interpretación de baja dificultad. La laguna está rodeada de pajonales, achiras de flores amarillas y enredaderas, hábitat natural de carpinchos, yacarés y diversas especies de aves.\r\nDesde un segundo acceso al parque, conocido como Estero Poí, se puede recorrer un sendero autoguiado que permite observar los paisajes característicos del área protegida, como la sabana con palmeras caranday y los grandes termiteros frecuentados por osos hormigueros.\r\nAmbas áreas recreativas cuentan con oficina de informes y zonas de acampe equipadas con sanitarios accesibles para personas con movilidad reducida.\r\n",
+    "FOTO_1": "/img/actividades/formosa/7.png",
+    "FOTO_2": "/img/actividades/formosa/8.png",
+    "FOTO_3": "/img/actividades/formosa/9.png"
+  },
+  {
+    "PROVINCIA": "Jujuy",
+    "SLUG": "jujuy",
+    "ACTIVIDAD": "Recorrer la selva de montaña",
+    "LOCALIZACION": "Calilegua, Jujuy\r\n",
+    "DESCRPICION": "El Parque Nacional Calilegua es uno de los destinos para conocer de cerca las yungas, o selvas de montaña, del noroeste argentino. Con una red de senderos, es ideal para quienes buscan experiencias de senderismo y trekking en entornos naturales únicos.\r\nDesde la seccional Aguas Negras parten circuitos de distinta duración y dificultad. Este sector cuenta con área de acampe, servicios básicos y atención a visitantes.\r\nEn otra de su seccionales llamada Mesada de las Colmenas, el parque ofrece un mirador panorámico, un área recreativa y el acceso al sendero El Negrito, un circuito exigente de aproximadamente tres horas que atraviesa la selva.\r\nLos centros urbanos más cercanos son Libertador General San Martín a 112 kilómetros de la capital jujeña y el pueblo de Calilegua, que ofrecen servicios turísticos y opciones de alojamiento para planificar la visita.\r\n",
+    "FOTO_1": "/img/actividades/jujuy/1.png",
+    "FOTO_2": "/img/actividades/jujuy/2.png",
+    "FOTO_3": "/img/actividades/jujuy/3.png"
+  },
+  {
+    "PROVINCIA": "Jujuy",
+    "SLUG": "jujuy",
+    "ACTIVIDAD": "Viajar al Valle de la Luna jujeño",
+    "LOCALIZACION": "Ruta 40, Jujuy\r\n",
+    "DESCRPICION": "Este lugar es un rincón de la provincia poco conocido y maravilloso: un valle con extrañas formas, paisajes espectaculares y colores a la vera de la Ruta 40, a 5 kilómetros al sudeste del pueblo de Cusi Cusi.\r\nEl paisaje es impactante, con formaciones geológicas únicas. Farallones y picos de hasta 100 metros de altura, en tonos rojizos, grises, blancos y morados se alzan esculpidos por la erosión de rocas volcánicas.\r\nLa aridez extrema impide la presencia de vegetación, pero ha dado lugar a curiosas formaciones como domos, quebradas y columnas de intensos colores que pueden apreciarse desde varios miradores naturales.\r\nSe recomienda la visita a Cusi Cusi, un pequeño y pintoresco pueblo cercano, de menos de 250 habitantes que viven de la cría de animales, la minería artesanal, la producción de quinoa y la elaboración de artesanías.\r\n",
+    "FOTO_1": "/img/actividades/jujuy/4.png",
+    "FOTO_2": "/img/actividades/jujuy/5.png",
+    "FOTO_3": "/img/actividades/jujuy/6.png"
+  },
+  {
+    "PROVINCIA": "Jujuy",
+    "SLUG": "jujuy",
+    "ACTIVIDAD": "Caminar por un desierto de sal",
+    "LOCALIZACION": "La belleza incomparable de la inmensidad\r\n",
+    "DESCRPICION": "Las Salinas Grandes se encuentran a 3450 msnm sobre la ruta nacional 52, a 65 kilómetros de Purmamarca y a 130 de San Salvador de Jujuy. El camino está asfaltado y para llegar se pasa por la Cuesta de Lipán, con hermosos paisajes en el camino.\r\nEste desierto de sal regala postales y recuerdos enmarcados a lo lejos por el nevado de Chañi y el Volcán Tuzgle.\r\nUna de los principales actividades en el lugar son las caminatas por sus senderos internos, que pueden realizarse junto a guías locales. Estos recorridos permiten explorar a pie la inmensidad del salar, conocer de cerca su geografía, aprender sobre el proceso artesanal de extracción de sal y los piletones donde se extrae el mineral.\r\nPueden visitarse durante todo el año, tanto en vehículo particular como mediante excursiones turísticas. No obstante, la mejor época para recorrerlas a pie es durante la estación seca, entre los meses de abril y noviembre, cuando el terreno está firme y las condiciones climáticas son más estables.\r\n",
+    "FOTO_1": "/img/actividades/jujuy/7.png",
+    "FOTO_2": "/img/actividades/jujuy/8.png",
+    "FOTO_3": "/img/actividades/jujuy/9.png"
   }
 ]

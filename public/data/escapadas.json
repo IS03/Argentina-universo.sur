@@ -26,5 +26,138 @@
     "PROVINCIAS": "Chubut",
     "DURACION": "3 Días",
     "PDF": "/pdf/pto_madryn_1.pdf"
+  },
+  {
+    "ID": "esc_05",
+    "TITULO": "Jujuy",
+    "PROVINCIAS": "Jujuy",
+    "DURACION": "3 Días",
+    "PDF": "/pdf/jujuy.pdf"
+  },
+  {
+    "ID": "esc_06",
+    "TITULO": "CABA",
+    "PROVINCIAS": "Ciudad Autónoma de Buenos Aires",
+    "DURACION": "3 Días",
+    "PDF": "/pdf/caba.pdf"
+  },
+  {
+    "ID": "esc_07",
+    "TITULO": "Sierra de la Ventana",
+    "PROVINCIAS": "Buenos Aires",
+    "DURACION": "3 Días",
+    "PDF": "/pdf/ventana.pdf"
+  },
+  {
+    "ID": "esc_08",
+    "TITULO": "San Carlos de Bariloche",
+    "PROVINCIAS": "Río Negro",
+    "DURACION": "3 Días",
+    "PDF": "/pdf/bariloche.pdf"
+  },
+  {
+    "ID": "esc_09",
+    "TITULO": "Salta",
+    "PROVINCIAS": "Salta",
+    "DURACION": "3 Días",
+    "PDF": "/pdf/salta.pdf"
+  },
+  {
+    "ID": "esc_10",
+    "TITULO": "Norte de Córdoba",
+    "PROVINCIAS": "Córdoba",
+    "DURACION": "3 Días",
+    "PDF": "/pdf/cba.pdf"
+  },
+  {
+    "ID": "esc_11",
+    "TITULO": "Entre Ríos",
+    "PROVINCIAS": "Entre Ríos",
+    "DURACION": "3 Días",
+    "PDF": "/pdf/entrerios.pdf"
+  },
+  {
+    "ID": "esc_12",
+    "TITULO": "Ushuaia",
+    "PROVINCIAS": "Tierra del Fuego",
+    "DURACION": "3 Días",
+    "PDF": "/pdf/ushuaia.pdf"
+  },
+  {
+    "ID": "esc_13",
+    "TITULO": "Talampaya e Ischigualasto",
+    "PROVINCIAS": "La Rioja",
+    "DURACION": "3 Días",
+    "PDF": "/pdf/talampaya.pdf"
+  },
+  {
+    "ID": "esc_14",
+    "TITULO": "Chaco",
+    "PROVINCIAS": "Chaco",
+    "DURACION": "3 Días",
+    "PDF": "/pdf/chaco.pdf"
+  },
+  {
+    "ID": "esc_15",
+    "TITULO": "Mendoza",
+    "PROVINCIAS": "Mendoza",
+    "DURACION": "3 Días",
+    "PDF": "/pdf/mendoza.pdf"
+  },
+  {
+    "ID": "esc_16",
+    "TITULO": "San Juan",
+    "PROVINCIAS": "San Juan",
+    "DURACION": "3 Días",
+    "PDF": "/pdf/sanjuan.pdf"
+  },
+  {
+    "ID": "esc_17",
+    "TITULO": "San Luis",
+    "PROVINCIAS": "San Luis",
+    "DURACION": "3 Días",
+    "PDF": "/pdf/sanluis.pdf"
+  },
+  {
+    "ID": "esc_18",
+    "TITULO": "Río Gallegos",
+    "PROVINCIAS": "Santa Cruz",
+    "DURACION": "3 Días",
+    "PDF": "/pdf/gallegos.pdf"
+  },
+  {
+    "ID": "esc_19",
+    "TITULO": "Neuquén",
+    "PROVINCIAS": "Neuquén",
+    "DURACION": "3 Días",
+    "PDF": "/pdf/neuquen.pdf"
+  },
+  {
+    "ID": "esc_20",
+    "TITULO": "Santiago del Estero",
+    "PROVINCIAS": "Santiago del Estero",
+    "DURACION": "3 Días",
+    "PDF": "/pdf/santiago.pdf"
+  },
+  {
+    "ID": "esc_21",
+    "TITULO": "Misiones",
+    "PROVINCIAS": "Misiones",
+    "DURACION": "3 Días",
+    "PDF": "/pdf/misiones.pdf"
+  },
+  {
+    "ID": "esc_22",
+    "TITULO": "La Pampa",
+    "PROVINCIAS": "La Pampa",
+    "DURACION": "3 Días",
+    "PDF": "/pdf/lapampa.pdf"
+  },
+  {
+    "ID": "esc_23",
+    "TITULO": "Formosa",
+    "PROVINCIAS": "Formosa",
+    "DURACION": "3 Días",
+    "PDF": "/pdf/formosa.pdf"
   }
 ]

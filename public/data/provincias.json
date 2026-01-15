@@ -2,6 +2,8 @@
   {
     "PROVINCIA": "Buenos Aires",
     "SLUG": "buenos_aires",
+    "LAT": -34.92,
+    "LON": -57.97,
     "DESCIPCION": "La provincia de Buenos Aires combina grandes centros urbanos como el Gran Buenos Aires y Mar del Plata, con una amplia oferta turística. Sus playas y llanuras son ideales para escapadas o vacaciones, mientras que las estancias ofrecen experiencias rurales. Al sur, Tandil y Sierra de la Ventana invitan a la aventura, y las aguas termales del río Salado y la laguna Epecuén brindan relax y bienestar.",
     "FOTO_1": "/provincias/img/buenos-aires/1.jpg",
     "FOTO_2": "/provincias/img/buenos-aires/2.jpg",
@@ -10,6 +12,8 @@
   {
     "PROVINCIA": "Ciudad Autónoma de Buenos Aires",
     "SLUG": "caba",
+    "LAT": -34.61,
+    "LON": -58.38,
     "DESCIPCION": "La Ciudad de Buenos Aires es la vibrante capital de Argentina y cautiva a los viajeros con su mezcla de tradición y modernidad. Es famosa por ser la cuna del tango y por su gran oferta cultural: teatros, museos, arte, historia y música. La ciudad invita a disfrutar de una experiencia gastronómica inigualable, desde una tradicional parrilla argentina hasta propuestas gourmet y cocina de autor. Sus emblemáticas cafeterías son puntos de encuentro con la esencia porteña.",
     "FOTO_1": "/provincias/img/ciudad-autonoma-de-buenos-aires/1.jpg",
     "FOTO_2": "/provincias/img/ciudad-autonoma-de-buenos-aires/2.jpg",
@@ -17,10 +21,222 @@
   },
   {
     "PROVINCIA": "Catamarca",
-    "SLUG": "catamarca",
+    "SLUG": "catarmaca",
+    "LAT": -28.46957,
+    "LON": -65.78524,
     "DESCIPCION": "Con salares, volcanes, dunas, termas, valles y grandes montañas Catamarca ofrece viajes bajo cielos plenamente azules. El turismo aventura está presente en senderos, lagos y laderas. La cultura ancestral se mantiene viva en sus tradiciones, plasmadas en trabajos en telares, casas de adobe y el recuerdo del pasado Inca. La provincia se caracteriza por la producción de olivos y vinos. Su capital, San Fernando del Valle de Catamarca, es el lugar donde cada invierno se realiza la Fiesta Nacional e Internacional del Poncho.",
     "FOTO_1": "/provincias/img/catamarca/1.jpg",
     "FOTO_2": "/provincias/img/catamarca/2.jpg",
     "FOTO_3": "/provincias/img/catamarca/3.jpg"
+  },
+  {
+    "PROVINCIA": "Chaco",
+    "SLUG": "chaco",
+    "LAT": -27.46363,
+    "LON": -58.98665,
+    "DESCIPCION": "La provincia del Chaco ofrece una gran variedad de atractivos turísticos ligados a la naturaleza, la cultura y la ciencia. El Parque Nacional Chaco y el Parque Nacional El Impenetrable invitan a explorar paisajes únicos con gran biodiversidad, junto con la Isla del Cerrito.\r\nResistencia, \"ciudad de las esculturas\", y las artesanías originarias, especialmente las Qom, ofrecen diversas experiencias para disfrutar de esta provincia.\r\n",
+    "FOTO_1": "/provincias/img/chaco/1.jpg",
+    "FOTO_2": "/provincias/img/chaco/2.jpg",
+    "FOTO_3": "/provincias/img/chaco/3.jpg"
+  },
+  {
+    "PROVINCIA": "Chubut",
+    "SLUG": "chubut",
+    "LAT": -43.3,
+    "LON": -65.1,
+    "DESCIPCION": "Chubut invita a explorar paisajes de una belleza incomparable. En cada una de las estaciones ofrece algo distinto y escenarios increíbles: sus montañas imponentes, picos nevados, bosques, espejos de agua cristalina, mesetas, acantilados y costas marítimas. Parques nacionales y áreas protegidas con su fauna en cada uno de los ambientes: la ballena franca austral, pingüinos, orcas, elefantes y lobos marinos, delfines, toninas overas, ñandúes, guanacos y ciervos son algunas de las especies que se pueden ver.",
+    "FOTO_1": "/provincias/img/chubut/1.jpg",
+    "FOTO_2": "/provincias/img/chubut/2.jpg",
+    "FOTO_3": "/provincias/img/chubut/3.jpg"
+  },
+  {
+    "PROVINCIA": "Córdoba",
+    "SLUG": "cordoba",
+    "LAT": -31.40648,
+    "LON": -64.18853,
+    "DESCIPCION": "Ubicada en el centro del país, la provincia de Córdoba se destaca por su diversidad de atractivos turísticos, que incluyen sierras, valles, ríos y lagos ideales para el turismo de aventura con actividades como trekking, canotaje, senderismo y cabalgatas. Esta provincia atrae tanto por su naturaleza como por su cultura y religiosidad. El legado histórico de las Estancias Jesuíticas, declaradas Patrimonio Mundial por la UNESCO, ofrece una inmersión en la historia colonial. También se destacan sus bodegas y su gastronomía particular.\r\n",
+    "FOTO_1": "/provincias/img/cordoba/1.jpg",
+    "FOTO_2": "/provincias/img/cordoba/2.jpg",
+    "FOTO_3": "/provincias/img/cordoba/3.jpg"
+  },
+  {
+    "PROVINCIA": "Corrientes",
+    "SLUG": "corrientes",
+    "LAT": -27.47,
+    "LON": -58.84,
+    "DESCIPCION": "Rodeada por los ríos Paraná y Uruguay, se ubica en el corazón del Litoral. Invita a descubrir sus extensas playas de aguas cálidas, a practicar actividades náuticas y pesca deportiva en destinos turísticos que combinan descanso, naturaleza y aventura. El Parque Nacional Iberá, considerado uno de los mayores humedales del mundo, es un paraíso natural que alberga una asombrosa biodiversidad.\r\nCorrientes también es sinónimo de identidad y cultura viva. Reconocida como la cuna del Chamamé, esta expresión musical ha sido declarada Patrimonio Mundial por la UNESCO, reflejo de una comunidad que celebra sus raíces con orgullo y emoción. Cada año, la provincia vibra con la Fiesta Nacional del Chamamé y, durante el verano, se llena de color y alegría con uno de los carnavales más importantes del país, donde comparsas, música y danza transforman la noche en pura celebración.\r\n",
+    "FOTO_1": "/provincias/img/corrientes/1.jpg",
+    "FOTO_2": "/provincias/img/corrientes/2.jpg",
+    "FOTO_3": "/provincias/img/corrientes/3.jpg"
+  },
+  {
+    "PROVINCIA": "Entre Rios",
+    "SLUG": "entre_rios",
+    "LAT": -31.73,
+    "LON": -60.52,
+    "DESCIPCION": "Entre los grandes ríos Paraná y Uruguay se despliega la tierra entrerriana. Caminar por las playas, salir a remar o navegar por el río, pescar… todo invita a conectarse con la naturaleza. También ofrece entre los montes, senderos y establecimientos agroganaderos que incluyen viñedos, donde se puede disfrutar del turismo rural. Cada experiencia es un placer y en época de carnaval, el color y el baile estallan en cada rincón. Muchos viajeros llegan en busca del bienestar de sus numerosas termas. La gastronomía gira alrededor de los platos con pescado, los quesos y embutidos y las delicias que acompañan el ritual del mate. Entre Ríos es un destino que tiene mucho para vivenciar y descubrir.\r\n",
+    "FOTO_1": "/provincias/img/entre-rios/1.jpg",
+    "FOTO_2": "/provincias/img/entre-rios/2.jpg",
+    "FOTO_3": "/provincias/img/entre-rios/3.jpg"
+  },
+  {
+    "PROVINCIA": "Formosa",
+    "SLUG": "formosa",
+    "LAT": -26.18,
+    "LON": -58.18,
+    "DESCIPCION": "Formosa ofrece un amplio abanico de ambientes naturales perfectos para explorar y descubrir. Hay una gran cantidad de ríos, bañados y lagunas que conforman una rica diversidad de ecosistemas donde habita una gran variedad de especies. La diversidad de esta provincia también se refleja en su riqueza cultural, resultado de múltiples corrientes migratorias provenientes de Paraguay y Europa. La interculturalidad se manifiesta en la vida cotidiana con las comunidades indígenas qom, wichí y pilagá que mantienen sus lenguas maternas y costumbres, enriqueciendo así el patrimonio cultural de la provincia.\r\n\r\n",
+    "FOTO_1": "/provincias/img/formosa/1.jpg",
+    "FOTO_2": "/provincias/img/formosa/2.jpg",
+    "FOTO_3": "/provincias/img/formosa/3.jpg"
+  },
+  {
+    "PROVINCIA": "Jujuy",
+    "SLUG": "jujuy",
+    "LAT": -24.1928,
+    "LON": -65.29342,
+    "DESCIPCION": "La provincia de Jujuy despliega una geografía única donde desiertos de altura, quebradas coloridas, valles fértiles y selvas verdes conviven a corta distancia entre sí. Cada paisaje ofrece una experiencia distinta, ideal para quienes buscan conectar con la naturaleza, la historia y la diversidad cultural que define a este rincón del norte argentino.\r\nLas culturas originarias, la espiritualidad popular, las festividades tradicionales y una gastronomía repleta de sabores auténticos construyen una identidad viva que se manifiesta en cada encuentro y recorrido. En Jujuy, cada experiencia propone una forma diferente de sentir y comprender la provincia.\r\n",
+    "FOTO_1": "/provincias/img/jujuy/1.jpg",
+    "FOTO_2": "/provincias/img/jujuy/2.jpg",
+    "FOTO_3": "/provincias/img/jujuy/3.jpg"
+  },
+  {
+    "PROVINCIA": "La Pampa",
+    "SLUG": "la_pampa",
+    "LAT": -36.62,
+    "LON": -64.29,
+    "DESCIPCION": "La Pampa ofrece experiencias únicas en contacto con la naturaleza, la tradición y el bienestar. Sus estancias rurales, distribuidas por toda la provincia, permiten al visitante disfrutar de jornadas distintas, con amaneceres espléndidos y puestas de sol inolvidables. La oferta incluye actividades náuticas, terrestres, aéreas y de ecoturismo en ambientes silvestres. También cuenta con centros termales y servicios de spa. Su propuesta cultural abarca gastronomía, artesanías y espacios donde se conservan formas de vida, costumbres y valores transmitidos por generaciones.",
+    "FOTO_1": "/provincias/img/la-pampa/1.jpg",
+    "FOTO_2": "/provincias/img/la-pampa/2.jpg",
+    "FOTO_3": "/provincias/img/la-pampa/3.jpg"
+  },
+  {
+    "PROVINCIA": "La Rioja",
+    "SLUG": "la_rioja",
+    "LAT": -29.41,
+    "LON": -66.85,
+    "DESCIPCION": "En La Rioja la naturaleza y la historia de la tierra se fusionan en escenarios imponentes. Sus paisajes con montañas, volcanes y lagunas de altura tienen contrastes que van desde suelos rojizos hasta espejos de agua cristalina. Este territorio ofrece una experiencia única para quienes buscan conectar con el pasado geológico del planeta. Cada rincón de la provincia invita a descubrir formaciones rocosas esculpidas por el tiempo y colores vibrantes en el paisaje.",
+    "FOTO_1": "/provincias/img/la-rioja/1.jpg",
+    "FOTO_2": "/provincias/img/la-rioja/2.jpg",
+    "FOTO_3": "/provincias/img/la-rioja/3.jpg"
+  },
+  {
+    "PROVINCIA": "Mendoza",
+    "SLUG": "mendoza",
+    "LAT": -32.88946,
+    "LON": -68.84582,
+    "DESCIPCION": "Mendoza ofrece una variedad de experiencias para disfrutar de su belleza natural y su rica cultura. En su capital se pueden recorrer calles históricas con acequias y explorar museos que cuentan la historia fundacional de la región. La producción vitivinícola es una propuesta esencial, se pueden visitar bodegas, viñedos y olivares que producen el famoso Malbec, además de disfrutar de la gastronomía local en las tradicionales parrillas y enramadas criollas. La región sur, con sus ríos, diques y cañones, invita a realizar actividades de aventura, como los paseos náuticos y los deportes extremos. La Precordillera, con sus termas y paisajes montañosos, ofrece una experiencia de relax y aventura, destacando la travesía del Cruce de los Andes y la posibilidad de disfrutar del astroturismo en cielos despejados. Las rutas y caminos que atraviesan Mendoza deslumbran con sus paisajes y conectan con la historia, la naturaleza y la viticultura que definen esta provincia única.\r\n",
+    "FOTO_1": "/provincias/img/mendoza/1.jpg",
+    "FOTO_2": "/provincias/img/mendoza/2.jpg",
+    "FOTO_3": "/provincias/img/mendoza/3.jpg"
+  },
+  {
+    "PROVINCIA": "Misiones",
+    "SLUG": "misiones",
+    "LAT": -27.39184,
+    "LON": -55.92379,
+    "DESCIPCION": "Al noreste de Argentina, limitando con Brasil y Paraguay, Misiones deslumbra con su selva exuberante, donde la biodiversidad de su flora y fauna convierte cada recorrido en una experiencia fascinante. Además de sus ríos caudalosos, cascadas y saltos de agua, la provincia guarda un legado histórico, con antiguas construcciones que revelan el pasado de la región. Explorar sus senderos, admirar sus paisajes y descubrir su historia permite una conexión única entre la naturaleza y la cultura.\r\n",
+    "FOTO_1": "/provincias/img/misiones/1.jpg",
+    "FOTO_2": "/provincias/img/misiones/2.jpg",
+    "FOTO_3": "/provincias/img/misiones/3.jpg"
+  },
+  {
+    "PROVINCIA": "Neuquén",
+    "SLUG": "neuquen",
+    "LAT": -38.95,
+    "LON": -68.06,
+    "DESCIPCION": "Neuquén tiene una diversidad de paisajes que van desde lagos cristalinos y bosques milenarios, hasta volcanes imponentes y formaciones rocosas únicas. La cultura mapuche, presente en distintas regiones, se entrelaza con tradiciones rurales, sabores patagónicos y expresiones artesanales que enriquecen cada experiencia.\r\nLas actividades al aire libre, el turismo termal, la observación de fauna, la paleontología y el enoturismo forman parte de las propuestas para todo tipo de turistas.\r\n",
+    "FOTO_1": "/provincias/img/neuquen/1.jpg",
+    "FOTO_2": "/provincias/img/neuquen/2.jpg",
+    "FOTO_3": "/provincias/img/neuquen/2.jpg"
+  },
+  {
+    "PROVINCIA": "Río Negro",
+    "SLUG": "rio_negro",
+    "LAT": -40.81,
+    "LON": -62.99,
+    "DESCIPCION": "La provincia de Río Negro, ubicada en la Patagonia Argentina, es un destino turístico que ofrece una impresionante diversidad de paisajes y actividades. Hermosas playas al este en la región de la Costa; lagos, bosques y montañas nevadas al oeste en la Cordillera; la estepa con su paisaje árido y con vastas llanuras; y la zona de los Valles, famosos por su productividad especialmente por sus huertas, frutales y viñedos.\r\n",
+    "FOTO_1": "/provincias/img/rio-negro/1.jpg",
+    "FOTO_2": "/provincias/img/rio-negro/2.jpg",
+    "FOTO_3": "/provincias/img/rio-negro/3.jpg"
+  },
+  {
+    "PROVINCIA": "Salta",
+    "SLUG": "salta",
+    "LAT": -24.80645,
+    "LON": -65.41999,
+    "DESCIPCION": "Salta deslumbra con su diversidad de propuestas de turismo naturaleza y de tradición arraigada. Desde sus pueblos hasta sus históricas iglesias y museos, cada rincón refleja una herencia cultural viva, que también se disfruta en su música, gastronomía y hospitalidad.\r\nSus rutas escénicas atraviesan paisajes majestuosos conectando valles y desiertos. Es posible visitar bodegas de altura que producen vinos reconocidos a nivel mundial. La provincia también es un paraíso para los amantes de la aventura: trekking, rafting o mountain bike son algunas de las actividades destacadas rodeadas de parques naturales y áreas protegidas. Y para quienes buscan descanso, las aguas termales completan una experiencia.\r\n",
+    "FOTO_1": "/provincias/img/salta/1.jpg",
+    "FOTO_2": "/provincias/img/salta/2.jpg",
+    "FOTO_3": "/provincias/img/salta/3.jpg"
+  },
+  {
+    "PROVINCIA": "San Juan",
+    "SLUG": "san_juan",
+    "LAT": -31.54,
+    "LON": -68.54,
+    "DESCIPCION": "San Juan es una provincia cuyana enmarcada por imponentes montañas, entre altos picos de la Cordillera de la Ramada. En sus verdes valles hay ciudades grandiosas y producciones agrícolas.\r\nLos turistas la recorren bajo cielos azules, un sol radiante y noches particularmente estrelladas. Acompañados por el característico viento zonda, viven una fusión ideal entre explorar y descubrir sus paisajes únicos dando lugar a la aventura.\r\nCon servicios turísticos de alto nivel invita a disfrutar de varietales tales como el Malbec, Syrah, Cabernet Sauvignon, Torrontés y su tradicional y destacada producción de olivo.\r\n",
+    "FOTO_1": "/provincias/img/san-juan/1.jpg",
+    "FOTO_2": "/provincias/img/san-juan/2.jpg",
+    "FOTO_3": "/provincias/img/san-juan/3.jpg"
+  },
+  {
+    "PROVINCIA": "San Luis",
+    "SLUG": "san_luis",
+    "LAT": -33.3,
+    "LON": -66.34,
+    "DESCIPCION": "San Luis es un destino ideal para quienes buscan conectarse con la naturaleza, la historia y la cultura, todo enmarcado por paisajes serranos que invitan a la aventura y el descanso. Esta provincia ofrece una amplia variedad de actividades al aire libre como senderismo, cabalgatas, deportes náuticos y vuelos en parapente, en entornos naturales imponentes.\r\nLa tranquilidad de sus pueblos, el patrimonio cultural y arquitectónico y las experiencias rurales se combinan con una excelente infraestructura turística que incluye alojamientos, gastronomía local y servicios para todos los gustos. Su accesibilidad y la calidez de sus anfitriones la convierten en una opción perfecta tanto para escapadas como para vacaciones completas, con propuestas activas, relajantes y auténticas durante todo el año.\r\n",
+    "FOTO_1": "/provincias/img/san-luis/1.jpg",
+    "FOTO_2": "/provincias/img/san-luis/2.jpg",
+    "FOTO_3": "/provincias/img/san-luis/3.jpg"
+  },
+  {
+    "PROVINCIA": "Santa Cruz",
+    "SLUG": "santa_cruz",
+    "LAT": -51.62,
+    "LON": -69.22,
+    "DESCIPCION": "La provincia argentina con más cantidad de parques nacionales invita a vivir experiencias únicas: desde navegaciones junto a glaciares majestuosos hasta senderos entre montañas imponentes y observación de fauna. Sus glaciares y extensa costa atlántica crean escenarios ideales para la aventura y el contacto con la naturaleza. A esto se suman paisajes infinitos a lo largo de la ruta, bosques inmensos y sitios históricos que reflejan el legado de la región.",
+    "FOTO_1": "/provincias/img/santa-cruz/1.jpg",
+    "FOTO_2": "/provincias/img/santa-cruz/2.jpg",
+    "FOTO_3": "/provincias/img/santa-cruz/3.jpg"
+  },
+  {
+    "PROVINCIA": "Santa Fe",
+    "SLUG": "santa_fe",
+    "LAT": -31.64881,
+    "LON": -60.70868,
+    "DESCIPCION": "La provincia de Santa Fe combina historia, naturaleza, cultura y tradición con la calidez de su gente. Invita a recorrer sus paisajes ribereños, degustar platos basados en pescado de río, deliciosas producciones locales como los típicos alfajores santafesinos y a descubrir ciudades con amplia oferta cultural y deportiva.\r\n",
+    "FOTO_1": "/provincias/img/santa-fe/1.jpg",
+    "FOTO_2": "/provincias/img/santa-fe/2.jpg",
+    "FOTO_3": "/provincias/img/santa-fe/3.jpg"
+  },
+  {
+    "PROVINCIA": "Santiago del Estero",
+    "SLUG": "santiago_del_estero",
+    "LAT": -27.80047,
+    "LON": -64.26285,
+    "DESCIPCION": "Santiago del Estero es cuna de historia y tradición. Su capital es conocida como \"Madre de Ciudades\" ya que fue la primera fundada por los colonizadores españoles en el actual territorio argentino, en 1553.\r\nEl paisaje santiagueño conjuga la calidez de su gente con la fuerza del monte chaqueño y la bondad de sus aguas termales. Santiago es tierra de folklore, chacarera y gastronomía regional. Es muy reconocida también por ser sede de eventos deportivos de gran convocatoria y por su autódromo de nivel internacional.\r\n",
+    "FOTO_1": "/provincias/img/santiago-del-estero/1.jpg",
+    "FOTO_2": "/provincias/img/santiago-del-estero/2.jpg",
+    "FOTO_3": "/provincias/img/santiago-del-estero/3.jpg"
+  },
+  {
+    "PROVINCIA": "Tierra del Fuego",
+    "SLUG": "tierra_del_fuego",
+    "LAT": -54.8,
+    "LON": -68.3,
+    "DESCIPCION": "Tierra del Fuego, la provincia más austral de Argentina, es un destino de paisajes imponentes donde montañas, bosques, ríos y costas se combinan en un entorno de gran belleza. Su clima frío y los cielos cambiantes le otorgan un carácter único, con inviernos nevados ideales para actividades invernales, otoños y primaveras coloridas, y veranos frescos que permiten recorrer sus senderos y disfrutar de la vida al aire libre.\r\nUn lugar donde la naturaleza domina el paisaje y cada estación ofrece una experiencia distinta.\r\n",
+    "FOTO_1": "/provincias/img/tierra-del-fuego/1.jpg",
+    "FOTO_2": "/provincias/img/tierra-del-fuego/2.jpg",
+    "FOTO_3": "/provincias/img/tierra-del-fuego/3.jpg"
+  },
+  {
+    "PROVINCIA": "Tucumán",
+    "SLUG": "tucuman",
+    "LAT": -26.81601,
+    "LON": -65.41999,
+    "DESCIPCION": "Tucumán fue la cuna de la independencia argentina y se pueden revivir esos hechos en sus iglesias, museos y edificios coloniales. Los recorridos combinan historia, naturaleza y cultura.\r\nSus Valles Calchaquíes deslumbran con paisajes de cerros y pueblos que mantienen sus costumbres y tradiciones ancestrales. Las Yungas son ideales para las actividades de aventura.\r\nLa gastronomía y los trabajos artesanales reflejan la identidad de sus pueblos originarios y criollos. Tucumán invita a descubrir toda su riqueza en un entorno de contrastes naturales.\r\n",
+    "FOTO_1": "/provincias/img/tucuman/1.jpg",
+    "FOTO_2": "/provincias/img/tucuman/2.jpg",
+    "FOTO_3": "/provincias/img/tucuman/3.jpg"
   }
 ]
