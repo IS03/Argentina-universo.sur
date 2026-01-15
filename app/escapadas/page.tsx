@@ -1,4 +1,5 @@
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 import { getEscapadas } from "@/lib/data";
 import Link from "next/link";
 
@@ -58,6 +59,7 @@ export default async function EscapadasPage() {
           </div>
         </div>
       </main>
+      <Footer />
     </>
   );
 }

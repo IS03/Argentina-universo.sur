@@ -2,6 +2,7 @@
 
 import { useState, useEffect, Suspense } from "react";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 import ActividadCard from "@/components/ActividadCard";
 // Tipos
 interface Actividad {
@@ -172,6 +173,7 @@ function ActividadesContent() {
           )}
         </div>
       </main>
+      <Footer />
     </>
   );
 }
@@ -188,6 +190,7 @@ export default function ActividadesPage() {
             </div>
           </div>
         </main>
+        <Footer />
       </>
     }>
       <ActividadesContent />

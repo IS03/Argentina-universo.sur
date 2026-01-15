@@ -1,4 +1,5 @@
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 import ProvinciaCard from "@/components/ProvinciaCard";
 import { getProvincias } from "@/lib/data";
 
@@ -27,6 +28,7 @@ export default async function ProvinciasPage() {
           </div>
         </div>
       </main>
+      <Footer />
     </>
   );
 }

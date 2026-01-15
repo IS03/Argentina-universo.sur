@@ -1,4 +1,5 @@
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 import Carrusel from "@/components/Carrusel";
 import Link from "next/link";
 import { getProvinciaBySlug, getProvincias } from "@/lib/data";
@@ -60,6 +61,7 @@ export default async function ProvinciaPage({ params }: PageProps) {
           </div>
         </div>
       </main>
+      <Footer />
     </>
   );
 }

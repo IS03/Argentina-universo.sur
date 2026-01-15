@@ -1,4 +1,5 @@
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 import Carrusel from "@/components/Carrusel";
 import { getActividadBySlug, getActividades } from "@/lib/data";
 import { notFound } from "next/navigation";
@@ -54,6 +55,7 @@ export default async function ActividadPage({ params }: PageProps) {
           </div>
         </div>
       </main>
+      <Footer />
     </>
   );
 }

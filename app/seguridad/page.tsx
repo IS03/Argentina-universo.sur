@@ -1,4 +1,5 @@
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 export default function SeguridadPage() {
   const secciones = [
@@ -263,6 +264,7 @@ export default function SeguridadPage() {
           </footer>
         </div>
       </main>
+      <Footer />
     </>
   );
 }
