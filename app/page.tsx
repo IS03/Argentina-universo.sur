@@ -10,8 +10,10 @@ import ActividadCard from "@/components/ActividadCard";
 import { Provincia, Actividad } from "@/lib/data";
 
 export default function Home() {
-  // Estados para el carrusel
-  // Lista de imágenes del home - actualizar según las imágenes disponibles en /public/img/home/
+  // ============================================
+  // CARRUSEL CON DOBLE BUFFER - SIN CORTES
+  // ============================================
+  // Lista de imágenes del home
   const imagenesHome = [
     '/img/home/1.jpg',
     '/img/home/2.jpg',
@@ -24,14 +26,39 @@ export default function Home() {
     '/img/home/9.jpg',
     '/img/home/10.jpg',
   ];
-  const [indiceImagen, setIndiceImagen] = useState(0);
-  const [indiceAnterior, setIndiceAnterior] = useState(0);
-  const [opacidad, setOpacidad] = useState(1);
-  const indiceImagenRef = useRef(0);
-  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
-  // Versión de caché para forzar recarga de imágenes cuando se actualicen
-  // Se genera solo en el cliente después de la hidratación para evitar mismatch
-  const [cacheVersion, setCacheVersion] = useState<string | null>(null);
+
+  // Estado del carrusel: índice actual y qué capa está visible
+  const [indiceActual, setIndiceActual] = useState(0);
+  const [capaVisible, setCapaVisible] = useState<'A' | 'B'>('A');
+  
+  // Estados para las opacidades de las dos capas (siempre una en 1, otra en 0)
+  // Capa A: siempre montada, nunca desmontada
+  const [opacidadCapaA, setOpacidadCapaA] = useState(1);
+  const [opacidadCapaB, setOpacidadCapaB] = useState(0);
+  
+  // Estados para las URLs de las imágenes en cada capa
+  // CRÍTICO: Nunca cambiamos el src de la capa visible durante la transición
+  const [srcCapaA, setSrcCapaA] = useState(imagenesHome[0]);
+  const [srcCapaB, setSrcCapaB] = useState(imagenesHome[1]);
+  
+  // Ref para el intervalo del carrusel
+  const intervaloRef = useRef<NodeJS.Timeout | null>(null);
+  
+  // Refs para mantener los valores actuales sin causar re-renders
+  const indiceActualRef = useRef(0);
+  const capaVisibleRef = useRef<'A' | 'B'>('A');
+  
+  // Estado para precarga de imágenes
+  const [imagenesPrecargadas, setImagenesPrecargadas] = useState(false);
+  
+  // Sincronizar refs con estado
+  useEffect(() => {
+    indiceActualRef.current = indiceActual;
+  }, [indiceActual]);
+  
+  useEffect(() => {
+    capaVisibleRef.current = capaVisible;
+  }, [capaVisible]);
 
   // Refs
   const heroRef = useRef<HTMLDivElement>(null);
@@ -51,34 +78,102 @@ export default function Home() {
   // Slugs de las 3 provincias destacadas
   const slugsDestacadas = ["buenos_aires", "cordoba", "rio_negro"];
 
-  // Cambiar imagen automáticamente cada 5 segundos
+  // ============================================
+  // PRECARGA DE IMÁGENES
+  // ============================================
+  // Precargar todas las imágenes al montar el componente
   useEffect(() => {
-    const intervalo = setInterval(() => {
-      if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current);
+    const precargarImagenes = () => {
+      const promesas = imagenesHome.map((src) => {
+        return new Promise<void>((resolve, reject) => {
+          const img = new window.Image();
+          img.onload = () => resolve();
+          img.onerror = () => resolve(); // Continuar aunque falle una imagen
+          img.src = src;
+        });
+      });
+      
+      Promise.all(promesas).then(() => {
+        setImagenesPrecargadas(true);
+      });
+    };
+    
+    precargarImagenes();
+  }, []);
+
+  // ============================================
+  // INICIALIZACIÓN DEL CARRUSEL AUTOMÁTICO
+  // ============================================
+  // Iniciar el carrusel automático solo después de precargar las imágenes
+  useEffect(() => {
+    if (!imagenesPrecargadas) return;
+    
+    // Función para cambiar a la siguiente imagen con transición suave
+    // Definida dentro del useEffect para evitar problemas de dependencias
+    const siguienteImagen = () => {
+      // Usar refs para obtener los valores actuales sin depender del estado
+      const indiceActual = indiceActualRef.current;
+      const capaVisible = capaVisibleRef.current;
+      
+      const siguienteIndice = (indiceActual + 1) % imagenesHome.length;
+      const siguienteSrc = imagenesHome[siguienteIndice];
+      
+      // Determinar qué capa está visible actualmente
+      const capaActiva = capaVisible;
+      const capaInactiva = capaVisible === 'A' ? 'B' : 'A';
+      
+      // CRÍTICO: La capa inactiva debe tener su src actualizado ANTES de hacerla visible
+      // Esto garantiza que cuando suba su opacity, la imagen ya esté cargada
+      // Actualizamos el src de la capa inactiva (que está en opacity 0)
+      if (capaInactiva === 'A') {
+        setSrcCapaA(siguienteSrc);
+      } else {
+        setSrcCapaB(siguienteSrc);
       }
       
-      const indiceActual = indiceImagenRef.current;
-      const siguienteIndice = (indiceActual + 1) % imagenesHome.length;
-      
-      setIndiceAnterior(indiceActual);
-      setOpacidad(0);
-      
-      timeoutRef.current = setTimeout(() => {
-        indiceImagenRef.current = siguienteIndice;
-        setIndiceImagen(siguienteIndice);
-        setOpacidad(1);
-        timeoutRef.current = null;
-      }, 2500);
+      // Esperar a que React actualice el DOM y el navegador procese el cambio de src
+      // Usamos requestAnimationFrame para asegurar que el navegador haya renderizado
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          // Ahora hacemos la transición:
+          // Paso 1: Subir la capa inactiva (con la nueva imagen) de opacity 0 → 1
+          //         La capa activa permanece en opacity 1 durante toda la transición
+          //         Esto garantiza que NUNCA haya un momento donde ambas estén < 1
+          if (capaInactiva === 'A') {
+            setOpacidadCapaA(1);
+          } else {
+            setOpacidadCapaB(1);
+          }
+          
+          // Paso 2: Una vez que la nueva imagen está visible (después de la transición),
+          //         bajamos la capa anterior a opacity 0
+          //         Usamos setTimeout con el mismo tiempo que la transición CSS (1.5s)
+          setTimeout(() => {
+            if (capaActiva === 'A') {
+              setOpacidadCapaA(0);
+            } else {
+              setOpacidadCapaB(0);
+            }
+            
+            // Actualizar el estado para el siguiente ciclo
+            setIndiceActual(siguienteIndice);
+            setCapaVisible(capaInactiva);
+          }, 1500); // Mismo tiempo que la transición CSS
+        });
+      });
+    };
+    
+    // Iniciar el intervalo: cambiar imagen cada 5 segundos
+    intervaloRef.current = setInterval(() => {
+      siguienteImagen();
     }, 5000);
-
+    
     return () => {
-      clearInterval(intervalo);
-      if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current);
+      if (intervaloRef.current) {
+        clearInterval(intervaloRef.current);
       }
     };
-  }, [imagenesHome.length]);
+  }, [imagenesPrecargadas]); // Solo depende de imagenesPrecargadas
 
   // Cargar provincias destacadas y contenido visitado
   useEffect(() => {
@@ -207,10 +302,9 @@ export default function Home() {
     cargarContenido();
   }, []);
 
-  // Marcar como montado después de la hidratación y generar cacheVersion
+  // Marcar como montado después de la hidratación
   useEffect(() => {
     setIsMounted(true);
-    setCacheVersion(Date.now().toString());
   }, []);
 
   // Detectar scroll y altura del contenido
@@ -293,43 +387,90 @@ export default function Home() {
             transition: 'opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
           }}
         >
-          {/* Carrusel de imágenes de fondo - SIN BLUR INICIAL */}
-          <div className="absolute inset-0">
-            <Image
-              src={cacheVersion ? `${imagenesHome[indiceAnterior]}?v=${cacheVersion}` : imagenesHome[indiceAnterior]}
-              alt={`Paisaje argentino ${indiceAnterior + 1}`}
-              fill
-              className="object-cover"
-              style={{ 
-                opacity: 1 - opacidad, 
-                filter: isMounted ? `blur(${blurAmount}px)` : 'blur(0px)',
-                transition: 'opacity 2.5s cubic-bezier(0.4, 0, 0.2, 1), filter 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
+          {/* ============================================
+              CARRUSEL CON DOBLE BUFFER
+              ============================================
+              GARANTÍAS DE IMPLEMENTACIÓN:
+              
+              1. NUNCA HAY PARPADEO:
+                 - Dos capas montadas permanentemente (nunca se desmontan)
+                 - Siempre hay exactamente una imagen con opacity: 1
+                 - La imagen entrante sube de 0 → 1 mientras la saliente permanece en 1
+                 - Solo cuando la entrante está al 100%, la saliente baja a 0
+              
+              2. NUNCA SE VÉ EL FONDO:
+                 - El contenedor tiene background-color igual al color dominante de las imágenes
+                 - En todo momento hay al menos una imagen con opacity: 1 cubriendo todo el espacio
+                 - Las dos capas están en position: absolute con inset-0
+              
+              3. TRANSICIÓN CONTINUA:
+                 - Usamos solo transition: opacity (NO animation)
+                 - La transición es suave (1.5s ease-in-out)
+                 - No hay cambios de src en elementos visibles durante la transición
+                 - El src se actualiza en la capa invisible ANTES de hacerla visible
+              
+              4. RENDER ESTABLE:
+                 - Los componentes Image nunca se desmontan
+                 - No usamos key={index} que causaría remounts
+                 - Las referencias a src se mantienen estables
+          */}
+          <div className="absolute inset-0 bg-[#5A4E3D]">
+            {/* CAPA A - Siempre montada, nunca desmontada */}
+            <div
+              className="absolute inset-0"
+              style={{
+                opacity: opacidadCapaA,
+                transition: 'opacity 1.5s ease-in-out',
+                willChange: 'opacity', // Optimización GPU
               }}
-              quality={90}
-              unoptimized
-            />
-            <Image
-              src={cacheVersion ? `${imagenesHome[indiceImagen]}?v=${cacheVersion}` : imagenesHome[indiceImagen]}
-              alt={`Paisaje argentino ${indiceImagen + 1}`}
-              fill
-              className="object-cover"
-              style={{ 
-                opacity: opacidad, 
-                filter: isMounted ? `blur(${blurAmount}px)` : 'blur(0px)',
-                transition: 'opacity 2.5s cubic-bezier(0.4, 0, 0.2, 1), filter 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
+            >
+              <Image
+                src={srcCapaA}
+                alt={`Paisaje argentino`}
+                fill
+                className="object-cover"
+                style={{ 
+                  filter: isMounted ? `blur(${blurAmount}px)` : 'blur(0px)',
+                  pointerEvents: 'none'
+                }}
+                priority={true}
+                quality={90}
+                unoptimized
+              />
+            </div>
+            
+            {/* CAPA B - Siempre montada, nunca desmontada */}
+            <div
+              className="absolute inset-0"
+              style={{
+                opacity: opacidadCapaB,
+                transition: 'opacity 1.5s ease-in-out',
+                willChange: 'opacity', // Optimización GPU
               }}
-              priority
-              quality={90}
-              unoptimized
-            />
+            >
+              <Image
+                src={srcCapaB}
+                alt={`Paisaje argentino`}
+                fill
+                className="object-cover"
+                style={{ 
+                  filter: isMounted ? `blur(${blurAmount}px)` : 'blur(0px)',
+                  pointerEvents: 'none'
+                }}
+                priority={true}
+                quality={90}
+                unoptimized
+              />
+            </div>
+            
             {/* Gradientes sutiles - solo para legibilidad del texto */}
-            <div className="absolute inset-0 bg-gradient-to-br from-[#5A4E3D]/20 via-[#6B5D47]/15 to-[#8B7355]/10"></div>
-            <div className="absolute inset-0 bg-gradient-to-t from-transparent via-transparent to-[#C9B99B]/5"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-[#5A4E3D]/20 via-[#6B5D47]/15 to-[#8B7355]/10 pointer-events-none"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-transparent via-transparent to-[#C9B99B]/5 pointer-events-none"></div>
             
             {/* Overlay progresivo - aparece desde el primer scroll */}
             {isMounted && (
               <div 
-                className="absolute inset-0 transition-opacity duration-300"
+                className="absolute inset-0 transition-opacity duration-300 pointer-events-none"
                 style={{ 
                   background: `linear-gradient(to bottom, 
                     transparent 0%,
@@ -338,8 +479,7 @@ export default function Home() {
                     rgba(250, 248, 243, ${overlayOpacity * 0.5}) 70%,
                     rgba(250, 248, 243, ${overlayOpacity}) 100%
                   )`,
-                  pointerEvents: 'none',
-                  opacity: Math.min(1, scrollProgress * 1.5) // Aparece más rápido
+                  opacity: Math.min(1, scrollProgress * 1.5)
                 }}
               />
             )}

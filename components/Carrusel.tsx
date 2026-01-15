@@ -10,13 +10,10 @@ interface CarruselProps {
 
 export default function Carrusel({ fotos, alt }: CarruselProps) {
   const [indiceActual, setIndiceActual] = useState(0);
-  const [indiceAnterior, setIndiceAnterior] = useState(0);
-  const [opacidad, setOpacidad] = useState(1);
   const intervaloRef = useRef<NodeJS.Timeout | null>(null);
   const pausadoRef = useRef(false);
   const timeoutReanudarRef = useRef<NodeJS.Timeout | null>(null);
   const indiceActualRef = useRef(0);
-  const transicionandoRef = useRef(false);
 
   useEffect(() => {
     indiceActualRef.current = indiceActual;
@@ -35,20 +32,9 @@ export default function Carrusel({ fotos, alt }: CarruselProps) {
       indiceNormalizado = ((nuevoIndice % fotos.length) + fotos.length) % fotos.length;
     }
 
-    // Para cambios manuales, solo evitar si es la misma imagen (pero permitir cancelar transición)
-    if (!esAutomatico) {
-      if (indiceNormalizado === indiceActual && opacidad === 1 && !transicionandoRef.current) {
-        return;
-      }
-    } else {
-      // Para automático, usar el ref para comparar (más confiable)
-      if (indiceNormalizado === indiceActualRef.current && opacidad === 1 && !transicionandoRef.current) {
-        return;
-      }
-      // Si está transicionando, no permitir cambios automáticos (esperar a que termine)
-      if (transicionandoRef.current) {
-        return;
-      }
+    // Evitar cambiar si es la misma imagen
+    if (indiceNormalizado === indiceActualRef.current) {
+      return;
     }
 
     if (!esAutomatico) {
@@ -71,33 +57,11 @@ export default function Carrusel({ fotos, alt }: CarruselProps) {
       }, 4000);
     }
 
-    // Iniciar transición suave
-    transicionandoRef.current = true;
-    setIndiceAnterior(indiceActualRef.current);
-    
-    // Actualizar el ref inmediatamente para mantener sincronización
+    // Actualizar el ref inmediatamente
     indiceActualRef.current = indiceNormalizado;
     
-    // Cambiar el índice
+    // Cambiar el índice directamente sin animaciones
     setIndiceActual(indiceNormalizado);
-    
-    // Iniciar la transición de opacidad de forma suave y difuminada
-    // Primero fade out de la imagen actual
-    setOpacidad(0);
-    
-    // Después de un pequeño delay para que comience el fade out, hacer fade in de la nueva imagen
-    // Esto crea un efecto de crossfade más suave
-    requestAnimationFrame(() => {
-      requestAnimationFrame(() => {
-        setOpacidad(1);
-      });
-    });
-    
-    // Resetear el flag de transición después de que termine completamente la animación
-    // Usar un tiempo ligeramente mayor que la duración de la transición CSS (2.5s)
-    setTimeout(() => {
-      transicionandoRef.current = false;
-    }, 2800);
   };
 
   const iniciarAutoPlay = () => {
@@ -109,8 +73,6 @@ export default function Carrusel({ fotos, alt }: CarruselProps) {
     }
 
     // Cambiar cada 3 segundos (3000ms)
-    // El intervalo se ejecuta cada 3s, pero la transición dura 2.5s
-    // Esto da tiempo suficiente entre cambios
     intervaloRef.current = setInterval(() => {
       if (pausadoRef.current) return;
       
@@ -138,22 +100,12 @@ export default function Carrusel({ fotos, alt }: CarruselProps) {
   }, [fotos.length]);
 
   const siguiente = () => {
-    // Si está transicionando, cancelar la transición actual
-    if (transicionandoRef.current) {
-      transicionandoRef.current = false;
-    }
-    
     // Calcular siguiente con ciclo infinito
     const siguienteIndice = (indiceActual + 1) % fotos.length;
     cambiarImagen(siguienteIndice, false);
   };
 
   const anterior = () => {
-    // Si está transicionando, cancelar la transición actual
-    if (transicionandoRef.current) {
-      transicionandoRef.current = false;
-    }
-    
     // Calcular anterior con ciclo infinito (si es -1, se normaliza a la última)
     const anteriorIndice = ((indiceActual - 1) + fotos.length) % fotos.length;
     cambiarImagen(anteriorIndice, false);
@@ -166,39 +118,8 @@ export default function Carrusel({ fotos, alt }: CarruselProps) {
   return (
     <div className="relative w-full">
       <div className="relative w-full h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden rounded-lg bg-gray-900">
-        {/* Imagen anterior (fade out) */}
-        {indiceAnterior !== indiceActual && (
-          <div
-            className="absolute inset-0"
-            style={{
-              opacity: 1 - opacidad,
-              transition: "opacity 2.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
-              zIndex: opacidad < 1 ? 2 : 1,
-              pointerEvents: "none",
-            }}
-          >
-            <Image
-              src={fotos[indiceAnterior]}
-              alt={`${alt} - Imagen ${indiceAnterior + 1}`}
-              fill
-              className="object-cover"
-              unoptimized
-              onError={(e) => {
-                console.error("Error cargando imagen:", fotos[indiceAnterior]);
-              }}
-            />
-          </div>
-        )}
-        {/* Imagen actual (fade in) */}
-        <div
-          className="absolute inset-0"
-          style={{
-            opacity: opacidad,
-            transition: "opacity 2.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
-            zIndex: opacidad >= 1 ? 2 : 1,
-            pointerEvents: "none",
-          }}
-        >
+        {/* Imagen actual - sin animaciones */}
+        <div className="absolute inset-0">
           <Image
             src={fotos[indiceActual]}
             alt={`${alt} - Imagen ${indiceActual + 1}`}
@@ -221,7 +142,7 @@ export default function Carrusel({ fotos, alt }: CarruselProps) {
               e.stopPropagation();
               anterior();
             }}
-            className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-colors z-20"
+            className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full z-20"
             aria-label="Imagen anterior"
           >
             <svg
@@ -244,7 +165,7 @@ export default function Carrusel({ fotos, alt }: CarruselProps) {
               e.stopPropagation();
               siguiente();
             }}
-            className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-colors z-20"
+            className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full z-20"
             aria-label="Imagen siguiente"
           >
             <svg
@@ -270,7 +191,7 @@ export default function Carrusel({ fotos, alt }: CarruselProps) {
             <button
               key={indice}
               onClick={() => irA(indice)}
-              className={`h-2 rounded-full transition-all ${
+              className={`h-2 rounded-full ${
                 indice === indiceActual
                   ? "w-8 bg-white"
                   : "w-2 bg-white/50 hover:bg-white/75"
