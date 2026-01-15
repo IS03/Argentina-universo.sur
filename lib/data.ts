@@ -24,6 +24,8 @@ export interface Actividad {
   des_2: string;
   fotos: string[];
   actividadSlug: string; // Slug único para la actividad
+  lat?: number;
+  lon?: number;
 }
 
 export interface Escapada {
@@ -113,7 +115,9 @@ export async function getActividades(): Promise<Actividad[]> {
       corregirExtension(item.FOTO_2 || ""),
       corregirExtension(item.FOTO_3 || "")
     ].filter(Boolean),
-    actividadSlug: createSlug(item.ACTIVIDAD)
+    actividadSlug: createSlug(item.ACTIVIDAD),
+    lat: item.LATITUD || undefined,
+    lon: item.LONGITUD || undefined
   }));
 }
 

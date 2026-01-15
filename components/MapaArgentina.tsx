@@ -51,71 +51,8 @@ export default function MapaArgentina({ provincias, zonaActiva }: MapaArgentinaP
     return provincias.find((p) => SLUG_TO_SVG_ID[p.slug] === svgId);
   };
 
-  // Cargar el SVG solo una vez
-  useEffect(() => {
-    if (!svgRef.current || svgRef.current.children.length > 0) return;
-
-    fetch("/argentina.svg")
-      .then((res) => res.text())
-      .then((text) => {
-        const parser = new DOMParser();
-        const svgDoc = parser.parseFromString(text, "image/svg+xml");
-        const svgElement = svgDoc.querySelector("svg");
-
-        if (!svgElement || !svgRef.current) return;
-
-        // Clonar el SVG
-        const clonedSvg = svgElement.cloneNode(true) as SVGElement;
-        
-        // Asegurar que el SVG se ajuste al contenedor
-        clonedSvg.removeAttribute("width");
-        clonedSvg.removeAttribute("height");
-        if (!clonedSvg.getAttribute("viewBox")) {
-          clonedSvg.setAttribute("viewBox", "0 0 361.54608 792.57880");
-        }
-        clonedSvg.setAttribute("preserveAspectRatio", "xMidYMid meet");
-        clonedSvg.setAttribute("style", "width: 100%; height: auto; max-height: 600px;");
-        
-        // Procesar cada path y agregar event listeners
-        const paths = clonedSvg.querySelectorAll("path");
-        paths.forEach((path) => {
-          const svgId = path.getAttribute("id");
-          if (!svgId) return;
-
-          const provincia = getProvinciaBySvgId(svgId);
-          if (!provincia) {
-            path.style.display = "none";
-            return;
-          }
-
-          // Aplicar estilos iniciales inmediatamente
-          const perteneceZona = zonaActiva === "Todas" || provincia.zona === zonaActiva;
-          const opacity = perteneceZona ? 1 : 0.3;
-          const fill = perteneceZona ? "#C9B99B" : "#D4C4B0";
-          const stroke = perteneceZona ? "#A68B5B" : "#C9B99B";
-          const strokeWidth = perteneceZona ? 2 : 1;
-
-          path.setAttribute("fill", fill);
-          path.setAttribute("stroke", stroke);
-          path.setAttribute("stroke-width", String(strokeWidth));
-          path.setAttribute("opacity", String(opacity));
-          path.setAttribute("style", `cursor: pointer; transition: all 0.3s ease`);
-          path.setAttribute("title", provincia.provincia);
-
-          // Agregar event listeners una sola vez
-          path.addEventListener("mouseenter", () => setHoveredSlug(provincia.slug));
-          path.addEventListener("mouseleave", () => setHoveredSlug(null));
-          path.addEventListener("click", () => handleProvinciaClick(provincia.slug));
-        });
-
-        // Agregar el SVG al DOM
-        svgRef.current.appendChild(clonedSvg);
-      })
-      .catch((err) => console.error("Error cargando SVG:", err));
-  }, [provincias, zonaActiva]);
-
-  // Actualizar estilos cuando cambia el filtro o el hover
-  useEffect(() => {
+  // Función para actualizar estilos de los paths
+  const actualizarEstilosPaths = () => {
     if (!svgRef.current) return;
 
     const svg = svgRef.current.querySelector("svg");
@@ -150,6 +87,88 @@ export default function MapaArgentina({ provincias, zonaActiva }: MapaArgentinaP
       path.setAttribute("stroke-width", String(strokeWidth));
       path.setAttribute("opacity", String(opacity));
     });
+  };
+
+  // Cargar el SVG solo una vez (sin zonaActiva en dependencias)
+  useEffect(() => {
+    if (!svgRef.current) return;
+    
+    // Prevenir carga múltiple
+    if (svgRef.current.children.length > 0) return;
+
+    let isMounted = true;
+
+    fetch("/argentina.svg")
+      .then((res) => res.text())
+      .then((text) => {
+        if (!isMounted || !svgRef.current) return;
+        
+        // Verificar nuevamente después de la carga asíncrona
+        if (svgRef.current.children.length > 0) return;
+
+        const parser = new DOMParser();
+        const svgDoc = parser.parseFromString(text, "image/svg+xml");
+        const svgElement = svgDoc.querySelector("svg");
+
+        if (!svgElement || !svgRef.current) return;
+
+        // Clonar el SVG
+        const clonedSvg = svgElement.cloneNode(true) as SVGElement;
+        
+        // Asegurar que el SVG se ajuste al contenedor
+        clonedSvg.removeAttribute("width");
+        clonedSvg.removeAttribute("height");
+        if (!clonedSvg.getAttribute("viewBox")) {
+          clonedSvg.setAttribute("viewBox", "0 0 361.54608 792.57880");
+        }
+        clonedSvg.setAttribute("preserveAspectRatio", "xMidYMid meet");
+        clonedSvg.setAttribute("style", "width: 100%; height: auto; max-height: 600px;");
+        
+        // Procesar cada path y agregar event listeners
+        const paths = clonedSvg.querySelectorAll("path");
+        paths.forEach((path) => {
+          const svgId = path.getAttribute("id");
+          if (!svgId) return;
+
+          const provincia = getProvinciaBySvgId(svgId);
+          if (!provincia) {
+            path.style.display = "none";
+            return;
+          }
+
+          // Estilos base
+          path.setAttribute("style", `cursor: pointer; transition: all 0.3s ease`);
+          path.setAttribute("title", provincia.provincia);
+
+          // Agregar event listeners una sola vez
+          path.addEventListener("mouseenter", () => setHoveredSlug(provincia.slug));
+          path.addEventListener("mouseleave", () => setHoveredSlug(null));
+          path.addEventListener("click", () => handleProvinciaClick(provincia.slug));
+        });
+
+        // Agregar el SVG al DOM
+        svgRef.current.appendChild(clonedSvg);
+        
+        // Aplicar estilos inmediatamente después de cargar
+        actualizarEstilosPaths();
+      })
+      .catch((err) => console.error("Error cargando SVG:", err));
+
+    // Función de limpieza
+    return () => {
+      isMounted = false;
+      if (svgRef.current) {
+        // Limpiar todos los SVGs del contenedor
+        while (svgRef.current.firstChild) {
+          svgRef.current.removeChild(svgRef.current.firstChild);
+        }
+      }
+    };
+  }, [provincias]); // Solo provincias, sin zonaActiva
+
+  // Actualizar estilos cuando cambia el filtro o el hover
+  useEffect(() => {
+    actualizarEstilosPaths();
   }, [zonaActiva, hoveredSlug, provincias]);
 
   return (
