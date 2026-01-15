@@ -32,6 +32,7 @@ export interface Escapada {
   provincias: string;
   duracion: string;
   pdf: string;
+  zona: string;
 }
 
 // Función auxiliar para crear slug desde texto
@@ -127,7 +128,8 @@ export async function getEscapadas(): Promise<Escapada[]> {
     titulo: item.TITULO,
     provincias: item.PROVINCIAS,
     duracion: item.DURACION,
-    pdf: item.PDF
+    pdf: item.PDF,
+    zona: item.ZONA || ""
   }));
 }
 

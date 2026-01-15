@@ -4,147 +4,168 @@
     "TITULO": "El Calafate y El Chaltén",
     "PROVINCIAS": "Santa Cruz",
     "DURACION": "3 Días",
-    "PDF": "/pdf/cañafate.pdf"
+    "PDF": "/pdf/cañafate.pdf",
+    "ZONA": "Patagonia"
   },
   {
     "ID": "esc_02",
     "TITULO": "Puerto Iguazú",
     "PROVINCIAS": "Misiones",
     "DURACION": "3 Días",
-    "PDF": "/pdf/iguazu_2.pdf"
+    "PDF": "/pdf/iguazu_2.pdf",
+    "ZONA": "Litoral"
   },
   {
     "ID": "esc_03",
     "TITULO": "Pinamar",
     "PROVINCIAS": "Buenos Aires",
     "DURACION": "3 Días",
-    "PDF": "/pdf/pinamar.pdf"
+    "PDF": "/pdf/pinamar.pdf",
+    "ZONA": "Buenos Aires"
   },
   {
     "ID": "esc_04",
     "TITULO": "Puerti Madryn",
     "PROVINCIAS": "Chubut",
     "DURACION": "3 Días",
-    "PDF": "/pdf/pto_madryn_1.pdf"
+    "PDF": "/pdf/pto_madryn_1.pdf",
+    "ZONA": "Patagonia"
   },
   {
     "ID": "esc_05",
     "TITULO": "Jujuy",
     "PROVINCIAS": "Jujuy",
     "DURACION": "3 Días",
-    "PDF": "/pdf/jujuy.pdf"
+    "PDF": "/pdf/jujuy.pdf",
+    "ZONA": "Norte"
   },
   {
     "ID": "esc_06",
     "TITULO": "CABA",
     "PROVINCIAS": "Ciudad Autónoma de Buenos Aires",
     "DURACION": "3 Días",
-    "PDF": "/pdf/caba.pdf"
+    "PDF": "/pdf/caba.pdf",
+    "ZONA": "Buenos Aires"
   },
   {
     "ID": "esc_07",
     "TITULO": "Sierra de la Ventana",
     "PROVINCIAS": "Buenos Aires",
     "DURACION": "3 Días",
-    "PDF": "/pdf/ventana.pdf"
+    "PDF": "/pdf/ventana.pdf",
+    "ZONA": "Buenos Aires"
   },
   {
     "ID": "esc_08",
     "TITULO": "San Carlos de Bariloche",
     "PROVINCIAS": "Río Negro",
     "DURACION": "3 Días",
-    "PDF": "/pdf/bariloche.pdf"
+    "PDF": "/pdf/bariloche.pdf",
+    "ZONA": "Patagonia"
   },
   {
     "ID": "esc_09",
     "TITULO": "Salta",
     "PROVINCIAS": "Salta",
     "DURACION": "3 Días",
-    "PDF": "/pdf/salta.pdf"
+    "PDF": "/pdf/salta.pdf",
+    "ZONA": "Norte"
   },
   {
     "ID": "esc_10",
     "TITULO": "Norte de Córdoba",
     "PROVINCIAS": "Córdoba",
     "DURACION": "3 Días",
-    "PDF": "/pdf/cba.pdf"
+    "PDF": "/pdf/cba.pdf",
+    "ZONA": "Centro"
   },
   {
     "ID": "esc_11",
     "TITULO": "Entre Ríos",
     "PROVINCIAS": "Entre Ríos",
     "DURACION": "3 Días",
-    "PDF": "/pdf/entrerios.pdf"
+    "PDF": "/pdf/entrerios.pdf",
+    "ZONA": "Litoral"
   },
   {
     "ID": "esc_12",
     "TITULO": "Ushuaia",
     "PROVINCIAS": "Tierra del Fuego",
     "DURACION": "3 Días",
-    "PDF": "/pdf/ushuaia.pdf"
+    "PDF": "/pdf/ushuaia.pdf",
+    "ZONA": "Patagonia"
   },
   {
     "ID": "esc_13",
     "TITULO": "Talampaya e Ischigualasto",
     "PROVINCIAS": "La Rioja",
     "DURACION": "3 Días",
-    "PDF": "/pdf/talampaya.pdf"
+    "PDF": "/pdf/talampaya.pdf",
+    "ZONA": "Norte"
   },
   {
     "ID": "esc_14",
     "TITULO": "Chaco",
     "PROVINCIAS": "Chaco",
     "DURACION": "3 Días",
-    "PDF": "/pdf/chaco.pdf"
+    "PDF": "/pdf/chaco.pdf",
+    "ZONA": "Litoral"
   },
   {
     "ID": "esc_15",
     "TITULO": "Mendoza",
     "PROVINCIAS": "Mendoza",
     "DURACION": "3 Días",
-    "PDF": "/pdf/mendoza.pdf"
+    "PDF": "/pdf/mendoza.pdf",
+    "ZONA": "Cuyo"
   },
   {
     "ID": "esc_16",
     "TITULO": "San Juan",
     "PROVINCIAS": "San Juan",
     "DURACION": "3 Días",
-    "PDF": "/pdf/sanjuan.pdf"
+    "PDF": "/pdf/sanjuan.pdf",
+    "ZONA": "Cuyo"
   },
   {
     "ID": "esc_17",
     "TITULO": "San Luis",
     "PROVINCIAS": "San Luis",
     "DURACION": "3 Días",
-    "PDF": "/pdf/sanluis.pdf"
+    "PDF": "/pdf/sanluis.pdf",
+    "ZONA": "Centro"
   },
   {
     "ID": "esc_18",
     "TITULO": "Río Gallegos",
     "PROVINCIAS": "Santa Cruz",
     "DURACION": "3 Días",
-    "PDF": "/pdf/gallegos.pdf"
+    "PDF": "/pdf/gallegos.pdf",
+    "ZONA": "Patagonia"
   },
   {
     "ID": "esc_19",
     "TITULO": "Neuquén",
     "PROVINCIAS": "Neuquén",
     "DURACION": "3 Días",
-    "PDF": "/pdf/neuquen.pdf"
+    "PDF": "/pdf/neuquen.pdf",
+    "ZONA": "Patagonia"
   },
   {
     "ID": "esc_20",
     "TITULO": "Santiago del Estero",
     "PROVINCIAS": "Santiago del Estero",
     "DURACION": "3 Días",
-    "PDF": "/pdf/santiago.pdf"
+    "PDF": "/pdf/santiago.pdf",
+    "ZONA": "Norte"
   },
   {
     "ID": "esc_21",
     "TITULO": "Misiones",
     "PROVINCIAS": "Misiones",
     "DURACION": "3 Días",
-    "PDF": "/pdf/misiones.pdf"
+    "PDF": "/pdf/misiones.pdf",
+    "ZONA": "Litoral"
   },
   {
     "ID": "esc_22",
@@ -158,6 +179,7 @@
     "TITULO": "Formosa",
     "PROVINCIAS": "Formosa",
     "DURACION": "3 Días",
-    "PDF": "/pdf/formosa.pdf"
+    "PDF": "/pdf/formosa.pdf",
+    "ZONA": "Litoral"
   }
 ]
