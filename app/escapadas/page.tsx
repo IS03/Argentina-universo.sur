@@ -11,10 +11,10 @@ export default async function EscapadasPage() {
       <main className="min-h-screen pt-32 pb-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <div className="mb-12 text-center">
-            <h1 className="text-4xl md:text-5xl font-semibold uppercase tracking-widest mb-4">
+            <h1 className="text-4xl md:text-5xl font-semibold uppercase tracking-widest mb-4 text-[#5A4E3D]">
               Escapadas
             </h1>
-            <p className="text-gray-400 text-lg">
+            <p className="text-[#6B5D47] text-lg">
               Descargá nuestras guías de escapadas en PDF
             </p>
           </div>
@@ -24,14 +24,14 @@ export default async function EscapadasPage() {
             {escapadas.map((escapada) => (
               <div
                 key={escapada.id}
-                className="bg-gray-900 border border-gray-800 rounded-lg p-6 hover:border-gray-700 transition-colors"
+                className="bg-[#E8DDD0] border border-[#C9B99B]/50 rounded-lg p-6 hover:border-[#A68B5B] hover:bg-[#F5F1E8] transition-all duration-300"
               >
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                   <div className="flex-1">
-                    <h2 className="text-2xl font-semibold mb-2">
+                    <h2 className="text-2xl font-semibold mb-2 text-[#5A4E3D]">
                       {escapada.titulo}
                     </h2>
-                    <div className="flex flex-wrap gap-4 text-sm text-gray-400">
+                    <div className="flex flex-wrap gap-4 text-sm text-[#6B5D47]">
                       <span>
                         <span className="uppercase tracking-wider">Provincia:</span>{" "}
                         {escapada.provincias}
@@ -47,7 +47,7 @@ export default async function EscapadasPage() {
                       href={escapada.pdf}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-block px-6 py-3 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white uppercase tracking-widest text-sm transition-all duration-300 border border-white/20 hover:border-white/40 whitespace-nowrap"
+                      className="inline-block px-6 py-3 bg-[#A68B5B]/20 hover:bg-[#A68B5B]/30 backdrop-blur-sm text-[#5A4E3D] uppercase tracking-widest text-sm transition-all duration-300 border border-[#C9B99B]/50 hover:border-[#A68B5B] whitespace-nowrap"
                     >
                       Ver PDF
                     </Link>

@@ -12,7 +12,7 @@ export default function ActividadCard({ actividad }: ActividadCardProps) {
   return (
     <Link
       href={`/actividades/${actividad.actividadSlug}`}
-      className="group block overflow-hidden rounded-xl bg-gradient-to-br from-slate-800 to-slate-900 hover:from-slate-700 hover:to-slate-800 transition-all duration-300 transform hover:scale-[1.03] shadow-lg hover:shadow-2xl hover:shadow-purple-500/20 border border-slate-700/50 hover:border-purple-500/50"
+      className="group block overflow-hidden rounded-xl bg-gradient-to-br from-[#E8DDD0] to-[#D4C4B0] hover:from-[#D4C4B0] hover:to-[#C9B99B] transition-all duration-300 transform hover:scale-[1.03] shadow-lg hover:shadow-2xl hover:shadow-[#8B7355]/30 border border-[#C9B99B]/50 hover:border-[#8B7355]/70"
     >
       <div className="relative w-full h-64 overflow-hidden">
         <Image
@@ -23,14 +23,14 @@ export default function ActividadCard({ actividad }: ActividadCardProps) {
           unoptimized
         />
         {/* Gradiente más sutil y colorido */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent group-hover:from-black/80 transition-all duration-300" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#5A4E3D]/85 via-[#6B5D47]/30 to-transparent group-hover:from-[#5A4E3D]/75 transition-all duration-300" />
         {/* Efecto de brillo en hover */}
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-500/0 via-transparent to-amber-500/0 group-hover:from-purple-500/10 group-hover:to-amber-500/10 transition-all duration-300" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#8B7355]/0 via-transparent to-[#C9B99B]/0 group-hover:from-[#8B7355]/15 group-hover:to-[#C9B99B]/15 transition-all duration-300" />
         <div className="absolute bottom-0 left-0 right-0 p-5">
-          <h3 className="text-xl font-bold text-white drop-shadow-lg group-hover:text-purple-200 transition-colors duration-300 mb-1">
+          <h3 className="text-xl font-bold text-white drop-shadow-lg group-hover:text-[#F5F1E8] transition-colors duration-300 mb-1">
             {actividad.actividad}
           </h3>
-          <p className="text-sm text-gray-200 drop-shadow-md">{actividad.localizacion}</p>
+          <p className="text-sm text-white/90 drop-shadow-md">{actividad.localizacion}</p>
         </div>
       </div>
     </Link>

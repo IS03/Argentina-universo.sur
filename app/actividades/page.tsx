@@ -107,20 +107,20 @@ function ActividadesContent() {
       <main className="min-h-screen pt-32 pb-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="mb-12 text-center">
-            <h1 className="text-4xl md:text-5xl font-semibold uppercase tracking-widest mb-4">
+            <h1 className="text-4xl md:text-5xl font-semibold uppercase tracking-widest mb-4 text-[#5A4E3D]">
               Qué hacer
             </h1>
-            <p className="text-gray-400 text-lg">
+            <p className="text-[#6B5D47] text-lg">
               Descubrí las mejores actividades en cada provincia
             </p>
           </div>
 
           {/* Filtro por provincia */}
           <div className="mb-12 flex justify-center">
-            <div className="bg-gray-900/50 backdrop-blur-sm border border-gray-700/50 rounded-lg p-6 w-full max-w-md hover:border-gray-600/70 hover:bg-gray-900/70 transition-all duration-300">
+            <div className="bg-[#E8DDD0]/80 backdrop-blur-sm border border-[#C9B99B]/50 rounded-lg p-6 w-full max-w-md hover:border-[#A68B5B]/70 hover:bg-[#E8DDD0] transition-all duration-300">
               <label
                 htmlFor="provincia-filtro"
-                className="block text-sm uppercase tracking-widest text-gray-300 mb-4 text-center font-light"
+                className="block text-sm uppercase tracking-widest text-[#6B5D47] mb-4 text-center font-light"
               >
                 Filtrar por provincia
               </label>
@@ -129,7 +129,7 @@ function ActividadesContent() {
                   id="provincia-filtro"
                   value={provinciaSeleccionada}
                   onChange={(e) => setProvinciaSeleccionada(e.target.value)}
-                  className="w-full bg-gray-800/80 border border-gray-600/50 text-white px-5 py-3.5 rounded-lg focus:outline-none focus:border-blue-500/50 focus:ring-2 focus:ring-blue-500/20 transition-all duration-300 appearance-none cursor-pointer hover:bg-gray-800 hover:border-gray-500/70 text-base font-light tracking-wide"
+                  className="w-full bg-[#F5F1E8] border border-[#C9B99B]/50 text-[#5A4E3D] px-5 py-3.5 rounded-lg focus:outline-none focus:border-[#A68B5B]/70 focus:ring-2 focus:ring-[#A68B5B]/20 transition-all duration-300 appearance-none cursor-pointer hover:bg-[#FAF8F3] hover:border-[#A68B5B]/70 text-base font-light tracking-wide"
                   style={{
                     backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23ffffff' d='M6 9L1 4h10z'/%3E%3C/svg%3E")`,
                     backgroundRepeat: 'no-repeat',
@@ -137,9 +137,9 @@ function ActividadesContent() {
                     paddingRight: '2.5rem'
                   }}
                 >
-                  <option value="todas" className="bg-gray-800">Todas las provincias</option>
+                  <option value="todas" className="bg-[#F5F1E8]">Todas las provincias</option>
                   {provincias.map((provincia) => (
-                    <option key={provincia.slug} value={provincia.slug} className="bg-gray-800">
+                    <option key={provincia.slug} value={provincia.slug} className="bg-[#F5F1E8]">
                       {provincia.provincia}
                     </option>
                   ))}
@@ -151,7 +151,7 @@ function ActividadesContent() {
           {/* Grilla de actividades */}
           {cargando ? (
             <div className="text-center py-12">
-              <p className="text-gray-400 text-lg">Cargando actividades...</p>
+              <p className="text-[#8B7355] text-lg">Cargando actividades...</p>
             </div>
           ) : actividadesFiltradas.length > 0 ? (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
@@ -165,7 +165,7 @@ function ActividadesContent() {
             </div>
           ) : (
             <div className="text-center py-12">
-              <p className="text-gray-400 text-lg">
+              <p className="text-[#8B7355] text-lg">
                 No se encontraron actividades para la provincia seleccionada.
               </p>
             </div>
@@ -184,7 +184,7 @@ export default function ActividadesPage() {
         <main className="min-h-screen pt-32 pb-16 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <div className="text-center py-12">
-              <p className="text-gray-400 text-lg">Cargando actividades...</p>
+              <p className="text-[#8B7355] text-lg">Cargando actividades...</p>
             </div>
           </div>
         </main>

@@ -24,7 +24,7 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="fixed top-0 w-full z-50 bg-gradient-to-r from-slate-900/95 via-slate-800/95 to-slate-900/95 backdrop-blur-md border-b border-[#6CB4EE]/30 shadow-lg">
+    <nav className="fixed top-0 w-full z-50 bg-gradient-to-r from-[#F5F1E8]/95 via-[#E8DDD0]/95 to-[#F5F1E8]/95 backdrop-blur-md border-b border-[#D4C4B0]/50 shadow-lg">
       <div className="w-full py-3 sm:py-4 flex justify-between items-center">
         <Link href="/" className="flex items-center pl-4 sm:pl-6 md:pl-8 group z-50" onClick={closeMenu}>
           <Image
@@ -44,17 +44,17 @@ export default function Navbar() {
           aria-label="Toggle menu"
         >
           <span
-            className={`w-6 h-0.5 bg-gray-300 transition-all duration-300 ${
+            className={`w-6 h-0.5 bg-[#6B5D47] transition-all duration-300 ${
               isMenuOpen ? "rotate-45 translate-y-2" : ""
             }`}
           ></span>
           <span
-            className={`w-6 h-0.5 bg-gray-300 transition-all duration-300 ${
+            className={`w-6 h-0.5 bg-[#6B5D47] transition-all duration-300 ${
               isMenuOpen ? "opacity-0" : ""
             }`}
           ></span>
           <span
-            className={`w-6 h-0.5 bg-gray-300 transition-all duration-300 ${
+            className={`w-6 h-0.5 bg-[#6B5D47] transition-all duration-300 ${
               isMenuOpen ? "-rotate-45 -translate-y-2" : ""
             }`}
           ></span>
@@ -93,13 +93,13 @@ export default function Navbar() {
 
       {/* Menú móvil desplegable */}
       <div
-        className={`md:hidden fixed top-0 left-0 w-full h-screen bg-gradient-to-b from-slate-900/98 via-slate-800/98 to-slate-900/98 backdrop-blur-lg transition-all duration-300 ease-in-out z-40 ${
+        className={`md:hidden fixed top-0 left-0 w-full h-screen bg-gradient-to-b from-[#F5F1E8]/98 via-[#E8DDD0]/98 to-[#F5F1E8]/98 backdrop-blur-lg transition-all duration-300 ease-in-out z-40 ${
           isMenuOpen
             ? "opacity-100 translate-y-0 pointer-events-auto"
             : "opacity-0 -translate-y-full pointer-events-none"
         }`}
       >
-        <div className="flex flex-col items-center justify-center h-full gap-8 pt-20">
+        <div className="flex flex-col items-end justify-start h-full gap-0 pt-24 pr-6">
           {navLinks.map((link) => {
             const LinkComponent = link.external ? "a" : Link;
             const linkProps = link.external
@@ -115,14 +115,11 @@ export default function Navbar() {
                 key={link.href}
                 {...linkProps}
                 onClick={closeMenu}
-                className="text-gray-300 hover:text-[#6CB4EE] transition-all duration-300 text-lg uppercase tracking-widest relative group py-2"
+                className="text-[#6B5D47] hover:text-[#A68B5B] transition-all duration-300 text-lg uppercase tracking-widest relative group py-6 w-full text-right border-b border-[#D4C4B0]/30 last:border-b-0"
               >
                 {link.label}
                 <span
-                  className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-[#6CB4EE] via-[#FFD700] to-[#6CB4EE] group-hover:w-full transition-all duration-300"
-                  style={{
-                    boxShadow: "0 0 8px rgba(108, 180, 238, 0.6)",
-                  }}
+                  className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-[#A68B5B] via-[#C9B99B] to-[#A68B5B] group-hover:w-full transition-all duration-300"
                 ></span>
               </LinkComponent>
             );

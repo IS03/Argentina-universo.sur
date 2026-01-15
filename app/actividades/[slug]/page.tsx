@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import Carrusel from "@/components/Carrusel";
 import { getActividadBySlug, getActividades } from "@/lib/data";
 import { notFound } from "next/navigation";
+import ActividadVisitTracker from "@/components/ActividadVisitTracker";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -25,6 +26,7 @@ export default async function ActividadPage({ params }: PageProps) {
   return (
     <>
       <Navbar />
+      <ActividadVisitTracker slug={slug} />
       <main className="min-h-screen pt-32 pb-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto">
           {/* Título */}
@@ -46,7 +48,7 @@ export default async function ActividadPage({ params }: PageProps) {
 
           {/* Descripción */}
           <div className="mb-12">
-            <p className="text-gray-300 text-lg leading-relaxed whitespace-pre-line">
+            <p className="text-[#6B5D47] text-lg leading-relaxed whitespace-pre-line">
               {actividad.descripcion}
             </p>
           </div>

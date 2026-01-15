@@ -11,10 +11,10 @@ export default async function ProvinciasPage() {
       <main className="min-h-screen pt-32 pb-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="mb-12 text-center">
-            <h1 className="text-4xl md:text-5xl font-semibold uppercase tracking-widest mb-4">
+            <h1 className="text-4xl md:text-5xl font-semibold uppercase tracking-widest mb-4 text-[#5A4E3D]">
               Viaja por Argentina
             </h1>
-            <p className="text-gray-400 text-lg">
+            <p className="text-[#6B5D47] text-lg">
               Descubrí las provincias argentinas y sus destinos imperdibles
             </p>
           </div>
