@@ -76,13 +76,13 @@ export default function Navbar() {
               <LinkComponent
                 key={link.href}
                 {...linkProps}
-                className="text-gray-300 hover:text-[#6CB4EE] transition-all duration-300 relative group"
+                className="text-[#6B5D47] hover:text-[#A68B5B] transition-all duration-300 relative group"
               >
                 {link.label}
                 <span
-                  className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-[#6CB4EE] via-[#FFD700] to-[#6CB4EE] group-hover:w-full transition-all duration-300"
+                  className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-[#A68B5B] via-[#C9B99B] to-[#A68B5B] group-hover:w-full transition-all duration-300"
                   style={{
-                    boxShadow: "0 0 8px rgba(108, 180, 238, 0.6)",
+                    boxShadow: "0 0 8px rgba(166, 139, 91, 0.6)",
                   }}
                 ></span>
               </LinkComponent>

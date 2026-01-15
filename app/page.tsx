@@ -10,20 +10,37 @@ import { Provincia, Actividad } from "@/lib/data";
 
 export default function Home() {
   // Estados para el carrusel
-  const imagenesHome = Array.from({ length: 10 }, (_, i) => `/img/home/${i + 1}.jpg`);
+  // Lista de imágenes del home - actualizar según las imágenes disponibles en /public/img/home/
+  const imagenesHome = [
+    '/img/home/1.jpg',
+    '/img/home/2.jpg',
+    '/img/home/3.jpg',
+    '/img/home/4.jpg',
+    '/img/home/5.jpg',
+    '/img/home/6.jpg',
+    '/img/home/7.jpg',
+    '/img/home/8.jpg',
+    '/img/home/9.jpg',
+    '/img/home/10.jpg',
+  ];
   const [indiceImagen, setIndiceImagen] = useState(0);
   const [indiceAnterior, setIndiceAnterior] = useState(0);
   const [opacidad, setOpacidad] = useState(1);
   const indiceImagenRef = useRef(0);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  // Versión de caché para forzar recarga de imágenes cuando se actualicen
+  // Se genera solo en el cliente después de la hidratación para evitar mismatch
+  const [cacheVersion, setCacheVersion] = useState<string | null>(null);
 
-  // Ref para el hero
+  // Refs
   const heroRef = useRef<HTMLDivElement>(null);
+  const contenidoRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
   
   // Estado para scroll y efectos - inicializar con valores seguros para SSR
   const [scrollY, setScrollY] = useState(0);
-  const [heroHeight, setHeroHeight] = useState(0);
   const [isMounted, setIsMounted] = useState(false);
+  const [contenidoHeight, setContenidoHeight] = useState(0);
 
   // Estados para provincias
   const [provinciasDestacadas, setProvinciasDestacadas] = useState<Provincia[]>([]);
@@ -189,12 +206,13 @@ export default function Home() {
     cargarContenido();
   }, []);
 
-  // Marcar como montado después de la hidratación
+  // Marcar como montado después de la hidratación y generar cacheVersion
   useEffect(() => {
     setIsMounted(true);
+    setCacheVersion(Date.now().toString());
   }, []);
 
-  // Detectar scroll y altura del hero
+  // Detectar scroll y altura del contenido
   useEffect(() => {
     if (!isMounted) return;
 
@@ -202,102 +220,125 @@ export default function Home() {
       setScrollY(window.scrollY);
     };
 
-    const handleResize = () => {
-      if (heroRef.current) {
-        setHeroHeight(heroRef.current.offsetHeight);
+    const updateContenidoHeight = () => {
+      if (contenidoRef.current) {
+        setContenidoHeight(contenidoRef.current.offsetHeight);
       }
     };
 
-    // Inicializar altura
-    handleResize();
-    handleScroll(); // Inicializar scroll position
+    // Inicializar
+    handleScroll();
+    updateContenidoHeight();
 
-    window.addEventListener("scroll", handleScroll);
-    window.addEventListener("resize", handleResize);
+    // Usar ResizeObserver para detectar cambios en la altura del contenido
+    const resizeObserver = new ResizeObserver(() => {
+      updateContenidoHeight();
+    });
+
+    if (contenidoRef.current) {
+      resizeObserver.observe(contenidoRef.current);
+    }
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("resize", updateContenidoHeight);
     
     return () => {
       window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("resize", handleResize);
+      window.removeEventListener("resize", updateContenidoHeight);
+      resizeObserver.disconnect();
     };
   }, [isMounted]);
 
-  // Calcular valores basados en scroll - solo después de montar
-  // Usar valores por defecto seguros para SSR
-  const defaultHeight = 800; // Valor por defecto para SSR
-  const effectiveHeroHeight = isMounted && heroHeight > 0 ? heroHeight : defaultHeight;
+  // Calcular valores basados en scroll - LÓGICA CORRECTA CON SUPERPOSICIÓN REAL
+  // Hero siempre es 100vh, usamos viewportHeight directamente
+  const viewportHeight = isMounted && typeof window !== 'undefined' ? window.innerHeight : 1000;
   
-  // El contenido comienza a aparecer a los ~70vh (retrasado para dar más protagonismo al hero)
-  const scrollThreshold = effectiveHeroHeight * 0.70; // 70vh - punto donde el contenido empieza a aparecer
-  const scrollProgress = isMounted ? Math.max(0, Math.min(1, (scrollY - scrollThreshold) / (effectiveHeroHeight * 0.20))) : 0; // Progreso en los últimos 20vh (más lento)
+  // El efecto comienza desde el PRIMER scroll (scrollY > 0)
+  // Máximo efecto se alcanza en aproximadamente 50vh de scroll
+  // Esto asegura que el contenido sea visible claramente antes de una pantalla completa
+  const scrollMax = viewportHeight * 0.5; // 50vh de scroll para máximo efecto
+  const scrollProgress = isMounted ? Math.max(0, Math.min(1, scrollY / scrollMax)) : 0;
   
-  // Blur más sutil y progresivo
-  const blurAmount = scrollProgress * 3; // Máximo 3px de blur (más sutil)
-  const overlayOpacity = scrollProgress * 0.15; // Máximo 15% de overlay (más sutil)
+  // Blur progresivo del hero - empieza desde el primer scroll, máximo 12px (más pronunciado)
+  const blurAmount = scrollProgress * 12;
   
-  // Opacidad del contenido (aparece más lentamente desde scrollThreshold)
-  const contenidoOpacity = isMounted ? Math.max(0, Math.min(1, (scrollY - scrollThreshold + 80) / 200)) : 0; // Más lento
+  // Opacidad del hero completo (imágenes + texto) - se difumina progresivamente
+  const heroOpacity = isMounted ? Math.max(1, 1 - scrollProgress * 1.2) : 1;
   
-  // Transform del contenido (sube más suavemente desde abajo)
-  const contenidoTransform = isMounted ? Math.max(0, 40 - (scrollY - scrollThreshold) * 0.15) : 40; // Más suave
+  // Overlay progresivo - aparece desde el primer scroll, máximo 40% de opacidad
+  const overlayOpacity = scrollProgress * 0.4;
   
-  // Posición del contenido: comienza a superponerse cuando el scroll alcanza 70vh
-  const contenidoMarginTop = effectiveHeroHeight * 0.70; // El contenido comienza a los 70vh
+  // Transform del contenido (sube desde abajo) - más suave y rápido
+  // Empieza 50px abajo, llega a 0px al 30% del scroll
+  const contenidoTransform = isMounted ? Math.max(0, 50 - (scrollY * 0.17)) : 50;
 
   return (
     <>
       <Navbar />
       
-      <main className="relative w-full">
-        {/* HERO SECTION - Sticky (limpio al inicio) */}
+      {/* Contenedor principal: tiene la altura del contenido para generar scroll */}
+      <div 
+        ref={containerRef}
+        className="relative w-full" 
+        style={{ height: contenidoHeight > 0 ? `${contenidoHeight + viewportHeight}px` : '100vh' }}
+      >
+        {/* HERO SECTION - Exactamente 100vh, sticky, NO genera scroll */}
         <section 
           ref={heroRef}
           className="sticky top-0 w-full z-0 overflow-hidden"
-          style={{ height: '100vh', height: '100dvh' }}
+          style={{ 
+            height: '100vh',
+            opacity: heroOpacity,
+            transition: 'opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
+          }}
         >
           {/* Carrusel de imágenes de fondo - SIN BLUR INICIAL */}
           <div className="absolute inset-0">
             <Image
-              src={imagenesHome[indiceAnterior]}
+              src={cacheVersion ? `${imagenesHome[indiceAnterior]}?v=${cacheVersion}` : imagenesHome[indiceAnterior]}
               alt={`Paisaje argentino ${indiceAnterior + 1}`}
               fill
               className="object-cover"
               style={{ 
                 opacity: 1 - opacidad, 
                 filter: isMounted ? `blur(${blurAmount}px)` : 'blur(0px)',
-                transition: 'opacity 2.5s cubic-bezier(0.4, 0, 0.2, 1), filter 0.5s cubic-bezier(0.4, 0, 0.2, 1)'
+                transition: 'opacity 2.5s cubic-bezier(0.4, 0, 0.2, 1), filter 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
               }}
               quality={90}
+              unoptimized
             />
             <Image
-              src={imagenesHome[indiceImagen]}
+              src={cacheVersion ? `${imagenesHome[indiceImagen]}?v=${cacheVersion}` : imagenesHome[indiceImagen]}
               alt={`Paisaje argentino ${indiceImagen + 1}`}
               fill
               className="object-cover"
               style={{ 
                 opacity: opacidad, 
                 filter: isMounted ? `blur(${blurAmount}px)` : 'blur(0px)',
-                transition: 'opacity 2.5s cubic-bezier(0.4, 0, 0.2, 1), filter 0.5s cubic-bezier(0.4, 0, 0.2, 1)'
+                transition: 'opacity 2.5s cubic-bezier(0.4, 0, 0.2, 1), filter 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
               }}
               priority
               quality={90}
+              unoptimized
             />
             {/* Gradientes sutiles - solo para legibilidad del texto */}
             <div className="absolute inset-0 bg-gradient-to-br from-[#5A4E3D]/20 via-[#6B5D47]/15 to-[#8B7355]/10"></div>
             <div className="absolute inset-0 bg-gradient-to-t from-transparent via-transparent to-[#C9B99B]/5"></div>
             
-            {/* Overlay progresivo SOLO cuando el contenido se superpone - con gradiente */}
+            {/* Overlay progresivo - aparece desde el primer scroll */}
             {isMounted && (
               <div 
-                className="absolute inset-0 transition-opacity duration-500"
+                className="absolute inset-0 transition-opacity duration-300"
                 style={{ 
                   background: `linear-gradient(to bottom, 
                     transparent 0%,
-                    transparent 40%,
-                    rgba(250, 248, 243, ${overlayOpacity * 0.3}) 60%,
-                    rgba(250, 248, 243, ${overlayOpacity * 0.6}) 80%,
+                    transparent 30%,
+                    rgba(250, 248, 243, ${overlayOpacity * 0.2}) 50%,
+                    rgba(250, 248, 243, ${overlayOpacity * 0.5}) 70%,
                     rgba(250, 248, 243, ${overlayOpacity}) 100%
                   )`,
-                  pointerEvents: 'none'
+                  pointerEvents: 'none',
+                  opacity: Math.min(1, scrollProgress * 1.5) // Aparece más rápido
                 }}
               />
             )}
@@ -325,11 +366,21 @@ export default function Home() {
               </h2>
             </div>
             
-            <p className="text-sm sm:text-base md:text-lg text-gray-100 max-w-2xl font-medium tracking-wide leading-relaxed drop-shadow-md mb-8 px-4">
+            <p 
+              className="text-sm sm:text-base md:text-lg text-gray-100 max-w-2xl font-medium tracking-wide leading-relaxed drop-shadow-md mb-8 px-4"
+              style={isMounted ? {
+                opacity: heroOpacity,
+                filter: `blur(${blurAmount * 0.3}px)`,
+                transition: 'opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1), filter 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
+              } : {
+                opacity: 1,
+                filter: 'blur(0px)'
+              }}
+            >
               Descubrí destinos, paisajes y experiencias únicas en todo el país.
             </p>
 
-            {/* CTA suave - se mantiene legible hasta ser cubierto */}
+            {/* CTA - se difumina progresivamente con el scroll */}
             <button
               onClick={(e) => {
                 e.preventDefault();
@@ -345,11 +396,12 @@ export default function Home() {
               }}
               className="inline-block px-6 sm:px-8 py-3 bg-[#A68B5B]/30 hover:bg-[#A68B5B]/40 backdrop-blur-sm text-white uppercase tracking-widest text-xs sm:text-sm font-medium transition-all duration-300 border border-[#C9B99B]/50 hover:border-[#C9B99B]/70 rounded-sm cursor-pointer shadow-lg"
               style={isMounted ? {
-                opacity: Math.max(0.7, 1 - scrollProgress * 0.5), // Se desvanece gradualmente cuando el contenido lo cubre
-                transform: `translateY(${scrollProgress * 10}px)`
+                opacity: heroOpacity,
+                filter: `blur(${blurAmount * 0.3}px)`,
+                transition: 'opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1), filter 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
               } : {
                 opacity: 1,
-                transform: 'translateY(0px)'
+                filter: 'blur(0px)'
               }}
             >
               Explorar destinos
@@ -357,60 +409,20 @@ export default function Home() {
           </div>
         </section>
 
-        {/* CAPA DE CONTENIDO SUPERPUESTA - Aparece después de ~70vh */}
+        {/* CAPA DE CONTENIDO SUPERPUESTA - Position absolute, superpuesta desde el inicio */}
         <div 
-          className="relative z-10"
+          ref={contenidoRef}
+          className="absolute top-[100vh] left-0 right-0 z-10"
           style={isMounted ? {
-            marginTop: `${contenidoMarginTop}px`,
-            opacity: contenidoOpacity,
             transform: `translateY(${contenidoTransform}px)`,
-            transition: 'opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)'
+            transition: 'transform 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
           } : {
-            marginTop: `${defaultHeight * 0.70}px`,
-            opacity: 0,
-            transform: 'translateY(40px)'
+            transform: 'translateY(50px)'
           }}
         >
-          {/* Gradiente de transición superior - blur progresivo más sutil */}
+          {/* Contenedor principal con sombra elegante */}
           <div 
-            className="h-40 sm:h-48 md:h-56 relative -mt-40 sm:-mt-48 md:-mt-56 pointer-events-none"
-            style={isMounted ? {
-              background: `linear-gradient(to bottom, 
-                transparent 0%, 
-                rgba(250, 248, 243, 0.15) 30%,
-                rgba(250, 248, 243, 0.4) 50%,
-                rgba(250, 248, 243, 0.7) 75%,
-                rgba(250, 248, 243, 0.92) 100%
-              )`,
-              backdropFilter: `blur(${Math.min(6, blurAmount * 1.2)}px)`,
-              WebkitBackdropFilter: `blur(${Math.min(6, blurAmount * 1.2)}px)`,
-              opacity: contenidoOpacity,
-              transition: 'opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), backdrop-filter 0.5s cubic-bezier(0.4, 0, 0.2, 1)'
-            } : {
-              background: `linear-gradient(to bottom, 
-                transparent 0%, 
-                rgba(250, 248, 243, 0.15) 30%,
-                rgba(250, 248, 243, 0.4) 50%,
-                rgba(250, 248, 243, 0.7) 75%,
-                rgba(250, 248, 243, 0.92) 100%
-              )`,
-              backdropFilter: 'blur(0px)',
-              WebkitBackdropFilter: 'blur(0px)',
-              opacity: 0
-            }}
-          />
-
-          {/* Contenedor principal con bordes redondeados y sombra elegante - blur más sutil */}
-          <div 
-            className="relative bg-[#FAF8F3] rounded-t-[2.5rem] sm:rounded-t-[3.5rem] md:rounded-t-[4.5rem] shadow-[0_-10px_40px_rgba(90,78,61,0.15)]"
-            style={isMounted ? {
-              backdropFilter: `blur(${Math.min(8, blurAmount * 2)}px)`,
-              WebkitBackdropFilter: `blur(${Math.min(8, blurAmount * 2)}px)`,
-              transition: 'backdrop-filter 0.5s cubic-bezier(0.4, 0, 0.2, 1)'
-            } : {
-              backdropFilter: 'blur(0px)',
-              WebkitBackdropFilter: 'blur(0px)'
-            }}
+            className="relative bg-[#FAF8F3] shadow-[0_-10px_40px_rgba(90,78,61,0.15)]"
           >
             {/* SECCIÓN: TOP 3 PROVINCIAS DESTACADAS */}
             <section 
@@ -488,7 +500,7 @@ export default function Home() {
             </section>
           </div>
         </div>
-      </main>
+      </div>
     </>
   );
 }
