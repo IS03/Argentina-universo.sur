@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Carrusel from "@/components/Carrusel";
+import CapitalMapWrapper from "@/components/CapitalMapWrapper";
 import Link from "next/link";
 import { getProvinciaBySlug, getProvincias } from "@/lib/data";
 import { notFound } from "next/navigation";
@@ -59,6 +60,20 @@ export default async function ProvinciaPage({ params }: PageProps) {
           {provincia.fotos.length > 0 && (
             <div className="mb-12">
               <Carrusel fotos={provincia.fotos} alt={provincia.provincia} />
+            </div>
+          )}
+
+          {/* Sección Capital */}
+          {provincia.nombre_capital && provincia.lat_capital && provincia.lon_capital && (
+            <div className="mb-12">
+              <h2 className="text-2xl md:text-3xl font-semibold uppercase tracking-widest mb-6 text-center text-[#5A4E3D]">
+                Su Capital: {provincia.nombre_capital}
+              </h2>
+              <CapitalMapWrapper
+                lat={provincia.lat_capital}
+                lon={provincia.lon_capital}
+                nombreCapital={provincia.nombre_capital}
+              />
             </div>
           )}
 

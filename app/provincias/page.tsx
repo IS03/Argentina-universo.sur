@@ -1,6 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import ProvinciaCard from "@/components/ProvinciaCard";
+import ViajeArgentina from "@/components/ViajeArgentina";
 import { getProvincias } from "@/lib/data";
 
 export default async function ProvinciasPage() {
@@ -20,12 +20,8 @@ export default async function ProvinciasPage() {
             </p>
           </div>
 
-          {/* Grilla de provincias */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            {provincias.map((provincia) => (
-              <ProvinciaCard key={provincia.slug} provincia={provincia} />
-            ))}
-          </div>
+          {/* Mapa interactivo + Filtros + Grilla */}
+          <ViajeArgentina provincias={provincias} />
         </div>
       </main>
       <Footer />

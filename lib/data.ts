@@ -5,10 +5,14 @@ import { join } from "path";
 export interface Provincia {
   provincia: string;
   slug: string;
+  zona: string;
   des_1: string;
   des_2: string;
   des_3: string;
   fotos: string[];
+  nombre_capital: string;
+  lat_capital: number;
+  lon_capital: number;
 }
 
 export interface Actividad {
@@ -53,9 +57,16 @@ export async function getProvincias(): Promise<Provincia[]> {
       return ruta.replace(/^\/provincias\/img\//, "/img/provincias/");
     };
     
+    // Manejar zona: puede ser string, null, undefined o NaN
+    let zona = item.ZONA;
+    if (!zona || zona === null || (typeof zona === 'number' && isNaN(zona))) {
+      zona = "";
+    }
+    
     return {
       provincia: item.PROVINCIA,
       slug: item.SLUG,
+      zona: typeof zona === 'string' ? zona : "",
       des_1: item.des_1 || "",
       des_2: item.des_2 || "",
       des_3: item.des_3 || "",
@@ -63,7 +74,10 @@ export async function getProvincias(): Promise<Provincia[]> {
         normalizarRuta(item.FOTO_1 || ""),
         normalizarRuta(item.FOTO_2 || ""),
         normalizarRuta(item.FOTO_3 || "")
-      ].filter(Boolean)
+      ].filter(Boolean),
+      nombre_capital: item.nombre_capital || "",
+      lat_capital: item.lat_capital || 0,
+      lon_capital: item.lon_capital || 0
     };
   });
 }
