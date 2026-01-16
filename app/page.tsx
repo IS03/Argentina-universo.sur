@@ -76,7 +76,7 @@ export default function Home() {
   const [cargando, setCargando] = useState(true);
 
   // Slugs de las 3 provincias destacadas
-  const slugsDestacadas = ["buenos_aires", "cordoba", "rio_negro"];
+  const slugsDestacadas = ["santa_fe", "cordoba", "buenos_aires"];
 
   // ============================================
   // PRECARGA DE IMÁGENES

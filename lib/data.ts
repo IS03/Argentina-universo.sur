@@ -53,7 +53,7 @@ export async function getProvincias(): Promise<Provincia[]> {
   const fileContents = await readFile(filePath, "utf8");
   const data = JSON.parse(fileContents);
   
-  return data.map((item: any) => {
+  const provinciasNormalizadas = data.map((item: any) => {
     // Normalizar rutas de imágenes: /provincias/img/... -> /img/provincias/...
     const normalizarRuta = (ruta: string) => {
       if (!ruta) return "";
@@ -83,6 +83,20 @@ export async function getProvincias(): Promise<Provincia[]> {
       lon_capital: item.lon_capital || 0
     };
   });
+
+  // Ordenar provincias: Santa Fe en segundo lugar
+  const santaFe = provinciasNormalizadas.find(p => p.slug === "santa_fe");
+  const otrasProvincias = provinciasNormalizadas.filter(p => p.slug !== "santa_fe");
+  
+  // Ordenar las otras provincias alfabéticamente por nombre
+  otrasProvincias.sort((a, b) => a.provincia.localeCompare(b.provincia));
+  
+  // Insertar Santa Fe en segundo lugar
+  if (santaFe) {
+    otrasProvincias.splice(1, 0, santaFe);
+  }
+  
+  return otrasProvincias;
 }
 
 // Normalizar datos de actividades
