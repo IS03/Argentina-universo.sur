@@ -89,7 +89,7 @@ export async function getProvincias(): Promise<Provincia[]> {
   const otrasProvincias = provinciasNormalizadas.filter((p: Provincia) => p.slug !== "santa_fe");
   
   // Ordenar las otras provincias alfabéticamente por nombre
-  otrasProvincias.sort((a, b) => a.provincia.localeCompare(b.provincia));
+  otrasProvincias.sort((a: Provincia, b: Provincia) => a.provincia.localeCompare(b.provincia));
   
   // Insertar Santa Fe en segundo lugar
   if (santaFe) {
