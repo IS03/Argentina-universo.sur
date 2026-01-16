@@ -85,8 +85,8 @@ export async function getProvincias(): Promise<Provincia[]> {
   });
 
   // Ordenar provincias: Santa Fe en segundo lugar
-  const santaFe = provinciasNormalizadas.find(p => p.slug === "santa_fe");
-  const otrasProvincias = provinciasNormalizadas.filter(p => p.slug !== "santa_fe");
+  const santaFe = provinciasNormalizadas.find((p: Provincia) => p.slug === "santa_fe");
+  const otrasProvincias = provinciasNormalizadas.filter((p: Provincia) => p.slug !== "santa_fe");
   
   // Ordenar las otras provincias alfabéticamente por nombre
   otrasProvincias.sort((a, b) => a.provincia.localeCompare(b.provincia));
