@@ -492,7 +492,7 @@ export default function Home() {
           <div className="relative z-10 h-full flex flex-col items-center justify-center px-6 text-center pt-20 pb-20">
             <div className="mb-8">
               <h1 
-                className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-[0.1em] uppercase mb-4 text-transparent bg-clip-text drop-shadow-2xl transition-all duration-300 hover:drop-shadow-[0_0_40px_rgba(108,180,238,0.9)] cursor-default"
+                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-[0.1em] uppercase mb-4 text-transparent bg-clip-text drop-shadow-2xl transition-all duration-300 hover:drop-shadow-[0_0_40px_rgba(108,180,238,0.9)] cursor-default"
                 style={{
                   backgroundImage: 'linear-gradient(to right, #A68B5B 0%, #F5F1E8 30%, #C9B99B 50%, #F5F1E8 70%, #A68B5B 100%)'
                 }}
@@ -503,7 +503,7 @@ export default function Home() {
                   e.currentTarget.style.backgroundImage = 'linear-gradient(to right, #A68B5B 0%, #F5F1E8 30%, #C9B99B 50%, #F5F1E8 70%, #A68B5B 100%)';
                 }}
               >
-                Argentina
+                Turismo en Argentina
               </h1>
               <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold tracking-[0.2em] uppercase text-white/90 mb-8 drop-shadow-lg">
                 Universo Sur
@@ -521,7 +521,7 @@ export default function Home() {
                 filter: 'blur(0px)'
               }}
             >
-              Descubrí destinos, paisajes y experiencias únicas en todo el país.
+              Descubrí destinos, paisajes y experiencias únicas en todo el país. Explorá provincias, actividades turísticas y escapadas.
             </p>
 
             {/* CTA - se difumina progresivamente con el scroll */}

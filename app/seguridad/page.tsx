@@ -1,5 +1,37 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Seguridad para Viajeros en Argentina - Consejos y Recomendaciones",
+  description: "Consejos de seguridad para viajeros en Argentina. Recomendaciones durante el viaje, uso responsable del fuego, cuidado del entorno, seguridad en la ruta y más. Viajá seguro por Argentina.",
+  keywords: ["seguridad viajeros argentina", "consejos seguridad viajar argentina", "recomendaciones turistas argentina", "viajar seguro argentina", "seguridad turismo argentina"],
+  openGraph: {
+    title: "Seguridad para Viajeros en Argentina - Consejos y Recomendaciones",
+    description: "Consejos de seguridad para viajeros en Argentina. Recomendaciones durante el viaje, uso responsable del fuego y más.",
+    url: "/seguridad",
+    siteName: "Argentina Universo Sur",
+    images: [
+      {
+        url: "/img/home/1.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Seguridad para viajeros en Argentina",
+      },
+    ],
+    locale: "es_AR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Seguridad para Viajeros en Argentina",
+    description: "Consejos de seguridad para viajeros en Argentina. Recomendaciones y tips para viajar seguro.",
+    images: ["/img/home/1.jpg"],
+  },
+  alternates: {
+    canonical: "/seguridad",
+  },
+};
 
 export default function SeguridadPage() {
   const secciones = [

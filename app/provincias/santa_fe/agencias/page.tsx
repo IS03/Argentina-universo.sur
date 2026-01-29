@@ -4,10 +4,37 @@ import { getAgenciasSantaFe } from "@/lib/data";
 import AgenciasSection from "@/components/santa-fe/AgenciasSection";
 import Breadcrumb from "@/components/santa-fe/Breadcrumb";
 import SidebarNavigation from "@/components/santa-fe/SidebarNavigation";
+import type { Metadata } from "next";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Agencias de Viajes - Santa Fe | Argentina Universo Sur",
-  description: "Listado completo de agencias de viajes en Santa Fe. Contactos, teléfonos y ubicaciones para planificar tu viaje.",
+  description: "Listado completo de agencias de viajes en Santa Fe. Contactos, teléfonos y ubicaciones para planificar tu viaje. Encontrá la agencia más cercana.",
+  keywords: ["agencias viajes santa fe", "viajes santa fe", "agencias turismo santa fe", "viajes organizados santa fe"],
+  openGraph: {
+    title: "Agencias de Viajes - Santa Fe",
+    description: "Listado completo de agencias de viajes en Santa Fe. Contactos, teléfonos y ubicaciones para planificar tu viaje.",
+    url: "/provincias/santa_fe/agencias",
+    siteName: "Argentina Universo Sur",
+    images: [
+      {
+        url: "/img/provincias/santa-fe/1.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Agencias de viajes en Santa Fe",
+      },
+    ],
+    locale: "es_AR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Agencias de Viajes - Santa Fe",
+    description: "Listado completo de agencias de viajes en Santa Fe",
+    images: ["/img/provincias/santa-fe/1.jpg"],
+  },
+  alternates: {
+    canonical: "/provincias/santa_fe/agencias",
+  },
 };
 
 export default async function AgenciasPage() {

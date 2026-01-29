@@ -1,6 +1,8 @@
+import Link from "next/link";
+
 export default function Footer() {
   return (
-    <footer className="bg-gradient-to-b from-[#F5F1E8] to-[#E8DDD0] border-t border-[#D4C4B0]/50 mt-auto">
+    <footer className="bg-gradient-to-b from-[#F5F1E8] to-[#E8DDD0] border-t border-[#D4C4B0]/50 mt-auto" role="contentinfo">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
         {/* Logo Santa Fe Turismo */}
         <div className="flex justify-center mb-8">
@@ -22,45 +24,45 @@ export default function Footer() {
           </div>
 
           {/* Columna 2: Enlaces rápidos */}
-          <div>
+          <nav aria-label="Enlaces rápidos">
             <h3 className="text-[#5A4E3D] font-semibold uppercase tracking-wider mb-4 text-sm">
               Enlaces rápidos
             </h3>
-            <ul className="space-y-2">
+            <ul className="space-y-2 list-none">
               <li>
-                <a
+                <Link
                   href="/provincias"
                   className="text-[#6B5D47] hover:text-[#A68B5B] transition-colors duration-200 text-sm"
                 >
                   Provincias
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="/actividades"
                   className="text-[#6B5D47] hover:text-[#A68B5B] transition-colors duration-200 text-sm"
                 >
                   Actividades
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="/escapadas"
                   className="text-[#6B5D47] hover:text-[#A68B5B] transition-colors duration-200 text-sm"
                 >
                   Escapadas
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="/seguridad"
                   className="text-[#6B5D47] hover:text-[#A68B5B] transition-colors duration-200 text-sm"
                 >
                   Guía de seguridad
-                </a>
+                </Link>
               </li>
             </ul>
-          </div>
+          </nav>
 
           {/* Columna 3: Contacto/Info adicional */}
           <div>

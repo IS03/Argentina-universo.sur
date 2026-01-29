@@ -24,12 +24,21 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="fixed top-0 w-full z-50 bg-gradient-to-r from-[#F5F1E8]/95 via-[#E8DDD0]/95 to-[#F5F1E8]/95 backdrop-blur-md border-b border-[#D4C4B0]/50 shadow-lg">
+    <nav 
+      className="fixed top-0 w-full z-50 bg-gradient-to-r from-[#F5F1E8]/95 via-[#E8DDD0]/95 to-[#F5F1E8]/95 backdrop-blur-md border-b border-[#D4C4B0]/50 shadow-lg"
+      role="navigation"
+      aria-label="Navegación principal"
+    >
       <div className="w-full py-3 sm:py-4 flex justify-between items-center">
-        <Link href="/" className="flex items-center pl-4 sm:pl-6 md:pl-8 group z-50" onClick={closeMenu}>
+        <Link 
+          href="/" 
+          className="flex items-center pl-4 sm:pl-6 md:pl-8 group z-50" 
+          onClick={closeMenu}
+          aria-label="Ir a inicio - Argentina Universo Sur"
+        >
           <Image
             src="/img/logopng.png"
-            alt="Argentina Universo Sur"
+            alt="Argentina Universo Sur - Turismo en Argentina"
             width={120}
             height={40}
             className="h-10 sm:h-12 md:h-14 lg:h-16 w-auto transition-transform duration-300 group-hover:scale-105"
@@ -61,7 +70,7 @@ export default function Navbar() {
         </button>
 
         {/* Menú desktop - visible en md y superior */}
-        <div className="hidden md:flex gap-4 sm:gap-6 md:gap-8 text-xs sm:text-sm uppercase tracking-widest pr-4 sm:pr-6 md:pr-8">
+        <ul className="hidden md:flex gap-4 sm:gap-6 md:gap-8 text-xs sm:text-sm uppercase tracking-widest pr-4 sm:pr-6 md:pr-8 list-none">
           {navLinks.map((link) => {
             const LinkComponent = link.external ? "a" : Link;
             const linkProps = link.external
@@ -69,26 +78,28 @@ export default function Navbar() {
                   href: link.href,
                   target: "_blank",
                   rel: "noopener noreferrer",
+                  "aria-label": `${link.label} - Abre en nueva ventana`,
                 }
               : { href: link.href };
 
             return (
-              <LinkComponent
-                key={link.href}
-                {...linkProps}
-                className="text-[#6B5D47] hover:text-[#A68B5B] transition-all duration-300 relative group"
-              >
-                {link.label}
-                <span
-                  className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-[#A68B5B] via-[#C9B99B] to-[#A68B5B] group-hover:w-full transition-all duration-300"
-                  style={{
-                    boxShadow: "0 0 8px rgba(166, 139, 91, 0.6)",
-                  }}
-                ></span>
-              </LinkComponent>
+              <li key={link.href}>
+                <LinkComponent
+                  {...linkProps}
+                  className="text-[#6B5D47] hover:text-[#A68B5B] transition-all duration-300 relative group"
+                >
+                  {link.label}
+                  <span
+                    className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-[#A68B5B] via-[#C9B99B] to-[#A68B5B] group-hover:w-full transition-all duration-300"
+                    style={{
+                      boxShadow: "0 0 8px rgba(166, 139, 91, 0.6)",
+                    }}
+                  ></span>
+                </LinkComponent>
+              </li>
             );
           })}
-        </div>
+        </ul>
       </div>
 
       {/* Menú móvil desplegable */}
@@ -98,8 +109,9 @@ export default function Navbar() {
             ? "opacity-100 translate-y-0 pointer-events-auto"
             : "opacity-0 -translate-y-full pointer-events-none"
         }`}
+        aria-hidden={!isMenuOpen}
       >
-        <div className="flex flex-col items-end justify-start h-full gap-0 pt-24 pr-6">
+        <ul className="flex flex-col items-end justify-start h-full gap-0 pt-24 pr-6 list-none w-full">
           {navLinks.map((link) => {
             const LinkComponent = link.external ? "a" : Link;
             const linkProps = link.external
@@ -107,24 +119,26 @@ export default function Navbar() {
                   href: link.href,
                   target: "_blank",
                   rel: "noopener noreferrer",
+                  "aria-label": `${link.label} - Abre en nueva ventana`,
                 }
               : { href: link.href };
 
             return (
-              <LinkComponent
-                key={link.href}
-                {...linkProps}
-                onClick={closeMenu}
-                className="text-[#6B5D47] hover:text-[#A68B5B] transition-all duration-300 text-lg uppercase tracking-widest relative group py-6 w-full text-right border-b border-[#D4C4B0]/30 last:border-b-0"
-              >
-                {link.label}
-                <span
-                  className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-[#A68B5B] via-[#C9B99B] to-[#A68B5B] group-hover:w-full transition-all duration-300"
-                ></span>
-              </LinkComponent>
+              <li key={link.href} className="w-full">
+                <LinkComponent
+                  {...linkProps}
+                  onClick={closeMenu}
+                  className="text-[#6B5D47] hover:text-[#A68B5B] transition-all duration-300 text-lg uppercase tracking-widest relative group py-6 w-full text-right border-b border-[#D4C4B0]/30 last:border-b-0 block"
+                >
+                  {link.label}
+                  <span
+                    className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-[#A68B5B] via-[#C9B99B] to-[#A68B5B] group-hover:w-full transition-all duration-300"
+                  ></span>
+                </LinkComponent>
+              </li>
             );
           })}
-        </div>
+        </ul>
       </div>
     </nav>
   );

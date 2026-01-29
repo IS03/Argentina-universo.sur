@@ -2,6 +2,38 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import EscapadasContent from "@/components/EscapadasContent";
 import { getEscapadas } from "@/lib/data";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Escapadas en Argentina - Guías de Viaje en PDF",
+  description: "Descargá nuestras guías de escapadas en PDF. Rutas turísticas, viajes cortos y fin de semana en diferentes provincias de Argentina. Planificá tu próxima escapada.",
+  keywords: ["escapadas argentina", "viajes cortos argentina", "fin de semana argentina", "rutas turísticas argentina", "guías viaje pdf", "escapadas por provincia"],
+  openGraph: {
+    title: "Escapadas en Argentina - Guías de Viaje en PDF",
+    description: "Descargá nuestras guías de escapadas en PDF. Rutas turísticas y viajes cortos en Argentina.",
+    url: "/escapadas",
+    siteName: "Argentina Universo Sur",
+    images: [
+      {
+        url: "/img/home/1.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Escapadas en Argentina",
+      },
+    ],
+    locale: "es_AR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Escapadas en Argentina - Guías de Viaje en PDF",
+    description: "Descargá nuestras guías de escapadas en PDF. Rutas turísticas y viajes cortos.",
+    images: ["/img/home/1.jpg"],
+  },
+  alternates: {
+    canonical: "/escapadas",
+  },
+};
 
 export default async function EscapadasPage() {
   const escapadas = await getEscapadas();

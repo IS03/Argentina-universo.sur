@@ -28,11 +28,11 @@ export default function ActividadMap({ lat, lon, actividad, localizacion }: Acti
   }
 
   return (
-    <div className="w-full h-96 rounded-lg overflow-hidden border border-[#C9B99B]/40 mb-8">
+    <div className="w-full h-96 rounded-lg overflow-hidden border border-[#C9B99B]/40 mb-8 relative z-0">
       <MapContainer
         center={[lat, lon]}
         zoom={13}
-        style={{ height: "100%", width: "100%" }}
+        style={{ height: "100%", width: "100%", zIndex: 0 }}
         scrollWheelZoom={false}
       >
         <TileLayer

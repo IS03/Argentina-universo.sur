@@ -18,6 +18,7 @@ import ProvinciaVisitTracker from "@/components/ProvinciaVisitTracker";
 import SantaFeQuickNav from "@/components/santa-fe/SantaFeQuickNav";
 import SantaFeSectionsGrid from "@/components/santa-fe/SantaFeSectionsGrid";
 import PreguntasFrecuentesSection from "@/components/santa-fe/PreguntasFrecuentesSection";
+import type { Metadata } from "next";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -28,6 +29,64 @@ export async function generateStaticParams() {
   return provincias.map((provincia) => ({
     slug: provincia.slug,
   }));
+}
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const provincia = await getProvinciaBySlug(slug);
+
+  if (!provincia) {
+    return {
+      title: "Provincia no encontrada",
+    };
+  }
+
+  const title = `Turismo ${provincia.provincia} - Qué hacer y Destinos | Argentina Universo Sur`;
+  const description = provincia.des_1 
+    ? `${provincia.des_1.substring(0, 150)}... Descubrí qué hacer, dónde ir y qué ver en ${provincia.provincia}. Guía completa de turismo.`
+    : `Descubrí ${provincia.provincia}, sus destinos turísticos, actividades y experiencias únicas. Guía completa de turismo con información sobre qué hacer y dónde ir.`;
+
+  const imageUrl = provincia.fotos && provincia.fotos.length > 0 
+    ? provincia.fotos[0] 
+    : "/img/home/1.jpg";
+
+  return {
+    title,
+    description,
+    keywords: [
+      `turismo ${provincia.provincia}`,
+      `qué hacer en ${provincia.provincia}`,
+      `destinos ${provincia.provincia}`,
+      `viajar a ${provincia.provincia}`,
+      `actividades turísticas ${provincia.provincia}`,
+      provincia.provincia.toLowerCase(),
+    ],
+    openGraph: {
+      title,
+      description,
+      url: `/provincias/${slug}`,
+      siteName: "Argentina Universo Sur",
+      images: [
+        {
+          url: imageUrl,
+          width: 1200,
+          height: 630,
+          alt: `${provincia.provincia} - Argentina`,
+        },
+      ],
+      locale: "es_AR",
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [imageUrl],
+    },
+    alternates: {
+      canonical: `/provincias/${slug}`,
+    },
+  };
 }
 
 export default async function ProvinciaPage({ params }: PageProps) {

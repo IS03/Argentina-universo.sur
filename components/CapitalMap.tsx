@@ -27,11 +27,11 @@ export default function CapitalMap({ lat, lon, nombreCapital }: CapitalMapProps)
   }
 
   return (
-    <div className="w-full h-96 rounded-lg overflow-hidden border border-[#C9B99B]/40">
+    <div className="w-full h-96 rounded-lg overflow-hidden border border-[#C9B99B]/40 relative z-0">
       <MapContainer
         center={[lat, lon]}
         zoom={13}
-        style={{ height: "100%", width: "100%" }}
+        style={{ height: "100%", width: "100%", zIndex: 0 }}
         scrollWheelZoom={false}
       >
         <TileLayer

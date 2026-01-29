@@ -32,3 +32,30 @@ body {
   color: var(--foreground);
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
 }
+
+/* Estilos para evitar que los mapas de Leaflet se superpongan a la navbar */
+.leaflet-container {
+  z-index: 0 !important;
+}
+
+.leaflet-control-container {
+  z-index: 10 !important;
+}
+
+.leaflet-top,
+.leaflet-bottom {
+  z-index: 10 !important;
+}
+
+.leaflet-popup {
+  z-index: 20 !important;
+}
+
+/* Asegurar que los controles de zoom no se superpongan a la navbar */
+.leaflet-control-zoom {
+  z-index: 10 !important;
+}
+
+.leaflet-control-attribution {
+  z-index: 10 !important;
+}

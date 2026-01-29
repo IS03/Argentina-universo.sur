@@ -4,10 +4,37 @@ import { getOficinasInformesSantaFe } from "@/lib/data";
 import OficinasSection from "@/components/santa-fe/OficinasSection";
 import Breadcrumb from "@/components/santa-fe/Breadcrumb";
 import SidebarNavigation from "@/components/santa-fe/SidebarNavigation";
+import type { Metadata } from "next";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Oficinas de Información Turística - Santa Fe | Argentina Universo Sur",
-  description: "Encontrá las oficinas de información turística en Santa Fe. Direcciones, teléfonos, horarios y contacto.",
+  description: "Encontrá las oficinas de información turística en Santa Fe. Direcciones, teléfonos, horarios y contacto. Información turística oficial.",
+  keywords: ["oficina turismo santa fe", "información turística santa fe", "oficinas turismo santa fe", "informes turísticos santa fe"],
+  openGraph: {
+    title: "Oficinas de Información Turística - Santa Fe",
+    description: "Encontrá las oficinas de información turística en Santa Fe. Direcciones, teléfonos, horarios y contacto.",
+    url: "/provincias/santa_fe/oficinas",
+    siteName: "Argentina Universo Sur",
+    images: [
+      {
+        url: "/img/provincias/santa-fe/1.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Oficinas de información turística en Santa Fe",
+      },
+    ],
+    locale: "es_AR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Oficinas de Información Turística - Santa Fe",
+    description: "Encontrá las oficinas de información turística en Santa Fe",
+    images: ["/img/provincias/santa-fe/1.jpg"],
+  },
+  alternates: {
+    canonical: "/provincias/santa_fe/oficinas",
+  },
 };
 
 export default async function OficinasPage() {
