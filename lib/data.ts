@@ -37,6 +37,54 @@ export interface Escapada {
   zona: string;
 }
 
+// Interfaces para datos de Santa Fe
+export interface PlanSantaFe {
+  Title: string;
+  Date: string;
+  Categories: string;
+  Summary: string;
+  Additional_Info: string;
+  Source: string;
+}
+
+export interface PreguntaFrecuente {
+  Pregunta: string;
+  Respuesta: string;
+}
+
+export interface NoticiaSantaFe {
+  Title: string;
+  Date: string;
+  Categories: string;
+  Summary: string;
+  Additional_Info: string;
+  Source: string;
+}
+
+export interface OficinaInforme {
+  Localidad: string;
+  "Teléfono/WhatsApp": string;
+  "Correo/Web": string;
+  "Direcciones y horarios": string;
+}
+
+export interface Agencia {
+  Ciudad: string;
+  Agencia: string;
+  "Teléfono/Celular": string;
+  "Correo electrónico": string;
+  Contacto: string;
+}
+
+export interface Evento {
+  Título: string;
+  Inicio: string;
+  Fin: string;
+  Descripción: string;
+  Lugar: string;
+  Precio: string;
+}
+
 // Función auxiliar para crear slug desde texto
 function createSlug(text: string): string {
   return text
@@ -167,4 +215,50 @@ export async function getActividadesByProvincia(provinciaSlug: string): Promise<
 export async function getActividadBySlug(actividadSlug: string): Promise<Actividad | null> {
   const actividades = await getActividades();
   return actividades.find(a => a.actividadSlug === actividadSlug) || null;
+}
+
+// Funciones para cargar datos de Santa Fe
+export async function getPlanesSantaFe(): Promise<PlanSantaFe[]> {
+  const filePath = join(process.cwd(), "public", "santa-fe", "json", "planes.json");
+  const fileContents = await readFile(filePath, "utf8");
+  return JSON.parse(fileContents);
+}
+
+export async function getPreguntasFrecuentesSantaFe(): Promise<PreguntaFrecuente[]> {
+  const filePath = join(process.cwd(), "public", "santa-fe", "json", "preguntas_frecuentes.json");
+  const fileContents = await readFile(filePath, "utf8");
+  return JSON.parse(fileContents);
+}
+
+export async function getNoticiasSantaFe(): Promise<NoticiaSantaFe[]> {
+  const filePath = join(process.cwd(), "public", "santa-fe", "json", "noticias.json");
+  const fileContents = await readFile(filePath, "utf8");
+  return JSON.parse(fileContents);
+}
+
+export async function getOficinasInformesSantaFe(): Promise<OficinaInforme[]> {
+  const filePath = join(process.cwd(), "public", "santa-fe", "json", "oficinas_informes.json");
+  const fileContents = await readFile(filePath, "utf8");
+  // Reemplazar NaN antes de parsear
+  const cleanedContents = fileContents.replace(/:\s*NaN\s*([,}])/g, ': null$1');
+  const data = JSON.parse(cleanedContents);
+  // Filtrar valores null/NaN
+  return data.map((item: any) => ({
+    Localidad: item.Localidad || "",
+    "Teléfono/WhatsApp": item["Teléfono/WhatsApp"] || "",
+    "Correo/Web": item["Correo/Web"] === null || item["Correo/Web"] === undefined || (typeof item["Correo/Web"] === 'number' && isNaN(item["Correo/Web"])) ? "No disponible" : item["Correo/Web"],
+    "Direcciones y horarios": item["Direcciones y horarios"] || ""
+  }));
+}
+
+export async function getAgenciasSantaFe(): Promise<Agencia[]> {
+  const filePath = join(process.cwd(), "public", "santa-fe", "json", "agencias.json");
+  const fileContents = await readFile(filePath, "utf8");
+  return JSON.parse(fileContents);
+}
+
+export async function getEventosSantaFe(): Promise<Evento[]> {
+  const filePath = join(process.cwd(), "public", "santa-fe", "json", "events_enero_febrero.json");
+  const fileContents = await readFile(filePath, "utf8");
+  return JSON.parse(fileContents);
 }
