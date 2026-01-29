@@ -114,7 +114,7 @@ export default function Footer() {
           </div>
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
             <p className="text-[#8B7355] text-xs text-center sm:text-left">
-              © {new Date().getFullYear()} Argentina Universo Sur. Todos los derechos reservados.
+              © {new Date().getFullYear()} Argentina Universo Sur. Propiedad de Sebastián Miguel Giusti. Todos los derechos reservados.
             </p>
             <p className="text-[#8B7355] text-xs text-center sm:text-right">
               Desarrollo <span className="font-semibold text-[#6B5D47]">IS</span>
