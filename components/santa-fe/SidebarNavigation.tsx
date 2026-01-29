@@ -29,13 +29,6 @@ const secciones = [
     href: '/provincias/santa_fe/agencias'
   },
   { 
-    id: 'preguntas-frecuentes', 
-    label: 'Preguntas Frecuentes', 
-    icon: '❓', 
-    href: '/provincias/santa_fe#preguntas-frecuentes',
-    isAnchor: true
-  },
-  { 
     id: 'noticias', 
     label: 'Noticias', 
     icon: '📰', 
@@ -48,7 +41,7 @@ export default function SidebarNavigation() {
 
   return (
     <aside className="hidden lg:block w-64 flex-shrink-0">
-      <div className="sticky top-24">
+      <div className="sticky top-32">
         <div className="bg-gradient-to-br from-[#E8DDD0] to-[#D4C4B0] border border-[#C9B99B]/50 rounded-xl p-6 shadow-lg">
           <h3 className="text-lg font-semibold uppercase tracking-wide text-[#5A4E3D] mb-4">
             Navegación
