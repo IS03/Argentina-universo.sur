@@ -14,18 +14,20 @@ export default function Home() {
   // ============================================
   // CARRUSEL CON DOBLE BUFFER - SIN CORTES
   // ============================================
-  // Lista de imágenes del home (nombres descriptivos en /public/img/home/)
+  // Lista de imágenes del home (nombres en /public/img/home/)
+  // Cambiar CACHE_VERSION cuando actualices las fotos para que no se use caché vieja
+  const CACHE_VERSION = '2';
   const imagenesHome = [
-    '/img/home/1.jpg',
-    '/img/home/2.jpg',
-    '/img/home/3.jpg',
-    '/img/home/4.jpg',
-    '/img/home/5.jpg',
-    '/img/home/6.jpg',
-    '/img/home/7.jpg',
-    '/img/home/8.jpg',
-    '/img/home/9.jpg',
-    '/img/home/10.jpg',
+    `/img/home/1.jpg?v=${CACHE_VERSION}`,
+    `/img/home/2.jpg?v=${CACHE_VERSION}`,
+    `/img/home/3.jpg?v=${CACHE_VERSION}`,
+    `/img/home/4.jpg?v=${CACHE_VERSION}`,
+    `/img/home/5.jpg?v=${CACHE_VERSION}`,
+    `/img/home/6.jpg?v=${CACHE_VERSION}`,
+    `/img/home/7.jpg?v=${CACHE_VERSION}`,
+    `/img/home/8.jpg?v=${CACHE_VERSION}`,
+    `/img/home/9.jpg?v=${CACHE_VERSION}`,
+    `/img/home/10.jpg?v=${CACHE_VERSION}`,
   ];
 
   // ALT text descriptivo por imagen para SEO y accesibilidad
@@ -175,16 +177,12 @@ export default function Home() {
       });
     };
     
-    // Retrasar inicio del carrusel para no competir con LCP (mejor velocidad percibida)
-    const startCarrusel = () => {
-      intervaloRef.current = setInterval(() => {
-        siguienteImagen();
-      }, 5000);
-    };
-    const delayId = setTimeout(startCarrusel, 2000);
+    // Iniciar carrusel de inmediato para que todas las imágenes duren lo mismo (5s cada una)
+    intervaloRef.current = setInterval(() => {
+      siguienteImagen();
+    }, 5000);
 
     return () => {
-      clearTimeout(delayId);
       if (intervaloRef.current) clearInterval(intervaloRef.current);
     };
   }, [imagenesPrecargadas]);

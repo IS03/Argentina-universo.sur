@@ -37,9 +37,32 @@ Checklist de indexación para que los buscadores descubran y rastreen bien el si
   - Escapadas: `"/escapadas"`.
   - Seguridad: `"/seguridad"`.
 
+## 12. Google Search Console (obligatorio)
+
+**Es el panel de control del SEO.** Aquí se monitorea indexación, errores y rendimiento en Google.
+
+### Checklist GSC
+
+- ✔ **Dominio verificado** — Propiedad del sitio añadida y verificada (DNS o HTML).
+- ✔ **Sitemap enviado** — Añadir la URL del sitemap (ej. `https://tu-dominio.com/sitemap.xml`) en *Sitemaps*.
+- ✔ **Errores corregidos** — Revisar *Cobertura* / *Páginas* y solucionar URLs con error (404, bloqueadas, etc.).
+- ✔ **Ver consultas reales** — En *Rendimiento* > *Consultas* ver qué búsquedas llevan tráfico y con qué páginas.
+- ✔ **Optimizar páginas que ya aparecen** — Mejorar títulos, descripciones y contenido de las URLs que ya tienen impresiones/clics para subir posiciones.
+
+### Dónde actuar según GSC
+
+| Sección GSC | Para qué usarla |
+|-------------|-----------------|
+| **Cobertura / Páginas** | Ver qué URLs están indexadas, excluidas o con error. Corregir errores antes de escalar contenido. |
+| **Sitemaps** | Confirmar que el sitemap se ha descubierto y no hay fallos. |
+| **Rendimiento** | Consultas, páginas, países, dispositivos. Priorizar optimización en lo que ya genera impresiones. |
+| **Mejoras** | Core Web Vitals, móvil, etc. Revisar avisos y corregir. |
+
+---
+
 ## Verificación rápida
 
 1. **Sitemap:** `https://tu-dominio.com/sitemap.xml`
 2. **Robots:** `https://tu-dominio.com/robots.txt`
 3. **Canonical:** Inspeccionar `<link rel="canonical" href="...">` en el HTML de cada tipo de página.
-4. **Google Search Console:** Enviar sitemap y revisar cobertura de indexación.
+4. **Google Search Console:** Dominio verificado, sitemap enviado, cobertura y rendimiento revisados (ver sección 12).
