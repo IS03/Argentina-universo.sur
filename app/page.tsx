@@ -16,7 +16,7 @@ export default function Home() {
   // ============================================
   // Lista de imágenes del home (nombres en /public/img/home/)
   // Cambiar CACHE_VERSION cuando actualices las fotos para que no se use caché vieja
-  const CACHE_VERSION = '2';
+  const CACHE_VERSION = '3';
   const imagenesHome = [
     `/img/home/1.jpg?v=${CACHE_VERSION}`,
     `/img/home/2.jpg?v=${CACHE_VERSION}`,
