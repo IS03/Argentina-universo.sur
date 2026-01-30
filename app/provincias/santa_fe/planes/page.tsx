@@ -61,7 +61,7 @@ export default async function PlanesPage() {
               />
 
               <h1 className="text-4xl md:text-5xl font-semibold uppercase tracking-widest mb-4 text-[#5A4E3D]">
-                Planes e Ideas
+                Planes e Ideas en Santa Fe
               </h1>
               <p className="text-[#6B5D47] text-lg mb-8">
                 Descubrí todas las propuestas y planes turísticos que Santa Fe tiene para ofrecerte

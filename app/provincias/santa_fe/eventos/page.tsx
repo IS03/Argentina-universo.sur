@@ -61,7 +61,7 @@ export default async function EventosPage() {
               />
 
               <h1 className="text-4xl md:text-5xl font-semibold uppercase tracking-widest mb-4 text-[#5A4E3D]">
-                Calendario de Eventos
+                Calendario de Eventos en Santa Fe
               </h1>
               <p className="text-[#6B5D47] text-lg mb-8">
                 Consultá todos los eventos y actividades que se realizan en Santa Fe durante el año

@@ -61,7 +61,7 @@ export default async function AgenciasPage() {
               />
 
               <h1 className="text-4xl md:text-5xl font-semibold uppercase tracking-widest mb-4 text-[#5A4E3D]">
-                Agencias de Viajes
+                Agencias de Viajes en Santa Fe
               </h1>
               <p className="text-[#6B5D47] text-lg mb-8">
                 Contactá con las agencias de viajes autorizadas en Santa Fe para planificar tu viaje

@@ -17,10 +17,10 @@ export default function ProvinciaCard({ provincia }: ProvinciaCardProps) {
       <div className="relative w-full h-64 overflow-hidden">
         <Image
           src={imagenPortada}
-          alt={provincia.provincia}
+          alt={`Paisaje de ${provincia.provincia} - Turismo Argentina Universo Sur`}
           fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           className="object-cover group-hover:scale-110 transition-transform duration-500"
-          unoptimized
         />
         {/* Gradiente más sutil y colorido */}
         <div className="absolute inset-0 bg-gradient-to-t from-[#5A4E3D]/85 via-[#6B5D47]/30 to-transparent group-hover:from-[#5A4E3D]/75 transition-all duration-300" />

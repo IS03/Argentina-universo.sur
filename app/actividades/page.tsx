@@ -111,7 +111,7 @@ function ActividadesContent() {
         <div className="max-w-7xl mx-auto">
           <div className="mb-12 text-center">
             <h1 className="text-4xl md:text-5xl font-semibold uppercase tracking-widest mb-4 text-[#5A4E3D]">
-              Qué hacer
+              Actividades turísticas en Argentina
             </h1>
             <p className="text-[#6B5D47] text-lg">
               Descubrí las mejores actividades en cada provincia
@@ -152,6 +152,10 @@ function ActividadesContent() {
           </div>
 
           {/* Grilla de actividades */}
+          <section aria-labelledby="actividades-por-provincia-heading">
+            <h2 id="actividades-por-provincia-heading" className="text-2xl md:text-3xl font-semibold uppercase tracking-widest mb-6 text-center text-[#5A4E3D]">
+              Actividades por provincia
+            </h2>
           {cargando ? (
             <div className="text-center py-12">
               <p className="text-[#8B7355] text-lg">Cargando actividades...</p>
@@ -173,6 +177,7 @@ function ActividadesContent() {
               </p>
             </div>
           )}
+          </section>
         </div>
       </main>
       <Footer />

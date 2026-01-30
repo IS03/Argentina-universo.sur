@@ -13,7 +13,7 @@ export default function Home() {
   // ============================================
   // CARRUSEL CON DOBLE BUFFER - SIN CORTES
   // ============================================
-  // Lista de imágenes del home
+  // Lista de imágenes del home (nombres descriptivos en /public/img/home/)
   const imagenesHome = [
     '/img/home/1.jpg',
     '/img/home/2.jpg',
@@ -25,6 +25,20 @@ export default function Home() {
     '/img/home/8.jpg',
     '/img/home/9.jpg',
     '/img/home/10.jpg',
+  ];
+
+  // ALT text descriptivo por imagen para SEO y accesibilidad
+  const altImagenesHome = [
+    'Paisaje de Argentina - Turismo Universo Sur, imagen 1',
+    'Paisaje de Argentina - Turismo Universo Sur, imagen 2',
+    'Paisaje de Argentina - Turismo Universo Sur, imagen 3',
+    'Paisaje de Argentina - Turismo Universo Sur, imagen 4',
+    'Paisaje de Argentina - Turismo Universo Sur, imagen 5',
+    'Paisaje de Argentina - Turismo Universo Sur, imagen 6',
+    'Paisaje de Argentina - Turismo Universo Sur, imagen 7',
+    'Paisaje de Argentina - Turismo Universo Sur, imagen 8',
+    'Paisaje de Argentina - Turismo Universo Sur, imagen 9',
+    'Paisaje de Argentina - Turismo Universo Sur, imagen 10',
   ];
 
   // Estado del carrusel: índice actual y qué capa está visible
@@ -429,16 +443,16 @@ export default function Home() {
             >
               <Image
                 src={srcCapaA}
-                alt={`Paisaje argentino`}
+                alt={altImagenesHome[imagenesHome.indexOf(srcCapaA)] ?? "Paisaje de Argentina - Turismo Universo Sur"}
                 fill
+                sizes="100vw"
                 className="object-cover"
                 style={{ 
                   filter: isMounted ? `blur(${blurAmount}px)` : 'blur(0px)',
                   pointerEvents: 'none'
                 }}
                 priority={true}
-                quality={90}
-                unoptimized
+                quality={85}
               />
             </div>
             
@@ -453,16 +467,16 @@ export default function Home() {
             >
               <Image
                 src={srcCapaB}
-                alt={`Paisaje argentino`}
+                alt={altImagenesHome[imagenesHome.indexOf(srcCapaB)] ?? "Paisaje de Argentina - Turismo Universo Sur"}
                 fill
+                sizes="100vw"
                 className="object-cover"
                 style={{ 
                   filter: isMounted ? `blur(${blurAmount}px)` : 'blur(0px)',
                   pointerEvents: 'none'
                 }}
                 priority={true}
-                quality={90}
-                unoptimized
+                quality={85}
               />
             </div>
             
@@ -505,9 +519,9 @@ export default function Home() {
               >
                 Turismo en Argentina
               </h1>
-              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold tracking-[0.2em] uppercase text-white/90 mb-8 drop-shadow-lg">
+              <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold tracking-[0.2em] uppercase text-white/90 mb-8 drop-shadow-lg" aria-label="Universo Sur">
                 Universo Sur
-              </h2>
+              </p>
             </div>
             
             <p 

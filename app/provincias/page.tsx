@@ -45,7 +45,7 @@ export default async function ProvinciasPage() {
         <div className="max-w-7xl mx-auto">
           <div className="mb-12 text-center">
             <h1 className="text-4xl md:text-5xl font-semibold uppercase tracking-widest mb-4 text-[#5A4E3D]">
-              Viaja por Argentina
+              Provincias de Argentina
             </h1>
             <p className="text-[#6B5D47] text-lg">
               Descubrí las provincias argentinas y sus destinos imperdibles
@@ -53,7 +53,12 @@ export default async function ProvinciasPage() {
           </div>
 
           {/* Mapa interactivo + Filtros + Grilla */}
-          <ViajeArgentina provincias={provincias} />
+          <section aria-labelledby="mapa-provincias-heading">
+            <h2 id="mapa-provincias-heading" className="sr-only">
+              Mapa y listado de provincias de Argentina
+            </h2>
+            <ViajeArgentina provincias={provincias} />
+          </section>
         </div>
       </main>
       <Footer />

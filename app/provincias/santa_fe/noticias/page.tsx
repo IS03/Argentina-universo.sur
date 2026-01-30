@@ -61,7 +61,7 @@ export default async function NoticiasPage() {
               />
 
               <h1 className="text-4xl md:text-5xl font-semibold uppercase tracking-widest mb-4 text-[#5A4E3D]">
-                Noticias
+                Noticias de Santa Fe
               </h1>
               <p className="text-[#6B5D47] text-lg mb-8">
                 Últimas noticias y actualizaciones sobre turismo en Santa Fe

@@ -25,17 +25,21 @@ export default function EscapadasContent({ escapadas }: EscapadasContentProps) {
       <FiltroZonas zonaActiva={zonaActiva} onZonaChange={setZonaActiva} />
 
       {/* Listado de escapadas filtradas */}
+      <section aria-labelledby="guias-escapadas-heading">
+        <h2 id="guias-escapadas-heading" className="text-2xl font-semibold uppercase tracking-widest mb-6 text-[#5A4E3D]">
+          Guías de escapadas en PDF
+        </h2>
       <div className="space-y-6">
         {escapadasFiltradas.map((escapada) => (
-          <div
+          <article
             key={escapada.id}
             className="bg-[#E8DDD0] border border-[#C9B99B]/50 rounded-lg p-6 hover:border-[#A68B5B] hover:bg-[#F5F1E8] transition-all duration-300"
           >
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
               <div className="flex-1">
-                <h2 className="text-2xl font-semibold mb-2 text-[#5A4E3D]">
+                <h3 className="text-2xl font-semibold mb-2 text-[#5A4E3D]">
                   {escapada.titulo}
-                </h2>
+                </h3>
                 <div className="flex flex-wrap gap-4 text-sm text-[#6B5D47]">
                   <span>
                     <span className="uppercase tracking-wider">Provincia:</span>{" "}
@@ -58,9 +62,10 @@ export default function EscapadasContent({ escapadas }: EscapadasContentProps) {
                 </Link>
               </div>
             </div>
-          </div>
+          </article>
         ))}
       </div>
+      </section>
 
       {/* Mensaje si no hay escapadas */}
       {escapadasFiltradas.length === 0 && (

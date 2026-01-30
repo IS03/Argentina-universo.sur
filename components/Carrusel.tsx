@@ -122,11 +122,12 @@ export default function Carrusel({ fotos, alt }: CarruselProps) {
         <div className="absolute inset-0">
           <Image
             src={fotos[indiceActual]}
-            alt={`${alt} - Imagen ${indiceActual + 1}`}
+            alt={`${alt} - Imagen ${indiceActual + 1} de ${fotos.length}`}
             fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 1200px"
             className="object-cover"
             priority={indiceActual === 0}
-            unoptimized
+            quality={85}
             onError={(e) => {
               console.error("Error cargando imagen:", fotos[indiceActual]);
             }}

@@ -45,7 +45,7 @@ export default async function EscapadasPage() {
         <div className="max-w-4xl mx-auto">
           <div className="mb-12 text-center">
             <h1 className="text-4xl md:text-5xl font-semibold uppercase tracking-widest mb-4 text-[#5A4E3D]">
-              Escapadas
+              Escapadas en Argentina
             </h1>
             <p className="text-[#6B5D47] text-lg">
               Descargá nuestras guías de escapadas en PDF

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -6,9 +7,11 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
         {/* Logo Santa Fe Turismo */}
         <div className="flex justify-center mb-8">
-          <img 
-            src="/img/logo-santa-fe-turismo-color-1.svg" 
-            alt="Santa Fe Turismo" 
+          <Image
+            src="/img/logo-santa-fe-turismo-color-1.svg"
+            alt="Santa Fe Turismo - Logo oficial"
+            width={200}
+            height={48}
             className="h-8 sm:h-10 md:h-12 w-auto"
           />
         </div>

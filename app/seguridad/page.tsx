@@ -159,7 +159,7 @@ export default function SeguridadPage() {
           {/* Hero Section - Introducción */}
           <header className="mb-10 sm:mb-12 md:mb-16 text-center">
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold uppercase tracking-wide sm:tracking-widest mb-4 sm:mb-6 px-2 break-words text-[#5A4E3D]">
-              Recomendaciones para un Verano Seguro
+              Verano Seguro en Argentina
             </h1>
             <div className="max-w-3xl mx-auto space-y-3 sm:space-y-4 text-[#6B5D47] leading-relaxed text-sm sm:text-base md:text-lg px-2">
               <p className="text-base sm:text-lg md:text-xl">
