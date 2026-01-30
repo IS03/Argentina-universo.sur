@@ -5,11 +5,11 @@ import { getProvincias } from "@/lib/data";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Provincias de Argentina - Guía de Turismo",
+  title: "Provincias de Argentina | Turismo",
   description: "Explorá todas las provincias argentinas. Descubrí destinos, paisajes y experiencias únicas en cada región del país. Mapa interactivo y guía completa de turismo.",
   keywords: ["provincias argentinas", "turismo por provincias", "destinos argentina", "viajar por argentina", "mapa turístico argentina", "qué provincia visitar"],
   openGraph: {
-    title: "Provincias de Argentina - Guía de Turismo",
+    title: "Provincias de Argentina | Turismo",
     description: "Explorá todas las provincias argentinas y sus destinos turísticos. Mapa interactivo con información completa.",
     url: "/provincias",
     siteName: "Argentina Universo Sur",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Provincias de Argentina - Guía de Turismo",
+    title: "Provincias de Argentina | Turismo",
     description: "Explorá todas las provincias argentinas y sus destinos turísticos",
     images: ["/img/home/1.jpg"],
   },

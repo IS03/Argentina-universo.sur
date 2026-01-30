@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Argentina Universo Sur - Turismo y Destinos",
-    template: "%s | Argentina Universo Sur",
+    default: "Turismo en Argentina | Universo Sur",
+    template: "%s | Universo Sur",
   },
   description: "Descubrí los destinos más emblemáticos de Argentina. Guía completa de provincias, actividades turísticas, escapadas y experiencias únicas en todo el país.",
   keywords: ["turismo argentina", "destinos argentina", "viajes argentina", "provincias argentinas", "actividades turísticas", "escapadas argentina"],
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     locale: "es_AR",
     url: "/",
     siteName: "Argentina Universo Sur",
-    title: "Argentina Universo Sur - Turismo y Destinos",
+    title: "Turismo en Argentina | Universo Sur",
     description: "Descubrí los destinos más emblemáticos de Argentina. Guía completa de provincias, actividades turísticas y experiencias únicas.",
     images: [
       {
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Argentina Universo Sur - Turismo y Destinos",
+    title: "Turismo en Argentina | Universo Sur",
     description: "Descubrí los destinos más emblemáticos de Argentina",
     images: ["/img/home/1.jpg"],
   },

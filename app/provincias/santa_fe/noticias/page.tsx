@@ -7,11 +7,11 @@ import SidebarNavigation from "@/components/santa-fe/SidebarNavigation";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Noticias de Turismo - Santa Fe | Argentina Universo Sur",
+  title: "Noticias Turismo Santa Fe",
   description: "Mantente informado con las últimas noticias y actualizaciones sobre turismo en Santa Fe. Novedades, eventos y actualidad turística.",
   keywords: ["noticias turismo santa fe", "turismo santa fe noticias", "actualidad turismo santa fe", "novedades santa fe"],
   openGraph: {
-    title: "Noticias de Turismo - Santa Fe",
+    title: "Noticias Turismo Santa Fe",
     description: "Mantente informado con las últimas noticias y actualizaciones sobre turismo en Santa Fe.",
     url: "/provincias/santa_fe/noticias",
     siteName: "Argentina Universo Sur",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Noticias de Turismo - Santa Fe",
+    title: "Noticias Turismo Santa Fe",
     description: "Mantente informado con las últimas noticias sobre turismo en Santa Fe",
     images: ["/img/provincias/santa-fe/1.jpg"],
   },

@@ -7,11 +7,11 @@ import SidebarNavigation from "@/components/santa-fe/SidebarNavigation";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Oficinas de Información Turística - Santa Fe | Argentina Universo Sur",
+  title: "Oficinas Turismo Santa Fe",
   description: "Encontrá las oficinas de información turística en Santa Fe. Direcciones, teléfonos, horarios y contacto. Información turística oficial.",
   keywords: ["oficina turismo santa fe", "información turística santa fe", "oficinas turismo santa fe", "informes turísticos santa fe"],
   openGraph: {
-    title: "Oficinas de Información Turística - Santa Fe",
+    title: "Oficinas Turismo Santa Fe",
     description: "Encontrá las oficinas de información turística en Santa Fe. Direcciones, teléfonos, horarios y contacto.",
     url: "/provincias/santa_fe/oficinas",
     siteName: "Argentina Universo Sur",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Oficinas de Información Turística - Santa Fe",
+    title: "Oficinas Turismo Santa Fe",
     description: "Encontrá las oficinas de información turística en Santa Fe",
     images: ["/img/provincias/santa-fe/1.jpg"],
   },

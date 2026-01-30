@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Actividades Turísticas en Argentina",
+  title: "Actividades Turísticas Argentina | Qué hacer",
   description: "Descubrí las mejores actividades turísticas en cada provincia de Argentina. Qué hacer, dónde ir y experiencias únicas. Filtra por provincia y encuentra tu próxima aventura.",
   keywords: ["actividades turísticas argentina", "qué hacer en argentina", "turismo argentina", "experiencias turísticas", "actividades por provincia"],
   openGraph: {
-    title: "Actividades Turísticas en Argentina",
+    title: "Actividades Turísticas Argentina | Qué hacer",
     description: "Descubrí las mejores actividades turísticas en cada provincia de Argentina. Qué hacer, dónde ir y experiencias únicas.",
     url: "/actividades",
     siteName: "Argentina Universo Sur",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Actividades Turísticas en Argentina",
+    title: "Actividades Turísticas Argentina | Qué hacer",
     description: "Descubrí las mejores actividades turísticas en cada provincia de Argentina",
     images: ["/img/home/1.jpg"],
   },

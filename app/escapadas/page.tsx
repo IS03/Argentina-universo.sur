@@ -5,11 +5,11 @@ import { getEscapadas } from "@/lib/data";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Escapadas en Argentina - Guías de Viaje en PDF",
+  title: "Escapadas Argentina | Guías PDF",
   description: "Descargá nuestras guías de escapadas en PDF. Rutas turísticas, viajes cortos y fin de semana en diferentes provincias de Argentina. Planificá tu próxima escapada.",
   keywords: ["escapadas argentina", "viajes cortos argentina", "fin de semana argentina", "rutas turísticas argentina", "guías viaje pdf", "escapadas por provincia"],
   openGraph: {
-    title: "Escapadas en Argentina - Guías de Viaje en PDF",
+    title: "Escapadas Argentina | Guías PDF",
     description: "Descargá nuestras guías de escapadas en PDF. Rutas turísticas y viajes cortos en Argentina.",
     url: "/escapadas",
     siteName: "Argentina Universo Sur",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Escapadas en Argentina - Guías de Viaje en PDF",
+    title: "Escapadas Argentina | Guías PDF",
     description: "Descargá nuestras guías de escapadas en PDF. Rutas turísticas y viajes cortos.",
     images: ["/img/home/1.jpg"],
   },

@@ -7,11 +7,11 @@ import SidebarNavigation from "@/components/santa-fe/SidebarNavigation";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Planes e Ideas Turísticas - Santa Fe | Argentina Universo Sur",
+  title: "Planes Turísticos Santa Fe | Ideas",
   description: "Descubrí los mejores planes e ideas turísticas en Santa Fe. Bodegones, turismo estudiantil, museos virtuales y más propuestas para disfrutar tu viaje.",
   keywords: ["planes turísticos santa fe", "qué hacer santa fe", "ideas turismo santa fe", "planes santa fe", "turismo santa fe"],
   openGraph: {
-    title: "Planes e Ideas Turísticas - Santa Fe",
+    title: "Planes Turísticos Santa Fe | Ideas",
     description: "Descubrí los mejores planes e ideas turísticas en Santa Fe. Bodegones, turismo estudiantil, museos virtuales y más.",
     url: "/provincias/santa_fe/planes",
     siteName: "Argentina Universo Sur",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Planes e Ideas Turísticas - Santa Fe",
+    title: "Planes Turísticos Santa Fe | Ideas",
     description: "Descubrí los mejores planes e ideas turísticas en Santa Fe",
     images: ["/img/provincias/santa-fe/1.jpg"],
   },

@@ -41,7 +41,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     };
   }
 
-  const title = `Turismo ${provincia.provincia} - Qué hacer y Destinos | Argentina Universo Sur`;
+  const title = `Turismo ${provincia.provincia} | Qué hacer`;
   const description = provincia.des_1 
     ? `${provincia.des_1.substring(0, 150)}... Descubrí qué hacer, dónde ir y qué ver en ${provincia.provincia}. Guía completa de turismo.`
     : `Descubrí ${provincia.provincia}, sus destinos turísticos, actividades y experiencias únicas. Guía completa de turismo con información sobre qué hacer y dónde ir.`;

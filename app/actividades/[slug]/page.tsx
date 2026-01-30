@@ -28,7 +28,18 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     };
   }
 
-  const title = `${actividad.actividad} - ${actividad.localizacion} | Argentina Universo Sur`;
+  // Optimizar título: keyword al inicio, máx 60 caracteres
+  const separador = " | ";
+  const maxLength = 60;
+  const localizacionLength = actividad.localizacion.length + separador.length;
+  const maxActividadLength = maxLength - localizacionLength;
+  
+  let actividadTitle = actividad.actividad;
+  if (actividadTitle.length > maxActividadLength) {
+    actividadTitle = actividadTitle.substring(0, maxActividadLength - 3) + "...";
+  }
+  
+  const title = `${actividadTitle}${separador}${actividad.localizacion}`;
   const description = actividad.des_1
     ? `${actividad.des_1.substring(0, 150)}... Ubicado en ${actividad.localizacion}, ${actividad.provincia}. Información completa, ubicación y qué hacer.`
     : `Descubrí ${actividad.actividad} en ${actividad.localizacion}, ${actividad.provincia}. Información, ubicación, qué hacer y más.`;
