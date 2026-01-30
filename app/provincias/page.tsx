@@ -2,6 +2,8 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ViajeArgentina from "@/components/ViajeArgentina";
 import { getProvincias } from "@/lib/data";
+import Link from "next/link";
+import { ROUTES, INTERNAL_ANCHORS } from "@/lib/site-links";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -47,9 +49,23 @@ export default async function ProvinciasPage() {
             <h1 className="text-4xl md:text-5xl font-semibold uppercase tracking-widest mb-4 text-[#5A4E3D]">
               Provincias de Argentina
             </h1>
-            <p className="text-[#6B5D47] text-lg">
+            <p className="text-[#6B5D47] text-lg mb-6">
               Descubrí las provincias argentinas y sus destinos imperdibles
             </p>
+            <nav className="flex flex-wrap justify-center gap-4 text-sm" aria-label="Explorar más contenido">
+              <Link href={ROUTES.home} className="text-[#6B5D47] hover:text-[#A68B5B] underline underline-offset-2 transition-colors">
+                Inicio
+              </Link>
+              <Link href={ROUTES.actividades} className="text-[#6B5D47] hover:text-[#A68B5B] underline underline-offset-2 transition-colors">
+                {INTERNAL_ANCHORS.verActividades}
+              </Link>
+              <Link href={ROUTES.escapadas} className="text-[#6B5D47] hover:text-[#A68B5B] underline underline-offset-2 transition-colors">
+                {INTERNAL_ANCHORS.verEscapadas}
+              </Link>
+              <Link href={ROUTES.seguridad} className="text-[#6B5D47] hover:text-[#A68B5B] underline underline-offset-2 transition-colors">
+                {INTERNAL_ANCHORS.guiaSeguridad}
+              </Link>
+            </nav>
           </div>
 
           {/* Mapa interactivo + Filtros + Grilla */}

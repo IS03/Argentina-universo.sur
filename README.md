@@ -34,3 +34,8 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## Datos y archivos
+
+- **PDF**: en `public/pdf/` — usados por la sección Escapadas ("Ver PDF"). Ver `docs/DATA-ASSETS.md`.
+- **Excel (fuente)**: en `data/excel/` — no se despliegan; son la fuente para generar los JSON de `public/data/`. Ver `data/excel/README.md` y `docs/DATA-ASSETS.md`.

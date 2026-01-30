@@ -42,7 +42,13 @@ En el proyecto ya se usa:
 - Next.js **Image** optimiza en build/servicio (redimensiona, puede servir WebP/AVIF). No usar `unoptimized` salvo que sea necesario.
 - Indicar `sizes` en las imágenes con `fill` para que el navegador elija el tamaño correcto y mejore LCP/CLS.
 
-## 4. Dónde se aplica en el código
+## 4. Hero del home (velocidad)
+
+- Las imágenes del hero viven en **`/public/img/home/`** como `1.jpg` … `10.jpg`.
+- Para LCP rápido solo se precargan la 1 y la 2; el resto se sirve con `next/image` al rotar.
+- Comprimir cada archivo (hero ≤ 1920 px, &lt; 300 KB por imagen) con TinyPNG, Squoosh o similar.
+
+## 5. Dónde se aplica en el código
 
 - **Hero (home)**: `app/page.tsx` — array `altImagenesHome`, `sizes="100vw"`, `quality={85}`.
 - **Cards**: `ProvinciaCard.tsx`, `ActividadCard.tsx` — alt descriptivo, `sizes` para grid responsive.
@@ -50,3 +56,7 @@ En el proyecto ya se usa:
 - **Logos**: `Navbar.jsx`, `Footer.tsx` — alt descriptivo; Footer usa `next/image` para el logo.
 
 Al añadir nuevas imágenes (páginas de provincia, actividades, etc.), seguir estas reglas: nombre descriptivo, alt en todas, tamaño adecuado y sin `unoptimized` innecesario.
+
+---
+
+*Rendimiento: fuentes con `display: swap`, precarga solo 1–2 imágenes del hero, carrusel arranca a los 2 s, fetches de datos en paralelo.*

@@ -1,5 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Link from "next/link";
+import { ROUTES, INTERNAL_ANCHORS } from "@/lib/site-links";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -288,8 +290,24 @@ export default function SeguridadPage() {
             })}
           </div>
 
+          {/* Enlazado interno (SEO) */}
+          <nav className="mt-10 sm:mt-12 md:mt-16 pt-6 sm:pt-8 border-t border-[#C9B99B]/50 flex flex-wrap justify-center gap-4 text-sm" aria-label="Explorar más contenido">
+            <Link href={ROUTES.home} className="text-[#6B5D47] hover:text-[#A68B5B] underline underline-offset-2 transition-colors">
+              Inicio
+            </Link>
+            <Link href={ROUTES.provincias} className="text-[#6B5D47] hover:text-[#A68B5B] underline underline-offset-2 transition-colors">
+              {INTERNAL_ANCHORS.verTodasLasProvincias}
+            </Link>
+            <Link href={ROUTES.actividades} className="text-[#6B5D47] hover:text-[#A68B5B] underline underline-offset-2 transition-colors">
+              {INTERNAL_ANCHORS.verActividades}
+            </Link>
+            <Link href={ROUTES.escapadas} className="text-[#6B5D47] hover:text-[#A68B5B] underline underline-offset-2 transition-colors">
+              {INTERNAL_ANCHORS.verEscapadas}
+            </Link>
+          </nav>
+
           {/* Separador visual final */}
-          <footer className="mt-10 sm:mt-12 md:mt-16 pt-6 sm:pt-8 border-t border-[#C9B99B]/50">
+          <footer className="mt-8 pt-6 border-t border-[#C9B99B]/50">
             <p className="text-center text-[#8B7355] text-xs sm:text-sm uppercase tracking-wide sm:tracking-widest">
               Viajá seguro, viajá responsable
             </p>

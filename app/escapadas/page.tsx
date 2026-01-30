@@ -1,7 +1,9 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import EscapadasContent from "@/components/EscapadasContent";
+import Link from "next/link";
 import { getEscapadas } from "@/lib/data";
+import { ROUTES, INTERNAL_ANCHORS } from "@/lib/site-links";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -47,9 +49,23 @@ export default async function EscapadasPage() {
             <h1 className="text-4xl md:text-5xl font-semibold uppercase tracking-widest mb-4 text-[#5A4E3D]">
               Escapadas en Argentina
             </h1>
-            <p className="text-[#6B5D47] text-lg">
+            <p className="text-[#6B5D47] text-lg mb-6">
               Descargá nuestras guías de escapadas en PDF
             </p>
+            <nav className="flex flex-wrap justify-center gap-4 text-sm" aria-label="Explorar más contenido">
+              <Link href={ROUTES.home} className="text-[#6B5D47] hover:text-[#A68B5B] underline underline-offset-2 transition-colors">
+                Inicio
+              </Link>
+              <Link href={ROUTES.provincias} className="text-[#6B5D47] hover:text-[#A68B5B] underline underline-offset-2 transition-colors">
+                {INTERNAL_ANCHORS.verTodasLasProvincias}
+              </Link>
+              <Link href={ROUTES.actividades} className="text-[#6B5D47] hover:text-[#A68B5B] underline underline-offset-2 transition-colors">
+                {INTERNAL_ANCHORS.verActividades}
+              </Link>
+              <Link href={ROUTES.seguridad} className="text-[#6B5D47] hover:text-[#A68B5B] underline underline-offset-2 transition-colors">
+                {INTERNAL_ANCHORS.guiaSeguridad}
+              </Link>
+            </nav>
           </div>
 
           {/* Contenido con filtros */}

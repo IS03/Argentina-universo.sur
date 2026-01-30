@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import Carrusel from "@/components/Carrusel";
 import CapitalMapWrapper from "@/components/CapitalMapWrapper";
 import Link from "next/link";
+import { ROUTES, INTERNAL_ANCHORS } from "@/lib/site-links";
 import { 
   getProvinciaBySlug, 
   getProvincias,
@@ -165,14 +166,25 @@ export default async function ProvinciaPage({ params }: PageProps) {
             <PreguntasFrecuentesSection preguntas={preguntasFrecuentes} />
           )}
 
-          {/* CTA: Ver qué hacer */}
-          <div className="text-center mb-16">
+          {/* CTA: Ver qué hacer + enlazado interno (SEO) */}
+          <div className="text-center mb-16 space-y-4">
             <Link
-              href={`/actividades?provincia=${provincia.slug}`}
+              href={ROUTES.actividadesPorProvincia(provincia.slug)}
               className="inline-block px-8 py-3 bg-[#A68B5B]/20 hover:bg-[#A68B5B]/30 backdrop-blur-sm text-[#5A4E3D] uppercase tracking-widest text-sm transition-all duration-300 border border-[#C9B99B]/40 hover:border-[#A68B5B]/60"
             >
-              Ver qué hacer en {provincia.provincia}
+              {INTERNAL_ANCHORS.verActividadesEnProvincia(provincia.provincia)}
             </Link>
+            <nav className="flex flex-wrap justify-center gap-4 text-sm" aria-label="Navegación relacionada">
+              <Link href={ROUTES.home} className="text-[#6B5D47] hover:text-[#A68B5B] underline underline-offset-2 transition-colors">
+                Inicio
+              </Link>
+              <Link href={ROUTES.provincias} className="text-[#6B5D47] hover:text-[#A68B5B] underline underline-offset-2 transition-colors">
+                {INTERNAL_ANCHORS.verTodasLasProvincias}
+              </Link>
+              <Link href={ROUTES.escapadas} className="text-[#6B5D47] hover:text-[#A68B5B] underline underline-offset-2 transition-colors">
+                {INTERNAL_ANCHORS.verEscapadas}
+              </Link>
+            </nav>
           </div>
 
           {/* Grid de secciones con previews solo para Santa Fe */}

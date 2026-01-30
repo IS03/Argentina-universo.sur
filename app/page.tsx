@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Image from "next/image";
 import Link from "next/link";
+import { ROUTES, INTERNAL_ANCHORS } from "@/lib/site-links";
 import { useState, useEffect, useRef } from "react";
 import ProvinciaCard from "@/components/ProvinciaCard";
 import ActividadCard from "@/components/ActividadCard";
@@ -93,26 +94,23 @@ export default function Home() {
   const slugsDestacadas = ["santa_fe", "cordoba", "buenos_aires"];
 
   // ============================================
-  // PRECARGA DE IMÁGENES
+  // PRECARGA DE IMÁGENES (solo 1 y 2 para LCP rápido)
   // ============================================
-  // Precargar todas las imágenes al montar el componente
+  // Precargar solo las dos primeras imágenes del hero; el resto se carga con next/image al rotar
   useEffect(() => {
-    const precargarImagenes = () => {
-      const promesas = imagenesHome.map((src) => {
-        return new Promise<void>((resolve, reject) => {
+    const precargarHero = () => {
+      const urls = [imagenesHome[0], imagenesHome[1]];
+      const promesas = urls.map((src) => {
+        return new Promise<void>((resolve) => {
           const img = new window.Image();
           img.onload = () => resolve();
-          img.onerror = () => resolve(); // Continuar aunque falle una imagen
+          img.onerror = () => resolve();
           img.src = src;
         });
       });
-      
-      Promise.all(promesas).then(() => {
-        setImagenesPrecargadas(true);
-      });
+      Promise.all(promesas).then(() => setImagenesPrecargadas(true));
     };
-    
-    precargarImagenes();
+    precargarHero();
   }, []);
 
   // ============================================
@@ -177,29 +175,32 @@ export default function Home() {
       });
     };
     
-    // Iniciar el intervalo: cambiar imagen cada 5 segundos
-    intervaloRef.current = setInterval(() => {
-      siguienteImagen();
-    }, 5000);
-    
-    return () => {
-      if (intervaloRef.current) {
-        clearInterval(intervaloRef.current);
-      }
+    // Retrasar inicio del carrusel para no competir con LCP (mejor velocidad percibida)
+    const startCarrusel = () => {
+      intervaloRef.current = setInterval(() => {
+        siguienteImagen();
+      }, 5000);
     };
-  }, [imagenesPrecargadas]); // Solo depende de imagenesPrecargadas
+    const delayId = setTimeout(startCarrusel, 2000);
 
-  // Cargar provincias destacadas y contenido visitado
+    return () => {
+      clearTimeout(delayId);
+      if (intervaloRef.current) clearInterval(intervaloRef.current);
+    };
+  }, [imagenesPrecargadas]);
+
+  // Cargar provincias destacadas y contenido visitado (fetches en paralelo)
   useEffect(() => {
     async function cargarContenido() {
       try {
-        // Cargar provincias
-        const provinciasResponse = await fetch("/data/provincias.json");
-        const provinciasData = await provinciasResponse.json();
-
-        // Cargar actividades
-        const actividadesResponse = await fetch("/data/actividades.json");
-        const actividadesData = await actividadesResponse.json();
+        const [provinciasResponse, actividadesResponse] = await Promise.all([
+          fetch("/data/provincias.json"),
+          fetch("/data/actividades.json"),
+        ]);
+        const [provinciasData, actividadesData] = await Promise.all([
+          provinciasResponse.json(),
+          actividadesResponse.json(),
+        ]);
 
         // Normalizar rutas de imágenes de provincias
         const normalizarRutaProvincia = (ruta: string) => {
@@ -642,18 +643,29 @@ export default function Home() {
               </section>
             )}
 
-            {/* CTA FINAL */}
+            {/* CTA FINAL + Enlazado interno (SEO: jerarquía y texto ancla descriptivo) */}
             <section className="relative bg-[#FAF8F3] py-12 sm:py-16 md:py-24 px-4 sm:px-6 lg:px-8 pb-20 sm:pb-24">
               <div className="max-w-4xl mx-auto text-center">
                 <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold uppercase tracking-widest mb-6 text-[#5A4E3D]">
                   Descubrí todo el país
                 </h2>
                 <Link
-                  href="/provincias"
+                  href={ROUTES.provincias}
                   className="inline-block px-8 sm:px-10 py-3 sm:py-4 bg-[#6B5D47] hover:bg-[#5A4E3D] text-white uppercase tracking-widest text-xs sm:text-sm font-light transition-all duration-300 rounded-sm"
                 >
-                  Ver todas las provincias
+                  {INTERNAL_ANCHORS.verTodasLasProvincias}
                 </Link>
+                <nav className="mt-8 flex flex-wrap justify-center gap-4 sm:gap-6 text-sm" aria-label="Explorar más contenido">
+                  <Link href={ROUTES.actividades} className="text-[#6B5D47] hover:text-[#A68B5B] underline underline-offset-2 transition-colors">
+                    {INTERNAL_ANCHORS.verActividades}
+                  </Link>
+                  <Link href={ROUTES.escapadas} className="text-[#6B5D47] hover:text-[#A68B5B] underline underline-offset-2 transition-colors">
+                    {INTERNAL_ANCHORS.verEscapadas}
+                  </Link>
+                  <Link href={ROUTES.seguridad} className="text-[#6B5D47] hover:text-[#A68B5B] underline underline-offset-2 transition-colors">
+                    {INTERNAL_ANCHORS.guiaSeguridad}
+                  </Link>
+                </nav>
               </div>
             </section>
           </div>

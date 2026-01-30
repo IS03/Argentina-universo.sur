@@ -1,6 +1,8 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Carrusel from "@/components/Carrusel";
+import Link from "next/link";
+import { ROUTES, INTERNAL_ANCHORS } from "@/lib/site-links";
 import { getActividadBySlug, getActividades } from "@/lib/data";
 import { notFound } from "next/navigation";
 import ActividadVisitTracker from "@/components/ActividadVisitTracker";
@@ -141,6 +143,19 @@ export default async function ActividadPage({ params }: PageProps) {
               <Carrusel fotos={actividad.fotos} alt={actividad.actividad} />
             </div>
           )}
+
+          {/* Enlazado interno (SEO): provincia, actividades, inicio */}
+          <nav className="mt-12 pt-8 border-t border-[#C9B99B]/50 flex flex-wrap justify-center gap-4 text-sm" aria-label="Navegación relacionada">
+            <Link href={ROUTES.provincia(actividad.slug)} className="text-[#6B5D47] hover:text-[#A68B5B] underline underline-offset-2 transition-colors">
+              {INTERNAL_ANCHORS.turismoEnProvincia(actividad.provincia)}
+            </Link>
+            <Link href={ROUTES.actividades} className="text-[#6B5D47] hover:text-[#A68B5B] underline underline-offset-2 transition-colors">
+              {INTERNAL_ANCHORS.verActividades}
+            </Link>
+            <Link href={ROUTES.home} className="text-[#6B5D47] hover:text-[#A68B5B] underline underline-offset-2 transition-colors">
+              Inicio
+            </Link>
+          </nav>
         </div>
       </main>
       <Footer />

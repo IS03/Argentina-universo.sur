@@ -12,6 +12,7 @@ export default function ActividadCard({ actividad }: ActividadCardProps) {
   return (
     <Link
       href={`/actividades/${actividad.actividadSlug}`}
+      aria-label={`Ver ${actividad.actividad} en ${actividad.localizacion}`}
       className="group block overflow-hidden rounded-xl bg-gradient-to-br from-[#E8DDD0] to-[#D4C4B0] hover:from-[#D4C4B0] hover:to-[#C9B99B] transition-all duration-300 transform hover:scale-[1.03] shadow-lg hover:shadow-2xl hover:shadow-[#8B7355]/30 border border-[#C9B99B]/50 hover:border-[#8B7355]/70"
     >
       <div className="relative w-full h-64 overflow-hidden">

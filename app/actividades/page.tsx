@@ -1,9 +1,11 @@
 "use client";
 
 import { useState, useEffect, Suspense } from "react";
+import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ActividadCard from "@/components/ActividadCard";
+import { ROUTES, INTERNAL_ANCHORS } from "@/lib/site-links";
 // Tipos
 interface Actividad {
   provincia: string;
@@ -113,9 +115,23 @@ function ActividadesContent() {
             <h1 className="text-4xl md:text-5xl font-semibold uppercase tracking-widest mb-4 text-[#5A4E3D]">
               Actividades turísticas en Argentina
             </h1>
-            <p className="text-[#6B5D47] text-lg">
+            <p className="text-[#6B5D47] text-lg mb-6">
               Descubrí las mejores actividades en cada provincia
             </p>
+            <nav className="flex flex-wrap justify-center gap-4 text-sm" aria-label="Explorar más contenido">
+              <Link href={ROUTES.home} className="text-[#6B5D47] hover:text-[#A68B5B] underline underline-offset-2 transition-colors">
+                Inicio
+              </Link>
+              <Link href={ROUTES.provincias} className="text-[#6B5D47] hover:text-[#A68B5B] underline underline-offset-2 transition-colors">
+                {INTERNAL_ANCHORS.verTodasLasProvincias}
+              </Link>
+              <Link href={ROUTES.escapadas} className="text-[#6B5D47] hover:text-[#A68B5B] underline underline-offset-2 transition-colors">
+                {INTERNAL_ANCHORS.verEscapadas}
+              </Link>
+              <Link href={ROUTES.seguridad} className="text-[#6B5D47] hover:text-[#A68B5B] underline underline-offset-2 transition-colors">
+                {INTERNAL_ANCHORS.guiaSeguridad}
+              </Link>
+            </nav>
           </div>
 
           {/* Filtro por provincia */}

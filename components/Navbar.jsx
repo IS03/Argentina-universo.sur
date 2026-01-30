@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
+import { ROUTES, NAV_ANCHORS } from "@/lib/site-links";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -16,10 +17,10 @@ export default function Navbar() {
   };
 
   const navLinks = [
-    { href: "/provincias", label: "Viaja por Argentina" },
-    { href: "/actividades", label: "Qué hacer" },
-    { href: "/escapadas", label: "Escapadas" },
-    { href: "/seguridad", label: "Guía de seguridad" },
+    { href: ROUTES.provincias, label: "Viaja por Argentina", aria: NAV_ANCHORS.provincias },
+    { href: ROUTES.actividades, label: "Qué hacer", aria: NAV_ANCHORS.actividades },
+    { href: ROUTES.escapadas, label: "Escapadas", aria: NAV_ANCHORS.escapadas },
+    { href: ROUTES.seguridad, label: "Guía de seguridad", aria: NAV_ANCHORS.seguridad },
     { href: "https://www.argentina.gob.ar/jefatura/turismo/noticias", label: "Noticias", external: true },
   ];
 
@@ -31,10 +32,10 @@ export default function Navbar() {
     >
       <div className="w-full py-3 sm:py-4 flex justify-between items-center">
         <Link 
-          href="/" 
+          href={ROUTES.home} 
           className="flex items-center pl-4 sm:pl-6 md:pl-8 group z-50" 
           onClick={closeMenu}
-          aria-label="Ir a inicio - Argentina Universo Sur"
+          aria-label={NAV_ANCHORS.home}
         >
           <Image
             src="/img/logopng.png"
@@ -80,7 +81,7 @@ export default function Navbar() {
                   rel: "noopener noreferrer",
                   "aria-label": `${link.label} - Abre en nueva ventana`,
                 }
-              : { href: link.href };
+              : { href: link.href, "aria-label": link.aria };
 
             return (
               <li key={link.href}>
@@ -121,7 +122,7 @@ export default function Navbar() {
                   rel: "noopener noreferrer",
                   "aria-label": `${link.label} - Abre en nueva ventana`,
                 }
-              : { href: link.href };
+              : { href: link.href, "aria-label": link.aria };
 
             return (
               <li key={link.href} className="w-full">

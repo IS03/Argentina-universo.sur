@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { ROUTES, NAV_ANCHORS } from "@/lib/site-links";
 
 export default function Footer() {
   return (
@@ -26,7 +27,7 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* Columna 2: Enlaces rápidos */}
+          {/* Columna 2: Enlaces rápidos (texto ancla descriptivo para SEO) */}
           <nav aria-label="Enlaces rápidos">
             <h3 className="text-[#5A4E3D] font-semibold uppercase tracking-wider mb-4 text-sm">
               Enlaces rápidos
@@ -34,34 +35,42 @@ export default function Footer() {
             <ul className="space-y-2 list-none">
               <li>
                 <Link
-                  href="/provincias"
+                  href={ROUTES.home}
                   className="text-[#6B5D47] hover:text-[#A68B5B] transition-colors duration-200 text-sm"
                 >
-                  Provincias
+                  {NAV_ANCHORS.home}
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/actividades"
+                  href={ROUTES.provincias}
                   className="text-[#6B5D47] hover:text-[#A68B5B] transition-colors duration-200 text-sm"
                 >
-                  Actividades
+                  {NAV_ANCHORS.provincias}
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/escapadas"
+                  href={ROUTES.actividades}
                   className="text-[#6B5D47] hover:text-[#A68B5B] transition-colors duration-200 text-sm"
                 >
-                  Escapadas
+                  {NAV_ANCHORS.actividades}
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/seguridad"
+                  href={ROUTES.escapadas}
                   className="text-[#6B5D47] hover:text-[#A68B5B] transition-colors duration-200 text-sm"
                 >
-                  Guía de seguridad
+                  {NAV_ANCHORS.escapadas}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href={ROUTES.seguridad}
+                  className="text-[#6B5D47] hover:text-[#A68B5B] transition-colors duration-200 text-sm"
+                >
+                  {NAV_ANCHORS.seguridad}
                 </Link>
               </li>
             </ul>
