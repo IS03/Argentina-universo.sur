@@ -21,7 +21,7 @@ export default function Navbar() {
     { href: ROUTES.actividades, label: "Qué hacer", aria: NAV_ANCHORS.actividades },
     { href: ROUTES.escapadas, label: "Escapadas", aria: NAV_ANCHORS.escapadas },
     { href: ROUTES.seguridad, label: "Guía de seguridad", aria: NAV_ANCHORS.seguridad },
-    { href: "https://www.argentina.gob.ar/jefatura/turismo/noticias", label: "Noticias", external: true },
+    { href: "https://www.argentina.gob.ar/node/56177/noticias", label: "Noticias", external: true },
   ];
 
   return (
@@ -129,7 +129,7 @@ export default function Navbar() {
                 <LinkComponent
                   {...linkProps}
                   onClick={closeMenu}
-                  className="text-[#6B5D47] hover:text-[#A68B5B] transition-all duration-300 text-lg uppercase tracking-widest relative group py-6 w-full text-right border-b border-[#D4C4B0]/30 last:border-b-0 block"
+                  className="text-[#6B5D47] hover:text-[#A68B5B] transition-all duration-300 text-lg uppercase tracking-widest relative group py-6 w-full text-right border-b border-[#D4C4B0]/30"
                 >
                   {link.label}
                   <span
