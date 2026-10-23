@@ -38,3 +38,13 @@ jobs:
         run: npm run build
       - name: Auditoría SEO del HTML, sitemap, robots y redirects
         run: npm run audit:seo
+      # Usa el Google Chrome preinstalado en ubuntu-latest: no descarga navegadores.
+      - name: E2E de renderizado e interacción (escritorio y móvil)
+        run: npm run test:e2e
+      - name: Trazas de E2E fallidas
+        if: failure()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: playwright-traces
+          path: test-results/
+          retention-days: 7

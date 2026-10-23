@@ -1,9 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Provincia } from "@/lib/data";
+import type { ProvinciaResumen } from "@/lib/catalog";
 
 interface ProvinciaCardProps {
-  provincia: Provincia;
+  provincia: ProvinciaResumen;
 }
 
 export default function ProvinciaCard({ provincia }: ProvinciaCardProps) {

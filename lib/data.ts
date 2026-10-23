@@ -56,12 +56,17 @@ export interface Evento {
   Precio: string;
 }
 
-// Normalizar datos de provincias
-export async function getProvincias(): Promise<Provincia[]> {
+// Provincias en el orden del archivo fuente (el selector de /actividades usa este orden).
+export async function getProvinciasEnOrdenDeCatalogo(): Promise<Provincia[]> {
   const filePath = join(process.cwd(), "public", "data", "provincias.json");
   const fileContents = await readFile(filePath, "utf8");
   const data: ProvinciaRaw[] = JSON.parse(fileContents);
-  const provinciasNormalizadas = data.map(normalizarProvincia);
+  return data.map(normalizarProvincia);
+}
+
+// Normalizar datos de provincias
+export async function getProvincias(): Promise<Provincia[]> {
+  const provinciasNormalizadas = await getProvinciasEnOrdenDeCatalogo();
 
   // Ordenar provincias: Santa Fe en segundo lugar
   const santaFe = provinciasNormalizadas.find((p: Provincia) => p.slug === "santa_fe");
