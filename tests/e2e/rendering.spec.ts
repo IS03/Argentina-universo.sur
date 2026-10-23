@@ -105,8 +105,13 @@ test.describe("portada", () => {
 
   test("Continuar explorando muestra el historial guardado y enlaza bien", async ({ page, errores, pedidosJson }) => {
     void errores; void pedidosJson;
+    // Los trackers escriben en un efecto posterior a la hidratación, no en el evento load.
+    const visitaGuardada = (clave: string, slug: string) => page.waitForFunction(
+      ([c, s]) => (localStorage.getItem(c) ?? "").includes(`"${s}"`), [clave, slug]);
     await page.goto("/provincias/catamarca");
+    await visitaGuardada("provinciasVisitadas", "catamarca");
     await page.goto("/actividades/vivir-la-magia-del-teatro-colon");
+    await visitaGuardada("actividadesVisitadas", "vivir-la-magia-del-teatro-colon");
     const resumen = page.waitForResponse(r => r.url().endsWith("/api/catalogo-resumen") && r.ok());
     await page.goto("/");
     await resumen;
@@ -132,6 +137,8 @@ test.describe("/actividades", () => {
     void errores; void pedidosJson;
     await page.goto("/actividades");
     await expect(tarjetasActividad(page)).toHaveCount(72);
+    // El select del HTML estático se reemplaza al hidratar: elegir antes perdería la selección.
+    await page.locator("#provincia-filtro[data-hidratado]").waitFor();
     await page.selectOption("#provincia-filtro", "santa_fe");
     await expect(tarjetasActividad(page)).toHaveCount(3);
     expect((await tarjetasActividad(page).evaluateAll(as => as.map(a => a.getAttribute("href")))).sort()).toEqual(slugsDe("santa_fe"));

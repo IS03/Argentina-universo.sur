@@ -20,7 +20,7 @@ interface ActividadesListadoProps {
 export function ActividadesListado({ actividades, provincias, seleccion, onSeleccion }: ActividadesListadoProps) {
   const actividadesFiltradas = filtrarActividades(actividades, seleccion);
   const control = onSeleccion
-    ? { value: seleccion, onChange: (e: React.ChangeEvent<HTMLSelectElement>) => onSeleccion(e.target.value) }
+    ? { value: seleccion, onChange: (e: React.ChangeEvent<HTMLSelectElement>) => onSeleccion(e.target.value), "data-hidratado": "" }
     : { defaultValue: seleccion };
 
   return (
