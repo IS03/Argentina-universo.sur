@@ -12,7 +12,7 @@ import {
   getNoticiasSantaFe,
   getOficinasInformesSantaFe,
   getAgenciasSantaFe,
-  getEventosSantaFe
+  getAgendaSantaFe
 } from "@/lib/data";
 import { notFound } from "next/navigation";
 import ProvinciaVisitTracker from "@/components/ProvinciaVisitTracker";
@@ -105,7 +105,8 @@ export default async function ProvinciaPage({ params }: PageProps) {
   const noticias = isSantaFe ? await getNoticiasSantaFe() : null;
   const oficinas = isSantaFe ? await getOficinasInformesSantaFe() : null;
   const agencias = isSantaFe ? await getAgenciasSantaFe() : null;
-  const eventos = isSantaFe ? await getEventosSantaFe() : null;
+  const agenda = isSantaFe ? await getAgendaSantaFe() : null;
+  const eventos = agenda?.vigentes ?? null;
 
   return (
     <>

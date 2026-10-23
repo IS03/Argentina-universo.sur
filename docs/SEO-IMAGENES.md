@@ -44,7 +44,7 @@ En el proyecto ya se usa:
 
 ## 4. Hero del home (velocidad)
 
-- Las imágenes del hero viven en **`/public/img/home/`** como `1.jpg` … `10.jpg`.
+- Las imágenes del hero viven en **`/public/img/home/`** como `1.jpg` … `9.jpg`.
 - Para LCP rápido solo se precargan la 1 y la 2; el resto se sirve con `next/image` al rotar.
 - Comprimir cada archivo (hero ≤ 1920 px, &lt; 300 KB por imagen) con TinyPNG, Squoosh o similar.
 

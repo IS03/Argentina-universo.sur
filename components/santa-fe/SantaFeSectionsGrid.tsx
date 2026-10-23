@@ -37,7 +37,7 @@ export default function SantaFeSectionsGrid({
     },
     {
       id: 'eventos',
-      titulo: 'Calendario de Eventos',
+      titulo: 'Próximos eventos y en curso',
       icon: '📅',
       href: '/provincias/santa_fe/eventos',
       count: eventos.length,
@@ -101,7 +101,7 @@ export default function SantaFeSectionsGrid({
             const Component = isAnchor ? 'a' : Link;
             const props = isAnchor 
               ? { href: seccion.href }
-              : { href: seccion.href as any };
+              : { href: seccion.href };
             
             return (
               <Component
@@ -127,6 +127,9 @@ export default function SantaFeSectionsGrid({
 
                 {/* Preview */}
                 <div className="flex-grow space-y-2 mb-4">
+                  {seccion.id === 'eventos' && seccion.count === 0 && (
+                    <p className="text-sm text-[#6B5D47]">No hay próximos eventos confirmados. Consultá el archivo de eventos anteriores.</p>
+                  )}
                   {seccion.preview.map((item, index) => (
                     <div
                       key={index}

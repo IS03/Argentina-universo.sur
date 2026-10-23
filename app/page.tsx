@@ -8,42 +8,17 @@ import { ROUTES, INTERNAL_ANCHORS } from "@/lib/site-links";
 import { useState, useEffect, useRef } from "react";
 import ProvinciaCard from "@/components/ProvinciaCard";
 import ActividadCard from "@/components/ActividadCard";
-import { Provincia, Actividad } from "@/lib/data";
+import { normalizarProvincia, normalizarActividad } from "@/lib/catalog";
+import type { Provincia, Actividad, ProvinciaRaw, ActividadRaw } from "@/lib/catalog";
+import { imagenesHome, altImagenesHome, getHeroOpacity } from "@/lib/home-images";
+
+const slugsDestacadas = ["santa_fe", "cordoba", "buenos_aires"];
+type Visita = string | { slug: string; timestamp?: number };
 
 export default function Home() {
   // ============================================
   // CARRUSEL CON DOBLE BUFFER - SIN CORTES
   // ============================================
-  // Lista de imágenes del home (nombres en /public/img/home/)
-  // Cambiar CACHE_VERSION cuando actualices las fotos para que no se use caché vieja
-  const CACHE_VERSION = '3';
-  const imagenesHome = [
-    `/img/home/1.jpg?v=${CACHE_VERSION}`,
-    `/img/home/2.jpg?v=${CACHE_VERSION}`,
-    `/img/home/3.jpg?v=${CACHE_VERSION}`,
-    `/img/home/4.jpg?v=${CACHE_VERSION}`,
-    `/img/home/5.jpg?v=${CACHE_VERSION}`,
-    `/img/home/6.jpg?v=${CACHE_VERSION}`,
-    `/img/home/7.jpg?v=${CACHE_VERSION}`,
-    `/img/home/8.jpg?v=${CACHE_VERSION}`,
-    `/img/home/9.jpg?v=${CACHE_VERSION}`,
-    `/img/home/10.jpg?v=${CACHE_VERSION}`,
-  ];
-
-  // ALT text descriptivo por imagen para SEO y accesibilidad
-  const altImagenesHome = [
-    'Paisaje de Argentina - Turismo Universo Sur, imagen 1',
-    'Paisaje de Argentina - Turismo Universo Sur, imagen 2',
-    'Paisaje de Argentina - Turismo Universo Sur, imagen 3',
-    'Paisaje de Argentina - Turismo Universo Sur, imagen 4',
-    'Paisaje de Argentina - Turismo Universo Sur, imagen 5',
-    'Paisaje de Argentina - Turismo Universo Sur, imagen 6',
-    'Paisaje de Argentina - Turismo Universo Sur, imagen 7',
-    'Paisaje de Argentina - Turismo Universo Sur, imagen 8',
-    'Paisaje de Argentina - Turismo Universo Sur, imagen 9',
-    'Paisaje de Argentina - Turismo Universo Sur, imagen 10',
-  ];
-
   // Estado del carrusel: índice actual y qué capa está visible
   const [indiceActual, setIndiceActual] = useState(0);
   const [capaVisible, setCapaVisible] = useState<'A' | 'B'>('A');
@@ -92,8 +67,6 @@ export default function Home() {
   const [contenidoVisitado, setContenidoVisitado] = useState<Array<{ tipo: 'provincia' | 'actividad'; data: Provincia | Actividad }>>([]);
   const [cargando, setCargando] = useState(true);
 
-  // Slugs de las 3 provincias destacadas
-  const slugsDestacadas = ["santa_fe", "cordoba", "buenos_aires"];
 
   // ============================================
   // PRECARGA DE IMÁGENES (solo 1 y 2 para LCP rápido)
@@ -200,56 +173,8 @@ export default function Home() {
           actividadesResponse.json(),
         ]);
 
-        // Normalizar rutas de imágenes de provincias
-        const normalizarRutaProvincia = (ruta: string) => {
-          if (!ruta) return "";
-          return ruta.replace(/^\/provincias\/img\//, "/img/provincias/");
-        };
-
-        const provinciasNormalizadas: Provincia[] = provinciasData.map((item: any) => ({
-          provincia: item.PROVINCIA,
-          slug: item.SLUG,
-          des_1: item.des_1 || "",
-          des_2: item.des_2 || "",
-          des_3: item.des_3 || "",
-          fotos: [
-            normalizarRutaProvincia(item.FOTO_1 || ""),
-            normalizarRutaProvincia(item.FOTO_2 || ""),
-            normalizarRutaProvincia(item.FOTO_3 || "")
-          ].filter(Boolean)
-        }));
-
-        // Normalizar actividades
-        const createSlug = (text: string) =>
-          text
-            .toLowerCase()
-            .normalize("NFD")
-            .replace(/[\u0300-\u036f]/g, "")
-            .replace(/[^a-z0-9]+/g, "-")
-            .replace(/(^-|-$)/g, "");
-
-        const corregirExtension = (ruta: string) => {
-          if (!ruta) return "";
-          if (ruta.includes("/caba/caba1/2.png")) {
-            return ruta.replace(/\.png$/i, ".jpeg");
-          }
-          return ruta.replace(/\.png$/i, ".jpg");
-        };
-
-        const actividadesNormalizadas: Actividad[] = actividadesData.map((item: any) => ({
-          provincia: item.PROVINCIA,
-          slug: item.SLUG,
-          actividad: item.ACTIVIDAD,
-          localizacion: item.LOCALIZACION,
-          des_1: item.des_1 || "",
-          des_2: item.des_2 || "",
-          fotos: [
-            corregirExtension(item.FOTO_1 || ""),
-            corregirExtension(item.FOTO_2 || ""),
-            corregirExtension(item.FOTO_3 || "")
-          ].filter(Boolean),
-          actividadSlug: createSlug(item.ACTIVIDAD)
-        }));
+        const provinciasNormalizadas = (provinciasData as ProvinciaRaw[]).map(normalizarProvincia);
+        const actividadesNormalizadas = (actividadesData as ActividadRaw[]).map(normalizarActividad);
 
         // Filtrar provincias destacadas y ordenarlas según slugsDestacadas
         const destacadas = slugsDestacadas
@@ -267,7 +192,7 @@ export default function Home() {
             const parsed = JSON.parse(provinciasVisitadasData);
             const visitasProvincias = Array.isArray(parsed) ? parsed : [];
             
-            visitasProvincias.forEach((item: any) => {
+            visitasProvincias.forEach((item: Visita) => {
               const slug = typeof item === 'string' ? item : item.slug;
               const timestamp = typeof item === 'object' && item.timestamp ? item.timestamp : Date.now();
               const provincia = provinciasNormalizadas.find(p => p.slug === slug);
@@ -287,7 +212,7 @@ export default function Home() {
             const parsed = JSON.parse(actividadesVisitadasData);
             const visitasActividades = Array.isArray(parsed) ? parsed : [];
             
-            visitasActividades.forEach((item: any) => {
+            visitasActividades.forEach((item: Visita) => {
               const slug = typeof item === 'string' ? item : item.slug;
               const timestamp = typeof item === 'object' && item.timestamp ? item.timestamp : Date.now();
               const actividad = actividadesNormalizadas.find(a => a.actividadSlug === slug);
@@ -320,7 +245,8 @@ export default function Home() {
 
   // Marcar como montado después de la hidratación
   useEffect(() => {
-    setIsMounted(true);
+    const frame = requestAnimationFrame(() => setIsMounted(true));
+    return () => cancelAnimationFrame(frame);
   }, []);
 
   // Detectar scroll y altura del contenido
@@ -374,7 +300,7 @@ export default function Home() {
   const blurAmount = scrollProgress * 12;
   
   // Opacidad del hero completo (imágenes + texto) - se difumina progresivamente
-  const heroOpacity = isMounted ? Math.max(1, 1 - scrollProgress * 1.2) : 1;
+  const heroOpacity = isMounted ? getHeroOpacity(scrollProgress) : 1;
   
   // Overlay progresivo - aparece desde el primer scroll, máximo 40% de opacidad
   const overlayOpacity = scrollProgress * 0.4;

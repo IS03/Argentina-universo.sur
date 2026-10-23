@@ -1,7 +1,12 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  turbopack: { root: process.cwd() },
+  async redirects() {
+    return [{ source: "/provincias/catamarca", destination: "/provincias/catarmaca", permanent: true }];
+  },
   images: {
+    qualities: [75, 85],
     localPatterns: [
       {
         pathname: "/img/**",

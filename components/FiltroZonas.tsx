@@ -1,19 +1,13 @@
 "use client";
 
+import { REGIONES } from "@/lib/catalog";
+
 interface FiltroZonasProps {
   zonaActiva: string;
   onZonaChange: (zona: string) => void;
 }
 
-const ZONAS = [
-  { id: "Todas", label: "Todas" },
-  { id: "Norte", label: "Norte" },
-  { id: "Litoral", label: "Litoral" },
-  { id: "Centro", label: "Centro" },
-  { id: "Cuyo", label: "Cuyo" },
-  { id: "Buenos Aires", label: "Buenos Aires" },
-  { id: "Patagonia", label: "Patagonia" },
-];
+const ZONAS = ["Todas", ...REGIONES].map(id => ({ id, label: id }));
 
 export default function FiltroZonas({ zonaActiva, onZonaChange }: FiltroZonasProps) {
   return (

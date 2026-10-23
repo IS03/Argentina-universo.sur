@@ -6,22 +6,8 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ActividadCard from "@/components/ActividadCard";
 import { ROUTES, INTERNAL_ANCHORS } from "@/lib/site-links";
-// Tipos
-interface Actividad {
-  provincia: string;
-  slug: string;
-  actividad: string;
-  localizacion: string;
-  des_1: string;
-  des_2: string;
-  fotos: string[];
-  actividadSlug: string;
-}
-
-interface Provincia {
-  provincia: string;
-  slug: string;
-}
+import { normalizarActividad, resolveProvinciaSlug } from "@/lib/catalog";
+import type { Actividad, ActividadRaw, Provincia } from "@/lib/catalog";
 import { useSearchParams } from "next/navigation";
 
 function ActividadesContent() {
@@ -29,11 +15,10 @@ function ActividadesContent() {
   const provinciaFiltro = searchParams.get("provincia");
   
   const [actividades, setActividades] = useState<Actividad[]>([]);
-  const [provincias, setProvincias] = useState<Provincia[]>([]);
+  const [provincias, setProvincias] = useState<Pick<Provincia, "provincia" | "slug">[]>([]);
   const [provinciaSeleccionada, setProvinciaSeleccionada] = useState<string>(
-    provinciaFiltro || "todas"
+    resolveProvinciaSlug(provinciaFiltro || "todas")
   );
-  const [actividadesFiltradas, setActividadesFiltradas] = useState<Actividad[]>([]);
   const [cargando, setCargando] = useState(true);
 
   useEffect(() => {
@@ -44,47 +29,9 @@ function ActividadesContent() {
         fetch("/data/provincias.json").then((res) => res.json()),
       ]);
 
-      // Normalizar actividades
-      const actividadesNormalizadas = actividadesData.map((item: any) => {
-        const createSlug = (text: string) =>
-          text
-            .toLowerCase()
-            .normalize("NFD")
-            .replace(/[\u0300-\u036f]/g, "")
-            .replace(/[^a-z0-9]+/g, "-")
-            .replace(/(^-|-$)/g, "");
-
-        // Función para corregir extensiones de imágenes
-        const corregirExtension = (ruta: string) => {
-          if (!ruta) return "";
-          // Caso especial: caba1/2.png -> caba1/2.jpeg
-          if (ruta.includes("/caba/caba1/2.png")) {
-            return ruta.replace(/\.png$/i, ".jpeg");
-          }
-          // Para el resto, reemplazar .png por .jpg
-          return ruta.replace(/\.png$/i, ".jpg");
-        };
-
-        return {
-          provincia: item.PROVINCIA,
-          slug: item.SLUG,
-          actividad: item.ACTIVIDAD,
-          localizacion: item.LOCALIZACION,
-          des_1: item.des_1 || "",
-          des_2: item.des_2 || "",
-          fotos: [
-            corregirExtension(item.FOTO_1 || ""),
-            corregirExtension(item.FOTO_2 || ""),
-            corregirExtension(item.FOTO_3 || ""),
-          ].filter(Boolean),
-          actividadSlug: createSlug(item.ACTIVIDAD),
-        };
-      });
-
-      // Normalizar provincias
-      const provinciasNormalizadas = provinciasData.map((item: any) => ({
-        provincia: item.PROVINCIA,
-        slug: item.SLUG,
+      const actividadesNormalizadas = (actividadesData as ActividadRaw[]).map(normalizarActividad);
+      const provinciasNormalizadas = (provinciasData as Array<{ PROVINCIA: string; SLUG: string }>).map(item => ({
+        provincia: item.PROVINCIA, slug: item.SLUG,
       }));
 
       setActividades(actividadesNormalizadas);
@@ -95,16 +42,9 @@ function ActividadesContent() {
     cargarDatos();
   }, []);
 
-  useEffect(() => {
-    // Filtrar actividades
-    if (provinciaSeleccionada === "todas") {
-      setActividadesFiltradas(actividades);
-    } else {
-      setActividadesFiltradas(
-        actividades.filter((a) => a.slug === provinciaSeleccionada)
-      );
-    }
-  }, [provinciaSeleccionada, actividades]);
+  const actividadesFiltradas = provinciaSeleccionada === "todas"
+    ? actividades
+    : actividades.filter((a) => a.slug === provinciaSeleccionada);
 
   return (
     <>

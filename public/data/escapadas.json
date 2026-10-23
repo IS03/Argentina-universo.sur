@@ -133,7 +133,7 @@
     "PROVINCIAS": "San Luis",
     "DURACION": "3 Días",
     "PDF": "/pdf/sanluis.pdf",
-    "ZONA": "Centro"
+    "ZONA": "Cuyo"
   },
   {
     "ID": "esc_18",
@@ -172,7 +172,8 @@
     "TITULO": "La Pampa",
     "PROVINCIAS": "La Pampa",
     "DURACION": "3 Días",
-    "PDF": "/pdf/lapampa.pdf"
+    "PDF": "/pdf/lapampa.pdf",
+    "ZONA": "Patagonia"
   },
   {
     "ID": "esc_23",
