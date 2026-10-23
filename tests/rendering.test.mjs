@@ -76,3 +76,24 @@ test("el layout mantiene montados Analytics y Speed Insights", async () => {
   assert.match(layout, /<Analytics \/>/);
   assert.match(layout, /<SpeedInsights \/>/);
 });
+
+test("los rewrites del filtro y el navegador resuelven igual cada valor de ?provincia", async () => {
+  const { ACTIVIDADES_FILTRO_REWRITES, ACTIVIDADES_FILTRO_REDIRECTS, SLUGS_PROVINCIAS, RUTA_INTERNA_FILTRO, FILTRO_SIN_RESULTADOS, seleccionDesdeParametro } = await import("../lib/site-links.ts");
+  const nextConfig = (await import("../next.config.ts")).default;
+  assert.deepEqual([...SLUGS_PROVINCIAS].sort(), raw.provincias.map(p => p.SLUG).sort());
+  assert.deepEqual((await nextConfig.rewrites()).beforeFiles, ACTIVIDADES_FILTRO_REWRITES);
+  assert.ok((await nextConfig.redirects()).some(r => r.source === `${RUTA_INTERNA_FILTRO}/:provincia`));
+  // Misma comparación que Next: primera regla cuyo valor coincide completo (^…$).
+  const servidor = valor => {
+    for (const regla of ACTIVIDADES_FILTRO_REWRITES) {
+      const m = valor ? valor.match(new RegExp(`^${regla.has[0].value}$`)) : null;
+      if (m) return regla.destination.replace(":provincia", m.groups?.provincia ?? "").slice(RUTA_INTERNA_FILTRO.length + 1);
+    }
+    return TODAS_LAS_PROVINCIAS; // sin rewrite: /actividades estática
+  };
+  const valores = [...SLUGS_PROVINCIAS, "catarmaca", "", null, "no-existe", "Santa_Fe", "santa_fe ", "santa_fe|cordoba", ".*", "sin-resultados", "todas"];
+  for (const valor of valores) assert.equal(seleccionDesdeParametro(valor), servidor(valor), `?provincia=${valor}`);
+  assert.equal(seleccionDesdeParametro("catarmaca"), "catamarca");
+  assert.equal(seleccionDesdeParametro("no-existe"), FILTRO_SIN_RESULTADOS);
+  assert.ok(ACTIVIDADES_FILTRO_REDIRECTS.every(r => r.permanent && r.destination.startsWith("/actividades?")));
+});

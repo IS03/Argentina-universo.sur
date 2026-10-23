@@ -137,7 +137,7 @@ test.describe("/actividades", () => {
     void errores; void pedidosJson;
     await page.goto("/actividades");
     await expect(tarjetasActividad(page)).toHaveCount(72);
-    // El select del HTML estático se reemplaza al hidratar: elegir antes perdería la selección.
+    // Tras hidratar, el cambio filtra en el acto (antes de hidratar se cubre en el bloque de regresión).
     await page.locator("#provincia-filtro[data-hidratado]").waitFor();
     await page.selectOption("#provincia-filtro", "santa_fe");
     await expect(tarjetasActividad(page)).toHaveCount(3);
@@ -172,6 +172,131 @@ test.describe("/actividades", () => {
     await tarjetasActividad(page).first().click();
     await expect(page).toHaveURL(new RegExp(`${destino}$`));
     await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
+  });
+});
+
+// Regresión del filtro por URL: el HTML ya llega filtrado (rewrite a variantes estáticas) y el
+// navegador nunca muestra otra provincia, ni antes de hidratar ni al volver atrás.
+test.describe("/actividades?provincia=… (regresión del filtro)", () => {
+  const SELECTOR_TARJETAS = 'section[aria-labelledby="actividades-por-provincia-heading"] a[href^="/actividades/"]';
+  const hrefs = (page: Page) => tarjetasActividad(page).evaluateAll(as => as.map(a => a.getAttribute("href")).sort());
+  // Registra, frame a frame durante 30 s, cada estado distinto de la grilla.
+  const grabarFrames = (page: Page) => page.evaluate(sel => {
+    const w = window as unknown as { __frames: string[] };
+    w.__frames = [];
+    const fin = performance.now() + 30_000;
+    const tick = () => {
+      const actual = [...document.querySelectorAll(sel)].map(a => a.getAttribute("href")).sort().join(",");
+      if (w.__frames.at(-1) !== actual) w.__frames.push(actual);
+      if (performance.now() < fin) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  }, SELECTOR_TARJETAS);
+  const framesDistintos = (page: Page) => page.evaluate(() => [...new Set((window as unknown as { __frames: string[] }).__frames)]);
+  const retrasarJs = (page: Page, ms: number) => page.route(/\/_next\/static\/chunks\/.*\.js/, async route => {
+    await new Promise(r => setTimeout(r, ms));
+    await route.continue();
+  });
+
+  test("el HTML sin JavaScript ya trae la provincia pedida, el alias y el vacío", async ({ request }) => {
+    const leer = async (query: string) => {
+      const html = (await (await request.get(`/actividades${query}`)).text()).replace(/<script\b[\s\S]*?<\/script>/gi, "");
+      return {
+        hrefs: [...new Set(html.match(/\/actividades\/[a-z0-9-]+(?=")/g))].sort(),
+        seleccionada: html.match(/<option value="([a-z_]+)"[^>]*selected/)?.[1],
+        vacio: html.includes("No se encontraron actividades"),
+      };
+    };
+    expect(await leer("?provincia=santa_fe")).toEqual({ hrefs: slugsDe("santa_fe"), seleccionada: "santa_fe", vacio: false });
+    expect(await leer("?provincia=catarmaca")).toEqual({ hrefs: slugsDe("catamarca"), seleccionada: "catamarca", vacio: false });
+    expect(await leer("?provincia=santa_fe&utm_source=boletin")).toMatchObject({ hrefs: slugsDe("santa_fe") });
+    expect(await leer("?provincia=no-existe")).toMatchObject({ hrefs: [], vacio: true });
+    expect((await leer("?provincia=")).hrefs).toHaveLength(72);
+  });
+
+  test("la ruta interna no es pública: redirige a la URL con el parámetro", async ({ request }) => {
+    const res = await request.get("/actividades/por-provincia/santa_fe", { maxRedirects: 0 });
+    expect(res.status()).toBe(308);
+    expect(res.headers().location).toBe("/actividades?provincia=santa_fe");
+  });
+
+  test("una carga directa filtrada nunca pinta otra provincia mientras hidrata", async ({ page, errores }) => {
+    void errores;
+    await retrasarJs(page, 1500);
+    await page.goto("/actividades?provincia=santa_fe", { waitUntil: "commit" });
+    await page.locator(SELECTOR_TARJETAS).first().waitFor();
+    await grabarFrames(page);
+    await expect(page.locator("#provincia-filtro")).not.toHaveAttribute("data-hidratado");
+    await expect(page.locator("#provincia-filtro")).toHaveValue("santa_fe");
+    await page.locator("#provincia-filtro[data-hidratado]").waitFor();
+    await page.waitForTimeout(300);
+    expect(await framesDistintos(page)).toEqual([slugsDe("santa_fe").join(",")]);
+  });
+
+  test("una elección hecha antes de hidratar se conserva y se aplica", async ({ page, errores }) => {
+    void errores;
+    await retrasarJs(page, 1500);
+    await page.goto("/actividades", { waitUntil: "commit" });
+    await page.locator("#provincia-filtro").waitFor();
+    await expect(page.locator("#provincia-filtro")).not.toHaveAttribute("data-hidratado");
+    await page.selectOption("#provincia-filtro", "catamarca");
+    await page.locator("#provincia-filtro[data-hidratado]").waitFor();
+    await expect(tarjetasActividad(page)).toHaveCount(3);
+    await expect(page.locator("#provincia-filtro")).toHaveValue("catamarca");
+    expect(await hrefs(page)).toEqual(slugsDe("catamarca"));
+    await expect(page).toHaveURL(/\/actividades\?provincia=catamarca$/);
+  });
+
+  test("atrás y adelante conservan el filtro elegido sin mostrar otro", async ({ page, errores }) => {
+    void errores;
+    for (const [inicio, eleccion] of [["/actividades", "salta"], ["/actividades?provincia=mendoza", "cordoba"]]) {
+      await page.goto(inicio);
+      await page.locator("#provincia-filtro[data-hidratado]").waitFor();
+      await page.selectOption("#provincia-filtro", eleccion);
+      await expect(page).toHaveURL(new RegExp(`\\?provincia=${eleccion}$`));
+      await tarjetasActividad(page).first().click();
+      await expect(page).toHaveURL(/\/actividades\/[a-z0-9-]+$/, { timeout: 15_000 });
+      await grabarFrames(page);
+      await page.goBack();
+      await expect(page).toHaveURL(new RegExp(`\\?provincia=${eleccion}$`), { timeout: 15_000 });
+      await expect(page.locator("#provincia-filtro")).toHaveValue(eleccion);
+      expect(await hrefs(page)).toEqual(slugsDe(eleccion));
+      // Ningún frame de la grilla mostró otra provincia (solo el detalle previo, sin grilla).
+      expect((await framesDistintos(page)).filter(Boolean)).toEqual([slugsDe(eleccion).join(",")]);
+      await page.goForward();
+      await page.goBack();
+      await expect(page.locator("#provincia-filtro")).toHaveValue(eleccion);
+      await page.reload();
+      await expect(page.locator("#provincia-filtro")).toHaveValue(eleccion);
+      expect(await hrefs(page)).toEqual(slugsDe(eleccion));
+    }
+  });
+
+  test("cambios rápidos sucesivos terminan en el último sin rebotes", async ({ page, errores }) => {
+    void errores;
+    await page.goto("/actividades");
+    await page.locator("#provincia-filtro[data-hidratado]").waitFor();
+    for (const slug of ["mendoza", "salta", "jujuy", "chubut"]) await page.selectOption("#provincia-filtro", slug);
+    await grabarFrames(page);
+    await page.waitForTimeout(500);
+    await expect(page).toHaveURL(/\?provincia=chubut$/);
+    await expect(page.locator("#provincia-filtro")).toHaveValue("chubut");
+    expect(await framesDistintos(page)).toEqual([slugsDe("chubut").join(",")]);
+  });
+
+  test("los enlaces de cada página provincial llegan filtrados, incluida Catamarca", async ({ page, errores }) => {
+    void errores;
+    // Sin santa_fe: su página tiene un error de hidratación intermitente preexistente (~1/20 en
+    // main, React #418) ajeno al filtro; queda para PR 04. Su enlace se verificó aparte.
+    for (const slug of ["catamarca", "mendoza", "tierra_del_fuego"]) {
+      await page.goto(`/provincias/${slug}`);
+      await grabarFrames(page);
+      await page.locator(`a[href="/actividades?provincia=${slug}"]`).first().click();
+      await expect(page).toHaveURL(new RegExp(`/actividades\\?provincia=${slug}$`));
+      await expect(page.locator("#provincia-filtro")).toHaveValue(slug);
+      expect(await hrefs(page)).toEqual(slugsDe(slug));
+      expect((await framesDistintos(page)).filter(Boolean)).toEqual([slugsDe(slug).join(",")]);
+    }
   });
 });
 
