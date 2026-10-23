@@ -8,6 +8,7 @@ import { notFound } from "next/navigation";
 import ActividadVisitTracker from "@/components/ActividadVisitTracker";
 import ActividadMapWrapper from "@/components/ActividadMapWrapper";
 import type { Metadata } from "next";
+import { actividadMetadata } from "@/lib/seo";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -24,69 +25,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const { slug } = await params;
   const actividad = await getActividadBySlug(slug);
 
-  if (!actividad) {
-    return {
-      title: "Actividad no encontrada",
-    };
-  }
-
-  // Optimizar título: keyword al inicio, máx 60 caracteres
-  const separador = " | ";
-  const maxLength = 60;
-  const localizacionLength = actividad.localizacion.length + separador.length;
-  const maxActividadLength = maxLength - localizacionLength;
-  
-  let actividadTitle = actividad.actividad;
-  if (actividadTitle.length > maxActividadLength) {
-    actividadTitle = actividadTitle.substring(0, maxActividadLength - 3) + "...";
-  }
-  
-  const title = `${actividadTitle}${separador}${actividad.localizacion}`;
-  const description = actividad.des_1
-    ? `${actividad.des_1.substring(0, 150)}... Ubicado en ${actividad.localizacion}, ${actividad.provincia}. Información completa, ubicación y qué hacer.`
-    : `Descubrí ${actividad.actividad} en ${actividad.localizacion}, ${actividad.provincia}. Información, ubicación, qué hacer y más.`;
-
-  const imageUrl = actividad.fotos && actividad.fotos.length > 0
-    ? actividad.fotos[0]
-    : "/img/home/1.jpg";
-
-  return {
-    title,
-    description,
-    keywords: [
-      actividad.actividad,
-      actividad.localizacion,
-      `turismo ${actividad.provincia}`,
-      `qué hacer en ${actividad.localizacion}`,
-      `actividades ${actividad.provincia}`,
-      `${actividad.actividad} ${actividad.localizacion}`,
-    ],
-    openGraph: {
-      title,
-      description,
-      url: `/actividades/${slug}`,
-      siteName: "Argentina Universo Sur",
-      images: [
-        {
-          url: imageUrl,
-          width: 1200,
-          height: 630,
-          alt: `${actividad.actividad} - ${actividad.localizacion}`,
-        },
-      ],
-      locale: "es_AR",
-      type: "website",
-    },
-    twitter: {
-      card: "summary_large_image",
-      title,
-      description,
-      images: [imageUrl],
-    },
-    alternates: {
-      canonical: `/actividades/${slug}`,
-    },
-  };
+  if (!actividad) notFound();
+  return actividadMetadata(actividad);
 }
 
 export default async function ActividadPage({ params }: PageProps) {

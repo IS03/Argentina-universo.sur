@@ -67,12 +67,12 @@ preserva ese contenido en este PR.
 
 ## Compatibilidad de URLs
 
-Los slugs publicados se preservan, incluido `catarmaca`. Se corrige el `SLUG` de
-las tres actividades de Catamarca para relacionarlas con su provincia. El filtro
-`/actividades?provincia=catamarca` continúa funcionando como alias de `catarmaca`.
-`/provincias/catamarca` redirige permanentemente (308) a
-`/provincias/catarmaca`, sin eliminar la URL anterior. Los slugs de las 72 páginas
-de actividades, el resto de provincias y las rutas de los PDF no cambian.
+Desde PR 02, la URL canónica es `/provincias/catamarca`. La variante histórica
+`/provincias/catarmaca` redirige con 308 a la correcta; se elimina la regla inversa
+de PR 01. Los catálogos, mapa y enlaces usan `catamarca`. El filtro
+`/actividades?provincia=catarmaca` y el historial local siguen siendo compatibles.
+Los slugs de actividades, el resto de provincias y los PDF no cambian.
+Criterios de migración y pruebas: [SEO-INDEXACION.md](SEO-INDEXACION.md).
 
 ## Agenda de Santa Fe
 

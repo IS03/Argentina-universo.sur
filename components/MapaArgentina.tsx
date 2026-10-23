@@ -13,7 +13,7 @@ interface MapaArgentinaProps {
 const SLUG_TO_SVG_ID: Record<string, string> = {
   buenos_aires: "AR-B",
   caba: "AR-C",
-  catarmaca: "AR-K",
+  catamarca: "AR-K",
   chaco: "AR-H",
   chubut: "AR-U",
   cordoba: "AR-X",

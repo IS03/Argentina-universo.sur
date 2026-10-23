@@ -33,8 +33,8 @@ test("la resolución compartida conserva las fotografías JPEG y el slug públic
   const mendoza = catalog.actividades.find(a => a.FOTO_3 === "/img/actividades/mendoza/3.jpeg");
   assert.ok(mendoza);
   assert.ok(normalizarActividad(mendoza).fotos.includes("/img/actividades/mendoza/3.jpeg"));
-  assert.equal(resolveProvinciaSlug("catamarca"), "catarmaca");
-  assert.equal(resolveProvinciaSlug("catarmaca"), "catarmaca");
+  assert.equal(resolveProvinciaSlug("catamarca"), "catamarca");
+  assert.equal(resolveProvinciaSlug("catarmaca"), "catamarca");
   assert.equal(resolveProvinciaSlug("santa_fe"), "santa_fe");
 });
 
