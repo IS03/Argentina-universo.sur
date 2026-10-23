@@ -6,7 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint --max-warnings=0",
+    "typecheck": "next typegen && tsc --noEmit",
+    "validate": "node --experimental-strip-types scripts/validate-data.mjs",
+    "test": "node --experimental-strip-types --test tests/*.test.mjs",
+    "check": "npm run lint && npm run typecheck && npm run validate && npm test && npm run build"
   },
   "dependencies": {
     "leaflet": "^1.9.4",
@@ -27,5 +31,9 @@
     "tailwindcss": "^4",
     "typescript": "^5",
     "xlsx": "^0.18.5"
-  }
+  },
+  "engines": {
+    "node": ">=22.19.0"
+  },
+  "type": "module"
 }

@@ -61,7 +61,7 @@ export default function SantaFeQuickNav() {
             const Component = isAnchor ? 'a' : Link;
             const props = isAnchor 
               ? { href: seccion.href }
-              : { href: seccion.href as any };
+              : { href: seccion.href };
             
             return (
               <Component

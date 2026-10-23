@@ -2,12 +2,15 @@
 
 import { useState, useMemo } from 'react';
 import { Evento } from "@/lib/data";
+import { EVENT_TIME_ZONE, parseEventDate } from "@/lib/events";
 
 interface EventosSectionProps {
   eventos: Evento[];
+  titulo?: string;
+  id?: string;
 }
 
-export default function EventosSection({ eventos }: EventosSectionProps) {
+export default function EventosSection({ eventos, titulo = "Próximos eventos y en curso", id = "eventos" }: EventosSectionProps) {
   const [vista, setVista] = useState<'lista' | 'calendario'>('lista');
 
   // Agrupar eventos por mes
@@ -15,8 +18,8 @@ export default function EventosSection({ eventos }: EventosSectionProps) {
     const agrupados: Record<string, Evento[]> = {};
     
     eventos.forEach(evento => {
-      const fecha = new Date(evento.Inicio);
-      const mes = fecha.toLocaleString('es-AR', { month: 'long', year: 'numeric' });
+      const fecha = parseEventDate(evento.Inicio);
+      const mes = fecha.toLocaleString('es-AR', { month: 'long', year: 'numeric', timeZone: EVENT_TIME_ZONE });
       if (!agrupados[mes]) {
         agrupados[mes] = [];
       }
@@ -26,7 +29,7 @@ export default function EventosSection({ eventos }: EventosSectionProps) {
     // Ordenar eventos dentro de cada mes por fecha
     Object.keys(agrupados).forEach(mes => {
       agrupados[mes].sort((a, b) => 
-        new Date(a.Inicio).getTime() - new Date(b.Inicio).getTime()
+        parseEventDate(a.Inicio).getTime() - parseEventDate(b.Inicio).getTime()
       );
     });
 
@@ -34,23 +37,23 @@ export default function EventosSection({ eventos }: EventosSectionProps) {
   }, [eventos]);
 
   const meses = Object.keys(eventosPorMes).sort((a, b) => {
-    const fechaA = new Date(eventosPorMes[a][0].Inicio);
-    const fechaB = new Date(eventosPorMes[b][0].Inicio);
+    const fechaA = parseEventDate(eventosPorMes[a][0].Inicio);
+    const fechaB = parseEventDate(eventosPorMes[b][0].Inicio);
     return fechaA.getTime() - fechaB.getTime();
   });
 
   const formatFecha = (fechaStr: string) => {
-    const fecha = new Date(fechaStr);
+    const fecha = parseEventDate(fechaStr);
     return {
-      dia: fecha.getDate(),
-      mes: fecha.toLocaleString('es-AR', { month: 'short' }),
+      dia: fecha.toLocaleString('es-AR', { day: 'numeric', timeZone: EVENT_TIME_ZONE }),
+      mes: fecha.toLocaleString('es-AR', { month: 'short', timeZone: EVENT_TIME_ZONE }),
       fechaCompleta: fecha.toLocaleDateString('es-AR', { 
         weekday: 'long', 
         year: 'numeric', 
         month: 'long', 
-        day: 'numeric' 
+        day: 'numeric', timeZone: EVENT_TIME_ZONE
       }),
-      hora: fecha.toLocaleTimeString('es-AR', { hour: '2-digit', minute: '2-digit' })
+      hora: fecha.toLocaleTimeString('es-AR', { hour: '2-digit', minute: '2-digit', hourCycle: 'h23', timeZone: EVENT_TIME_ZONE })
     };
   };
 
@@ -68,10 +71,10 @@ export default function EventosSection({ eventos }: EventosSectionProps) {
   };
 
   return (
-    <section id="eventos" className="mb-16 scroll-mt-32">
+    <section id={id} className="mb-16 scroll-mt-32">
       <div className="flex flex-col md:flex-row justify-between items-center mb-8 gap-4">
         <h2 className="text-3xl md:text-4xl font-semibold uppercase tracking-widest text-center text-[#5A4E3D]">
-          Calendario de Eventos
+          {titulo}
         </h2>
         <div className="flex gap-2 bg-[#E8DDD0]/80 backdrop-blur-sm border border-[#C9B99B]/50 rounded-lg p-1">
           <button
@@ -97,7 +100,9 @@ export default function EventosSection({ eventos }: EventosSectionProps) {
         </div>
       </div>
 
-      {vista === 'lista' ? (
+      {eventos.length === 0 ? (
+        <p className="text-[#6B5D47] py-6">No hay próximos eventos confirmados por el momento.</p>
+      ) : vista === 'lista' ? (
         // Vista de lista
         <div className="space-y-8">
           {meses.map((mes) => (

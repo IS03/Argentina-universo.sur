@@ -2,7 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { Provincia } from "@/lib/data";
-import { useState, useEffect, useRef, useMemo } from "react";
+import { useState, useEffect, useRef, useCallback, useEffectEvent } from "react";
 
 interface MapaArgentinaProps {
   provincias: Provincia[];
@@ -42,17 +42,17 @@ export default function MapaArgentina({ provincias, zonaActiva }: MapaArgentinaP
   const [hoveredSlug, setHoveredSlug] = useState<string | null>(null);
   const svgRef = useRef<HTMLDivElement>(null);
 
-  const handleProvinciaClick = (slug: string) => {
+  const handleProvinciaClick = useCallback((slug: string) => {
     router.push(`/provincias/${slug}`);
-  };
+  }, [router]);
 
   // Función helper para obtener provincia por SVG ID
-  const getProvinciaBySvgId = (svgId: string): Provincia | undefined => {
+  const getProvinciaBySvgId = useCallback((svgId: string): Provincia | undefined => {
     return provincias.find((p) => SLUG_TO_SVG_ID[p.slug] === svgId);
-  };
+  }, [provincias]);
 
   // Función para actualizar estilos de los paths
-  const actualizarEstilosPaths = () => {
+  const actualizarEstilosPaths = useCallback(() => {
     if (!svgRef.current) return;
 
     const svg = svgRef.current.querySelector("svg");
@@ -87,14 +87,16 @@ export default function MapaArgentina({ provincias, zonaActiva }: MapaArgentinaP
       path.setAttribute("stroke-width", String(strokeWidth));
       path.setAttribute("opacity", String(opacity));
     });
-  };
+  }, [getProvinciaBySvgId, hoveredSlug, zonaActiva]);
+  const aplicarEstilosIniciales = useEffectEvent(actualizarEstilosPaths);
 
   // Cargar el SVG solo una vez (sin zonaActiva en dependencias)
   useEffect(() => {
-    if (!svgRef.current) return;
+    const container = svgRef.current;
+    if (!container) return;
     
     // Prevenir carga múltiple
-    if (svgRef.current.children.length > 0) return;
+    if (container.children.length > 0) return;
 
     let isMounted = true;
 
@@ -104,7 +106,7 @@ export default function MapaArgentina({ provincias, zonaActiva }: MapaArgentinaP
         if (!isMounted || !svgRef.current) return;
         
         // Verificar nuevamente después de la carga asíncrona
-        if (svgRef.current.children.length > 0) return;
+        if (container.children.length > 0) return;
 
         const parser = new DOMParser();
         const svgDoc = parser.parseFromString(text, "image/svg+xml");
@@ -150,26 +152,21 @@ export default function MapaArgentina({ provincias, zonaActiva }: MapaArgentinaP
         svgRef.current.appendChild(clonedSvg);
         
         // Aplicar estilos inmediatamente después de cargar
-        actualizarEstilosPaths();
+        aplicarEstilosIniciales();
       })
       .catch((err) => console.error("Error cargando SVG:", err));
 
     // Función de limpieza
     return () => {
       isMounted = false;
-      if (svgRef.current) {
-        // Limpiar todos los SVGs del contenedor
-        while (svgRef.current.firstChild) {
-          svgRef.current.removeChild(svgRef.current.firstChild);
-        }
-      }
+      container.replaceChildren();
     };
-  }, [provincias]); // Solo provincias, sin zonaActiva
+  }, [getProvinciaBySvgId, handleProvinciaClick]);
 
   // Actualizar estilos cuando cambia el filtro o el hover
   useEffect(() => {
     actualizarEstilosPaths();
-  }, [zonaActiva, hoveredSlug, provincias]);
+  }, [actualizarEstilosPaths]);
 
   return (
     <div className="w-full flex justify-center mb-8">

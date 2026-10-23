@@ -2,40 +2,11 @@
 import { readFile } from "fs/promises";
 import { join } from "path";
 
-export interface Provincia {
-  provincia: string;
-  slug: string;
-  zona: string;
-  des_1: string;
-  des_2: string;
-  des_3: string;
-  fotos: string[];
-  nombre_capital: string;
-  lat_capital: number;
-  lon_capital: number;
-}
-
-export interface Actividad {
-  provincia: string;
-  slug: string;
-  actividad: string;
-  localizacion: string;
-  des_1: string;
-  des_2: string;
-  fotos: string[];
-  actividadSlug: string; // Slug único para la actividad
-  lat?: number;
-  lon?: number;
-}
-
-export interface Escapada {
-  id: string;
-  titulo: string;
-  provincias: string;
-  duracion: string;
-  pdf: string;
-  zona: string;
-}
+import { normalizarProvincia, normalizarActividad } from "./catalog";
+import type { Provincia, Actividad, Escapada, ProvinciaRaw, ActividadRaw, EscapadaRaw } from "./catalog";
+import { connection } from "next/server";
+import { partitionEvents } from "./events";
+export type { Provincia, Actividad, Escapada } from "./catalog";
 
 // Interfaces para datos de Santa Fe
 export interface PlanSantaFe {
@@ -85,52 +56,12 @@ export interface Evento {
   Precio: string;
 }
 
-// Función auxiliar para crear slug desde texto
-function createSlug(text: string): string {
-  return text
-    .toLowerCase()
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/(^-|-$)/g, "");
-}
-
 // Normalizar datos de provincias
 export async function getProvincias(): Promise<Provincia[]> {
   const filePath = join(process.cwd(), "public", "data", "provincias.json");
   const fileContents = await readFile(filePath, "utf8");
-  const data = JSON.parse(fileContents);
-  
-  const provinciasNormalizadas = data.map((item: any) => {
-    // Normalizar rutas de imágenes: /provincias/img/... -> /img/provincias/...
-    const normalizarRuta = (ruta: string) => {
-      if (!ruta) return "";
-      return ruta.replace(/^\/provincias\/img\//, "/img/provincias/");
-    };
-    
-    // Manejar zona: puede ser string, null, undefined o NaN
-    let zona = item.ZONA;
-    if (!zona || zona === null || (typeof zona === 'number' && isNaN(zona))) {
-      zona = "";
-    }
-    
-    return {
-      provincia: item.PROVINCIA,
-      slug: item.SLUG,
-      zona: typeof zona === 'string' ? zona : "",
-      des_1: item.des_1 || "",
-      des_2: item.des_2 || "",
-      des_3: item.des_3 || "",
-      fotos: [
-        normalizarRuta(item.FOTO_1 || ""),
-        normalizarRuta(item.FOTO_2 || ""),
-        normalizarRuta(item.FOTO_3 || "")
-      ].filter(Boolean),
-      nombre_capital: item.nombre_capital || "",
-      lat_capital: item.lat_capital || 0,
-      lon_capital: item.lon_capital || 0
-    };
-  });
+  const data: ProvinciaRaw[] = JSON.parse(fileContents);
+  const provinciasNormalizadas = data.map(normalizarProvincia);
 
   // Ordenar provincias: Santa Fe en segundo lugar
   const santaFe = provinciasNormalizadas.find((p: Provincia) => p.slug === "santa_fe");
@@ -151,45 +82,17 @@ export async function getProvincias(): Promise<Provincia[]> {
 export async function getActividades(): Promise<Actividad[]> {
   const filePath = join(process.cwd(), "public", "data", "actividades.json");
   const fileContents = await readFile(filePath, "utf8");
-  const data = JSON.parse(fileContents);
-  
-  // Función para corregir extensiones de imágenes
-  // Los JSON tienen .png pero los archivos reales son .jpg o .jpeg
-  const corregirExtension = (ruta: string) => {
-    if (!ruta) return "";
-    // Caso especial: caba1/2.png -> caba1/2.jpeg (el archivo real es .jpeg)
-    if (ruta.includes("/caba/caba1/2.png")) {
-      return ruta.replace(/\.png$/i, ".jpeg");
-    }
-    // Para el resto, reemplazar .png por .jpg (los archivos reales son .jpg)
-    return ruta.replace(/\.png$/i, ".jpg");
-  };
-  
-  return data.map((item: any) => ({
-    provincia: item.PROVINCIA,
-    slug: item.SLUG,
-    actividad: item.ACTIVIDAD,
-    localizacion: item.LOCALIZACION,
-    des_1: item.des_1 || "",
-    des_2: item.des_2 || "",
-    fotos: [
-      corregirExtension(item.FOTO_1 || ""),
-      corregirExtension(item.FOTO_2 || ""),
-      corregirExtension(item.FOTO_3 || "")
-    ].filter(Boolean),
-    actividadSlug: createSlug(item.ACTIVIDAD),
-    lat: item.LATITUD || undefined,
-    lon: item.LONGITUD || undefined
-  }));
+  const data: ActividadRaw[] = JSON.parse(fileContents);
+  return data.map(normalizarActividad);
 }
 
 // Normalizar datos de escapadas
 export async function getEscapadas(): Promise<Escapada[]> {
   const filePath = join(process.cwd(), "public", "data", "escapadas.json");
   const fileContents = await readFile(filePath, "utf8");
-  const data = JSON.parse(fileContents);
+  const data: EscapadaRaw[] = JSON.parse(fileContents);
   
-  return data.map((item: any) => ({
+  return data.map((item) => ({
     id: item.ID,
     titulo: item.TITULO,
     provincias: item.PROVINCIAS,
@@ -239,14 +142,11 @@ export async function getNoticiasSantaFe(): Promise<NoticiaSantaFe[]> {
 export async function getOficinasInformesSantaFe(): Promise<OficinaInforme[]> {
   const filePath = join(process.cwd(), "public", "santa-fe", "json", "oficinas_informes.json");
   const fileContents = await readFile(filePath, "utf8");
-  // Reemplazar NaN antes de parsear
-  const cleanedContents = fileContents.replace(/:\s*NaN\s*([,}])/g, ': null$1');
-  const data = JSON.parse(cleanedContents);
-  // Filtrar valores null/NaN
-  return data.map((item: any) => ({
+  const data: Array<Omit<OficinaInforme, "Correo/Web"> & { "Correo/Web": string | null }> = JSON.parse(fileContents);
+  return data.map((item) => ({
     Localidad: item.Localidad || "",
     "Teléfono/WhatsApp": item["Teléfono/WhatsApp"] || "",
-    "Correo/Web": item["Correo/Web"] === null || item["Correo/Web"] === undefined || (typeof item["Correo/Web"] === 'number' && isNaN(item["Correo/Web"])) ? "No disponible" : item["Correo/Web"],
+    "Correo/Web": item["Correo/Web"] ?? "No disponible",
     "Direcciones y horarios": item["Direcciones y horarios"] || ""
   }));
 }
@@ -261,4 +161,10 @@ export async function getEventosSantaFe(): Promise<Evento[]> {
   const filePath = join(process.cwd(), "public", "santa-fe", "json", "events_enero_febrero.json");
   const fileContents = await readFile(filePath, "utf8");
   return JSON.parse(fileContents);
+}
+
+// Evaluar en cada request: una agenda estática conservaría eventos vencidos hasta el próximo deploy.
+export async function getAgendaSantaFe() {
+  await connection();
+  return partitionEvents(await getEventosSantaFe(), new Date());
 }

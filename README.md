@@ -95,7 +95,7 @@ La web consume datos estáticos en **JSON** servidos desde `public/`. Las fuente
 | **Linting** | ESLint, eslint-config-next | Reglas y consistencia de código |
 | **Fuentes** | Geist Sans, Geist Mono (Next/font) | Tipografía del sitio |
 
-El proyecto usa **Node.js 18+**. No hay base de datos: todo el contenido se sirve desde archivos estáticos (JSON, imágenes, PDF).
+El proyecto usa **Node.js 22.19+** (versión de CI en `.nvmrc`). No hay base de datos: todo el contenido se sirve desde archivos estáticos (JSON, imágenes, PDF).
 
 ---
 
@@ -116,7 +116,7 @@ La interfaz apuesta por una estética **clara y cálida**, inspirada en tonos ti
 
 ## Cómo correr el proyecto
 
-**Requisito:** Node.js 18+
+**Requisito:** Node.js 22.19+ (`nvm use`)
 
 ```bash
 git clone https://github.com/IS03/Argentina-universo.sur.git
@@ -134,7 +134,14 @@ npm install
 | `npm run dev`     | Servidor de desarrollo       |
 | `npm run build`   | Build para producción        |
 | `npm run start`   | Sirve el build (tras `build`)|
-| `npm run lint`    | ESLint                       |
+| `npm run lint`    | ESLint sin advertencias       |
+| `npm run typecheck` | Tipos de rutas y TypeScript |
+| `npm run validate` | Integridad de datos y assets |
+| `npm test`        | Pruebas de regresión         |
+| `npm run check`   | Lint, tipos, integridad, tests y build |
+
+GitHub Actions ejecuta estos controles en cada PR y en `main`. Criterios de regiones,
+compatibilidad de URLs, agenda y contrato de datos: [docs/DATA-ASSETS.md](docs/DATA-ASSETS.md).
 
 ---
 

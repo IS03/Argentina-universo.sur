@@ -1,6 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { getEventosSantaFe } from "@/lib/data";
+import { getAgendaSantaFe } from "@/lib/data";
 import EventosSection from "@/components/santa-fe/EventosSection";
 import Breadcrumb from "@/components/santa-fe/Breadcrumb";
 import SidebarNavigation from "@/components/santa-fe/SidebarNavigation";
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
 };
 
 export default async function EventosPage() {
-  const eventos = await getEventosSantaFe();
+  const { vigentes, anteriores } = await getAgendaSantaFe();
 
   return (
     <>
@@ -64,10 +64,18 @@ export default async function EventosPage() {
                 Calendario de Eventos en Santa Fe
               </h1>
               <p className="text-[#6B5D47] text-lg mb-8">
-                Consultá todos los eventos y actividades que se realizan en Santa Fe durante el año
+                Consultá los próximos eventos, las actividades en curso y el archivo de eventos anteriores de Santa Fe.
               </p>
 
-              <EventosSection eventos={eventos} />
+              <EventosSection eventos={vigentes} />
+              {anteriores.length > 0 && (
+                <details className="text-[#5A4E3D] mb-8">
+                  <summary className="cursor-pointer text-lg font-semibold mb-6">
+                    Eventos anteriores ({anteriores.length})
+                  </summary>
+                  <EventosSection eventos={anteriores} titulo="Eventos anteriores" id="eventos-anteriores" />
+                </details>
+              )}
             </div>
           </div>
         </div>

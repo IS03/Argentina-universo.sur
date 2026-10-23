@@ -1,0 +1,38 @@
+name: Controles de integridad
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      NEXT_TELEMETRY_DISABLED: 1
+      TZ: UTC
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - name: Lint (sin advertencias)
+        run: npm run lint
+      - name: TypeScript y tipos de rutas de Next.js
+        run: npm run typecheck
+      - name: Integridad de datos, imágenes y PDF
+        run: npm run validate
+      - name: Pruebas de regresión
+        run: npm test
+      - name: Build de producción
+        run: npm run build

@@ -10,110 +10,34 @@ interface CarruselProps {
 
 export default function Carrusel({ fotos, alt }: CarruselProps) {
   const [indiceActual, setIndiceActual] = useState(0);
-  const intervaloRef = useRef<NodeJS.Timeout | null>(null);
-  const pausadoRef = useRef(false);
-  const timeoutReanudarRef = useRef<NodeJS.Timeout | null>(null);
-  const indiceActualRef = useRef(0);
+  const [pausado, setPausado] = useState(false);
+  const timeoutReanudarRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const cantidad = fotos.length;
+  const indiceVisible = cantidad > 0 ? indiceActual % cantidad : 0;
 
   useEffect(() => {
-    indiceActualRef.current = indiceActual;
-  }, [indiceActual]);
-
-  if (!fotos || fotos.length === 0) {
-    return null;
-  }
-
-  const cambiarImagen = (nuevoIndice: number, esAutomatico: boolean = false) => {
-    // Normalizar el índice correctamente para ciclo infinito
-    let indiceNormalizado: number;
-    if (nuevoIndice >= 0) {
-      indiceNormalizado = nuevoIndice % fotos.length;
-    } else {
-      indiceNormalizado = ((nuevoIndice % fotos.length) + fotos.length) % fotos.length;
-    }
-
-    // Evitar cambiar si es la misma imagen
-    if (indiceNormalizado === indiceActualRef.current) {
-      return;
-    }
-
-    if (!esAutomatico) {
-      // Pausar el autoplay cuando el usuario interactúa manualmente
-      if (intervaloRef.current) {
-        clearInterval(intervaloRef.current);
-        intervaloRef.current = null;
-      }
-      pausadoRef.current = true;
-
-      // Limpiar timeout anterior si existe
-      if (timeoutReanudarRef.current) {
-        clearTimeout(timeoutReanudarRef.current);
-      }
-
-      // Reanudar después de 4 segundos
-      timeoutReanudarRef.current = setTimeout(() => {
-        pausadoRef.current = false;
-        iniciarAutoPlay();
-      }, 4000);
-    }
-
-    // Actualizar el ref inmediatamente
-    indiceActualRef.current = indiceNormalizado;
-    
-    // Cambiar el índice directamente sin animaciones
-    setIndiceActual(indiceNormalizado);
-  };
-
-  const iniciarAutoPlay = () => {
-    if (fotos.length <= 1 || pausadoRef.current) return;
-
-    // Limpiar intervalo anterior si existe
-    if (intervaloRef.current) {
-      clearInterval(intervaloRef.current);
-    }
-
-    // Cambiar cada 3 segundos (3000ms)
-    intervaloRef.current = setInterval(() => {
-      if (pausadoRef.current) return;
-      
-      // Calcular el siguiente índice con ciclo infinito
-      // Usar el ref directamente para asegurar que siempre tenemos el valor más actualizado
-      const indiceActual = indiceActualRef.current;
-      const siguienteIndice = (indiceActual + 1) % fotos.length;
-      
-      // Cambiar la imagen - ahora el módulo ya está aplicado aquí también
-      cambiarImagen(siguienteIndice, true);
+    if (cantidad <= 1 || pausado) return;
+    const intervalo = setInterval(() => {
+      setIndiceActual(indice => (indice + 1) % cantidad);
     }, 3000);
-  };
+    return () => clearInterval(intervalo);
+  }, [cantidad, pausado]);
 
-  useEffect(() => {
-    iniciarAutoPlay();
+  useEffect(() => () => {
+    if (timeoutReanudarRef.current) clearTimeout(timeoutReanudarRef.current);
+  }, []);
 
-    return () => {
-      if (intervaloRef.current) {
-        clearInterval(intervaloRef.current);
-      }
-      if (timeoutReanudarRef.current) {
-        clearTimeout(timeoutReanudarRef.current);
-      }
-    };
-  }, [fotos.length]);
-
-  const siguiente = () => {
-    // Calcular siguiente con ciclo infinito
-    const siguienteIndice = (indiceActual + 1) % fotos.length;
-    cambiarImagen(siguienteIndice, false);
-  };
-
-  const anterior = () => {
-    // Calcular anterior con ciclo infinito (si es -1, se normaliza a la última)
-    const anteriorIndice = ((indiceActual - 1) + fotos.length) % fotos.length;
-    cambiarImagen(anteriorIndice, false);
-  };
+  // Todos los hooks se ejecutan incluso cuando la lista está vacía.
+  if (cantidad === 0) return null;
 
   const irA = (indice: number) => {
-    cambiarImagen(indice, false);
+    setIndiceActual(((indice % cantidad) + cantidad) % cantidad);
+    setPausado(true);
+    if (timeoutReanudarRef.current) clearTimeout(timeoutReanudarRef.current);
+    timeoutReanudarRef.current = setTimeout(() => setPausado(false), 4000);
   };
+  const siguiente = () => irA(indiceVisible + 1);
+  const anterior = () => irA(indiceVisible - 1);
 
   return (
     <div className="relative w-full">
@@ -121,15 +45,15 @@ export default function Carrusel({ fotos, alt }: CarruselProps) {
         {/* Imagen actual - sin animaciones */}
         <div className="absolute inset-0">
           <Image
-            src={fotos[indiceActual]}
-            alt={`${alt} - Imagen ${indiceActual + 1} de ${fotos.length}`}
+            src={fotos[indiceVisible]}
+            alt={`${alt} - Imagen ${indiceVisible + 1} de ${fotos.length}`}
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 1200px"
             className="object-cover"
-            priority={indiceActual === 0}
+            priority={indiceVisible === 0}
             quality={85}
-            onError={(e) => {
-              console.error("Error cargando imagen:", fotos[indiceActual]);
+            onError={() => {
+              console.error("Error cargando imagen:", fotos[indiceVisible]);
             }}
           />
         </div>
@@ -193,7 +117,7 @@ export default function Carrusel({ fotos, alt }: CarruselProps) {
               key={indice}
               onClick={() => irA(indice)}
               className={`h-2 rounded-full ${
-                indice === indiceActual
+                indice === indiceVisible
                   ? "w-8 bg-white"
                   : "w-2 bg-white/50 hover:bg-white/75"
               }`}
