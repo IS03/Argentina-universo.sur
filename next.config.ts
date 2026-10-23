@@ -1,9 +1,15 @@
 import type { NextConfig } from "next";
+import { PUBLIC_REDIRECTS } from "./lib/seo.ts";
 
 const nextConfig: NextConfig = {
   turbopack: { root: process.cwd() },
   async redirects() {
-    return [{ source: "/provincias/catamarca", destination: "/provincias/catarmaca", permanent: true }];
+    return PUBLIC_REDIRECTS;
+  },
+  async headers() {
+    return process.env.VERCEL_ENV === "preview"
+      ? [{ source: "/:path*", headers: [{ key: "X-Robots-Tag", value: "noindex, nofollow" }] }]
+      : [];
   },
   images: {
     qualities: [75, 85],

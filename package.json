@@ -10,9 +10,12 @@
     "typecheck": "next typegen && tsc --noEmit",
     "validate": "node --experimental-strip-types scripts/validate-data.mjs",
     "test": "node --experimental-strip-types --test tests/*.test.mjs",
-    "check": "npm run lint && npm run typecheck && npm run validate && npm test && npm run build"
+    "check": "npm run lint && npm run typecheck && npm run validate && npm test && npm run build && npm run audit:seo",
+    "audit:seo": "node --experimental-strip-types scripts/audit-seo.mjs"
   },
   "dependencies": {
+    "@vercel/analytics": "2.0.1",
+    "@vercel/speed-insights": "2.0.0",
     "leaflet": "^1.9.4",
     "next": "16.1.1",
     "react": "19.2.3",

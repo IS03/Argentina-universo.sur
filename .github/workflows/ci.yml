@@ -36,3 +36,5 @@ jobs:
         run: npm test
       - name: Build de producción
         run: npm run build
+      - name: Auditoría SEO del HTML, sitemap, robots y redirects
+        run: npm run audit:seo

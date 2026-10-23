@@ -138,7 +138,8 @@ npm install
 | `npm run typecheck` | Tipos de rutas y TypeScript |
 | `npm run validate` | Integridad de datos y assets |
 | `npm test`        | Pruebas de regresión         |
-| `npm run check`   | Lint, tipos, integridad, tests y build |
+| `npm run audit:seo` | Audita HTML de 106 páginas, sitemap, robots y redirects después del build |
+| `npm run check`   | Lint, tipos, integridad, tests, build y auditoría SEO |
 
 GitHub Actions ejecuta estos controles en cada PR y en `main`. Criterios de regiones,
 compatibilidad de URLs, agenda y contrato de datos: [docs/DATA-ASSETS.md](docs/DATA-ASSETS.md).
@@ -165,3 +166,14 @@ En `docs/` hay notas sobre:
 - Uso y convenciones de datos y assets.
 
 Conviene mantener esa documentación al día cuando se cambien rutas, datos o criterios de SEO.
+
+## SEO técnico y observabilidad
+
+La identidad pública es **https://www.argentinauniversosur.com**, centralizada en
+`lib/seo.ts`. Sitemap, canonical y Open Graph usan ese origen también en Preview,
+donde se envían señales `noindex`. El sitemap no inventa fechas de modificación.
+Catamarca usa `/provincias/catamarca` con redirección permanente desde la variante
+histórica. Web Analytics y Speed Insights se integran en el layout raíz.
+
+- [Indexación y pasos de Google Search Console](docs/SEO-INDEXACION.md).
+- [Activaciones y comprobaciones en Vercel](docs/OBSERVABILIDAD-VERCEL.md).

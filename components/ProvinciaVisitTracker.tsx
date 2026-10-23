@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import { resolveProvinciaSlug } from "@/lib/catalog";
 
 interface ProvinciaVisitTrackerProps {
   slug: string;
@@ -30,7 +31,7 @@ export default function ProvinciaVisitTracker({ slug }: ProvinciaVisitTrackerPro
       }
 
       // Remover el slug si ya existe (para evitar duplicados)
-      slugsVisitados = slugsVisitados.filter(s => s.slug !== slug);
+      slugsVisitados = slugsVisitados.filter(s => resolveProvinciaSlug(s.slug) !== slug);
       
       // Agregar al final (más reciente) con timestamp
       slugsVisitados.push({ slug, timestamp: Date.now(), type: 'provincia' });

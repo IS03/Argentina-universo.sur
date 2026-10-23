@@ -4,38 +4,9 @@ import { getPlanesSantaFe } from "@/lib/data";
 import PlanesSection from "@/components/santa-fe/PlanesSection";
 import Breadcrumb from "@/components/santa-fe/Breadcrumb";
 import SidebarNavigation from "@/components/santa-fe/SidebarNavigation";
-import type { Metadata } from "next";
+import { staticPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Planes Turísticos Santa Fe | Ideas",
-  description: "Descubrí los mejores planes e ideas turísticas en Santa Fe. Bodegones, turismo estudiantil, museos virtuales y más propuestas para disfrutar tu viaje.",
-  keywords: ["planes turísticos santa fe", "qué hacer santa fe", "ideas turismo santa fe", "planes santa fe", "turismo santa fe"],
-  openGraph: {
-    title: "Planes Turísticos Santa Fe | Ideas",
-    description: "Descubrí los mejores planes e ideas turísticas en Santa Fe. Bodegones, turismo estudiantil, museos virtuales y más.",
-    url: "/provincias/santa_fe/planes",
-    siteName: "Argentina Universo Sur",
-    images: [
-      {
-        url: "/img/provincias/santa-fe/1.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Planes turísticos en Santa Fe",
-      },
-    ],
-    locale: "es_AR",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Planes Turísticos Santa Fe | Ideas",
-    description: "Descubrí los mejores planes e ideas turísticas en Santa Fe",
-    images: ["/img/provincias/santa-fe/1.jpg"],
-  },
-  alternates: {
-    canonical: "/provincias/santa_fe/planes",
-  },
-};
+export const metadata = staticPageMetadata("/provincias/santa_fe/planes");
 
 export default async function PlanesPage() {
   const planes = await getPlanesSantaFe();

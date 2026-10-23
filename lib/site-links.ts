@@ -1,3 +1,5 @@
+import { resolveProvinciaSlug } from "./catalog.ts";
+
 /**
  * Rutas y textos ancla para enlazado interno (SEO).
  * Centraliza URLs para evitar links rotos y mantiene textos ancla descriptivos.
@@ -11,9 +13,9 @@ export const ROUTES = {
   actividades: "/actividades",
   escapadas: "/escapadas",
   seguridad: "/seguridad",
-  provincia: (slug: string) => `/provincias/${slug}`,
+  provincia: (slug: string) => `/provincias/${resolveProvinciaSlug(slug)}`,
   actividad: (slug: string) => `/actividades/${slug}`,
-  actividadesPorProvincia: (slug: string) => `/actividades?provincia=${slug}`,
+  actividadesPorProvincia: (slug: string) => `/actividades?provincia=${resolveProvinciaSlug(slug)}`,
 } as const;
 
 /** Textos ancla descriptivos para navegación principal (Navbar/Footer) */

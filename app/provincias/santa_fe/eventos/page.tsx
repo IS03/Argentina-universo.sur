@@ -4,38 +4,9 @@ import { getAgendaSantaFe } from "@/lib/data";
 import EventosSection from "@/components/santa-fe/EventosSection";
 import Breadcrumb from "@/components/santa-fe/Breadcrumb";
 import SidebarNavigation from "@/components/santa-fe/SidebarNavigation";
-import type { Metadata } from "next";
+import { staticPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Eventos Santa Fe | Calendario",
-  description: "Calendario completo de eventos en Santa Fe. Fiestas regionales, carnavales, festivales y más actividades. Consultá la agenda cultural y eventos del año.",
-  keywords: ["eventos santa fe", "festivales santa fe", "agenda cultural santa fe", "calendario eventos santa fe", "fiestas santa fe"],
-  openGraph: {
-    title: "Eventos Santa Fe | Calendario",
-    description: "Calendario completo de eventos en Santa Fe. Fiestas regionales, carnavales, festivales y más actividades.",
-    url: "/provincias/santa_fe/eventos",
-    siteName: "Argentina Universo Sur",
-    images: [
-      {
-        url: "/img/provincias/santa-fe/1.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Eventos en Santa Fe",
-      },
-    ],
-    locale: "es_AR",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Eventos Santa Fe | Calendario",
-    description: "Calendario completo de eventos en Santa Fe. Fiestas regionales, carnavales, festivales y más.",
-    images: ["/img/provincias/santa-fe/1.jpg"],
-  },
-  alternates: {
-    canonical: "/provincias/santa_fe/eventos",
-  },
-};
+export const metadata = staticPageMetadata("/provincias/santa_fe/eventos");
 
 export default async function EventosPage() {
   const { vigentes, anteriores } = await getAgendaSantaFe();

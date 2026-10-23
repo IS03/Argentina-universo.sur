@@ -75,11 +75,11 @@ export interface Escapada {
   zona: string;
 }
 
-// Conservar estos slugs: ya forman parte de las URLs públicas (incluido catarmaca).
+// Slugs canónicos. El slug histórico catarmaca redirige permanentemente a catamarca.
 // Criterio y tabla completa: docs/DATA-ASSETS.md.
 export const REGION_POR_PROVINCIA: Record<string, string> = {
   buenos_aires: "Buenos Aires", caba: "Buenos Aires",
-  catarmaca: "Norte", jujuy: "Norte", la_rioja: "Norte", salta: "Norte",
+  catamarca: "Norte", jujuy: "Norte", la_rioja: "Norte", salta: "Norte",
   santiago_del_estero: "Norte", tucuman: "Norte",
   chaco: "Litoral", corrientes: "Litoral", entre_rios: "Litoral",
   formosa: "Litoral", misiones: "Litoral", santa_fe: "Litoral",
@@ -91,9 +91,9 @@ export const REGION_POR_PROVINCIA: Record<string, string> = {
 
 export const REGIONES = ["Norte", "Litoral", "Centro", "Cuyo", "Buenos Aires", "Patagonia"];
 
-// El catálogo de actividades usaba catamarca, mientras que la URL publicada usa catarmaca.
+// Compatibilidad con URLs, filtros e historial anteriores a PR 02.
 export function resolveProvinciaSlug(slug: string): string {
-  return slug === "catamarca" ? "catarmaca" : slug;
+  return slug === "catarmaca" ? "catamarca" : slug;
 }
 
 export function createSlug(text: string): string {
