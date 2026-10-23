@@ -1,21 +1,15 @@
-import { Suspense } from "react";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import ActividadesExplorer, { ActividadesListado } from "@/components/actividades/ActividadesExplorer";
-import type { ProvinciaOpcion } from "@/components/actividades/ActividadesExplorer";
+import ActividadesExplorer from "@/components/actividades/ActividadesExplorer";
 import { ROUTES, INTERNAL_ANCHORS } from "@/lib/site-links";
-import { TODAS_LAS_PROVINCIAS } from "@/lib/catalog";
-import type { ActividadResumen } from "@/lib/catalog";
+import { getActividades, getProvinciasEnOrdenDeCatalogo } from "@/lib/data";
+import { resumirActividad } from "@/lib/catalog";
 
-interface ActividadesContentProps {
-  actividades: ActividadResumen[];
-  provincias: ProvinciaOpcion[];
-}
-
-// Server Component. La página es estática: el HTML incluye las 72 actividades y el filtro
-// solo se ejecuta en el navegador, que es quien conoce el parámetro ?provincia.
-export default function ActividadesContent({ actividades, provincias }: ActividadesContentProps) {
+// Server Component estático. Se prerenderiza una vez por filtro (todas, cada provincia y sin
+// resultados), así el HTML ya muestra lo que pide ?provincia; el navegador solo cambia el filtro.
+export default async function ActividadesContent({ seleccionInicial }: { seleccionInicial: string }) {
+  const [actividades, provincias] = await Promise.all([getActividades(), getProvinciasEnOrdenDeCatalogo()]);
   return (
     <>
       <Navbar />
@@ -44,9 +38,12 @@ export default function ActividadesContent({ actividades, provincias }: Activida
             </nav>
           </div>
 
-          <Suspense fallback={<ActividadesListado actividades={actividades} provincias={provincias} seleccion={TODAS_LAS_PROVINCIAS} />}>
-            <ActividadesExplorer actividades={actividades} provincias={provincias} />
-          </Suspense>
+          <ActividadesExplorer
+            key={seleccionInicial}
+            actividades={actividades.map(resumirActividad)}
+            provincias={provincias.map(({ provincia, slug }) => ({ provincia, slug }))}
+            seleccionInicial={seleccionInicial}
+          />
         </div>
       </main>
       <Footer />

@@ -1,10 +1,15 @@
 import type { NextConfig } from "next";
 import { PUBLIC_REDIRECTS } from "./lib/seo.ts";
+import { ACTIVIDADES_FILTRO_REWRITES, ACTIVIDADES_FILTRO_REDIRECTS } from "./lib/site-links.ts";
 
 const nextConfig: NextConfig = {
   turbopack: { root: process.cwd() },
   async redirects() {
-    return PUBLIC_REDIRECTS;
+    return [...PUBLIC_REDIRECTS, ...ACTIVIDADES_FILTRO_REDIRECTS];
+  },
+  // beforeFiles: /actividades existe como página estática y, si no, ganaría al rewrite.
+  async rewrites() {
+    return { beforeFiles: ACTIVIDADES_FILTRO_REWRITES, afterFiles: [], fallback: [] };
   },
   async headers() {
     return process.env.VERCEL_ENV === "preview"

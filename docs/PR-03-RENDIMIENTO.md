@@ -5,7 +5,7 @@
 | Ruta | Antes | Después |
 | --- | --- | --- |
 | `/` | `HomeContent` cliente (26 KB de fuente): `fetch` de `provincias.json` y `actividades.json`, estado “Cargando…”, re-render completo en cada evento de scroll, altura medida con `ResizeObserver`. | `HomeContent` es Server Component. Islas cliente: `HeroCarousel`, `HomeScrollStage`, `ExplorarDestinosButton`, `ContinuarExplorando`. |
-| `/actividades` | `ActividadesContent` cliente dentro de `Suspense`: el HTML estático solo tenía “Cargando actividades…”; luego `fetch` de ambos JSON. | `ActividadesContent` es Server Component. El HTML incluye las 72 tarjetas (fallback de `Suspense` renderizado en el servidor). `ActividadesExplorer` (cliente) solo filtra en memoria. |
+| `/actividades` | `ActividadesContent` cliente dentro de `Suspense`: el HTML estático solo tenía “Cargando actividades…”; luego `fetch` de ambos JSON. | `ActividadesContent` es Server Component, prerenderizado una vez por filtro (ver “Filtro por URL”). El HTML de `/actividades` incluye las 72 tarjetas y el de `?provincia=…`, solo las de esa provincia. `ActividadesExplorer` (cliente) solo cambia el filtro en memoria. |
 
 ### Qué pasó de cliente a servidor
 
@@ -22,7 +22,7 @@
 | `HomeScrollStage` | Efectos de scroll. Escribe variables CSS (`--hero-*`) y el `transform` del contenido una vez por frame (`requestAnimationFrame`), sin estado de React. El layout es CSS puro (hero `sticky` + contenido en el flujo), así que no se miden alturas. |
 | `ExplorarDestinosButton` | Desplazamiento suave con compensación del navbar. |
 | `ContinuarExplorando` | Lee `localStorage`. Solo si hay historial pide `/api/catalogo-resumen` (JSON estático del build, 4 KB gzip, `noindex`). |
-| `ActividadesExplorer` | Lee `?provincia` (incluido el alias `catarmaca`), filtra en memoria y sincroniza la URL con `history.replaceState`, sin navegar ni pedir datos. |
+| `ActividadesExplorer` | Recibe la selección inicial del servidor, filtra en memoria y sincroniza la URL con `history.replaceState`, sin navegar ni pedir datos. Un componente mínimo (`SincronizarUrl`, en su propio `Suspense`) mantiene la URL como fuente de verdad en atrás/adelante. |
 
 ### Imágenes del hero
 
@@ -103,12 +103,52 @@ común a todas las páginas. La reducción importante está en el trabajo que es
 cambian dentro del margen de variación. El CLS preexistente (`/provincias` 0,19 en móvil, detalle de
 actividad 0,31) queda documentado en “Pendientes”.
 
+## Filtro por URL (revisión posterior al merge del PR 03)
+
+### Problema
+
+`/actividades` es estática y el servidor no ve `?provincia`. En el PR 03, el HTML de
+`/actividades?provincia=santa_fe` traía las 72 tarjetas y el filtro se aplicaba al hidratar.
+Mediana de 5 corridas en móvil lento (Pixel 7, 150 ms RTT, 1,6 Mbps, CPU 4×):
+
+| Escenario | PR 03 (main) | Corrección |
+| --- | --- | --- |
+| Carga directa `?provincia=santa_fe` | 72 tarjetas y “Todas las provincias” durante ~1,4 s | 3 tarjetas correctas desde el primer pintado (0 ms incorrectos) |
+| Carga directa `?provincia=catarmaca` | ~1,4 s de contenido incorrecto | 3 tarjetas de Catamarca desde el primer pintado |
+| CLS en esas cargas | 0–0,001 | 0–0,001 |
+| Elección en el select antes de hidratar | Se perdía (3 de 3): volvía a “todas” | Se conserva y se aplica (3 de 3) |
+| Enlace “Ver qué hacer en …” desde la provincia | Correcto (navegación cliente) | Correcto |
+| Atrás/adelante y recarga tras cambiar el filtro | Correcto | Correcto (igual que main) |
+
+No había saltos de diseño medibles: el problema era contenido incorrecto visible y la elección perdida.
+
+### Solución
+
+- `app/actividades/por-provincia/[provincia]` prerenderiza 25 variantes estáticas en el build: las 24
+  provincias y una sin resultados.
+- Los rewrites `beforeFiles` de `next.config.ts` (`ACTIVIDADES_FILTRO_REWRITES` en
+  `lib/site-links.ts`) sirven cada variante bajo la URL pública. La URL no cambia y la página sigue en
+  CDN (`s-maxage`). El alias `catarmaca` va a Catamarca; un valor desconocido muestra el listado vacío,
+  como antes; un valor vacío muestra todas.
+- La ruta interna redirige (308) a `/actividades?provincia=…`. La metadata y el canonical siguen
+  siendo los de `/actividades`.
+- El explorador ya no usa `useSearchParams` sobre la grilla: React hidrata el HTML existente en lugar
+  de reemplazarlo. React 19 no reescribe el valor de un `<select>` al hidratar, así que una elección
+  hecha antes se adopta al montar.
+- `seleccionDesdeParametro` replica en el navegador la resolución de los rewrites. Una prueba unitaria
+  verifica que ambas coincidan para cada valor posible.
+
+Lighthouse móvil, mediana de 5, PR 03 → corrección: `?provincia=santa_fe` FCP 907 → 756 ms, hilo
+principal 543 → 461 ms, imágenes pedidas 16 → 5, HTML gzip 23,1 → 13,9 KB. `/actividades` sin filtro:
+TBT 14 → 9 ms, hilo principal 538 → 501 ms, JS +0,7 KB.
+
 ## Pruebas
 
-- `npm test`: 29 pruebas (23 previas + 6 nuevas en `tests/rendering.test.mjs`).
-- `npm run test:e2e`: 15 escenarios × escritorio y móvil (Playwright, Chrome del sistema). Fallan si hay
-  errores de consola o de hidratación, o pedidos a `/data/*.json`. Contra `main` fallan 14, lo que
-  confirma que detectan el problema.
+- `npm test`: 30 pruebas (23 previas + 7 nuevas en `tests/rendering.test.mjs`).
+- `npm run test:e2e`: 22 escenarios × escritorio y móvil (Playwright, Chrome del sistema). Fallan si hay
+  errores de consola o de hidratación, o pedidos a `/data/*.json`. Contra la base del PR 03 fallan 14;
+  contra el main posterior al merge fallan las 4 pruebas del filtro por URL que cubren el problema
+  (×2 perfiles). Las otras 3 de ese bloque protegen comportamiento que ya era correcto.
 - `npm run audit:seo`: 106 páginas, 0 errores.
 
 ## Pendientes detectados (fuera del alcance)
@@ -123,3 +163,5 @@ actividad 0,31) queda documentado en “Pendientes”.
    relación de aspecto reservada.
 4. **`/provincias`:** `ViajeArgentina` recibe las descripciones completas de las 24 provincias, que no
    usa. Se pueden reducir con los mismos resúmenes de este PR.
+5. **Error de hidratación intermitente en `/provincias/santa_fe`** (React #418, ~1 de 20 cargas). Ocurre
+   igual en main antes y después de este cambio y no afecta a `/actividades` (0 de 20).
