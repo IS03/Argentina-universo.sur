@@ -1,9 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Actividad } from "@/lib/data";
+import type { ActividadResumen } from "@/lib/catalog";
 
 interface ActividadCardProps {
-  actividad: Actividad;
+  actividad: ActividadResumen;
 }
 
 export default function ActividadCard({ actividad }: ActividadCardProps) {

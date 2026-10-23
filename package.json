@@ -10,8 +10,9 @@
     "typecheck": "next typegen && tsc --noEmit",
     "validate": "node --experimental-strip-types scripts/validate-data.mjs",
     "test": "node --experimental-strip-types --test tests/*.test.mjs",
-    "check": "npm run lint && npm run typecheck && npm run validate && npm test && npm run build && npm run audit:seo",
-    "audit:seo": "node --experimental-strip-types scripts/audit-seo.mjs"
+    "check": "npm run lint && npm run typecheck && npm run validate && npm test && npm run build && npm run audit:seo && npm run test:e2e",
+    "audit:seo": "node --experimental-strip-types scripts/audit-seo.mjs",
+    "test:e2e": "playwright test"
   },
   "dependencies": {
     "@vercel/analytics": "2.0.1",
@@ -23,6 +24,7 @@
     "react-leaflet": "^5.0.0"
   },
   "devDependencies": {
+    "@playwright/test": "1.64.1",
     "@tailwindcss/postcss": "^4",
     "@types/leaflet": "^1.9.21",
     "@types/node": "^20",

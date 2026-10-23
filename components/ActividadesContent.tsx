@@ -1,51 +1,21 @@
-"use client";
-
-import { useState, useEffect, Suspense } from "react";
+import { Suspense } from "react";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import ActividadCard from "@/components/ActividadCard";
+import ActividadesExplorer, { ActividadesListado } from "@/components/actividades/ActividadesExplorer";
+import type { ProvinciaOpcion } from "@/components/actividades/ActividadesExplorer";
 import { ROUTES, INTERNAL_ANCHORS } from "@/lib/site-links";
-import { normalizarActividad, resolveProvinciaSlug } from "@/lib/catalog";
-import type { Actividad, ActividadRaw, Provincia } from "@/lib/catalog";
-import { useSearchParams } from "next/navigation";
+import { TODAS_LAS_PROVINCIAS } from "@/lib/catalog";
+import type { ActividadResumen } from "@/lib/catalog";
 
-function ActividadesContent() {
-  const searchParams = useSearchParams();
-  const provinciaFiltro = searchParams.get("provincia");
-  
-  const [actividades, setActividades] = useState<Actividad[]>([]);
-  const [provincias, setProvincias] = useState<Pick<Provincia, "provincia" | "slug">[]>([]);
-  const [provinciaSeleccionada, setProvinciaSeleccionada] = useState<string>(
-    resolveProvinciaSlug(provinciaFiltro || "todas")
-  );
-  const [cargando, setCargando] = useState(true);
+interface ActividadesContentProps {
+  actividades: ActividadResumen[];
+  provincias: ProvinciaOpcion[];
+}
 
-  useEffect(() => {
-    // Cargar datos
-    async function cargarDatos() {
-      const [actividadesData, provinciasData] = await Promise.all([
-        fetch("/data/actividades.json").then((res) => res.json()),
-        fetch("/data/provincias.json").then((res) => res.json()),
-      ]);
-
-      const actividadesNormalizadas = (actividadesData as ActividadRaw[]).map(normalizarActividad);
-      const provinciasNormalizadas = (provinciasData as Array<{ PROVINCIA: string; SLUG: string }>).map(item => ({
-        provincia: item.PROVINCIA, slug: item.SLUG,
-      }));
-
-      setActividades(actividadesNormalizadas);
-      setProvincias(provinciasNormalizadas);
-      setCargando(false);
-    }
-
-    cargarDatos();
-  }, []);
-
-  const actividadesFiltradas = provinciaSeleccionada === "todas"
-    ? actividades
-    : actividades.filter((a) => a.slug === provinciaSeleccionada);
-
+// Server Component. La página es estática: el HTML incluye las 72 actividades y el filtro
+// solo se ejecuta en el navegador, que es quien conoce el parámetro ?provincia.
+export default function ActividadesContent({ actividades, provincias }: ActividadesContentProps) {
   return (
     <>
       <Navbar />
@@ -74,89 +44,12 @@ function ActividadesContent() {
             </nav>
           </div>
 
-          {/* Filtro por provincia */}
-          <div className="mb-12 flex justify-center">
-            <div className="bg-[#E8DDD0]/80 backdrop-blur-sm border border-[#C9B99B]/50 rounded-lg p-6 w-full max-w-md hover:border-[#A68B5B]/70 hover:bg-[#E8DDD0] transition-all duration-300">
-              <label
-                htmlFor="provincia-filtro"
-                className="block text-sm uppercase tracking-widest text-[#6B5D47] mb-4 text-center font-light"
-              >
-                Filtrar por provincia
-              </label>
-              <div className="relative">
-                <select
-                  id="provincia-filtro"
-                  value={provinciaSeleccionada}
-                  onChange={(e) => setProvinciaSeleccionada(e.target.value)}
-                  className="w-full bg-[#F5F1E8] border border-[#C9B99B]/50 text-[#5A4E3D] px-5 py-3.5 rounded-lg focus:outline-none focus:border-[#A68B5B]/70 focus:ring-2 focus:ring-[#A68B5B]/20 transition-all duration-300 appearance-none cursor-pointer hover:bg-[#FAF8F3] hover:border-[#A68B5B]/70 text-base font-light tracking-wide"
-                  style={{
-                    backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23ffffff' d='M6 9L1 4h10z'/%3E%3C/svg%3E")`,
-                    backgroundRepeat: 'no-repeat',
-                    backgroundPosition: 'right 1rem center',
-                    paddingRight: '2.5rem'
-                  }}
-                >
-                  <option value="todas" className="bg-[#F5F1E8]">Todas las provincias</option>
-                  {provincias.map((provincia) => (
-                    <option key={provincia.slug} value={provincia.slug} className="bg-[#F5F1E8]">
-                      {provincia.provincia}
-                    </option>
-                  ))}
-                </select>
-              </div>
-            </div>
-          </div>
-
-          {/* Grilla de actividades */}
-          <section aria-labelledby="actividades-por-provincia-heading">
-            <h2 id="actividades-por-provincia-heading" className="text-2xl md:text-3xl font-semibold uppercase tracking-widest mb-6 text-center text-[#5A4E3D]">
-              Actividades por provincia
-            </h2>
-          {cargando ? (
-            <div className="text-center py-12">
-              <p className="text-[#8B7355] text-lg">Cargando actividades...</p>
-            </div>
-          ) : actividadesFiltradas.length > 0 ? (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-              {/* Mostrar todas si es "Todas las provincias", sino máximo 4 */}
-              {(provinciaSeleccionada === "todas" 
-                ? actividadesFiltradas 
-                : actividadesFiltradas.slice(0, 4)
-              ).map((actividad) => (
-                <ActividadCard key={actividad.actividadSlug} actividad={actividad} />
-              ))}
-            </div>
-          ) : (
-            <div className="text-center py-12">
-              <p className="text-[#8B7355] text-lg">
-                No se encontraron actividades para la provincia seleccionada.
-              </p>
-            </div>
-          )}
-          </section>
+          <Suspense fallback={<ActividadesListado actividades={actividades} provincias={provincias} seleccion={TODAS_LAS_PROVINCIAS} />}>
+            <ActividadesExplorer actividades={actividades} provincias={provincias} />
+          </Suspense>
         </div>
       </main>
       <Footer />
     </>
-  );
-}
-
-export default function ActividadesPage() {
-  return (
-    <Suspense fallback={
-      <>
-        <Navbar />
-        <main className="min-h-screen pt-32 pb-16 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto">
-            <div className="text-center py-12">
-              <p className="text-[#8B7355] text-lg">Cargando actividades...</p>
-            </div>
-          </div>
-        </main>
-        <Footer />
-      </>
-    }>
-      <ActividadesContent />
-    </Suspense>
   );
 }

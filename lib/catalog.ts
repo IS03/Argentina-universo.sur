@@ -122,3 +122,28 @@ export function normalizarActividad(item: ActividadRaw): Actividad {
     actividadSlug: createSlug(item.ACTIVIDAD), lat: item.LATITUD, lon: item.LONGITUD,
   };
 }
+
+// Lo que necesita una tarjeta. Es lo único que viaja al navegador cuando un listado
+// interactivo recibe el catálogo: sin descripciones ni coordenadas.
+export type ProvinciaResumen = Pick<Provincia, "provincia" | "slug" | "fotos">;
+export type ActividadResumen = Pick<Actividad, "provincia" | "slug" | "actividad" | "localizacion" | "actividadSlug" | "fotos">;
+
+export function resumirProvincia(item: Provincia): ProvinciaResumen {
+  return { provincia: item.provincia, slug: item.slug, fotos: item.fotos.slice(0, 1) };
+}
+
+export function resumirActividad(item: Actividad): ActividadResumen {
+  return {
+    provincia: item.provincia, slug: item.slug, actividad: item.actividad,
+    localizacion: item.localizacion, actividadSlug: item.actividadSlug, fotos: item.fotos.slice(0, 1),
+  };
+}
+
+export const TODAS_LAS_PROVINCIAS = "todas";
+export const MAX_ACTIVIDADES_POR_PROVINCIA = 4;
+
+// Filtro de /actividades: el listado completo o, por provincia, como máximo cuatro.
+export function filtrarActividades<T extends Pick<Actividad, "slug">>(actividades: T[], provincia: string): T[] {
+  if (provincia === TODAS_LAS_PROVINCIAS) return actividades;
+  return actividades.filter(a => a.slug === provincia).slice(0, MAX_ACTIVIDADES_POR_PROVINCIA);
+}

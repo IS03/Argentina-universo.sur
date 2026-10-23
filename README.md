@@ -139,7 +139,8 @@ npm install
 | `npm run validate` | Integridad de datos y assets |
 | `npm test`        | Pruebas de regresión         |
 | `npm run audit:seo` | Audita HTML de 106 páginas, sitemap, robots y redirects después del build |
-| `npm run check`   | Lint, tipos, integridad, tests, build y auditoría SEO |
+| `npm run test:e2e` | E2E con Playwright (escritorio y móvil) sobre la build; usa Google Chrome del sistema |
+| `npm run check`   | Lint, tipos, integridad, tests, build, auditoría SEO y E2E |
 
 GitHub Actions ejecuta estos controles en cada PR y en `main`. Criterios de regiones,
 compatibilidad de URLs, agenda y contrato de datos: [docs/DATA-ASSETS.md](docs/DATA-ASSETS.md).
