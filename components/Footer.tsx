@@ -130,6 +130,9 @@ export default function Footer() {
             <p className="text-[#8B7355] text-xs text-center sm:text-left">
               © {new Date().getFullYear()} Argentina Universo Sur. Propiedad de Sebastián Miguel Giusti. Todos los derechos reservados.
             </p>
+            <Link href={ROUTES.privacidad} className="text-[#8B7355] hover:text-[#5A4E3D] text-xs underline underline-offset-2">
+              Privacidad y cookies
+            </Link>
             <p className="text-[#8B7355] text-xs text-center sm:text-right">
               Desarrollo <span className="font-semibold text-[#6B5D47]">IS</span>
             </p>

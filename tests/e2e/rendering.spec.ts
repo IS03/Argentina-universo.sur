@@ -579,7 +579,7 @@ test.describe("hidratación con streaming lento", () => {
 });
 
 test.describe("accesibilidad", () => {
-  for (const ruta of ["/", "/provincias", "/provincias/santa_fe", DETALLE]) {
+  for (const ruta of ["/", "/provincias", "/provincias/santa_fe", DETALLE, "/privacidad"]) {
     test(`${ruta}: todos los controles tienen nombre accesible`, async ({ page, errores }) => {
       void errores;
       await page.goto(ruta);
@@ -615,6 +615,19 @@ test.describe("accesibilidad", () => {
     await page.clock.runFor(10_000);
     await expect(imagen).toHaveAttribute("alt", /Imagen 1 de/);
   });
+});
+
+test("el pie enlaza al aviso de privacidad, que no se indexa y tiene su canonical", async ({ page, errores, request }) => {
+  void errores;
+  const html = await (await request.get("/privacidad")).text();
+  expect(html).toContain('<link rel="canonical" href="https://www.argentinauniversosur.com/privacidad"/>');
+  expect(html).toMatch(/<meta name="robots" content="noindex, follow"\/>/);
+  expect(html).toContain("Ley N° 25.326");
+  await page.goto("/");
+  await page.getByRole("contentinfo").getByRole("link", { name: "Privacidad y cookies" }).click();
+  await expect(page).toHaveURL(/\/privacidad$/);
+  await expect(page.getByRole("heading", { level: 1 })).toHaveText(/Privacidad y cookies/i);
+  await expect(page.locator('a[href^="mailto:"]').first()).toHaveAttribute("href", /^mailto:[^@\s]+@[^@\s]+\.[a-z]{2,}$/i);
 });
 
 // La build de CI y la local no son producción de Vercel: GA4 no debe cargarse ni enviar datos.
