@@ -133,3 +133,23 @@ test("la vista previa cubre el mapa en cualquier ancho y un móvil no descarga t
     assert.ok(teselas.every(t => ANCHOS_MINIMOS.includes(t.anchoMinimo)));
   }
 });
+
+// Next 16.3+ predice el segmento de /actividades?provincia=… (rewrite por query) a partir de
+// /actividades y su prefetch responde 404 (vercel/next.js#97244). Ningún enlace a esa URL debe
+// precargarse; el clic sigue navegando en el cliente.
+test("los enlaces a /actividades?provincia=… no se precargan", async () => {
+  const archivos = [];
+  for (const dir of ["app", "components"]) {
+    for (const entry of await readdir(join(projectRoot, dir), { recursive: true })) {
+      if (/\.(tsx|jsx)$/.test(entry)) archivos.push(join(dir, entry));
+    }
+  }
+  let enlaces = 0;
+  for (const path of archivos) {
+    for (const [link] of (await source(path)).matchAll(/<Link\b[^>]*?(?:actividadesPorProvincia|\?provincia=)[\s\S]*?>/g)) {
+      enlaces++;
+      assert.match(link, /prefetch=\{false\}/, `${path}: ${link.slice(0, 80)}`);
+    }
+  }
+  assert.ok(enlaces >= 1);
+});

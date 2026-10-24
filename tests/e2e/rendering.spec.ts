@@ -488,7 +488,7 @@ test.describe("mapas", () => {
     test.skip(isMobile, "solo escritorio");
     await page.goto(DETALLE);
     const teselas = page.locator('[role="region"] button img[src*="tile.openstreetmap.org"]');
-    await expect.poll(() => teselas.evaluateAll(imgs => imgs.filter(i => i.complete && i.naturalWidth > 0 && getComputedStyle(i).display !== "none").length)).toBeGreaterThanOrEqual(6);
+    await expect.poll(() => teselas.evaluateAll(imgs => (imgs as HTMLImageElement[]).filter(i => i.complete && i.naturalWidth > 0 && getComputedStyle(i).display !== "none").length)).toBeGreaterThanOrEqual(6);
   });
 
   test("Leaflet se carga al activar el mapa (toque o teclado) y responde a + y flechas", async ({ page, errores }) => {
