@@ -65,42 +65,40 @@ las activaciones o ajustes estén realizados por el mero hecho de fusionar el PR
 
 ### Integración
 
-- `app/layout.tsx` monta `GoogleAnalytics` de `@next/third-parties/google` (método documentado por
-  Next.js 16.4, misma versión que `next`). Carga `gtag.js` después de hidratar (`afterInteractive`).
-- El ID se lee de `NEXT_PUBLIC_GA_ID` y solo se renderiza si `VERCEL_ENV === "production"`
-  (`lib/analytics.ts`). En local, CI y Preview no hay scripts ni pedidos a Google; una prueba E2E lo
-  verifica. Un ID con formato inválido hace fallar el build de producción en lugar de medir mal.
-- Visitas de página: las registra la medición mejorada de GA4 (“Cambios de página basados en eventos
-  del historial del navegador”). No hay `page_view` manuales ni eventos personalizados. Verificado con
-  una build local de producción interceptando la recolección: una visita por carga, navegación interna,
-  atrás y recarga, sin duplicados. El cambio de provincia en el filtro de `/actividades` cambia la URL
-  (`replaceState`) y cuenta como una visita de `/actividades?provincia=…`.
+- `app/layout.tsx` monta `MedicionConConsentimiento` (`components/consentimiento/`) solo si
+  `idMedicionGA(process.env)` devuelve un ID: `VERCEL_ENV === "production"` y `NEXT_PUBLIC_GA_ID` válido.
+  En local, CI y Preview no hay banner ni scripts de Google.
+- **Modo de consentimiento básico:** GA4 no se carga ni envía nada hasta que la persona acepta en el
+  banner. Al aceptar, se fijan los permisos (`COMANDOS_CONSENTIMIENTO` en `lib/analytics.ts`: analítica
+  concedida, publicidad denegada, sin Google Signals ni personalización de anuncios) y recién entonces se
+  monta `GoogleAnalytics` de `@next/third-parties`.
+- **Rechazo:** no se carga GA4. Si había aceptado en esa pestaña, se envía `consent update` denegado, se
+  activa `ga-disable-<ID>` y se borran las cookies `_ga` y `_ga_<ID>`.
+- **Decisión guardada:** `localStorage["consentimientoCookies"]` con versión y fecha (`lib/consentimiento.ts`).
+  Vale 12 meses; subir `VERSION_CONSENTIMIENTO` vuelve a preguntar a todos. Se puede cambiar en
+  `/privacidad` (panel “Tu decisión sobre las cookies”), enlazada desde el pie.
+- **Rendimiento:** el banner viene en el HTML y se pinta con la página; un script mínimo en `<head>`
+  (`SCRIPT_DECISION_INICIAL`) oculta el banner a quien ya decidió antes del primer pintado. Así no aparece
+  más tarde como nuevo LCP ni parpadea. Es fijo: no desplaza contenido (CLS 0).
+- **Visitas:** las registra la medición mejorada de GA4 (eventos del historial). No hay `page_view`
+  manuales. Verificado con gtag.js real y la recolección interceptada: una visita por carga, navegación
+  interna, atrás y recarga, sin duplicados.
 
-### Privacidad y consentimiento
+### Pruebas
 
-Antes del `config`, un script `beforeInteractive` fija el modo de consentimiento v2:
-
-| Región | `analytics_storage` | Publicidad (`ad_storage`, `ad_user_data`, `ad_personalization`) |
-| --- | --- | --- |
-| EEE, Reino Unido y Suiza | denegado: pings sin cookies, sin `_ga` | denegado |
-| Resto (incluida Argentina) | concedido | denegado |
-
-Además: `allow_google_signals: false`, `allow_ad_personalization_signals: false` y
-`ads_data_redaction: true`. No se envían `user_id`, correos, teléfonos ni otros datos personales;
-las URLs del sitio no los contienen. GA4 no almacena direcciones IP.
-
-Pendiente de decisión antes de activar: el sitio no tiene una página de privacidad. La Ley 25.326 exige
-informar el tratamiento; se recomienda publicar un aviso de privacidad y cookies que mencione GA4 y Vercel
-Analytics. Para medir con cookies a visitantes del EEE/Reino Unido/Suiza haría falta un banner de
-consentimiento (CMP) que actualice `analytics_storage`.
+`npm run test:e2e` levanta, además de la build normal, una build de producción simulada en
+`.next-consentimiento` (`NEXT_DIST_DIR`) con el ID ficticio `G-PRUEBA0001` en el puerto 3201. Allí
+`tests/e2e/consentimiento.spec.ts` reemplaza gtag.js por un sustituto local e intercepta cualquier envío
+a Google: nada sale a internet ni llega a la propiedad real. `tsconfig.json` ya incluye esos tipos para
+que Next no lo reescriba; no usar otro valor de `NEXT_DIST_DIR`.
 
 ### Activación en Vercel
 
 1. En **Settings → Environment Variables**, crear `NEXT_PUBLIC_GA_ID` = `G-0DQ0YWHJNZ` solo para
-   **Production**. Sin esa variable, el código no carga GA4.
+   **Production**. Sin esa variable no hay banner ni GA4.
 2. Volver a desplegar producción (las variables `NEXT_PUBLIC_` se fijan en el build).
 3. En GA4: **Admin → Flujos de datos → Web → Medición mejorada**, confirmar activa la opción “Cambios de
-   página basados en eventos del historial del navegador”. Verificar en **Informes → Tiempo real** y con
-   **DebugView** (extensión Google Analytics Debugger) que llega un `page_view` por navegación.
+   página basados en eventos del historial del navegador”. Aceptar el banner y verificar en
+   **Informes → Tiempo real** y **DebugView** que llega un `page_view` por navegación.
 4. En GA4: **Admin → Recopilación de datos**, mantener desactivadas Google Signals y la personalización
-   de anuncios, y fijar la retención de datos según la política de privacidad.
+   de anuncios; retención de eventos: 14 meses.

@@ -3,13 +3,13 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import { GoogleAnalytics } from "@next/third-parties/google";
-import Script from "next/script";
 import { SITE_URL, SITE_NAME } from "@/lib/seo";
-import { idMedicionGA, SCRIPT_CONSENTIMIENTO } from "@/lib/analytics";
+import { idMedicionGA } from "@/lib/analytics";
+import MedicionConConsentimiento from "@/components/consentimiento/MedicionConConsentimiento";
+import { SCRIPT_DECISION_INICIAL } from "@/lib/consentimiento";
 
 const isPreview = process.env.VERCEL_ENV === "preview";
-// GA4 solo en producción y con NEXT_PUBLIC_GA_ID; en local, CI y Preview queda en null.
+// GA4 solo en producción y con NEXT_PUBLIC_GA_ID; en local, CI y Preview queda en null y no hay banner.
 const gaId = idMedicionGA(process.env);
 
 const geistSans = Geist({
@@ -45,7 +45,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es">
+    // suppressHydrationWarning: el script del <head> puede marcar <html data-consentimiento> antes de hidratar.
+    <html lang="es" suppressHydrationWarning={gaId ? true : undefined}>
+      {gaId && (
+        <head>
+          {/* Oculta el banner a quien ya decidió, antes del primer pintado. */}
+          <script id="decision-cookies" dangerouslySetInnerHTML={{ __html: SCRIPT_DECISION_INICIAL }} />
+          {/* Sin JavaScript GA4 no puede cargarse: no tiene sentido pedir permiso. */}
+          <noscript>
+            <style>{"#aviso-cookies{display:none}"}</style>
+          </noscript>
+        </head>
+      )}
       <body
         className={`
           ${geistSans.variable}
@@ -57,13 +68,8 @@ export default function RootLayout({
         {children}
         <Analytics />
         <SpeedInsights />
-        {gaId && (
-          <>
-            {/* El consentimiento por defecto debe llegar al dataLayer antes del config de GA4. */}
-            <Script id="ga-consentimiento" strategy="beforeInteractive" dangerouslySetInnerHTML={{ __html: SCRIPT_CONSENTIMIENTO }} />
-            <GoogleAnalytics gaId={gaId} />
-          </>
-        )}
+        {/* GA4 se carga solo después de que la persona acepta en el banner. */}
+        {gaId && <MedicionConConsentimiento gaId={gaId} />}
       </body>
     </html>
   );

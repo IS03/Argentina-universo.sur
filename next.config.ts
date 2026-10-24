@@ -3,6 +3,8 @@ import { PUBLIC_REDIRECTS } from "./lib/seo.ts";
 import { ACTIVIDADES_FILTRO_REWRITES, ACTIVIDADES_FILTRO_REDIRECTS } from "./lib/site-links.ts";
 
 const nextConfig: NextConfig = {
+  // Solo para la build de pruebas del consentimiento (playwright.config.ts); por defecto, .next.
+  distDir: process.env.NEXT_DIST_DIR || ".next",
   turbopack: { root: process.cwd() },
   async redirects() {
     return [...PUBLIC_REDIRECTS, ...ACTIVIDADES_FILTRO_REDIRECTS];
