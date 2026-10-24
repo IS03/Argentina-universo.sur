@@ -1,0 +1,71 @@
+"use client";
+import { preload as preloadResource } from "react-dom";
+import type { ImageProps } from "next/image";
+import assets from "@/lib/prototype-images.json";
+export default function PrototypeImage({
+  src,
+  alt,
+  fill,
+  preload,
+  priority,
+  quality,
+  unoptimized,
+  sizes,
+  style,
+  loading,
+  width,
+  height,
+  ...rest
+}: ImageProps) {
+  void quality;
+  void unoptimized;
+  const raw =
+    typeof src === "string"
+      ? src
+      : "default" in src
+        ? src.default.src
+        : src.src;
+  const found = (
+    assets as Record<
+      string,
+      { variants: { url: string; width: number; format: string }[] }
+    >
+  )[raw.split(/[?#]/)[0]];
+  const variants = found?.variants.filter((v) => v.format === "webp") || [];
+  const selected = variants.at(-1);
+  const url = selected?.url || raw;
+  const srcSet = variants.length
+    ? variants.map((v) => `${v.url} ${v.width}w`).join(", ")
+    : undefined;
+  if (preload || priority)
+    preloadResource(url, {
+      as: "image",
+      imageSrcSet: srcSet,
+      imageSizes: sizes || "100vw",
+      fetchPriority: "high",
+    });
+  // Intentional ordinary img: no /_next/image endpoint, no runtime transformation/paid binding.
+  return (
+    <img
+      {...rest}
+      src={url}
+      alt={alt}
+      srcSet={srcSet}
+      sizes={sizes}
+      width={fill ? undefined : width}
+      height={fill ? undefined : height}
+      loading={preload || priority ? "eager" : loading || "lazy"}
+      style={
+        fill
+          ? {
+              position: "absolute",
+              inset: 0,
+              width: "100%",
+              height: "100%",
+              ...style,
+            }
+          : style
+      }
+    />
+  );
+}

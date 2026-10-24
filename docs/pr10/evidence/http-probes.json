@@ -1,0 +1,148 @@
+{
+  "scope": "Local workerd, 200ms async RSC with connection(); raw node:http. No billed CPU or remote edge claim.",
+  "streaming": [
+    {
+      "run": 1,
+      "headersAtMs": 55.913375,
+      "chunks": [
+        {
+          "atMs": 60.16445900000001,
+          "bytes": 4631,
+          "hasFallback": true,
+          "hasCompletedMarkup": false
+        },
+        {
+          "atMs": 60.19137500000001,
+          "bytes": 8186,
+          "hasFallback": true,
+          "hasCompletedMarkup": false
+        },
+        {
+          "atMs": 60.211,
+          "bytes": 12986,
+          "hasFallback": true,
+          "hasCompletedMarkup": false
+        },
+        {
+          "atMs": 247.99095899999998,
+          "bytes": 920,
+          "hasFallback": true,
+          "hasCompletedMarkup": true
+        },
+        {
+          "atMs": 248.042167,
+          "bytes": 562,
+          "hasFallback": true,
+          "hasCompletedMarkup": true
+        },
+        {
+          "atMs": 248.694209,
+          "bytes": 14,
+          "hasFallback": true,
+          "hasCompletedMarkup": true
+        }
+      ]
+    },
+    {
+      "run": 2,
+      "headersAtMs": 29.494209000000012,
+      "chunks": [
+        {
+          "atMs": 31.34770900000001,
+          "bytes": 4631,
+          "hasFallback": true,
+          "hasCompletedMarkup": false
+        },
+        {
+          "atMs": 31.399249999999995,
+          "bytes": 18016,
+          "hasFallback": true,
+          "hasCompletedMarkup": false
+        },
+        {
+          "atMs": 31.469750000000033,
+          "bytes": 3156,
+          "hasFallback": true,
+          "hasCompletedMarkup": false
+        },
+        {
+          "atMs": 233.81483400000008,
+          "bytes": 920,
+          "hasFallback": true,
+          "hasCompletedMarkup": true
+        },
+        {
+          "atMs": 233.863042,
+          "bytes": 562,
+          "hasFallback": true,
+          "hasCompletedMarkup": true
+        },
+        {
+          "atMs": 237.43633400000004,
+          "bytes": 14,
+          "hasFallback": true,
+          "hasCompletedMarkup": true
+        }
+      ]
+    },
+    {
+      "run": 3,
+      "headersAtMs": 50.005292000000054,
+      "chunks": [
+        {
+          "atMs": 50.381917000000044,
+          "bytes": 4631,
+          "hasFallback": true,
+          "hasCompletedMarkup": false
+        },
+        {
+          "atMs": 50.40445800000009,
+          "bytes": 9824,
+          "hasFallback": true,
+          "hasCompletedMarkup": false
+        },
+        {
+          "atMs": 50.44354200000009,
+          "bytes": 11348,
+          "hasFallback": true,
+          "hasCompletedMarkup": false
+        },
+        {
+          "atMs": 221.4569580000001,
+          "bytes": 920,
+          "hasFallback": true,
+          "hasCompletedMarkup": true
+        },
+        {
+          "atMs": 221.6215420000001,
+          "bytes": 562,
+          "hasFallback": true,
+          "hasCompletedMarkup": true
+        },
+        {
+          "atMs": 227.70958300000007,
+          "bytes": 14,
+          "hasFallback": true,
+          "hasCompletedMarkup": true
+        }
+      ]
+    }
+  ],
+  "filtering": [
+    {
+      "target": "baseline",
+      "query": "provincia=santa_fe",
+      "activityLinksInInitialHtml": 3
+    },
+    {
+      "target": "static",
+      "query": "provincia=santa_fe",
+      "activityLinksInInitialHtml": 72
+    },
+    {
+      "target": "worker",
+      "query": "provincia=santa_fe",
+      "activityLinksInInitialHtml": 3
+    }
+  ]
+}

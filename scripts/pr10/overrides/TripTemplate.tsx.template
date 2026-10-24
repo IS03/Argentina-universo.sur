@@ -1,0 +1,98 @@
+import Image from "next/image";
+import Link from "next/link";
+import MapaUbicacion from "@/components/mapa/MapaUbicacion";
+export interface TripDraft {
+  id: string;
+  title: string;
+  destination: { name: string; province: string };
+  description: string;
+  publishable: false;
+  sections: { title: string; paragraphs: string[] }[];
+  location: { lat: number; lon: number; title: string; disclaimer: string };
+  photos: {
+    src: string;
+    alt: string;
+    attribution: string;
+    licenseUrl: string;
+    rightsCleared: boolean;
+    approved: boolean;
+  }[];
+  related: { href: string; label: string }[];
+  sources: { url: string; title: string; checkedAt: string }[];
+}
+export default function TripTemplate({ trip }: { trip: TripDraft }) {
+  const photos = trip.photos.filter(
+    (p) => p.rightsCleared && p.approved && p.licenseUrl,
+  );
+  return (
+    <article className="max-w-4xl mx-auto pt-32 pb-12 px-5 text-[#5A4E3D]">
+      <p className="border p-4 mb-8">
+        Prototipo local PR10. No aprobado para publicación. No es una
+        transcripción de un PDF ni una ficha del maestro.
+      </p>
+      <h1 className="text-4xl mb-5">{trip.title}</h1>
+      <p>
+        Destino: {trip.destination.name} · {trip.destination.province}
+      </p>
+      <p>{trip.description}</p>
+      {trip.sections.map((s) => (
+        <section key={s.title}>
+          <h2 className="text-2xl mt-8">{s.title}</h2>
+          {s.paragraphs.map((p) => (
+            <p key={p}>{p}</p>
+          ))}
+        </section>
+      ))}
+      <h2 className="text-2xl mt-8">Ubicación y mapas</h2>
+      <p>{trip.location.disclaimer}</p>
+      <MapaUbicacion
+        lat={trip.location.lat}
+        lon={trip.location.lon}
+        titulo={trip.location.title}
+        detalle={trip.location.disclaimer}
+        teselasEnMovil={false}
+      />
+      <h2 className="text-2xl mt-8">Fotografías optimizadas</h2>
+      {photos.length ? (
+        photos.map((p) => (
+          <figure key={p.src}>
+            <Image
+              src={p.src}
+              alt={p.alt}
+              width={960}
+              height={640}
+              sizes="(max-width:768px) 100vw, 900px"
+            />
+            <figcaption>
+              {p.attribution} · <a href={p.licenseUrl}>Licencia</a>
+            </figcaption>
+          </figure>
+        ))
+      ) : (
+        <p>
+          No se incorpora una fotografía como si su licencia estuviera
+          verificada. Se necesitan derechos y aprobación explícitos.
+        </p>
+      )}
+      <h2 className="text-2xl mt-8">Fuentes y fechas de verificación</h2>
+      <ul>
+        {trip.sources.map((s) => (
+          <li key={s.url}>
+            <a href={s.url} className="underline" rel="noopener noreferrer">
+              {s.title}
+            </a>{" "}
+            · consulta {s.checkedAt}
+          </li>
+        ))}
+      </ul>
+      <h2 className="text-2xl mt-8">Seguí explorando</h2>
+      <nav className="flex flex-wrap gap-5">
+        {trip.related.map((l) => (
+          <Link className="underline" key={l.href} href={l.href}>
+            {l.label}
+          </Link>
+        ))}
+      </nav>
+    </article>
+  );
+}

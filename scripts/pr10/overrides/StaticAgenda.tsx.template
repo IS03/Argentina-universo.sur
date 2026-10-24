@@ -1,0 +1,56 @@
+"use client";
+import { useEffect, useState } from "react";
+import type { Evento } from "@/lib/data";
+import { parseEventDate, partitionEvents } from "@/lib/events";
+import EventosSection from "@/components/santa-fe/EventosSection";
+export default function StaticAgenda({ events }: { events: Evento[] }) {
+  // Fail closed: the initial HTML never calls an event "upcoming" using a stale build date.
+  // Without JS all entries remain in the dated archive. A scheduled build is optional.
+  const [clock, setClock] = useState<Date | null>(null);
+  useEffect(() => {
+    let timer: ReturnType<typeof setTimeout>;
+    const refresh = () => {
+      clearTimeout(timer);
+      const now = new Date();
+      setClock(now);
+      // Recompute at the end of the next event minute; also check clock changes each minute.
+      const boundaries = events
+        .map((e) => parseEventDate(e.Fin).getTime() + 60000)
+        .filter((t) => t > now.getTime());
+      const delay = Math.min(
+        60000,
+        ...boundaries.map((t) => t - now.getTime()),
+      );
+      timer = setTimeout(refresh, Math.max(1, delay));
+    };
+    refresh();
+    document.addEventListener("visibilitychange", refresh);
+    return () => {
+      clearTimeout(timer);
+      document.removeEventListener("visibilitychange", refresh);
+    };
+  }, [events]);
+  const { vigentes, anteriores } = clock
+    ? partitionEvents(events, clock)
+    : { vigentes: [], anteriores: events };
+  return (
+    <>
+      {clock ? (
+        <EventosSection eventos={vigentes} />
+      ) : (
+        <p>
+          Agenda fechada. La vigencia se comprueba en tu navegador; sin
+          JavaScript no se presentan eventos como próximos.
+        </p>
+      )}
+      <details>
+        <summary>Archivo y fechas documentadas ({anteriores.length})</summary>
+        <EventosSection
+          eventos={anteriores}
+          titulo="Eventos anteriores o sin vigencia calculada"
+          id="eventos-anteriores"
+        />
+      </details>
+    </>
+  );
+}

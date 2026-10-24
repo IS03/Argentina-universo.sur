@@ -1,0 +1,477 @@
+{
+  "source": "PR9 versioned inventory, freshly SHA-256 verified against all 306 files classified tourism-images (304 images plus README and shortcut)",
+  "originalsChanged": [],
+  "formats": [
+    {
+      "mime": "image/jpeg",
+      "files": 300,
+      "bytes": 234416193
+    },
+    {
+      "mime": "application/octet-stream",
+      "files": 2,
+      "bytes": 1739
+    },
+    {
+      "mime": "image/svg+xml",
+      "files": 2,
+      "bytes": 222371
+    },
+    {
+      "mime": "image/png",
+      "files": 2,
+      "bytes": 41981
+    }
+  ],
+  "originalPhotoBytes": 234682284,
+  "duplicateGroups": [
+    {
+      "sha256": "619feae14dc3d0bc9e81a76aa97ccc518b464c3de753313e480caf70cb5d456a",
+      "paths": [
+        "public/img/actividades/catamarca/cata2/1.jpg",
+        "public/img/actividades/catamarca/cata2/2.jpg"
+      ]
+    },
+    {
+      "sha256": "16e2ab9b3fdcb8923b417d8543dabe4aa48f3cce5e7a56759378efc777e8c598",
+      "paths": [
+        "public/img/actividades/chaco/7.jpg",
+        "public/img/actividades/chaco/8.jpg"
+      ]
+    },
+    {
+      "sha256": "31b13038453af81fad87831d1f438096c5682bc8520ea4c054d319d06614c849",
+      "paths": [
+        "public/img/actividades/la-rioja/4.jpg",
+        "public/img/provincias/la-rioja/1.jpg"
+      ]
+    },
+    {
+      "sha256": "fdb7d894a3dfdaf3cce491bcc9fa4182af5cfebdc6d552d66e65b4d0ae9c9a72",
+      "paths": [
+        "public/img/actividades/neuquen/5.jpg",
+        "public/img/actividades/neuquen/6.jpg"
+      ]
+    },
+    {
+      "sha256": "c127110c02fad7e68ccd5dc5ede1143a6df225b1e46df797358d5b86f97985e4",
+      "paths": [
+        "public/img/actividades/santa-fe/2.jpg",
+        "public/img/home/4.jpg"
+      ]
+    },
+    {
+      "sha256": "28f97dccbcb86d8224a163f3d0d2ffcba76b10506204781824a5b9feb1a47577",
+      "paths": [
+        "public/img/home/7.jpg",
+        "public/img/provincias/santa-fe/1.jpg"
+      ]
+    }
+  ],
+  "possibleUnreferenced": [
+    "public/img/home/README.md",
+    "public/img/logoAzBl.png",
+    "public/img/logoarg.svg",
+    "public/img/provincias/buenos-aires/imperdibles/1.jpg",
+    "public/img/provincias/buenos-aires/imperdibles/2.jpg",
+    "public/img/provincias/buenos-aires/imperdibles/3.jpg",
+    "public/img/provincias/neuquen/3.jpg",
+    "public/img/provincias/tierra-del-fuego/provincias - Acceso directo.lnk"
+  ],
+  "referenceCaveat": "Static references cannot prove non-use or rights; do not delete by this list.",
+  "transformedFiles": 302,
+  "uniqueTransformedImages": 296,
+  "allVariantBytes": 84948529,
+  "selectedLargestWebpBytes": 51694790,
+  "untransformedBytes": 224110,
+  "samples": [
+    {
+      "url": "/img/actividades/santa-fe/1.jpg",
+      "originalBytes": 684583,
+      "sha256": "06c9592f9f4a4077178a3f4eb696f68d52e8cd726b72749211e1f104dbb60a2a",
+      "dimensions": {
+        "width": 1920,
+        "height": 1080,
+        "pages": 1
+      },
+      "references": [
+        "public/data/actividades.json.60.FOTO_1"
+      ],
+      "variants": [
+        {
+          "url": "/optimized/06c9592f9f4a4077-480.webp",
+          "width": 480,
+          "height": 270,
+          "requestedWidth": 480,
+          "bytes": 33564,
+          "format": "webp",
+          "sha256": "e935c60350dceab44f889900a216f41c3e7f940d90cadea3362caff299a9e03d",
+          "psnrDb": 32.888663382948266
+        },
+        {
+          "url": "/optimized/06c9592f9f4a4077-480.avif",
+          "width": 480,
+          "height": 270,
+          "requestedWidth": 480,
+          "bytes": 29011,
+          "format": "avif",
+          "sha256": "013f19ddf9e41ae0a19ba49d97f66be67759e70f77f2c3bcad55280b47b35286",
+          "psnrDb": 33.32493809031159
+        },
+        {
+          "url": "/optimized/06c9592f9f4a4077-960.webp",
+          "width": 960,
+          "height": 540,
+          "requestedWidth": 960,
+          "bytes": 75962,
+          "format": "webp",
+          "sha256": "e38cf38ffc9098545bfa0e535a89d1b789199264bf0f00093f9542f371feac59",
+          "psnrDb": 34.26368710413361
+        },
+        {
+          "url": "/optimized/06c9592f9f4a4077-960.avif",
+          "width": 960,
+          "height": 540,
+          "requestedWidth": 960,
+          "bytes": 58620,
+          "format": "avif",
+          "sha256": "71d4d26cf0a58f736d195ecbfdbd149d7e89f384d2c8e07c6b8970e83f576c5b",
+          "psnrDb": 34.35348714869567
+        },
+        {
+          "url": "/optimized/06c9592f9f4a4077-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "requestedWidth": 1600,
+          "bytes": 137690,
+          "format": "webp",
+          "sha256": "c40c2d537422aead78b58818f9c1e4214e2c1014e3116e69e7e472f6257e6506",
+          "psnrDb": 35.45425140464128
+        },
+        {
+          "url": "/optimized/06c9592f9f4a4077-1600.avif",
+          "width": 1600,
+          "height": 900,
+          "requestedWidth": 1600,
+          "bytes": 96783,
+          "format": "avif",
+          "sha256": "a3bfd4a57f0e41d2032035fe848dc7a518f2cfdf526142bb03f92e509c2dc6fa",
+          "psnrDb": 35.47768670021527
+        }
+      ],
+      "rights": "unverified",
+      "attribution": "Preserve source attribution; none established by this inventory."
+    },
+    {
+      "url": "/img/home/1.jpg",
+      "originalBytes": 299100,
+      "sha256": "c1181f51eb6fa665af88cb8561c9737a07570e5c2e414be3fb5627bda91827a8",
+      "dimensions": {
+        "width": 1920,
+        "height": 1080,
+        "pages": 1
+      },
+      "references": [
+        "lib/home-images.ts",
+        "lib/seo.ts"
+      ],
+      "variants": [
+        {
+          "url": "/optimized/c1181f51eb6fa665-480.webp",
+          "width": 480,
+          "height": 270,
+          "requestedWidth": 480,
+          "bytes": 13416,
+          "format": "webp",
+          "sha256": "9f168928dbcfbd77a0a44c121cc7c33010adc921d723ee36ff89b8efaae0d9db",
+          "psnrDb": 35.340377262342535
+        },
+        {
+          "url": "/optimized/c1181f51eb6fa665-480.avif",
+          "width": 480,
+          "height": 270,
+          "requestedWidth": 480,
+          "bytes": 9545,
+          "format": "avif",
+          "sha256": "bd95777cbb7a615ee0be151c116cfb72b1a55b5a530d74a9ed72fda24ce7f763",
+          "psnrDb": 35.1707849411328
+        },
+        {
+          "url": "/optimized/c1181f51eb6fa665-960.webp",
+          "width": 960,
+          "height": 540,
+          "requestedWidth": 960,
+          "bytes": 44628,
+          "format": "webp",
+          "sha256": "42e1b359c93ae7106edcd51b28d1c611c3f9cd8520f6bd11955b494a06383c3f",
+          "psnrDb": 35.91812315262492
+        },
+        {
+          "url": "/optimized/c1181f51eb6fa665-960.avif",
+          "width": 960,
+          "height": 540,
+          "requestedWidth": 960,
+          "bytes": 29523,
+          "format": "avif",
+          "sha256": "f08a01da7ca3f1b44ba9fbc216b6dfeefecf1d0df7aed547c7e3f2200c0bda45",
+          "psnrDb": 35.530780858619465
+        },
+        {
+          "url": "/optimized/c1181f51eb6fa665-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "requestedWidth": 1600,
+          "bytes": 110298,
+          "format": "webp",
+          "sha256": "a2baeeeb3a183f4b88608d9359507d13f9ec7cdf3e97b3f52ada1a5c7ac99098",
+          "psnrDb": 36.59404816212341
+        },
+        {
+          "url": "/optimized/c1181f51eb6fa665-1600.avif",
+          "width": 1600,
+          "height": 900,
+          "requestedWidth": 1600,
+          "bytes": 69257,
+          "format": "avif",
+          "sha256": "229a1e1824c13ba68ab056e69903ee8f7dcce66d2a13586a0c00af91db12a29a",
+          "psnrDb": 35.961789067211456
+        }
+      ],
+      "rights": "unverified",
+      "attribution": "Preserve source attribution; none established by this inventory."
+    },
+    {
+      "url": "/img/home/2.jpg",
+      "originalBytes": 281597,
+      "sha256": "5bd38dc8b2dc86759a63369984ab0fd0062dbc683364d2dc7fea8529e44902c4",
+      "dimensions": {
+        "width": 1920,
+        "height": 1080,
+        "pages": 1
+      },
+      "references": [
+        "lib/home-images.ts"
+      ],
+      "variants": [
+        {
+          "url": "/optimized/5bd38dc8b2dc8675-480.webp",
+          "width": 480,
+          "height": 270,
+          "requestedWidth": 480,
+          "bytes": 26416,
+          "format": "webp",
+          "sha256": "e3c1da7cbe0c3452599d87b13a6ad1b5df114db96e0d866f0405342817ee0321",
+          "psnrDb": 30.458442682345108
+        },
+        {
+          "url": "/optimized/5bd38dc8b2dc8675-480.avif",
+          "width": 480,
+          "height": 270,
+          "requestedWidth": 480,
+          "bytes": 22385,
+          "format": "avif",
+          "sha256": "0044edaf39dc2c7f849a3e4f083807bffee564c19c3667b81be461d30213ea6e",
+          "psnrDb": 31.472578438535255
+        },
+        {
+          "url": "/optimized/5bd38dc8b2dc8675-960.webp",
+          "width": 960,
+          "height": 540,
+          "requestedWidth": 960,
+          "bytes": 100434,
+          "format": "webp",
+          "sha256": "14936ed635a0f7296de89e7a0b45dbd7823610a197d8378c92f36e2629aca092",
+          "psnrDb": 32.303861906874424
+        },
+        {
+          "url": "/optimized/5bd38dc8b2dc8675-960.avif",
+          "width": 960,
+          "height": 540,
+          "requestedWidth": 960,
+          "bytes": 83939,
+          "format": "avif",
+          "sha256": "2280d36c9a909c0433ba5e2e90978830a233979038aeecc80da41535ef8301d0",
+          "psnrDb": 32.571115250903894
+        },
+        {
+          "url": "/optimized/5bd38dc8b2dc8675-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "requestedWidth": 1600,
+          "bytes": 243582,
+          "format": "webp",
+          "sha256": "5e8d9defeb78e72f6fdd0afcc7b92a9d58ff2c48270babb04a4746d4b04b235a",
+          "psnrDb": 33.61529210597033
+        },
+        {
+          "url": "/optimized/5bd38dc8b2dc8675-1600.avif",
+          "width": 1600,
+          "height": 900,
+          "requestedWidth": 1600,
+          "bytes": 189456,
+          "format": "avif",
+          "sha256": "fc032674972c25dc72255861d53566107221fc04becb3d1606d08afd4bc0778a",
+          "psnrDb": 33.51844298238476
+        }
+      ],
+      "rights": "unverified",
+      "attribution": "Preserve source attribution; none established by this inventory."
+    },
+    {
+      "url": "/img/provincias/santa-fe/1.jpg",
+      "originalBytes": 1640164,
+      "sha256": "28f97dccbcb86d8224a163f3d0d2ffcba76b10506204781824a5b9feb1a47577",
+      "dimensions": {
+        "width": 1920,
+        "height": 1080,
+        "pages": 1
+      },
+      "references": [
+        "lib/seo.ts",
+        "public/data/provincias.json.20.FOTO_1"
+      ],
+      "variants": [
+        {
+          "url": "/optimized/28f97dccbcb86d82-480.webp",
+          "width": 480,
+          "height": 270,
+          "requestedWidth": 480,
+          "bytes": 60206,
+          "format": "webp",
+          "sha256": "0a42c77992d9dd48e9d854be26de24eed5c79fb86b07ff1778d3e229e0f9fcf2",
+          "psnrDb": 27.404900922743316
+        },
+        {
+          "url": "/optimized/28f97dccbcb86d82-480.avif",
+          "width": 480,
+          "height": 270,
+          "requestedWidth": 480,
+          "bytes": 60251,
+          "format": "avif",
+          "sha256": "c0005cb2aaa3f1da4aecf460d42df2ae5f045b0b6954ae297692d5ef9707aae9",
+          "psnrDb": 30.064973847512498
+        },
+        {
+          "url": "/optimized/28f97dccbcb86d82-960.webp",
+          "width": 960,
+          "height": 540,
+          "requestedWidth": 960,
+          "bytes": 181250,
+          "format": "webp",
+          "sha256": "da7c3ffbb2f67b058e207c48d17ef5cb47463654410761b726c1ef228b78b948",
+          "psnrDb": 29.534107648725527
+        },
+        {
+          "url": "/optimized/28f97dccbcb86d82-960.avif",
+          "width": 960,
+          "height": 540,
+          "requestedWidth": 960,
+          "bytes": 170072,
+          "format": "avif",
+          "sha256": "3c51525bca1e87cab0d07aaa2a24468e37ec80acb12e57d8354c1abba2111b20",
+          "psnrDb": 31.13203351824776
+        },
+        {
+          "url": "/optimized/28f97dccbcb86d82-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "requestedWidth": 1600,
+          "bytes": 500274,
+          "format": "webp",
+          "sha256": "8bb80e8e089f4162a78d055959adc2d996a1488970e7824b8febc77dc7cb1427",
+          "psnrDb": 30.816377466507838
+        },
+        {
+          "url": "/optimized/28f97dccbcb86d82-1600.avif",
+          "width": 1600,
+          "height": 900,
+          "requestedWidth": 1600,
+          "bytes": 441133,
+          "format": "avif",
+          "sha256": "98690d3b93172ff4bcfd05e20e3445b2bd6df3bcfac2096d4db3c514d624c2c2",
+          "psnrDb": 31.329427457747357
+        }
+      ],
+      "rights": "unverified",
+      "attribution": "Preserve source attribution; none established by this inventory."
+    },
+    {
+      "url": "/img/provincias/santa-fe/2.jpg",
+      "originalBytes": 725381,
+      "sha256": "5760a6a5e77b9a02f29f974749fad27d2972340576acce06e101ddfb8a450674",
+      "dimensions": {
+        "width": 1920,
+        "height": 1080,
+        "pages": 1
+      },
+      "references": [
+        "public/data/provincias.json.20.FOTO_2"
+      ],
+      "variants": [
+        {
+          "url": "/optimized/5760a6a5e77b9a02-480.webp",
+          "width": 480,
+          "height": 270,
+          "requestedWidth": 480,
+          "bytes": 28342,
+          "format": "webp",
+          "sha256": "340e284d96336870c3fc2276c7e0cf9c0fd803c1d7420ec7efc4e59aed3c7aaf",
+          "psnrDb": 33.93318412695581
+        },
+        {
+          "url": "/optimized/5760a6a5e77b9a02-480.avif",
+          "width": 480,
+          "height": 270,
+          "requestedWidth": 480,
+          "bytes": 24758,
+          "format": "avif",
+          "sha256": "a1389dab9e4be0bdb5ee102b3e54d525e57d0b7c17eb2427d7d5ae5d9ab929a6",
+          "psnrDb": 34.75198022156499
+        },
+        {
+          "url": "/optimized/5760a6a5e77b9a02-960.webp",
+          "width": 960,
+          "height": 540,
+          "requestedWidth": 960,
+          "bytes": 59356,
+          "format": "webp",
+          "sha256": "cb12a447d43fe2314ce0ad02ed2dd52cfc81914bdb54f03d3a3deda703438c40",
+          "psnrDb": 35.161580235809346
+        },
+        {
+          "url": "/optimized/5760a6a5e77b9a02-960.avif",
+          "width": 960,
+          "height": 540,
+          "requestedWidth": 960,
+          "bytes": 46044,
+          "format": "avif",
+          "sha256": "a0c3dddceb707149064befb5d36ae93b33f8fdb5ef2ea02eda3fbb23c3da1d15",
+          "psnrDb": 35.54081415845499
+        },
+        {
+          "url": "/optimized/5760a6a5e77b9a02-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "requestedWidth": 1600,
+          "bytes": 124210,
+          "format": "webp",
+          "sha256": "9b59faa1e6a499939f1132b7270b9590288c44fa96a89b6de1e246e83af71506",
+          "psnrDb": 35.599373747361426
+        },
+        {
+          "url": "/optimized/5760a6a5e77b9a02-1600.avif",
+          "width": 1600,
+          "height": 900,
+          "requestedWidth": 1600,
+          "bytes": 86404,
+          "format": "avif",
+          "sha256": "e0315696f3c0f454e75e598c0d80efc717baa3989497d9d16970831342fff39c",
+          "psnrDb": 35.49892393667298
+        }
+      ],
+      "rights": "unverified",
+      "attribution": "Preserve source attribution; none established by this inventory."
+    }
+  ],
+  "rights": "No photo license verified; local derivatives only, metadata and existing JSX alt retained."
+}

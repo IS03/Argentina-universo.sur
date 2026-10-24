@@ -1,0 +1,910 @@
+[
+  {
+    "id": "esc_08",
+    "title": "San Carlos de Bariloche",
+    "path": "/pdf/bariloche.pdf",
+    "bytes": 34489884,
+    "sha256": "b35fae10ae9f4e75b1b242fbead5987622994b3d7fa99db0207df546bf3915cf",
+    "overPagesLimit": true,
+    "uses": [
+      "public/data/escapadas.json → EscapadasContent → /escapadas"
+    ],
+    "officialSource": {
+      "url": "https://barilocheturismo.gob.ar/",
+      "scope": "Portal oficial municipal",
+      "check": {
+        "checkedAt": "2026-10-24T17:50:31.141Z",
+        "status": 200,
+        "finalUrl": "https://barilocheturismo.gob.ar/es/home",
+        "title": "Bariloche - Sitio Web Oficial de Turismo",
+        "availability": "http-accessible-not-content-approved"
+      }
+    },
+    "pdfMetadata": {
+      "status": "metadata-only",
+      "pages": 1,
+      "authorFieldPresent": false,
+      "license": "unverified; metadata is not permission"
+    },
+    "conversion": "Recomendable por etapas; redactar de nuevo tras revisar fuentes y derechos. No transcribir automáticamente.",
+    "manualReview": [
+      "autoría y permiso de texto, mapas y fotografías",
+      "vigencia de horarios, tarifas, traslados y contactos",
+      "fuentes por afirmación y alcance geográfico",
+      "accesibilidad, seguridad y logística sin garantías inventadas"
+    ],
+    "suggestedUrl": "/escapadas/san-carlos-de-bariloche",
+    "oldLinkStrategy": "Mantener PDF actual hasta autorización y respaldo independiente verificado por SHA-256. Luego 301/308 a HTML equivalente y revisado; nunca a la home ni a una página inexistente.",
+    "approvedForRemoval": false
+  },
+  {
+    "id": "esc_06",
+    "title": "CABA",
+    "path": "/pdf/caba.pdf",
+    "bytes": 37651530,
+    "sha256": "8ddb609288147a3d0da25b24abd45dfbd9c060b83773907ef3d2addbf18e1075",
+    "overPagesLimit": true,
+    "uses": [
+      "public/data/escapadas.json → EscapadasContent → /escapadas"
+    ],
+    "officialSource": {
+      "url": "https://turismo.buenosaires.gob.ar/",
+      "scope": "Portal oficial de turismo de la Ciudad",
+      "check": {
+        "checkedAt": "2026-10-24T17:50:30.843Z",
+        "status": 200,
+        "finalUrl": "https://turismo.buenosaires.gob.ar/es",
+        "title": "Sitio oficial de turismo de la Ciudad de Buenos Aires",
+        "availability": "http-accessible-not-content-approved"
+      }
+    },
+    "pdfMetadata": {
+      "status": "metadata-only",
+      "pages": 1,
+      "authorFieldPresent": false,
+      "license": "unverified; metadata is not permission"
+    },
+    "conversion": "Recomendable por etapas; redactar de nuevo tras revisar fuentes y derechos. No transcribir automáticamente.",
+    "manualReview": [
+      "autoría y permiso de texto, mapas y fotografías",
+      "vigencia de horarios, tarifas, traslados y contactos",
+      "fuentes por afirmación y alcance geográfico",
+      "accesibilidad, seguridad y logística sin garantías inventadas"
+    ],
+    "suggestedUrl": "/escapadas/caba",
+    "oldLinkStrategy": "Mantener PDF actual hasta autorización y respaldo independiente verificado por SHA-256. Luego 301/308 a HTML equivalente y revisado; nunca a la home ni a una página inexistente.",
+    "approvedForRemoval": false
+  },
+  {
+    "id": "esc_01",
+    "title": "El Calafate y El Chaltén",
+    "path": "/pdf/cañafate.pdf",
+    "bytes": 19318193,
+    "sha256": "0b0757d612a70202953f15630cd53991640bac22573158f97f27493c9b4af49e",
+    "overPagesLimit": false,
+    "uses": [
+      "public/data/escapadas.json → EscapadasContent → /escapadas"
+    ],
+    "officialSource": {
+      "url": "https://www.argentina.gob.ar/parquesnacionales/losglaciares",
+      "scope": "Parques Nacionales: cobertura parcial, no valida la guía completa",
+      "check": {
+        "checkedAt": "2026-10-24T17:50:29.964Z",
+        "status": 200,
+        "finalUrl": "https://www.argentina.gob.ar/parquesnacionales/patagonia-austral/parque-nacional-los-glaciares",
+        "title": "Parque Nacional Los Glaciares | Argentina.gob.ar",
+        "availability": "http-accessible-not-content-approved"
+      }
+    },
+    "pdfMetadata": {
+      "status": "metadata-only",
+      "pages": 1,
+      "authorFieldPresent": false,
+      "license": "unverified; metadata is not permission"
+    },
+    "conversion": "Recomendable por etapas; redactar de nuevo tras revisar fuentes y derechos. No transcribir automáticamente.",
+    "manualReview": [
+      "autoría y permiso de texto, mapas y fotografías",
+      "vigencia de horarios, tarifas, traslados y contactos",
+      "fuentes por afirmación y alcance geográfico",
+      "accesibilidad, seguridad y logística sin garantías inventadas"
+    ],
+    "suggestedUrl": "/escapadas/el-calafate-y-el-chalten",
+    "oldLinkStrategy": "Mantener PDF actual hasta autorización y respaldo independiente verificado por SHA-256. Luego 301/308 a HTML equivalente y revisado; nunca a la home ni a una página inexistente.",
+    "approvedForRemoval": false
+  },
+  {
+    "id": "esc_10",
+    "title": "Norte de Córdoba",
+    "path": "/pdf/cba.pdf",
+    "bytes": 25346217,
+    "sha256": "6e790c0fa6b686caeba8b8575023e9fc9f3aae35ad5434d7953e68a85b382bca",
+    "overPagesLimit": false,
+    "uses": [
+      "public/data/escapadas.json → EscapadasContent → /escapadas"
+    ],
+    "officialSource": {
+      "url": "https://www.cordobaturismo.gov.ar/",
+      "scope": "Portal provincial: delimitar norte de Córdoba",
+      "check": {
+        "checkedAt": "2026-10-24T17:50:34.088Z",
+        "status": 200,
+        "finalUrl": "https://cordobaturismo.gov.ar/",
+        "title": "Córdoba Turismo",
+        "availability": "http-accessible-not-content-approved"
+      }
+    },
+    "pdfMetadata": {
+      "status": "metadata-only",
+      "pages": 1,
+      "authorFieldPresent": false,
+      "license": "unverified; metadata is not permission"
+    },
+    "conversion": "Recomendable por etapas; redactar de nuevo tras revisar fuentes y derechos. No transcribir automáticamente.",
+    "manualReview": [
+      "autoría y permiso de texto, mapas y fotografías",
+      "vigencia de horarios, tarifas, traslados y contactos",
+      "fuentes por afirmación y alcance geográfico",
+      "accesibilidad, seguridad y logística sin garantías inventadas"
+    ],
+    "suggestedUrl": "/escapadas/norte-de-cordoba",
+    "oldLinkStrategy": "Mantener PDF actual hasta autorización y respaldo independiente verificado por SHA-256. Luego 301/308 a HTML equivalente y revisado; nunca a la home ni a una página inexistente.",
+    "approvedForRemoval": false
+  },
+  {
+    "id": "esc_14",
+    "title": "Chaco",
+    "path": "/pdf/chaco.pdf",
+    "bytes": 23895952,
+    "sha256": "134819694046946cd0a7dd3b69c05304812d064dfd2c24e925046974dcd668a5",
+    "overPagesLimit": false,
+    "uses": [
+      "public/data/escapadas.json → EscapadasContent → /escapadas"
+    ],
+    "officialSource": {
+      "url": "https://www.argentina.gob.ar/parquesnacionales/chaco",
+      "scope": "Parque Nacional; no equivale a toda la provincia",
+      "check": {
+        "checkedAt": "2026-10-24T17:50:34.421Z",
+        "status": 200,
+        "finalUrl": "https://www.argentina.gob.ar/parquesnacionales/nea/parque-nacional-chaco",
+        "title": "Parque Nacional Chaco | Argentina.gob.ar",
+        "availability": "http-accessible-not-content-approved"
+      }
+    },
+    "pdfMetadata": {
+      "status": "metadata-only",
+      "pages": 1,
+      "authorFieldPresent": false,
+      "license": "unverified; metadata is not permission"
+    },
+    "conversion": "Recomendable por etapas; redactar de nuevo tras revisar fuentes y derechos. No transcribir automáticamente.",
+    "manualReview": [
+      "autoría y permiso de texto, mapas y fotografías",
+      "vigencia de horarios, tarifas, traslados y contactos",
+      "fuentes por afirmación y alcance geográfico",
+      "accesibilidad, seguridad y logística sin garantías inventadas"
+    ],
+    "suggestedUrl": "/escapadas/chaco",
+    "oldLinkStrategy": "Mantener PDF actual hasta autorización y respaldo independiente verificado por SHA-256. Luego 301/308 a HTML equivalente y revisado; nunca a la home ni a una página inexistente.",
+    "approvedForRemoval": false
+  },
+  {
+    "id": "esc_11",
+    "title": "Entre Ríos",
+    "path": "/pdf/entrerios.pdf",
+    "bytes": 29060699,
+    "sha256": "6264c1b294a9bcac1920ce94ec985f48e822001ea67c8ddf1e67d55531a9680a",
+    "overPagesLimit": true,
+    "uses": [
+      "public/data/escapadas.json → EscapadasContent → /escapadas"
+    ],
+    "officialSource": {
+      "url": "https://www.argentina.gob.ar/parquesnacionales/elpalmar",
+      "scope": "Fuente comprobada para El Palmar; no cubre toda Entre Ríos",
+      "check": {
+        "checkedAt": "2026-10-24T17:50:31.875Z",
+        "status": 200,
+        "finalUrl": "https://www.argentina.gob.ar/parquesnacionales/centro/parque-nacional-el-palmar",
+        "title": "Parque Nacional El Palmar | Argentina.gob.ar",
+        "availability": "http-accessible-not-content-approved"
+      }
+    },
+    "pdfMetadata": {
+      "status": "metadata-only",
+      "pages": 1,
+      "authorFieldPresent": false,
+      "license": "unverified; metadata is not permission"
+    },
+    "conversion": "Recomendable por etapas; redactar de nuevo tras revisar fuentes y derechos. No transcribir automáticamente.",
+    "manualReview": [
+      "autoría y permiso de texto, mapas y fotografías",
+      "vigencia de horarios, tarifas, traslados y contactos",
+      "fuentes por afirmación y alcance geográfico",
+      "accesibilidad, seguridad y logística sin garantías inventadas"
+    ],
+    "suggestedUrl": "/escapadas/entre-rios",
+    "oldLinkStrategy": "Mantener PDF actual hasta autorización y respaldo independiente verificado por SHA-256. Luego 301/308 a HTML equivalente y revisado; nunca a la home ni a una página inexistente.",
+    "approvedForRemoval": false
+  },
+  {
+    "id": "esc_23",
+    "title": "Formosa",
+    "path": "/pdf/formosa.pdf",
+    "bytes": 57013841,
+    "sha256": "7dfb6d4369c98477367c52c8e5a71fbbf1a969b1b7e5f50d88ece7e33f05b658",
+    "overPagesLimit": true,
+    "uses": [
+      "public/data/escapadas.json → EscapadasContent → /escapadas"
+    ],
+    "officialSource": {
+      "url": "https://www.formosa.gob.ar/turismo",
+      "scope": "Portal provincial",
+      "check": {
+        "checkedAt": "2026-10-24T17:50:44.129Z",
+        "status": 200,
+        "finalUrl": "https://www.formosahermosa.gob.ar/",
+        "title": "Formosa Hermosa",
+        "availability": "http-accessible-not-content-approved"
+      }
+    },
+    "pdfMetadata": {
+      "status": "metadata-only",
+      "pages": 1,
+      "authorFieldPresent": false,
+      "license": "unverified; metadata is not permission"
+    },
+    "conversion": "Recomendable por etapas; redactar de nuevo tras revisar fuentes y derechos. No transcribir automáticamente.",
+    "manualReview": [
+      "autoría y permiso de texto, mapas y fotografías",
+      "vigencia de horarios, tarifas, traslados y contactos",
+      "fuentes por afirmación y alcance geográfico",
+      "accesibilidad, seguridad y logística sin garantías inventadas"
+    ],
+    "suggestedUrl": "/escapadas/formosa",
+    "oldLinkStrategy": "Mantener PDF actual hasta autorización y respaldo independiente verificado por SHA-256. Luego 301/308 a HTML equivalente y revisado; nunca a la home ni a una página inexistente.",
+    "approvedForRemoval": false
+  },
+  {
+    "id": "esc_18",
+    "title": "Río Gallegos",
+    "path": "/pdf/gallegos.pdf",
+    "bytes": 19784786,
+    "sha256": "47efb3d922e1545a0ee3fd117ed03381ad8b81408b762843a71a2738dec170ed",
+    "overPagesLimit": false,
+    "uses": [
+      "public/data/escapadas.json → EscapadasContent → /escapadas"
+    ],
+    "officialSource": {
+      "url": "https://www.riogallegos.gov.ar/",
+      "scope": "Portal municipal general",
+      "check": {
+        "checkedAt": "2026-10-24T17:50:35.746Z",
+        "status": null,
+        "availability": "manual-check-required",
+        "error": "UNABLE_TO_VERIFY_LEAF_SIGNATURE"
+      }
+    },
+    "pdfMetadata": {
+      "status": "metadata-only",
+      "pages": 1,
+      "authorFieldPresent": false,
+      "license": "unverified; metadata is not permission"
+    },
+    "conversion": "Recomendable por etapas; redactar de nuevo tras revisar fuentes y derechos. No transcribir automáticamente.",
+    "manualReview": [
+      "autoría y permiso de texto, mapas y fotografías",
+      "vigencia de horarios, tarifas, traslados y contactos",
+      "fuentes por afirmación y alcance geográfico",
+      "accesibilidad, seguridad y logística sin garantías inventadas"
+    ],
+    "suggestedUrl": "/escapadas/rio-gallegos",
+    "oldLinkStrategy": "Mantener PDF actual hasta autorización y respaldo independiente verificado por SHA-256. Luego 301/308 a HTML equivalente y revisado; nunca a la home ni a una página inexistente.",
+    "approvedForRemoval": false
+  },
+  {
+    "id": "esc_02",
+    "title": "Puerto Iguazú",
+    "path": "/pdf/iguazu_2.pdf",
+    "bytes": 14457850,
+    "sha256": "7cf128d2f00fe4730b18813b983ae388748eb5a057dc7c44778f8832d23cd0d4",
+    "overPagesLimit": false,
+    "uses": [
+      "public/data/escapadas.json → EscapadasContent → /escapadas"
+    ],
+    "officialSource": {
+      "url": "https://www.argentina.gob.ar/parquesnacionales/iguazu",
+      "scope": "Parques Nacionales: cobertura parcial",
+      "check": {
+        "checkedAt": "2026-10-24T17:50:29.965Z",
+        "status": 200,
+        "finalUrl": "https://www.argentina.gob.ar/parquesnacionales/nea/parque-nacional-iguazu",
+        "title": "Parque Nacional Iguazú | Argentina.gob.ar",
+        "availability": "http-accessible-not-content-approved"
+      }
+    },
+    "pdfMetadata": {
+      "status": "metadata-only",
+      "pages": 1,
+      "authorFieldPresent": false,
+      "license": "unverified; metadata is not permission"
+    },
+    "conversion": "Recomendable por etapas; redactar de nuevo tras revisar fuentes y derechos. No transcribir automáticamente.",
+    "manualReview": [
+      "autoría y permiso de texto, mapas y fotografías",
+      "vigencia de horarios, tarifas, traslados y contactos",
+      "fuentes por afirmación y alcance geográfico",
+      "accesibilidad, seguridad y logística sin garantías inventadas"
+    ],
+    "suggestedUrl": "/escapadas/puerto-iguazu",
+    "oldLinkStrategy": "Mantener PDF actual hasta autorización y respaldo independiente verificado por SHA-256. Luego 301/308 a HTML equivalente y revisado; nunca a la home ni a una página inexistente.",
+    "approvedForRemoval": false
+  },
+  {
+    "id": "esc_05",
+    "title": "Jujuy",
+    "path": "/pdf/jujuy.pdf",
+    "bytes": 21391638,
+    "sha256": "46f00914b3f5c92e8099ef37c26efeda1750b6944134b8f318f4df9c4872ff0f",
+    "overPagesLimit": false,
+    "uses": [
+      "public/data/escapadas.json → EscapadasContent → /escapadas"
+    ],
+    "officialSource": {
+      "url": "https://www.turismo.jujuy.gob.ar/",
+      "scope": "Portal provincial: necesita fuentes por atractivo",
+      "check": {
+        "checkedAt": "2026-10-24T17:50:31.575Z",
+        "status": 200,
+        "finalUrl": "https://www.turismo.jujuy.gob.ar/",
+        "title": "Ministerio de Cultura y Turismo de Jujuy",
+        "availability": "http-accessible-not-content-approved"
+      }
+    },
+    "pdfMetadata": {
+      "status": "metadata-only",
+      "pages": 1,
+      "authorFieldPresent": false,
+      "license": "unverified; metadata is not permission"
+    },
+    "conversion": "Recomendable por etapas; redactar de nuevo tras revisar fuentes y derechos. No transcribir automáticamente.",
+    "manualReview": [
+      "autoría y permiso de texto, mapas y fotografías",
+      "vigencia de horarios, tarifas, traslados y contactos",
+      "fuentes por afirmación y alcance geográfico",
+      "accesibilidad, seguridad y logística sin garantías inventadas"
+    ],
+    "suggestedUrl": "/escapadas/jujuy",
+    "oldLinkStrategy": "Mantener PDF actual hasta autorización y respaldo independiente verificado por SHA-256. Luego 301/308 a HTML equivalente y revisado; nunca a la home ni a una página inexistente.",
+    "approvedForRemoval": false
+  },
+  {
+    "id": "esc_22",
+    "title": "La Pampa",
+    "path": "/pdf/lapampa.pdf",
+    "bytes": 20932838,
+    "sha256": "c44359d857148c1fe5f5720fa798ac76b583fe2050beaae7bd515b0d420c1eab",
+    "overPagesLimit": false,
+    "uses": [
+      "public/data/escapadas.json → EscapadasContent → /escapadas"
+    ],
+    "officialSource": {
+      "url": "https://turismo.lapampa.gob.ar/",
+      "scope": "Portal provincial",
+      "check": {
+        "checkedAt": "2026-10-24T17:50:43.255Z",
+        "status": 200,
+        "finalUrl": "https://turismo.lapampa.gob.ar/",
+        "title": "Home - Secretaría de Turismo - La Pampa Original",
+        "availability": "http-accessible-not-content-approved"
+      }
+    },
+    "pdfMetadata": {
+      "status": "metadata-only",
+      "pages": 1,
+      "authorFieldPresent": false,
+      "license": "unverified; metadata is not permission"
+    },
+    "conversion": "Recomendable por etapas; redactar de nuevo tras revisar fuentes y derechos. No transcribir automáticamente.",
+    "manualReview": [
+      "autoría y permiso de texto, mapas y fotografías",
+      "vigencia de horarios, tarifas, traslados y contactos",
+      "fuentes por afirmación y alcance geográfico",
+      "accesibilidad, seguridad y logística sin garantías inventadas"
+    ],
+    "suggestedUrl": "/escapadas/la-pampa",
+    "oldLinkStrategy": "Mantener PDF actual hasta autorización y respaldo independiente verificado por SHA-256. Luego 301/308 a HTML equivalente y revisado; nunca a la home ni a una página inexistente.",
+    "approvedForRemoval": false
+  },
+  {
+    "id": "esc_15",
+    "title": "Mendoza",
+    "path": "/pdf/mendoza.pdf",
+    "bytes": 21326786,
+    "sha256": "194eb1eb3791428024961537fac7f9e1327cf2d3cfa717650ebd48de7d6a920b",
+    "overPagesLimit": false,
+    "uses": [
+      "public/data/escapadas.json → EscapadasContent → /escapadas"
+    ],
+    "officialSource": {
+      "url": "https://www.mendoza.gov.ar/turismo/",
+      "scope": "Portal provincial",
+      "check": {
+        "checkedAt": "2026-10-24T17:50:34.849Z",
+        "status": 403,
+        "finalUrl": "https://informacionoficial.mendoza.gob.ar/turismo",
+        "title": "ERROR: The request could not be satisfied",
+        "availability": "manual-check-required"
+      }
+    },
+    "pdfMetadata": {
+      "status": "metadata-only",
+      "pages": 1,
+      "authorFieldPresent": false,
+      "license": "unverified; metadata is not permission"
+    },
+    "conversion": "Recomendable por etapas; redactar de nuevo tras revisar fuentes y derechos. No transcribir automáticamente.",
+    "manualReview": [
+      "autoría y permiso de texto, mapas y fotografías",
+      "vigencia de horarios, tarifas, traslados y contactos",
+      "fuentes por afirmación y alcance geográfico",
+      "accesibilidad, seguridad y logística sin garantías inventadas"
+    ],
+    "suggestedUrl": "/escapadas/mendoza",
+    "oldLinkStrategy": "Mantener PDF actual hasta autorización y respaldo independiente verificado por SHA-256. Luego 301/308 a HTML equivalente y revisado; nunca a la home ni a una página inexistente.",
+    "approvedForRemoval": false
+  },
+  {
+    "id": "esc_21",
+    "title": "Misiones",
+    "path": "/pdf/misiones.pdf",
+    "bytes": 23042857,
+    "sha256": "96c659dfb28bb2302cc847a003f8869764451dec7a0105aa4a9e74d2b929d170",
+    "overPagesLimit": false,
+    "uses": [
+      "public/data/escapadas.json → EscapadasContent → /escapadas"
+    ],
+    "officialSource": {
+      "url": "https://misiones.tur.ar/",
+      "scope": "Portal provincial: verificar titularidad institucional y cada atractivo",
+      "check": {
+        "checkedAt": "2026-10-24T17:50:43.296Z",
+        "status": 200,
+        "finalUrl": "https://misiones.tur.ar/",
+        "title": "Ministerio de Turismo | Misiones",
+        "availability": "http-accessible-not-content-approved"
+      }
+    },
+    "pdfMetadata": {
+      "status": "metadata-only",
+      "pages": 1,
+      "authorFieldPresent": false,
+      "license": "unverified; metadata is not permission"
+    },
+    "conversion": "Recomendable por etapas; redactar de nuevo tras revisar fuentes y derechos. No transcribir automáticamente.",
+    "manualReview": [
+      "autoría y permiso de texto, mapas y fotografías",
+      "vigencia de horarios, tarifas, traslados y contactos",
+      "fuentes por afirmación y alcance geográfico",
+      "accesibilidad, seguridad y logística sin garantías inventadas"
+    ],
+    "suggestedUrl": "/escapadas/misiones",
+    "oldLinkStrategy": "Mantener PDF actual hasta autorización y respaldo independiente verificado por SHA-256. Luego 301/308 a HTML equivalente y revisado; nunca a la home ni a una página inexistente.",
+    "approvedForRemoval": false
+  },
+  {
+    "id": "esc_19",
+    "title": "Neuquén",
+    "path": "/pdf/neuquen.pdf",
+    "bytes": 45336735,
+    "sha256": "a226f20887dfd52a7d0b8625779eb4fe2f5b4062b73cd500fa7e535f502322d4",
+    "overPagesLimit": true,
+    "uses": [
+      "public/data/escapadas.json → EscapadasContent → /escapadas"
+    ],
+    "officialSource": {
+      "url": "https://neuquentur.gob.ar/",
+      "scope": "Portal provincial",
+      "check": {
+        "checkedAt": "2026-10-24T17:50:35.709Z",
+        "status": null,
+        "availability": "manual-check-required",
+        "error": "ENOTFOUND"
+      }
+    },
+    "pdfMetadata": {
+      "status": "metadata-only",
+      "pages": 1,
+      "authorFieldPresent": false,
+      "license": "unverified; metadata is not permission"
+    },
+    "conversion": "Recomendable por etapas; redactar de nuevo tras revisar fuentes y derechos. No transcribir automáticamente.",
+    "manualReview": [
+      "autoría y permiso de texto, mapas y fotografías",
+      "vigencia de horarios, tarifas, traslados y contactos",
+      "fuentes por afirmación y alcance geográfico",
+      "accesibilidad, seguridad y logística sin garantías inventadas"
+    ],
+    "suggestedUrl": "/escapadas/neuquen",
+    "oldLinkStrategy": "Mantener PDF actual hasta autorización y respaldo independiente verificado por SHA-256. Luego 301/308 a HTML equivalente y revisado; nunca a la home ni a una página inexistente.",
+    "approvedForRemoval": false
+  },
+  {
+    "id": "esc_03",
+    "title": "Pinamar",
+    "path": "/pdf/pinamar.pdf",
+    "bytes": 19760229,
+    "sha256": "aaaba6460562f60af510c03e91767674fbad8a1994b3558a3ead64f3fce280c4",
+    "overPagesLimit": false,
+    "uses": [
+      "public/data/escapadas.json → EscapadasContent → /escapadas"
+    ],
+    "officialSource": {
+      "url": "https://pinamar.gob.ar/turismo/",
+      "scope": "Municipalidad: comprobar cada afirmación",
+      "check": {
+        "checkedAt": "2026-10-24T17:50:30.125Z",
+        "status": 404,
+        "finalUrl": "https://pinamar.gob.ar/turismo/",
+        "title": "Página no encontrada &#8211; Municipalidad de Pinamar",
+        "availability": "manual-check-required"
+      }
+    },
+    "pdfMetadata": {
+      "status": "metadata-only",
+      "pages": 1,
+      "authorFieldPresent": false,
+      "license": "unverified; metadata is not permission"
+    },
+    "conversion": "Recomendable por etapas; redactar de nuevo tras revisar fuentes y derechos. No transcribir automáticamente.",
+    "manualReview": [
+      "autoría y permiso de texto, mapas y fotografías",
+      "vigencia de horarios, tarifas, traslados y contactos",
+      "fuentes por afirmación y alcance geográfico",
+      "accesibilidad, seguridad y logística sin garantías inventadas"
+    ],
+    "suggestedUrl": "/escapadas/pinamar",
+    "oldLinkStrategy": "Mantener PDF actual hasta autorización y respaldo independiente verificado por SHA-256. Luego 301/308 a HTML equivalente y revisado; nunca a la home ni a una página inexistente.",
+    "approvedForRemoval": false
+  },
+  {
+    "id": "esc_04",
+    "title": "Puerti Madryn",
+    "path": "/pdf/pto_madryn_1.pdf",
+    "bytes": 24274044,
+    "sha256": "b86f199669860e38682385b245b0482c2c7c8fa229e836312c9c2b5f63ed2176",
+    "overPagesLimit": false,
+    "uses": [
+      "public/data/escapadas.json → EscapadasContent → /escapadas"
+    ],
+    "officialSource": {
+      "url": "https://www.madryn.gob.ar/turismo/",
+      "scope": "Municipalidad: revisar además la errata del título actual",
+      "check": {
+        "checkedAt": "2026-10-24T17:50:30.297Z",
+        "status": 200,
+        "finalUrl": "https://www.madryn.gob.ar/turismo/",
+        "title": "TURISMO - Municipalidad de Puerto Madryn",
+        "availability": "http-accessible-not-content-approved"
+      }
+    },
+    "pdfMetadata": {
+      "status": "metadata-only",
+      "pages": 1,
+      "authorFieldPresent": false,
+      "license": "unverified; metadata is not permission"
+    },
+    "conversion": "Recomendable por etapas; redactar de nuevo tras revisar fuentes y derechos. No transcribir automáticamente.",
+    "manualReview": [
+      "autoría y permiso de texto, mapas y fotografías",
+      "vigencia de horarios, tarifas, traslados y contactos",
+      "fuentes por afirmación y alcance geográfico",
+      "accesibilidad, seguridad y logística sin garantías inventadas"
+    ],
+    "suggestedUrl": "/escapadas/puerto-madryn",
+    "oldLinkStrategy": "Mantener PDF actual hasta autorización y respaldo independiente verificado por SHA-256. Luego 301/308 a HTML equivalente y revisado; nunca a la home ni a una página inexistente.",
+    "approvedForRemoval": false
+  },
+  {
+    "id": "esc_09",
+    "title": "Salta",
+    "path": "/pdf/salta.pdf",
+    "bytes": 31616145,
+    "sha256": "cd29698d10d093ed093dcea3f8633e6d2462573be1ce006e57f0b9c4f0a7a813",
+    "overPagesLimit": true,
+    "uses": [
+      "public/data/escapadas.json → EscapadasContent → /escapadas"
+    ],
+    "officialSource": {
+      "url": "https://www.turismosalta.gov.ar/",
+      "scope": "Portal provincial",
+      "check": {
+        "checkedAt": "2026-10-24T17:50:33.585Z",
+        "status": 200,
+        "finalUrl": "https://visitsalta.ar/",
+        "title": null,
+        "availability": "http-accessible-not-content-approved"
+      }
+    },
+    "pdfMetadata": {
+      "status": "metadata-only",
+      "pages": 1,
+      "authorFieldPresent": false,
+      "license": "unverified; metadata is not permission"
+    },
+    "conversion": "Recomendable por etapas; redactar de nuevo tras revisar fuentes y derechos. No transcribir automáticamente.",
+    "manualReview": [
+      "autoría y permiso de texto, mapas y fotografías",
+      "vigencia de horarios, tarifas, traslados y contactos",
+      "fuentes por afirmación y alcance geográfico",
+      "accesibilidad, seguridad y logística sin garantías inventadas"
+    ],
+    "suggestedUrl": "/escapadas/salta",
+    "oldLinkStrategy": "Mantener PDF actual hasta autorización y respaldo independiente verificado por SHA-256. Luego 301/308 a HTML equivalente y revisado; nunca a la home ni a una página inexistente.",
+    "approvedForRemoval": false
+  },
+  {
+    "id": "esc_16",
+    "title": "San Juan",
+    "path": "/pdf/sanjuan.pdf",
+    "bytes": 16454455,
+    "sha256": "f1ef2bca6fc0ebbc29f50d82bc789a5d9ff1df6c15dcbe839ffb0eaa13ea5663",
+    "overPagesLimit": false,
+    "uses": [
+      "public/data/escapadas.json → EscapadasContent → /escapadas"
+    ],
+    "officialSource": {
+      "url": "https://www.sanjuan.gov.ar/",
+      "scope": "Portal provincial general; faltan fuentes turísticas específicas",
+      "check": {
+        "checkedAt": "2026-10-24T17:50:35.607Z",
+        "status": 200,
+        "finalUrl": "https://sj.sanjuan.gob.ar/",
+        "title": "Gobierno de la provincia de San Juan",
+        "availability": "http-accessible-not-content-approved"
+      }
+    },
+    "pdfMetadata": {
+      "status": "metadata-only",
+      "pages": 1,
+      "authorFieldPresent": false,
+      "license": "unverified; metadata is not permission"
+    },
+    "conversion": "Recomendable por etapas; redactar de nuevo tras revisar fuentes y derechos. No transcribir automáticamente.",
+    "manualReview": [
+      "autoría y permiso de texto, mapas y fotografías",
+      "vigencia de horarios, tarifas, traslados y contactos",
+      "fuentes por afirmación y alcance geográfico",
+      "accesibilidad, seguridad y logística sin garantías inventadas"
+    ],
+    "suggestedUrl": "/escapadas/san-juan",
+    "oldLinkStrategy": "Mantener PDF actual hasta autorización y respaldo independiente verificado por SHA-256. Luego 301/308 a HTML equivalente y revisado; nunca a la home ni a una página inexistente.",
+    "approvedForRemoval": false
+  },
+  {
+    "id": "esc_17",
+    "title": "San Luis",
+    "path": "/pdf/sanluis.pdf",
+    "bytes": 33406355,
+    "sha256": "3a1571a56d29d31e1f86e0a2140b3b25a3d8a69a11ba7f79db816c51dc208d17",
+    "overPagesLimit": true,
+    "uses": [
+      "public/data/escapadas.json → EscapadasContent → /escapadas"
+    ],
+    "officialSource": {
+      "url": "https://turismo.sanluis.gov.ar/",
+      "scope": "Portal provincial",
+      "check": {
+        "checkedAt": "2026-10-24T17:50:42.796Z",
+        "status": null,
+        "availability": "manual-check-required",
+        "error": "ENETUNREACH"
+      }
+    },
+    "pdfMetadata": {
+      "status": "metadata-only",
+      "pages": 1,
+      "authorFieldPresent": false,
+      "license": "unverified; metadata is not permission"
+    },
+    "conversion": "Recomendable por etapas; redactar de nuevo tras revisar fuentes y derechos. No transcribir automáticamente.",
+    "manualReview": [
+      "autoría y permiso de texto, mapas y fotografías",
+      "vigencia de horarios, tarifas, traslados y contactos",
+      "fuentes por afirmación y alcance geográfico",
+      "accesibilidad, seguridad y logística sin garantías inventadas"
+    ],
+    "suggestedUrl": "/escapadas/san-luis",
+    "oldLinkStrategy": "Mantener PDF actual hasta autorización y respaldo independiente verificado por SHA-256. Luego 301/308 a HTML equivalente y revisado; nunca a la home ni a una página inexistente.",
+    "approvedForRemoval": false
+  },
+  {
+    "id": "esc_20",
+    "title": "Santiago del Estero",
+    "path": "/pdf/santiago.pdf",
+    "bytes": 28132742,
+    "sha256": "4bd407b099b401e214dbf700668207c0f43aea51e353a95d464ff60424e0adbb",
+    "overPagesLimit": true,
+    "uses": [
+      "public/data/escapadas.json → EscapadasContent → /escapadas"
+    ],
+    "officialSource": {
+      "url": "https://www.santiagodelestero.gov.ar/",
+      "scope": "Portal provincial general; faltan fuentes por destino",
+      "check": {
+        "checkedAt": "2026-10-24T17:50:35.710Z",
+        "status": null,
+        "availability": "manual-check-required",
+        "error": "ENOTFOUND"
+      }
+    },
+    "pdfMetadata": {
+      "status": "metadata-only",
+      "pages": 1,
+      "authorFieldPresent": false,
+      "license": "unverified; metadata is not permission"
+    },
+    "conversion": "Recomendable por etapas; redactar de nuevo tras revisar fuentes y derechos. No transcribir automáticamente.",
+    "manualReview": [
+      "autoría y permiso de texto, mapas y fotografías",
+      "vigencia de horarios, tarifas, traslados y contactos",
+      "fuentes por afirmación y alcance geográfico",
+      "accesibilidad, seguridad y logística sin garantías inventadas"
+    ],
+    "suggestedUrl": "/escapadas/santiago-del-estero",
+    "oldLinkStrategy": "Mantener PDF actual hasta autorización y respaldo independiente verificado por SHA-256. Luego 301/308 a HTML equivalente y revisado; nunca a la home ni a una página inexistente.",
+    "approvedForRemoval": false
+  },
+  {
+    "id": "security-archive",
+    "title": "Documento de seguridad",
+    "path": "/pdf/seguridad/recomendaciones_para_un_verano_seguro_1.pdf",
+    "bytes": 1368481,
+    "sha256": "1d0637c6aa8ba9b7479340c8833db2c019db5673a85408b2e68db5175ca5be6d",
+    "overPagesLimit": false,
+    "uses": [
+      "Sin referencia interna confirmada. /seguridad ya es HTML. No descartar enlaces externos."
+    ],
+    "officialSource": {
+      "url": "https://www.argentina.gob.ar/sinagir",
+      "scope": "Fuente institucional de seguridad; no valida autoría del PDF",
+      "check": {
+        "checkedAt": "2026-10-24T17:50:43.097Z",
+        "status": 200,
+        "finalUrl": "https://www.argentina.gob.ar/sinagir",
+        "title": "SINAGIR | Argentina.gob.ar",
+        "availability": "http-accessible-not-content-approved"
+      }
+    },
+    "pdfMetadata": {
+      "status": "metadata-only",
+      "pages": 10,
+      "authorFieldPresent": false,
+      "license": "unverified; metadata is not permission"
+    },
+    "conversion": "Evaluar si el HTML de /seguridad ya cubre el alcance; no crear otra URL sin necesidad.",
+    "manualReview": [
+      "autoría y permiso de texto, mapas y fotografías",
+      "vigencia de horarios, tarifas, traslados y contactos",
+      "fuentes por afirmación y alcance geográfico",
+      "accesibilidad, seguridad y logística sin garantías inventadas"
+    ],
+    "suggestedUrl": "/seguridad",
+    "oldLinkStrategy": "Mantener PDF actual hasta autorización y respaldo independiente verificado por SHA-256. Luego 301/308 a HTML equivalente y revisado; nunca a la home ni a una página inexistente.",
+    "approvedForRemoval": false
+  },
+  {
+    "id": "esc_13",
+    "title": "Talampaya e Ischigualasto",
+    "path": "/pdf/talampaya.pdf",
+    "bytes": 35463984,
+    "sha256": "378d69540724586f217519589d05fee8a0f268b77664173893f00a37b3fd45f5",
+    "overPagesLimit": true,
+    "uses": [
+      "public/data/escapadas.json → EscapadasContent → /escapadas"
+    ],
+    "officialSource": {
+      "url": "https://www.argentina.gob.ar/parquesnacionales/talampaya",
+      "scope": "Talampaya; Ischigualasto requiere fuente independiente de San Juan",
+      "check": {
+        "checkedAt": "2026-10-24T17:50:34.269Z",
+        "status": 200,
+        "finalUrl": "https://www.argentina.gob.ar/parquesnacionales/centro/parque-nacional-talampaya",
+        "title": "Parque Nacional Talampaya | Argentina.gob.ar",
+        "availability": "http-accessible-not-content-approved"
+      }
+    },
+    "pdfMetadata": {
+      "status": "metadata-only",
+      "pages": 1,
+      "authorFieldPresent": false,
+      "license": "unverified; metadata is not permission"
+    },
+    "conversion": "Recomendable por etapas; redactar de nuevo tras revisar fuentes y derechos. No transcribir automáticamente.",
+    "manualReview": [
+      "autoría y permiso de texto, mapas y fotografías",
+      "vigencia de horarios, tarifas, traslados y contactos",
+      "fuentes por afirmación y alcance geográfico",
+      "accesibilidad, seguridad y logística sin garantías inventadas"
+    ],
+    "suggestedUrl": "/escapadas/talampaya-e-ischigualasto",
+    "oldLinkStrategy": "Mantener PDF actual hasta autorización y respaldo independiente verificado por SHA-256. Luego 301/308 a HTML equivalente y revisado; nunca a la home ni a una página inexistente.",
+    "approvedForRemoval": false
+  },
+  {
+    "id": "esc_12",
+    "title": "Ushuaia",
+    "path": "/pdf/ushuaia.pdf",
+    "bytes": 34178289,
+    "sha256": "f0ccb3e456defa8d1dcd0fff42293091f631f94d87dbac9fc002cf8b74f91c36",
+    "overPagesLimit": true,
+    "uses": [
+      "public/data/escapadas.json → EscapadasContent → /escapadas"
+    ],
+    "officialSource": {
+      "url": "https://www.ushuaia.gob.ar/turismo",
+      "scope": "Portal municipal: información turística detallada pendiente",
+      "check": {
+        "checkedAt": "2026-10-24T17:50:32.281Z",
+        "status": 200,
+        "finalUrl": "https://www.ushuaia.gob.ar/turismo",
+        "title": "Secretaria de turismo - Municipalidad de ushuaia",
+        "availability": "http-accessible-not-content-approved"
+      }
+    },
+    "pdfMetadata": {
+      "status": "metadata-only",
+      "pages": 1,
+      "authorFieldPresent": false,
+      "license": "unverified; metadata is not permission"
+    },
+    "conversion": "Recomendable por etapas; redactar de nuevo tras revisar fuentes y derechos. No transcribir automáticamente.",
+    "manualReview": [
+      "autoría y permiso de texto, mapas y fotografías",
+      "vigencia de horarios, tarifas, traslados y contactos",
+      "fuentes por afirmación y alcance geográfico",
+      "accesibilidad, seguridad y logística sin garantías inventadas"
+    ],
+    "suggestedUrl": "/escapadas/ushuaia",
+    "oldLinkStrategy": "Mantener PDF actual hasta autorización y respaldo independiente verificado por SHA-256. Luego 301/308 a HTML equivalente y revisado; nunca a la home ni a una página inexistente.",
+    "approvedForRemoval": false
+  },
+  {
+    "id": "esc_07",
+    "title": "Sierra de la Ventana",
+    "path": "/pdf/ventana.pdf",
+    "bytes": 15874893,
+    "sha256": "ba9891b9a3705cbc9c38fb7d9bcad92ed593d46535c97203e9b947130aaa515f",
+    "overPagesLimit": false,
+    "uses": [
+      "public/data/escapadas.json → EscapadasContent → /escapadas"
+    ],
+    "officialSource": {
+      "url": "https://www.tornquist.gov.ar/turismo/",
+      "scope": "Municipalidad: cobertura de Sierra de la Ventana a revisar",
+      "check": {
+        "checkedAt": "2026-10-24T17:50:31.772Z",
+        "status": 404,
+        "finalUrl": "https://www.tornquist.gov.ar/turismo/",
+        "title": "404 Not Found",
+        "availability": "manual-check-required"
+      }
+    },
+    "pdfMetadata": {
+      "status": "metadata-only",
+      "pages": 1,
+      "authorFieldPresent": false,
+      "license": "unverified; metadata is not permission"
+    },
+    "conversion": "Recomendable por etapas; redactar de nuevo tras revisar fuentes y derechos. No transcribir automáticamente.",
+    "manualReview": [
+      "autoría y permiso de texto, mapas y fotografías",
+      "vigencia de horarios, tarifas, traslados y contactos",
+      "fuentes por afirmación y alcance geográfico",
+      "accesibilidad, seguridad y logística sin garantías inventadas"
+    ],
+    "suggestedUrl": "/escapadas/sierra-de-la-ventana",
+    "oldLinkStrategy": "Mantener PDF actual hasta autorización y respaldo independiente verificado por SHA-256. Luego 301/308 a HTML equivalente y revisado; nunca a la home ni a una página inexistente.",
+    "approvedForRemoval": false
+  }
+]

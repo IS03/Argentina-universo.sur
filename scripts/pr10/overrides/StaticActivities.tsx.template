@@ -1,0 +1,100 @@
+"use client";
+import { useEffect, useRef, useState } from "react";
+import ActividadCard from "@/components/ActividadCard";
+import type { ActividadResumen, Provincia } from "@/lib/catalog";
+import { filtrarActividades, TODAS_LAS_PROVINCIAS } from "@/lib/catalog";
+import { seleccionDesdeParametro, SLUGS_PROVINCIAS } from "@/lib/site-links";
+export default function StaticActivities({
+  actividades,
+  provincias,
+  seleccionInicial,
+}: {
+  actividades: ActividadResumen[];
+  provincias: Pick<Provincia, "provincia" | "slug">[];
+  seleccionInicial: string;
+}) {
+  const [selection, setSelection] = useState(seleccionInicial);
+  const [ready, setReady] = useState(false);
+  const select = useRef<HTMLSelectElement>(null);
+  useEffect(() => {
+    const sync = () => {
+      const value = seleccionDesdeParametro(
+        new URLSearchParams(location.search).get("provincia"),
+      );
+      document.documentElement.dataset.pr10Province = value;
+      setSelection(value);
+      if (select.current) select.current.value = value;
+    };
+    sync();
+    setReady(true);
+    window.addEventListener("popstate", sync);
+    return () => window.removeEventListener("popstate", sync);
+  }, []);
+  const change = (value: string) => {
+    const url = new URL(location.href);
+    if (value === TODAS_LAS_PROVINCIAS) url.searchParams.delete("provincia");
+    else url.searchParams.set("provincia", value);
+    history.replaceState(null, "", url);
+    document.documentElement.dataset.pr10Province = value;
+    setSelection(value);
+  };
+  // All canonical content remains in HTML; an early head script + CSS handles first paint.
+  // Without JS a query cannot change static HTML. The noscript notice makes that explicit.
+  const visible = filtrarActividades(actividades, selection);
+  return (
+    <>
+      <label htmlFor="provincia-filtro" className="block mb-3 text-[#5A4E3D]">
+        Filtrar por provincia
+      </label>
+      <select
+        id="provincia-filtro"
+        ref={select}
+        value={selection}
+        onChange={(e) => change(e.target.value)}
+        data-hidratado={ready ? "" : undefined}
+        className="p-4 mb-8 bg-[#F5F1E8] text-[#5A4E3D] border rounded"
+      >
+        <option value="todas">Todas las provincias</option>
+        {provincias.map((p) => (
+          <option value={p.slug} key={p.slug}>
+            {p.provincia}
+          </option>
+        ))}
+      </select>
+      <noscript>
+        <p>
+          El filtro por parámetro requiere JavaScript en este prototipo
+          estático. El listado completo sigue disponible. No sustituye todavía
+          el comportamiento sin JavaScript de producción.
+        </p>
+      </noscript>
+      <section aria-labelledby="actividades-por-provincia-heading">
+        <h2
+          id="actividades-por-provincia-heading"
+          className="text-3xl mb-6 text-[#5A4E3D]"
+        >
+          Actividades por provincia
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+          {actividades.map((a) => (
+            <div
+              key={a.actividadSlug}
+              data-pr10-province={a.slug}
+              data-pr10-eligible={
+                filtrarActividades(actividades, a.slug).includes(a)
+                  ? "yes"
+                  : "no"
+              }
+            >
+              <ActividadCard actividad={a} />
+            </div>
+          ))}
+        </div>
+        {ready && visible.length === 0 && (
+          <p>No se encontraron actividades para la provincia seleccionada.</p>
+        )}
+      </section>
+      <style>{`html[data-pr10-province]:not([data-pr10-province="todas"]) [data-pr10-eligible="no"]{display:none}${[...SLUGS_PROVINCIAS, "sin-resultados"].map((slug) => `html[data-pr10-province="${slug}"] [data-pr10-province]:not([data-pr10-province="${slug}"]){display:none}`).join("")}`}</style>
+    </>
+  );
+}

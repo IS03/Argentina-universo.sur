@@ -1,0 +1,169 @@
+{
+  "scope": "Planning only, 3 pages/visit, 30 days, peak 10x average; measured rows extrapolate equal mix of 3 cold mobile pages, not real traffic.",
+  "budget": [
+    {
+      "visits": 1000,
+      "pageViews": 3000,
+      "staticArchitecture": {
+        "staticRequests": 75000,
+        "dynamicRequests": 0
+      },
+      "workersArchitecture": {
+        "staticRequests": 69000,
+        "dynamicRequests": 6000,
+        "averageDynamicPerDay": 200,
+        "peakDynamicPerDay": 2000,
+        "dailyRequestLimitExceeded": false,
+        "cpuAndMemoryFit": "UNVERIFIED"
+      },
+      "totalBytes": 2400000000,
+      "decimalGB": 2.4,
+      "assumptions": {
+        "pageViewsPerVisit": 3,
+        "requestsPerPage": 25,
+        "bytesPerPage": 800000,
+        "dynamicRequestsPerPage": 2,
+        "peakFactor": 10,
+        "pdfDownloadRate": 0,
+        "pdfBytes": 26399142.625
+      }
+    },
+    {
+      "visits": 10000,
+      "pageViews": 30000,
+      "staticArchitecture": {
+        "staticRequests": 750000,
+        "dynamicRequests": 0
+      },
+      "workersArchitecture": {
+        "staticRequests": 690000,
+        "dynamicRequests": 60000,
+        "averageDynamicPerDay": 2000,
+        "peakDynamicPerDay": 20000,
+        "dailyRequestLimitExceeded": false,
+        "cpuAndMemoryFit": "UNVERIFIED"
+      },
+      "totalBytes": 24000000000,
+      "decimalGB": 24,
+      "assumptions": {
+        "pageViewsPerVisit": 3,
+        "requestsPerPage": 25,
+        "bytesPerPage": 800000,
+        "dynamicRequestsPerPage": 2,
+        "peakFactor": 10,
+        "pdfDownloadRate": 0,
+        "pdfBytes": 26399142.625
+      }
+    },
+    {
+      "visits": 100000,
+      "pageViews": 300000,
+      "staticArchitecture": {
+        "staticRequests": 7500000,
+        "dynamicRequests": 0
+      },
+      "workersArchitecture": {
+        "staticRequests": 6900000,
+        "dynamicRequests": 600000,
+        "averageDynamicPerDay": 20000,
+        "peakDynamicPerDay": 200000,
+        "dailyRequestLimitExceeded": true,
+        "cpuAndMemoryFit": "UNVERIFIED"
+      },
+      "totalBytes": 240000000000,
+      "decimalGB": 240,
+      "assumptions": {
+        "pageViewsPerVisit": 3,
+        "requestsPerPage": 25,
+        "bytesPerPage": 800000,
+        "dynamicRequestsPerPage": 2,
+        "peakFactor": 10,
+        "pdfDownloadRate": 0,
+        "pdfBytes": 26399142.625
+      }
+    }
+  ],
+  "measured": [
+    {
+      "visits": 1000,
+      "pageViews": 3000,
+      "staticArchitecture": {
+        "staticRequests": 103000,
+        "dynamicRequests": 0
+      },
+      "workersArchitecture": {
+        "staticRequests": 97000,
+        "dynamicRequests": 6000,
+        "averageDynamicPerDay": 200,
+        "peakDynamicPerDay": 2000,
+        "dailyRequestLimitExceeded": false,
+        "cpuAndMemoryFit": "UNVERIFIED"
+      },
+      "totalBytes": 2765318000,
+      "decimalGB": 2.765318,
+      "assumptions": {
+        "pageViewsPerVisit": 3,
+        "requestsPerPage": 34.333333333333336,
+        "bytesPerPage": 921772.6666666666,
+        "dynamicRequestsPerPage": 2,
+        "peakFactor": 10,
+        "pdfDownloadRate": 0,
+        "pdfBytes": 26399142.625
+      }
+    },
+    {
+      "visits": 10000,
+      "pageViews": 30000,
+      "staticArchitecture": {
+        "staticRequests": 1030000.0000000001,
+        "dynamicRequests": 0
+      },
+      "workersArchitecture": {
+        "staticRequests": 970000.0000000001,
+        "dynamicRequests": 60000,
+        "averageDynamicPerDay": 2000,
+        "peakDynamicPerDay": 20000,
+        "dailyRequestLimitExceeded": false,
+        "cpuAndMemoryFit": "UNVERIFIED"
+      },
+      "totalBytes": 27653180000,
+      "decimalGB": 27.65318,
+      "assumptions": {
+        "pageViewsPerVisit": 3,
+        "requestsPerPage": 34.333333333333336,
+        "bytesPerPage": 921772.6666666666,
+        "dynamicRequestsPerPage": 2,
+        "peakFactor": 10,
+        "pdfDownloadRate": 0,
+        "pdfBytes": 26399142.625
+      }
+    },
+    {
+      "visits": 100000,
+      "pageViews": 300000,
+      "staticArchitecture": {
+        "staticRequests": 10300000,
+        "dynamicRequests": 0
+      },
+      "workersArchitecture": {
+        "staticRequests": 9700000,
+        "dynamicRequests": 600000,
+        "averageDynamicPerDay": 20000,
+        "peakDynamicPerDay": 200000,
+        "dailyRequestLimitExceeded": true,
+        "cpuAndMemoryFit": "UNVERIFIED"
+      },
+      "totalBytes": 276531800000,
+      "decimalGB": 276.5318,
+      "assumptions": {
+        "pageViewsPerVisit": 3,
+        "requestsPerPage": 34.333333333333336,
+        "bytesPerPage": 921772.6666666666,
+        "dynamicRequestsPerPage": 2,
+        "peakFactor": 10,
+        "pdfDownloadRate": 0,
+        "pdfBytes": 26399142.625
+      }
+    }
+  ]
+}
