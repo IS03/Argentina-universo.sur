@@ -1,0 +1,42 @@
+[
+  {
+    "original": "/img/home/1.jpg",
+    "originalBytes": 299100,
+    "webpBytes": 44628,
+    "width": 960,
+    "psnrDb": 35.91812315262492,
+    "rights": "Unverified; existing publication and metadata are not proof of a license."
+  },
+  {
+    "original": "/img/home/2.jpg",
+    "originalBytes": 281597,
+    "webpBytes": 100434,
+    "width": 960,
+    "psnrDb": 32.303861906874424,
+    "rights": "Unverified; existing publication and metadata are not proof of a license."
+  },
+  {
+    "original": "/img/provincias/santa-fe/1.jpg",
+    "originalBytes": 1640164,
+    "webpBytes": 181250,
+    "width": 960,
+    "psnrDb": 29.534107648725527,
+    "rights": "Unverified; existing publication and metadata are not proof of a license."
+  },
+  {
+    "original": "/img/provincias/santa-fe/2.jpg",
+    "originalBytes": 725381,
+    "webpBytes": 59356,
+    "width": 960,
+    "psnrDb": 35.161580235809346,
+    "rights": "Unverified; existing publication and metadata are not proof of a license."
+  },
+  {
+    "original": "/img/actividades/santa-fe/1.jpg",
+    "originalBytes": 684583,
+    "webpBytes": 75962,
+    "width": 960,
+    "psnrDb": 34.26368710413361,
+    "rights": "Unverified; existing publication and metadata are not proof of a license."
+  }
+]

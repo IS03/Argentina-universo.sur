@@ -9,6 +9,7 @@ import { idMedicionGA } from "@/lib/analytics";
 import PreferenciasCookies from "@/components/consentimiento/PreferenciasCookies";
 
 // Igual que el layout: el panel de preferencias solo existe donde GA4 está configurado.
+const isPages = process.env.AUS_STATIC_EXPORT === "1";
 const medicionActiva = idMedicionGA(process.env) !== null;
 
 // Página legal: accesible desde el pie, sin indexar y fuera del sitemap (no compite con el contenido turístico).
@@ -70,11 +71,15 @@ export default function PrivacidadPage() {
                 <strong>Solo con tu consentimiento:</strong> Google Analytics no se carga, no crea cookies ni envía
                 datos hasta que aceptás en el aviso de cookies. Si rechazás, no se carga en ninguna página.
               </li>
+              {isPages ? (
+                <li>Esta versión no utiliza Vercel Web Analytics ni Speed Insights. No se ha activado Cloudflare Web Analytics.</li>
+              ) : (
               <li>
                 <strong>Vercel Web Analytics y Speed Insights</strong> (Vercel Inc., proveedor de alojamiento):
                 cuentan visitas y miden la velocidad de carga de forma agregada, sin cookies ni identificadores
                 persistentes.
               </li>
+              )}
             </ul>
           </section>
 
@@ -140,9 +145,10 @@ export default function PrivacidadPage() {
             <h2 id="terceros" className={titulo}>Otros servicios de terceros</h2>
             <ul className={lista}>
               <li>
-                <strong>Alojamiento:</strong> el sitio se sirve desde Vercel, que registra datos técnicos de cada
+                <strong>Alojamiento:</strong> el sitio se sirve desde {isPages ? "Cloudflare Pages" : "Vercel"}, que {isPages ? "procesa" : "registra"} datos técnicos de cada
                 solicitud (dirección IP, navegador, página pedida) para operar y proteger el servicio.
               </li>
+              {isPages && <li>Los enlaces a guías PDF que permanecen en el sitio anterior abren esa versión publicada; sus servicios de alojamiento se describen en la política de ese sitio.</li>}
               <li>
                 <strong>Mapas:</strong> los mapas de ubicación muestran imágenes de OpenStreetMap. Al verlos o
                 activarlos, tu navegador las descarga de los servidores de la OpenStreetMap Foundation, que recibe tu
@@ -157,7 +163,7 @@ export default function PrivacidadPage() {
               Estos proveedores pueden procesar los datos fuera de Argentina, incluso en Estados Unidos. Más
               información:{" "}
               <a href="https://policies.google.com/privacy?hl=es" className={enlace} target="_blank" rel="noopener noreferrer">Google</a>,{" "}
-              <a href="https://vercel.com/legal/privacy-policy" className={enlace} target="_blank" rel="noopener noreferrer">Vercel</a> y{" "}
+              <a href={isPages ? "https://www.cloudflare.com/privacypolicy/" : "https://vercel.com/legal/privacy-policy"} className={enlace} target="_blank" rel="noopener noreferrer">{isPages ? "Cloudflare" : "Vercel"}</a> y{" "}
               <a href="https://osmfoundation.org/wiki/Privacy_Policy" className={enlace} target="_blank" rel="noopener noreferrer">OpenStreetMap Foundation</a>.
             </p>
           </section>

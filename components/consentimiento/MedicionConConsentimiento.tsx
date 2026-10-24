@@ -14,10 +14,11 @@ import { BOTON_DECISION } from "./estilos";
  * viene en el HTML y se pinta con la página; a quien ya decidió se lo oculta el script del <head>
  * (SCRIPT_DECISION_INICIAL) y, al hidratar, deja de renderizarse. Sin decisión, GA4 no se carga.
  */
-export default function MedicionConConsentimiento({ gaId }: { gaId: string }) {
+export default function MedicionConConsentimiento({ gaId, measurementAllowed = true }: { gaId: string; measurementAllowed?: boolean }) {
   const decision = useSyncExternalStore(suscribirConsentimiento, leerConsentimiento, () => "pendiente" as const);
   if (decision === "pendiente" || decision === null) return <BannerCookies />;
   if (decision === "rechazada") return <RevocarGA gaId={gaId} />;
+  if (!measurementAllowed) return null;
   return (
     <>
       <PermisosGA gaId={gaId} />

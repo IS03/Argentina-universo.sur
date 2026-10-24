@@ -1,0 +1,58 @@
+{
+  "mode": "consent-test",
+  "files": 2081,
+  "bytes": 736310348,
+  "mediaBytes": 80004852,
+  "fallbackBytes": 222371,
+  "pdfBytes": 633579423,
+  "withoutPdfsBytes": 102730925,
+  "oversized": [
+    {
+      "path": "pdf/bariloche.pdf",
+      "bytes": 34489884
+    },
+    {
+      "path": "pdf/caba.pdf",
+      "bytes": 37651530
+    },
+    {
+      "path": "pdf/entrerios.pdf",
+      "bytes": 29060699
+    },
+    {
+      "path": "pdf/formosa.pdf",
+      "bytes": 57013841
+    },
+    {
+      "path": "pdf/neuquen.pdf",
+      "bytes": 45336735
+    },
+    {
+      "path": "pdf/salta.pdf",
+      "bytes": 31616145
+    },
+    {
+      "path": "pdf/sanluis.pdf",
+      "bytes": 33406355
+    },
+    {
+      "path": "pdf/santiago.pdf",
+      "bytes": 28132742
+    },
+    {
+      "path": "pdf/talampaya.pdf",
+      "bytes": 35463984
+    },
+    {
+      "path": "pdf/ushuaia.pdf",
+      "bytes": 34178289
+    }
+  ],
+  "deploymentAuthorized": false,
+  "releaseBlocked": [
+    "PDF replacements pending human approval",
+    "Image rights review",
+    "Cloudflare account and zone rules not authorized/tested",
+    "Privacy provider update pending"
+  ]
+}

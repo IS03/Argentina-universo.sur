@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "eslint --max-warnings=0",
     "typecheck": "next typegen && tsc --noEmit",
-    "validate": "node --experimental-strip-types scripts/validate-data.mjs && npm run db:check",
+    "validate": "node --experimental-strip-types scripts/validate-data.mjs && npm run db:check && npm run validate:pages",
     "test": "node --experimental-strip-types --test tests/*.test.mjs",
     "check": "npm run lint && npm run typecheck && npm run validate && npm test && npm run build && npm run audit:seo && npm run test:e2e",
     "audit:seo": "node --experimental-strip-types scripts/audit-seo.mjs",
@@ -17,7 +17,10 @@
     "migration:catalog": "node --experimental-strip-types scripts/catalog-migration-map.mjs",
     "import:dry-run": "node scripts/editorial-import.mjs",
     "db:types": "node scripts/supabase/generate-types.mjs",
-    "db:check": "node scripts/supabase/generate-types.mjs --check"
+    "db:check": "node scripts/supabase/generate-types.mjs --check",
+    "build:pages": "node --experimental-strip-types scripts/pages/build.mjs",
+    "validate:pages": "node --experimental-strip-types scripts/pages/validate.mjs",
+    "test:pages": "node scripts/pages/prepare-tests.mjs && playwright test --config scripts/pages/playwright.config.ts"
   },
   "dependencies": {
     "@next/third-parties": "16.4.3",
