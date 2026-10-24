@@ -3,9 +3,14 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { GoogleAnalytics } from "@next/third-parties/google";
+import Script from "next/script";
 import { SITE_URL, SITE_NAME } from "@/lib/seo";
+import { idMedicionGA, SCRIPT_CONSENTIMIENTO } from "@/lib/analytics";
 
 const isPreview = process.env.VERCEL_ENV === "preview";
+// GA4 solo en producción y con NEXT_PUBLIC_GA_ID; en local, CI y Preview queda en null.
+const gaId = idMedicionGA(process.env);
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -52,6 +57,13 @@ export default function RootLayout({
         {children}
         <Analytics />
         <SpeedInsights />
+        {gaId && (
+          <>
+            {/* El consentimiento por defecto debe llegar al dataLayer antes del config de GA4. */}
+            <Script id="ga-consentimiento" strategy="beforeInteractive" dangerouslySetInnerHTML={{ __html: SCRIPT_CONSENTIMIENTO }} />
+            <GoogleAnalytics gaId={gaId} />
+          </>
+        )}
       </body>
     </html>
   );
