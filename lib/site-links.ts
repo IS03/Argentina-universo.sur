@@ -44,6 +44,7 @@ export const ROUTES = {
   actividades: "/actividades",
   escapadas: "/escapadas",
   seguridad: "/seguridad",
+  privacidad: "/privacidad",
   provincia: (slug: string) => `/provincias/${resolveProvinciaSlug(slug)}`,
   actividad: (slug: string) => `/actividades/${slug}`,
   actividadesPorProvincia: (slug: string) => `/actividades?provincia=${resolveProvinciaSlug(slug)}`,

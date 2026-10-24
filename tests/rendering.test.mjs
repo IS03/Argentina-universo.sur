@@ -153,3 +153,26 @@ test("los enlaces a /actividades?provincia=… no se precargan", async () => {
   }
   assert.ok(enlaces >= 1);
 });
+
+test("el aviso de privacidad tiene un contacto válido y declara todo el almacenamiento local", async () => {
+  const { CONTACTO_PRIVACIDAD, ALMACENAMIENTO_LOCAL, RESPONSABLE } = await import("../lib/privacidad.ts");
+  assert.match(CONTACTO_PRIVACIDAD, /^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i, "falta el correo para ejercer los derechos (lib/privacidad.ts)");
+  assert.ok(RESPONSABLE.trim());
+  const declaradas = new Set(ALMACENAMIENTO_LOCAL.map(item => item.nombre));
+  for (const dir of ["app", "components", "lib"]) {
+    for (const entry of await readdir(join(projectRoot, dir), { recursive: true })) {
+      if (!/\.(tsx?|jsx?)$/.test(entry)) continue;
+      for (const [, clave] of (await source(join(dir, entry))).matchAll(/(?:local|session)Storage\.setItem\(\s*["'`]([^"'`]+)/g)) {
+        assert.ok(declaradas.has(clave), `${dir}/${entry} guarda "${clave}" y el aviso no lo declara`);
+      }
+      assert.doesNotMatch(await source(join(dir, entry)), /document\.cookie\s*=/, `${dir}/${entry} escribe cookies propias no declaradas`);
+    }
+  }
+});
+
+test("/privacidad no se indexa ni entra al sitemap", async () => {
+  const pagina = await source("app/privacidad/page.tsx");
+  assert.match(pagina, /robots: \{ index: false, follow: true \}/);
+  const { STATIC_PAGES } = await import("../lib/seo.ts");
+  assert.ok(!STATIC_PAGES.some(p => p.path === "/privacidad"));
+});
