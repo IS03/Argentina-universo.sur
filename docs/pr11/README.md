@@ -7,6 +7,7 @@ Base: `main` `18a4780` (PR 10 fusionado). Rama: `codex/pr11-pages-ready`. No se 
 ## Resultados y evidencias
 
 - [Resultados, tamaños y rendimiento](RESULTS.md).
+- [Seguridad editorial y ausencia de borradores en artefactos públicos](EDITORIAL-SECURITY.md).
 - [Pasos exactos de Preview, reglas y reversión](CLOUDFLARE.md).
 - [Cambios de privacidad propuestos](PRIVACY-DELTA.md).
 - [Plan editorial y 24 PDF](content-plan.json), derivado de la [matriz de PR10](../pr10/PDF-MATRIX.md).
@@ -44,9 +45,9 @@ Los derechos de fotografías existentes siguen pendientes de acreditación del t
 
 El usuario autorizó explícitamente en esta conversación la nueva ficha de **El Palmar**, redactada desde cero con fuentes oficiales. Esa autorización queda registrada en `content/escapadas/el-palmar.json` y no alcanza al PDF, a las 84 fichas del maestro ni a infraestructura remota.
 
-La ficha está completa para revisión en el candidato: presentación, naturaleza, patrimonio histórico, organización, recomendaciones, dirección, búsqueda de mapa, fuentes con fecha y enlaces relacionados. No inventa coordenadas precisas, tarifas, servicios disponibles, duración ni apertura. No copia el PDF ni incorpora fotografías sin permiso. La dirección y los hechos estables se verificaron en APN; datos variables se consultan en los canales oficiales.
+La ficha está completa para revisión **en el código del PR, fuera de los artefactos públicos**: presentación, naturaleza, patrimonio histórico, organización, recomendaciones, dirección, búsqueda de mapa, fuentes con fecha y enlaces relacionados. No inventa coordenadas precisas, tarifas, servicios disponibles, duración ni apertura. No copia el PDF ni incorpora fotografías sin permiso. La dirección y los hechos estables se verificaron en APN; datos variables se consultan en los canales oficiales.
 
-La **autorización de publicación ya está otorgada**; el registro permanece en `draft`/noindex mientras el texto exacto se revisa en este PR. `review:null` evita afirmar que el usuario leyó o firmó cada párrafo. El gate exige revisión identificada vinculada al SHA-256 del contenido; una edición posterior invalida esa revisión. Tras la aprobación humana del texto en GitHub se completa el registro de revisión, sin volver a pedir autorización general ni alterar estados del maestro. La web Vercel existente sigue respondiendo 404 a drafts.
+La **autorización de publicación ya está otorgada**; el registro permanece en `draft`, con `review:null`, mientras el texto exacto se revisa. El gate existente exige revisión identificada vinculada al SHA-256 del contenido; una edición posterior invalida esa revisión. Esta corrección no cambia esa política ni registra una aprobación por cuenta del desarrollador. **Vercel y todos los modos de exportación responden 404 al borrador**, sin HTML, RSC ni contenido en JavaScript; noindex no es control de acceso. No se incluye tampoco la demostración de revisión de PR10. El catálogo `server-only` y la auditoría de artefactos impiden usar flags de exportación como excepción. Ver [barreras y alcance de la revisión del maestro](EDITORIAL-SECURITY.md).
 
 `app/escapadas/[slug]`, `TripView` y el catálogo de publicación permiten agregar futuras fichas validadas. Los IDs nuevos de esta publicación no se presentan como IDs originales del maestro; el Sheets existente sigue siendo la fuente editorial principal y sus 84 registros no se importaron ni aprobaron. Antes de incorporar una ficha del maestro hay que conservar su ID/relaciones/fuentes/estados mediante el contrato de PR9. Este JSON es un artefacto de publicación, no otra planilla maestra.
 
@@ -90,6 +91,6 @@ node scripts/pr10/serve-static.mjs .artifacts/pr10/static/out 4301
 node scripts/pages/benchmark.mjs
 ```
 
-El harness reutiliza las expectativas de consentimiento existentes: solo cambia el transporte para representar el hostname oficial con respuestas locales e ID ficticio. No debe contactar producción para esos tests; `fallback` mantiene el retraso de JS dentro del transporte y un hook espera las rutas pendientes. El benchmark, en cambio, realiza lecturas públicas de producción expresamente para comparar, con Google y telemetría bloqueados. No se crearon eventos reales de GA4.
+El harness reutiliza las expectativas de consentimiento existentes: solo cambia el transporte para representar el hostname oficial con los archivos del artefacto local e ID ficticio. No contacta producción para esos tests; `fallback` mantiene el retraso de JS dentro del transporte. La respuesta se inicia directamente desde archivo para evitar carreras con peticiones HTTP durante el cierre, sin omitir errores ni alterar las expectativas. El benchmark, en cambio, realiza lecturas públicas de producción expresamente para comparar, con Google y telemetría bloqueados. No se crearon eventos reales de GA4.
 
 `production-audit` conserva PDF para pruebas locales y **no es desplegable** por sus diez archivos grandes. `consent-test` usa un ID ficticio y tampoco se sube. `preview` es el único candidato para el Preview del titular, después de autorización de cuenta y revisión de privacidad/derechos. `slim-size-estimate` lleva una marca de no despliegue: es una estimación, no un modo de saltar aprobaciones. No existe un comando de release de producción.

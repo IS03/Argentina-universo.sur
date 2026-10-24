@@ -1,3 +1,4 @@
+import { assertPublicArtifact, readEditorialTrips } from "./editorial-security.mjs";
 import { readFile, stat, readdir, mkdir, writeFile } from "node:fs/promises";
 import { join, resolve } from "node:path";
 import {
@@ -12,6 +13,9 @@ import { createSitemap } from "../../lib/seo.ts";
 const mode = process.argv[2] || "preview",
   base = resolve(".artifacts/pages/" + mode),
   preview = mode === "preview";
+const editorialSecurity = await assertPublicArtifact(base, await readEditorialTrips(resolve(".")));
+await mkdir(".artifacts/pages/reports", {recursive: true});
+await writeFile(".artifacts/pages/reports/editorial-security-" + mode + ".json", JSON.stringify(editorialSecurity, null, 2) + "\n");
 const catalog = await readCatalog();
 const urls = createSitemap(
   catalog.provincias.map(normalizarProvincia),

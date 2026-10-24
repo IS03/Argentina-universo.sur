@@ -4,22 +4,30 @@ Fuente de código: `main` `18a4780`, PR10 fusionado; pruebas el 24/10/2026 en ma
 
 ## Pruebas
 
-- Aplicación actual: `npm run check` completo, lint sin warnings, TypeScript, validación de catálogos/medios, PGlite y contratos editoriales; **67 unitarias**, build, **106 páginas SEO / 0 errores**, **103 E2E aprobadas y 9 omisiones** del alcance original.
+- Aplicación actual: `npm run check` completo, lint sin warnings, TypeScript, validación de catálogos/medios, PGlite y contratos editoriales; **75 unitarias**, build, **106 páginas SEO / 0 errores**, **103 E2E aprobadas y 9 omisiones** del alcance original.
 - Candidato Pages: tres builds aislados y TypeScript; auditoría de 106 URL en Preview y modo de compatibilidad, canonical/OG/sitemap/robots y recursos con **0 errores**.
 - Navegador adicional: **68 aprobadas y 2 omisiones**, incluyendo pruebas estáticas de PR10, 24 páginas provinciales sin JS, modelo de reglas legacy, consentimiento reutilizado y seis comprobaciones con **Wrangler Pages local real** en escritorio/móvil. Las omisiones corresponden exclusivamente a las pruebas de Workers que ya no aplican.
-- Sin GA4 en Preview/alias; aceptación guardada, rechazo, revocación, pestañas, expiración y orden de permisos antes del config verificados con ID ficticio y transporte local. El harness conserva las expectativas originales y enruta el JS retrasado mediante `fallback`; espera rutas pendientes al cerrar. Los errores iniciales de transporte de pruebas fueron corregidos, no ocultados como fallos del producto.
+- Sin GA4 en Preview/alias; aceptación guardada, rechazo, revocación, pestañas, expiración y orden de permisos antes del config verificados con ID ficticio y transporte local. El harness conserva las expectativas originales y enruta el JS retrasado mediante `fallback`. La revisión final encontró una carrera entre el fetch HTTP de prueba y `unrouteAll`; ahora se sirven los mismos bytes del artefacto local directamente, iniciando la respuesta antes del cierre, sin ignorar errores ni cambiar expectativas del consentimiento.
 - Wrangler 4.152.0 se instaló en tooling aislado, sin login ni recursos remotos. Se comprobaron navegación cliente de export, ruta Catamarca y query, `_headers`, `_redirects`, WebP y la diferencia inevitable de query sin zona. No se extrapola el emulador como certificación del CDN remoto.
 - Los hashes de originales se conservan: 306 archivos de la categoría heredada de imágenes (304 imágenes y dos auxiliares) y los 24 PDF. Sin cambios en Excel, SQL de Supabase, datos turísticos existentes ni historia de Git.
 
 [Evidencias JSON](evidence/). El CI incorpora además build/auditoría de Preview, manteniendo las verificaciones existentes.
 
+## Seguridad editorial: corrección final
+
+Se eliminó la excepción `AUS_STATIC_EXPORT=1` que exponía borradores y la inyección del demo PR10. El Palmar sigue en `draft`/`review:null`, sin modificar su contenido ni autorización. El texto se revisa en código, fuera del Preview público. El gate de aprobación no cambió. Next no admite rutas dinámicas sin parámetros en export: con cero aprobadas se omite únicamente la ruta del clon temporal.
+
+[Detalle de barreras, pruebas y límites](EDITORIAL-SECURITY.md). Cada build real auditó 134 HTML, 666 archivos TXT de navegación/RSC y 23 JavaScript; cero hallazgos de borradores, prototipos o datos privados del contrato conocido del maestro. Se excluyeron seis Excel fuente del artefacto, sin borrar originales. No se accedió al Sheets ni se exportaron sus fichas; no se presenta este chequeo como auditoría del maestro remoto.
+
+Las mediciones de rendimiento siguientes corresponden a la ejecución anterior del PR11; esta corrección no cambió fotos, layouts, consentimiento ni las tres páginas medidas. Se regeneraron builds, tamaños y pruebas funcionales para la revisión de seguridad, sin atribuirle una nueva medición de rendimiento.
+
 ## Peso del despliegue
 
 | Artefacto | Archivos | Bytes | MB decimales | Estado |
 | --- | ---: | ---: | ---: | --- |
-| Preview ligero | 2057 | 102135213 | 102.14 | Sin PDF ni originales; pendiente cuenta/derechos/privacidad |
-| Compatibilidad local con PDF | 2081 | 735705399 | 735.71 | No desplegable: 10 PDF >25 MiB |
-| Estimación sin PDF de compatibilidad | — | 102125976 | 102.13 | No permite saltar aprobaciones |
+| Preview ligero | 2038 | 101809265 | 101.81 | Sin PDF ni originales; pendiente cuenta/derechos/privacidad |
+| Compatibilidad local con PDF | 2062 | 735379408 | 735.38 | No desplegable: 10 PDF >25 MiB |
+| Estimación sin PDF de compatibilidad | — | 101799985 | 101.80 | No permite saltar aprobaciones |
 | Variantes WebP | — | 80004852 | 80.00 | Incluidas en el Preview |
 | SVG conservados | 2 | 222371 | 0.22 | Incluidos en el Preview |
 | PDF originales | 24 | 633579423 | 633,58 | Permanecen en repositorio y producción |

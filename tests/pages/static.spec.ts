@@ -125,23 +125,13 @@ test("PDFs y URLs de fotos heredadas siguen accesibles; ningún optimizer Vercel
   expect(pdf.status()).toBe(200);
   expect(pdf.headers()["content-type"]).toContain("application/pdf");
 });
-test("El Palmar queda completo para revisión, noindex y fuera del sitemap", async ({
-  page,
-  request,
-}) => {
-  await page.goto("/escapadas/el-palmar");
-  await expect(page.locator("h1")).toContainText("El Palmar");
-  await expect(
-    page.getByRole("heading", { name: "Ubicación y mapa" }),
-  ).toBeVisible();
-  await expect(
-    page.getByText("Borrador para revisión humana.", { exact: false }),
-  ).toBeVisible();
-  await expect(page.locator('meta[name="robots"]')).toHaveAttribute(
-    "content",
-    /noindex/,
-  );
-  expect(await (await request.get("/sitemap.xml")).text()).not.toContain(
-    "/escapadas/el-palmar",
-  );
+test("los borradores no tienen HTML ni datos RSC públicos", async ({ request }) => {
+  for (const host of [4401, 4402, 4404, 4410]) {
+    for (const route of ["/escapadas/el-palmar", "/escapadas/el-palmar.html", "/escapadas/el-palmar.txt", "/prototipo-pr10/escapadas/el-palmar"]) {
+      const response = await request.get(`http://127.0.0.1:${host}${route}`);
+      expect(response.status(), `${host}${route}`).toBe(404);
+      expect(await response.text()).not.toContain("AUS-ESC-EL-PALMAR-EDITORIAL-01");
+    }
+    expect(await (await request.get(`http://127.0.0.1:${host}/sitemap.xml`)).text()).not.toContain("/escapadas/el-palmar");
+  }
 });

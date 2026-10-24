@@ -68,3 +68,20 @@ export function validateTrip(trip: Trip): string[] {
     errors.push("Approval lacks human review/publication permission");
   return errors;
 }
+
+// Explicit public projection: editorial authorization, reviews and unknown import fields stay server-side.
+export type PublishedTrip = Pick<Trip,
+  "id" | "slug" | "title" | "destination" | "province" | "description" |
+  "sources" | "sections" | "address" | "mapUrl" | "related"
+>;
+export function publishedTripProjection(trip: Trip): PublishedTrip {
+  if (!tripPublishable(trip)) throw new Error("Trip has no valid publication approval");
+  return {
+    id: trip.id, slug: trip.slug, title: trip.title,
+    destination: trip.destination, province: trip.province, description: trip.description,
+    sources: trip.sources.map(({id, title, url, checkedAt}) => ({id, title, url, checkedAt})),
+    sections: trip.sections.map(({title, paragraphs, sourceIds}) => ({title, paragraphs: [...paragraphs], sourceIds: [...sourceIds]})),
+    address: trip.address, mapUrl: trip.mapUrl,
+    related: trip.related.map(({href, label}) => ({href, label})),
+  };
+}

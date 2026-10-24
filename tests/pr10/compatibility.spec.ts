@@ -143,12 +143,17 @@ test("demo local y fuentes, fuera del sitemap", async ({
 }, info) => {
   test.skip(info.project.name.startsWith("baseline"));
   const response = await page.goto("/prototipo-pr10/escapadas/el-palmar");
-  expect(response?.status()).toBe(200);
-  await expect(page.locator("h1")).toContainText("El Palmar");
-  await expect(page.locator('meta[name="robots"]')).toHaveAttribute(
-    "content",
-    /noindex/,
-  );
+  if (info.project.metadata.publicExport) {
+    expect(response?.status()).toBe(404);
+    expect(await response?.text()).not.toContain("El Palmar");
+  } else {
+    expect(response?.status()).toBe(200);
+    await expect(page.locator("h1")).toContainText("El Palmar");
+    await expect(page.locator('meta[name="robots"]')).toHaveAttribute(
+      "content",
+      /noindex/,
+    );
+  }
   expect(await (await request.get("/sitemap.xml")).text()).not.toContain(
     "prototipo-pr10",
   );

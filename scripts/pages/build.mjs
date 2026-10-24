@@ -15,6 +15,7 @@ import { execFileSync, spawn } from "node:child_process";
 import { constants } from "node:fs";
 import sharp from "sharp";
 import { createHash } from "node:crypto";
+import { copyTrackedInputs, readEditorialTrips, preparePublicTripInputs, assertPublicArtifact } from "./editorial-security.mjs";
 import { imageWidths } from "../../lib/pages/image-policy.ts";
 const root = fileURLToPath(new URL("../../", import.meta.url));
 const base = join(root, ".artifacts/pages");
@@ -32,7 +33,14 @@ const mode = process.argv.includes("--consent-test")
   : process.argv.includes("--production-audit")
     ? "production-audit"
     : "preview";
+const out = join(base, mode);
+const slim = join(base, "slim-size-estimate");
+// Failed builds must not leave a stale upload candidate or a stale passing report for this mode.
+await rm(out, {recursive: true, force: true});
+await rm(slim, {recursive: true, force: true});
 const reports = join(base, "reports");
+for (const name of [`build-${mode}.json`, `editorial-security-${mode}.json`])
+  await rm(join(reports, name), {force: true});
 await mkdir(reports, { recursive: true });
 await rm(source, { recursive: true, force: true });
 await mkdir(source, { recursive: true });
@@ -44,16 +52,11 @@ const files = execFileSync("git", ["ls-files", "-z"], {
   .filter((p) =>
     /^(app\/|components\/|lib\/|content\/|public\/|package(-lock)?\.json$|tsconfig.json$|postcss.config.mjs$)/.test(
       p,
-    ),
+    ) && !/^public\/.*\.(?:xlsx?|csv|tsv)$/i.test(p),
   );
-// Also copy new content/components before their first commit, never .env, publicidad or credentials.
-for (const path of ["app", "components", "lib", "content", "public"])
-  await cp(join(root, path), join(source, path), {
-    recursive: true,
-    mode: constants.COPYFILE_FICLONE,
-  });
-for (const p of files.filter((p) => !p.includes("/")))
-  await cp(join(root, p), join(source, p));
+await copyTrackedInputs(root, source, files);
+const editorialTrips = await readEditorialTrips(source);
+await preparePublicTripInputs(source, editorialTrips);
 await symlink(join(root, "node_modules"), join(source, "node_modules"), "dir");
 const edit = async (p, fn) => {
   const previous = await readFile(join(source, p), "utf8");
@@ -191,17 +194,7 @@ await writeFile(
   join(source, "next.config.ts"),
   `import type {NextConfig} from 'next';const c:NextConfig={output:'export',turbopack:{root:${JSON.stringify(root)}},images:{unoptimized:true}};export default c;`,
 );
-// Keep the PR10 review-only demo so its static regression suite can be rerun.
-await cp(
-  join(root, "scripts/pr10/overrides/TripTemplate.tsx.template"),
-  join(source, "components/TripTemplate.tsx"),
-);
-const demo = join(source, "app/prototipo-pr10/escapadas/el-palmar");
-await mkdir(demo, { recursive: true });
-await cp(
-  join(root, "scripts/pr10/overrides/TripPage.tsx.template"),
-  join(demo, "page.tsx"),
-);
+// PR10 review templates stay in research source; no review route is injected into public builds.
 async function adaptImages(path) {
   for (const entry of await readdir(path, { withFileTypes: true })) {
     const p = join(path, entry.name);
@@ -263,7 +256,8 @@ await new Promise((resolve, reject) => {
   );
   child.on("error", reject);
 });
-const out = join(base, mode);
+// Fail before copying any newly generated public output, including RSC and JS.
+await assertPublicArtifact(join(source, "out"), editorialTrips);
 await rm(out, { recursive: true, force: true });
 await cp(join(source, "out"), out, {
   recursive: true,
@@ -325,13 +319,14 @@ await rm(join(out, "data"), { recursive: true, force: true });
 await rm(join(out, "santa-fe/json"), { recursive: true, force: true });
 await writeFile(
   join(out, "_headers"),
-  `/*\n  X-Content-Type-Options: nosniff\n${mode === "preview" ? "  X-Robots-Tag: noindex, nofollow\n" : ""}/escapadas/el-palmar\n  X-Robots-Tag: noindex, nofollow\n`,
+  `/*\n  X-Content-Type-Options: nosniff\n${mode === "preview" ? "  X-Robots-Tag: noindex, nofollow\n" : ""}`,
 );
+const security = await assertPublicArtifact(out, editorialTrips);
+await writeFile(join(reports, `editorial-security-${mode}.json`), JSON.stringify(security, null, 2) + "\n");
 const full = [];
 await walk(out, async (p) =>
   full.push({ path: relative(out, p), bytes: (await stat(p)).size }),
 );
-const slim = join(base, "slim-size-estimate");
 await rm(slim, { recursive: true, force: true });
 await cp(out, slim, { recursive: true, mode: constants.COPYFILE_FICLONE });
 await rm(join(slim, "pdf"), { recursive: true, force: true });
@@ -340,8 +335,10 @@ await writeFile(
   join(slim, "NOT-DEPLOYABLE.txt"),
   "Size estimate only: PDF compatibility is unresolved. Do not deploy.\n",
 );
+await assertPublicArtifact(slim, editorialTrips);
 const report = {
   mode,
+  editorialSecurity: {withheldRecords: security.withheldRecords, errors: security.errors.length},
   files: full.length,
   bytes: full.reduce((n, f) => n + f.bytes, 0),
   mediaBytes: full

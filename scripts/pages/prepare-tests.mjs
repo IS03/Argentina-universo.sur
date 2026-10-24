@@ -11,7 +11,23 @@ source = source.replace(
 );
 // A delayed page-level request must continue through the local host transport, not the Internet.
 source = source.replace("await r.continue();", "await r.fallback();");
-source += `\n// Only transport differs: browser hostname is production; every application request stays local.\ntest.beforeEach(async({context})=>{await context.route('https://www.argentinauniversosur.com/**',async route=>{const url=new URL(route.request().url());const response=await fetch('http://127.0.0.1:4402'+url.pathname+url.search,{headers:{'accept-encoding':'identity'}});const body=Buffer.from(await response.arrayBuffer());await route.fulfill({status:response.status,contentType:response.headers.get('content-type')||'application/octet-stream',body});});});\n`;
+source += `
+// Only transport differs: approved hostname, bytes from the isolated local artifact, never Internet.
+// Synchronous file reads start fulfillment before teardown can unroute an in-flight HTTP fetch.
+import { readFileSync, statSync } from 'node:fs';
+import { resolve, join, extname, sep } from 'node:path';
+const artifact = resolve('.artifacts/pages/consent-test');
+const types: Record<string,string> = {'.html':'text/html; charset=utf-8','.js':'text/javascript','.css':'text/css','.json':'application/json','.txt':'text/plain','.xml':'application/xml','.webp':'image/webp','.svg':'image/svg+xml','.ico':'image/x-icon','.woff2':'font/woff2','.png':'image/png','.jpg':'image/jpeg','.jpeg':'image/jpeg','.pdf':'application/pdf'};
+test.beforeEach(async({context})=>{
+  await context.route('https://www.argentinauniversosur.com/**', route=>{
+    const pathname=decodeURIComponent(new URL(route.request().url()).pathname);
+    const wanted=resolve(artifact,'.'+pathname);
+    if(wanted!==artifact && !wanted.startsWith(artifact+sep)) return route.fulfill({status:403,body:''});
+    const file=[wanted,wanted+'.html',join(wanted,'index.html')].find(p=>{try{return statSync(p).isFile();}catch{return false;}});
+    return route.fulfill({status:file?200:404,contentType:pathname==='/api/catalogo-resumen'?'application/json':types[extname(file||'404.html')]||'application/octet-stream',body:readFileSync(file||join(artifact,'404.html'))});
+  });
+});
+`;
 source += `\ntest.afterEach(async({context})=>{await context.unrouteAll({behavior:'wait'});});\n`;
 await writeFile(new URL("consent.spec.ts", dir), source);
 await cp(

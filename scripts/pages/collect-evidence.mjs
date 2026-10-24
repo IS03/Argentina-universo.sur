@@ -5,6 +5,9 @@ const target = new URL("../../docs/pr11/evidence/", import.meta.url),
 await mkdir(target, { recursive: true });
 for (const name of [
   "build-preview.json",
+  "editorial-security-preview.json",
+  "editorial-security-production-audit.json",
+  "editorial-security-consent-test.json",
   "build-production-audit.json",
   "build-consent-test.json",
   "seo-preview.json",

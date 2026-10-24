@@ -1,16 +1,11 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { tripPublishable, type Trip } from "@/lib/pages/trips";
-export default function TripView({ trip }: { trip: Trip }) {
+import { type PublishedTrip } from "@/lib/pages/trips";
+export default function TripView({ trip }: { trip: PublishedTrip }) {
   return (
     <>
       <Navbar />
       <main className="max-w-4xl mx-auto pt-32 pb-16 px-6 text-[#5A4E3D]">
-        {!tripPublishable(trip) && (
-          <p className="border rounded p-4 mb-8">
-            Borrador para revisión humana. La redacción de esta ficha nueva cuenta con autorización de publicación; la revisión final del texto se realiza en el PR.
-          </p>
-        )}
         <h1 className="text-4xl font-semibold mb-5">{trip.title}</h1>
         <p>
           {trip.destination} · {trip.province}

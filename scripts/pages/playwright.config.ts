@@ -18,6 +18,7 @@ export default defineConfig({
   projects: ["escritorio", "movil"].flatMap((d) => [
     {
       name: "static-" + d,
+      metadata: { publicExport: true },
       testMatch: ["legacy.spec.ts", "static.spec.ts"],
       use: {
         ...(d === "movil" ? devices["Pixel 7"] : devices["Desktop Chrome"]),

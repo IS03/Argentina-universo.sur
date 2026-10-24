@@ -70,9 +70,7 @@ createServer(async (req, res) => {
     if (compressed) data = gzipSync(data);
     const headers = await readFile(join(dir, "_headers"), "utf8");
     const noindex =
-      /^  X-Robots-Tag:/m.test(headers.split("/escapadas")[0]) ||
-      path === "/escapadas/el-palmar" ||
-      path.startsWith("/prototipo-pr10");
+      /^  X-Robots-Tag:/m.test(headers);
     res.writeHead(status, {
       "content-type": type,
       "x-content-type-options": "nosniff",

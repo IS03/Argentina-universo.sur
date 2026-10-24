@@ -1,11 +1,15 @@
 {
   "mode": "preview",
-  "files": 2057,
-  "bytes": 102135213,
+  "editorialSecurity": {
+    "withheldRecords": 1,
+    "errors": 0
+  },
+  "files": 2038,
+  "bytes": 101809265,
   "mediaBytes": 80004852,
   "fallbackBytes": 222371,
   "pdfBytes": 0,
-  "withoutPdfsBytes": 102135213,
+  "withoutPdfsBytes": 101809265,
   "oversized": [],
   "deploymentAuthorized": false,
   "releaseBlocked": [

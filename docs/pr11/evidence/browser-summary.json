@@ -1,7 +1,7 @@
 {
   "stats": {
-    "startTime": "2026-10-24T20:16:35.824Z",
-    "duration": 40731.935,
+    "startTime": "2026-10-24T21:42:21.940Z",
+    "duration": 38782.282,
     "expected": 68,
     "skipped": 2,
     "unexpected": 0,
@@ -399,7 +399,7 @@
       ]
     },
     {
-      "title": "El Palmar queda completo para revisión, noindex y fuera del sitemap",
+      "title": "los borradores no tienen HTML ni datos RSC públicos",
       "project": "static-escritorio",
       "status": "expected",
       "results": [
@@ -459,7 +459,7 @@
       ]
     },
     {
-      "title": "El Palmar queda completo para revisión, noindex y fuera del sitemap",
+      "title": "los borradores no tienen HTML ni datos RSC públicos",
       "project": "static-movil",
       "status": "expected",
       "results": [

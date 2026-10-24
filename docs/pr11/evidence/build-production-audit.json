@@ -1,11 +1,15 @@
 {
   "mode": "production-audit",
-  "files": 2081,
-  "bytes": 735705399,
+  "editorialSecurity": {
+    "withheldRecords": 1,
+    "errors": 0
+  },
+  "files": 2062,
+  "bytes": 735379408,
   "mediaBytes": 80004852,
   "fallbackBytes": 222371,
   "pdfBytes": 633579423,
-  "withoutPdfsBytes": 102125976,
+  "withoutPdfsBytes": 101799985,
   "oversized": [
     {
       "path": "pdf/bariloche.pdf",
