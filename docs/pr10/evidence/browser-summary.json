@@ -1,0 +1,1395 @@
+{
+  "stats": {
+    "startTime": "2026-10-24T18:16:11.124Z",
+    "duration": 72776.995,
+    "expected": 130,
+    "skipped": 6,
+    "unexpected": 2,
+    "flaky": 0
+  },
+  "cases": [
+    {
+      "title": "SSR e hidratación /",
+      "project": "baseline-escritorio",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "SSR e hidratación /provincias",
+      "project": "baseline-escritorio",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "SSR e hidratación /provincias/santa_fe",
+      "project": "baseline-escritorio",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "SSR e hidratación /actividades",
+      "project": "baseline-escritorio",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "SSR e hidratación /actividades?provincia=santa_fe",
+      "project": "baseline-escritorio",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "SSR e hidratación /actividades?provincia=catarmaca",
+      "project": "baseline-escritorio",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "SSR e hidratación /escapadas",
+      "project": "baseline-escritorio",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "SSR e hidratación /actividades/vivir-la-magia-del-teatro-colon",
+      "project": "baseline-escritorio",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "SSR e hidratación /privacidad",
+      "project": "baseline-escritorio",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "SSR e hidratación /provincias/santa_fe/eventos",
+      "project": "baseline-escritorio",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "filtro, recarga, navegación cliente y atrás",
+      "project": "baseline-escritorio",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "historial local y resumen estático",
+      "project": "baseline-escritorio",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "Leaflet se activa y mantiene controles",
+      "project": "baseline-escritorio",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "redirect permanente Catamarca y metadatos estáticos",
+      "project": "baseline-escritorio",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "agenda nunca presenta los eventos de enero/febrero como próximos",
+      "project": "baseline-escritorio",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "demo local y fuentes, fuera del sitemap",
+      "project": "baseline-escritorio",
+      "status": "skipped",
+      "results": [
+        {
+          "status": "skipped"
+        }
+      ]
+    },
+    {
+      "title": "Workers: Suspense y Client Component",
+      "project": "baseline-escritorio",
+      "status": "skipped",
+      "results": [
+        {
+          "status": "skipped"
+        }
+      ]
+    },
+    {
+      "title": "SSR e hidratación /",
+      "project": "static-escritorio",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "SSR e hidratación /provincias",
+      "project": "static-escritorio",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "SSR e hidratación /provincias/santa_fe",
+      "project": "static-escritorio",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "SSR e hidratación /actividades",
+      "project": "static-escritorio",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "SSR e hidratación /actividades?provincia=santa_fe",
+      "project": "static-escritorio",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "SSR e hidratación /actividades?provincia=catarmaca",
+      "project": "static-escritorio",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "SSR e hidratación /escapadas",
+      "project": "static-escritorio",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "SSR e hidratación /actividades/vivir-la-magia-del-teatro-colon",
+      "project": "static-escritorio",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "SSR e hidratación /privacidad",
+      "project": "static-escritorio",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "SSR e hidratación /provincias/santa_fe/eventos",
+      "project": "static-escritorio",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "filtro, recarga, navegación cliente y atrás",
+      "project": "static-escritorio",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "historial local y resumen estático",
+      "project": "static-escritorio",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "Leaflet se activa y mantiene controles",
+      "project": "static-escritorio",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "redirect permanente Catamarca y metadatos estáticos",
+      "project": "static-escritorio",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "agenda nunca presenta los eventos de enero/febrero como próximos",
+      "project": "static-escritorio",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "demo local y fuentes, fuera del sitemap",
+      "project": "static-escritorio",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "Workers: Suspense y Client Component",
+      "project": "static-escritorio",
+      "status": "skipped",
+      "results": [
+        {
+          "status": "skipped"
+        }
+      ]
+    },
+    {
+      "title": "SSR e hidratación /",
+      "project": "worker-escritorio",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "SSR e hidratación /provincias",
+      "project": "worker-escritorio",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "SSR e hidratación /provincias/santa_fe",
+      "project": "worker-escritorio",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "SSR e hidratación /actividades",
+      "project": "worker-escritorio",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "SSR e hidratación /actividades?provincia=santa_fe",
+      "project": "worker-escritorio",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "SSR e hidratación /actividades?provincia=catarmaca",
+      "project": "worker-escritorio",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "SSR e hidratación /escapadas",
+      "project": "worker-escritorio",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "SSR e hidratación /actividades/vivir-la-magia-del-teatro-colon",
+      "project": "worker-escritorio",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "SSR e hidratación /privacidad",
+      "project": "worker-escritorio",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "SSR e hidratación /provincias/santa_fe/eventos",
+      "project": "worker-escritorio",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "filtro, recarga, navegación cliente y atrás",
+      "project": "worker-escritorio",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "historial local y resumen estático",
+      "project": "worker-escritorio",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "Leaflet se activa y mantiene controles",
+      "project": "worker-escritorio",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "redirect permanente Catamarca y metadatos estáticos",
+      "project": "worker-escritorio",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "agenda nunca presenta los eventos de enero/febrero como próximos",
+      "project": "worker-escritorio",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "demo local y fuentes, fuera del sitemap",
+      "project": "worker-escritorio",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "Workers: Suspense y Client Component",
+      "project": "worker-escritorio",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "SSR e hidratación /",
+      "project": "baseline-movil",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "SSR e hidratación /provincias",
+      "project": "baseline-movil",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "SSR e hidratación /provincias/santa_fe",
+      "project": "baseline-movil",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "SSR e hidratación /actividades",
+      "project": "baseline-movil",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "SSR e hidratación /actividades?provincia=santa_fe",
+      "project": "baseline-movil",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "SSR e hidratación /actividades?provincia=catarmaca",
+      "project": "baseline-movil",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "SSR e hidratación /escapadas",
+      "project": "baseline-movil",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "SSR e hidratación /actividades/vivir-la-magia-del-teatro-colon",
+      "project": "baseline-movil",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "SSR e hidratación /privacidad",
+      "project": "baseline-movil",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "SSR e hidratación /provincias/santa_fe/eventos",
+      "project": "baseline-movil",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "filtro, recarga, navegación cliente y atrás",
+      "project": "baseline-movil",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "historial local y resumen estático",
+      "project": "baseline-movil",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "Leaflet se activa y mantiene controles",
+      "project": "baseline-movil",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "redirect permanente Catamarca y metadatos estáticos",
+      "project": "baseline-movil",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "agenda nunca presenta los eventos de enero/febrero como próximos",
+      "project": "baseline-movil",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "demo local y fuentes, fuera del sitemap",
+      "project": "baseline-movil",
+      "status": "skipped",
+      "results": [
+        {
+          "status": "skipped"
+        }
+      ]
+    },
+    {
+      "title": "Workers: Suspense y Client Component",
+      "project": "baseline-movil",
+      "status": "skipped",
+      "results": [
+        {
+          "status": "skipped"
+        }
+      ]
+    },
+    {
+      "title": "SSR e hidratación /",
+      "project": "static-movil",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "SSR e hidratación /provincias",
+      "project": "static-movil",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "SSR e hidratación /provincias/santa_fe",
+      "project": "static-movil",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "SSR e hidratación /actividades",
+      "project": "static-movil",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "SSR e hidratación /actividades?provincia=santa_fe",
+      "project": "static-movil",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "SSR e hidratación /actividades?provincia=catarmaca",
+      "project": "static-movil",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "SSR e hidratación /escapadas",
+      "project": "static-movil",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "SSR e hidratación /actividades/vivir-la-magia-del-teatro-colon",
+      "project": "static-movil",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "SSR e hidratación /privacidad",
+      "project": "static-movil",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "SSR e hidratación /provincias/santa_fe/eventos",
+      "project": "static-movil",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "filtro, recarga, navegación cliente y atrás",
+      "project": "static-movil",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "historial local y resumen estático",
+      "project": "static-movil",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "Leaflet se activa y mantiene controles",
+      "project": "static-movil",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "redirect permanente Catamarca y metadatos estáticos",
+      "project": "static-movil",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "agenda nunca presenta los eventos de enero/febrero como próximos",
+      "project": "static-movil",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "demo local y fuentes, fuera del sitemap",
+      "project": "static-movil",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "Workers: Suspense y Client Component",
+      "project": "static-movil",
+      "status": "skipped",
+      "results": [
+        {
+          "status": "skipped"
+        }
+      ]
+    },
+    {
+      "title": "SSR e hidratación /",
+      "project": "worker-movil",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "SSR e hidratación /provincias",
+      "project": "worker-movil",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "SSR e hidratación /provincias/santa_fe",
+      "project": "worker-movil",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "SSR e hidratación /actividades",
+      "project": "worker-movil",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "SSR e hidratación /actividades?provincia=santa_fe",
+      "project": "worker-movil",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "SSR e hidratación /actividades?provincia=catarmaca",
+      "project": "worker-movil",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "SSR e hidratación /escapadas",
+      "project": "worker-movil",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "SSR e hidratación /actividades/vivir-la-magia-del-teatro-colon",
+      "project": "worker-movil",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "SSR e hidratación /privacidad",
+      "project": "worker-movil",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "SSR e hidratación /provincias/santa_fe/eventos",
+      "project": "worker-movil",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "filtro, recarga, navegación cliente y atrás",
+      "project": "worker-movil",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "historial local y resumen estático",
+      "project": "worker-movil",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "Leaflet se activa y mantiene controles",
+      "project": "worker-movil",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "redirect permanente Catamarca y metadatos estáticos",
+      "project": "worker-movil",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "agenda nunca presenta los eventos de enero/febrero como próximos",
+      "project": "worker-movil",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "demo local y fuentes, fuera del sitemap",
+      "project": "worker-movil",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "Workers: Suspense y Client Component",
+      "project": "worker-movil",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "el HTML trae el banner y el script que lo oculta a quien ya decidió, sin scripts de Google",
+      "project": "static-escritorio",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "antes de hidratar: el banner se ve si no hay decisión y nunca aparece si ya la hay",
+      "project": "static-escritorio",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "sin decisión: banner visible y GA4 sin cargar, sin cookies ni envíos",
+      "project": "static-escritorio",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "aceptar carga GA4 una vez, con los permisos antes del config, y se recuerda",
+      "project": "static-escritorio",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "rechazar no carga GA4 en ninguna página y se recuerda",
+      "project": "static-escritorio",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "la decisión se cambia desde «Privacidad y cookies»: rechazar borra las cookies y aceptar vuelve a medir",
+      "project": "static-escritorio",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "una decisión vencida o de una versión anterior vuelve a mostrar el banner sin cargar GA4",
+      "project": "static-escritorio",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "«Aceptar» y «Rechazar» tienen el mismo peso visual, se usan con teclado y el banner no desplaza contenido",
+      "project": "static-escritorio",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "la decisión tomada en otra pestaña se aplica sin recargar",
+      "project": "static-escritorio",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "el HTML trae el banner y el script que lo oculta a quien ya decidió, sin scripts de Google",
+      "project": "worker-escritorio",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "antes de hidratar: el banner se ve si no hay decisión y nunca aparece si ya la hay",
+      "project": "worker-escritorio",
+      "status": "unexpected",
+      "results": [
+        {
+          "status": "failed",
+          "error": "Error: expect(received).toBe(expected) // Object.is equality\n\nExpected: 1\nReceived: 0"
+        }
+      ]
+    },
+    {
+      "title": "sin decisión: banner visible y GA4 sin cargar, sin cookies ni envíos",
+      "project": "worker-escritorio",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "aceptar carga GA4 una vez, con los permisos antes del config, y se recuerda",
+      "project": "worker-escritorio",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "rechazar no carga GA4 en ninguna página y se recuerda",
+      "project": "worker-escritorio",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "la decisión se cambia desde «Privacidad y cookies»: rechazar borra las cookies y aceptar vuelve a medir",
+      "project": "worker-escritorio",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "una decisión vencida o de una versión anterior vuelve a mostrar el banner sin cargar GA4",
+      "project": "worker-escritorio",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "«Aceptar» y «Rechazar» tienen el mismo peso visual, se usan con teclado y el banner no desplaza contenido",
+      "project": "worker-escritorio",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "la decisión tomada en otra pestaña se aplica sin recargar",
+      "project": "worker-escritorio",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "el HTML trae el banner y el script que lo oculta a quien ya decidió, sin scripts de Google",
+      "project": "static-movil",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "antes de hidratar: el banner se ve si no hay decisión y nunca aparece si ya la hay",
+      "project": "static-movil",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "sin decisión: banner visible y GA4 sin cargar, sin cookies ni envíos",
+      "project": "static-movil",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "aceptar carga GA4 una vez, con los permisos antes del config, y se recuerda",
+      "project": "static-movil",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "rechazar no carga GA4 en ninguna página y se recuerda",
+      "project": "static-movil",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "la decisión se cambia desde «Privacidad y cookies»: rechazar borra las cookies y aceptar vuelve a medir",
+      "project": "static-movil",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "una decisión vencida o de una versión anterior vuelve a mostrar el banner sin cargar GA4",
+      "project": "static-movil",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "«Aceptar» y «Rechazar» tienen el mismo peso visual, se usan con teclado y el banner no desplaza contenido",
+      "project": "static-movil",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "la decisión tomada en otra pestaña se aplica sin recargar",
+      "project": "static-movil",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "el HTML trae el banner y el script que lo oculta a quien ya decidió, sin scripts de Google",
+      "project": "worker-movil",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "antes de hidratar: el banner se ve si no hay decisión y nunca aparece si ya la hay",
+      "project": "worker-movil",
+      "status": "unexpected",
+      "results": [
+        {
+          "status": "failed",
+          "error": "Error: expect(received).toBe(expected) // Object.is equality\n\nExpected: 1\nReceived: 0"
+        }
+      ]
+    },
+    {
+      "title": "sin decisión: banner visible y GA4 sin cargar, sin cookies ni envíos",
+      "project": "worker-movil",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "aceptar carga GA4 una vez, con los permisos antes del config, y se recuerda",
+      "project": "worker-movil",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "rechazar no carga GA4 en ninguna página y se recuerda",
+      "project": "worker-movil",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "la decisión se cambia desde «Privacidad y cookies»: rechazar borra las cookies y aceptar vuelve a medir",
+      "project": "worker-movil",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "una decisión vencida o de una versión anterior vuelve a mostrar el banner sin cargar GA4",
+      "project": "worker-movil",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "«Aceptar» y «Rechazar» tienen el mismo peso visual, se usan con teclado y el banner no desplaza contenido",
+      "project": "worker-movil",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "la decisión tomada en otra pestaña se aplica sin recargar",
+      "project": "worker-movil",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    }
+  ],
+  "scope": "Complete prototype suite; known failures retained. Any isolated follow-up is separately reported."
+}

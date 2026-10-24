@@ -1,0 +1,82 @@
+{
+  "baseCommit": "bf3dcf1be328de2f0cc4435a41c508e10acd03c1",
+  "branch": "codex/pr10-cloudflare-feasibility",
+  "checkedAt": "2026-10-24T18:19:08.661314+00:00",
+  "productionApplicationChanged": false,
+  "remoteCloudflareAccountVerified": false,
+  "remoteResourcesCreated": false,
+  "remoteDeploymentPerformed": false,
+  "dnsChanged": false,
+  "checks": {
+    "rootNpmRunCheck": {
+      "exitCode": 0,
+      "unit": {
+        "passed": 63
+      },
+      "seo": {
+        "pages": 106,
+        "errors": 0
+      },
+      "e2e": {
+        "passed": 103,
+        "skipped": 9
+      }
+    },
+    "isolatedNpmCi": {
+      "exitCode": 0
+    },
+    "cleanPrototypeBuilds": {
+      "exitCode": 0,
+      "baselineNext": "16.4.3",
+      "vinext": "1.3.0",
+      "reactInVinext": "19.3.1",
+      "typeScriptStatic": true,
+      "typeScriptWorker": true,
+      "wrangler": "dry-run only"
+    },
+    "prototypeE2EFinal": {
+      "exitCode": 1,
+      "passed": 130,
+      "failed": 2,
+      "skipped": 6,
+      "blockers": [
+        "Worker saved accepted consent with delayed JS, desktop",
+        "Worker saved accepted consent with delayed JS, mobile"
+      ]
+    },
+    "prototypeSeo": {
+      "static": {
+        "exitCode": 1,
+        "pages": 106,
+        "errors": 2
+      },
+      "worker": {
+        "exitCode": 1,
+        "pages": 106,
+        "errors": 2
+      },
+      "blockers": [
+        "apex host redirect",
+        "legacy Vercel host redirect"
+      ]
+    },
+    "benchmarks": {
+      "localLoads": 72,
+      "productionReadOnlyLoads": 3,
+      "httpFailures": 0,
+      "pageErrors": 0
+    },
+    "assets": {
+      "oversizedPdfs": 10,
+      "pdfOriginalsChanged": 0,
+      "imageCategoryFilesChanged": 0
+    }
+  },
+  "pendingRemote": [
+    "Authorized account of owner",
+    "Cloudflare Preview/CDN",
+    "Worker billed CPU, memory and startup",
+    "Real host rules and TLS",
+    "Complete PDF compatibility before deployment"
+  ]
+}

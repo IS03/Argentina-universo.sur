@@ -1,0 +1,47 @@
+# Contenido, propiedad y plan reversible
+
+## Publicar sin base de datos en ejecución
+
+Sí: contenido humano aprobado → exportación validada → JSON privado de construcción → HTML + catálogo público mínimo. Los visitantes no necesitan Supabase, claves ni llamadas a una API editorial. El catálogo actual ya funciona así; este PR no cambia su fuente oficial. Los SQL, RLS, tipos, inventario y contratos de PR 9 continúan versionados. No se creó proyecto remoto ni se migraron archivos.
+
+El Google Sheets existente sigue siendo el único maestro: 18 pestañas, 84 fichas investigadas (55 candidatas a revisión acotada, 3 con decisiones numéricas independientes y 26 borradores). Ninguna de esas categorías equivale a aprobación/publicación. No se duplicó la planilla ni se importaron filas. El futuro exportador debe usar el [contrato de PR 9](../supabase/IMPORT.md) y las herramientas existentes de dry-run/idempotencia, verificando nombres reales del contrato antes de construir un adaptador.
+
+Flujo futuro: preservar IDs originales, claves externas y relaciones; validar duplicados/slug/URLs/fechas/fuentes/evidencias; producir diferencias sin escribir; rechazar registros con relaciones ausentes o decisiones ambiguas; revisión humana independiente de estados documental, aprobación y permiso de publicación; snapshot privado trazable; generar solo campos públicos aprobados, sin evidencias personales; validar y construir. Cambiar una ficha no crea otra identidad. Fallo de validación conserva el snapshot previo. No enviar al navegador todo el maestro, aunque se filtre visualmente.
+
+Supabase se justificaría con varios editores autenticados, aprobación y auditoría concurrentes, revisiones persistentes, contenidos privados, búsquedas complejas, eventos que requieran actualización inmediata o administración real de campañas. No se justifica solo para servir 84 fichas y fotos. Si se activa: proyecto exclusivo del titular, RLS restrictivo probado, roles no editables por el usuario, secretos solo servidor y export estático como respaldo. No utilizar OWNLEVEL ni proyectos personales. Ser Owner/Admin de organizaciones afecta el límite Free de Supabase a través de ellas; definir acceso mínimo del desarrollador.
+
+## Plantilla funcional de escapada
+
+Disponible **solo en copias locales**: `/prototipo-pr10/escapadas/el-palmar`. Componente `TripTemplate` con título/destino/descripción, secciones de qué conocer y actividades, ubicación de referencia, mapa, consejos, fuentes/fecha, vínculos internos y ranura de fotos con licencia/atribución/aprobación. React escapa las cadenas; no se usa HTML crudo proveniente de un PDF. Sin horarios, tarifas ni recomendaciones de seguridad inventadas.
+
+La demostración es una redacción nueva, breve y atribuida a [Administración de Parques Nacionales: El Palmar](https://www.argentina.gob.ar/parquesnacionales/centro/parque-nacional-el-palmar), comprobada el 24/10/2026. No es una conversión ni reproducción de las guías. La autorización de este PR cubre la demostración local; **no es una aprobación editorial para publicar**. `publishable:false`, noindex y exclusión del sitemap. Sin fotografías nuevas porque no existe permiso verificado. La coordenada reutilizada es Paraná, referencia provincial ya presente en el catálogo, claramente identificada; no se presenta como acceso al parque. El acceso concreto debe verificarse antes de una ficha pública. Los links de actividades relacionadas provienen de relaciones existentes.
+
+Antes de convertir una guía: identificar autor/titular y permiso para adaptar texto/fotos/mapas, contrastar información con fuente oficial actual y registrar fecha/URL, separar hechos estables de precios/horarios/senderos/alertas variables y someter a revisión humana. Una página oficial accesible no garantiza licencia de su contenido ni exactitud de un PDF anterior. La matriz registra 17 fuentes accesibles y 7 que requieren comprobación manual, sin aprobar ninguna por HTTP 200. Consultar cada fila en [PDF-MATRIX.md](PDF-MATRIX.md) y detalles de revisión en el JSON.
+
+## Retirada futura de PDF sin 404
+
+1. Backup privado íntegro por SHA-256 fuera del despliegue: verificar restauración y custodio. Este PR no mueve los originales. Evitar que originales grandes sigan subiendo como historial de Git de nuevos builds; no reescribir Git como solución automática.
+2. Convertir **una** guía autorizada con equivalencia útil y fuentes revisadas; conservar ID/relaciones. Publicar HTML con canonical propio, noindex hasta aprobación y validaciones. Luego permitir indexación mediante decisión humana.
+3. Registrar todas las referencias internas y posibles enlaces externos de la antigua URL, incluidas variantes codificadas (`cañafate.pdf`). Agregar 301/308 desde la URL PDF exacta al HTML equivalente aprobado. No redirigir todos los PDF a home ni a una ficha incompleta.
+4. Probar GET/HEAD y follow, query, acentos/encoding, cadenas/bucles, caché y contenido final en Preview del titular. Solo entonces autorizar exclusión del PDF del artefacto público. El original permanece en backup verificado; nunca borrar por sospecha de falta de referencias.
+5. Resolver así **los diez mayores de 25 MiB** antes de desplegar un sitio sin ellos. La cuarentena local Workers no es un plan de producción. Mantenerlos en Vercel personal como fallback perpetuaría el consumo que queremos eliminar.
+
+El PDF de seguridad no tiene referencia interna confirmada; `/seguridad` ya es HTML. Hace falta revisar equivalencia y enlaces externos antes de decidir la redirección; no se presume que sea eliminable. El resto corresponde a las 23 guías usadas en Escapadas.
+
+## Propiedad, privacidad y autorización pendiente
+
+No hay cuenta Cloudflare del responsable verificada ni autorización para crear recursos allí. Es el bloqueo para Preview/CDN/CPU remotos. El propietario debe crear/controlar la cuenta Free y MFA, confirmar identificador, dominio y acceso limitado del desarrollador, y autorizar expresamente un Preview. Sin tarjeta, sin Workers Paid, R2, Images, BD ni complementos. Conectar GitHub con permisos acotados al repositorio correcto, sin usar otros proyectos y sin publicar datos privados del maestro. Registrar quién paga/recibe avisos de cuotas aun cuando la factura inicial sea cero.
+
+El dominio mantiene `https://www.argentinauniversosur.com`; no se tocó DNS. Antes de moverlo: inventariar registros completos, confirmar correo/verificaciones dependientes, preparar reglas apex→www y aliases históricos, TLS, caché, `_headers`/CSP, robots y sitemap106. El alias `catarmaca` conserva 308 sin bucle. El host Vercel histórico no lo puede redirigir Cloudflare si el tráfico nunca llega a Cloudflare: se necesita un plan explícito del dueño del proyecto anterior. No se promete su continuidad gratis en una cuenta personal comercial.
+
+El consentimiento actual y la política pública no cambian aquí. Los prototipos usan ID GA ficticio y las pruebas interceptan Google; no se enviaron eventos de prueba a una propiedad real. Fuera de Vercel, hay que sustituir el indicador `VERCEL_ENV` por una configuración de entorno de producción del proveedor elegida explícitamente, conservar el bloqueo antes del consentimiento y repetir toda la batería de aceptar/rechazar/revocar/pestañas/expiración. Los fallos Workers encontrados bloquean su adopción hasta aclararlos.
+
+Antes del cambio real, revisar privacidad, encargado/proveedor, transferencias, cookies y cualquier beacon nuevo. Cloudflare Analytics es solo una propuesta; tampoco se agregó publicidad ni métricas de anuncios. La política actual declara ausencia de publicidad: actualizarla y resolver consentimiento/contratos antes de activar anuncios. Campañas con fechas y banners aprobados podrían generarse estáticamente, pero no se desarrolló esa función ni seguimiento de usuarios.
+
+## Secuencia de migración y reversión
+
+- **Este PR:** herramientas y evidencias locales en una rama, sin tocar aplicación/infraestructura pública. Reversión: revertir el commit de tooling; borrar `.artifacts/pr10` solo cuando no se necesiten evidencias. Git conserva los originales y el código de PR 9.
+- **PR 11 propuesto:** confirmar propietario y cuenta; resolver decisión de filtro sin JS preservando las URL existentes; un piloto HTML editorial aprobado con derechos y respaldo; preparar lista de assets publicables y derivadas con revisión visual, sin retirar los demás PDF. No mover aún DNS.
+- **Tras autorizaciones futuras:** Preview en la cuenta del titular, prueba completa de dominios/SEO/106URLs/cookies/todos los enlaces PDF/mapas/404/headers, medición desde Argentina con caché frío/caliente y revisión de cuota. Workers solo si se demuestra CPU/RAM/arranque y se resuelven las regresiones.
+- **Corte separado y autorizado:** release estático firmado por hashes, snapshot de DNS/config anterior, plan de canary si aplica, TTL y horario acordados, pruebas poscorte, Search Console y monitor sin tracking innecesario. No retirar el proveedor anterior hasta validar; luego cerrar o transferir ordenadamente para dejar de consumir cuotas personales.
+- **Rollback:** restaurar configuración DNS/release y redirects previamente registrados solo con autorización de corte, recuperar assets desde backup probado, conservar URLs y IDs, no recrear fichas ni revertir consentimiento de visitantes. Probar también rollback antes de retirar el alojamiento anterior. No se ejecutó ninguno de estos pasos remotos en este PR.

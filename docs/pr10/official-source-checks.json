@@ -1,0 +1,166 @@
+{
+  "https://www.argentina.gob.ar/parquesnacionales/losglaciares": {
+    "checkedAt": "2026-10-24T17:50:29.964Z",
+    "status": 200,
+    "finalUrl": "https://www.argentina.gob.ar/parquesnacionales/patagonia-austral/parque-nacional-los-glaciares",
+    "title": "Parque Nacional Los Glaciares | Argentina.gob.ar",
+    "availability": "http-accessible-not-content-approved"
+  },
+  "https://www.argentina.gob.ar/parquesnacionales/iguazu": {
+    "checkedAt": "2026-10-24T17:50:29.965Z",
+    "status": 200,
+    "finalUrl": "https://www.argentina.gob.ar/parquesnacionales/nea/parque-nacional-iguazu",
+    "title": "Parque Nacional Iguazú | Argentina.gob.ar",
+    "availability": "http-accessible-not-content-approved"
+  },
+  "https://pinamar.gob.ar/turismo/": {
+    "checkedAt": "2026-10-24T17:50:30.125Z",
+    "status": 404,
+    "finalUrl": "https://pinamar.gob.ar/turismo/",
+    "title": "Página no encontrada &#8211; Municipalidad de Pinamar",
+    "availability": "manual-check-required"
+  },
+  "https://www.madryn.gob.ar/turismo/": {
+    "checkedAt": "2026-10-24T17:50:30.297Z",
+    "status": 200,
+    "finalUrl": "https://www.madryn.gob.ar/turismo/",
+    "title": "TURISMO - Municipalidad de Puerto Madryn",
+    "availability": "http-accessible-not-content-approved"
+  },
+  "https://turismo.buenosaires.gob.ar/": {
+    "checkedAt": "2026-10-24T17:50:30.843Z",
+    "status": 200,
+    "finalUrl": "https://turismo.buenosaires.gob.ar/es",
+    "title": "Sitio oficial de turismo de la Ciudad de Buenos Aires",
+    "availability": "http-accessible-not-content-approved"
+  },
+  "https://barilocheturismo.gob.ar/": {
+    "checkedAt": "2026-10-24T17:50:31.141Z",
+    "status": 200,
+    "finalUrl": "https://barilocheturismo.gob.ar/es/home",
+    "title": "Bariloche - Sitio Web Oficial de Turismo",
+    "availability": "http-accessible-not-content-approved"
+  },
+  "https://www.turismo.jujuy.gob.ar/": {
+    "checkedAt": "2026-10-24T17:50:31.575Z",
+    "status": 200,
+    "finalUrl": "https://www.turismo.jujuy.gob.ar/",
+    "title": "Ministerio de Cultura y Turismo de Jujuy",
+    "availability": "http-accessible-not-content-approved"
+  },
+  "https://www.tornquist.gov.ar/turismo/": {
+    "checkedAt": "2026-10-24T17:50:31.772Z",
+    "status": 404,
+    "finalUrl": "https://www.tornquist.gov.ar/turismo/",
+    "title": "404 Not Found",
+    "availability": "manual-check-required"
+  },
+  "https://www.argentina.gob.ar/parquesnacionales/elpalmar": {
+    "checkedAt": "2026-10-24T17:50:31.875Z",
+    "status": 200,
+    "finalUrl": "https://www.argentina.gob.ar/parquesnacionales/centro/parque-nacional-el-palmar",
+    "title": "Parque Nacional El Palmar | Argentina.gob.ar",
+    "availability": "http-accessible-not-content-approved"
+  },
+  "https://www.ushuaia.gob.ar/turismo": {
+    "checkedAt": "2026-10-24T17:50:32.281Z",
+    "status": 200,
+    "finalUrl": "https://www.ushuaia.gob.ar/turismo",
+    "title": "Secretaria de turismo - Municipalidad de ushuaia",
+    "availability": "http-accessible-not-content-approved"
+  },
+  "https://www.turismosalta.gov.ar/": {
+    "checkedAt": "2026-10-24T17:50:33.585Z",
+    "status": 200,
+    "finalUrl": "https://visitsalta.ar/",
+    "title": null,
+    "availability": "http-accessible-not-content-approved"
+  },
+  "https://www.cordobaturismo.gov.ar/": {
+    "checkedAt": "2026-10-24T17:50:34.088Z",
+    "status": 200,
+    "finalUrl": "https://cordobaturismo.gov.ar/",
+    "title": "Córdoba Turismo",
+    "availability": "http-accessible-not-content-approved"
+  },
+  "https://www.argentina.gob.ar/parquesnacionales/talampaya": {
+    "checkedAt": "2026-10-24T17:50:34.269Z",
+    "status": 200,
+    "finalUrl": "https://www.argentina.gob.ar/parquesnacionales/centro/parque-nacional-talampaya",
+    "title": "Parque Nacional Talampaya | Argentina.gob.ar",
+    "availability": "http-accessible-not-content-approved"
+  },
+  "https://www.argentina.gob.ar/parquesnacionales/chaco": {
+    "checkedAt": "2026-10-24T17:50:34.421Z",
+    "status": 200,
+    "finalUrl": "https://www.argentina.gob.ar/parquesnacionales/nea/parque-nacional-chaco",
+    "title": "Parque Nacional Chaco | Argentina.gob.ar",
+    "availability": "http-accessible-not-content-approved"
+  },
+  "https://www.mendoza.gov.ar/turismo/": {
+    "checkedAt": "2026-10-24T17:50:34.849Z",
+    "status": 403,
+    "finalUrl": "https://informacionoficial.mendoza.gob.ar/turismo",
+    "title": "ERROR: The request could not be satisfied",
+    "availability": "manual-check-required"
+  },
+  "https://www.sanjuan.gov.ar/": {
+    "checkedAt": "2026-10-24T17:50:35.607Z",
+    "status": 200,
+    "finalUrl": "https://sj.sanjuan.gob.ar/",
+    "title": "Gobierno de la provincia de San Juan",
+    "availability": "http-accessible-not-content-approved"
+  },
+  "https://neuquentur.gob.ar/": {
+    "checkedAt": "2026-10-24T17:50:35.709Z",
+    "status": null,
+    "availability": "manual-check-required",
+    "error": "ENOTFOUND"
+  },
+  "https://www.santiagodelestero.gov.ar/": {
+    "checkedAt": "2026-10-24T17:50:35.710Z",
+    "status": null,
+    "availability": "manual-check-required",
+    "error": "ENOTFOUND"
+  },
+  "https://www.riogallegos.gov.ar/": {
+    "checkedAt": "2026-10-24T17:50:35.746Z",
+    "status": null,
+    "availability": "manual-check-required",
+    "error": "UNABLE_TO_VERIFY_LEAF_SIGNATURE"
+  },
+  "https://turismo.sanluis.gov.ar/": {
+    "checkedAt": "2026-10-24T17:50:42.796Z",
+    "status": null,
+    "availability": "manual-check-required",
+    "error": "ENETUNREACH"
+  },
+  "https://www.argentina.gob.ar/sinagir": {
+    "checkedAt": "2026-10-24T17:50:43.097Z",
+    "status": 200,
+    "finalUrl": "https://www.argentina.gob.ar/sinagir",
+    "title": "SINAGIR | Argentina.gob.ar",
+    "availability": "http-accessible-not-content-approved"
+  },
+  "https://turismo.lapampa.gob.ar/": {
+    "checkedAt": "2026-10-24T17:50:43.255Z",
+    "status": 200,
+    "finalUrl": "https://turismo.lapampa.gob.ar/",
+    "title": "Home - Secretaría de Turismo - La Pampa Original",
+    "availability": "http-accessible-not-content-approved"
+  },
+  "https://misiones.tur.ar/": {
+    "checkedAt": "2026-10-24T17:50:43.296Z",
+    "status": 200,
+    "finalUrl": "https://misiones.tur.ar/",
+    "title": "Ministerio de Turismo | Misiones",
+    "availability": "http-accessible-not-content-approved"
+  },
+  "https://www.formosa.gob.ar/turismo": {
+    "checkedAt": "2026-10-24T17:50:44.129Z",
+    "status": 200,
+    "finalUrl": "https://www.formosahermosa.gob.ar/",
+    "title": "Formosa Hermosa",
+    "availability": "http-accessible-not-content-approved"
+  }
+}

@@ -1,0 +1,88 @@
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import TripTemplate, { type TripDraft } from "@/components/TripTemplate";
+import { getActividadesByProvincia, getProvinciaBySlug } from "@/lib/data";
+export const metadata = {
+  title: { absolute: "Demostración local — Escapada por Entre Ríos" },
+  robots: { index: false, follow: false },
+};
+export default async function TripPage() {
+  const [activities, province] = await Promise.all([
+    getActividadesByProvincia("entre_rios"),
+    getProvinciaBySlug("entre_rios"),
+  ]);
+  if (!province) throw Error("Missing original province");
+  const trip: TripDraft = {
+    id: "PR10-DEMO-EL-PALMAR",
+    publishable: false,
+    destination: {
+      name: "Parque Nacional El Palmar",
+      province: province.provincia,
+    },
+    title: "Una primera mirada al Parque Nacional El Palmar",
+    description:
+      "El Palmar está en Entre Ríos. Esta propuesta editorial toma como punto de partida la información institucional de Parques Nacionales para acercarse al paisaje de palmares y sus ambientes naturales.",
+    sections: [
+      {
+        title: "Qué conocer",
+        paragraphs: [
+          "La página oficial describe palmares de yatay, sectores de espinal, pastizales, selva en galería y ambientes ribereños. El paisaje es el eje de esta primera aproximación. No se prometen recorridos habilitados, servicios ni avistajes.",
+        ],
+      },
+      {
+        title: "Atractivos principales",
+        paragraphs: [
+          "El sitio institucional explica también el valor histórico de la Calera del Palmar. Su mención documental no la convierte en una parada con acceso validado para una fecha concreta.",
+        ],
+      },
+      {
+        title: "Actividades recomendadas",
+        paragraphs: [
+          "Propuesta editorial: observar el paisaje e informarse sobre el patrimonio natural e histórico antes de elegir un recorrido. Los enlaces al catálogo provincial al final de esta página no constituyen un itinerario operativo dentro del parque.",
+        ],
+      },
+      {
+        title: "Consejos prácticos",
+        paragraphs: [
+          "Consultá los canales oficiales para confirmar accesos, condiciones, horarios y tarifas de la fecha elegida. Esta demostración no publica importes, tiempos de viaje, permisos ni garantías de apertura. No reutiliza ni da por aprobado el texto de la guía PDF.",
+        ],
+      },
+    ],
+    location: {
+      lat: province.lat_capital,
+      lon: province.lon_capital,
+      title: "Referencia provincial: " + province.nombre_capital,
+      disclaimer:
+        "Referencia de la capital en el catálogo actual; no representa la ubicación precisa ni el acceso al parque.",
+    },
+    photos: [],
+    related: [
+      { href: "/provincias/entre_rios", label: "Provincia de Entre Ríos" },
+      {
+        href: "/actividades?provincia=entre_rios",
+        label: "Actividades en Entre Ríos",
+      },
+      { href: "/escapadas", label: "Escapadas actuales" },
+      ...activities.map((a) => ({
+        href: "/actividades/" + a.actividadSlug,
+        label: a.actividad,
+      })),
+    ],
+    sources: [
+      {
+        url: "https://www.argentina.gob.ar/parquesnacionales/centro/parque-nacional-el-palmar",
+        title: "Administración de Parques Nacionales — El Palmar",
+        checkedAt: "2026-10-24",
+      },
+    ],
+  };
+  return (
+    <>
+      <Navbar />
+      <main>
+        <TripTemplate trip={trip} />
+      </main>
+      <Footer />
+    </>
+  );
+}
