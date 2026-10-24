@@ -5,6 +5,11 @@ import type { Metadata } from "next";
 import { ROUTES } from "@/lib/site-links";
 import { pageMetadata } from "@/lib/seo";
 import { ULTIMA_ACTUALIZACION, RESPONSABLE, CONTACTO_PRIVACIDAD, RETENCION_GA, COOKIES, ALMACENAMIENTO_LOCAL } from "@/lib/privacidad";
+import { idMedicionGA } from "@/lib/analytics";
+import PreferenciasCookies from "@/components/consentimiento/PreferenciasCookies";
+
+// Igual que el layout: el panel de preferencias solo existe donde GA4 está configurado.
+const medicionActiva = idMedicionGA(process.env) !== null;
 
 // Página legal: accesible desde el pie, sin indexar y fuera del sitemap (no compite con el contenido turístico).
 export const metadata: Metadata = {
@@ -62,8 +67,8 @@ export default function PrivacidadPage() {
                 publicitario. Los datos se conservan {RETENCION_GA}.
               </li>
               <li>
-                Para visitantes del Espacio Económico Europeo, el Reino Unido y Suiza, Google Analytics funciona sin
-                cookies: solo envía señales agregadas y no guarda identificadores en tu navegador.
+                <strong>Solo con tu consentimiento:</strong> Google Analytics no se carga, no crea cookies ni envía
+                datos hasta que aceptás en el aviso de cookies. Si rechazás, no se carga en ninguna página.
               </li>
               <li>
                 <strong>Vercel Web Analytics y Speed Insights</strong> (Vercel Inc., proveedor de alojamiento):
@@ -73,9 +78,30 @@ export default function PrivacidadPage() {
             </ul>
           </section>
 
+          <section className="mb-10" aria-labelledby="preferencias">
+            <h2 id="preferencias" className={titulo}>Tu decisión sobre las cookies</h2>
+            {medicionActiva ? (
+              <>
+                <p className={parrafo}>
+                  Podés aceptar o rechazar las cookies de Google Analytics, y cambiar tu decisión en cualquier momento.
+                  Si las rechazás después de haberlas aceptado, dejamos de medir y borramos esas cookies de tu navegador.
+                </p>
+                <PreferenciasCookies />
+                <p className={parrafo}>
+                  Guardamos tu decisión en tu navegador durante 12 meses; después te volvemos a preguntar.
+                </p>
+              </>
+            ) : (
+              <p className={parrafo}>
+                Google Analytics no está activo en este momento. Si lo activamos, te vamos a pedir permiso antes de
+                cargarlo.
+              </p>
+            )}
+          </section>
+
           <section className="mb-10" aria-labelledby="cookies">
             <h2 id="cookies" className={titulo}>Cookies y almacenamiento local</h2>
-            <p className={parrafo}>Cookies de Google Analytics (fuera del Espacio Económico Europeo, el Reino Unido y Suiza):</p>
+            <p className={parrafo}>Cookies de Google Analytics, que se crean solo si aceptás:</p>
             <div className="overflow-x-auto mb-6">
               <table className="w-full border-collapse text-sm text-[#6B5D47]">
                 <thead className="bg-[#E8DDD0]/60 text-[#5A4E3D]">
@@ -99,9 +125,9 @@ export default function PrivacidadPage() {
               </table>
             </div>
             <p className={parrafo}>
-              El sitio también guarda en el almacenamiento local de tu navegador las últimas páginas que visitaste.
-              Esa información queda en tu dispositivo, no se envía a ningún servidor y podés borrarla en cualquier
-              momento desde la configuración del navegador:
+              El sitio también usa el almacenamiento local de tu navegador para recordar tu decisión sobre las cookies
+              y las últimas páginas que visitaste. Esa información queda en tu dispositivo, no se envía a ningún
+              servidor y podés borrarla en cualquier momento desde la configuración del navegador:
             </p>
             <ul className={lista}>
               {ALMACENAMIENTO_LOCAL.map(item => (
@@ -139,6 +165,7 @@ export default function PrivacidadPage() {
           <section className="mb-10" aria-labelledby="control">
             <h2 id="control" className={titulo}>Cómo evitar la medición</h2>
             <ul className={lista}>
+              <li>Rechazar en el aviso de cookies o cambiar tu decisión en esta página.</li>
               <li>Bloquear o borrar las cookies desde la configuración de tu navegador.</li>
               <li>
                 Instalar el{" "}

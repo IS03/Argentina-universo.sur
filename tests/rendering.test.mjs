@@ -165,7 +165,13 @@ test("el aviso de privacidad tiene un contacto válido y declara todo el almacen
       for (const [, clave] of (await source(join(dir, entry))).matchAll(/(?:local|session)Storage\.setItem\(\s*["'`]([^"'`]+)/g)) {
         assert.ok(declaradas.has(clave), `${dir}/${entry} guarda "${clave}" y el aviso no lo declara`);
       }
-      assert.doesNotMatch(await source(join(dir, entry)), /document\.cookie\s*=/, `${dir}/${entry} escribe cookies propias no declaradas`);
+      const codigo = await source(join(dir, entry));
+      if (join(dir, entry) === join("components", "consentimiento", "gtag.ts")) {
+        // Única escritura permitida: expirar cookies de GA4 al rechazar.
+        for (const [asignacion] of codigo.matchAll(/document\.cookie\s*=[^;]*;[^\n]*/g)) assert.match(asignacion, /Max-Age=0/);
+        continue;
+      }
+      assert.doesNotMatch(codigo, /document\.cookie\s*=/, `${dir}/${entry} escribe cookies propias no declaradas`);
     }
   }
 });
@@ -188,30 +194,65 @@ test("GA4 solo se activa en producción de Vercel y con un ID válido", async ()
   assert.throws(() => idMedicionGA({ VERCEL_ENV: "production", NEXT_PUBLIC_GA_ID: "UA-123-1" }));
 });
 
-test("el consentimiento por defecto llega antes que GA4 y no habilita publicidad", async () => {
-  const { SCRIPT_CONSENTIMIENTO, REGIONES_CONSENTIMIENTO_PREVIO } = await import("../lib/analytics.ts");
-  const { runInNewContext } = await import("node:vm");
-  const ventana = {};
-  ventana.window = ventana;
-  runInNewContext(SCRIPT_CONSENTIMIENTO, ventana);
-  // JSON normaliza los objetos creados en el contexto vm (otro realm).
-  const comandos = JSON.parse(JSON.stringify(Array.from(ventana.dataLayer, args => Array.from(args))));
-  assert.deepEqual(comandos.map(c => c.slice(0, 2).map(String).join(":")), ["consent:default", "consent:default", "set:[object Object]"]);
-  const [regional, general] = [comandos[0][2], comandos[1][2]];
-  assert.equal(regional.analytics_storage, "denied");
-  assert.deepEqual([...regional.region].sort(), [...REGIONES_CONSENTIMIENTO_PREVIO].sort());
-  assert.ok(["ES", "DE", "FR", "IT", "GB", "CH", "NO"].every(r => regional.region.includes(r)));
-  assert.equal(general.analytics_storage, "granted");
-  assert.equal(general.region, undefined);
-  for (const c of [regional, general]) for (const k of ["ad_storage", "ad_user_data", "ad_personalization"]) assert.equal(c[k], "denied");
-  assert.deepEqual(comandos[2][1], { allow_google_signals: false, allow_ad_personalization_signals: false, ads_data_redaction: true });
+test("al aceptar, GA4 recibe analítica concedida y publicidad y señales de Google desactivadas", async () => {
+  const { COMANDOS_CONSENTIMIENTO, COMANDO_REVOCAR, cookiesGA } = await import("../lib/analytics.ts");
+  const [consent, set] = COMANDOS_CONSENTIMIENTO;
+  assert.deepEqual(consent.slice(0, 2), ["consent", "default"]);
+  assert.equal(consent[2].analytics_storage, "granted");
+  for (const k of ["ad_storage", "ad_user_data", "ad_personalization"]) assert.equal(consent[2][k], "denied");
+  assert.equal(consent[2].region, undefined);
+  assert.deepEqual(set, ["set", { allow_google_signals: false, allow_ad_personalization_signals: false, ads_data_redaction: true }]);
+  assert.deepEqual(COMANDO_REVOCAR, ["consent", "update", { analytics_storage: "denied" }]);
+  assert.deepEqual(cookiesGA("G-0DQ0YWHJNZ"), ["_ga", "_ga_0DQ0YWHJNZ"]);
   // Sin config ni page_view manual: las visitas las registra la medición mejorada.
-  assert.doesNotMatch(SCRIPT_CONSENTIMIENTO, /config|page_view|user_id/);
+  assert.doesNotMatch(JSON.stringify(COMANDOS_CONSENTIMIENTO), /config|page_view|user_id/);
+});
 
+test("GA4 se monta solo después de aceptar, con los permisos fijados antes del config", async () => {
   const layout = await source("app/layout.tsx");
-  assert.ok(layout.indexOf('id="ga-consentimiento"') < layout.indexOf("<GoogleAnalytics"), "consentimiento antes de GA4");
-  assert.match(layout, /strategy="beforeInteractive"/);
-  assert.match(layout, /\{gaId && \(/);
+  assert.match(layout, /\{gaId && <MedicionConConsentimiento gaId=\{gaId\} \/>\}/);
+  assert.doesNotMatch(layout, /GoogleAnalytics|beforeInteractive|next\/script/);
+  const medicion = await source("components/consentimiento/MedicionConConsentimiento.tsx");
+  // Único punto que monta GA4: la rama "aceptada", con PermisosGA (useLayoutEffect) antes.
+  for (const dir of ["app", "components"]) {
+    for (const entry of await readdir(join(projectRoot, dir), { recursive: true })) {
+      if (!/\.(tsx|jsx)$/.test(entry) || join(dir, entry) === join("components", "consentimiento", "MedicionConConsentimiento.tsx")) continue;
+      assert.doesNotMatch(await source(join(dir, entry)), /<GoogleAnalytics\b/, `${dir}/${entry} no debe montar GA4 sin consentimiento`);
+    }
+  }
+  const rama = medicion.slice(medicion.indexOf('if (decision === "rechazada")'));
+  assert.ok(rama.indexOf("<PermisosGA") < rama.indexOf("<GoogleAnalytics"), "permisos antes de GA4");
+  // El banner se renderiza también en el servidor ("pendiente"): se pinta con la página, no después.
+  assert.match(medicion, /if \(decision === "pendiente" \|\| decision === null\) return <BannerCookies \/>;/);
+  assert.match(medicion, /id="aviso-cookies"/);
+  assert.match(layout, /<script id="decision-cookies" dangerouslySetInnerHTML=\{\{ __html: SCRIPT_DECISION_INICIAL \}\} \/>/);
+  assert.match(await source("app/globals.css"), /html\[data-consentimiento\] #aviso-cookies \{\s*display: none;/);
+  assert.match(medicion, /function PermisosGA[\s\S]*?useLayoutEffect/);
+  // «Aceptar» y «Rechazar» con el mismo estilo en el banner y en el panel.
+  const preferencias = await source("components/consentimiento/PreferenciasCookies.tsx");
+  for (const codigo of [medicion, preferencias]) {
+    const botones = [...codigo.matchAll(/<button[^>]*className=\{([A-Z_]+)\}/g)].map(m => m[1]);
+    assert.deepEqual(botones, ["BOTON_DECISION", "BOTON_DECISION"]);
+  }
+});
+
+test("la decisión guardada respeta versión y vigencia, y tolera datos inválidos", async () => {
+  const { interpretarConsentimiento, serializarConsentimiento, VERSION_CONSENTIMIENTO, VIGENCIA_DIAS } = await import("../lib/consentimiento.ts");
+  const ahora = Date.parse("2026-10-24T12:00:00Z");
+  const dia = 86_400_000;
+  assert.equal(interpretarConsentimiento(serializarConsentimiento("aceptada", ahora), ahora), "aceptada");
+  assert.equal(interpretarConsentimiento(serializarConsentimiento("rechazada", ahora), ahora + 30 * dia), "rechazada");
+  assert.equal(interpretarConsentimiento(serializarConsentimiento("aceptada", ahora), ahora + (VIGENCIA_DIAS + 1) * dia), null);
+  assert.equal(interpretarConsentimiento(serializarConsentimiento("aceptada", ahora + 5 * dia), ahora), null);
+  for (const invalido of [null, "", "{", "null", "[]", '{"analitica":"aceptada"}', JSON.stringify({ analitica: "quizas", version: VERSION_CONSENTIMIENTO, fecha: new Date(ahora).toISOString() }), JSON.stringify({ analitica: "aceptada", version: VERSION_CONSENTIMIENTO + 1, fecha: new Date(ahora).toISOString() }), JSON.stringify({ analitica: "aceptada", version: VERSION_CONSENTIMIENTO, fecha: "ayer" })]) {
+    assert.equal(interpretarConsentimiento(invalido, ahora), null, String(invalido));
+  }
+  // El aviso promete 12 meses de vigencia.
+  assert.equal(VIGENCIA_DIAS, 365);
+  assert.match(await source("app/privacidad/page.tsx"), /durante 12 meses/);
+  const { ALMACENAMIENTO_LOCAL } = await import("../lib/privacidad.ts");
+  const { CLAVE_CONSENTIMIENTO } = await import("../lib/consentimiento.ts");
+  assert.ok(ALMACENAMIENTO_LOCAL.some(item => item.nombre === CLAVE_CONSENTIMIENTO && /12 meses/.test(item.finalidad)));
 });
 
 test("el ID de GA4 no está escrito en el código ni se envían eventos manuales", async () => {
@@ -223,4 +264,30 @@ test("el ID de GA4 no está escrito en el código ni se envían eventos manuales
       assert.doesNotMatch(codigo, /sendGAEvent|gtag\(\s*["']event["']/, `${dir}/${entry}`);
     }
   }
+});
+
+test("el script del <head> decide igual que interpretarConsentimiento (versión, vigencia, datos inválidos)", async () => {
+  const { SCRIPT_DECISION_INICIAL, interpretarConsentimiento, serializarConsentimiento, CLAVE_CONSENTIMIENTO, ATRIBUTO_DECISION, VERSION_CONSENTIMIENTO } = await import("../lib/consentimiento.ts");
+  const { runInNewContext } = await import("node:vm");
+  const ahora = Date.now();
+  const dia = 86_400_000;
+  const casos = [
+    null, "", "{", "null", "[]", "esto no es JSON",
+    serializarConsentimiento("aceptada", ahora), serializarConsentimiento("rechazada", ahora - 100 * dia),
+    serializarConsentimiento("aceptada", ahora - 364 * dia), serializarConsentimiento("aceptada", ahora - 366 * dia),
+    serializarConsentimiento("aceptada", ahora + 3 * dia),
+    JSON.stringify({ analitica: "aceptada", version: VERSION_CONSENTIMIENTO - 1, fecha: new Date(ahora).toISOString() }),
+    JSON.stringify({ analitica: "talvez", version: VERSION_CONSENTIMIENTO, fecha: new Date(ahora).toISOString() }),
+    JSON.stringify({ analitica: "aceptada", version: VERSION_CONSENTIMIENTO, fecha: "ayer" }),
+  ];
+  for (const guardado of casos) {
+    const atributos = {};
+    runInNewContext(SCRIPT_DECISION_INICIAL, {
+      localStorage: { getItem: clave => (clave === CLAVE_CONSENTIMIENTO ? guardado : null) },
+      document: { documentElement: { setAttribute: (nombre, valor) => { atributos[nombre] = valor; } } },
+    });
+    assert.equal(atributos[ATRIBUTO_DECISION] ?? null, interpretarConsentimiento(guardado, Date.now()), String(guardado));
+  }
+  // Sin acceso al almacenamiento (modo privado estricto) no rompe la página.
+  assert.doesNotThrow(() => runInNewContext(SCRIPT_DECISION_INICIAL, { localStorage: { getItem() { throw new Error("bloqueado"); } }, document: {} }));
 });

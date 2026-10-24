@@ -623,6 +623,7 @@ test("el pie enlaza al aviso de privacidad, que no se indexa y tiene su canonica
   expect(html).toContain('<link rel="canonical" href="https://www.argentinauniversosur.com/privacidad"/>');
   expect(html).toMatch(/<meta name="robots" content="noindex, follow"\/>/);
   expect(html).toContain("Ley N° 25.326");
+  expect(html).toContain("Google Analytics no está activo en este momento");
   await page.goto("/");
   await page.getByRole("contentinfo").getByRole("link", { name: "Privacidad y cookies" }).click();
   await expect(page).toHaveURL(/\/privacidad$/);
@@ -638,7 +639,9 @@ test("fuera de producción no se carga Google Analytics ni se envían datos a Go
   for (const ruta of ["/", "/provincias/santa_fe", DETALLE]) {
     await page.goto(ruta);
     await page.waitForLoadState("load");
-    await expect(page.locator('script[src*="googletagmanager.com"], script#ga-consentimiento, script#_next-ga-init')).toHaveCount(0);
+    await expect(page.locator('script[src*="googletagmanager.com"], script#_next-ga-init')).toHaveCount(0);
+    // Sin GA4 configurado tampoco hay banner de cookies: no se pide permiso para algo inactivo.
+    await expect(page.getByRole("region", { name: "Aviso de cookies" })).toHaveCount(0);
     expect(await page.evaluate(() => "dataLayer" in window)).toBe(false);
   }
   expect(pedidos).toEqual([]);

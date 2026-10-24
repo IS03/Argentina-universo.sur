@@ -21,6 +21,7 @@ export const COOKIES = [
 ];
 
 export const ALMACENAMIENTO_LOCAL = [
+  { nombre: "consentimientoCookies", finalidad: "Guardar tu decisión sobre las cookies de Google Analytics (aceptar o rechazar) y su fecha, durante 12 meses." },
   { nombre: "provinciasVisitadas", finalidad: "Recordar las últimas provincias visitadas para la sección “Continuar explorando” de la portada." },
   { nombre: "actividadesVisitadas", finalidad: "Recordar las últimas actividades visitadas para la misma sección." },
 ];

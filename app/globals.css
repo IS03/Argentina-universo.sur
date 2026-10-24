@@ -88,3 +88,8 @@ body {
     scroll-behavior: auto !important;
   }
 }
+
+/* Banner de cookies: viene en el HTML; el script del <head> marca la decisión guardada antes de pintar. */
+html[data-consentimiento] #aviso-cookies {
+  display: none;
+}
