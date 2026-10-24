@@ -178,7 +178,67 @@ distribución oficial de SheetJS o un script que no lo necesite.
 
 ## 6. Medición
 
-MEDICION_PENDIENTE
+Build de producción de `main` (Next 16.1.1, puerto 3300) y de este PR (Next 16.4.3, puerto 3200) en
+la misma máquina, alternando versiones en cada corrida. Lighthouse 13 (Chrome 154) con simulación
+(lantern): mediana de 5 corridas en móvil y de 3 en escritorio. Medición observada: Playwright con
+Pixel 7, 150 ms RTT, 1,6 Mbps y CPU 4× reales, mediana de 3. Las teselas de OSM se cargaron reales.
+
+**Limitaciones.** Servidor local: el TTFB no representa Vercel. La simulación penaliza las imágenes de
+otros orígenes; por eso se agregó la medición observada y, en el detalle de actividad, Lighthouse con
+limitación aplicada (`devtools`).
+
+### Lighthouse móvil (simulado)
+
+| Página | Score | LCP (ms) | CLS | Elemento LCP (PR) |
+| --- | --- | --- | --- | --- |
+| `/provincias` | 85 → **93** | 3.181 → 3.173 | **0,187 → 0** | `<h1>` (antes, foto de la grilla) |
+| Detalle de actividad (Teatro Colón) | 81 → **97** | 2.706 → 2.646 | **0,311 → 0** | párrafo de la descripción |
+| `/provincias/santa_fe` | 96 → 96 | 2.855 → 2.791 | 0 → 0 | párrafo |
+| `/provincias/catamarca` | 96 → 97 | 2.710 → 2.637 | 0 → 0 | párrafo |
+| `/` | 94 → 94 | 3.025 → 3.028 | 0 → 0 | texto del hero |
+
+FCP sin cambios (±5 ms) y TBT entre 15 y 24 ms en ambas versiones.
+
+### Lighthouse escritorio (simulado)
+
+| Página | Score | LCP (ms) | CLS |
+| --- | --- | --- | --- |
+| `/provincias` | 89 → **100** | 677 → 640 | **0,215 → 0** |
+| Detalle de actividad | 93 → **100** | 584 → 549 | **0,159 → 0** |
+| `/provincias/santa_fe` | 100 → 100 | 624 → 593 | 0 → 0 |
+
+### Observada en móvil lento (sin simulación)
+
+| Página | FCP (ms) | LCP (ms) | CLS | Evento `load` (ms) |
+| --- | --- | --- | --- | --- |
+| `/provincias` | 764 → 772 | **2.512 → 772** | **0,193 → 0** | 6.252 → 4.959 |
+| Detalle de actividad | 804 → 780 | 804 → 780 | **0,308 → 0** | 3.715 → 2.428 |
+| `/provincias/santa_fe` | 812 → 808 | 812 → 808 | 0 → 0 | 4.972 → 4.309 |
+
+En `/provincias`, el LCP observado de `main` era la foto de la primera provincia, que estaba en
+pantalla hasta que llegaba el SVG; ahora es el `<h1>`, pintado en el primer cuadro. El `load` baja en
+el detalle porque Leaflet, sus íconos de unpkg.com y las teselas ya no se piden al cargar.
+
+### Iteraciones descartadas (detalle de actividad, móvil)
+
+| Variante | LCP simulado | LCP `devtools` | CLS |
+| --- | --- | --- | --- |
+| `main` | 2.706 | 1.567 | 0,311 |
+| Espacio reservado + Leaflet al hidratar (prueba previa a este PR) | 5.700 | — | 0 |
+| Vista previa con teselas también en móvil | 4.203 | 2.780 | 0 |
+| **Final: fondo liviano en móvil, teselas en escritorio** | **2.646–2.718** | **1.561** | **0** |
+
+### Preview de Vercel (commit `7e4a318`)
+
+- 0 errores de consola y 0 pedidos RSC con error (357 correctos) en escritorio y móvil.
+- `/provincias/santa_fe` renderizada por la función de Vercel: 15 cargas sin errores de hidratación.
+- Botón desde 3 provincias, filtro, atrás y recarga correctos; `?provincia=catarmaca` llega filtrado
+  en el HTML; la ruta interna responde 308.
+- Menú móvil con toques reales: “Qué hacer” y “Escapadas” abren su página y el menú se cierra.
+- CLS 0 en el detalle y en `/provincias` en móvil; el detalle móvil no descarga teselas y el de
+  escritorio muestra las 12.
+- `X-Robots-Tag: noindex, nofollow` en el Preview, sitemap con 106 URLs, y Analytics 2.0.1 y Speed
+  Insights 2.0.0 cargados (200), igual que en producción.
 
 ## 7. Pruebas
 
