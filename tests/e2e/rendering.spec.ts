@@ -617,6 +617,20 @@ test.describe("accesibilidad", () => {
   });
 });
 
+// La build de CI y la local no son producción de Vercel: GA4 no debe cargarse ni enviar datos.
+test("fuera de producción no se carga Google Analytics ni se envían datos a Google", async ({ page, errores }) => {
+  void errores;
+  const pedidos: string[] = [];
+  page.on("request", r => { if (/googletagmanager\.com|google-analytics\.com|doubleclick\.net/.test(r.url())) pedidos.push(r.url()); });
+  for (const ruta of ["/", "/provincias/santa_fe", DETALLE]) {
+    await page.goto(ruta);
+    await page.waitForLoadState("load");
+    await expect(page.locator('script[src*="googletagmanager.com"], script#ga-consentimiento, script#_next-ga-init')).toHaveCount(0);
+    expect(await page.evaluate(() => "dataLayer" in window)).toBe(false);
+  }
+  expect(pedidos).toEqual([]);
+});
+
 test("la metadata canónica no cambia y el sitemap mantiene 106 URLs", async ({ request }) => {
   const canonical = async (path: string) => (await (await request.get(path)).text()).match(/<link rel="canonical" href="([^"]+)"/)?.[1];
   expect(await canonical("/")).toBe("https://www.argentinauniversosur.com");

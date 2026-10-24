@@ -153,3 +153,51 @@ test("los enlaces a /actividades?provincia=… no se precargan", async () => {
   }
   assert.ok(enlaces >= 1);
 });
+
+test("GA4 solo se activa en producción de Vercel y con un ID válido", async () => {
+  const { idMedicionGA } = await import("../lib/analytics.ts");
+  assert.equal(idMedicionGA({}), null);
+  assert.equal(idMedicionGA({ NEXT_PUBLIC_GA_ID: "G-0DQ0YWHJNZ" }), null);
+  assert.equal(idMedicionGA({ VERCEL_ENV: "preview", NEXT_PUBLIC_GA_ID: "G-0DQ0YWHJNZ" }), null);
+  assert.equal(idMedicionGA({ VERCEL_ENV: "development", NEXT_PUBLIC_GA_ID: "G-0DQ0YWHJNZ" }), null);
+  assert.equal(idMedicionGA({ VERCEL_ENV: "production" }), null);
+  assert.equal(idMedicionGA({ VERCEL_ENV: "production", NEXT_PUBLIC_GA_ID: " G-0DQ0YWHJNZ " }), "G-0DQ0YWHJNZ");
+  assert.throws(() => idMedicionGA({ VERCEL_ENV: "production", NEXT_PUBLIC_GA_ID: "UA-123-1" }));
+});
+
+test("el consentimiento por defecto llega antes que GA4 y no habilita publicidad", async () => {
+  const { SCRIPT_CONSENTIMIENTO, REGIONES_CONSENTIMIENTO_PREVIO } = await import("../lib/analytics.ts");
+  const { runInNewContext } = await import("node:vm");
+  const ventana = {};
+  ventana.window = ventana;
+  runInNewContext(SCRIPT_CONSENTIMIENTO, ventana);
+  // JSON normaliza los objetos creados en el contexto vm (otro realm).
+  const comandos = JSON.parse(JSON.stringify(Array.from(ventana.dataLayer, args => Array.from(args))));
+  assert.deepEqual(comandos.map(c => c.slice(0, 2).map(String).join(":")), ["consent:default", "consent:default", "set:[object Object]"]);
+  const [regional, general] = [comandos[0][2], comandos[1][2]];
+  assert.equal(regional.analytics_storage, "denied");
+  assert.deepEqual([...regional.region].sort(), [...REGIONES_CONSENTIMIENTO_PREVIO].sort());
+  assert.ok(["ES", "DE", "FR", "IT", "GB", "CH", "NO"].every(r => regional.region.includes(r)));
+  assert.equal(general.analytics_storage, "granted");
+  assert.equal(general.region, undefined);
+  for (const c of [regional, general]) for (const k of ["ad_storage", "ad_user_data", "ad_personalization"]) assert.equal(c[k], "denied");
+  assert.deepEqual(comandos[2][1], { allow_google_signals: false, allow_ad_personalization_signals: false, ads_data_redaction: true });
+  // Sin config ni page_view manual: las visitas las registra la medición mejorada.
+  assert.doesNotMatch(SCRIPT_CONSENTIMIENTO, /config|page_view|user_id/);
+
+  const layout = await source("app/layout.tsx");
+  assert.ok(layout.indexOf('id="ga-consentimiento"') < layout.indexOf("<GoogleAnalytics"), "consentimiento antes de GA4");
+  assert.match(layout, /strategy="beforeInteractive"/);
+  assert.match(layout, /\{gaId && \(/);
+});
+
+test("el ID de GA4 no está escrito en el código ni se envían eventos manuales", async () => {
+  for (const dir of ["app", "components", "lib"]) {
+    for (const entry of await readdir(join(projectRoot, dir), { recursive: true })) {
+      if (!/\.(tsx?|jsx?|mjs)$/.test(entry)) continue;
+      const codigo = await source(join(dir, entry));
+      assert.doesNotMatch(codigo, /G-0DQ0YWHJNZ/, `${dir}/${entry}`);
+      assert.doesNotMatch(codigo, /sendGAEvent|gtag\(\s*["']event["']/, `${dir}/${entry}`);
+    }
+  }
+});
