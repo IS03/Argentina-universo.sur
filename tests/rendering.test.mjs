@@ -210,7 +210,8 @@ test("al aceptar, GA4 recibe analítica concedida y publicidad y señales de Goo
 
 test("GA4 se monta solo después de aceptar, con los permisos fijados antes del config", async () => {
   const layout = await source("app/layout.tsx");
-  assert.match(layout, /\{gaId && <MedicionConConsentimiento gaId=\{gaId\} \/>\}/);
+  assert.match(layout, /\{!isPages && gaId && <MedicionConConsentimiento gaId=\{gaId\} \/>\}/);
+  assert.match(layout, /\{isPages && gaId && <PagesConsent gaId=\{gaId\} \/>\}/);
   assert.doesNotMatch(layout, /GoogleAnalytics|beforeInteractive|next\/script/);
   const medicion = await source("components/consentimiento/MedicionConConsentimiento.tsx");
   // Único punto que monta GA4: la rama "aceptada", con PermisosGA (useLayoutEffect) antes.

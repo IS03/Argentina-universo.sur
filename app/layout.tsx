@@ -8,7 +8,10 @@ import { idMedicionGA } from "@/lib/analytics";
 import MedicionConConsentimiento from "@/components/consentimiento/MedicionConConsentimiento";
 import { SCRIPT_DECISION_INICIAL } from "@/lib/consentimiento";
 
-const isPreview = process.env.VERCEL_ENV === "preview";
+import { isPagesPreview } from "@/lib/pages/environment";
+import PagesConsent from "@/components/pages/PagesConsent";
+const isPreview = isPagesPreview(process.env);
+const isPages = process.env.AUS_STATIC_EXPORT === "1";
 // GA4 solo en producción y con NEXT_PUBLIC_GA_ID; en local, CI y Preview queda en null y no hay banner.
 const gaId = idMedicionGA(process.env);
 
@@ -66,10 +69,11 @@ export default function RootLayout({
         `}
       >
         {children}
-        <Analytics />
-        <SpeedInsights />
+        {!isPages && <Analytics />}
+        {!isPages && <SpeedInsights />}
         {/* GA4 se carga solo después de que la persona acepta en el banner. */}
-        {gaId && <MedicionConConsentimiento gaId={gaId} />}
+        {!isPages && gaId && <MedicionConConsentimiento gaId={gaId} />}
+        {isPages && gaId && <PagesConsent gaId={gaId} />}
       </body>
     </html>
   );

@@ -1,0 +1,40 @@
+{
+  "counts": {
+    "info": 0,
+    "low": 0,
+    "moderate": 2,
+    "high": 1,
+    "critical": 0,
+    "total": 3
+  },
+  "packages": [
+    {
+      "name": "miniflare",
+      "severity": "moderate",
+      "fixAvailable": {
+        "name": "wrangler",
+        "version": "4.35.0",
+        "isSemVerMajor": true
+      }
+    },
+    {
+      "name": "undici",
+      "severity": "high",
+      "fixAvailable": {
+        "name": "wrangler",
+        "version": "4.35.0",
+        "isSemVerMajor": true
+      }
+    },
+    {
+      "name": "wrangler",
+      "severity": "moderate",
+      "fixAvailable": {
+        "name": "wrangler",
+        "version": "4.35.0",
+        "isSemVerMajor": true
+      }
+    }
+  ],
+  "scope": "Local Wrangler verification only; not frontend or production dependencies"
+}

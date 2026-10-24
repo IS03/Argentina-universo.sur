@@ -38,6 +38,8 @@ jobs:
         run: npm run build
       - name: Auditoría SEO del HTML, sitemap, robots y redirects
         run: npm run audit:seo
+      - name: "Pages: exportación, seguridad editorial y SEO (Preview sin GA4)"
+        run: npm run build:pages && node --experimental-strip-types scripts/pages/audit.mjs preview
       # Usa el Google Chrome preinstalado en ubuntu-latest: no descarga navegadores.
       - name: E2E de renderizado e interacción (escritorio y móvil)
         run: npm run test:e2e

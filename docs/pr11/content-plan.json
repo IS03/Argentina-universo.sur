@@ -1,0 +1,284 @@
+{
+  "master": "Existing Google Sheets remains authoritative; no researched record imported or approved.",
+  "drafts": [
+    {
+      "id": "AUS-ESC-EL-PALMAR-EDITORIAL-01",
+      "slug": "el-palmar",
+      "contentSha256": "4a676aa05ef243d003a8c783b5f285695a3aa35d30799b5abde73bcb73a9a801",
+      "publishable": false,
+      "sourceIds": [
+        "APN-PRESENTACION",
+        "APN-FICHA",
+        "APN-VISITA",
+        "APN-RECOMENDACIONES"
+      ]
+    }
+  ],
+  "pdfs": [
+    {
+      "id": "esc_08",
+      "pdf": "/pdf/bariloche.pdf",
+      "bytes": 34489884,
+      "sha256": "b35fae10ae9f4e75b1b242fbead5987622994b3d7fa99db0207df546bf3915cf",
+      "suggestedHtml": "/escapadas/san-carlos-de-bariloche",
+      "replacementApproved": false,
+      "backupVerified": false,
+      "redirectApproved": false,
+      "status": "pending-human-review"
+    },
+    {
+      "id": "esc_06",
+      "pdf": "/pdf/caba.pdf",
+      "bytes": 37651530,
+      "sha256": "8ddb609288147a3d0da25b24abd45dfbd9c060b83773907ef3d2addbf18e1075",
+      "suggestedHtml": "/escapadas/caba",
+      "replacementApproved": false,
+      "backupVerified": false,
+      "redirectApproved": false,
+      "status": "pending-human-review"
+    },
+    {
+      "id": "esc_01",
+      "pdf": "/pdf/cañafate.pdf",
+      "bytes": 19318193,
+      "sha256": "0b0757d612a70202953f15630cd53991640bac22573158f97f27493c9b4af49e",
+      "suggestedHtml": "/escapadas/el-calafate-y-el-chalten",
+      "replacementApproved": false,
+      "backupVerified": false,
+      "redirectApproved": false,
+      "status": "pending-human-review"
+    },
+    {
+      "id": "esc_10",
+      "pdf": "/pdf/cba.pdf",
+      "bytes": 25346217,
+      "sha256": "6e790c0fa6b686caeba8b8575023e9fc9f3aae35ad5434d7953e68a85b382bca",
+      "suggestedHtml": "/escapadas/norte-de-cordoba",
+      "replacementApproved": false,
+      "backupVerified": false,
+      "redirectApproved": false,
+      "status": "pending-human-review"
+    },
+    {
+      "id": "esc_14",
+      "pdf": "/pdf/chaco.pdf",
+      "bytes": 23895952,
+      "sha256": "134819694046946cd0a7dd3b69c05304812d064dfd2c24e925046974dcd668a5",
+      "suggestedHtml": "/escapadas/chaco",
+      "replacementApproved": false,
+      "backupVerified": false,
+      "redirectApproved": false,
+      "status": "pending-human-review"
+    },
+    {
+      "id": "esc_11",
+      "pdf": "/pdf/entrerios.pdf",
+      "bytes": 29060699,
+      "sha256": "6264c1b294a9bcac1920ce94ec985f48e822001ea67c8ddf1e67d55531a9680a",
+      "suggestedHtml": "/escapadas/entre-rios",
+      "replacementApproved": false,
+      "backupVerified": false,
+      "redirectApproved": false,
+      "status": "pending-human-review"
+    },
+    {
+      "id": "esc_23",
+      "pdf": "/pdf/formosa.pdf",
+      "bytes": 57013841,
+      "sha256": "7dfb6d4369c98477367c52c8e5a71fbbf1a969b1b7e5f50d88ece7e33f05b658",
+      "suggestedHtml": "/escapadas/formosa",
+      "replacementApproved": false,
+      "backupVerified": false,
+      "redirectApproved": false,
+      "status": "pending-human-review"
+    },
+    {
+      "id": "esc_18",
+      "pdf": "/pdf/gallegos.pdf",
+      "bytes": 19784786,
+      "sha256": "47efb3d922e1545a0ee3fd117ed03381ad8b81408b762843a71a2738dec170ed",
+      "suggestedHtml": "/escapadas/rio-gallegos",
+      "replacementApproved": false,
+      "backupVerified": false,
+      "redirectApproved": false,
+      "status": "pending-human-review"
+    },
+    {
+      "id": "esc_02",
+      "pdf": "/pdf/iguazu_2.pdf",
+      "bytes": 14457850,
+      "sha256": "7cf128d2f00fe4730b18813b983ae388748eb5a057dc7c44778f8832d23cd0d4",
+      "suggestedHtml": "/escapadas/puerto-iguazu",
+      "replacementApproved": false,
+      "backupVerified": false,
+      "redirectApproved": false,
+      "status": "pending-human-review"
+    },
+    {
+      "id": "esc_05",
+      "pdf": "/pdf/jujuy.pdf",
+      "bytes": 21391638,
+      "sha256": "46f00914b3f5c92e8099ef37c26efeda1750b6944134b8f318f4df9c4872ff0f",
+      "suggestedHtml": "/escapadas/jujuy",
+      "replacementApproved": false,
+      "backupVerified": false,
+      "redirectApproved": false,
+      "status": "pending-human-review"
+    },
+    {
+      "id": "esc_22",
+      "pdf": "/pdf/lapampa.pdf",
+      "bytes": 20932838,
+      "sha256": "c44359d857148c1fe5f5720fa798ac76b583fe2050beaae7bd515b0d420c1eab",
+      "suggestedHtml": "/escapadas/la-pampa",
+      "replacementApproved": false,
+      "backupVerified": false,
+      "redirectApproved": false,
+      "status": "pending-human-review"
+    },
+    {
+      "id": "esc_15",
+      "pdf": "/pdf/mendoza.pdf",
+      "bytes": 21326786,
+      "sha256": "194eb1eb3791428024961537fac7f9e1327cf2d3cfa717650ebd48de7d6a920b",
+      "suggestedHtml": "/escapadas/mendoza",
+      "replacementApproved": false,
+      "backupVerified": false,
+      "redirectApproved": false,
+      "status": "pending-human-review"
+    },
+    {
+      "id": "esc_21",
+      "pdf": "/pdf/misiones.pdf",
+      "bytes": 23042857,
+      "sha256": "96c659dfb28bb2302cc847a003f8869764451dec7a0105aa4a9e74d2b929d170",
+      "suggestedHtml": "/escapadas/misiones",
+      "replacementApproved": false,
+      "backupVerified": false,
+      "redirectApproved": false,
+      "status": "pending-human-review"
+    },
+    {
+      "id": "esc_19",
+      "pdf": "/pdf/neuquen.pdf",
+      "bytes": 45336735,
+      "sha256": "a226f20887dfd52a7d0b8625779eb4fe2f5b4062b73cd500fa7e535f502322d4",
+      "suggestedHtml": "/escapadas/neuquen",
+      "replacementApproved": false,
+      "backupVerified": false,
+      "redirectApproved": false,
+      "status": "pending-human-review"
+    },
+    {
+      "id": "esc_03",
+      "pdf": "/pdf/pinamar.pdf",
+      "bytes": 19760229,
+      "sha256": "aaaba6460562f60af510c03e91767674fbad8a1994b3558a3ead64f3fce280c4",
+      "suggestedHtml": "/escapadas/pinamar",
+      "replacementApproved": false,
+      "backupVerified": false,
+      "redirectApproved": false,
+      "status": "pending-human-review"
+    },
+    {
+      "id": "esc_04",
+      "pdf": "/pdf/pto_madryn_1.pdf",
+      "bytes": 24274044,
+      "sha256": "b86f199669860e38682385b245b0482c2c7c8fa229e836312c9c2b5f63ed2176",
+      "suggestedHtml": "/escapadas/puerto-madryn",
+      "replacementApproved": false,
+      "backupVerified": false,
+      "redirectApproved": false,
+      "status": "pending-human-review"
+    },
+    {
+      "id": "esc_09",
+      "pdf": "/pdf/salta.pdf",
+      "bytes": 31616145,
+      "sha256": "cd29698d10d093ed093dcea3f8633e6d2462573be1ce006e57f0b9c4f0a7a813",
+      "suggestedHtml": "/escapadas/salta",
+      "replacementApproved": false,
+      "backupVerified": false,
+      "redirectApproved": false,
+      "status": "pending-human-review"
+    },
+    {
+      "id": "esc_16",
+      "pdf": "/pdf/sanjuan.pdf",
+      "bytes": 16454455,
+      "sha256": "f1ef2bca6fc0ebbc29f50d82bc789a5d9ff1df6c15dcbe839ffb0eaa13ea5663",
+      "suggestedHtml": "/escapadas/san-juan",
+      "replacementApproved": false,
+      "backupVerified": false,
+      "redirectApproved": false,
+      "status": "pending-human-review"
+    },
+    {
+      "id": "esc_17",
+      "pdf": "/pdf/sanluis.pdf",
+      "bytes": 33406355,
+      "sha256": "3a1571a56d29d31e1f86e0a2140b3b25a3d8a69a11ba7f79db816c51dc208d17",
+      "suggestedHtml": "/escapadas/san-luis",
+      "replacementApproved": false,
+      "backupVerified": false,
+      "redirectApproved": false,
+      "status": "pending-human-review"
+    },
+    {
+      "id": "esc_20",
+      "pdf": "/pdf/santiago.pdf",
+      "bytes": 28132742,
+      "sha256": "4bd407b099b401e214dbf700668207c0f43aea51e353a95d464ff60424e0adbb",
+      "suggestedHtml": "/escapadas/santiago-del-estero",
+      "replacementApproved": false,
+      "backupVerified": false,
+      "redirectApproved": false,
+      "status": "pending-human-review"
+    },
+    {
+      "id": "security-archive",
+      "pdf": "/pdf/seguridad/recomendaciones_para_un_verano_seguro_1.pdf",
+      "bytes": 1368481,
+      "sha256": "1d0637c6aa8ba9b7479340c8833db2c019db5673a85408b2e68db5175ca5be6d",
+      "suggestedHtml": "/seguridad",
+      "replacementApproved": false,
+      "backupVerified": false,
+      "redirectApproved": false,
+      "status": "pending-human-review"
+    },
+    {
+      "id": "esc_13",
+      "pdf": "/pdf/talampaya.pdf",
+      "bytes": 35463984,
+      "sha256": "378d69540724586f217519589d05fee8a0f268b77664173893f00a37b3fd45f5",
+      "suggestedHtml": "/escapadas/talampaya-e-ischigualasto",
+      "replacementApproved": false,
+      "backupVerified": false,
+      "redirectApproved": false,
+      "status": "pending-human-review"
+    },
+    {
+      "id": "esc_12",
+      "pdf": "/pdf/ushuaia.pdf",
+      "bytes": 34178289,
+      "sha256": "f0ccb3e456defa8d1dcd0fff42293091f631f94d87dbac9fc002cf8b74f91c36",
+      "suggestedHtml": "/escapadas/ushuaia",
+      "replacementApproved": false,
+      "backupVerified": false,
+      "redirectApproved": false,
+      "status": "pending-human-review"
+    },
+    {
+      "id": "esc_07",
+      "pdf": "/pdf/ventana.pdf",
+      "bytes": 15874893,
+      "sha256": "ba9891b9a3705cbc9c38fb7d9bcad92ed593d46535c97203e9b947130aaa515f",
+      "suggestedHtml": "/escapadas/sierra-de-la-ventana",
+      "replacementApproved": false,
+      "backupVerified": false,
+      "redirectApproved": false,
+      "status": "pending-human-review"
+    }
+  ],
+  "note": "El Palmar is an additional destination draft, not an equivalent replacement for the entire Entre Ríos PDF."
+}

@@ -2,7 +2,8 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "git": {
     "deploymentEnabled": {
-      "codex/pr10-cloudflare-feasibility": false
+      "codex/pr10-cloudflare-feasibility": false,
+      "codex/pr11-pages-ready": false
     }
   }
 }

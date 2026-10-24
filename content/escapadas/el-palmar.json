@@ -1,0 +1,101 @@
+{
+  "id": "AUS-ESC-EL-PALMAR-EDITORIAL-01",
+  "slug": "el-palmar",
+  "title": "El Palmar: naturaleza e historia junto al río Uruguay",
+  "destination": "Parque Nacional El Palmar",
+  "province": "Entre Ríos",
+  "description": "Una propuesta para conocer el paisaje de palmares del este entrerriano, acercarse a su patrimonio histórico y organizar la visita con información oficial actualizada.",
+  "status": "draft",
+  "publicationAuthorized": true,
+  "review": null,
+  "sources": [
+    {
+      "id": "APN-PRESENTACION",
+      "title": "Administración de Parques Nacionales — El Palmar",
+      "url": "https://www.argentina.gob.ar/parquesnacionales/centro/parque-nacional-el-palmar",
+      "checkedAt": "2026-10-24"
+    },
+    {
+      "id": "APN-FICHA",
+      "title": "Ficha del área protegida",
+      "url": "https://www.argentina.gob.ar/parquesnacionales/centro/parque-nacional-el-palmar/ficha-del-area-protegida",
+      "checkedAt": "2026-10-24"
+    },
+    {
+      "id": "APN-VISITA",
+      "title": "Planeá tu visita",
+      "url": "https://www.argentina.gob.ar/parquesnacionales/centro/parque-nacional-el-palmar/planea-tu-visita",
+      "checkedAt": "2026-10-24"
+    },
+    {
+      "id": "APN-RECOMENDACIONES",
+      "title": "Recomendaciones para tu visita — APN",
+      "url": "https://www.argentina.gob.ar/parquesnacionales/recomendaciones-para-tu-visita",
+      "checkedAt": "2026-10-24"
+    }
+  ],
+  "sections": [
+    {
+      "title": "Qué conocer",
+      "sourceIds": [
+        "APN-PRESENTACION"
+      ],
+      "paragraphs": [
+        "En Entre Ríos, El Palmar reúne un paisaje reconocible por sus palmeras yatay. La visita permite acercarse a ambientes diferentes: pastizales, sectores de espinal, selva en galería y áreas vinculadas al agua. Esa diversidad invita a mirar más allá de una sola postal y a recorrer el área con atención a sus cambios de vegetación.",
+        "El parque también conserva testimonios históricos y arqueológicos. La Calera del Palmar forma parte de ese patrimonio: su historia se vincula con la presencia jesuítica en la región. Para decidir qué sectores recorrer, consultá la información de visita del parque y las indicaciones del personal en la fecha de tu viaje."
+      ]
+    },
+    {
+      "title": "El paisaje y sus ambientes",
+      "sourceIds": [
+        "APN-FICHA"
+      ],
+      "paragraphs": [
+        "El área protegida se encuentra junto al río Uruguay, en la transición de las regiones naturales Pampeana y del Espinal. Su condición de Sitio Ramsar reconoce la importancia de sus humedales. Palmas, pastizales y ambientes ribereños ofrecen distintas formas de observar y comprender ese territorio.",
+        "La yatay proporciona refugio, lugares de nidificación y alimento a distintas especies. En los sectores bajos pueden formarse humedales temporarios; las riberas, a su vez, sostienen una vegetación diferente. La observación de fauna depende de las condiciones y del comportamiento de los animales: esta guía no promete avistajes ni acceso a un sector concreto."
+      ]
+    },
+    {
+      "title": "Cómo organizar la escapada",
+      "sourceIds": [
+        "APN-VISITA"
+      ],
+      "paragraphs": [
+        "Antes de salir, usá el menú de “Planeá tu visita” de Parques Nacionales para revisar panorámica, actividades, alojamiento, servicios, horarios, acceso, tarifas y mapa. Elegí las propuestas con esa información vigente, sin tomar esta ficha como una reserva ni como un programa cerrado.",
+        "Si pensás alojarte o contratar un servicio, confirmá condiciones y disponibilidad directamente con su prestador. Esta página reúne enlaces de consulta y una presentación del destino; no fija duraciones de recorridos, tiempos de traslado ni presupuestos. Los datos variables deben comprobarse nuevamente para el día elegido."
+      ]
+    },
+    {
+      "title": "Consejos prácticos",
+      "sourceIds": [
+        "APN-RECOMENDACIONES"
+      ],
+      "paragraphs": [
+        "Seguí las indicaciones del parque y respetá las áreas habilitadas. Consultá sus recomendaciones antes de elegir una actividad: la información institucional propone una visita responsable y el cuidado del entorno.",
+        "Guardá el enlace oficial de planificación y verificá allí cualquier aviso antes de viajar. Los horarios de atención de una oficina no deben interpretarse como horarios de todos los circuitos. No se reproducen tarifas ni contactos de prestadores que puedan quedar desactualizados."
+      ]
+    }
+  ],
+  "address": "Portada del Parque Nacional — Ruta Nacional 14, km 198, Ubajay, Entre Ríos",
+  "mapUrl": "https://www.openstreetmap.org/search?query=Parque%20Nacional%20El%20Palmar%20Ubajay%20Entre%20R%C3%ADos",
+  "related": [
+    {
+      "href": "/provincias/entre_rios",
+      "label": "Turismo en Entre Ríos"
+    },
+    {
+      "href": "/actividades?provincia=entre_rios",
+      "label": "Actividades en Entre Ríos"
+    },
+    {
+      "href": "/escapadas",
+      "label": "Otras escapadas"
+    }
+  ],
+  "authorization": {
+    "date": "2026-10-24",
+    "source": "Explicit authorization from the human user in this conversation",
+    "scope": "New original El Palmar page based on verified official sources; excludes PDF reproduction, master records and production infrastructure changes",
+    "textReview": "Final text remains reviewable in this pull request; not claimed as individually read or signed by the user"
+  }
+}

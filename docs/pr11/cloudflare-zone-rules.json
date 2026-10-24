@@ -1,0 +1,52 @@
+{
+  "kind": "zone",
+  "phase": "http_request_dynamic_redirect",
+  "name": "AUS legacy activity filters — validate in owner zone before activation",
+  "rules": [
+    {
+      "description": "Legacy Catamarca activities",
+      "expression": "http.host eq \"www.argentinauniversosur.com\" and http.request.uri.path eq \"/actividades\" and http.request.uri.args[\"provincia\"][0] eq \"catarmaca\"",
+      "action": "redirect",
+      "action_parameters": {
+        "from_value": {
+          "status_code": 308,
+          "preserve_query_string": true,
+          "target_url": {
+            "expression": "concat(\"https://\", http.host, \"/actividades/por-provincia/catamarca\")"
+          }
+        }
+      },
+      "enabled": true
+    },
+    {
+      "description": "Legacy province activities",
+      "expression": "http.host eq \"www.argentinauniversosur.com\" and http.request.uri.path eq \"/actividades\" and http.request.uri.args[\"provincia\"][0] in {\"buenos_aires\" \"caba\" \"catamarca\" \"jujuy\" \"la_rioja\" \"salta\" \"santiago_del_estero\" \"tucuman\" \"chaco\" \"corrientes\" \"entre_rios\" \"formosa\" \"misiones\" \"santa_fe\" \"cordoba\" \"mendoza\" \"san_juan\" \"san_luis\" \"chubut\" \"la_pampa\" \"neuquen\" \"rio_negro\" \"santa_cruz\" \"tierra_del_fuego\"}",
+      "action": "redirect",
+      "action_parameters": {
+        "from_value": {
+          "status_code": 308,
+          "preserve_query_string": true,
+          "target_url": {
+            "expression": "concat(\"https://\", http.host, \"/actividades/por-provincia/\", http.request.uri.args[\"provincia\"][0])"
+          }
+        }
+      },
+      "enabled": true
+    },
+    {
+      "description": "Unknown province activities",
+      "expression": "http.host eq \"www.argentinauniversosur.com\" and http.request.uri.path eq \"/actividades\" and http.request.uri.args[\"provincia\"][0] ne \"\" and not http.request.uri.args[\"provincia\"][0] in {\"buenos_aires\" \"caba\" \"catamarca\" \"jujuy\" \"la_rioja\" \"salta\" \"santiago_del_estero\" \"tucuman\" \"chaco\" \"corrientes\" \"entre_rios\" \"formosa\" \"misiones\" \"santa_fe\" \"cordoba\" \"mendoza\" \"san_juan\" \"san_luis\" \"chubut\" \"la_pampa\" \"neuquen\" \"rio_negro\" \"santa_cruz\" \"tierra_del_fuego\"} and http.request.uri.args[\"provincia\"][0] ne \"catarmaca\"",
+      "action": "redirect",
+      "action_parameters": {
+        "from_value": {
+          "status_code": 308,
+          "preserve_query_string": true,
+          "target_url": {
+            "expression": "concat(\"https://\", http.host, \"/actividades/por-provincia/sin-resultados\")"
+          }
+        }
+      },
+      "enabled": true
+    }
+  ]
+}

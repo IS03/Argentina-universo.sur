@@ -1,0 +1,712 @@
+{
+  "stats": {
+    "startTime": "2026-10-24T21:42:21.940Z",
+    "duration": 38782.282,
+    "expected": 68,
+    "skipped": 2,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "cases": [
+    {
+      "title": "SSR e hidratación /",
+      "project": "static-escritorio",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "SSR e hidratación /provincias",
+      "project": "static-escritorio",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "SSR e hidratación /provincias/santa_fe",
+      "project": "static-escritorio",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "SSR e hidratación /actividades",
+      "project": "static-escritorio",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "SSR e hidratación /actividades?provincia=santa_fe",
+      "project": "static-escritorio",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "SSR e hidratación /actividades?provincia=catarmaca",
+      "project": "static-escritorio",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "SSR e hidratación /escapadas",
+      "project": "static-escritorio",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "SSR e hidratación /actividades/vivir-la-magia-del-teatro-colon",
+      "project": "static-escritorio",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "SSR e hidratación /privacidad",
+      "project": "static-escritorio",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "SSR e hidratación /provincias/santa_fe/eventos",
+      "project": "static-escritorio",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "filtro, recarga, navegación cliente y atrás",
+      "project": "static-escritorio",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "historial local y resumen estático",
+      "project": "static-escritorio",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "Leaflet se activa y mantiene controles",
+      "project": "static-escritorio",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "redirect permanente Catamarca y metadatos estáticos",
+      "project": "static-escritorio",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "agenda nunca presenta los eventos de enero/febrero como próximos",
+      "project": "static-escritorio",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "demo local y fuentes, fuera del sitemap",
+      "project": "static-escritorio",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "Workers: Suspense y Client Component",
+      "project": "static-escritorio",
+      "status": "skipped",
+      "results": [
+        {
+          "status": "skipped"
+        }
+      ]
+    },
+    {
+      "title": "SSR e hidratación /",
+      "project": "static-movil",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "SSR e hidratación /provincias",
+      "project": "static-movil",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "SSR e hidratación /provincias/santa_fe",
+      "project": "static-movil",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "SSR e hidratación /actividades",
+      "project": "static-movil",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "SSR e hidratación /actividades?provincia=santa_fe",
+      "project": "static-movil",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "SSR e hidratación /actividades?provincia=catarmaca",
+      "project": "static-movil",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "SSR e hidratación /escapadas",
+      "project": "static-movil",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "SSR e hidratación /actividades/vivir-la-magia-del-teatro-colon",
+      "project": "static-movil",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "SSR e hidratación /privacidad",
+      "project": "static-movil",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "SSR e hidratación /provincias/santa_fe/eventos",
+      "project": "static-movil",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "filtro, recarga, navegación cliente y atrás",
+      "project": "static-movil",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "historial local y resumen estático",
+      "project": "static-movil",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "Leaflet se activa y mantiene controles",
+      "project": "static-movil",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "redirect permanente Catamarca y metadatos estáticos",
+      "project": "static-movil",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "agenda nunca presenta los eventos de enero/febrero como próximos",
+      "project": "static-movil",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "demo local y fuentes, fuera del sitemap",
+      "project": "static-movil",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "Workers: Suspense y Client Component",
+      "project": "static-movil",
+      "status": "skipped",
+      "results": [
+        {
+          "status": "skipped"
+        }
+      ]
+    },
+    {
+      "title": "24 páginas filtradas entregan exactamente su provincia sin JavaScript",
+      "project": "static-escritorio",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "modelo de reglas de zona conserva query y entrega 3 actividades sin JS",
+      "project": "static-escritorio",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "Preview no monta GA incluso con aceptación guardada",
+      "project": "static-escritorio",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "alias pages.dev/local de un artefacto production tampoco carga GA",
+      "project": "static-escritorio",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "PDFs y URLs de fotos heredadas siguen accesibles; ningún optimizer Vercel",
+      "project": "static-escritorio",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "los borradores no tienen HTML ni datos RSC públicos",
+      "project": "static-escritorio",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "24 páginas filtradas entregan exactamente su provincia sin JavaScript",
+      "project": "static-movil",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "modelo de reglas de zona conserva query y entrega 3 actividades sin JS",
+      "project": "static-movil",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "Preview no monta GA incluso con aceptación guardada",
+      "project": "static-movil",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "alias pages.dev/local de un artefacto production tampoco carga GA",
+      "project": "static-movil",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "PDFs y URLs de fotos heredadas siguen accesibles; ningún optimizer Vercel",
+      "project": "static-movil",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "los borradores no tienen HTML ni datos RSC públicos",
+      "project": "static-movil",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "Wrangler Pages local: rutas, headers, imágenes y navegación cliente",
+      "project": "wrangler-escritorio",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "Wrangler interpreta _redirects y preserva la query",
+      "project": "wrangler-escritorio",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "Wrangler sin JS: página provincial correcta, query legacy requiere regla de zona",
+      "project": "wrangler-escritorio",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "Wrangler Pages local: rutas, headers, imágenes y navegación cliente",
+      "project": "wrangler-movil",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "Wrangler interpreta _redirects y preserva la query",
+      "project": "wrangler-movil",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "Wrangler sin JS: página provincial correcta, query legacy requiere regla de zona",
+      "project": "wrangler-movil",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "el HTML trae el banner y el script que lo oculta a quien ya decidió, sin scripts de Google",
+      "project": "consent-escritorio",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "antes de hidratar: el banner se ve si no hay decisión y nunca aparece si ya la hay",
+      "project": "consent-escritorio",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "sin decisión: banner visible y GA4 sin cargar, sin cookies ni envíos",
+      "project": "consent-escritorio",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "aceptar carga GA4 una vez, con los permisos antes del config, y se recuerda",
+      "project": "consent-escritorio",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "rechazar no carga GA4 en ninguna página y se recuerda",
+      "project": "consent-escritorio",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "la decisión se cambia desde «Privacidad y cookies»: rechazar borra las cookies y aceptar vuelve a medir",
+      "project": "consent-escritorio",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "una decisión vencida o de una versión anterior vuelve a mostrar el banner sin cargar GA4",
+      "project": "consent-escritorio",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "«Aceptar» y «Rechazar» tienen el mismo peso visual, se usan con teclado y el banner no desplaza contenido",
+      "project": "consent-escritorio",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "la decisión tomada en otra pestaña se aplica sin recargar",
+      "project": "consent-escritorio",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "el HTML trae el banner y el script que lo oculta a quien ya decidió, sin scripts de Google",
+      "project": "consent-movil",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "antes de hidratar: el banner se ve si no hay decisión y nunca aparece si ya la hay",
+      "project": "consent-movil",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "sin decisión: banner visible y GA4 sin cargar, sin cookies ni envíos",
+      "project": "consent-movil",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "aceptar carga GA4 una vez, con los permisos antes del config, y se recuerda",
+      "project": "consent-movil",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "rechazar no carga GA4 en ninguna página y se recuerda",
+      "project": "consent-movil",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "la decisión se cambia desde «Privacidad y cookies»: rechazar borra las cookies y aceptar vuelve a medir",
+      "project": "consent-movil",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "una decisión vencida o de una versión anterior vuelve a mostrar el banner sin cargar GA4",
+      "project": "consent-movil",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "«Aceptar» y «Rechazar» tienen el mismo peso visual, se usan con teclado y el banner no desplaza contenido",
+      "project": "consent-movil",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "la decisión tomada en otra pestaña se aplica sin recargar",
+      "project": "consent-movil",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    }
+  ]
+}
