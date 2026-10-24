@@ -59,3 +59,32 @@ body {
 .leaflet-control-attribution {
   z-index: 10 !important;
 }
+
+/* Indicador de foco visible y consistente para teclado. :where() no suma especificidad, así que
+   los estilos de foco propios de cada componente (ring, outline) siguen teniendo prioridad. */
+:where(a, button, select, input, textarea, summary, [tabindex]):focus-visible {
+  outline: 2px solid #5A4E3D;
+  outline-offset: 2px;
+}
+
+/* El contenedor del mapa recorta lo que sobresale: el contorno de foco va hacia adentro. */
+.leaflet-container:focus-visible {
+  outline: 3px solid #5A4E3D;
+  outline-offset: -3px;
+}
+
+/* Movimiento reducido: sin desplazamiento suave ni transiciones o animaciones decorativas. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

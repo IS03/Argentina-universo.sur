@@ -1,7 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Carrusel from "@/components/Carrusel";
-import CapitalMapWrapper from "@/components/CapitalMapWrapper";
+import MapaUbicacion from "@/components/mapa/MapaUbicacion";
 import Link from "next/link";
 import { ROUTES, INTERNAL_ANCHORS } from "@/lib/site-links";
 import { 
@@ -105,10 +105,10 @@ export default async function ProvinciaPage({ params }: PageProps) {
               <h2 className="text-2xl md:text-3xl font-semibold uppercase tracking-widest mb-6 text-center text-[#5A4E3D]">
                 Su Capital: {provincia.nombre_capital}
               </h2>
-              <CapitalMapWrapper
+              <MapaUbicacion
                 lat={provincia.lat_capital}
                 lon={provincia.lon_capital}
-                nombreCapital={provincia.nombre_capital}
+                titulo={provincia.nombre_capital}
               />
             </div>
           )}
@@ -120,8 +120,12 @@ export default async function ProvinciaPage({ params }: PageProps) {
 
           {/* CTA: Ver qué hacer + enlazado interno (SEO) */}
           <div className="text-center mb-16 space-y-4">
+            {/* Sin prefetch: /actividades?provincia=… es un rewrite por query y Next 16.3+ predice su
+                segmento a partir de /actividades, lo que da 404 (vercel/next.js#97244). El clic
+                navega igual en el cliente, pidiendo el árbol completo al servidor. */}
             <Link
               href={ROUTES.actividadesPorProvincia(provincia.slug)}
+              prefetch={false}
               className="inline-block px-8 py-3 bg-[#A68B5B]/20 hover:bg-[#A68B5B]/30 backdrop-blur-sm text-[#5A4E3D] uppercase tracking-widest text-sm transition-all duration-300 border border-[#C9B99B]/40 hover:border-[#A68B5B]/60"
             >
               {INTERNAL_ANCHORS.verActividadesEnProvincia(provincia.provincia)}

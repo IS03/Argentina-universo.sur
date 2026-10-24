@@ -9,6 +9,10 @@ interface MapaArgentinaProps {
   zonaActiva: string;
 }
 
+// Dimensiones de public/argentina.svg (atributos width y height del archivo).
+const ANCHO_SVG = 361.54608;
+const ALTO_SVG = 792.5788;
+
 // Mapeo de slugs a IDs del SVG (formato AR-X)
 const SLUG_TO_SVG_ID: Record<string, string> = {
   buenos_aires: "AR-B",
@@ -121,7 +125,7 @@ export default function MapaArgentina({ provincias, zonaActiva }: MapaArgentinaP
         clonedSvg.removeAttribute("width");
         clonedSvg.removeAttribute("height");
         if (!clonedSvg.getAttribute("viewBox")) {
-          clonedSvg.setAttribute("viewBox", "0 0 361.54608 792.57880");
+          clonedSvg.setAttribute("viewBox", `0 0 ${ANCHO_SVG} ${ALTO_SVG}`);
         }
         clonedSvg.setAttribute("preserveAspectRatio", "xMidYMid meet");
         clonedSvg.setAttribute("style", "width: 100%; height: auto; max-height: 600px;");
@@ -141,12 +145,25 @@ export default function MapaArgentina({ provincias, zonaActiva }: MapaArgentinaP
           // Estilos base
           path.setAttribute("style", `cursor: pointer; transition: all 0.3s ease`);
           path.setAttribute("title", provincia.provincia);
+          // Cada provincia es un enlace accesible con teclado (Tab, Enter o Espacio).
+          path.setAttribute("tabindex", "0");
+          path.setAttribute("role", "link");
+          path.setAttribute("aria-label", `Ver turismo en ${provincia.provincia}`);
 
           // Agregar event listeners una sola vez
           path.addEventListener("mouseenter", () => setHoveredSlug(provincia.slug));
           path.addEventListener("mouseleave", () => setHoveredSlug(null));
+          path.addEventListener("focus", () => setHoveredSlug(provincia.slug));
+          path.addEventListener("blur", () => setHoveredSlug(null));
           path.addEventListener("click", () => handleProvinciaClick(provincia.slug));
+          path.addEventListener("keydown", (e) => {
+            if (e.key !== "Enter" && e.key !== " ") return;
+            e.preventDefault();
+            handleProvinciaClick(provincia.slug);
+          });
         });
+        clonedSvg.setAttribute("role", "group");
+        clonedSvg.setAttribute("aria-label", "Mapa de provincias de Argentina");
 
         // Agregar el SVG al DOM
         svgRef.current.appendChild(clonedSvg);
@@ -172,10 +189,12 @@ export default function MapaArgentina({ provincias, zonaActiva }: MapaArgentinaP
     <div className="w-full flex justify-center mb-8">
       <div className="w-full max-w-4xl">
         <div className="bg-gradient-to-br from-[#F5F1E8] to-[#E8DDD0] rounded-xl p-6 shadow-lg border border-[#C9B99B]/30 overflow-hidden">
+          {/* El SVG llega por fetch después de hidratar: el contenedor ya reserva su alto
+              (misma relación de aspecto y tope de 600 px) y la grilla no se desplaza (CLS). */}
           <div
             ref={svgRef}
-            className="w-full h-auto flex justify-center items-center"
-            style={{ maxHeight: "600px", overflow: "hidden" }}
+            className="w-full flex justify-center items-center"
+            style={{ aspectRatio: `${ANCHO_SVG} / ${ALTO_SVG}`, maxHeight: "600px", overflow: "hidden" }}
           />
         </div>
       </div>
