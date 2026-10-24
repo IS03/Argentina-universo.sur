@@ -25,7 +25,7 @@ El contenido está orientado a SEO y enlazado interno (breadcrumbs, enlaces cont
 - Enlaces a escapadas y guía de seguridad.
 
 ### Viaja por Argentina (`/provincias`)
-- **Mapa interactivo** de Argentina (Leaflet) con las 24 provincias.
+- **Mapa interactivo** de Argentina (SVG) con las 24 provincias, navegable con mouse o teclado.
 - Cada provincia tiene ficha con: nombre, fotos, descripciones, capital (nombre, dirección, coordenadas), zona (Norte, Cuyo, Patagonia, etc.).
 - Enlace a actividades filtradas por esa provincia.
 - **Santa Fe** incluye subsecciones propias: noticias, planes, agencias, oficinas de información, eventos, preguntas frecuentes.
@@ -89,7 +89,7 @@ La web consume datos estáticos en **JSON** servidos desde `public/`. Las fuente
 | **Framework** | Next.js 16 (App Router) | Rutas, SSR/estático, metadata, sitemap, robots |
 | **UI** | React 19, TypeScript | Componentes y tipado |
 | **Estilos** | Tailwind CSS 4, PostCSS | Utility-first, variables CSS, tema |
-| **Mapas** | Leaflet, React-Leaflet | Mapa de Argentina, provincias, actividades (marcadores) |
+| **Mapas** | Leaflet, React-Leaflet | Mapas de ubicación de capitales y actividades (marcadores) |
 | **Imágenes** | Sharp | Optimización de imágenes en build (Next.js) |
 | **Datos (fuente)** | xlsx | Lectura de Excel para generar JSON (scripts en dev) |
 | **Linting** | ESLint, eslint-config-next | Reglas y consistencia de código |
@@ -108,7 +108,7 @@ La interfaz apuesta por una estética **clara y cálida**, inspirada en tonos ti
 - **Fondo:** gradiente suave en el `body` (crema a beige) con `background-attachment: fixed`. Scroll suave (`scroll-behavior: smooth`).
 - **Navbar:** barra fija con gradiente horizontal (crema/beige), `backdrop-blur`, borde inferior discreto y sombra. Enlaces en mayúsculas con tracking ancho; hover con subrayado animado (gradiente dorado/marrón). Menú móvil a pantalla completa con el mismo estilo.
 - **Contenido:** contenedores con `max-w-7xl` y padding responsive; títulos en mayúsculas con tracking; tarjetas (provincias, actividades, escapadas) con imágenes, texto y enlaces bien separados.
-- **Mapas (Leaflet):** z-index ajustados en CSS para que no tapen la navbar; controles de zoom y popups visibles. Integración con el resto del diseño (bordes, sombras si aplican).
+- **Mapas (Leaflet):** el HTML trae una vista previa estática (las mismas teselas de OpenStreetMap y el mismo marcador) en un contenedor de alto fijo; Leaflet se descarga al tocar “Explorar mapa” o activarlo con el teclado. Así el mapa no desplaza el contenido ni retrasa el LCP. z-index ajustados en CSS para que no tapen la navbar; controles en español y movimiento reducido respetado. Detalles en [docs/PR-05-ESTABILIDAD.md](docs/PR-05-ESTABILIDAD.md).
 - **Responsive:** breakpoints de Tailwind (sm, md, lg); menú hamburguesa en móvil; grid y flex adaptados según ancho de pantalla.
 - **Accesibilidad y SEO:** textos alternativos en imágenes, `aria-label` en navegación y enlaces, estructura de encabezados y metadata por página (título, descripción, Open Graph, Twitter).
 
