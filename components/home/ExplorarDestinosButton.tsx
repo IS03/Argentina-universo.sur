@@ -13,7 +13,7 @@ export default function ExplorarDestinosButton({ style }: { style: React.CSSProp
           const y = elemento.getBoundingClientRect().top + window.pageYOffset + yOffset;
           window.scrollTo({
             top: y,
-            behavior: 'smooth'
+            behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"
           });
         }
       }}

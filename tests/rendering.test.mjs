@@ -6,6 +6,7 @@ import { readCatalog, projectRoot } from "../scripts/validate-data.mjs";
 import { normalizarProvincia, normalizarActividad, resumirProvincia, resumirActividad, filtrarActividades, resolveProvinciaSlug, TODAS_LAS_PROVINCIAS } from "../lib/catalog.ts";
 import { getHeroScrollState } from "../lib/home-images.ts";
 import { resolverVisitasRecientes, MAX_VISITAS_INICIO } from "../lib/recent-visits.ts";
+import { teselasVistaPrevia, ANCHOS_MINIMOS, TAMANO_TESELA, ALTO_MAPA } from "../lib/mapa-teselas.ts";
 
 const raw = await readCatalog();
 const provincias = raw.provincias.map(normalizarProvincia).map(resumirProvincia);
@@ -96,4 +97,39 @@ test("los rewrites del filtro y el navegador resuelven igual cada valor de ?prov
   assert.equal(seleccionDesdeParametro("catarmaca"), "catamarca");
   assert.equal(seleccionDesdeParametro("no-existe"), FILTRO_SIN_RESULTADOS);
   assert.ok(ACTIVIDADES_FILTRO_REDIRECTS.every(r => r.permanent && r.destination.startsWith("/actividades?")));
+});
+
+// Fórmula de teselas de OpenStreetMap (wiki "Slippy map tilenames"), independiente de lib/mapa-teselas.
+const teselaOsm = (lat, lon, z) => {
+  const n = 2 ** z, r = lat * Math.PI / 180;
+  return [Math.floor((lon + 180) / 360 * n), Math.floor((1 - Math.asinh(Math.tan(r)) / Math.PI) / 2 * n)];
+};
+const coordenadasDeMapas = () => [
+  ...raw.actividades.map(normalizarActividad).map(a => [a.lat, a.lon]),
+  ...raw.provincias.map(normalizarProvincia).map(p => [p.lat_capital, p.lon_capital]),
+].filter(([lat, lon]) => lat && lon);
+
+test("la vista previa del mapa usa la tesela de OSM que contiene el centro, en la posición de Leaflet", () => {
+  for (const [lat, lon] of coordenadasDeMapas()) {
+    const [x, y] = teselaOsm(lat, lon, 13);
+    const central = teselasVistaPrevia(lat, lon).find(t => t.dx <= 0 && t.dx > -TAMANO_TESELA && t.dy <= 0 && t.dy > -TAMANO_TESELA);
+    assert.equal(central?.url, `https://tile.openstreetmap.org/13/${x}/${y}.png`, `${lat},${lon}`);
+  }
+});
+
+test("la vista previa cubre el mapa en cualquier ancho y un móvil no descarga teselas de escritorio", () => {
+  for (const [lat, lon] of coordenadasDeMapas()) {
+    const teselas = teselasVistaPrevia(lat, lon);
+    assert.equal(new Set(teselas.map(t => t.url)).size, teselas.length);
+    // Ventana de vw px con un contenedor del mismo ancho (cota superior: el real es más angosto).
+    for (const vw of [320, 375, 412, 600, 768, 1024, 1280]) {
+      const ancho = Math.min(vw, 1216);
+      const visibles = teselas.filter(t => t.anchoMinimo <= vw);
+      for (const px of [-ancho / 2, 0, ancho / 2 - 1]) for (const py of [-ALTO_MAPA / 2, 0, ALTO_MAPA / 2 - 1]) {
+        assert.ok(visibles.some(t => px >= t.dx && px < t.dx + TAMANO_TESELA && py >= t.dy && py < t.dy + TAMANO_TESELA), `${lat},${lon} sin cubrir en ${vw}px (${px},${py})`);
+      }
+    }
+    assert.ok(teselas.filter(t => t.anchoMinimo === 0).length <= 9);
+    assert.ok(teselas.every(t => ANCHOS_MINIMOS.includes(t.anchoMinimo)));
+  }
 });

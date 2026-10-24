@@ -1,7 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Carrusel from "@/components/Carrusel";
-import CapitalMapWrapper from "@/components/CapitalMapWrapper";
+import MapaUbicacion from "@/components/mapa/MapaUbicacion";
 import Link from "next/link";
 import { ROUTES, INTERNAL_ANCHORS } from "@/lib/site-links";
 import { 
@@ -105,10 +105,10 @@ export default async function ProvinciaPage({ params }: PageProps) {
               <h2 className="text-2xl md:text-3xl font-semibold uppercase tracking-widest mb-6 text-center text-[#5A4E3D]">
                 Su Capital: {provincia.nombre_capital}
               </h2>
-              <CapitalMapWrapper
+              <MapaUbicacion
                 lat={provincia.lat_capital}
                 lon={provincia.lon_capital}
-                nombreCapital={provincia.nombre_capital}
+                titulo={provincia.nombre_capital}
               />
             </div>
           )}

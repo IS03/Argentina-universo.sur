@@ -1,7 +1,16 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useSyncExternalStore } from "react";
 import Image from "next/image";
+
+// Movimiento reducido: sin rotación automática. En el servidor se asume que no (no cambia el HTML).
+const CONSULTA_MOVIMIENTO = "(prefers-reduced-motion: reduce)";
+const suscribirMovimiento = (avisar: () => void) => {
+  const consulta = window.matchMedia(CONSULTA_MOVIMIENTO);
+  consulta.addEventListener("change", avisar);
+  return () => consulta.removeEventListener("change", avisar);
+};
+const movimientoReducido = () => window.matchMedia(CONSULTA_MOVIMIENTO).matches;
 
 interface CarruselProps {
   fotos: string[];
@@ -11,17 +20,20 @@ interface CarruselProps {
 export default function Carrusel({ fotos, alt }: CarruselProps) {
   const [indiceActual, setIndiceActual] = useState(0);
   const [pausado, setPausado] = useState(false);
+  // También se detiene mientras el puntero o el foco están sobre el carrusel.
+  const [enUso, setEnUso] = useState(false);
+  const reducido = useSyncExternalStore(suscribirMovimiento, movimientoReducido, () => false);
   const timeoutReanudarRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const cantidad = fotos.length;
   const indiceVisible = cantidad > 0 ? indiceActual % cantidad : 0;
 
   useEffect(() => {
-    if (cantidad <= 1 || pausado) return;
+    if (cantidad <= 1 || pausado || enUso || reducido) return;
     const intervalo = setInterval(() => {
       setIndiceActual(indice => (indice + 1) % cantidad);
     }, 3000);
     return () => clearInterval(intervalo);
-  }, [cantidad, pausado]);
+  }, [cantidad, pausado, enUso, reducido]);
 
   useEffect(() => () => {
     if (timeoutReanudarRef.current) clearTimeout(timeoutReanudarRef.current);
@@ -40,17 +52,24 @@ export default function Carrusel({ fotos, alt }: CarruselProps) {
   const anterior = () => irA(indiceVisible - 1);
 
   return (
-    <div className="relative w-full">
+    <div
+      className="relative w-full"
+      onMouseEnter={() => setEnUso(true)}
+      onMouseLeave={() => setEnUso(false)}
+      onFocus={() => setEnUso(true)}
+      onBlur={(e) => { if (!e.currentTarget.contains(e.relatedTarget)) setEnUso(false); }}
+    >
       <div className="relative w-full h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden rounded-lg bg-gray-900">
         {/* Imagen actual - sin animaciones */}
         <div className="absolute inset-0">
+          {/* Sin priority: en los detalles el carrusel queda debajo del pliegue (descripción y mapa)
+              y su precarga de alta prioridad competía con el contenido visible. */}
           <Image
             src={fotos[indiceVisible]}
             alt={`${alt} - Imagen ${indiceVisible + 1} de ${fotos.length}`}
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 1200px"
             className="object-cover"
-            priority={indiceVisible === 0}
             quality={85}
             onError={() => {
               console.error("Error cargando imagen:", fotos[indiceVisible]);
@@ -62,6 +81,7 @@ export default function Carrusel({ fotos, alt }: CarruselProps) {
       {fotos.length > 1 && (
         <>
           <button
+            type="button"
             onClick={(e) => {
               e.preventDefault();
               e.stopPropagation();
@@ -85,6 +105,7 @@ export default function Carrusel({ fotos, alt }: CarruselProps) {
             </svg>
           </button>
           <button
+            type="button"
             onClick={(e) => {
               e.preventDefault();
               e.stopPropagation();
@@ -111,18 +132,26 @@ export default function Carrusel({ fotos, alt }: CarruselProps) {
       )}
 
       {fotos.length > 1 && (
-        <div className="flex justify-center gap-2 mt-4">
+        <div className="flex justify-center mt-2">
           {fotos.map((_, indice) => (
+            // Área táctil de 24 px alrededor del punto visible; colores con contraste sobre el fondo crema.
             <button
               key={indice}
+              type="button"
               onClick={() => irA(indice)}
-              className={`h-2 rounded-full ${
-                indice === indiceVisible
-                  ? "w-8 bg-white"
-                  : "w-2 bg-white/50 hover:bg-white/75"
-              }`}
+              className="group flex h-6 min-w-6 items-center justify-center rounded-full"
               aria-label={`Ir a imagen ${indice + 1}`}
-            />
+              aria-current={indice === indiceVisible ? "true" : undefined}
+            >
+              <span
+                aria-hidden="true"
+                className={`h-2 rounded-full ${
+                  indice === indiceVisible
+                    ? "w-8 bg-[#8B7355]"
+                    : "w-2 bg-[#C9B99B] group-hover:bg-[#A68B5B]"
+                }`}
+              />
+            </button>
           ))}
         </div>
       )}

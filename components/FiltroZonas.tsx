@@ -15,6 +15,7 @@ export default function FiltroZonas({ zonaActiva, onZonaChange }: FiltroZonasPro
       {/* Menú desplegable para móvil */}
       <div className="md:hidden w-full max-w-xs mx-auto">
         <select
+          aria-label="Filtrar provincias por región"
           value={zonaActiva}
           onChange={(e) => onZonaChange(e.target.value)}
           className="w-full px-4 py-3 rounded-lg text-sm font-medium uppercase tracking-wider
@@ -37,7 +38,9 @@ export default function FiltroZonas({ zonaActiva, onZonaChange }: FiltroZonasPro
         {ZONAS.map((zona) => (
           <button
             key={zona.id}
+            type="button"
             onClick={() => onZonaChange(zona.id)}
+            aria-pressed={zonaActiva === zona.id}
             className={`
               px-5 py-2.5 rounded-full text-sm font-medium uppercase tracking-wider
               transition-all duration-300 transform hover:scale-105

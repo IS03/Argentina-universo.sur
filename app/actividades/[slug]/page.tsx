@@ -6,7 +6,7 @@ import { ROUTES, INTERNAL_ANCHORS } from "@/lib/site-links";
 import { getActividadBySlug, getActividades } from "@/lib/data";
 import { notFound } from "next/navigation";
 import ActividadVisitTracker from "@/components/ActividadVisitTracker";
-import ActividadMapWrapper from "@/components/ActividadMapWrapper";
+import MapaUbicacion from "@/components/mapa/MapaUbicacion";
 import type { Metadata } from "next";
 import { actividadMetadata } from "@/lib/seo";
 
@@ -55,11 +55,13 @@ export default async function ActividadPage({ params }: PageProps) {
 
           {/* 3. Mapa */}
           {actividad.lat && actividad.lon && (
-            <ActividadMapWrapper
+            <MapaUbicacion
               lat={actividad.lat}
               lon={actividad.lon}
-              actividad={actividad.actividad}
-              localizacion={actividad.localizacion}
+              titulo={actividad.actividad}
+              detalle={actividad.localizacion}
+              className="mb-8"
+              teselasEnMovil={false}
             />
           )}
 
