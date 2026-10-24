@@ -42,3 +42,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Local migration inventories, private master exports and Supabase state
+/.artifacts/
+/supabase/.temp/
+/supabase/.branches/
+!/.env.example

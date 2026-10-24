@@ -8,23 +8,31 @@
     "start": "next start",
     "lint": "eslint --max-warnings=0",
     "typecheck": "next typegen && tsc --noEmit",
-    "validate": "node --experimental-strip-types scripts/validate-data.mjs",
+    "validate": "node --experimental-strip-types scripts/validate-data.mjs && npm run db:check",
     "test": "node --experimental-strip-types --test tests/*.test.mjs",
     "check": "npm run lint && npm run typecheck && npm run validate && npm test && npm run build && npm run audit:seo && npm run test:e2e",
     "audit:seo": "node --experimental-strip-types scripts/audit-seo.mjs",
-    "test:e2e": "playwright test"
+    "test:e2e": "playwright test",
+    "inventory:media": "node --experimental-strip-types scripts/media-inventory.mjs",
+    "migration:catalog": "node --experimental-strip-types scripts/catalog-migration-map.mjs",
+    "import:dry-run": "node scripts/editorial-import.mjs",
+    "db:types": "node scripts/supabase/generate-types.mjs",
+    "db:check": "node scripts/supabase/generate-types.mjs --check"
   },
   "dependencies": {
     "@next/third-parties": "16.4.3",
+    "@supabase/supabase-js": "2.118.0",
     "@vercel/analytics": "2.0.1",
     "@vercel/speed-insights": "2.0.0",
     "leaflet": "^1.9.4",
     "next": "16.4.3",
     "react": "19.2.3",
     "react-dom": "19.2.3",
-    "react-leaflet": "^5.0.0"
+    "react-leaflet": "^5.0.0",
+    "server-only": "0.0.1"
   },
   "devDependencies": {
+    "@electric-sql/pglite": "0.5.11",
     "@playwright/test": "1.64.1",
     "@tailwindcss/postcss": "^4",
     "@types/leaflet": "^1.9.21",
