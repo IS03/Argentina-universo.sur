@@ -1,0 +1,1519 @@
+{
+  "origin": "git:IS03/Argentina-universo.sur",
+  "sourceHashes": {
+    "provincias": "bfd6c1f6fd6d8add06847721d817056f18849d722665a68ace0796fd37b1ce02",
+    "actividades": "44888b28d9238cf71df085d98b4c239fc8f4da8c248e50bd3ccb2926cbf66c6b",
+    "escapadas": "809c6b15b7876766e20c1abece64bf666749b8203e8b1d743d50e2b9cc18cd7f"
+  },
+  "entries": [
+    {
+      "id": "abcee661-d578-5ae0-9fd5-d2a7aa2f3320",
+      "sourceId": "buenos_aires",
+      "kind": "jurisdiction",
+      "slug": "buenos_aires",
+      "region": "Buenos Aires",
+      "canonicalPath": "/provincias/buenos_aires",
+      "media": [
+        "/img/provincias/buenos-aires/1.jpg",
+        "/img/provincias/buenos-aires/2.jpg",
+        "/img/provincias/buenos-aires/3.jpg"
+      ]
+    },
+    {
+      "id": "d0b61c10-db5d-5a0b-91ca-042bbb435d60",
+      "sourceId": "caba",
+      "kind": "jurisdiction",
+      "slug": "caba",
+      "region": "Buenos Aires",
+      "canonicalPath": "/provincias/caba",
+      "media": [
+        "/img/provincias/ciudad-autonoma-de-buenos-aires/1.jpg",
+        "/img/provincias/ciudad-autonoma-de-buenos-aires/2.jpg",
+        "/img/provincias/ciudad-autonoma-de-buenos-aires/3.jpg"
+      ]
+    },
+    {
+      "id": "f443436e-d09a-5904-a1c0-4f0352fef8d3",
+      "sourceId": "catamarca",
+      "kind": "jurisdiction",
+      "slug": "catamarca",
+      "region": "Norte",
+      "canonicalPath": "/provincias/catamarca",
+      "media": [
+        "/img/provincias/catamarca/1.jpg",
+        "/img/provincias/catamarca/2.jpg",
+        "/img/provincias/catamarca/3.jpg"
+      ]
+    },
+    {
+      "id": "206376cc-d9a6-52f2-a02b-7d58e2992f04",
+      "sourceId": "chaco",
+      "kind": "jurisdiction",
+      "slug": "chaco",
+      "region": "Litoral",
+      "canonicalPath": "/provincias/chaco",
+      "media": [
+        "/img/provincias/chaco/1.jpg",
+        "/img/provincias/chaco/2.jpg",
+        "/img/provincias/chaco/3.jpg"
+      ]
+    },
+    {
+      "id": "316b2cb4-8e86-54f8-a4a6-0a4a08ffe699",
+      "sourceId": "chubut",
+      "kind": "jurisdiction",
+      "slug": "chubut",
+      "region": "Patagonia",
+      "canonicalPath": "/provincias/chubut",
+      "media": [
+        "/img/provincias/chubut/1.jpg",
+        "/img/provincias/chubut/2.jpg",
+        "/img/provincias/chubut/3.jpg"
+      ]
+    },
+    {
+      "id": "c4781226-4e34-596b-9b27-caf800499138",
+      "sourceId": "cordoba",
+      "kind": "jurisdiction",
+      "slug": "cordoba",
+      "region": "Centro",
+      "canonicalPath": "/provincias/cordoba",
+      "media": [
+        "/img/provincias/cordoba/1.jpg",
+        "/img/provincias/cordoba/2.jpg",
+        "/img/provincias/cordoba/3.jpg"
+      ]
+    },
+    {
+      "id": "dd14b431-4392-572f-ab7f-d4b598b48c1a",
+      "sourceId": "corrientes",
+      "kind": "jurisdiction",
+      "slug": "corrientes",
+      "region": "Litoral",
+      "canonicalPath": "/provincias/corrientes",
+      "media": [
+        "/img/provincias/corrientes/1.jpg",
+        "/img/provincias/corrientes/2.jpg",
+        "/img/provincias/corrientes/3.jpg"
+      ]
+    },
+    {
+      "id": "dd3ff488-0648-57a4-b193-d7556ad73f52",
+      "sourceId": "entre_rios",
+      "kind": "jurisdiction",
+      "slug": "entre_rios",
+      "region": "Litoral",
+      "canonicalPath": "/provincias/entre_rios",
+      "media": [
+        "/img/provincias/entre-rios/1.jpg",
+        "/img/provincias/entre-rios/2.jpg",
+        "/img/provincias/entre-rios/3.jpg"
+      ]
+    },
+    {
+      "id": "8b096449-a6e0-5589-8caf-efdde04f558e",
+      "sourceId": "formosa",
+      "kind": "jurisdiction",
+      "slug": "formosa",
+      "region": "Litoral",
+      "canonicalPath": "/provincias/formosa",
+      "media": [
+        "/img/provincias/formosa/1.jpg",
+        "/img/provincias/formosa/2.jpg",
+        "/img/provincias/formosa/3.jpg"
+      ]
+    },
+    {
+      "id": "6f868fa0-9e77-5882-a9f5-839880e4e1cf",
+      "sourceId": "jujuy",
+      "kind": "jurisdiction",
+      "slug": "jujuy",
+      "region": "Norte",
+      "canonicalPath": "/provincias/jujuy",
+      "media": [
+        "/img/provincias/jujuy/1.jpg",
+        "/img/provincias/jujuy/2.jpg",
+        "/img/provincias/jujuy/3.jpg"
+      ]
+    },
+    {
+      "id": "7492b4f0-b0fd-5434-b216-de131f427e40",
+      "sourceId": "la_pampa",
+      "kind": "jurisdiction",
+      "slug": "la_pampa",
+      "region": "Patagonia",
+      "canonicalPath": "/provincias/la_pampa",
+      "media": [
+        "/img/provincias/la-pampa/1.jpg",
+        "/img/provincias/la-pampa/2.jpg",
+        "/img/provincias/la-pampa/3.jpg"
+      ]
+    },
+    {
+      "id": "db0ab8e7-bb0f-5a17-8dcc-51c901bb22aa",
+      "sourceId": "la_rioja",
+      "kind": "jurisdiction",
+      "slug": "la_rioja",
+      "region": "Norte",
+      "canonicalPath": "/provincias/la_rioja",
+      "media": [
+        "/img/provincias/la-rioja/1.jpg",
+        "/img/provincias/la-rioja/2.jpg",
+        "/img/provincias/la-rioja/3.jpg"
+      ]
+    },
+    {
+      "id": "bf4adb55-8f92-577c-a7de-5e23a1aa780c",
+      "sourceId": "mendoza",
+      "kind": "jurisdiction",
+      "slug": "mendoza",
+      "region": "Cuyo",
+      "canonicalPath": "/provincias/mendoza",
+      "media": [
+        "/img/provincias/mendoza/1.jpg",
+        "/img/provincias/mendoza/2.jpg",
+        "/img/provincias/mendoza/3.jpg"
+      ]
+    },
+    {
+      "id": "d1178eb8-a0d9-5bff-a74a-3673a86d6b92",
+      "sourceId": "misiones",
+      "kind": "jurisdiction",
+      "slug": "misiones",
+      "region": "Litoral",
+      "canonicalPath": "/provincias/misiones",
+      "media": [
+        "/img/provincias/misiones/1.jpg",
+        "/img/provincias/misiones/2.jpg",
+        "/img/provincias/misiones/3.jpg"
+      ]
+    },
+    {
+      "id": "fee2b768-3e0e-58e7-adfa-16c427f70117",
+      "sourceId": "neuquen",
+      "kind": "jurisdiction",
+      "slug": "neuquen",
+      "region": "Patagonia",
+      "canonicalPath": "/provincias/neuquen",
+      "media": [
+        "/img/provincias/neuquen/1.jpg",
+        "/img/provincias/neuquen/2.jpg",
+        "/img/provincias/neuquen/2.jpg"
+      ]
+    },
+    {
+      "id": "a3d60169-8951-5565-b30e-3a0d560aa820",
+      "sourceId": "rio_negro",
+      "kind": "jurisdiction",
+      "slug": "rio_negro",
+      "region": "Patagonia",
+      "canonicalPath": "/provincias/rio_negro",
+      "media": [
+        "/img/provincias/rio-negro/1.jpg",
+        "/img/provincias/rio-negro/2.jpg",
+        "/img/provincias/rio-negro/3.jpg"
+      ]
+    },
+    {
+      "id": "9149b16c-359b-5014-84db-cb669d1f0bf5",
+      "sourceId": "salta",
+      "kind": "jurisdiction",
+      "slug": "salta",
+      "region": "Norte",
+      "canonicalPath": "/provincias/salta",
+      "media": [
+        "/img/provincias/salta/1.jpg",
+        "/img/provincias/salta/2.jpg",
+        "/img/provincias/salta/3.jpg"
+      ]
+    },
+    {
+      "id": "85cf76c1-6f20-59dc-b04a-b9acd1289702",
+      "sourceId": "san_juan",
+      "kind": "jurisdiction",
+      "slug": "san_juan",
+      "region": "Cuyo",
+      "canonicalPath": "/provincias/san_juan",
+      "media": [
+        "/img/provincias/san-juan/1.jpg",
+        "/img/provincias/san-juan/2.jpg",
+        "/img/provincias/san-juan/3.jpg"
+      ]
+    },
+    {
+      "id": "b150f035-e1d8-575e-a6ae-985a64b5282a",
+      "sourceId": "san_luis",
+      "kind": "jurisdiction",
+      "slug": "san_luis",
+      "region": "Cuyo",
+      "canonicalPath": "/provincias/san_luis",
+      "media": [
+        "/img/provincias/san-luis/1.jpg",
+        "/img/provincias/san-luis/2.jpg",
+        "/img/provincias/san-luis/3.jpg"
+      ]
+    },
+    {
+      "id": "2b5583fd-f636-5275-92ba-2dc919425b63",
+      "sourceId": "santa_cruz",
+      "kind": "jurisdiction",
+      "slug": "santa_cruz",
+      "region": "Patagonia",
+      "canonicalPath": "/provincias/santa_cruz",
+      "media": [
+        "/img/provincias/santa-cruz/1.jpg",
+        "/img/provincias/santa-cruz/2.jpg",
+        "/img/provincias/santa-cruz/3.jpg"
+      ]
+    },
+    {
+      "id": "5e439432-85f2-57d2-beaf-3bd2efaa7ec0",
+      "sourceId": "santa_fe",
+      "kind": "jurisdiction",
+      "slug": "santa_fe",
+      "region": "Litoral",
+      "canonicalPath": "/provincias/santa_fe",
+      "media": [
+        "/img/provincias/santa-fe/1.jpg",
+        "/img/provincias/santa-fe/2.jpg",
+        "/img/provincias/santa-fe/3.jpg"
+      ]
+    },
+    {
+      "id": "36934fa6-8bc4-58a5-a155-271802576554",
+      "sourceId": "santiago_del_estero",
+      "kind": "jurisdiction",
+      "slug": "santiago_del_estero",
+      "region": "Norte",
+      "canonicalPath": "/provincias/santiago_del_estero",
+      "media": [
+        "/img/provincias/santiago-del-estero/1.jpg",
+        "/img/provincias/santiago-del-estero/2.jpg",
+        "/img/provincias/santiago-del-estero/3.jpg"
+      ]
+    },
+    {
+      "id": "3489a32f-1c62-5083-ade8-556140a10bb6",
+      "sourceId": "tierra_del_fuego",
+      "kind": "jurisdiction",
+      "slug": "tierra_del_fuego",
+      "region": "Patagonia",
+      "canonicalPath": "/provincias/tierra_del_fuego",
+      "media": [
+        "/img/provincias/tierra-del-fuego/1.jpg",
+        "/img/provincias/tierra-del-fuego/2.jpg",
+        "/img/provincias/tierra-del-fuego/3.jpg"
+      ]
+    },
+    {
+      "id": "8e07c687-5e41-500e-b849-0235eefaf917",
+      "sourceId": "tucuman",
+      "kind": "jurisdiction",
+      "slug": "tucuman",
+      "region": "Norte",
+      "canonicalPath": "/provincias/tucuman",
+      "media": [
+        "/img/provincias/tucuman/1.jpg",
+        "/img/provincias/tucuman/2.jpg",
+        "/img/provincias/tucuman/3.jpg"
+      ]
+    },
+    {
+      "id": "fddbf8c5-b386-5b56-ad03-7c79d2e8e096",
+      "sourceId": "conocer-la-tradicion-gauchesca-y-criolla",
+      "kind": "activity",
+      "slug": "conocer-la-tradicion-gauchesca-y-criolla",
+      "jurisdictionSlug": "buenos_aires",
+      "canonicalPath": "/actividades/conocer-la-tradicion-gauchesca-y-criolla",
+      "media": [
+        "/img/actividades/bs/bs1/1.jpg",
+        "/img/actividades/bs/bs1/2.jpg",
+        "/img/actividades/bs/bs1/3.jpg"
+      ]
+    },
+    {
+      "id": "083256e4-1202-540f-b809-a4eae17c4d5e",
+      "sourceId": "aprender-sobre-arquitectura-moderna",
+      "kind": "activity",
+      "slug": "aprender-sobre-arquitectura-moderna",
+      "jurisdictionSlug": "buenos_aires",
+      "canonicalPath": "/actividades/aprender-sobre-arquitectura-moderna",
+      "media": [
+        "/img/actividades/bs/bs2/1.jpg",
+        "/img/actividades/bs/bs2/2.jpg",
+        "/img/actividades/bs/bs2/3.jpg"
+      ]
+    },
+    {
+      "id": "ba82f602-b376-52be-bbfa-600658eafb2f",
+      "sourceId": "pasear-en-una-isla-con-historia",
+      "kind": "activity",
+      "slug": "pasear-en-una-isla-con-historia",
+      "jurisdictionSlug": "buenos_aires",
+      "canonicalPath": "/actividades/pasear-en-una-isla-con-historia",
+      "media": [
+        "/img/actividades/bs/bs3/1.jpg",
+        "/img/actividades/bs/bs3/2.jpg",
+        "/img/actividades/bs/bs3/3.jpg"
+      ]
+    },
+    {
+      "id": "1abd1be0-4556-53c5-921a-a7938f596e63",
+      "sourceId": "conectarse-con-el-cielo-en-el-planetario-de-la-ciudad",
+      "kind": "activity",
+      "slug": "conectarse-con-el-cielo-en-el-planetario-de-la-ciudad",
+      "jurisdictionSlug": "caba",
+      "canonicalPath": "/actividades/conectarse-con-el-cielo-en-el-planetario-de-la-ciudad",
+      "media": [
+        "/img/actividades/caba/caba1/1.jpg",
+        "/img/actividades/caba/caba1/2.jpeg",
+        "/img/actividades/caba/caba1/3.jpg"
+      ]
+    },
+    {
+      "id": "4dc81d65-cbd6-5473-b24c-556f96b51c4b",
+      "sourceId": "conocer-el-legado-del-general-san-martin",
+      "kind": "activity",
+      "slug": "conocer-el-legado-del-general-san-martin",
+      "jurisdictionSlug": "caba",
+      "canonicalPath": "/actividades/conocer-el-legado-del-general-san-martin",
+      "media": [
+        "/img/actividades/caba/caba2/1.jpg",
+        "/img/actividades/caba/caba2/2.jpg",
+        "/img/actividades/caba/caba2/3.jpg"
+      ]
+    },
+    {
+      "id": "e28ec4f9-2dd9-5a13-8c45-13ec94be7194",
+      "sourceId": "vivir-la-magia-del-teatro-colon",
+      "kind": "activity",
+      "slug": "vivir-la-magia-del-teatro-colon",
+      "jurisdictionSlug": "caba",
+      "canonicalPath": "/actividades/vivir-la-magia-del-teatro-colon",
+      "media": [
+        "/img/actividades/caba/caba3/1.jpg",
+        "/img/actividades/caba/caba3/2.jpg",
+        "/img/actividades/caba/caba3/3.jpg"
+      ]
+    },
+    {
+      "id": "18bbe93e-a698-52ac-8231-1660a3c814e3",
+      "sourceId": "explorar-la-cordillera-de-los-andes",
+      "kind": "activity",
+      "slug": "explorar-la-cordillera-de-los-andes",
+      "jurisdictionSlug": "catamarca",
+      "canonicalPath": "/actividades/explorar-la-cordillera-de-los-andes",
+      "media": [
+        "/img/actividades/catamarca/cata1/1.jpg",
+        "/img/actividades/catamarca/cata1/2.jpg",
+        "/img/actividades/catamarca/cata1/3.jpg"
+      ]
+    },
+    {
+      "id": "4fe56613-5c73-5571-95be-274e524e7432",
+      "sourceId": "visitar-museos-de-historia-y-arte",
+      "kind": "activity",
+      "slug": "visitar-museos-de-historia-y-arte",
+      "jurisdictionSlug": "catamarca",
+      "canonicalPath": "/actividades/visitar-museos-de-historia-y-arte",
+      "media": [
+        "/img/actividades/catamarca/cata2/1.jpg",
+        "/img/actividades/catamarca/cata2/2.jpg",
+        "/img/actividades/catamarca/cata2/3.jpg"
+      ]
+    },
+    {
+      "id": "becb3ec0-bf3b-572c-a5ad-2ea09e1036be",
+      "sourceId": "explorar-el-pueblo-perdido-de-la-quebrada",
+      "kind": "activity",
+      "slug": "explorar-el-pueblo-perdido-de-la-quebrada",
+      "jurisdictionSlug": "catamarca",
+      "canonicalPath": "/actividades/explorar-el-pueblo-perdido-de-la-quebrada",
+      "media": [
+        "/img/actividades/catamarca/cata3/1.jpg",
+        "/img/actividades/catamarca/cata3/2.jpg",
+        "/img/actividades/catamarca/cata3/3.jpg"
+      ]
+    },
+    {
+      "id": "b4619972-68a3-5bf3-a046-059d4b22048f",
+      "sourceId": "disfrutar-las-aguas-termales",
+      "kind": "activity",
+      "slug": "disfrutar-las-aguas-termales",
+      "jurisdictionSlug": "chaco",
+      "canonicalPath": "/actividades/disfrutar-las-aguas-termales",
+      "media": [
+        "/img/actividades/chaco/1.jpg",
+        "/img/actividades/chaco/2.jpg",
+        "/img/actividades/chaco/3.jpg"
+      ]
+    },
+    {
+      "id": "d4aab570-b55f-5c3a-88f8-115c98e0eeb5",
+      "sourceId": "conocer-los-meteoritos-en-el-campo-del-cielo",
+      "kind": "activity",
+      "slug": "conocer-los-meteoritos-en-el-campo-del-cielo",
+      "jurisdictionSlug": "chaco",
+      "canonicalPath": "/actividades/conocer-los-meteoritos-en-el-campo-del-cielo",
+      "media": [
+        "/img/actividades/chaco/4.jpg",
+        "/img/actividades/chaco/5.jpg",
+        "/img/actividades/chaco/6.jpg"
+      ]
+    },
+    {
+      "id": "8bbee2d6-a25d-59e0-9932-60e0ba9d605c",
+      "sourceId": "pescar-en-la-isla-del-cerrito",
+      "kind": "activity",
+      "slug": "pescar-en-la-isla-del-cerrito",
+      "jurisdictionSlug": "chaco",
+      "canonicalPath": "/actividades/pescar-en-la-isla-del-cerrito",
+      "media": [
+        "/img/actividades/chaco/7.jpg",
+        "/img/actividades/chaco/8.jpg",
+        "/img/actividades/chaco/9.jpg"
+      ]
+    },
+    {
+      "id": "190938f6-8c2f-5b05-800a-60f4a1e8c1d5",
+      "sourceId": "esquiar-fuera-de-pista-en-la-hoya",
+      "kind": "activity",
+      "slug": "esquiar-fuera-de-pista-en-la-hoya",
+      "jurisdictionSlug": "chubut",
+      "canonicalPath": "/actividades/esquiar-fuera-de-pista-en-la-hoya",
+      "media": [
+        "/img/actividades/chubut/1.jpg",
+        "/img/actividades/chubut/2.jpg",
+        "/img/actividades/chubut/3.jpg"
+      ]
+    },
+    {
+      "id": "0a8a05a7-6ae3-5d4a-91bd-419102adacc8",
+      "sourceId": "viajar-en-el-tren-la-trochita",
+      "kind": "activity",
+      "slug": "viajar-en-el-tren-la-trochita",
+      "jurisdictionSlug": "chubut",
+      "canonicalPath": "/actividades/viajar-en-el-tren-la-trochita",
+      "media": [
+        "/img/actividades/chubut/4.jpg",
+        "/img/actividades/chubut/5.jpg",
+        "/img/actividades/chubut/6.jpg"
+      ]
+    },
+    {
+      "id": "e218c87d-c448-5757-ba1d-3a859235cec6",
+      "sourceId": "avistar-ballenas-en-peninsula-valdes",
+      "kind": "activity",
+      "slug": "avistar-ballenas-en-peninsula-valdes",
+      "jurisdictionSlug": "chubut",
+      "canonicalPath": "/actividades/avistar-ballenas-en-peninsula-valdes",
+      "media": [
+        "/img/actividades/chubut/7.jpg",
+        "/img/actividades/chubut/8.jpg",
+        "/img/actividades/chubut/9.jpg"
+      ]
+    },
+    {
+      "id": "58459a95-7cf0-593a-8107-21bc7102bbf0",
+      "sourceId": "descubrir-la-cultura-de-la-docta",
+      "kind": "activity",
+      "slug": "descubrir-la-cultura-de-la-docta",
+      "jurisdictionSlug": "cordoba",
+      "canonicalPath": "/actividades/descubrir-la-cultura-de-la-docta",
+      "media": [
+        "/img/actividades/cba/1.jpg",
+        "/img/actividades/cba/2.jpg",
+        "/img/actividades/cba/3.jpg"
+      ]
+    },
+    {
+      "id": "ebb0a2fa-195d-51ab-9689-f0f50683042f",
+      "sourceId": "disfrutar-del-rio-en-el-valle-de-traslasierra",
+      "kind": "activity",
+      "slug": "disfrutar-del-rio-en-el-valle-de-traslasierra",
+      "jurisdictionSlug": "cordoba",
+      "canonicalPath": "/actividades/disfrutar-del-rio-en-el-valle-de-traslasierra",
+      "media": [
+        "/img/actividades/cba/4.jpg",
+        "/img/actividades/cba/5.jpg",
+        "/img/actividades/cba/6.jpg"
+      ]
+    },
+    {
+      "id": "02fce8f2-002f-5940-8e1d-6b706e447b9b",
+      "sourceId": "visitar-las-estancias-jesuiticas",
+      "kind": "activity",
+      "slug": "visitar-las-estancias-jesuiticas",
+      "jurisdictionSlug": "cordoba",
+      "canonicalPath": "/actividades/visitar-las-estancias-jesuiticas",
+      "media": [
+        "/img/actividades/cba/7.jpg",
+        "/img/actividades/cba/8.jpg",
+        "/img/actividades/cba/9.jpg"
+      ]
+    },
+    {
+      "id": "2429fa95-09e4-5050-9077-f7b19c92b1cd",
+      "sourceId": "descubrir-la-armonia-entre-naturaleza-y-comunidad",
+      "kind": "activity",
+      "slug": "descubrir-la-armonia-entre-naturaleza-y-comunidad",
+      "jurisdictionSlug": "corrientes",
+      "canonicalPath": "/actividades/descubrir-la-armonia-entre-naturaleza-y-comunidad",
+      "media": [
+        "/img/actividades/corrientes/1.jpg",
+        "/img/actividades/corrientes/2.jpg",
+        "/img/actividades/corrientes/3.jpg"
+      ]
+    },
+    {
+      "id": "ec2e5f36-7256-590c-86cf-04623000e946",
+      "sourceId": "conocer-los-comienzos-del-general-san-martin",
+      "kind": "activity",
+      "slug": "conocer-los-comienzos-del-general-san-martin",
+      "jurisdictionSlug": "corrientes",
+      "canonicalPath": "/actividades/conocer-los-comienzos-del-general-san-martin",
+      "media": [
+        "/img/actividades/corrientes/4.jpg",
+        "/img/actividades/corrientes/5.jpg",
+        "/img/actividades/corrientes/6.jpg"
+      ]
+    },
+    {
+      "id": "8513602d-53c8-52e7-945c-d607efd10139",
+      "sourceId": "descubrir-paisajes-y-fosiles-en-el-sur-de-corrientes",
+      "kind": "activity",
+      "slug": "descubrir-paisajes-y-fosiles-en-el-sur-de-corrientes",
+      "jurisdictionSlug": "corrientes",
+      "canonicalPath": "/actividades/descubrir-paisajes-y-fosiles-en-el-sur-de-corrientes",
+      "media": [
+        "/img/actividades/corrientes/7.jpg",
+        "/img/actividades/corrientes/8.jpg",
+        "/img/actividades/corrientes/9.jpg"
+      ]
+    },
+    {
+      "id": "37ac8726-182a-5157-8504-cbb9b84fcbc9",
+      "sourceId": "conocer-el-carnaval-y-sus-colores",
+      "kind": "activity",
+      "slug": "conocer-el-carnaval-y-sus-colores",
+      "jurisdictionSlug": "entre_rios",
+      "canonicalPath": "/actividades/conocer-el-carnaval-y-sus-colores",
+      "media": [
+        "/img/actividades/entre-rios/1.jpg",
+        "/img/actividades/entre-rios/2.jpg",
+        "/img/actividades/entre-rios/3.jpg"
+      ]
+    },
+    {
+      "id": "9a8a0225-c3c6-50f4-a98f-226ce63516fa",
+      "sourceId": "disfrutar-los-beneficios-de-las-termas",
+      "kind": "activity",
+      "slug": "disfrutar-los-beneficios-de-las-termas",
+      "jurisdictionSlug": "entre_rios",
+      "canonicalPath": "/actividades/disfrutar-los-beneficios-de-las-termas",
+      "media": [
+        "/img/actividades/entre-rios/4.jpg",
+        "/img/actividades/entre-rios/5.jpg",
+        "/img/actividades/entre-rios/6.jpg"
+      ]
+    },
+    {
+      "id": "c14789b8-6e06-5353-86cc-07981a352d4e",
+      "sourceId": "caminar-en-el-parque-nacional-el-palmar",
+      "kind": "activity",
+      "slug": "caminar-en-el-parque-nacional-el-palmar",
+      "jurisdictionSlug": "entre_rios",
+      "canonicalPath": "/actividades/caminar-en-el-parque-nacional-el-palmar",
+      "media": [
+        "/img/actividades/entre-rios/7.jpg",
+        "/img/actividades/entre-rios/8.jpg",
+        "/img/actividades/entre-rios/9.jpg"
+      ]
+    },
+    {
+      "id": "df675c17-128d-5f41-abc1-a0103c8de92a",
+      "sourceId": "hacer-un-safari-fotografico-en-el-banado-la-estrella",
+      "kind": "activity",
+      "slug": "hacer-un-safari-fotografico-en-el-banado-la-estrella",
+      "jurisdictionSlug": "formosa",
+      "canonicalPath": "/actividades/hacer-un-safari-fotografico-en-el-banado-la-estrella",
+      "media": [
+        "/img/actividades/formosa/1.jpg",
+        "/img/actividades/formosa/2.jpg",
+        "/img/actividades/formosa/3.jpg"
+      ]
+    },
+    {
+      "id": "3a2403d6-b79b-5943-aa5a-15b3773b69ea",
+      "sourceId": "degustar-la-gastronomia-formosena",
+      "kind": "activity",
+      "slug": "degustar-la-gastronomia-formosena",
+      "jurisdictionSlug": "formosa",
+      "canonicalPath": "/actividades/degustar-la-gastronomia-formosena",
+      "media": [
+        "/img/actividades/formosa/4.jpg",
+        "/img/actividades/formosa/5.jpg",
+        "/img/actividades/formosa/6.jpg"
+      ]
+    },
+    {
+      "id": "64788a09-9199-5ff0-bbaa-0eb8c03d4055",
+      "sourceId": "caminar-por-las-pasarelas-del-parque-nacional-rio-pilcomayo",
+      "kind": "activity",
+      "slug": "caminar-por-las-pasarelas-del-parque-nacional-rio-pilcomayo",
+      "jurisdictionSlug": "formosa",
+      "canonicalPath": "/actividades/caminar-por-las-pasarelas-del-parque-nacional-rio-pilcomayo",
+      "media": [
+        "/img/actividades/formosa/7.jpg",
+        "/img/actividades/formosa/8.jpg",
+        "/img/actividades/formosa/9.jpg"
+      ]
+    },
+    {
+      "id": "66b40488-777d-5bda-9033-6e196de20153",
+      "sourceId": "recorrer-la-selva-de-montana",
+      "kind": "activity",
+      "slug": "recorrer-la-selva-de-montana",
+      "jurisdictionSlug": "jujuy",
+      "canonicalPath": "/actividades/recorrer-la-selva-de-montana",
+      "media": [
+        "/img/actividades/jujuy/1.jpg",
+        "/img/actividades/jujuy/2.jpg",
+        "/img/actividades/jujuy/3.jpg"
+      ]
+    },
+    {
+      "id": "dd538404-0e64-58f6-b721-dede22b2d952",
+      "sourceId": "viajar-al-valle-de-la-luna-jujeno",
+      "kind": "activity",
+      "slug": "viajar-al-valle-de-la-luna-jujeno",
+      "jurisdictionSlug": "jujuy",
+      "canonicalPath": "/actividades/viajar-al-valle-de-la-luna-jujeno",
+      "media": [
+        "/img/actividades/jujuy/4.jpg",
+        "/img/actividades/jujuy/5.jpg",
+        "/img/actividades/jujuy/6.jpg"
+      ]
+    },
+    {
+      "id": "4223053c-b3a3-5524-857a-cab0b2d7a97b",
+      "sourceId": "caminar-por-un-desierto-de-sal",
+      "kind": "activity",
+      "slug": "caminar-por-un-desierto-de-sal",
+      "jurisdictionSlug": "jujuy",
+      "canonicalPath": "/actividades/caminar-por-un-desierto-de-sal",
+      "media": [
+        "/img/actividades/jujuy/7.jpg",
+        "/img/actividades/jujuy/8.jpg",
+        "/img/actividades/jujuy/9.jpg"
+      ]
+    },
+    {
+      "id": "1369a76e-6786-5710-be3a-c8b691be4851",
+      "sourceId": "saborear-los-vinos-pampeanos",
+      "kind": "activity",
+      "slug": "saborear-los-vinos-pampeanos",
+      "jurisdictionSlug": "la_pampa",
+      "canonicalPath": "/actividades/saborear-los-vinos-pampeanos",
+      "media": [
+        "/img/actividades/la-pampa/1.jpg",
+        "/img/actividades/la-pampa/2.jpg",
+        "/img/actividades/la-pampa/3.jpg"
+      ]
+    },
+    {
+      "id": "e40eea13-df1d-58b7-89b2-2ee669268edd",
+      "sourceId": "conocer-las-salinas-pampeanas",
+      "kind": "activity",
+      "slug": "conocer-las-salinas-pampeanas",
+      "jurisdictionSlug": "la_pampa",
+      "canonicalPath": "/actividades/conocer-las-salinas-pampeanas",
+      "media": [
+        "/img/actividades/la-pampa/4.jpg",
+        "/img/actividades/la-pampa/5.jpg",
+        "/img/actividades/la-pampa/6.jpg"
+      ]
+    },
+    {
+      "id": "f3ef8ff0-dcdf-5c4b-ac7a-fdeb621873a9",
+      "sourceId": "visitar-el-museo-el-castillo",
+      "kind": "activity",
+      "slug": "visitar-el-museo-el-castillo",
+      "jurisdictionSlug": "la_pampa",
+      "canonicalPath": "/actividades/visitar-el-museo-el-castillo",
+      "media": [
+        "/img/actividades/la-pampa/7.jpg",
+        "/img/actividades/la-pampa/8.jpg",
+        "/img/actividades/la-pampa/9.jpg"
+      ]
+    },
+    {
+      "id": "7757a829-5ae8-5585-bdbe-22cbeef559e0",
+      "sourceId": "visitar-los-museos-de-la-ciudad",
+      "kind": "activity",
+      "slug": "visitar-los-museos-de-la-ciudad",
+      "jurisdictionSlug": "la_rioja",
+      "canonicalPath": "/actividades/visitar-los-museos-de-la-ciudad",
+      "media": [
+        "/img/actividades/la-rioja/1.jpg",
+        "/img/actividades/la-rioja/2.jpg",
+        "/img/actividades/la-rioja/3.jpg"
+      ]
+    },
+    {
+      "id": "8ee0b21e-8e13-5fd4-93d5-052f6bb86f55",
+      "sourceId": "conducir-por-la-cuesta-de-miranda",
+      "kind": "activity",
+      "slug": "conducir-por-la-cuesta-de-miranda",
+      "jurisdictionSlug": "la_rioja",
+      "canonicalPath": "/actividades/conducir-por-la-cuesta-de-miranda",
+      "media": [
+        "/img/actividades/la-rioja/4.jpg",
+        "/img/actividades/la-rioja/5.jpg",
+        "/img/actividades/la-rioja/6.jpg"
+      ]
+    },
+    {
+      "id": "afdd0255-c653-54e8-92e1-ddc0f6a05679",
+      "sourceId": "vivir-la-chaya",
+      "kind": "activity",
+      "slug": "vivir-la-chaya",
+      "jurisdictionSlug": "la_rioja",
+      "canonicalPath": "/actividades/vivir-la-chaya",
+      "media": [
+        "/img/actividades/la-rioja/7.jpg",
+        "/img/actividades/la-rioja/8.jpg",
+        "/img/actividades/la-rioja/9.jpg"
+      ]
+    },
+    {
+      "id": "4dd5ada3-00f4-56da-97d0-483e118e94d9",
+      "sourceId": "seguir-los-pasos-del-general-san-martin",
+      "kind": "activity",
+      "slug": "seguir-los-pasos-del-general-san-martin",
+      "jurisdictionSlug": "mendoza",
+      "canonicalPath": "/actividades/seguir-los-pasos-del-general-san-martin",
+      "media": [
+        "/img/actividades/mendoza/1.jpg",
+        "/img/actividades/mendoza/2.jpg",
+        "/img/actividades/mendoza/3.jpeg"
+      ]
+    },
+    {
+      "id": "64606f0b-e61e-54d4-bc00-3bf91c82cc55",
+      "sourceId": "hacer-rafting-en-el-rio-atuel",
+      "kind": "activity",
+      "slug": "hacer-rafting-en-el-rio-atuel",
+      "jurisdictionSlug": "mendoza",
+      "canonicalPath": "/actividades/hacer-rafting-en-el-rio-atuel",
+      "media": [
+        "/img/actividades/mendoza/4.jpg",
+        "/img/actividades/mendoza/5.jpg",
+        "/img/actividades/mendoza/6.jpg"
+      ]
+    },
+    {
+      "id": "c5fba921-331c-5958-bc14-13cdccee36e0",
+      "sourceId": "esquiar-en-el-valle-de-las-lenas",
+      "kind": "activity",
+      "slug": "esquiar-en-el-valle-de-las-lenas",
+      "jurisdictionSlug": "mendoza",
+      "canonicalPath": "/actividades/esquiar-en-el-valle-de-las-lenas",
+      "media": [
+        "/img/actividades/mendoza/7.jpg",
+        "/img/actividades/mendoza/8.jpg",
+        "/img/actividades/mendoza/9.jpg"
+      ]
+    },
+    {
+      "id": "c46cd352-f284-5bf0-afad-1618484ffc9d",
+      "sourceId": "conocer-las-minas-de-wanda",
+      "kind": "activity",
+      "slug": "conocer-las-minas-de-wanda",
+      "jurisdictionSlug": "misiones",
+      "canonicalPath": "/actividades/conocer-las-minas-de-wanda",
+      "media": [
+        "/img/actividades/misiones/1.jpg",
+        "/img/actividades/misiones/2.jpg",
+        "/img/actividades/misiones/3.jpg"
+      ]
+    },
+    {
+      "id": "9b0dd8dd-a6ac-5640-933a-7e0e7358576f",
+      "sourceId": "conocer-las-cataratas-del-iguazu",
+      "kind": "activity",
+      "slug": "conocer-las-cataratas-del-iguazu",
+      "jurisdictionSlug": "misiones",
+      "canonicalPath": "/actividades/conocer-las-cataratas-del-iguazu",
+      "media": [
+        "/img/actividades/misiones/4.jpg",
+        "/img/actividades/misiones/5.jpg",
+        "/img/actividades/misiones/6.jpg"
+      ]
+    },
+    {
+      "id": "b9c3eda9-2160-52b7-bbee-2400874a4fdb",
+      "sourceId": "acampar-en-la-naturaleza",
+      "kind": "activity",
+      "slug": "acampar-en-la-naturaleza",
+      "jurisdictionSlug": "misiones",
+      "canonicalPath": "/actividades/acampar-en-la-naturaleza",
+      "media": [
+        "/img/actividades/misiones/7.jpg",
+        "/img/actividades/misiones/8.jpg",
+        "/img/actividades/misiones/9.jpg"
+      ]
+    },
+    {
+      "id": "1d63f902-c72a-5a46-8b35-7782466f6b63",
+      "sourceId": "bucear-en-el-bosque-sumergido",
+      "kind": "activity",
+      "slug": "bucear-en-el-bosque-sumergido",
+      "jurisdictionSlug": "neuquen",
+      "canonicalPath": "/actividades/bucear-en-el-bosque-sumergido",
+      "media": [
+        "/img/actividades/neuquen/1.jpg",
+        "/img/actividades/neuquen/2.jpg",
+        "/img/actividades/neuquen/3.jpg"
+      ]
+    },
+    {
+      "id": "9a964ece-1cbe-5837-89e0-73ca7104b653",
+      "sourceId": "descansar-en-las-termas-de-copahue",
+      "kind": "activity",
+      "slug": "descansar-en-las-termas-de-copahue",
+      "jurisdictionSlug": "neuquen",
+      "canonicalPath": "/actividades/descansar-en-las-termas-de-copahue",
+      "media": [
+        "/img/actividades/neuquen/4.jpg",
+        "/img/actividades/neuquen/5.jpg",
+        "/img/actividades/neuquen/6.jpg"
+      ]
+    },
+    {
+      "id": "139745af-f1ae-501a-abfd-f6a746b8d057",
+      "sourceId": "conocer-el-parque-via-christi",
+      "kind": "activity",
+      "slug": "conocer-el-parque-via-christi",
+      "jurisdictionSlug": "neuquen",
+      "canonicalPath": "/actividades/conocer-el-parque-via-christi",
+      "media": [
+        "/img/actividades/neuquen/7.jpg",
+        "/img/actividades/neuquen/8.jpg",
+        "/img/actividades/neuquen/9.jpg"
+      ]
+    },
+    {
+      "id": "61fa1c09-c8ff-5afa-a4b5-c3c9b6b9008d",
+      "sourceId": "realizar-trekking-por-el-rio-azul",
+      "kind": "activity",
+      "slug": "realizar-trekking-por-el-rio-azul",
+      "jurisdictionSlug": "rio_negro",
+      "canonicalPath": "/actividades/realizar-trekking-por-el-rio-azul",
+      "media": [
+        "/img/actividades/rio-negro/1.jpg",
+        "/img/actividades/rio-negro/2.jpg",
+        "/img/actividades/rio-negro/3.jpg"
+      ]
+    },
+    {
+      "id": "cad0ed95-98af-5f98-9d16-9fc4a81aa82a",
+      "sourceId": "esquiar-y-realizar-snowboard-en-el-cerro-catedral",
+      "kind": "activity",
+      "slug": "esquiar-y-realizar-snowboard-en-el-cerro-catedral",
+      "jurisdictionSlug": "rio_negro",
+      "canonicalPath": "/actividades/esquiar-y-realizar-snowboard-en-el-cerro-catedral",
+      "media": [
+        "/img/actividades/rio-negro/4.jpg",
+        "/img/actividades/rio-negro/5.jpg",
+        "/img/actividades/rio-negro/6.jpg"
+      ]
+    },
+    {
+      "id": "1ade23e0-f2be-5743-9075-6522ef8d8be8",
+      "sourceId": "navegar-por-el-lago-nahuel-huapi",
+      "kind": "activity",
+      "slug": "navegar-por-el-lago-nahuel-huapi",
+      "jurisdictionSlug": "rio_negro",
+      "canonicalPath": "/actividades/navegar-por-el-lago-nahuel-huapi",
+      "media": [
+        "/img/actividades/rio-negro/7.jpg",
+        "/img/actividades/rio-negro/8.jpg",
+        "/img/actividades/rio-negro/9.jpg"
+      ]
+    },
+    {
+      "id": "8f4139a1-7058-5f73-bde5-1fa9aa6965c2",
+      "sourceId": "remar-en-el-rio-juramento",
+      "kind": "activity",
+      "slug": "remar-en-el-rio-juramento",
+      "jurisdictionSlug": "salta",
+      "canonicalPath": "/actividades/remar-en-el-rio-juramento",
+      "media": [
+        "/img/actividades/salta/1.jpg",
+        "/img/actividades/salta/2.jpg",
+        "/img/actividades/salta/3.jpg"
+      ]
+    },
+    {
+      "id": "e997e837-c265-50db-9635-d6c2feebd273",
+      "sourceId": "viajar-a-las-nubes-en-tren",
+      "kind": "activity",
+      "slug": "viajar-a-las-nubes-en-tren",
+      "jurisdictionSlug": "salta",
+      "canonicalPath": "/actividades/viajar-a-las-nubes-en-tren",
+      "media": [
+        "/img/actividades/salta/4.jpg",
+        "/img/actividades/salta/5.jpg",
+        "/img/actividades/salta/6.jpg"
+      ]
+    },
+    {
+      "id": "1180fcff-fe8c-5338-acba-ef274eaf9df3",
+      "sourceId": "fotografiar-los-salares-en-la-puna",
+      "kind": "activity",
+      "slug": "fotografiar-los-salares-en-la-puna",
+      "jurisdictionSlug": "salta",
+      "canonicalPath": "/actividades/fotografiar-los-salares-en-la-puna",
+      "media": [
+        "/img/actividades/salta/7.jpg",
+        "/img/actividades/salta/8.jpg",
+        "/img/actividades/salta/9.jpg"
+      ]
+    },
+    {
+      "id": "19c01d8c-5496-5dab-a2d3-f73da261119f",
+      "sourceId": "practicar-kitesurf-y-el-windsurf",
+      "kind": "activity",
+      "slug": "practicar-kitesurf-y-el-windsurf",
+      "jurisdictionSlug": "san_juan",
+      "canonicalPath": "/actividades/practicar-kitesurf-y-el-windsurf",
+      "media": [
+        "/img/actividades/san-juan/1.jpg",
+        "/img/actividades/san-juan/2.jpg",
+        "/img/actividades/san-juan/3.jpg"
+      ]
+    },
+    {
+      "id": "81211410-9e9c-52cd-9f87-43626cf19ada",
+      "sourceId": "navegar-en-kayak-por-el-rio-san-juan",
+      "kind": "activity",
+      "slug": "navegar-en-kayak-por-el-rio-san-juan",
+      "jurisdictionSlug": "san_juan",
+      "canonicalPath": "/actividades/navegar-en-kayak-por-el-rio-san-juan",
+      "media": [
+        "/img/actividades/san-juan/4.jpg",
+        "/img/actividades/san-juan/5.jpg",
+        "/img/actividades/san-juan/6.jpg"
+      ]
+    },
+    {
+      "id": "db796b6d-b027-5270-930c-d5e21defbdbf",
+      "sourceId": "caminar-por-el-valle-de-la-luna",
+      "kind": "activity",
+      "slug": "caminar-por-el-valle-de-la-luna",
+      "jurisdictionSlug": "san_juan",
+      "canonicalPath": "/actividades/caminar-por-el-valle-de-la-luna",
+      "media": [
+        "/img/actividades/san-juan/7.jpg",
+        "/img/actividades/san-juan/8.jpg",
+        "/img/actividades/san-juan/9.jpg"
+      ]
+    },
+    {
+      "id": "870b8438-b4fd-51a2-84a2-b803b790f193",
+      "sourceId": "realizar-actividades-nauticas",
+      "kind": "activity",
+      "slug": "realizar-actividades-nauticas",
+      "jurisdictionSlug": "san_luis",
+      "canonicalPath": "/actividades/realizar-actividades-nauticas",
+      "media": [
+        "/img/actividades/san-luis/1.jpg",
+        "/img/actividades/san-luis/2.jpg",
+        "/img/actividades/san-luis/3.jpg"
+      ]
+    },
+    {
+      "id": "1873eff2-d19b-5e28-a6a3-195eb434ed33",
+      "sourceId": "recorrer-el-circuito-historico-la-punta",
+      "kind": "activity",
+      "slug": "recorrer-el-circuito-historico-la-punta",
+      "jurisdictionSlug": "san_luis",
+      "canonicalPath": "/actividades/recorrer-el-circuito-historico-la-punta",
+      "media": [
+        "/img/actividades/san-luis/4.jpg",
+        "/img/actividades/san-luis/5.jpg",
+        "/img/actividades/san-luis/6.jpg"
+      ]
+    },
+    {
+      "id": "03cd2c4f-14bb-53fd-8b96-2af0361170f9",
+      "sourceId": "disfrutar-del-dique-lujan",
+      "kind": "activity",
+      "slug": "disfrutar-del-dique-lujan",
+      "jurisdictionSlug": "san_luis",
+      "canonicalPath": "/actividades/disfrutar-del-dique-lujan",
+      "media": [
+        "/img/actividades/san-luis/7.jpg",
+        "/img/actividades/san-luis/8.jpg",
+        "/img/actividades/san-luis/9.jpg"
+      ]
+    },
+    {
+      "id": "dc3fd9ab-a5c9-5f42-b6e5-07de4c9b118c",
+      "sourceId": "avistar-pinguinos-penacho-amarillo-y-toninas-overas",
+      "kind": "activity",
+      "slug": "avistar-pinguinos-penacho-amarillo-y-toninas-overas",
+      "jurisdictionSlug": "santa_cruz",
+      "canonicalPath": "/actividades/avistar-pinguinos-penacho-amarillo-y-toninas-overas",
+      "media": [
+        "/img/actividades/santa-cruz/1.jpg",
+        "/img/actividades/santa-cruz/2.jpg",
+        "/img/actividades/santa-cruz/3.jpg"
+      ]
+    },
+    {
+      "id": "7c23bd6f-41a6-5b13-abb0-1d9c3bd669c0",
+      "sourceId": "caminar-sobre-el-glaciar-perito-moreno",
+      "kind": "activity",
+      "slug": "caminar-sobre-el-glaciar-perito-moreno",
+      "jurisdictionSlug": "santa_cruz",
+      "canonicalPath": "/actividades/caminar-sobre-el-glaciar-perito-moreno",
+      "media": [
+        "/img/actividades/santa-cruz/4.jpg",
+        "/img/actividades/santa-cruz/5.jpg",
+        "/img/actividades/santa-cruz/6.jpg"
+      ]
+    },
+    {
+      "id": "64c49250-9ad2-5cc4-a625-7a1668b3bbdf",
+      "sourceId": "hacer-trekking-en-el-chalten",
+      "kind": "activity",
+      "slug": "hacer-trekking-en-el-chalten",
+      "jurisdictionSlug": "santa_cruz",
+      "canonicalPath": "/actividades/hacer-trekking-en-el-chalten",
+      "media": [
+        "/img/actividades/santa-cruz/7.jpg",
+        "/img/actividades/santa-cruz/8.jpg",
+        "/img/actividades/santa-cruz/9.jpg"
+      ]
+    },
+    {
+      "id": "689cb758-5dc1-5e66-a837-ee7f2352de0d",
+      "sourceId": "visitar-la-cuna-de-nuestra-bandera",
+      "kind": "activity",
+      "slug": "visitar-la-cuna-de-nuestra-bandera",
+      "jurisdictionSlug": "santa_fe",
+      "canonicalPath": "/actividades/visitar-la-cuna-de-nuestra-bandera",
+      "media": [
+        "/img/actividades/santa-fe/1.jpg",
+        "/img/actividades/santa-fe/2.jpg",
+        "/img/actividades/santa-fe/3.jpg"
+      ]
+    },
+    {
+      "id": "b35a5435-6e9d-5649-97e5-594c88bd03af",
+      "sourceId": "navegar-por-el-rio-parana",
+      "kind": "activity",
+      "slug": "navegar-por-el-rio-parana",
+      "jurisdictionSlug": "santa_fe",
+      "canonicalPath": "/actividades/navegar-por-el-rio-parana",
+      "media": [
+        "/img/actividades/santa-fe/4.jpg",
+        "/img/actividades/santa-fe/5.jpg",
+        "/img/actividades/santa-fe/6.jpg"
+      ]
+    },
+    {
+      "id": "9e45899a-c1c4-5a6e-a33a-42e10bcd3beb",
+      "sourceId": "recorrer-la-historia-de-la-ciudad-de-santa-fe",
+      "kind": "activity",
+      "slug": "recorrer-la-historia-de-la-ciudad-de-santa-fe",
+      "jurisdictionSlug": "santa_fe",
+      "canonicalPath": "/actividades/recorrer-la-historia-de-la-ciudad-de-santa-fe",
+      "media": [
+        "/img/actividades/santa-fe/7.jpg",
+        "/img/actividades/santa-fe/8.jpg",
+        "/img/actividades/santa-fe/9.jpg"
+      ]
+    },
+    {
+      "id": "fb13b46e-5156-5611-8ae5-5426847f29f3",
+      "sourceId": "relajarse-en-termas-de-rio-hondo",
+      "kind": "activity",
+      "slug": "relajarse-en-termas-de-rio-hondo",
+      "jurisdictionSlug": "santiago_del_estero",
+      "canonicalPath": "/actividades/relajarse-en-termas-de-rio-hondo",
+      "media": [
+        "/img/actividades/santiago-del-estero/1.jpg",
+        "/img/actividades/santiago-del-estero/2.jpg",
+        "/img/actividades/santiago-del-estero/3.jpg"
+      ]
+    },
+    {
+      "id": "d35803a0-71dc-568e-ba94-e6c97aef6a8d",
+      "sourceId": "vivir-la-adrenalina-en-el-autodromo",
+      "kind": "activity",
+      "slug": "vivir-la-adrenalina-en-el-autodromo",
+      "jurisdictionSlug": "santiago_del_estero",
+      "canonicalPath": "/actividades/vivir-la-adrenalina-en-el-autodromo",
+      "media": [
+        "/img/actividades/santiago-del-estero/4.jpg",
+        "/img/actividades/santiago-del-estero/5.jpg",
+        "/img/actividades/santiago-del-estero/6.jpg"
+      ]
+    },
+    {
+      "id": "8acddfba-b34c-5fbc-b74d-f12e1cbdab3e",
+      "sourceId": "vivir-el-folklore-en-el-patio-del-indio-froilan",
+      "kind": "activity",
+      "slug": "vivir-el-folklore-en-el-patio-del-indio-froilan",
+      "jurisdictionSlug": "santiago_del_estero",
+      "canonicalPath": "/actividades/vivir-el-folklore-en-el-patio-del-indio-froilan",
+      "media": [
+        "/img/actividades/santiago-del-estero/7.jpg",
+        "/img/actividades/santiago-del-estero/8.jpg",
+        "/img/actividades/santiago-del-estero/9.jpg"
+      ]
+    },
+    {
+      "id": "31563fe9-9353-5fd0-9ea8-9fe57b107679",
+      "sourceId": "esquiar-y-realizar-snowboard-en-el-fin-del-mundo",
+      "kind": "activity",
+      "slug": "esquiar-y-realizar-snowboard-en-el-fin-del-mundo",
+      "jurisdictionSlug": "tierra_del_fuego",
+      "canonicalPath": "/actividades/esquiar-y-realizar-snowboard-en-el-fin-del-mundo",
+      "media": [
+        "/img/actividades/tierra-del-fuego/1.jpg",
+        "/img/actividades/tierra-del-fuego/2.jpg",
+        "/img/actividades/tierra-del-fuego/3.jpg"
+      ]
+    },
+    {
+      "id": "39fc8d8c-19e8-5d81-a062-d665553cb7bb",
+      "sourceId": "navegar-por-el-canal-de-beagle",
+      "kind": "activity",
+      "slug": "navegar-por-el-canal-de-beagle",
+      "jurisdictionSlug": "tierra_del_fuego",
+      "canonicalPath": "/actividades/navegar-por-el-canal-de-beagle",
+      "media": [
+        "/img/actividades/tierra-del-fuego/4.jpg",
+        "/img/actividades/tierra-del-fuego/5.jpg",
+        "/img/actividades/tierra-del-fuego/6.jpg"
+      ]
+    },
+    {
+      "id": "c70abf78-b1de-5560-9cbd-3a57c99c5420",
+      "sourceId": "recorrer-el-norte-fueguino",
+      "kind": "activity",
+      "slug": "recorrer-el-norte-fueguino",
+      "jurisdictionSlug": "tierra_del_fuego",
+      "canonicalPath": "/actividades/recorrer-el-norte-fueguino",
+      "media": [
+        "/img/actividades/tierra-del-fuego/7.jpg",
+        "/img/actividades/tierra-del-fuego/8.jpg",
+        "/img/actividades/tierra-del-fuego/9.jpg"
+      ]
+    },
+    {
+      "id": "27451dd1-0ca4-5c4e-be27-cce14db9b54a",
+      "sourceId": "recorrer-la-ruta-del-artesano",
+      "kind": "activity",
+      "slug": "recorrer-la-ruta-del-artesano",
+      "jurisdictionSlug": "tucuman",
+      "canonicalPath": "/actividades/recorrer-la-ruta-del-artesano",
+      "media": [
+        "/img/actividades/tucuman/1.jpg",
+        "/img/actividades/tucuman/2.jpg",
+        "/img/actividades/tucuman/3.jpg"
+      ]
+    },
+    {
+      "id": "062d203e-c4f1-5eb8-a3e2-c66edc0bfae2",
+      "sourceId": "caminar-por-la-ciudad-sagrada-de-quilmes",
+      "kind": "activity",
+      "slug": "caminar-por-la-ciudad-sagrada-de-quilmes",
+      "jurisdictionSlug": "tucuman",
+      "canonicalPath": "/actividades/caminar-por-la-ciudad-sagrada-de-quilmes",
+      "media": [
+        "/img/actividades/tucuman/4.jpg",
+        "/img/actividades/tucuman/5.jpg",
+        "/img/actividades/tucuman/6.jpg"
+      ]
+    },
+    {
+      "id": "266bef23-404d-5fac-b2b2-e61dc7a87aaf",
+      "sourceId": "remar-en-el-dique-el-cadillal",
+      "kind": "activity",
+      "slug": "remar-en-el-dique-el-cadillal",
+      "jurisdictionSlug": "tucuman",
+      "canonicalPath": "/actividades/remar-en-el-dique-el-cadillal",
+      "media": [
+        "/img/actividades/tucuman/7.jpg",
+        "/img/actividades/tucuman/8.jpg",
+        "/img/actividades/tucuman/9.jpg"
+      ]
+    },
+    {
+      "id": "d9b40e61-df03-5be2-bf24-d07a6987d31f",
+      "sourceId": "esc_01",
+      "kind": "circuit",
+      "slug": "esc_01",
+      "canonicalPath": null,
+      "jurisdictionSlugs": [
+        "santa_cruz"
+      ],
+      "pdf": "/pdf/cañafate.pdf"
+    },
+    {
+      "id": "4d556095-71da-53c0-89b9-6691b29f9262",
+      "sourceId": "esc_02",
+      "kind": "circuit",
+      "slug": "esc_02",
+      "canonicalPath": null,
+      "jurisdictionSlugs": [
+        "misiones"
+      ],
+      "pdf": "/pdf/iguazu_2.pdf"
+    },
+    {
+      "id": "8e7b5c4b-bdfb-5413-996e-41efc0185ebb",
+      "sourceId": "esc_03",
+      "kind": "circuit",
+      "slug": "esc_03",
+      "canonicalPath": null,
+      "jurisdictionSlugs": [
+        "buenos_aires"
+      ],
+      "pdf": "/pdf/pinamar.pdf"
+    },
+    {
+      "id": "0e30f7ae-01cc-5c73-88a9-9214e9d7f52f",
+      "sourceId": "esc_04",
+      "kind": "circuit",
+      "slug": "esc_04",
+      "canonicalPath": null,
+      "jurisdictionSlugs": [
+        "chubut"
+      ],
+      "pdf": "/pdf/pto_madryn_1.pdf"
+    },
+    {
+      "id": "1c626057-9b77-5c0f-943f-4bdab02e9a12",
+      "sourceId": "esc_05",
+      "kind": "circuit",
+      "slug": "esc_05",
+      "canonicalPath": null,
+      "jurisdictionSlugs": [
+        "jujuy"
+      ],
+      "pdf": "/pdf/jujuy.pdf"
+    },
+    {
+      "id": "6b5e6a88-f24f-5cd9-bb23-21f204d5fd7d",
+      "sourceId": "esc_06",
+      "kind": "circuit",
+      "slug": "esc_06",
+      "canonicalPath": null,
+      "jurisdictionSlugs": [
+        "caba"
+      ],
+      "pdf": "/pdf/caba.pdf"
+    },
+    {
+      "id": "c3d2bb43-c2e2-5205-b810-4e661fe6163b",
+      "sourceId": "esc_07",
+      "kind": "circuit",
+      "slug": "esc_07",
+      "canonicalPath": null,
+      "jurisdictionSlugs": [
+        "buenos_aires"
+      ],
+      "pdf": "/pdf/ventana.pdf"
+    },
+    {
+      "id": "a5793f7d-eb31-53ce-9e67-77456674925f",
+      "sourceId": "esc_08",
+      "kind": "circuit",
+      "slug": "esc_08",
+      "canonicalPath": null,
+      "jurisdictionSlugs": [
+        "rio_negro"
+      ],
+      "pdf": "/pdf/bariloche.pdf"
+    },
+    {
+      "id": "b7abf0b8-98ab-5c37-a7f1-15863e7e631e",
+      "sourceId": "esc_09",
+      "kind": "circuit",
+      "slug": "esc_09",
+      "canonicalPath": null,
+      "jurisdictionSlugs": [
+        "salta"
+      ],
+      "pdf": "/pdf/salta.pdf"
+    },
+    {
+      "id": "0fd1d0f4-b40c-58d5-af6a-075c302f9ae7",
+      "sourceId": "esc_10",
+      "kind": "circuit",
+      "slug": "esc_10",
+      "canonicalPath": null,
+      "jurisdictionSlugs": [
+        "cordoba"
+      ],
+      "pdf": "/pdf/cba.pdf"
+    },
+    {
+      "id": "b22f78b6-76d1-56cd-a70c-610d8f78f7ff",
+      "sourceId": "esc_11",
+      "kind": "circuit",
+      "slug": "esc_11",
+      "canonicalPath": null,
+      "jurisdictionSlugs": [
+        "entre_rios"
+      ],
+      "pdf": "/pdf/entrerios.pdf"
+    },
+    {
+      "id": "44713e0b-11d7-5547-8c5e-3c0a712c996c",
+      "sourceId": "esc_12",
+      "kind": "circuit",
+      "slug": "esc_12",
+      "canonicalPath": null,
+      "jurisdictionSlugs": [
+        "tierra_del_fuego"
+      ],
+      "pdf": "/pdf/ushuaia.pdf"
+    },
+    {
+      "id": "d05ea347-0a49-5c45-9cff-852571b15d01",
+      "sourceId": "esc_13",
+      "kind": "circuit",
+      "slug": "esc_13",
+      "canonicalPath": null,
+      "jurisdictionSlugs": [
+        "la_rioja"
+      ],
+      "pdf": "/pdf/talampaya.pdf"
+    },
+    {
+      "id": "67340252-db26-5854-91b7-cd5d39c79540",
+      "sourceId": "esc_14",
+      "kind": "circuit",
+      "slug": "esc_14",
+      "canonicalPath": null,
+      "jurisdictionSlugs": [
+        "chaco"
+      ],
+      "pdf": "/pdf/chaco.pdf"
+    },
+    {
+      "id": "54225aaf-2689-5845-81df-f6b2c862e5b2",
+      "sourceId": "esc_15",
+      "kind": "circuit",
+      "slug": "esc_15",
+      "canonicalPath": null,
+      "jurisdictionSlugs": [
+        "mendoza"
+      ],
+      "pdf": "/pdf/mendoza.pdf"
+    },
+    {
+      "id": "175ee84a-9a1e-5d1d-ab58-7e8a96e5dcee",
+      "sourceId": "esc_16",
+      "kind": "circuit",
+      "slug": "esc_16",
+      "canonicalPath": null,
+      "jurisdictionSlugs": [
+        "san_juan"
+      ],
+      "pdf": "/pdf/sanjuan.pdf"
+    },
+    {
+      "id": "fc81b5ee-f8a2-5f7a-8acd-08c7eafca1dd",
+      "sourceId": "esc_17",
+      "kind": "circuit",
+      "slug": "esc_17",
+      "canonicalPath": null,
+      "jurisdictionSlugs": [
+        "san_luis"
+      ],
+      "pdf": "/pdf/sanluis.pdf"
+    },
+    {
+      "id": "24d528bc-ada7-5ad4-8623-43640f1501cc",
+      "sourceId": "esc_18",
+      "kind": "circuit",
+      "slug": "esc_18",
+      "canonicalPath": null,
+      "jurisdictionSlugs": [
+        "santa_cruz"
+      ],
+      "pdf": "/pdf/gallegos.pdf"
+    },
+    {
+      "id": "937b9465-80e8-5f89-a197-a920a5abb715",
+      "sourceId": "esc_19",
+      "kind": "circuit",
+      "slug": "esc_19",
+      "canonicalPath": null,
+      "jurisdictionSlugs": [
+        "neuquen"
+      ],
+      "pdf": "/pdf/neuquen.pdf"
+    },
+    {
+      "id": "7dc4a1ed-3c00-5a59-91d5-46236a415c58",
+      "sourceId": "esc_20",
+      "kind": "circuit",
+      "slug": "esc_20",
+      "canonicalPath": null,
+      "jurisdictionSlugs": [
+        "santiago_del_estero"
+      ],
+      "pdf": "/pdf/santiago.pdf"
+    },
+    {
+      "id": "deb179cc-9fef-5b40-943d-77615cd4d5eb",
+      "sourceId": "esc_21",
+      "kind": "circuit",
+      "slug": "esc_21",
+      "canonicalPath": null,
+      "jurisdictionSlugs": [
+        "misiones"
+      ],
+      "pdf": "/pdf/misiones.pdf"
+    },
+    {
+      "id": "d7fd5293-83c5-505d-b652-feb98b9ed7bb",
+      "sourceId": "esc_22",
+      "kind": "circuit",
+      "slug": "esc_22",
+      "canonicalPath": null,
+      "jurisdictionSlugs": [
+        "la_pampa"
+      ],
+      "pdf": "/pdf/lapampa.pdf"
+    },
+    {
+      "id": "2c2b9e6f-92a0-523b-beea-b5b18690f43b",
+      "sourceId": "esc_23",
+      "kind": "circuit",
+      "slug": "esc_23",
+      "canonicalPath": null,
+      "jurisdictionSlugs": [
+        "formosa"
+      ],
+      "pdf": "/pdf/formosa.pdf"
+    }
+  ],
+  "aliases": [
+    {
+      "from": "/provincias/catarmaca",
+      "to": "/provincias/catamarca",
+      "status": 308
+    }
+  ],
+  "publicationPermitted": false
+}
