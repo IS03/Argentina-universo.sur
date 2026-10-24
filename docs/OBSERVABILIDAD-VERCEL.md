@@ -60,3 +60,47 @@ Referencias: [Analytics: solución de problemas](https://vercel.com/docs/analyti
 
 Estas comprobaciones del panel quedan como pasos manuales; no se presupone que
 las activaciones o ajustes estén realizados por el mero hecho de fusionar el PR.
+
+## Google Analytics 4
+
+### Integración
+
+- `app/layout.tsx` monta `GoogleAnalytics` de `@next/third-parties/google` (método documentado por
+  Next.js 16.4, misma versión que `next`). Carga `gtag.js` después de hidratar (`afterInteractive`).
+- El ID se lee de `NEXT_PUBLIC_GA_ID` y solo se renderiza si `VERCEL_ENV === "production"`
+  (`lib/analytics.ts`). En local, CI y Preview no hay scripts ni pedidos a Google; una prueba E2E lo
+  verifica. Un ID con formato inválido hace fallar el build de producción en lugar de medir mal.
+- Visitas de página: las registra la medición mejorada de GA4 (“Cambios de página basados en eventos
+  del historial del navegador”). No hay `page_view` manuales ni eventos personalizados. Verificado con
+  una build local de producción interceptando la recolección: una visita por carga, navegación interna,
+  atrás y recarga, sin duplicados. El cambio de provincia en el filtro de `/actividades` cambia la URL
+  (`replaceState`) y cuenta como una visita de `/actividades?provincia=…`.
+
+### Privacidad y consentimiento
+
+Antes del `config`, un script `beforeInteractive` fija el modo de consentimiento v2:
+
+| Región | `analytics_storage` | Publicidad (`ad_storage`, `ad_user_data`, `ad_personalization`) |
+| --- | --- | --- |
+| EEE, Reino Unido y Suiza | denegado: pings sin cookies, sin `_ga` | denegado |
+| Resto (incluida Argentina) | concedido | denegado |
+
+Además: `allow_google_signals: false`, `allow_ad_personalization_signals: false` y
+`ads_data_redaction: true`. No se envían `user_id`, correos, teléfonos ni otros datos personales;
+las URLs del sitio no los contienen. GA4 no almacena direcciones IP.
+
+Pendiente de decisión antes de activar: el sitio no tiene una página de privacidad. La Ley 25.326 exige
+informar el tratamiento; se recomienda publicar un aviso de privacidad y cookies que mencione GA4 y Vercel
+Analytics. Para medir con cookies a visitantes del EEE/Reino Unido/Suiza haría falta un banner de
+consentimiento (CMP) que actualice `analytics_storage`.
+
+### Activación en Vercel
+
+1. En **Settings → Environment Variables**, crear `NEXT_PUBLIC_GA_ID` = `G-0DQ0YWHJNZ` solo para
+   **Production**. Sin esa variable, el código no carga GA4.
+2. Volver a desplegar producción (las variables `NEXT_PUBLIC_` se fijan en el build).
+3. En GA4: **Admin → Flujos de datos → Web → Medición mejorada**, confirmar activa la opción “Cambios de
+   página basados en eventos del historial del navegador”. Verificar en **Informes → Tiempo real** y con
+   **DebugView** (extensión Google Analytics Debugger) que llega un `page_view` por navegación.
+4. En GA4: **Admin → Recopilación de datos**, mantener desactivadas Google Signals y la personalización
+   de anuncios, y fijar la retención de datos según la política de privacidad.
