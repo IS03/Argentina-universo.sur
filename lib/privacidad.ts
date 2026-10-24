@@ -10,7 +10,7 @@ export const ULTIMA_ACTUALIZACION = "24 de octubre de 2026";
 export const RESPONSABLE = "Sebastián Miguel Giusti";
 
 // Canal para ejercer los derechos de la Ley 25.326. Obligatorio: una prueba impide publicar sin él.
-export const CONTACTO_PRIVACIDAD = "";
+export const CONTACTO_PRIVACIDAD = "sebastiangiusti@hotmail.com";
 
 // Período de conservación configurado en GA4 (Admin → Recopilación de datos → Retención).
 export const RETENCION_GA = "14 meses";
