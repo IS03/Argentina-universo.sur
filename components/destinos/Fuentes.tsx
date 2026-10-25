@@ -4,7 +4,7 @@ import Icono from "@/components/ui/Icono";
 export const anclaFuente = (id: string) => `fuente-${id}`;
 
 // Citas en línea: cada afirmación enlaza a su fuente dentro de la misma página.
-export function ReferenciasFuentes({ ids, fuentes }: { ids: string[]; fuentes: FuenteOficial[] }) {
+export function ReferenciasFuentes({ ids, fuentes, compact = false }: { ids: string[]; fuentes: FuenteOficial[]; compact?: boolean }) {
   if (!ids.length) return null;
   return (
     <p className="mt-3 text-sm text-tinta-500">
@@ -12,8 +12,8 @@ export function ReferenciasFuentes({ ids, fuentes }: { ids: string[]; fuentes: F
       {ids.map((id, index) => (
         <span key={id}>
           {index > 0 ? " · " : ""}
-          <a className="underline decoration-arena-400 underline-offset-2 hover:text-lago-700" href={`#${anclaFuente(id)}`}>
-            {fuentes.find(fuente => fuente.id === id)?.titulo}
+          <a className="underline decoration-arena-400 underline-offset-2 hover:text-lago-700" href={`#${anclaFuente(id)}`} aria-label={compact ? fuentes.find(fuente => fuente.id === id)?.titulo : undefined}>
+            {compact ? `[${fuentes.findIndex(fuente => fuente.id === id) + 1}]` : fuentes.find(fuente => fuente.id === id)?.titulo}
           </a>
         </span>
       ))}

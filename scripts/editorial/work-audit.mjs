@@ -10,10 +10,10 @@ export async function assertWorkIsolation(root = process.cwd()) {
   const tracked = execFileSync('git', ['ls-files', '-z', '--cached', '--others', '--exclude-standard'], { cwd: root, encoding: 'utf8' }).split('\0').filter(Boolean);
   for (const file of tracked) {
     if (file.startsWith('.artifacts/') || /(?:^|\/)(?:master-snapshot|previous-snapshot|import-plan)\b/i.test(file)) errors.push('PRIVATE_TRACKED_INPUT');
-    if (/^(?:app|components)\/.*\.[cm]?[jt]sx?$/.test(file) && /work-review|editorial-import|work-import|\.artifacts\//.test(await readFile(join(root, file), 'utf8'))) errors.push('WORK_APP_IMPORT_NOT_ENABLED');
+    if (/^(?:app|components)\/.*\.[cm]?[jt]sx?$/.test(file) && /work-review|review-batch|review-server|review-assets|editorial-import|work-import|\.artifacts\//.test(await readFile(join(root, file), 'utf8'))) errors.push('WORK_APP_IMPORT_NOT_ENABLED');
     if (file.startsWith('app/')) {
       if (/^app\/destinos(?:\/|$)/.test(file)) errors.push('WORK_PUBLIC_ROUTE_NOT_ENABLED');
-      if (/\.[cm]?[jt]sx?$/.test(file) && /work-review|DestinoArticle|editorial-import|work-import|\.artifacts\//.test(await readFile(join(root, file), 'utf8'))) errors.push('WORK_APP_IMPORT_NOT_ENABLED');
+      if (/\.[cm]?[jt]sx?$/.test(file) && /work-review|DestinoArticle|DestinoEditorialArticle|review-batch|editorial-import|work-import|\.artifacts\//.test(await readFile(join(root, file), 'utf8'))) errors.push('WORK_APP_IMPORT_NOT_ENABLED');
     }
   }
   if (errors.length) throw Error('Work isolation check failed: ' + [...new Set(errors)].join(','));
