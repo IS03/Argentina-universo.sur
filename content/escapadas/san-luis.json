@@ -5,7 +5,7 @@
   "title": "San Luis: pueblos serranos y memoria del paisaje",
   "destination": "San Luis",
   "province": "San Luis",
-  "description": "San Luis ofrece escalas diferentes para una escapada: el paisaje del embalse en Potrero de los Funes, la historia de La Carolina y los ambientes protegidos de Sierra de las Quijadas. Se pueden elegir como propuestas independientes, sin convertir la provincia en una única localidad.",
+  "description": "San Luis permite elegir entre pueblos serranos, patrimonio y paisajes protegidos. La Punta, El Trapiche y el Valle de Pancanta aportan propuestas diferentes de Potrero de los Funes y La Carolina; Sierra de las Quijadas suma otra región, que merece organizarse por separado.",
   "status": "draft",
   "publicationAuthorized": false,
   "review": null,
@@ -32,6 +32,30 @@
         "provinceSlug": "san_luis",
         "sourceIds": [
           "SL-CAROLINA"
+        ]
+      },
+      {
+        "id": "git-locality:san-luis:la-punta",
+        "name": "La Punta",
+        "provinceSlug": "san_luis",
+        "sourceIds": [
+          "SL-PUNTA"
+        ]
+      },
+      {
+        "id": "git-locality:san-luis:el-trapiche",
+        "name": "El Trapiche",
+        "provinceSlug": "san_luis",
+        "sourceIds": [
+          "SL-TRAPICHE"
+        ]
+      },
+      {
+        "id": "git-locality:san-luis:pancanta",
+        "name": "Valle de Pancanta",
+        "provinceSlug": "san_luis",
+        "sourceIds": [
+          "SL-PANCANTA"
         ]
       }
     ]
@@ -61,6 +85,25 @@
       "title": "APN — Actividades en Sierra de las Quijadas",
       "url": "https://www.argentina.gob.ar/parquesnacionales/centro/parque-nacional-sierra-de-las-quijadas/actividades",
       "checkedAt": "2026-10-24"
+    },
+    {
+      "id": "SL-PUNTA",
+      "title": "Municipalidad de La Punta — Ciudad de La Punta y Paseo Patrio",
+      "url": "https://ciudaddelapunta.gob.ar/01/corredorcentral/",
+      "checkedAt": "2026-10-25"
+    },
+    {
+      "id": "SL-TRAPICHE",
+      "title": "Turismo de la Nación — El Trapiche, San Luis",
+      "url": "https://www.argentina.gob.ar/jefatura/turismo-y-ambiente/turismo/best-tourism-villages-argentina/el-trapiche-san-luis",
+      "checkedAt": "2026-10-25"
+    },
+    {
+      "id": "SL-PANCANTA",
+      "title": "Agencia de Noticias San Luis — Valle de Pancanta, un destino ideal para los amantes de la tranquilidad y la naturaleza",
+      "url": "https://agenciasanluis.com/2025/01/28/1022923-valle-de-pancanta-un-destino-ideal-para-los-amantes-de-la-tranquilidad-y-la-naturaleza/",
+      "checkedAt": "2026-10-25",
+      "publishedAt": "2025-01-28"
     }
   ],
   "sections": [
@@ -73,6 +116,31 @@
       ],
       "paragraphs": [
         "Parque Nativo se ubica junto al lago de Potrero de los Funes y ofrece una referencia del paisaje de agua y sierras. No se deduce que cualquier orilla permita bañarse: la información del parque indica que no se permite ingresar al agua en ese ámbito. Confirmá las condiciones con la administración antes de elegir una actividad."
+      ]
+    },
+    {
+      "id": "la-punta",
+      "kind": "culture",
+      "title": "La Punta: réplicas e interpretación histórica",
+      "sourceIds": [
+        "SL-PUNTA"
+      ],
+      "paragraphs": [
+        "El Paseo Patrio vincula las réplicas del Cabildo y de la Casa de Tucumán con una propuesta de interpretación histórica. Son recreaciones contemporáneas: no deben confundirse con los edificios originales de Buenos Aires y Tucumán. El municipio también identifica al Museo Malvinas como otro espacio de memoria local.",
+        "Elegí qué espacio conocer y consultá sus condiciones de ingreso. Las visitas a museos y réplicas tienen responsables y modalidades propias; un corredor turístico no acredita un turno de visita ni permite entrar a cualquier edificio."
+      ]
+    },
+    {
+      "id": "trapiche-pancanta",
+      "kind": "activities",
+      "title": "El Trapiche y Valle de Pancanta",
+      "sourceIds": [
+        "SL-TRAPICHE",
+        "SL-PANCANTA"
+      ],
+      "paragraphs": [
+        "El Trapiche permite aproximarse al paisaje de ríos y sierras, con referencias como Siete Cajones y el embalse La Florida. Los morteros del río suman una dimensión arqueológica. La descripción de piletas naturales no demuestra que el baño sea seguro o esté habilitado: consultá las indicaciones del lugar y cuidá el patrimonio.",
+        "El Valle de Pancanta se encuentra sobre la RP 9 y tiene identidad propia dentro de las Sierras Centrales. La información provincial describe arroyos y propuestas de cabalgata, escalada y caminata. Para investigar el Salto de la Negra Libre, coordiná acceso, guía y condiciones con los responsables; una nota promocional no confirma una senda de acceso libre ni autoriza atravesar propiedades."
       ]
     },
     {
@@ -155,6 +223,33 @@
         "SL-QUIJADAS"
       ],
       "mapUrl": "https://www.openstreetmap.org/search?query=Parque%20Nacional%20Sierra%20de%20las%20Quijadas%2C%20San%20Luis%20Argentina"
+    },
+    {
+      "id": "la-punta",
+      "label": "La Punta, San Luis",
+      "description": "La Punta, San Luis; ubicación orientativa, no ruta ni punto de encuentro confirmado.",
+      "mapUrl": "https://www.openstreetmap.org/search?query=La%20Punta%2C%20San%20Luis%20Argentina",
+      "sourceIds": [
+        "SL-PUNTA"
+      ]
+    },
+    {
+      "id": "el-trapiche",
+      "label": "El Trapiche, San Luis",
+      "description": "El Trapiche, San Luis; ubicación orientativa, no ruta ni punto de encuentro confirmado.",
+      "mapUrl": "https://www.openstreetmap.org/search?query=El%20Trapiche%2C%20San%20Luis%20Argentina",
+      "sourceIds": [
+        "SL-TRAPICHE"
+      ]
+    },
+    {
+      "id": "pancanta",
+      "label": "Valle de Pancanta, San Luis",
+      "description": "Valle de Pancanta, San Luis; ubicación orientativa, no ruta ni punto de encuentro confirmado.",
+      "mapUrl": "https://www.openstreetmap.org/search?query=Valle%20de%20Pancanta%2C%20San%20Luis%20Argentina",
+      "sourceIds": [
+        "SL-PANCANTA"
+      ]
     }
   ],
   "photos": [],
@@ -174,7 +269,7 @@
   ],
   "editorial": {
     "documentaryStatus": "sources-checked",
-    "updatedAt": "2026-10-24",
+    "updatedAt": "2026-10-25",
     "origin": {
       "kind": "git-editorial",
       "legacyGuideIds": [
@@ -187,9 +282,10 @@
       "Autorización independiente de publicación",
       "Fotografías: derechos y selección pendientes",
       "Equivalencia con el PDF y respaldo externo sin aprobar",
-      "INCOMPLETA para Sierras Centrales: faltan fuentes específicas de La Punta, El Trapiche y Pancanta",
       "Resolver contradicción de atribución arqueológica de Inti Huasi antes de ampliar",
-      "Horarios de Parque Nativo diferentes dentro de la misma página: no publicados"
+      "Horarios de Parque Nativo diferentes dentro de la misma página: no publicados",
+      "Pancanta y Salto de la Negra Libre: permiso de ingreso, prestador y estado de senda pendientes de confirmación directa",
+      "No ofrecer Parque Astronómico ni recorridos pendientes como operativos sin fuente administradora específica"
     ]
   }
 }

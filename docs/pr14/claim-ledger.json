@@ -1,0 +1,1157 @@
+[
+  {
+    "slug": "caba",
+    "contentSha256": "f02a7479c86258e097a478bdbef51b74ef4221b815009d39a7c322aa96637042",
+    "ledger": [
+      {
+        "id": "introduction",
+        "sourceIds": [
+          "BA-PRIMERA",
+          "BA-BARRIOS"
+        ],
+        "textSha256": "4c801c9830e88c848bcb144ed03dee9370964450bd33e2c1b9f684043975cfb0",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "que-conocer:1",
+        "sourceIds": [
+          "BA-PRIMERA",
+          "BA-BARRIOS"
+        ],
+        "textSha256": "036896e89d2b761a963ac7f94da75fc17c2b4ab8d8ab93d696f2ef90dfb67bbc",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "que-conocer:2",
+        "sourceIds": [
+          "BA-PRIMERA",
+          "BA-BARRIOS"
+        ],
+        "textSha256": "2f3e235916310aeb88da9f2a4bd51d725a11ef6c7730960e3630ddff7a1737a7",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "barrios-y-patrimonio:1",
+        "sourceIds": [
+          "BA-BARRIOS",
+          "BA-CIRCUITOS"
+        ],
+        "textSha256": "b1dd983d0db67a9f21fe879840bc33dfca4fc5df03fe842049ec74ab170e1578",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "barrios-y-patrimonio:2",
+        "sourceIds": [
+          "BA-BARRIOS",
+          "BA-CIRCUITOS"
+        ],
+        "textSha256": "12aab0da7c80df28747892e39fee84dacb7aa32eac1e41a35d48cd0271dc1a11",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "naturaleza-en-la-ciudad:1",
+        "sourceIds": [
+          "BA-RESERVA"
+        ],
+        "textSha256": "b209c220da16889ba0c695a0eab10c0fd471738452a4a44699ea72613a85b0ee",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "naturaleza-en-la-ciudad:2",
+        "sourceIds": [
+          "BA-RESERVA"
+        ],
+        "textSha256": "9f330b3eb233d2524c27e57f7f94cce90872970d35ef32c91ca74e6c60fdfde8",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "recorridos-por-intereses:1",
+        "sourceIds": [
+          "BA-PRIMERA",
+          "BA-CIRCUITOS"
+        ],
+        "textSha256": "9ede784cffeaba4961df8386d4d4d37e1b0bb1873013c7611e55ae68a0f39649",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "recorridos-por-intereses:2",
+        "sourceIds": [
+          "BA-PRIMERA",
+          "BA-CIRCUITOS"
+        ],
+        "textSha256": "ff187ec292147211d6e57778c79747c69ab97f25b5de549ba4bb29269bdb6349",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "informacion-practica:1",
+        "sourceIds": [
+          "BA-MOVILIDAD",
+          "BA-ACCESIBLE"
+        ],
+        "textSha256": "10d4da222c0ef0000e8c157923e7d11e20ad5ef214a2285b523fc01689b41d28",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "informacion-practica:2",
+        "sourceIds": [
+          "BA-MOVILIDAD",
+          "BA-ACCESIBLE"
+        ],
+        "textSha256": "1bb0d54eced49eec678fa925f4f20f594cba6abe24deb92b8825a119ce17fba7",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "location:ciudad",
+        "sourceIds": [
+          "BA-PRIMERA"
+        ],
+        "textSha256": "3392d21b7872c1d4e8ccedeb67854bbc8367e7f63a3f589df936bc125a01b580",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "location:plaza-mayo",
+        "sourceIds": [
+          "BA-PRIMERA"
+        ],
+        "textSha256": "17ee76b51c5acd81203c295e0013ced5465f43ca58ae78de2a3101682d1258f7",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "location:san-telmo",
+        "sourceIds": [
+          "BA-BARRIOS"
+        ],
+        "textSha256": "b2381afc56667f859c8c7d2d5f98bcb5a623c4add2d06a5584784edf71b36a92",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "location:costanera-sur",
+        "sourceIds": [
+          "BA-RESERVA"
+        ],
+        "textSha256": "196e1b1f34aca6584ad922cb56a9ff678dceebea2b10208a5cb0b4248a3bbcf2",
+        "assessment": "documentary-supported; operating availability not certified"
+      }
+    ]
+  },
+  {
+    "slug": "puerto-iguazu",
+    "contentSha256": "017dadbb587385b7b3994a67a30b0f57f3dd5054df4a97da185a7624e562a197",
+    "ledger": [
+      {
+        "id": "introduction",
+        "sourceIds": [
+          "IGU-PARQUE",
+          "IGU-PANORAMA"
+        ],
+        "textSha256": "9f0c1dd7db0a2c4cc02877475a9b4f80d5471512b5c480f178c947c93d5e9d2b",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "cataratas-y-selva:1",
+        "sourceIds": [
+          "IGU-PARQUE"
+        ],
+        "textSha256": "6056e0eabece5a79551c4291ce5b6750b0beaeedc6998119c9f205e220d9f7af",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "cataratas-y-selva:2",
+        "sourceIds": [
+          "IGU-PARQUE"
+        ],
+        "textSha256": "6f9d04d3fe024e6f4363c6ca182607630f17a877f5f673dde144ddf9c5641316",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "elegir-los-paseos:1",
+        "sourceIds": [
+          "IGU-ACTIVIDADES"
+        ],
+        "textSha256": "c880b1faeaa66d4ed64b8356c648145eea637593d96b45aafce56fe52ac06b14",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "elegir-los-paseos:2",
+        "sourceIds": [
+          "IGU-ACTIVIDADES"
+        ],
+        "textSha256": "58ff0ee63e587afd376aa76b75cc0c87d881c0b13e80856ca57049e4def4f762",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "interpretacion-y-cultura:1",
+        "sourceIds": [
+          "IGU-PANORAMA"
+        ],
+        "textSha256": "f9c538a737e1637f4339fc840c5ff744ba6418c99aa87cb3d51106ff1c3fffc0",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "interpretacion-y-cultura:2",
+        "sourceIds": [
+          "IGU-PANORAMA"
+        ],
+        "textSha256": "b6b357e1c09c7a1f8a8e697598314d3ead430986b83175c1b923c37dc92d03d3",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "puerto-iguazu:1",
+        "sourceIds": [
+          "IGU-CIUDAD",
+          "IGU-PANORAMA"
+        ],
+        "textSha256": "2fd14fdfa5e5669b36ea57127855f8986b10819346e463af112e0e58cf69d328",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "puerto-iguazu:2",
+        "sourceIds": [
+          "IGU-CIUDAD",
+          "IGU-PANORAMA"
+        ],
+        "textSha256": "706fb69889517a66f3bd34224895ae9b8d5b4537df9a33ead4e627f0e2acdc61",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "planificar-la-visita:1",
+        "sourceIds": [
+          "IGU-ACCESO",
+          "IGU-PANORAMA",
+          "APN-RESPONSABLE"
+        ],
+        "textSha256": "009112680175eda0f51c9bbe6bf766c37c7b2b8e2d46f1bdb841b03ef7b3fb8b",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "planificar-la-visita:2",
+        "sourceIds": [
+          "IGU-ACCESO",
+          "IGU-PANORAMA",
+          "APN-RESPONSABLE"
+        ],
+        "textSha256": "dbef39c13e9e390a6f6ed02f9431404b1004d4c5184431e9b0e0369168dce1ab",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "location:puerto-iguazu",
+        "sourceIds": [
+          "IGU-CIUDAD"
+        ],
+        "textSha256": "a43695166464186618b51d1469cb0149f8f8d09edfc74e268ee687284f6bfa85",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "location:parque-iguazu",
+        "sourceIds": [
+          "IGU-ACCESO"
+        ],
+        "textSha256": "0f2e2925b25edb336ccb88d4cb53526a19c32b2d6410db5b288ed2f0f46293b6",
+        "assessment": "documentary-supported; operating availability not certified"
+      }
+    ]
+  },
+  {
+    "slug": "talampaya-e-ischigualasto",
+    "contentSha256": "08aed22195ff6bb69d1a984fb681bfcefae159353b2302666c3c7b83266609c6",
+    "ledger": [
+      {
+        "id": "introduction",
+        "sourceIds": [
+          "TAL-PARQUE",
+          "UNESCO-966"
+        ],
+        "textSha256": "d16028632faa991580a4f15e9e07d0b8f81f52e6f4b64a513170c192b8b38485",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "dos-parques:1",
+        "sourceIds": [
+          "TAL-PARQUE",
+          "UNESCO-966"
+        ],
+        "textSha256": "0452f33294150418e6a8b76242d92d652baada78355541b6b359fe3ca7ff3c10",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "dos-parques:2",
+        "sourceIds": [
+          "TAL-PARQUE",
+          "UNESCO-966"
+        ],
+        "textSha256": "c733ffcdd51b871698f56285f49a245f5bd50b4695411e58b18e24e477aeeac9",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "talampaya:1",
+        "sourceIds": [
+          "TAL-ACTIVIDADES"
+        ],
+        "textSha256": "8203c82a8db640278f420748db2e646fdea0a47f27b52feb4fcab83e54a3893d",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "talampaya:2",
+        "sourceIds": [
+          "TAL-ACTIVIDADES"
+        ],
+        "textSha256": "5d1ae1af61a63eeac1450140e4693d9307970a753f86bddbb0b77b706242da8c",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "ischigualasto:1",
+        "sourceIds": [
+          "ISCHI-TURISMO"
+        ],
+        "textSha256": "3fc984223a59142cb17e76919ccc4692c409fd1173a3e8d79eab67cf9886bd7f",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "ischigualasto:2",
+        "sourceIds": [
+          "ISCHI-TURISMO"
+        ],
+        "textSha256": "783e7bc000df3debdd51bf18e74bf127be2fc0e41b88904d329085b7d62f7c12",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "paisaje-y-patrimonio:1",
+        "sourceIds": [
+          "TAL-PANORAMA"
+        ],
+        "textSha256": "d02dc1af93f858f5cd11f685289fe0b5b82b0957c950e9663b723735b8795679",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "paisaje-y-patrimonio:2",
+        "sourceIds": [
+          "TAL-PANORAMA"
+        ],
+        "textSha256": "588dccefc19bd4744e6e6d0bdd3372490a72fbb58661d01b3b5f50098a1b4d3a",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "organizar-la-escapada:1",
+        "sourceIds": [
+          "TAL-PANORAMA",
+          "ISCHI-TURISMO",
+          "TAL-PARQUE"
+        ],
+        "textSha256": "00b673f41ecc664ff53391dc2b5e1b89e933bfb28f6a07793446db49c019de59",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "organizar-la-escapada:2",
+        "sourceIds": [
+          "TAL-PANORAMA",
+          "ISCHI-TURISMO",
+          "TAL-PARQUE"
+        ],
+        "textSha256": "ed137a7e131e9c41a991b6621bc026e2566abef3a230531b6886ba222fbd3022",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "location:talampaya",
+        "sourceIds": [
+          "TAL-PARQUE"
+        ],
+        "textSha256": "e49fefc8026f209b660086d022a1e2eb039e8f36e44253f048172537efb2d98a",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "location:ischigualasto",
+        "sourceIds": [
+          "ISCHI-TURISMO"
+        ],
+        "textSha256": "90a5f3f758af140dccc0c17b41928c67eaca8ba0810651874144d55d41519b2f",
+        "assessment": "documentary-supported; operating availability not certified"
+      }
+    ]
+  },
+  {
+    "slug": "el-palmar",
+    "contentSha256": "bf8456e4e9cb88aac5f590f7e0e75d4d63e22e2be0397ae325a8c7dd7d37b2d0",
+    "ledger": [
+      {
+        "id": "introduction",
+        "sourceIds": [
+          "APN-PRESENTACION",
+          "APN-FICHA"
+        ],
+        "textSha256": "f4319f0d779961a1fe7457e725c9192674959e8c9cbb27f41fb2408089b989fd",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "palmares-y-ambientes:1",
+        "sourceIds": [
+          "APN-PRESENTACION",
+          "APN-FICHA"
+        ],
+        "textSha256": "270499ebe9a7504d00ae0ac05a48f1d21b11dd691886ffb54086e6e809577b16",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "palmares-y-ambientes:2",
+        "sourceIds": [
+          "APN-PRESENTACION",
+          "APN-FICHA"
+        ],
+        "textSha256": "d18ac4d23b18950cae7184b50be213f69e5655b9bf99f8714e4ae5dc1f2df6c0",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "senderos-y-observacion:1",
+        "sourceIds": [
+          "PAL-ACTIVIDADES"
+        ],
+        "textSha256": "358256f9156c5235aa16db0f07ec49cc14e32ff6f36541e76d41b8c78bfb9dcb",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "senderos-y-observacion:2",
+        "sourceIds": [
+          "PAL-ACTIVIDADES"
+        ],
+        "textSha256": "81aff2b25c646e7224884c6197a4702089a511e449031150aaf76d210d3ea3f1",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "historia-del-palmar:1",
+        "sourceIds": [
+          "APN-PRESENTACION",
+          "PAL-ACTIVIDADES"
+        ],
+        "textSha256": "6c0445285ed3fdeb5e76341cf023598ce64657d2e9af3d0245bedc9309604fbc",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "historia-del-palmar:2",
+        "sourceIds": [
+          "APN-PRESENTACION",
+          "PAL-ACTIVIDADES"
+        ],
+        "textSha256": "72876ad65e521a7d908fa7f82039d7ab73bac5d00ccdf16a6862257b2a8a48dd",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "organizar-la-visita:1",
+        "sourceIds": [
+          "PAL-ACCESO",
+          "PAL-PANORAMA",
+          "APN-RECOMENDACIONES"
+        ],
+        "textSha256": "cf610a9fd8e7c2f8e1483fcce5bc26242d23022d03f54f6fe4f28cbcd9b59844",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "organizar-la-visita:2",
+        "sourceIds": [
+          "PAL-ACCESO",
+          "PAL-PANORAMA",
+          "APN-RECOMENDACIONES"
+        ],
+        "textSha256": "a46d4cbe98623bf725f11828877a7fbe15135730605aae7ee539f22647f954e9",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "entorno-regional:1",
+        "sourceIds": [
+          "PAL-PANORAMA"
+        ],
+        "textSha256": "85bbb76197b98804b6bdd72697e0edaab810f7faea7c179ccf6db6c84467e8b1",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "entorno-regional:2",
+        "sourceIds": [
+          "PAL-PANORAMA"
+        ],
+        "textSha256": "c6be29c767820e1c2d39a7e8c67802f8cea4af0459986899c0e7380e1c48d162",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "location:portada",
+        "sourceIds": [
+          "PAL-ACCESO"
+        ],
+        "textSha256": "eb7cbaf2e60b9986897ca12bfb013f57cbee9a9271fbf624ce222c0a3114d94a",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "location:calera",
+        "sourceIds": [
+          "PAL-ACTIVIDADES"
+        ],
+        "textSha256": "fb9bb0c86974549c237e4c44ca4726b7eb0e960870a7f2c63f650b0197914cf0",
+        "assessment": "documentary-supported; operating availability not certified"
+      }
+    ]
+  },
+  {
+    "slug": "jujuy",
+    "contentSha256": "c94afd3fc3d9e4d5ca44c75a3723019fcf814929d266a1d215abe9f9512b5271",
+    "ledger": [
+      {
+        "id": "introduction",
+        "sourceIds": [
+          "JUJ-REGIONES",
+          "JUJ-UNESCO"
+        ],
+        "textSha256": "1e16b76023943c1862f7af8c9cf54888c96839c874d56674e55fd79b11ea57bd",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "regiones:1",
+        "sourceIds": [
+          "JUJ-REGIONES"
+        ],
+        "textSha256": "31fb89c1259a119c7ba804da9d528117fb001835249a284e369fe59d515157ae",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "quebrada:1",
+        "sourceIds": [
+          "JUJ-UNESCO"
+        ],
+        "textSha256": "211c0f79810a887dae9f4fa097879c1a27a51bcd2af3d48616082e1b26420e76",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "quebrada:2",
+        "sourceIds": [
+          "JUJ-UNESCO"
+        ],
+        "textSha256": "2bab97d07765caa3854b2d3146c5542e43ceda27c0583449ba5a7b7a1e9acc44",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "purmamarca:1",
+        "sourceIds": [
+          "JUJ-PURMAMARCA"
+        ],
+        "textSha256": "d43e57e8e1765ffdb07c0e0fc380f1fa4ff6a6508484be3f12295434b6aacdeb",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "purmamarca:2",
+        "sourceIds": [
+          "JUJ-PURMAMARCA"
+        ],
+        "textSha256": "642b274fe4e286f22db8036a2131b0765d039ee4bf0928e767f2329e7931f2cc",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "tilcara:1",
+        "sourceIds": [
+          "JUJ-TILCARA-UBA"
+        ],
+        "textSha256": "1f9610063ece14a5b7254720aaa454783ae2b68237b934d56b5f5098301f9fa1",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "tilcara:2",
+        "sourceIds": [
+          "JUJ-TILCARA-UBA"
+        ],
+        "textSha256": "87799318f09d65dc59650b380963b38c753924c6c92936eadf0f41ac94fb3765",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "humahuaca-hornocal:1",
+        "sourceIds": [
+          "JUJ-HUMAHUACA",
+          "JUJ-HORNOCAL"
+        ],
+        "textSha256": "24dd2a600aa14f2e0ed3015f3f5400171b2c41d1dcab18c3c865de926454f382",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "humahuaca-hornocal:2",
+        "sourceIds": [
+          "JUJ-HUMAHUACA",
+          "JUJ-HORNOCAL"
+        ],
+        "textSha256": "cb8ce57c7148586383fcb4da4a2fe60a775edb6e97ed6c94eccec4e5187aca27",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "maimara:1",
+        "sourceIds": [
+          "JUJ-MAIMARA"
+        ],
+        "textSha256": "588dd76d1c23a3eb8398ce5c2694eb1f31d1bfa65c239d191a21fe67cb5f7d59",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "maimara:2",
+        "sourceIds": [
+          "JUJ-MAIMARA"
+        ],
+        "textSha256": "886dd2775b4fea88495eb93dc8616a3a7187910cf9593f0aa05ff3c1ad294604",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "yungas:1",
+        "sourceIds": [
+          "JUJ-CALILEGUA"
+        ],
+        "textSha256": "88668ae48d74123c9804659194cd67e584f67944d5efc4cfb4ef47b417eda23b",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "yungas:2",
+        "sourceIds": [
+          "JUJ-CALILEGUA"
+        ],
+        "textSha256": "e9472a697afebd65ed9f99ae0ff20fa6e2dec4b0b0680b7de065a8ec243aaa49",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "organizar:1",
+        "sourceIds": [
+          "JUJ-REGIONES",
+          "JUJ-CALILEGUA"
+        ],
+        "textSha256": "389d04634c5069d8063ffa155f5d74ef20a0f9620919ac97a473c1a89d133bd7",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "location:maimara",
+        "sourceIds": [
+          "JUJ-MAIMARA"
+        ],
+        "textSha256": "e99deba83a54efd0be8d01fb1a79aa534f2f7fc0be21123837447eb45ab1170b",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "location:calilegua",
+        "sourceIds": [
+          "JUJ-CALILEGUA"
+        ],
+        "textSha256": "128a2d5410a1df238e4bf9dfb403440140ee082ba0441193a9c166929c266a0f",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "location:purmamarca",
+        "sourceIds": [
+          "JUJ-PURMAMARCA"
+        ],
+        "textSha256": "760f959d1580c6ba785907e66adbad5466c7276b73f4aa45eeb9f160916568a2",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "location:tilcara",
+        "sourceIds": [
+          "JUJ-TILCARA-UBA"
+        ],
+        "textSha256": "15efb33e5981a2e0f508ef2e9131091214e4b86541ca6923937a6b7ec65f59c1",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "location:humahuaca",
+        "sourceIds": [
+          "JUJ-HUMAHUACA"
+        ],
+        "textSha256": "504d784f131f6dac5c2105bd307d6bee96cb7e2b9dd9807d281d7e0a75773000",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "location:hornocal",
+        "sourceIds": [
+          "JUJ-HORNOCAL"
+        ],
+        "textSha256": "cea5b12a0c310ed3c273325e1306491326f56b61f135fe8d93f01226e74cc63b",
+        "assessment": "documentary-supported; operating availability not certified"
+      }
+    ]
+  },
+  {
+    "slug": "san-luis",
+    "contentSha256": "47f7427e3d1ea46d436c69616cae6dd9169198189b7948b0cc499d734067ed7c",
+    "ledger": [
+      {
+        "id": "introduction",
+        "sourceIds": [
+          "SL-POTRERO",
+          "SL-CAROLINA"
+        ],
+        "textSha256": "f8609ae2f1adbfa1060df02a143fe2b3bc0f942df527b538a290b348caf2cbe0",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "potrero:1",
+        "sourceIds": [
+          "SL-POTRERO"
+        ],
+        "textSha256": "4211e3398da6ff9441c988e24ff095135d0904eb35532d42c0895cd10323db21",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "la-punta:1",
+        "sourceIds": [
+          "SL-PUNTA"
+        ],
+        "textSha256": "4b658db133018a54d000e838e3e76005e21d8f96d628282ead01059d0f629b4b",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "la-punta:2",
+        "sourceIds": [
+          "SL-PUNTA"
+        ],
+        "textSha256": "b06770bfb0930b7d519fab0503b389c4edb3abcc16baaffbf01f5d1cdb8c738c",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "trapiche-pancanta:1",
+        "sourceIds": [
+          "SL-TRAPICHE",
+          "SL-PANCANTA"
+        ],
+        "textSha256": "3d80d92cb74268966e7cc1661ecf7d82a9500c87cd5349270d021f19fb0a99d8",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "trapiche-pancanta:2",
+        "sourceIds": [
+          "SL-TRAPICHE",
+          "SL-PANCANTA"
+        ],
+        "textSha256": "93bc1807c2a0f70e748c356d24e1a89f383577c00c8ca8d36e76a14e325feabd",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "carolina:1",
+        "sourceIds": [
+          "SL-CAROLINA",
+          "SL-PEATONAL"
+        ],
+        "textSha256": "1791c61891e73215ff60c83e0e14b1121c475ec627cb03f6a1e067f0b4c6e8d3",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "carolina:2",
+        "sourceIds": [
+          "SL-CAROLINA",
+          "SL-PEATONAL"
+        ],
+        "textSha256": "f1fe945b63b17ea9c19aacc59b0840109c6db182be132470f906da19ed65b445",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "quijadas:1",
+        "sourceIds": [
+          "SL-QUIJADAS"
+        ],
+        "textSha256": "f10206a5526f7108f5101e53b95d1088323316641ff851d1e5f497c6e67d2b18",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "recorridos:1",
+        "sourceIds": [
+          "SL-QUIJADAS"
+        ],
+        "textSha256": "67578e6c2ada07efb18c6f15eac1c97b8e644ae611c47ad21f1ce89fc7619ad0",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "recorridos:2",
+        "sourceIds": [
+          "SL-QUIJADAS"
+        ],
+        "textSha256": "c3d69b1304c22130b4317a6622aa197549e2f7b5fd318e40eca5dff44a18cddb",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "organizar:1",
+        "sourceIds": [
+          "SL-POTRERO",
+          "SL-PEATONAL",
+          "SL-QUIJADAS"
+        ],
+        "textSha256": "5be2e2a42f4e537a9bc70cc3003ddcc7eaaf660741b3fa18e03310f7930e0b15",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "organizar:2",
+        "sourceIds": [
+          "SL-POTRERO",
+          "SL-PEATONAL",
+          "SL-QUIJADAS"
+        ],
+        "textSha256": "e2b549bc345764a185f8f5fc70db8f817db64db6b47f273e0b0a725dfc4f9fde",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "location:potrero-funes",
+        "sourceIds": [
+          "SL-POTRERO"
+        ],
+        "textSha256": "73a6140907deb4b14612145f1a8d668060077300de869048d7e89155c185fc3c",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "location:la-carolina",
+        "sourceIds": [
+          "SL-CAROLINA"
+        ],
+        "textSha256": "caaf894185c6e7a7d0810b3129f1283b27ec43264e878b24547a7d92be128fcd",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "location:quijadas",
+        "sourceIds": [
+          "SL-QUIJADAS"
+        ],
+        "textSha256": "52ae5c4a12f419220e8e5ad5f3872da3d3058f58f28dd81ecb9085ddc9bd159f",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "location:la-punta",
+        "sourceIds": [
+          "SL-PUNTA"
+        ],
+        "textSha256": "eb544b3e90078c3053fa228611ec36a68b8a8d19eaece53f7e87359c96acd341",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "location:el-trapiche",
+        "sourceIds": [
+          "SL-TRAPICHE"
+        ],
+        "textSha256": "0d28ac3dbb8f72fa7ffc90a30808ab15f43abc6813d934dc8750bdfa094419b1",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "location:pancanta",
+        "sourceIds": [
+          "SL-PANCANTA"
+        ],
+        "textSha256": "51df59ba195495ccb8f017bd01489455dd6e7d2774622691ff030659c8b56d47",
+        "assessment": "documentary-supported; operating availability not certified"
+      }
+    ]
+  },
+  {
+    "slug": "entre-rios",
+    "contentSha256": "90827634be46208733dd38af252a8eb95576ad2a14339db7d705bafdf719c43a",
+    "ledger": [
+      {
+        "id": "introduction",
+        "sourceIds": [
+          "ER-MOLINO",
+          "ER-SANJOSE"
+        ],
+        "textSha256": "72c01eec3b9ac4dd8a9c67b0a532a5e12121965a7608ee9141adf89ea7705e7a",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "molino:1",
+        "sourceIds": [
+          "ER-MOLINO"
+        ],
+        "textSha256": "7f4a1cdb6d2d16fa8733cfe81810adaf462fbe50d138cacb228b350b5d14d2f7",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "molino:2",
+        "sourceIds": [
+          "ER-MOLINO"
+        ],
+        "textSha256": "9ed817de4ebdc03794a10be8b4ab472b23237393cd815d9f42c9bd37022dc785",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "san-jose:1",
+        "sourceIds": [
+          "ER-SANJOSE"
+        ],
+        "textSha256": "8704cfea129a51c728a1b2975b083eee617ee0d3381fc2c45a0e3ff33e8a6ff8",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "san-jose:2",
+        "sourceIds": [
+          "ER-SANJOSE"
+        ],
+        "textSha256": "d9cfdb39860937ff0363cfbb45076e18f7fe7ed4f90f3548fd95b5a259aac36d",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "liebig:1",
+        "sourceIds": [
+          "ER-LIEBIG"
+        ],
+        "textSha256": "11932cc4a8ace682b1f2ac29d0ef92cc2740006989c451695451f8c80b11e3ee",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "liebig:2",
+        "sourceIds": [
+          "ER-LIEBIG"
+        ],
+        "textSha256": "5a3c60cdde9e3500289b8130f1c626409590232a5b0c3deeedd1538b08076114",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "palmar:1",
+        "sourceIds": [
+          "ER-PALMAR"
+        ],
+        "textSha256": "efb8b5e6cbed5a393f637e17be504f5ba0babbee6a3b01d6a1a9119a2655595b",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "organizar:1",
+        "sourceIds": [
+          "ER-MOLINO",
+          "ER-SANJOSE",
+          "ER-LIEBIG"
+        ],
+        "textSha256": "0da962e45a28ee473e7fa65d78d5142994b06b463997bf7c02a875fda297bcb8",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "termas:1",
+        "sourceIds": [
+          "ER-TERMAS-COLON",
+          "ER-ENOTERMAL"
+        ],
+        "textSha256": "22e7cada7c0910357fbaaa664518558807b381be0e0bc906ffddb2ec6e08653f",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "termas:2",
+        "sourceIds": [
+          "ER-TERMAS-COLON",
+          "ER-ENOTERMAL"
+        ],
+        "textSha256": "afa0bc330c0a759d1c784f7b15a2f021f1a3a9bd911767e9fe3c7dcae31a0cba",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "vino-y-ruralidad:1",
+        "sourceIds": [
+          "ER-ENOTERMAL"
+        ],
+        "textSha256": "199b10feb82081fd777dd3c4cb44e3afdcdc6ba4f61251fb9cc37de8325ea2db",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "vino-y-ruralidad:2",
+        "sourceIds": [
+          "ER-ENOTERMAL"
+        ],
+        "textSha256": "c51f3e16c73715e62a7267a33d7fe79be522aa66c710b4b246e3ed0de4ba3a15",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "colonias-judias:1",
+        "sourceIds": [
+          "ER-COLONIAS-DOMINGUEZ",
+          "ER-COLONIAS-CLARA"
+        ],
+        "textSha256": "559fbfb52351241583b0a29b956c891045059c7a0a6b85842272a6a14425cbd5",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "colonias-judias:2",
+        "sourceIds": [
+          "ER-COLONIAS-DOMINGUEZ",
+          "ER-COLONIAS-CLARA"
+        ],
+        "textSha256": "554dfa08573a409347437befb611af3f8a3bd5d76bf9e96f6984da273a8a522c",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "location:colon",
+        "sourceIds": [
+          "ER-MOLINO"
+        ],
+        "textSha256": "a30c9721aef85340be2e357ab2dd308846956222b65193430ea4a78cded3d4f7",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "location:san-jose",
+        "sourceIds": [
+          "ER-SANJOSE"
+        ],
+        "textSha256": "8b7bd25358f18c836ac7b800c4be64f540441f5e24a558ca94f4414184bc5068",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "location:pueblo-liebig",
+        "sourceIds": [
+          "ER-LIEBIG"
+        ],
+        "textSha256": "d554ed7b6bc176cf2f90e3dae2f9dd66eb6efc521e5199298b612e41fcb4ffae",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "location:villa-dominguez",
+        "sourceIds": [
+          "ER-COLONIAS-DOMINGUEZ"
+        ],
+        "textSha256": "f05f03876fac936adb35c4586b3e7d3fa15e4046947f59bb756758ca8fe05d8f",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "location:villa-clara",
+        "sourceIds": [
+          "ER-COLONIAS-CLARA"
+        ],
+        "textSha256": "82fb3b244ae88db332349fc085cfd6ee6ca93c48dc006dc1524f0666dedde786",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "location:san-gregorio",
+        "sourceIds": [
+          "ER-COLONIAS-DOMINGUEZ"
+        ],
+        "textSha256": "445b43c38cc5236dd828745cfef4a68e39e5649da67924af154287decdf41457",
+        "assessment": "documentary-supported; operating availability not certified"
+      }
+    ]
+  },
+  {
+    "slug": "rio-gallegos",
+    "contentSha256": "2ddbded25b229c8fce43955b92ca1d2b4918f6b0ea45c5e56d876b900ce6d252",
+    "ledger": [
+      {
+        "id": "introduction",
+        "sourceIds": [
+          "RG-TURISMO",
+          "RG-PROVINCIA"
+        ],
+        "textSha256": "a9e12b97d7479f05d08c3a837c0332fe8285c048e47e52f8894f648cd5879daa",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "ria:1",
+        "sourceIds": [
+          "RG-TURISMO"
+        ],
+        "textSha256": "d173e6ac4f871756751058a432ce610935ff261b3ba453f820d80af1832ebc51",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "ciudad:1",
+        "sourceIds": [
+          "RG-PIONEROS",
+          "RG-FERROVIARIO",
+          "RG-MOLINA"
+        ],
+        "textSha256": "47c778042a15630fbb0e2f38687e03d30efcc62cf51c48db409598dd2795d014",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "ciudad:2",
+        "sourceIds": [
+          "RG-PIONEROS",
+          "RG-FERROVIARIO",
+          "RG-MOLINA"
+        ],
+        "textSha256": "9993078c29b77f2d00be080c09f4e4c3178648dd04d1504bd744f54637bcb199",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "gobernacion:1",
+        "sourceIds": [
+          "RG-GOBERNACION"
+        ],
+        "textSha256": "6304105a7ee1840b0edbe852ff7e4fad04f9eef8216e45acbd0eef841d0762e5",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "gobernacion:2",
+        "sourceIds": [
+          "RG-GOBERNACION"
+        ],
+        "textSha256": "1317af74fed5ccf9770afd5ccfb8eabcee97692ef945d2d502a7a1786fceca94",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "cabo:1",
+        "sourceIds": [
+          "RG-PROVINCIA",
+          "RG-TURISMO"
+        ],
+        "textSha256": "c3f63dffd56f72d1a2fbaf8ce4f278fc471cc08f3a028c6c0509ef0d7fa0f22b",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "loyola:1",
+        "sourceIds": [
+          "RG-LOYOLA"
+        ],
+        "textSha256": "e2ce0a6c984610cea134f08a2cff9daf1025024f491a185507caae9dd4cb19f2",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "loyola:2",
+        "sourceIds": [
+          "RG-LOYOLA"
+        ],
+        "textSha256": "f172e632c1e70663b198aa4de685ab6c1a772881dd26b871bc5148dc942384a4",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "volcan:1",
+        "sourceIds": [
+          "RG-PROVINCIA"
+        ],
+        "textSha256": "8c29679b090f008496584fffd6dc3fb1a659c52be00371d34a9e29369ceb3d23",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "plan:1",
+        "sourceIds": [
+          "RG-CONSULTA",
+          "RG-TURISMO"
+        ],
+        "textSha256": "2479a057c4eac74a4a4ae0dc2a33c59dddc392733d2b26b5b2591bc369dfa189",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "location:rio-gallegos",
+        "sourceIds": [
+          "RG-TURISMO"
+        ],
+        "textSha256": "bdf464f72fa172472a8e5235887653f7c8fdbc58f3abddeff5e8705139a89c79",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "location:punta-loyola",
+        "sourceIds": [
+          "RG-LOYOLA"
+        ],
+        "textSha256": "21591b24e54e48043371cd4ab1b0373728459081061b8eccb6b53a7d07a3c375",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "location:cabo-virgenes",
+        "sourceIds": [
+          "RG-PROVINCIA"
+        ],
+        "textSha256": "b145cd3152d6da63011158dc4cc2bf1ae0655d69b41b136617b448f1468e0d1b",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "location:pioneros",
+        "sourceIds": [
+          "RG-PIONEROS"
+        ],
+        "textSha256": "0b44f3aced733960e6b4ba1586fe569c84dd117596c7dbfb14861e7844dcd03f",
+        "assessment": "documentary-supported; operating availability not certified"
+      },
+      {
+        "id": "location:ferroviario",
+        "sourceIds": [
+          "RG-FERROVIARIO"
+        ],
+        "textSha256": "43ade494a5f40664e62dcda829fe78336467454ef3c622dd4891a2ceb5b4cd79",
+        "assessment": "documentary-supported; operating availability not certified"
+      }
+    ]
+  }
+]

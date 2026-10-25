@@ -7,6 +7,9 @@ const read=async path=>JSON.parse(await readFile(path,'utf8'));
 const research=await read('docs/pr13/research-register.json');
 const previous=await read('docs/pr12/pdf-replacements.json');
 const trips=await readEditorialTrips(process.cwd());
+// Do not overwrite historical PR13 reviews with later editorial versions.
+const frozen=await read('docs/pr13/pdf-equivalence.json');
+if(frozen.some(row=>tripContentHash(trips.find(t=>t.id===row.draftId))!==row.tripContentSha256))throw Error('PR13 is a historical snapshot; use npm run editorial:report-pr14 for current revisions.');
 const records=research.records.map(r=>{const trip=trips.find(t=>t.slug===r.slug);if(!trip)throw Error('Missing trip '+r.slug);return {r,trip,row:previous.find(p=>p.legacyGuideId===r.guide)}});
 await mkdir('docs/pr13/review',{recursive:true});
 execFileSync(process.execPath,['--experimental-strip-types','scripts/editorial/review.mjs','--pr13'],{stdio:'inherit'});

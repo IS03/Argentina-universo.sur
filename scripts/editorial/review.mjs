@@ -2,8 +2,10 @@
 import { mkdir, writeFile } from "node:fs/promises";
 import { readEditorialTrips } from "../pages/editorial-security.mjs";
 import { tripContentHash, tripPublishable } from "../../lib/pages/trips.ts";
-if (process.argv.slice(2).some(arg => arg !== "--pr13")) throw Error("Only --pr13 is supported; review output cannot be placed in public/.");
-const out = new URL(process.argv.includes("--pr13") ? "../../.artifacts/pr13/review/" : "../../.artifacts/pr12/review/", import.meta.url);
+const args = process.argv.slice(2);
+if (args.length > 1 || args.some(arg => !["--pr13", "--pr14"].includes(arg))) throw Error("Only one of --pr13/--pr14 is supported; review output cannot be placed in public/.");
+const phase = args[0]?.slice(2) ?? "pr12";
+const out = new URL(`../../.artifacts/${phase}/review/`, import.meta.url);
 await mkdir(out, {recursive: true});
 const trips = await readEditorialTrips(process.cwd());
 for (const trip of trips) {

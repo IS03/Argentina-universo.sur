@@ -5,7 +5,7 @@
   "title": "Buenos Aires: barrios, historia y naturaleza urbana",
   "destination": "Ciudad Autónoma de Buenos Aires",
   "province": "Ciudad Autónoma de Buenos Aires",
-  "description": "Buenos Aires propone descubrir la ciudad por capas: las plazas del centro, la identidad de sus barrios y los espacios naturales próximos al río. Esta escapada reúne alternativas para elegir según tus intereses, sin imponer un itinerario único.",
+  "description": "Buenos Aires se descubre mejor eligiendo un barrio y un interés: la historia alrededor de Plaza de Mayo, las calles de San Telmo y La Boca, el paisaje de Palermo o la naturaleza junto al río. Esta selección propone recorridos para armar una escapada propia, con tiempo para mirar y detenerse.",
   "status": "draft",
   "publicationAuthorized": false,
   "review": null,
@@ -33,99 +33,102 @@
       "id": "BA-PRIMERA",
       "title": "Travel Buenos Aires — Primera vez en Buenos Aires",
       "url": "https://turismo.buenosaires.gob.ar/es/article/primera-vez-en-buenos-aires",
-      "checkedAt": "2026-10-24"
+      "checkedAt": "2026-10-25"
     },
     {
       "id": "BA-BARRIOS",
       "title": "Travel Buenos Aires — Barrios emblemáticos",
       "url": "https://turismo.buenosaires.gob.ar/es/agrupador-noticias/imperdibles-de-los-barrios-mas-emblematicos",
-      "checkedAt": "2026-10-24"
+      "checkedAt": "2026-10-25"
     },
     {
       "id": "BA-CIRCUITOS",
       "title": "Travel Buenos Aires — Recorré por tu cuenta",
       "url": "https://turismo.buenosaires.gob.ar/es/agrupador-noticias/recorre-por-tu-cuenta",
-      "checkedAt": "2026-10-24"
+      "checkedAt": "2026-10-25"
     },
     {
       "id": "BA-RESERVA",
       "title": "Travel Buenos Aires — Reserva Ecológica Costanera Sur",
       "url": "https://turismo.buenosaires.gob.ar/es/otros-establecimientos/reserva-ecologica-costanera-sur",
-      "checkedAt": "2026-10-24"
+      "checkedAt": "2026-10-25"
     },
     {
       "id": "BA-MOVILIDAD",
       "title": "Travel Buenos Aires — Moverse por la Ciudad",
       "url": "https://turismo.buenosaires.gob.ar/es/article/moverse-por-la-ciudad",
-      "checkedAt": "2026-10-24"
+      "checkedAt": "2026-10-25"
     },
     {
       "id": "BA-ACCESIBLE",
       "title": "Travel Buenos Aires — Turismo accesible",
       "url": "https://turismo.buenosaires.gob.ar/es/article/turismo-accesible",
-      "checkedAt": "2026-10-24"
+      "checkedAt": "2026-10-25"
     }
   ],
   "sections": [
     {
       "id": "que-conocer",
       "kind": "highlights",
-      "title": "Qué conocer",
+      "title": "Plaza de Mayo y los barrios porteños",
       "sourceIds": [
-        "BA-PRIMERA"
+        "BA-PRIMERA",
+        "BA-BARRIOS"
       ],
       "paragraphs": [
-        "La Plaza de Mayo es una referencia para comenzar a comprender el centro histórico. La presentación oficial de la ciudad la relaciona con otros paseos muy diferentes, entre ellos Puerto Madero, Caminito y Palermo. En lugar de intentar abarcar todo, podés elegir un sector y dedicarle atención a sus edificios, sus espacios públicos y sus formas de habitar la ciudad.",
-        "El mapa oficial de Buenos Aires permite ubicar los lugares antes de salir y estudiar las alternativas para trasladarte entre ellos. Es una herramienta útil para construir tu propia visita: las propuestas de esta ficha son ejes de exploración, no etapas que deban completarse en una jornada."
+        "La Plaza de Mayo reúne referencias del centro histórico y puede ser el comienzo de una visita dedicada a la arquitectura y la historia política. El eje de Avenida de Mayo vincula ese entorno con el Congreso. Mirar fachadas, plazas y pasajes permite reconocer distintas etapas de la ciudad; el ingreso a cada edificio se consulta por separado.",
+        "San Telmo conserva una identidad asociada al casco histórico y al tango. La Boca suma Caminito y sus conventillos; Puerto Madero muestra otro paisaje urbano, junto a los antiguos diques. Elegí uno de estos sectores como tema del paseo, en vez de tratarlos como paradas obligatorias de una misma jornada."
       ]
     },
     {
       "id": "barrios-y-patrimonio",
       "kind": "culture",
-      "title": "Barrios y patrimonio",
+      "title": "Palermo, Recoleta y recorridos culturales",
       "sourceIds": [
-        "BA-BARRIOS"
+        "BA-BARRIOS",
+        "BA-CIRCUITOS"
       ],
       "paragraphs": [
-        "San Telmo reúne parte de la historia más antigua de Buenos Aires y una identidad vinculada al tango. La Boca ofrece otra lectura de la ciudad a través de Caminito y los conventillos. En Monserrat, la Avenida de Mayo conecta referencias del patrimonio político y urbano como la Casa Rosada, la Plaza de Mayo y el Congreso.",
-        "Palermo y Recoleta amplían esa mirada hacia otros paisajes urbanos. Los barrios no son escenarios intercambiables: comparar sus calles, edificios y plazas ayuda a reconocer una ciudad hecha de historias distintas. Consultá las fichas oficiales de cada lugar para decidir qué interiores visitar y comprobar sus condiciones de ingreso."
+        "Palermo permite alternar espacios verdes y vida de barrio. Recoleta aporta otra lectura de la arquitectura porteña. Antes de sumar interiores, elegí qué te interesa conocer y consultá las fichas de los museos o edificios: un paseo por el barrio y una visita a sus colecciones son experiencias distintas.",
+        "Los recorridos autoguiados del Ente de Turismo ofrecen hilos concretos para explorar: tango, fileteado, arquitectura y Avenida de Mayo. Seguir un tema ayuda a descubrir detalles que una lista de monumentos deja de lado. Revisá el recorrido elegido para ubicar sus referencias sin depender de una excursión organizada."
       ]
     },
     {
       "id": "naturaleza-en-la-ciudad",
       "kind": "nature",
-      "title": "Naturaleza junto a la ciudad",
+      "title": "Costanera Sur: otra mirada de Buenos Aires",
       "sourceIds": [
         "BA-RESERVA"
       ],
       "paragraphs": [
-        "La Reserva Ecológica Costanera Sur conserva bosques, pastizales, lagunas y bañados cerca de Puerto Madero. Es un contrapunto al recorrido por avenidas y edificios: allí el interés se desplaza hacia los ambientes naturales y la observación de su flora y fauna.",
-        "El portal turístico describe senderos y pasarelas interpretativas. Antes de organizar el paseo, consultá la información de la reserva y respetá los sectores habilitados. La presencia de aves y otros animales forma parte de un ambiente vivo; observarlos no equivale a contar con un avistaje asegurado."
+        "La Reserva Ecológica Costanera Sur conserva bosques, pastizales, lagunas y bañados cerca de Puerto Madero. Sus senderos y pasarelas interpretativas permiten acercarse a la flora y la fauna nativas en un paisaje muy diferente del centro construido.",
+        "La observación de aves puede orientar el paseo, sin prometer especies ni cantidades de avistajes. Consultá con la reserva los accesos y sectores habilitados para ese día. Su proximidad a la ciudad no elimina la necesidad de respetar las indicaciones del área protegida."
       ]
     },
     {
       "id": "recorridos-por-intereses",
       "kind": "activities",
-      "title": "Recorridos por intereses",
+      "title": "Cómo elegir los paseos",
       "sourceIds": [
+        "BA-PRIMERA",
         "BA-CIRCUITOS"
       ],
       "paragraphs": [
-        "El catálogo oficial de recorridos autoguiados permite elegir temas además de lugares. Incluye propuestas vinculadas con el tango, el fileteado porteño, la arquitectura y los circuitos de Avenida de Mayo. Podés usar uno de esos hilos para descubrir detalles que pasarían inadvertidos en una visita centrada solo en monumentos.",
-        "Los recorridos de barrios y los paseos al aire libre ofrecen otras maneras de combinar cultura y paisaje urbano. Elegí las propuestas que te interesen y revisá su descripción completa en la fuente oficial. Esta selección no agrega distancias, secuencias de traslado ni tiempos de visita que no hayan sido comprobados."
+        "Una escapada puede centrarse en el casco histórico y la Avenida de Mayo; otra, en los barrios del sur y el tango. Palermo y la reserva ofrecen alternativas para dedicar más tiempo al aire libre. Son criterios para elegir, no un programa de tres días con traslados o entradas garantizados.",
+        "Usá el mapa oficial de Buenos Aires para ubicar los lugares y planificar las conexiones. Compará los puntos de interés antes de reservar actividades: el recorrido que sirve para descubrir arquitectura no tiene por qué ser el mismo que el de una visita enfocada en naturaleza o museos."
       ]
     },
     {
       "id": "informacion-practica",
       "kind": "practical",
-      "title": "Antes de organizar la visita",
+      "title": "Movilidad y accesibilidad para organizar la visita",
       "sourceIds": [
         "BA-MOVILIDAD",
         "BA-ACCESIBLE"
       ],
       "paragraphs": [
-        "La ciudad dispone de distintas alternativas de movilidad, entre ellas colectivos, subte, bicicletas y taxis. El portal oficial explica sus características y enlaza herramientas para planificar los traslados. Revisá allí las indicaciones vigentes y comprobá por separado tarifas, medios de pago y funcionamiento del servicio que elijas.",
-        "La información de turismo accesible incluye visitas y recursos específicos. Consultala si necesitás anticipar apoyos o condiciones de acceso, y confirmá cada prestación con su responsable. La existencia de una propuesta accesible no permite extender esa condición automáticamente a todos los edificios, veredas o medios de transporte."
+        "Colectivos, subte, bicicletas y taxis ofrecen distintas alternativas para trasladarte. El portal de movilidad turística enlaza mapas y explica cada sistema. Comprobá funcionamiento, medios de pago y tarifas para la fecha del viaje; las condiciones de un medio de transporte no se trasladan automáticamente a los demás.",
+        "El programa de turismo accesible presenta mapas hápticos, recursos de comunicación y propuestas específicas. Si necesitás apoyos, consultá las condiciones del recorrido y de cada espacio antes de salir. La existencia de herramientas accesibles en la ciudad no garantiza accesibilidad continua en todas las veredas, edificios o estaciones."
       ]
     }
   ],
@@ -139,6 +142,33 @@
       "mapUrl": "https://www.openstreetmap.org/search?query=Ciudad%20Aut%C3%B3noma%20de%20Buenos%20Aires%20Argentina",
       "sourceIds": [
         "BA-PRIMERA"
+      ]
+    },
+    {
+      "id": "plaza-mayo",
+      "label": "Plaza de Mayo, Buenos Aires",
+      "description": "Plaza de Mayo, Buenos Aires; ubicación orientativa, no ruta ni punto de encuentro confirmado.",
+      "mapUrl": "https://www.openstreetmap.org/search?query=Plaza%20de%20Mayo%2C%20Buenos%20Aires%20Argentina",
+      "sourceIds": [
+        "BA-PRIMERA"
+      ]
+    },
+    {
+      "id": "san-telmo",
+      "label": "San Telmo, Buenos Aires",
+      "description": "San Telmo, Buenos Aires; ubicación orientativa, no ruta ni punto de encuentro confirmado.",
+      "mapUrl": "https://www.openstreetmap.org/search?query=San%20Telmo%2C%20Buenos%20Aires%20Argentina",
+      "sourceIds": [
+        "BA-BARRIOS"
+      ]
+    },
+    {
+      "id": "costanera-sur",
+      "label": "Reserva Ecológica Costanera Sur, Buenos Aires",
+      "description": "Reserva Ecológica Costanera Sur, Buenos Aires; ubicación orientativa, no ruta ni punto de encuentro confirmado.",
+      "mapUrl": "https://www.openstreetmap.org/search?query=Reserva%20Ecol%C3%B3gica%20Costanera%20Sur%2C%20Buenos%20Aires%20Argentina",
+      "sourceIds": [
+        "BA-RESERVA"
       ]
     }
   ],
@@ -159,7 +189,7 @@
   ],
   "editorial": {
     "documentaryStatus": "sources-checked",
-    "updatedAt": "2026-10-24",
+    "updatedAt": "2026-10-25",
     "origin": {
       "kind": "git-editorial",
       "legacyGuideIds": [

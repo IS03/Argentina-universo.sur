@@ -1,0 +1,587 @@
+{
+  "schemaVersion": 1,
+  "baseCommit": "aeac1d1d99506373cf95ef262e3fad6383817588",
+  "checkedAt": "2026-10-25",
+  "baseline": {
+    "caba": {
+      "fileSha256": "246d052bcd42fc94f0b29fd937f80c24cb05dbedaac12000e3081094dd74d2c4",
+      "id": "AUS-ESC-CABA-EDITORIAL-01",
+      "legacyGuideIds": [
+        "esc_06"
+      ],
+      "status": "draft",
+      "publicationAuthorized": false,
+      "review": null,
+      "authorizationSha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+    },
+    "chaco": {
+      "fileSha256": "37c0b614c8188f72d983290e06fb6a2c44fba49a9914c5fd9af0ef2ce739c778",
+      "id": "AUS-ESC-CHACO-EDITORIAL-01",
+      "legacyGuideIds": [
+        "esc_14"
+      ],
+      "status": "draft",
+      "publicationAuthorized": false,
+      "review": null,
+      "authorizationSha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+    },
+    "el-calafate-y-el-chalten": {
+      "fileSha256": "6e27c984dce250d224f4bc24d150306468259e298ca3eab75f2e4c5005e0fb1f",
+      "id": "AUS-ESC-EL-CALAFATE-Y-EL-CHALTEN-EDITORIAL-01",
+      "legacyGuideIds": [
+        "esc_01"
+      ],
+      "status": "draft",
+      "publicationAuthorized": false,
+      "review": null,
+      "authorizationSha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+    },
+    "el-palmar": {
+      "fileSha256": "a86d1c1b3442a18d0e207fb79f6f00172dd003277268063ab5a8b33d834b9488",
+      "id": "AUS-ESC-EL-PALMAR-EDITORIAL-01",
+      "legacyGuideIds": [],
+      "status": "draft",
+      "publicationAuthorized": true,
+      "review": null,
+      "authorizationSha256": "94ba2b4d1ee25bf123891d2bdc51890b3fb8390c01ac66187d18fd497fbb77be"
+    },
+    "entre-rios": {
+      "fileSha256": "253f86efb2a79918e2df892034a0a580f9b23d8d4516e886acea0b61455d34c3",
+      "id": "AUS-ESC-ENTRE-RIOS-EDITORIAL-01",
+      "legacyGuideIds": [
+        "esc_11"
+      ],
+      "status": "draft",
+      "publicationAuthorized": false,
+      "review": null,
+      "authorizationSha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+    },
+    "formosa": {
+      "fileSha256": "71a44a143ff6c09c31d1a181031201a0ff992bac530c51cf1ca25fc07000737a",
+      "id": "AUS-ESC-FORMOSA-EDITORIAL-01",
+      "legacyGuideIds": [
+        "esc_23"
+      ],
+      "status": "draft",
+      "publicationAuthorized": false,
+      "review": null,
+      "authorizationSha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+    },
+    "jujuy": {
+      "fileSha256": "e0cead40d912b960399afbcb4ad9b97cd8a881ca8c8a4fcabb02f9a93b03c53e",
+      "id": "AUS-ESC-JUJUY-EDITORIAL-01",
+      "legacyGuideIds": [
+        "esc_05"
+      ],
+      "status": "draft",
+      "publicationAuthorized": false,
+      "review": null,
+      "authorizationSha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+    },
+    "la-pampa": {
+      "fileSha256": "d46c51fac2523cf733096fbebaf6b43e7ba2d6a79a08a8f1649d0a1d762a28e2",
+      "id": "AUS-ESC-LA-PAMPA-EDITORIAL-01",
+      "legacyGuideIds": [
+        "esc_22"
+      ],
+      "status": "draft",
+      "publicationAuthorized": false,
+      "review": null,
+      "authorizationSha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+    },
+    "mendoza": {
+      "fileSha256": "2ce5c00ce9d5606cd822f404fcdf061f735bb581222f2a05b1ed9482152ae7a2",
+      "id": "AUS-ESC-MENDOZA-EDITORIAL-01",
+      "legacyGuideIds": [
+        "esc_15"
+      ],
+      "status": "draft",
+      "publicationAuthorized": false,
+      "review": null,
+      "authorizationSha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+    },
+    "misiones": {
+      "fileSha256": "994225c765b374e2095dbaaf8b9314d39c6b4efaf7e7b31a0d84cefefbfc8a4f",
+      "id": "AUS-ESC-MISIONES-EDITORIAL-01",
+      "legacyGuideIds": [
+        "esc_21"
+      ],
+      "status": "draft",
+      "publicationAuthorized": false,
+      "review": null,
+      "authorizationSha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+    },
+    "neuquen": {
+      "fileSha256": "8dbb72476c3bec632fac0dd0269ac36989e9b446cae19328f937171f8217d334",
+      "id": "AUS-ESC-NEUQUEN-EDITORIAL-01",
+      "legacyGuideIds": [
+        "esc_19"
+      ],
+      "status": "draft",
+      "publicationAuthorized": false,
+      "review": null,
+      "authorizationSha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+    },
+    "norte-de-cordoba": {
+      "fileSha256": "c6c7c3d2d5f894578076b08745e02674780ce89b45e23cbd0f41c52d25c16a9c",
+      "id": "AUS-ESC-NORTE-DE-CORDOBA-EDITORIAL-01",
+      "legacyGuideIds": [
+        "esc_10"
+      ],
+      "status": "draft",
+      "publicationAuthorized": false,
+      "review": null,
+      "authorizationSha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+    },
+    "pinamar": {
+      "fileSha256": "ade94db66759917cca0e846737c198efb37365c33a31cf329d63118ea77811ab",
+      "id": "AUS-ESC-PINAMAR-EDITORIAL-01",
+      "legacyGuideIds": [
+        "esc_03"
+      ],
+      "status": "draft",
+      "publicationAuthorized": false,
+      "review": null,
+      "authorizationSha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+    },
+    "puerto-iguazu": {
+      "fileSha256": "5c8b50456a328bc81fbec9a9f885e4d0ef16aa33b55022b83376330a636284ce",
+      "id": "AUS-ESC-PUERTO-IGUAZU-EDITORIAL-01",
+      "legacyGuideIds": [
+        "esc_02"
+      ],
+      "status": "draft",
+      "publicationAuthorized": false,
+      "review": null,
+      "authorizationSha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+    },
+    "puerto-madryn": {
+      "fileSha256": "f8d6cd1b7e0bb7bf11b97a04368398a45f78510b13d7815c812f60c0dc48e608",
+      "id": "AUS-ESC-PUERTO-MADRYN-EDITORIAL-01",
+      "legacyGuideIds": [
+        "esc_04"
+      ],
+      "status": "draft",
+      "publicationAuthorized": false,
+      "review": null,
+      "authorizationSha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+    },
+    "rio-gallegos": {
+      "fileSha256": "6c44f02df4283300a2ec44dc4bd71609def912603160bed329f993a50c3156a4",
+      "id": "AUS-ESC-RIO-GALLEGOS-EDITORIAL-01",
+      "legacyGuideIds": [
+        "esc_18"
+      ],
+      "status": "draft",
+      "publicationAuthorized": false,
+      "review": null,
+      "authorizationSha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+    },
+    "salta": {
+      "fileSha256": "7961967679a72c04f100a39da99e23f082d116b98e8f91da39b34c4002d4bf03",
+      "id": "AUS-ESC-SALTA-EDITORIAL-01",
+      "legacyGuideIds": [
+        "esc_09"
+      ],
+      "status": "draft",
+      "publicationAuthorized": false,
+      "review": null,
+      "authorizationSha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+    },
+    "san-carlos-de-bariloche": {
+      "fileSha256": "09108a05a8ea04f91789a44abfe76464dd9a1e6c10a06dbe6b6c994a92c59bdd",
+      "id": "AUS-ESC-SAN-CARLOS-DE-BARILOCHE-EDITORIAL-01",
+      "legacyGuideIds": [
+        "esc_08"
+      ],
+      "status": "draft",
+      "publicationAuthorized": false,
+      "review": null,
+      "authorizationSha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+    },
+    "san-juan": {
+      "fileSha256": "d572cce6b2a8d1647d4b25dae9a83a3ca85a5c4148bdc532e4540421950775f5",
+      "id": "AUS-ESC-SAN-JUAN-EDITORIAL-01",
+      "legacyGuideIds": [
+        "esc_16"
+      ],
+      "status": "draft",
+      "publicationAuthorized": false,
+      "review": null,
+      "authorizationSha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+    },
+    "san-luis": {
+      "fileSha256": "72c0cd18a70c7deed7ab6c8de278b557c0082ac48b00d43c380b479278c43c97",
+      "id": "AUS-ESC-SAN-LUIS-EDITORIAL-01",
+      "legacyGuideIds": [
+        "esc_17"
+      ],
+      "status": "draft",
+      "publicationAuthorized": false,
+      "review": null,
+      "authorizationSha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+    },
+    "santiago-del-estero": {
+      "fileSha256": "d81415b4ca94505623a2ed73ab53418b2f56b2101d5c4af6961c841370d830bd",
+      "id": "AUS-ESC-SANTIAGO-DEL-ESTERO-EDITORIAL-01",
+      "legacyGuideIds": [
+        "esc_20"
+      ],
+      "status": "draft",
+      "publicationAuthorized": false,
+      "review": null,
+      "authorizationSha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+    },
+    "sierra-de-la-ventana": {
+      "fileSha256": "bf2f3585edfc7a0521837e71e2c997963b1408aa25bbef2e6a2f1248653af8fe",
+      "id": "AUS-ESC-SIERRA-DE-LA-VENTANA-EDITORIAL-01",
+      "legacyGuideIds": [
+        "esc_07"
+      ],
+      "status": "draft",
+      "publicationAuthorized": false,
+      "review": null,
+      "authorizationSha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+    },
+    "talampaya-e-ischigualasto": {
+      "fileSha256": "932f899493ac7c0fc337256c721c03f8efecd461abb7052235fb0ff807c22335",
+      "id": "AUS-ESC-TALAMPAYA-E-ISCHIGUALASTO-EDITORIAL-01",
+      "legacyGuideIds": [
+        "esc_13"
+      ],
+      "status": "draft",
+      "publicationAuthorized": false,
+      "review": null,
+      "authorizationSha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+    },
+    "ushuaia": {
+      "fileSha256": "3d451186291ef6c00c1fba8be010976cd244ce8d7924a9868aa83704c1565b5c",
+      "id": "AUS-ESC-USHUAIA-EDITORIAL-01",
+      "legacyGuideIds": [
+        "esc_12"
+      ],
+      "status": "draft",
+      "publicationAuthorized": false,
+      "review": null,
+      "authorizationSha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+    }
+  },
+  "historicalFiles": {
+    "docs/pr13/B02.md": "e6cf332e4ab3d4ad2a8a937addfdc97d8a372a844634656e307fde1ef1724f98",
+    "docs/pr13/B03.md": "cb13772f3a79c6f33d07a3ea7f0508838a2ea0c4bfe902751856a26de5b98b99",
+    "docs/pr13/B04.md": "5f2c5c02dba25207b4c43b56dc48233fa7d798d84117157bd30e3e5a7875db39",
+    "docs/pr13/B05.md": "e8d662e029084f61cf3a1ac3c4a36c89c59d734c9f1401f82b9ea49fb315eb6b",
+    "docs/pr13/B06.md": "3ae038efc588268493cb03dd0c9199321dfe78938ad8511c7484da4961b47168",
+    "docs/pr13/CONTRADICTIONS.md": "c69be06824b67e288c5764b5e20c122bfd15d2fb6efe6b8ceccbcb8f15a2d1ae",
+    "docs/pr13/EDITORIAL-INVENTORY.md": "e5f0c05d03cad9226422baee34829c6b949154088e015daeec34df5faef64cf4",
+    "docs/pr13/PDF-MATRIX.md": "7b94b40ba08ee59e85bf4826b1b45d76e1438e402a5770858d1d98f1d6975e1f",
+    "docs/pr13/README.md": "1d413a8859e645ad4c545c09ec9787007f53b71d8031366941d5922bead33a3d",
+    "docs/pr13/RELEASE-PLAN.md": "85c98b857c9a5f507f0a80694ee6a6f301dc839c96c63dbf88dd65a5c8204d98",
+    "docs/pr13/RESULTS.md": "87c0e44fe79f8a114e1605f9ddc0d0609a68834c406985018d7bb1889b78cf7e",
+    "docs/pr13/SOURCES.md": "0b1648d643715b0d6696a4d3d43692592b6790b0d8cfe7497e782b2b52237b5b",
+    "docs/pr13/evidence/build-consent-test.json": "4fed669027123c99cb1ba2e44e2661809ff5976ffc5c678efef848fab713b7b9",
+    "docs/pr13/evidence/build-preview.json": "6b5b4cd90a11d9f8f136ecffc40d079e7637599d7b80f3688bac94c24677a8c3",
+    "docs/pr13/evidence/build-production-audit.json": "cb8e7fbcfd13fe84d39c2f8bf2af153ff1ccaf08a2c720750e3fe1935c073011",
+    "docs/pr13/evidence/editorial-security-consent-test.json": "0c78a3b6f7e7e5582f7f2471a0ccd6b6be97d3231a3bff43eab74663cbc6e1d0",
+    "docs/pr13/evidence/editorial-security-next.json": "7943743e9becc0ad3d10096bf96b87ba87a21a6021ab3a879cf6501668021624",
+    "docs/pr13/evidence/editorial-security-preview.json": "100f69f4b0e5a08047158a555a5358a106b231c6df6d0fd03444924c600ace9b",
+    "docs/pr13/evidence/editorial-security-production-audit.json": "0c78a3b6f7e7e5582f7f2471a0ccd6b6be97d3231a3bff43eab74663cbc6e1d0",
+    "docs/pr13/evidence/pages-browser-summary.json": "b940b14c56dfd134c9d67cbe039c881b4ced72eb7e5fe91fc504e476a8134f7a",
+    "docs/pr13/evidence/seo-consent-test.json": "94b12aa3759c517ca3f0baebd474805fa242c565fd34e25c45d1bccc986101bf",
+    "docs/pr13/evidence/seo-preview.json": "7bae24a44394390af6f037e000e388fcf3337aeedaff4392e4070ac1453a4715",
+    "docs/pr13/evidence/seo-production-audit.json": "0c342cfb3d4cb94d908476734349bb56e272bdf6a7731c6fccb444a119e317d7",
+    "docs/pr13/existing-content-sha256.json": "33818e872bc74d098ae6c43e48220dee2837e9dcda92f663058e72523a61acf0",
+    "docs/pr13/pdf-equivalence.json": "5361d4b892e4caca89e9356ebf75ccc623a24cec71d33b83a0d71d4c8d5e2c99",
+    "docs/pr13/pdf-link-check.json": "0bb5d3778d3ac97d2eba05e1178c8f1952e63b479332d4f0313ab54c93175a9e",
+    "docs/pr13/photo-proposals.json": "923de4397246218f537436db2a21651392beaf1eb6e9f0ddf66be7833f9be06a",
+    "docs/pr13/research-register.json": "d63dd31a6fb74ea1b10e7659ddcf5dbd2ebce63c48c686d9428575eb13c2f19f",
+    "docs/pr13/review/chaco.md": "38ca3a2287c0a48d54bc0957d2fb67a54294e901979f15046d94d0accfe2b066",
+    "docs/pr13/review/el-calafate-y-el-chalten.md": "451d3debbeb9cac7944e4932d2387e0bb07a4e21fed455bcd7b1898883c5716a",
+    "docs/pr13/review/entre-rios.md": "8b8fefb083455f4ffa470bce7ed858dae745bd245edebb22c6c42e063e270766",
+    "docs/pr13/review/formosa.md": "6786788b2ccfdfe78ea48dcd75beb5c0fde6912c960b08191666da201bc5ecc0",
+    "docs/pr13/review/jujuy.md": "a4889e2c48e4c9fba5069899322fbfa4f5f68bb6ee6653c8257fe2e7762bad0d",
+    "docs/pr13/review/la-pampa.md": "248b8b8bb07e7f5e2503ef154535e1b0556ff232d3e9fb781cde64880954f336",
+    "docs/pr13/review/mendoza.md": "01f0259f8cd090a3e291943c915c438eeef03986e9f79b479f4b0f40b43d681e",
+    "docs/pr13/review/misiones.md": "b16d28572436dfe4d28f8c7e2759eed85546d6e3d451f65ae3419269dc01472b",
+    "docs/pr13/review/neuquen.md": "795e430452012c35af2a81c1ff87c06d996ed2ba1d9f0867dac548213a93ff58",
+    "docs/pr13/review/norte-de-cordoba.md": "b9d461a8153a50e6f159c531cbfe013625b2824a1383746f5fe9c89ab8f35f2f",
+    "docs/pr13/review/pinamar.md": "80cd09619abf08187868edb514dbd5e6e48284a8da54d4cd3310bd23d65c8637",
+    "docs/pr13/review/puerto-madryn.md": "f9bc781758eb689bdd6c2403cc56c38163d2a833c18221704dabd7a633b9c5e5",
+    "docs/pr13/review/rio-gallegos.md": "e9879ee11345c49ceeb464f94aa2fa7e8f227c7503f9fa68f60bdfd313e40920",
+    "docs/pr13/review/salta.md": "c81e59539be838cf737b91c0d92b838737b840a9438bda89edb2847277a68362",
+    "docs/pr13/review/san-carlos-de-bariloche.md": "bb51fd68abc318d65db1fd13c16e68504258c2dc746e4f2383266bcce04619c9",
+    "docs/pr13/review/san-juan.md": "9c569d407765485938419405160e9fa99a0dff7ece504417a3390d23b26e8bdb",
+    "docs/pr13/review/san-luis.md": "6d134e878a0f9dce9c5bed063567e9f998a1abb72c99695af5b9b762aad5b3ef",
+    "docs/pr13/review/santiago-del-estero.md": "c2c4f84d961b5ec18ee7e1451c0694b1a3437d151fe4905451df43996a5e5146",
+    "docs/pr13/review/sierra-de-la-ventana.md": "dae0dd89f43b4aa2f349acc36e92a6245553185d6f67c4a953ca2592fdccc188",
+    "docs/pr13/review/ushuaia.md": "47e840b09021660898642c09d4d25607d3a561f05198c978a0a643c50db7d9c5"
+  },
+  "records": [
+    {
+      "slug": "caba",
+      "id": "AUS-ESC-CABA-EDITORIAL-01",
+      "group": "pilot",
+      "before": {
+        "fileSha256": "246d052bcd42fc94f0b29fd937f80c24cb05dbedaac12000e3081094dd74d2c4",
+        "contentSha256": "525321f62ee2e4359c179c110344bd882204e4a76a168747de32407e2c46e18f",
+        "state": {
+          "status": "draft",
+          "publicationAuthorized": false,
+          "review": null
+        }
+      },
+      "after": {
+        "fileSha256": "3e7e3daadd51d413ada74ef6b7c469350b7e022b5af1ef953594671945a8b98f",
+        "contentSha256": "f02a7479c86258e097a478bdbef51b74ef4221b815009d39a7c322aa96637042",
+        "state": {
+          "status": "draft",
+          "publicationAuthorized": false,
+          "review": null
+        }
+      },
+      "legacyGuideIds": [
+        "esc_06"
+      ],
+      "masterRefs": [],
+      "changedSections": [
+        "que-conocer",
+        "barrios-y-patrimonio",
+        "naturaleza-en-la-ciudad",
+        "recorridos-por-intereses",
+        "informacion-practica"
+      ],
+      "humanReview": null
+    },
+    {
+      "slug": "puerto-iguazu",
+      "id": "AUS-ESC-PUERTO-IGUAZU-EDITORIAL-01",
+      "group": "pilot",
+      "before": {
+        "fileSha256": "5c8b50456a328bc81fbec9a9f885e4d0ef16aa33b55022b83376330a636284ce",
+        "contentSha256": "9432f7406ef6ab3a8a3edc647ecf7b8e657fd43ae4b338ba3d905db92df29f4e",
+        "state": {
+          "status": "draft",
+          "publicationAuthorized": false,
+          "review": null
+        }
+      },
+      "after": {
+        "fileSha256": "5a8d75e155884e96198afa2b7e9fc588561788304a3c19fd51311c23e0928c3e",
+        "contentSha256": "017dadbb587385b7b3994a67a30b0f57f3dd5054df4a97da185a7624e562a197",
+        "state": {
+          "status": "draft",
+          "publicationAuthorized": false,
+          "review": null
+        }
+      },
+      "legacyGuideIds": [
+        "esc_02"
+      ],
+      "masterRefs": [],
+      "changedSections": [
+        "elegir-los-paseos",
+        "interpretacion-y-cultura",
+        "puerto-iguazu",
+        "planificar-la-visita"
+      ],
+      "humanReview": null
+    },
+    {
+      "slug": "talampaya-e-ischigualasto",
+      "id": "AUS-ESC-TALAMPAYA-E-ISCHIGUALASTO-EDITORIAL-01",
+      "group": "pilot",
+      "before": {
+        "fileSha256": "932f899493ac7c0fc337256c721c03f8efecd461abb7052235fb0ff807c22335",
+        "contentSha256": "d7375efc0b58e7529c99b722d3881bee5147fb1e888bc0a07beba789fcefd46b",
+        "state": {
+          "status": "draft",
+          "publicationAuthorized": false,
+          "review": null
+        }
+      },
+      "after": {
+        "fileSha256": "c6076d6a38614c1cfe15a378dfb0a0013b66d74e72e9083bfb12b6ef78ccd4c5",
+        "contentSha256": "08aed22195ff6bb69d1a984fb681bfcefae159353b2302666c3c7b83266609c6",
+        "state": {
+          "status": "draft",
+          "publicationAuthorized": false,
+          "review": null
+        }
+      },
+      "legacyGuideIds": [
+        "esc_13"
+      ],
+      "masterRefs": [],
+      "changedSections": [
+        "talampaya",
+        "ischigualasto",
+        "organizar-la-escapada"
+      ],
+      "humanReview": null
+    },
+    {
+      "slug": "el-palmar",
+      "id": "AUS-ESC-EL-PALMAR-EDITORIAL-01",
+      "group": "pilot",
+      "before": {
+        "fileSha256": "a86d1c1b3442a18d0e207fb79f6f00172dd003277268063ab5a8b33d834b9488",
+        "contentSha256": "4a676aa05ef243d003a8c783b5f285695a3aa35d30799b5abde73bcb73a9a801",
+        "state": {
+          "status": "draft",
+          "publicationAuthorized": true,
+          "review": null
+        }
+      },
+      "after": {
+        "fileSha256": "4832ccb40219b9703f8619ad67fbd18a1753c281191ed8addd532fbcd0b32695",
+        "contentSha256": "bf8456e4e9cb88aac5f590f7e0e75d4d63e22e2be0397ae325a8c7dd7d37b2d0",
+        "state": {
+          "status": "draft",
+          "publicationAuthorized": true,
+          "review": null
+        }
+      },
+      "legacyGuideIds": [],
+      "masterRefs": [],
+      "changedSections": [
+        "palmares-y-ambientes",
+        "senderos-y-observacion",
+        "historia-del-palmar",
+        "organizar-la-visita",
+        "entorno-regional"
+      ],
+      "humanReview": null
+    },
+    {
+      "slug": "jujuy",
+      "id": "AUS-ESC-JUJUY-EDITORIAL-01",
+      "group": "priority-gap",
+      "before": {
+        "fileSha256": "e0cead40d912b960399afbcb4ad9b97cd8a881ca8c8a4fcabb02f9a93b03c53e",
+        "contentSha256": "6cb2df2157a21819fc0a84c667ab368c97e2a247b9cc0f87f16b0b20910553c7",
+        "state": {
+          "status": "draft",
+          "publicationAuthorized": false,
+          "review": null
+        }
+      },
+      "after": {
+        "fileSha256": "e9e03c160de23d6a67044952df0d550345a152778a2de342c595c40d48efce60",
+        "contentSha256": "c94afd3fc3d9e4d5ca44c75a3723019fcf814929d266a1d215abe9f9512b5271",
+        "state": {
+          "status": "draft",
+          "publicationAuthorized": false,
+          "review": null
+        }
+      },
+      "legacyGuideIds": [
+        "esc_05"
+      ],
+      "masterRefs": [],
+      "changedSections": [
+        "purmamarca",
+        "tilcara",
+        "humahuaca-hornocal"
+      ],
+      "humanReview": null
+    },
+    {
+      "slug": "san-luis",
+      "id": "AUS-ESC-SAN-LUIS-EDITORIAL-01",
+      "group": "priority-gap",
+      "before": {
+        "fileSha256": "72c0cd18a70c7deed7ab6c8de278b557c0082ac48b00d43c380b479278c43c97",
+        "contentSha256": "73d608e71ed53d75d0e0c0c6c5e7342c1a6ad6c46912367ceed21ef0a936875c",
+        "state": {
+          "status": "draft",
+          "publicationAuthorized": false,
+          "review": null
+        }
+      },
+      "after": {
+        "fileSha256": "9b2d5816d633bdde415c625fad40e38551a268582c55c34c2c88d1ced5a611a8",
+        "contentSha256": "47f7427e3d1ea46d436c69616cae6dd9169198189b7948b0cc499d734067ed7c",
+        "state": {
+          "status": "draft",
+          "publicationAuthorized": false,
+          "review": null
+        }
+      },
+      "legacyGuideIds": [
+        "esc_17"
+      ],
+      "masterRefs": [],
+      "changedSections": [
+        "la-punta",
+        "trapiche-pancanta"
+      ],
+      "humanReview": null
+    },
+    {
+      "slug": "entre-rios",
+      "id": "AUS-ESC-ENTRE-RIOS-EDITORIAL-01",
+      "group": "priority-gap",
+      "before": {
+        "fileSha256": "253f86efb2a79918e2df892034a0a580f9b23d8d4516e886acea0b61455d34c3",
+        "contentSha256": "1d37eca02b68a215d3ef4061d5215ab6b7792bbf9b3f7002f205601ba6c66ee9",
+        "state": {
+          "status": "draft",
+          "publicationAuthorized": false,
+          "review": null
+        }
+      },
+      "after": {
+        "fileSha256": "bf1e0fde2db6af83d780dc68ca67be1a818dea7eb20fc4e53db5940011ce9bee",
+        "contentSha256": "90827634be46208733dd38af252a8eb95576ad2a14339db7d705bafdf719c43a",
+        "state": {
+          "status": "draft",
+          "publicationAuthorized": false,
+          "review": null
+        }
+      },
+      "legacyGuideIds": [
+        "esc_11"
+      ],
+      "masterRefs": [],
+      "changedSections": [
+        "organizar",
+        "termas",
+        "vino-y-ruralidad",
+        "colonias-judias"
+      ],
+      "humanReview": null
+    },
+    {
+      "slug": "rio-gallegos",
+      "id": "AUS-ESC-RIO-GALLEGOS-EDITORIAL-01",
+      "group": "priority-gap",
+      "before": {
+        "fileSha256": "6c44f02df4283300a2ec44dc4bd71609def912603160bed329f993a50c3156a4",
+        "contentSha256": "7adf32d05228f1a79815c1db75180aba37f46e12c1f8d48cd8221e3ade19ecca",
+        "state": {
+          "status": "draft",
+          "publicationAuthorized": false,
+          "review": null
+        }
+      },
+      "after": {
+        "fileSha256": "3d340ba52a2f6d962aef3834533a43d4a7ca73b6764ef9869aab9d917f418869",
+        "contentSha256": "2ddbded25b229c8fce43955b92ca1d2b4918f6b0ea45c5e56d876b900ce6d252",
+        "state": {
+          "status": "draft",
+          "publicationAuthorized": false,
+          "review": null
+        }
+      },
+      "legacyGuideIds": [
+        "esc_18"
+      ],
+      "masterRefs": [],
+      "changedSections": [
+        "ciudad",
+        "gobernacion"
+      ],
+      "humanReview": null
+    }
+  ]
+}

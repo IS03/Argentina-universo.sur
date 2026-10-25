@@ -52,6 +52,31 @@
       "title": "Turismo de Río Gallegos — Guía oficial",
       "url": "https://turismo.riogallegos.gob.ar/",
       "checkedAt": "2026-10-24"
+    },
+    {
+      "id": "RG-PIONEROS",
+      "title": "Municipalidad de Río Gallegos — Museo de los Pioneros, Casa Parisi",
+      "url": "https://turismo.riogallegos.gob.ar/#museo-de-los-pioneros-casa-parisi",
+      "checkedAt": "2026-10-25"
+    },
+    {
+      "id": "RG-FERROVIARIO",
+      "title": "Municipalidad de Río Gallegos — Museo Ferroviario",
+      "url": "https://turismo.riogallegos.gob.ar/#museo-ferroportuario",
+      "checkedAt": "2026-10-25"
+    },
+    {
+      "id": "RG-GOBERNACION",
+      "title": "Municipalidad de Río Gallegos — Circuito de la Gobernación",
+      "url": "https://turismo.riogallegos.gob.ar/#circuito-de-la-gobernacion",
+      "checkedAt": "2026-10-25"
+    },
+    {
+      "id": "RG-MOLINA",
+      "title": "Gobierno de Santa Cruz — Museo Padre Molina y preservación de fósiles",
+      "url": "https://noticias.santacruz.gob.ar/organismos/gobierno/cultura/el-museo-padre-molina-fue-seleccionado-para-un-proyecto-de-capacitacion-en-preservacion-de-fosiles",
+      "checkedAt": "2026-10-25",
+      "publishedAt": "2026-05-27"
     }
   ],
   "sections": [
@@ -69,13 +94,27 @@
     {
       "id": "ciudad",
       "kind": "culture",
-      "title": "Museos con temas diferentes",
+      "title": "Museos: historias del poblamiento, el ferrocarril y la ciencia",
       "sourceIds": [
-        "RG-TURISMO"
+        "RG-PIONEROS",
+        "RG-FERROVIARIO",
+        "RG-MOLINA"
       ],
       "paragraphs": [
-        "El Museo de los Pioneros, el Ferroviario Roberto Galián y el Centro de Interpretación del Estuario aparecen entre las referencias del catálogo provincial. Ofrecen temas distintos para investigar: poblamiento, transporte y ambiente. No se atribuye a todos un mismo recorrido ni se traslada el horario de la oficina turística al de sus salas.",
-        "Elegí la institución por el tema que te interesa y confirmá apertura y modalidad. Un listado provincial ayuda a orientar la consulta, pero no demuestra que una muestra específica siga montada. Los circuitos urbanos también requieren confirmar qué propuesta se realiza y en qué condiciones."
+        "El Museo de los Pioneros funciona en la Casa Parisi y reúne objetos de familias, fotografías y testimonios de la historia local. El Ferroviario permite investigar otra dimensión: la relación entre el puerto de Río Gallegos y los trenes del carbón de Río Turbio, a través de herramientas, imágenes y material ferroviario.",
+        "El Museo Provincial Padre Manuel Jesús Molina conserva patrimonio científico de Santa Cruz. La información institucional reciente documenta trabajo de preservación paleontológica; no equivale a una cartelera de exposiciones visitables. Elegí el museo por el tema y confirmá con su responsable recepción, muestra y condiciones de acceso."
+      ]
+    },
+    {
+      "id": "gobernacion",
+      "kind": "activities",
+      "title": "Circuito de la Gobernación: leer la ciudad a través de sus edificios",
+      "sourceIds": [
+        "RG-GOBERNACION"
+      ],
+      "paragraphs": [
+        "El circuito municipal relaciona Casa de Gobierno, el Balcón de Roca, Casa Histórica Gregores y espacios de memoria policial y naval. Propone interpretar la arquitectura y la organización del antiguo territorio de Santa Cruz durante el gobierno de Juan Manuel Gregores.",
+        "Usá esas referencias para preparar un paseo por la historia urbana, sin deducir acceso libre a los edificios que siguen teniendo funciones institucionales. El catálogo no demuestra que exista una salida guiada para tu fecha. Confirmá por separado qué interiores se pueden visitar y cuál es el recorrido ofrecido."
       ]
     },
     {
@@ -155,6 +194,24 @@
         "RG-PROVINCIA"
       ],
       "mapUrl": "https://www.openstreetmap.org/search?query=Reserva%20Provincial%20Cabo%20V%C3%ADrgenes%2C%20Santa%20Cruz%20Argentina"
+    },
+    {
+      "id": "pioneros",
+      "label": "Museo de los Pioneros, Río Gallegos",
+      "description": "Museo de los Pioneros, Río Gallegos; ubicación orientativa, no ruta ni punto de encuentro confirmado.",
+      "mapUrl": "https://www.openstreetmap.org/search?query=Museo%20de%20los%20Pioneros%2C%20R%C3%ADo%20Gallegos%20Argentina",
+      "sourceIds": [
+        "RG-PIONEROS"
+      ]
+    },
+    {
+      "id": "ferroviario",
+      "label": "Museo Ferroviario, Río Gallegos",
+      "description": "Museo Ferroviario, Río Gallegos; ubicación orientativa, no ruta ni punto de encuentro confirmado.",
+      "mapUrl": "https://www.openstreetmap.org/search?query=Museo%20Ferroviario%2C%20R%C3%ADo%20Gallegos%20Argentina",
+      "sourceIds": [
+        "RG-FERROVIARIO"
+      ]
     }
   ],
   "photos": [],
@@ -174,7 +231,7 @@
   ],
   "editorial": {
     "documentaryStatus": "sources-checked",
-    "updatedAt": "2026-10-24",
+    "updatedAt": "2026-10-25",
     "origin": {
       "kind": "git-editorial",
       "legacyGuideIds": [
@@ -188,7 +245,9 @@
       "Fotografías: derechos y selección pendientes",
       "Equivalencia con el PDF y respaldo externo sin aprobar",
       "Completar fuentes de administradores de Cabo Vírgenes y Laguna Azul",
-      "INCOMPLETA para agenda urbana del PDF: falta evidencia específica del planetario y parques temáticos"
+      "Planetario: falta fuente primaria legible de administración y programa actual; no confundirlo con el planetario móvil de una función de 2025",
+      "Parques temáticos del PDF y confirmaciones directas de apertura de museos pendientes",
+      "El catálogo municipal contiene una ficha de circuito ferroviario titulada Página no encontrada; no se ofrece como recorrido contratado"
     ]
   }
 }
