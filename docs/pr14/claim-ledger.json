@@ -136,7 +136,7 @@
   },
   {
     "slug": "puerto-iguazu",
-    "contentSha256": "491fbe5b5edaab009943b3f29d03a5c1c105b3512699a6117d3b6da5bd5f4cf2",
+    "contentSha256": "017dadbb587385b7b3994a67a30b0f57f3dd5054df4a97da185a7624e562a197",
     "ledger": [
       {
         "id": "introduction",
@@ -192,7 +192,7 @@
         "sourceIds": [
           "IGU-PANORAMA"
         ],
-        "textSha256": "b5c6f4d47969f85d3c5e268b782e2420b27d323ec0584d6404dbc4785ee94a5d",
+        "textSha256": "b6b357e1c09c7a1f8a8e697598314d3ead430986b83175c1b923c37dc92d03d3",
         "assessment": "documentary-supported; operating availability not certified"
       },
       {

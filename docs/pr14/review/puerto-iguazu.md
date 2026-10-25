@@ -1,7 +1,7 @@
 # Puerto Iguazú: cataratas, selva y cultura de frontera
 
 **Documento de revisión. Estado: draft. Publicable: no.**
-ID: AUS-ESC-PUERTO-IGUAZU-EDITORIAL-01. SHA-256 del contenido: `491fbe5b5edaab009943b3f29d03a5c1c105b3512699a6117d3b6da5bd5f4cf2`.
+ID: AUS-ESC-PUERTO-IGUAZU-EDITORIAL-01. SHA-256 del contenido: `017dadbb587385b7b3994a67a30b0f57f3dd5054df4a97da185a7624e562a197`.
 La generación de este documento no otorga aprobación ni permiso de publicación.
 
 Puerto Iguazú y Parque Nacional Iguazú · Misiones
@@ -31,7 +31,7 @@ Fuentes: IGU-ACTIVIDADES
 
 El Centro de Visitantes Yvyrá Retá presenta la diversidad de plantas y animales de la Selva Paranense y las culturas vinculadas con la región. La lectura de ese espacio aporta contexto para reconocer que las cataratas pertenecen a un territorio con historia y comunidades, además de valor paisajístico.
 
-La Feria Artesanal Yhary y la Feria del Viejo Hotel aparecen en la información de APN como referencias de la producción artesanal guaraní. Consultá su funcionamiento antes de incluirlas y acercate con respeto a quienes comparten su trabajo. Una visita al parque no incluye por sí sola el acceso a comunidades o actividades culturales fuera de él.
+APN relaciona la Feria Artesanal Yhary con la presencia guaraní y menciona también la Feria del Viejo Hotel entre las propuestas del área. Consultá su funcionamiento antes de incluirlas y acercate con respeto a quienes comparten su trabajo. Una visita al parque no incluye por sí sola el acceso a comunidades o actividades culturales fuera de él.
 
 Fuentes: IGU-PANORAMA
 
@@ -94,7 +94,7 @@ Parque Nacional Iguazú, Misiones. Consultar la portada y el acceso habilitado c
 
 ## Informe de revisión PR14 (documental, sin aprobación humana)
 
-Consulta: 2026-10-25. Archivo JSON: `717ea0af59c9ed6b241e65a34456b56f4cee309629f98eab28bdeccd301db658`. Hash anterior de contenido: `9432f7406ef6ab3a8a3edc647ecf7b8e657fd43ae4b338ba3d905db92df29f4e`.
+Consulta: 2026-10-25. Archivo JSON: `5a8d75e155884e96198afa2b7e9fc588561788304a3c19fd51311c23e0928c3e`. Hash anterior de contenido: `9432f7406ef6ab3a8a3edc647ecf7b8e657fd43ae4b338ba3d905db92df29f4e`.
 
 Grupo: piloto para lectura integral. Esquema: 2. Estado: draft; permiso conservado: false; revisión: null.
 
@@ -141,7 +141,7 @@ Grupo: piloto para lectura integral. Esquema: 2. Estado: draft; permiso conserva
 - elegir-los-paseos:1: `c880b1faeaa66d4ed64b8356c648145eea637593d96b45aafce56fe52ac06b14` · IGU-ACTIVIDADES.
 - elegir-los-paseos:2: `58ff0ee63e587afd376aa76b75cc0c87d881c0b13e80856ca57049e4def4f762` · IGU-ACTIVIDADES.
 - interpretacion-y-cultura:1: `f9c538a737e1637f4339fc840c5ff744ba6418c99aa87cb3d51106ff1c3fffc0` · IGU-PANORAMA.
-- interpretacion-y-cultura:2: `b5c6f4d47969f85d3c5e268b782e2420b27d323ec0584d6404dbc4785ee94a5d` · IGU-PANORAMA.
+- interpretacion-y-cultura:2: `b6b357e1c09c7a1f8a8e697598314d3ead430986b83175c1b923c37dc92d03d3` · IGU-PANORAMA.
 - puerto-iguazu:1: `2fd14fdfa5e5669b36ea57127855f8986b10819346e463af112e0e58cf69d328` · IGU-CIUDAD, IGU-PANORAMA.
 - puerto-iguazu:2: `706fb69889517a66f3bd34224895ae9b8d5b4537df9a33ead4e627f0e2acdc61` · IGU-CIUDAD, IGU-PANORAMA.
 - planificar-la-visita:1: `009112680175eda0f51c9bbe6bf766c37c7b2b8e2d46f1bdb841b03ef7b3fb8b` · IGU-ACCESO, IGU-PANORAMA, APN-RESPONSABLE.

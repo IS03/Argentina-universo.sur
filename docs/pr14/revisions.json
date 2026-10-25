@@ -366,8 +366,8 @@
         }
       },
       "after": {
-        "fileSha256": "717ea0af59c9ed6b241e65a34456b56f4cee309629f98eab28bdeccd301db658",
-        "contentSha256": "491fbe5b5edaab009943b3f29d03a5c1c105b3512699a6117d3b6da5bd5f4cf2",
+        "fileSha256": "5a8d75e155884e96198afa2b7e9fc588561788304a3c19fd51311c23e0928c3e",
+        "contentSha256": "017dadbb587385b7b3994a67a30b0f57f3dd5054df4a97da185a7624e562a197",
         "state": {
           "status": "draft",
           "publicationAuthorized": false,

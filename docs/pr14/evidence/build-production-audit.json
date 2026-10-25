@@ -5,11 +5,11 @@
     "errors": 0
   },
   "files": 2062,
-  "bytes": 735380282,
+  "bytes": 735380454,
   "mediaBytes": 80004852,
   "fallbackBytes": 222371,
   "pdfBytes": 633579423,
-  "withoutPdfsBytes": 101800859,
+  "withoutPdfsBytes": 101801031,
   "oversized": [
     {
       "path": "pdf/bariloche.pdf",

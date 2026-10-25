@@ -32,7 +32,7 @@ Original: `/pdf/iguazu_2.pdf`, 14457850 bytes; SHA-256 `7cf128d2f00fe4730b18813b
 
 Una página sirve para ciudad y parque. Wanda y San Ignacio requieren tratamiento regional separado; no declarar equivalencia del PDF completo con esta única ficha.
 
-Texto evaluado: `491fbe5b5edaab009943b3f29d03a5c1c105b3512699a6117d3b6da5bd5f4cf2`. Decisión humana de suficiencia: pendiente.
+Texto evaluado: `017dadbb587385b7b3994a67a30b0f57f3dd5054df4a97da185a7624e562a197`. Decisión humana de suficiencia: pendiente.
 
 ## talampaya-e-ischigualasto
 
