@@ -1,20 +1,26 @@
 import { cp, lstat, mkdir, readdir, readFile, rm, writeFile } from "node:fs/promises";
 import { dirname, join, relative } from "node:path";
 import { brotliDecompressSync, gunzipSync } from "node:zlib";
-import { tripPublishable, publishedTripProjection } from "../../lib/pages/trips.ts";
+import { tripPublishable, publishedTripProjection, validateTripAsOf, buildDate } from "../../lib/pages/trips.ts";
 
 export async function readEditorialTrips(root) {
   const directory = join(root, "content/escapadas");
   const trips = [];
   for (const name of (await readdir(directory)).sort())
     if (name.endsWith(".json"))
-      trips.push(JSON.parse(await readFile(join(directory, name), "utf8")));
+      {
+        const trip = JSON.parse(await readFile(join(directory, name), "utf8"));
+        const errors = validateTripAsOf(trip, buildDate());
+        if (errors.length) throw Error("Invalid editorial input " + name + ": " + errors.join("; "));
+        trips.push(trip);
+      }
   return trips;
 }
 
 // Operates only on the isolated build clone, never the repository content or approval records.
 export async function preparePublicTripInputs(source, trips) {
-  const published = trips.filter(tripPublishable).map(publishedTripProjection);
+  const asOf = buildDate();
+  const published = trips.filter(tripPublishable).map(trip => publishedTripProjection(trip, {asOf}));
   const directory = join(source, "content/escapadas");
   await rm(directory, {recursive: true, force: true});
   await mkdir(directory, {recursive: true});
@@ -57,16 +63,17 @@ function normalize(value) {
   }
   return value.normalize("NFC");
 }
-const privateMarkers = /1fwed8poUbIaLBnMLJta5WkyAnYg_SFc453m-wl3aB1w|spreadsheetId|original_payload|originalPayload|dictamen_publicacion|aprobacion_humana|permiso_publicacion|practica_trazabilidad|practica_campos_permitidos|practica_exclusiones|componentes_condicionados_ids|AUS_PRIVATE_MASTER_CANARY/i;
+const privateMarkers = /1fwed8poUbIaLBnMLJta5WkyAnYg_SFc453m-wl3aB1w|spreadsheetId|original_payload|originalPayload|dictamen_publicacion|aprobacion_humana|permiso_publicacion|practica_trazabilidad|practica_campos_permitidos|practica_exclusiones|componentes_condicionados_ids|AUS_PRIVATE_MASTER_CANARY|masterRefs|pendingReviews|documentaryStatus|retirementApproval|scopeReview|restorationVerified/i;
 const privatePath = /(?:^|\/)(?:\.env(?:\.|$)|master[-_]snapshot|previous[-_]snapshot|import[-_]plan|original_payload|content\/escapadas|\.artifacts\/)|\.(?:xlsx?|csv|tsv)$/i;
 // Scan every non-media file, including extensionless static API responses and unknown auxiliaries.
 const binaryMedia = /\.(?:avif|gif|ico|jpe?g|png|webp|woff2?|ttf|otf|pdf|mp3|mp4|mov|webm)$/i;
 
-export async function auditPublicArtifact(directory, trips) {
+// `include` narrows a mixed build directory (Next's .next) to the files it serves publicly.
+export async function auditPublicArtifact(directory, trips, {include = () => true} = {}) {
   const withheld = trips.filter((trip) => !tripPublishable(trip));
   const needles = withheld.flatMap((trip, index) => [
     { label: `withheld-route-${index + 1}`, value: "/escapadas/" + trip.slug },
-    ...[trip.id, trip.title, trip.description, ...trip.sections.flatMap((s) => s.paragraphs)]
+    ...[trip.id, trip.title, trip.description, ...trip.sections.flatMap((s) => s.paragraphs), ...(trip.operationalNotices ?? []).flatMap((n) => [n.guidance, n.observation])]
       .filter((value) => typeof value === "string" && value.length >= 20)
       .map((value) => ({label: `withheld-content-${index + 1}`, value: normalize(value)})),
   ]);
@@ -80,6 +87,7 @@ export async function auditPublicArtifact(directory, trips) {
         continue;
       }
       if (entry.isDirectory()) { await walk(path); continue; }
+      if (!include(name)) continue;
       counts.files++;
       const normalizedPath = normalize("/" + name);
       if (privatePath.test(name)) errors.push({file: name, rule: "private-input-path"});
@@ -109,8 +117,8 @@ export async function auditPublicArtifact(directory, trips) {
   return { ...counts, withheldRecords: withheld.length, errors, remoteMasterAccessed: false };
 }
 
-export async function assertPublicArtifact(directory, trips) {
-  const report = await auditPublicArtifact(directory, trips);
+export async function assertPublicArtifact(directory, trips, options) {
+  const report = await auditPublicArtifact(directory, trips, options);
   if (report.errors.length) throw Error("Editorial security audit failed: " + JSON.stringify(report.errors));
   return report;
 }

@@ -1,0 +1,279 @@
+{
+  "checkedAt": "2026-10-25T01:13:30.111Z",
+  "method": "HEAD",
+  "bodiesDownloaded": 0,
+  "production": "https://www.argentinauniversosur.com",
+  "preview": "https://argentina-universo-sur-preview.pages.dev",
+  "pdfs": {
+    "total": 24,
+    "ok": 24,
+    "results": [
+      {
+        "id": "esc_08",
+        "path": "/pdf/bariloche.pdf",
+        "expectedBytes": 34489884,
+        "status": 200,
+        "contentType": "application/pdf",
+        "contentLength": 34489884,
+        "location": null,
+        "ok": true
+      },
+      {
+        "id": "esc_06",
+        "path": "/pdf/caba.pdf",
+        "expectedBytes": 37651530,
+        "status": 200,
+        "contentType": "application/pdf",
+        "contentLength": 37651530,
+        "location": null,
+        "ok": true
+      },
+      {
+        "id": "esc_01",
+        "path": "/pdf/cañafate.pdf",
+        "expectedBytes": 19318193,
+        "status": 200,
+        "contentType": "application/pdf",
+        "contentLength": 19318193,
+        "location": null,
+        "ok": true
+      },
+      {
+        "id": "esc_10",
+        "path": "/pdf/cba.pdf",
+        "expectedBytes": 25346217,
+        "status": 200,
+        "contentType": "application/pdf",
+        "contentLength": 25346217,
+        "location": null,
+        "ok": true
+      },
+      {
+        "id": "esc_14",
+        "path": "/pdf/chaco.pdf",
+        "expectedBytes": 23895952,
+        "status": 200,
+        "contentType": "application/pdf",
+        "contentLength": 23895952,
+        "location": null,
+        "ok": true
+      },
+      {
+        "id": "esc_11",
+        "path": "/pdf/entrerios.pdf",
+        "expectedBytes": 29060699,
+        "status": 200,
+        "contentType": "application/pdf",
+        "contentLength": 29060699,
+        "location": null,
+        "ok": true
+      },
+      {
+        "id": "esc_23",
+        "path": "/pdf/formosa.pdf",
+        "expectedBytes": 57013841,
+        "status": 200,
+        "contentType": "application/pdf",
+        "contentLength": 57013841,
+        "location": null,
+        "ok": true
+      },
+      {
+        "id": "esc_18",
+        "path": "/pdf/gallegos.pdf",
+        "expectedBytes": 19784786,
+        "status": 200,
+        "contentType": "application/pdf",
+        "contentLength": 19784786,
+        "location": null,
+        "ok": true
+      },
+      {
+        "id": "esc_02",
+        "path": "/pdf/iguazu_2.pdf",
+        "expectedBytes": 14457850,
+        "status": 200,
+        "contentType": "application/pdf",
+        "contentLength": 14457850,
+        "location": null,
+        "ok": true
+      },
+      {
+        "id": "esc_05",
+        "path": "/pdf/jujuy.pdf",
+        "expectedBytes": 21391638,
+        "status": 200,
+        "contentType": "application/pdf",
+        "contentLength": 21391638,
+        "location": null,
+        "ok": true
+      },
+      {
+        "id": "esc_22",
+        "path": "/pdf/lapampa.pdf",
+        "expectedBytes": 20932838,
+        "status": 200,
+        "contentType": "application/pdf",
+        "contentLength": 20932838,
+        "location": null,
+        "ok": true
+      },
+      {
+        "id": "esc_15",
+        "path": "/pdf/mendoza.pdf",
+        "expectedBytes": 21326786,
+        "status": 200,
+        "contentType": "application/pdf",
+        "contentLength": 21326786,
+        "location": null,
+        "ok": true
+      },
+      {
+        "id": "esc_21",
+        "path": "/pdf/misiones.pdf",
+        "expectedBytes": 23042857,
+        "status": 200,
+        "contentType": "application/pdf",
+        "contentLength": 23042857,
+        "location": null,
+        "ok": true
+      },
+      {
+        "id": "esc_19",
+        "path": "/pdf/neuquen.pdf",
+        "expectedBytes": 45336735,
+        "status": 200,
+        "contentType": "application/pdf",
+        "contentLength": 45336735,
+        "location": null,
+        "ok": true
+      },
+      {
+        "id": "esc_03",
+        "path": "/pdf/pinamar.pdf",
+        "expectedBytes": 19760229,
+        "status": 200,
+        "contentType": "application/pdf",
+        "contentLength": 19760229,
+        "location": null,
+        "ok": true
+      },
+      {
+        "id": "esc_04",
+        "path": "/pdf/pto_madryn_1.pdf",
+        "expectedBytes": 24274044,
+        "status": 200,
+        "contentType": "application/pdf",
+        "contentLength": 24274044,
+        "location": null,
+        "ok": true
+      },
+      {
+        "id": "esc_09",
+        "path": "/pdf/salta.pdf",
+        "expectedBytes": 31616145,
+        "status": 200,
+        "contentType": "application/pdf",
+        "contentLength": 31616145,
+        "location": null,
+        "ok": true
+      },
+      {
+        "id": "esc_16",
+        "path": "/pdf/sanjuan.pdf",
+        "expectedBytes": 16454455,
+        "status": 200,
+        "contentType": "application/pdf",
+        "contentLength": 16454455,
+        "location": null,
+        "ok": true
+      },
+      {
+        "id": "esc_17",
+        "path": "/pdf/sanluis.pdf",
+        "expectedBytes": 33406355,
+        "status": 200,
+        "contentType": "application/pdf",
+        "contentLength": 33406355,
+        "location": null,
+        "ok": true
+      },
+      {
+        "id": "esc_20",
+        "path": "/pdf/santiago.pdf",
+        "expectedBytes": 28132742,
+        "status": 200,
+        "contentType": "application/pdf",
+        "contentLength": 28132742,
+        "location": null,
+        "ok": true
+      },
+      {
+        "id": "esc_13",
+        "path": "/pdf/talampaya.pdf",
+        "expectedBytes": 35463984,
+        "status": 200,
+        "contentType": "application/pdf",
+        "contentLength": 35463984,
+        "location": null,
+        "ok": true
+      },
+      {
+        "id": "esc_12",
+        "path": "/pdf/ushuaia.pdf",
+        "expectedBytes": 34178289,
+        "status": 200,
+        "contentType": "application/pdf",
+        "contentLength": 34178289,
+        "location": null,
+        "ok": true
+      },
+      {
+        "id": "esc_07",
+        "path": "/pdf/ventana.pdf",
+        "expectedBytes": 15874893,
+        "status": 200,
+        "contentType": "application/pdf",
+        "contentLength": 15874893,
+        "location": null,
+        "ok": true
+      },
+      {
+        "id": "security-archive",
+        "path": "/pdf/seguridad/recomendaciones_para_un_verano_seguro_1.pdf",
+        "expectedBytes": 1368481,
+        "status": 200,
+        "contentType": "application/pdf",
+        "contentLength": 1368481,
+        "location": null,
+        "ok": true
+      }
+    ]
+  },
+  "previewDraftRoutes": {
+    "total": 4,
+    "withheld": 4,
+    "results": [
+      {
+        "path": "/escapadas/caba",
+        "status": 404,
+        "ok": true
+      },
+      {
+        "path": "/escapadas/puerto-iguazu",
+        "status": 404,
+        "ok": true
+      },
+      {
+        "path": "/escapadas/talampaya-e-ischigualasto",
+        "status": 404,
+        "ok": true
+      },
+      {
+        "path": "/escapadas/el-palmar",
+        "status": 404,
+        "ok": true
+      }
+    ]
+  }
+}

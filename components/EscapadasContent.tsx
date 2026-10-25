@@ -22,7 +22,7 @@ export default function EscapadasContent({ escapadas }: EscapadasContentProps) {
   return (
     <div className="w-full">
       {/* Filtros por zona */}
-      <FiltroZonas zonaActiva={zonaActiva} onZonaChange={setZonaActiva} />
+      <FiltroZonas filterLabel="Filtrar escapadas por región" zonaActiva={zonaActiva} onZonaChange={setZonaActiva} />
 
       {/* Listado de escapadas filtradas */}
       <section aria-labelledby="guias-escapadas-heading">

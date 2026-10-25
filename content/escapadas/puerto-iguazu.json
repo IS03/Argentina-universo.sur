@@ -1,0 +1,226 @@
+{
+  "schemaVersion": 2,
+  "id": "AUS-ESC-PUERTO-IGUAZU-EDITORIAL-01",
+  "slug": "puerto-iguazu",
+  "title": "Puerto Iguazú: cataratas, selva y cultura de frontera",
+  "destination": "Puerto Iguazú y Parque Nacional Iguazú",
+  "province": "Misiones",
+  "description": "El agua y la selva dan forma a una escapada que conecta Puerto Iguazú con el Parque Nacional Iguazú. Las cataratas son su gran referencia, pero la interpretación del ambiente y las expresiones culturales de la región permiten una visita más amplia que una sola vista panorámica.",
+  "status": "draft",
+  "publicationAuthorized": false,
+  "review": null,
+  "introductionSourceIds": [
+    "IGU-PARQUE",
+    "IGU-PANORAMA"
+  ],
+  "geography": {
+    "provinceSlugs": [
+      "misiones"
+    ],
+    "localities": [
+      {
+        "id": "git-locality:misiones:puerto-iguazu",
+        "name": "Puerto Iguazú",
+        "provinceSlug": "misiones",
+        "sourceIds": [
+          "IGU-CIUDAD"
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "IGU-PARQUE",
+      "title": "APN — Parque Nacional Iguazú",
+      "url": "https://www.argentina.gob.ar/parquesnacionales/nea/parque-nacional-iguazu",
+      "checkedAt": "2026-10-24"
+    },
+    {
+      "id": "IGU-ACTIVIDADES",
+      "title": "APN — Actividades en Iguazú",
+      "url": "https://www.argentina.gob.ar/parquesnacionales/nea/parque-nacional-iguazu/actividades",
+      "checkedAt": "2026-10-24"
+    },
+    {
+      "id": "IGU-PANORAMA",
+      "title": "APN — Panorámica de Iguazú",
+      "url": "https://www.argentina.gob.ar/parquesnacionales/nea/parque-nacional-iguazu/panoramica",
+      "checkedAt": "2026-10-24"
+    },
+    {
+      "id": "IGU-ACCESO",
+      "title": "APN — Horarios y cómo llegar",
+      "url": "https://www.argentina.gob.ar/parquesnacionales/nea/parque-nacional-iguazu/horarios-como-llegar",
+      "checkedAt": "2026-10-24"
+    },
+    {
+      "id": "IGU-CIUDAD",
+      "title": "Ministerio de Turismo de Misiones — Centro de Informes Puerto Iguazú",
+      "url": "https://misiones.tur.ar/infotur_pub/verCentros.php?IdCentros=3",
+      "checkedAt": "2026-10-24"
+    },
+    {
+      "id": "APN-RESPONSABLE",
+      "title": "APN — Recomendaciones para tu visita",
+      "url": "https://www.argentina.gob.ar/parquesnacionales/recomendaciones-para-tu-visita",
+      "checkedAt": "2026-10-24"
+    },
+    {
+      "id": "IGU-ESTADO-APN",
+      "title": "APN — Parque Nacional Iguazú abierto todo el año",
+      "url": "https://www.argentina.gob.ar/noticias/parque-nacional-iguazu-abierto-todo-el-ano",
+      "checkedAt": "2026-10-24",
+      "publishedAt": "2026-09-17"
+    },
+    {
+      "id": "IGU-ESTADO-CONCESION",
+      "title": "Iguazú Argentina S.A., concesionaria del Área Cataratas — Circuitos disponibles mientras Garganta del Diablo permanece cerrado",
+      "url": "https://iguazuargentina.com/parque-nacional-iguazu-conoce-los-circuitos-disponibles-mientras-garganta-del-diablo-permanece-cerrado/",
+      "checkedAt": "2026-10-24",
+      "publishedAt": "2026-08-03T19:45-03:00"
+    },
+    {
+      "id": "IGU-ESTADO-CIRCUITO",
+      "title": "Iguazú Argentina S.A., concesionaria del Área Cataratas — Circuito Garganta del Diablo: horarios y estado",
+      "url": "https://iguazuargentina.com/area-cataratas/circuito-garganta/",
+      "checkedAt": "2026-10-24"
+    }
+  ],
+  "sections": [
+    {
+      "id": "cataratas-y-selva",
+      "kind": "highlights",
+      "title": "Qué conocer",
+      "sourceIds": [
+        "IGU-PARQUE"
+      ],
+      "paragraphs": [
+        "El Parque Nacional Iguazú conserva una porción de la Selva Paranense en el norte de Misiones. Las cataratas se encuentran dentro de esa área protegida, reconocida como Patrimonio Mundial. El interés del lugar no se limita al volumen del agua: los saltos forman parte de un paisaje de vegetación, cursos de agua y vida silvestre.",
+        "Acercarse al parque con esa mirada permite relacionar cada vista con el ambiente que la rodea. El espacio protegido y la ciudad de Puerto Iguazú son ámbitos distintos de la escapada; conviene diferenciarlos al elegir dónde alojarse, qué conocer y cómo organizar los traslados."
+      ]
+    },
+    {
+      "id": "elegir-los-paseos",
+      "kind": "activities",
+      "title": "Actividades y recorridos",
+      "sourceIds": [
+        "IGU-ACTIVIDADES"
+      ],
+      "paragraphs": [
+        "El Paseo Superior y el Paseo Inferior ofrecen perspectivas diferentes de los saltos. La Garganta del Diablo, la caída principal de las cataratas, se recorre habitualmente por una pasarela sobre el lecho superior del río. El parque también describe el Sendero Macuco y el Tren Ecológico de la Selva, opciones que permiten conocer otros aspectos del área.",
+        "La elección debe considerar las condiciones de cada recorrido. El Paseo Inferior incluye escaleras; Macuco es un sendero agreste. Revisá las descripciones de APN y consultá el estado de los sectores antes de ingresar. Esta ficha no convierte la existencia de una actividad en una confirmación de apertura ni asigna duraciones o dificultades propias."
+      ]
+    },
+    {
+      "id": "interpretacion-y-cultura",
+      "kind": "culture",
+      "title": "Selva e interpretación cultural",
+      "sourceIds": [
+        "IGU-PANORAMA"
+      ],
+      "paragraphs": [
+        "El Centro de Visitantes Yvyrá Retá presenta la diversidad de plantas y animales de la Selva Paranense y las culturas vinculadas con la región. La lectura de ese espacio aporta contexto para reconocer que las cataratas pertenecen a un territorio con historia y comunidades, además de valor paisajístico.",
+        "APN también identifica ferias artesanales relacionadas con la presencia guaraní. Si te interesa esta dimensión cultural, consultá las propuestas y sus condiciones con los responsables locales. La visita puede orientarse hacia la interpretación y el intercambio respetuoso, sin dar por disponibles actividades comunitarias que no fueron confirmadas."
+      ]
+    },
+    {
+      "id": "puerto-iguazu",
+      "kind": "highlights",
+      "title": "Puerto Iguazú más allá del parque",
+      "sourceIds": [
+        "IGU-CIUDAD",
+        "IGU-PANORAMA"
+      ],
+      "paragraphs": [
+        "El sistema de información turística de Misiones identifica el Hito Tres Fronteras y el Santuario Nuestra Señora de Iguazú entre los atractivos de la ciudad. Es un punto de partida oficial para investigar una visita urbana que complemente el área de cataratas y permita conocer otras referencias del destino.",
+        "La información del parque sitúa a Puerto Iguazú dentro de una región de triple frontera y señala sus propuestas culturales, gastronómicas y recreativas. Elegí qué sumar a la escapada con información local actualizada. Esta ficha se concentra en el lado argentino y no presupone requisitos migratorios, excursiones internacionales ni un programa cerrado."
+      ]
+    },
+    {
+      "id": "planificar-la-visita",
+      "kind": "practical",
+      "title": "Ubicación e información práctica",
+      "sourceIds": [
+        "IGU-ACCESO",
+        "IGU-PANORAMA",
+        "APN-RESPONSABLE"
+      ],
+      "paragraphs": [
+        "APN informa accesos terrestres por las rutas nacionales 12 y 101 y distintas opciones de traslado desde Puerto Iguazú. Consultá su página de acceso y los prestadores para elegir la alternativa adecuada. Los horarios, boletos y condiciones operativas deben verificarse para la fecha del viaje.",
+        "La panorámica oficial recomienda prever agua, calzado apropiado, protección frente al sol y la lluvia y repelente. Antes de elegir actividades, revisá también las recomendaciones del área protegida. Respetar las indicaciones del personal y los sectores habilitados forma parte de la preparación, incluso en los paseos más conocidos."
+      ]
+    }
+  ],
+  "address": "Puerto Iguazú, Misiones; referencia urbana del destino.",
+  "mapUrl": "https://www.openstreetmap.org/search?query=Puerto%20Iguaz%C3%BA%20Misiones%20Argentina",
+  "locations": [
+    {
+      "id": "puerto-iguazu",
+      "label": "Puerto Iguazú",
+      "description": "Puerto Iguazú, Misiones; referencia urbana del destino.",
+      "mapUrl": "https://www.openstreetmap.org/search?query=Puerto%20Iguaz%C3%BA%20Misiones%20Argentina",
+      "sourceIds": [
+        "IGU-CIUDAD"
+      ]
+    },
+    {
+      "id": "parque-iguazu",
+      "label": "Parque Nacional Iguazú",
+      "description": "Parque Nacional Iguazú, Misiones. Consultar la portada y el acceso habilitado con APN.",
+      "mapUrl": "https://www.openstreetmap.org/search?query=Parque%20Nacional%20Iguaz%C3%BA%20Misiones%20Argentina",
+      "sourceIds": [
+        "IGU-ACCESO"
+      ]
+    }
+  ],
+  "photos": [],
+  "operationalNotices": [
+    {
+      "id": "garganta-del-diablo",
+      "sectionId": "elegir-los-paseos",
+      "guidance": "La habilitación de los circuitos puede cambiar según el caudal del río Iguazú y otras condiciones. Antes de viajar, consultá el estado que publica la concesionaria del Área Cataratas:",
+      "officialStatusSourceId": "IGU-ESTADO-CIRCUITO",
+      "observation": "En la consulta del 24 de octubre de 2026, la concesionaria del Área Cataratas indicaba el circuito Garganta del Diablo como cerrado, por un cierre preventivo ante el aumento del caudal del río Iguazú. APN había informado el 17 de septiembre de 2026 que las pasarelas del circuito se retiraron en agosto como medida preventiva, y la concesionaria había señalado el 3 de agosto de 2026 que no existía una fecha establecida para la reapertura. Según esas fuentes, los demás atractivos del Área Cataratas seguían funcionando.",
+      "sourceIds": [
+        "IGU-ESTADO-CIRCUITO",
+        "IGU-ESTADO-APN",
+        "IGU-ESTADO-CONCESION"
+      ],
+      "verifiedAt": "2026-10-24",
+      "expiresAt": "2026-11-07"
+    }
+  ],
+  "related": [
+    {
+      "href": "/provincias/misiones",
+      "label": "Conocer Misiones"
+    },
+    {
+      "href": "/actividades?provincia=misiones",
+      "label": "Actividades en Misiones"
+    },
+    {
+      "href": "/escapadas",
+      "label": "Otras escapadas"
+    }
+  ],
+  "editorial": {
+    "documentaryStatus": "sources-checked",
+    "updatedAt": "2026-10-24",
+    "origin": {
+      "kind": "git-editorial",
+      "legacyGuideIds": [
+        "esc_02"
+      ],
+      "masterRefs": []
+    },
+    "pendingReviews": [
+      "Revisión humana del texto exacto y su alcance",
+      "Permiso de publicación independiente",
+      "Reverificar el estado de Garganta del Diablo con la concesionaria y APN antes de aprobar: la revisión debe darse dentro de los 7 días posteriores a la verificación y antes de que caduque la observación (máximo 14 días)",
+      "Ubicar el aviso de la concesionaria sobre Garganta del Diablo actualizado el 11/10/2026 a las 17:00 que indicó el responsable; no se encontró en la consulta del 2026-10-24 y no se cita sin verificarlo",
+      "Fotografías: selección, derechos y variantes optimizadas pendientes",
+      "Comparación temática con la guía PDF y aprobación de equivalencia pendientes"
+    ]
+  }
+}

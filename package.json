@@ -8,9 +8,9 @@
     "start": "next start",
     "lint": "eslint --max-warnings=0",
     "typecheck": "next typegen && tsc --noEmit",
-    "validate": "node --experimental-strip-types scripts/validate-data.mjs && npm run db:check && npm run validate:pages",
+    "validate": "node --experimental-strip-types scripts/validate-data.mjs && npm run db:check && npm run validate:pages && npm run editorial:check",
     "test": "node --experimental-strip-types --test tests/*.test.mjs",
-    "check": "npm run lint && npm run typecheck && npm run validate && npm test && npm run build && npm run audit:seo && npm run test:e2e",
+    "check": "npm run lint && npm run typecheck && npm run validate && npm test && npm run build && npm run editorial:audit-next && npm run audit:seo && npm run test:e2e",
     "audit:seo": "node --experimental-strip-types scripts/audit-seo.mjs",
     "test:e2e": "playwright test",
     "inventory:media": "node --experimental-strip-types scripts/media-inventory.mjs",
@@ -20,7 +20,12 @@
     "db:check": "node scripts/supabase/generate-types.mjs --check",
     "build:pages": "node --experimental-strip-types scripts/pages/build.mjs",
     "validate:pages": "node --experimental-strip-types scripts/pages/validate.mjs",
-    "test:pages": "node scripts/pages/prepare-tests.mjs && playwright test --config scripts/pages/playwright.config.ts"
+    "test:pages": "node scripts/pages/prepare-tests.mjs && playwright test --config scripts/pages/playwright.config.ts",
+    "editorial:review": "node --experimental-strip-types scripts/editorial/review.mjs",
+    "editorial:plan": "node --experimental-strip-types scripts/editorial/plan.mjs",
+    "editorial:check": "node --experimental-strip-types scripts/editorial/check.mjs",
+    "editorial:audit-next": "node --experimental-strip-types scripts/editorial/next-audit.mjs",
+    "editorial:links": "node scripts/editorial/pdf-links.mjs"
   },
   "dependencies": {
     "@next/third-parties": "16.4.3",

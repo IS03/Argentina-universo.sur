@@ -1,3 +1,4 @@
+import { approvedTripUrls } from "./editorial/public-urls.mjs";
 import { spawn } from "node:child_process";
 import { createServer } from "node:net";
 import { get as httpGet } from "node:http";
@@ -109,7 +110,7 @@ async function localServer() {
 
 export async function auditSite(base, preview = false) {
   const catalog = await readCatalog();
-  const urls = createSitemap(catalog.provincias.map(normalizarProvincia), catalog.actividades.map(normalizarActividad)).map(row => row.url);
+  const urls = [...createSitemap(catalog.provincias.map(normalizarProvincia), catalog.actividades.map(normalizarActividad)).map(row => row.url), ...await approvedTripUrls(projectRoot)];
   const paths = urls.map(url => new URL(url).pathname);
   const headers = { "user-agent": "Twitterbot" }; // metadata completa en HTML, incluso sin JavaScript.
   if (process.env.VERCEL_OIDC_TOKEN) headers["x-vercel-trusted-oidc-idp-token"] = process.env.VERCEL_OIDC_TOKEN;

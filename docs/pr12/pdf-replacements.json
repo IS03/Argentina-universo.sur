@@ -1,0 +1,1107 @@
+[
+  {
+    "legacyGuideId": "esc_08",
+    "title": "San Carlos de Bariloche",
+    "legacyTitle": "San Carlos de Bariloche",
+    "provinceSlugs": [
+      "rio_negro"
+    ],
+    "batch": "B02",
+    "pdf": {
+      "path": "/pdf/bariloche.pdf",
+      "bytes": 34489884,
+      "sha256": "b35fae10ae9f4e75b1b242fbead5987622994b3d7fa99db0207df546bf3915cf"
+    },
+    "usedBy": [
+      "public/data/escapadas.json → EscapadasContent → /escapadas"
+    ],
+    "proposedHtml": "/escapadas/san-carlos-de-bariloche",
+    "draftSlug": null,
+    "editorialStatus": "research-inventory",
+    "humanApproved": false,
+    "publicationPermitted": false,
+    "research": {
+      "checkedAt": "2026-10-24",
+      "depth": "official-overview",
+      "sources": [
+        {
+          "url": "https://barilocheturismo.gob.ar/es/home",
+          "title": "Turismo de Bariloche — Portal municipal"
+        }
+      ],
+      "scope": "El portal permite separar paseos urbanos, cerros, lagos y propuestas estacionales.",
+      "pending": [
+        "Delimitar ciudad y entorno; investigar Centro Cívico y circuitos elegidos; validar senderos con APN; no asegurar actividades de nieve ni traslados.",
+        "Derechos de fotografías, texto final y revisión de equivalencia con la guía original."
+      ]
+    },
+    "replacement": {
+      "scopeReview": null,
+      "backup": null,
+      "retirementApproval": null
+    },
+    "redirect": {
+      "status": 308,
+      "fromPath": "/pdf/bariloche.pdf",
+      "toPath": "/escapadas/san-carlos-de-bariloche",
+      "enabled": false
+    }
+  },
+  {
+    "legacyGuideId": "esc_06",
+    "title": "CABA",
+    "legacyTitle": "CABA",
+    "provinceSlugs": [
+      "caba"
+    ],
+    "batch": "B01",
+    "pdf": {
+      "path": "/pdf/caba.pdf",
+      "bytes": 37651530,
+      "sha256": "8ddb609288147a3d0da25b24abd45dfbd9c060b83773907ef3d2addbf18e1075"
+    },
+    "usedBy": [
+      "public/data/escapadas.json → EscapadasContent → /escapadas"
+    ],
+    "proposedHtml": "/escapadas/caba",
+    "draftSlug": "caba",
+    "editorialStatus": "draft-prepared",
+    "humanApproved": false,
+    "publicationPermitted": false,
+    "research": {
+      "checkedAt": "2026-10-24",
+      "depth": "official-overview",
+      "sources": [
+        {
+          "url": "https://turismo.buenosaires.gob.ar/es/article/primera-vez-en-buenos-aires",
+          "title": "Travel Buenos Aires — Primera visita"
+        }
+      ],
+      "scope": "Primera ficha urbana preparada: centro, barrios, naturaleza, recorridos y planificación.",
+      "pending": [
+        "Revisar texto final, accesibilidad por lugar y derechos fotográficos; cotejar temas de la guía antes de declarar equivalencia.",
+        "Derechos de fotografías, texto final y revisión de equivalencia con la guía original."
+      ]
+    },
+    "replacement": {
+      "scopeReview": null,
+      "backup": null,
+      "retirementApproval": null
+    },
+    "redirect": {
+      "status": 308,
+      "fromPath": "/pdf/caba.pdf",
+      "toPath": "/escapadas/caba",
+      "enabled": false
+    }
+  },
+  {
+    "legacyGuideId": "esc_01",
+    "title": "El Calafate y El Chaltén",
+    "legacyTitle": "El Calafate y El Chaltén",
+    "provinceSlugs": [
+      "santa_cruz"
+    ],
+    "batch": "B02",
+    "pdf": {
+      "path": "/pdf/cañafate.pdf",
+      "bytes": 19318193,
+      "sha256": "0b0757d612a70202953f15630cd53991640bac22573158f97f27493c9b4af49e"
+    },
+    "usedBy": [
+      "public/data/escapadas.json → EscapadasContent → /escapadas"
+    ],
+    "proposedHtml": "/escapadas/el-calafate-y-el-chalten",
+    "draftSlug": null,
+    "editorialStatus": "research-inventory",
+    "humanApproved": false,
+    "publicationPermitted": false,
+    "research": {
+      "checkedAt": "2026-10-24",
+      "depth": "official-overview",
+      "sources": [
+        {
+          "url": "https://www.argentina.gob.ar/parquesnacionales/patagonia-austral/parque-nacional-los-glaciares",
+          "title": "APN — Los Glaciares"
+        }
+      ],
+      "scope": "El área protegida reúne paisajes glaciares y bosque/estepa. La fuente del parque no reemplaza la investigación de las dos localidades.",
+      "pending": [
+        "Separar El Calafate y El Chaltén; comprobar senderos y accesos con APN y municipios; no proponer conexiones ni exigencias físicas sin verificación.",
+        "Derechos de fotografías, texto final y revisión de equivalencia con la guía original."
+      ]
+    },
+    "replacement": {
+      "scopeReview": null,
+      "backup": null,
+      "retirementApproval": null
+    },
+    "redirect": {
+      "status": 308,
+      "fromPath": "/pdf/cañafate.pdf",
+      "toPath": "/escapadas/el-calafate-y-el-chalten",
+      "enabled": false
+    }
+  },
+  {
+    "legacyGuideId": "esc_10",
+    "title": "Norte de Córdoba",
+    "legacyTitle": "Norte de Córdoba",
+    "provinceSlugs": [
+      "cordoba"
+    ],
+    "batch": "B03",
+    "pdf": {
+      "path": "/pdf/cba.pdf",
+      "bytes": 25346217,
+      "sha256": "6e790c0fa6b686caeba8b8575023e9fc9f3aae35ad5434d7953e68a85b382bca"
+    },
+    "usedBy": [
+      "public/data/escapadas.json → EscapadasContent → /escapadas"
+    ],
+    "proposedHtml": "/escapadas/norte-de-cordoba",
+    "draftSlug": null,
+    "editorialStatus": "research-inventory",
+    "humanApproved": false,
+    "publicationPermitted": false,
+    "research": {
+      "checkedAt": "2026-10-24",
+      "depth": "official-overview",
+      "sources": [
+        {
+          "url": "https://cordobaturismo.gov.ar/norte_/",
+          "title": "Agencia Córdoba Turismo — Norte"
+        }
+      ],
+      "scope": "Cerro Colorado, Camino Real y Santa Catalina son ejes históricos/naturales identificados por el organismo provincial.",
+      "pending": [
+        "Investigar localidades por separado y normas de visita al patrimonio; contrastar recorridos y permisos; no asumir acceso libre a pinturas rupestres.",
+        "Derechos de fotografías, texto final y revisión de equivalencia con la guía original."
+      ]
+    },
+    "replacement": {
+      "scopeReview": null,
+      "backup": null,
+      "retirementApproval": null
+    },
+    "redirect": {
+      "status": 308,
+      "fromPath": "/pdf/cba.pdf",
+      "toPath": "/escapadas/norte-de-cordoba",
+      "enabled": false
+    }
+  },
+  {
+    "legacyGuideId": "esc_14",
+    "title": "Chaco",
+    "legacyTitle": "Chaco",
+    "provinceSlugs": [
+      "chaco"
+    ],
+    "batch": "B05",
+    "pdf": {
+      "path": "/pdf/chaco.pdf",
+      "bytes": 23895952,
+      "sha256": "134819694046946cd0a7dd3b69c05304812d064dfd2c24e925046974dcd668a5"
+    },
+    "usedBy": [
+      "public/data/escapadas.json → EscapadasContent → /escapadas"
+    ],
+    "proposedHtml": "/escapadas/chaco",
+    "draftSlug": null,
+    "editorialStatus": "research-inventory",
+    "humanApproved": false,
+    "publicationPermitted": false,
+    "research": {
+      "checkedAt": "2026-10-24",
+      "depth": "official-overview",
+      "sources": [
+        {
+          "url": "https://turismo.chaco.gob.ar/destinations/pn-el-impenetrable/",
+          "title": "Instituto de Turismo del Chaco — El Impenetrable"
+        }
+      ],
+      "scope": "El portal regional distingue Litoral, Centro Sudoeste e Impenetrable; el PN Chaco y el PN El Impenetrable son áreas diferentes.",
+      "pending": [
+        "Delimitar provincia y destinos; contrastar contenido cultural con actores responsables; verificar servicios y accesos locales; no presentar un parque como toda la provincia.",
+        "Derechos de fotografías, texto final y revisión de equivalencia con la guía original."
+      ]
+    },
+    "replacement": {
+      "scopeReview": null,
+      "backup": null,
+      "retirementApproval": null
+    },
+    "redirect": {
+      "status": 308,
+      "fromPath": "/pdf/chaco.pdf",
+      "toPath": "/escapadas/chaco",
+      "enabled": false
+    }
+  },
+  {
+    "legacyGuideId": "esc_11",
+    "title": "Entre Ríos",
+    "legacyTitle": "Entre Ríos",
+    "provinceSlugs": [
+      "entre_rios"
+    ],
+    "batch": "B05",
+    "pdf": {
+      "path": "/pdf/entrerios.pdf",
+      "bytes": 29060699,
+      "sha256": "6264c1b294a9bcac1920ce94ec985f48e822001ea67c8ddf1e67d55531a9680a"
+    },
+    "usedBy": [
+      "public/data/escapadas.json → EscapadasContent → /escapadas"
+    ],
+    "proposedHtml": "/escapadas/entre-rios",
+    "draftSlug": null,
+    "editorialStatus": "research-inventory",
+    "humanApproved": false,
+    "publicationPermitted": false,
+    "research": {
+      "checkedAt": "2026-10-24",
+      "depth": "official-overview",
+      "sources": [
+        {
+          "url": "https://www.argentina.travel/litoral/entre-rios",
+          "title": "INPROTUR — Entre Ríos"
+        }
+      ],
+      "scope": "La provincia incluye patrimonio, ríos, termas y carnavales; El Palmar cubre solo una parte.",
+      "pending": [
+        "Redactar una guía provincial o un conjunto de destinos con cobertura revisada; no redirigir esta guía a El Palmar; no reproducir cantidades de complejos, tarifas ni fechas variables.",
+        "Derechos de fotografías, texto final y revisión de equivalencia con la guía original."
+      ]
+    },
+    "replacement": {
+      "scopeReview": null,
+      "backup": null,
+      "retirementApproval": null
+    },
+    "redirect": {
+      "status": 308,
+      "fromPath": "/pdf/entrerios.pdf",
+      "toPath": "/escapadas/entre-rios",
+      "enabled": false
+    }
+  },
+  {
+    "legacyGuideId": "esc_23",
+    "title": "Formosa",
+    "legacyTitle": "Formosa",
+    "provinceSlugs": [
+      "formosa"
+    ],
+    "batch": "B05",
+    "pdf": {
+      "path": "/pdf/formosa.pdf",
+      "bytes": 57013841,
+      "sha256": "7dfb6d4369c98477367c52c8e5a71fbbf1a969b1b7e5f50d88ece7e33f05b658"
+    },
+    "usedBy": [
+      "public/data/escapadas.json → EscapadasContent → /escapadas"
+    ],
+    "proposedHtml": "/escapadas/formosa",
+    "draftSlug": null,
+    "editorialStatus": "research-inventory",
+    "humanApproved": false,
+    "publicationPermitted": false,
+    "research": {
+      "checkedAt": "2026-10-24",
+      "depth": "official-overview",
+      "sources": [
+        {
+          "url": "https://www.argentina.travel/litoral/formosa",
+          "title": "INPROTUR — Formosa"
+        }
+      ],
+      "scope": "Bañado La Estrella y PN Río Pilcomayo son ejes naturales diferentes dentro de una provincia extensa.",
+      "pending": [
+        "Mayor ahorro individual posible; delimitar destinos, investigar cultura con fuentes adecuadas y validar condiciones de humedales/servicios; portal provincial respondió con restricción de acceso.",
+        "Derechos de fotografías, texto final y revisión de equivalencia con la guía original."
+      ]
+    },
+    "replacement": {
+      "scopeReview": null,
+      "backup": null,
+      "retirementApproval": null
+    },
+    "redirect": {
+      "status": 308,
+      "fromPath": "/pdf/formosa.pdf",
+      "toPath": "/escapadas/formosa",
+      "enabled": false
+    }
+  },
+  {
+    "legacyGuideId": "esc_18",
+    "title": "Río Gallegos",
+    "legacyTitle": "Río Gallegos",
+    "provinceSlugs": [
+      "santa_cruz"
+    ],
+    "batch": "B06",
+    "pdf": {
+      "path": "/pdf/gallegos.pdf",
+      "bytes": 19784786,
+      "sha256": "47efb3d922e1545a0ee3fd117ed03381ad8b81408b762843a71a2738dec170ed"
+    },
+    "usedBy": [
+      "public/data/escapadas.json → EscapadasContent → /escapadas"
+    ],
+    "proposedHtml": "/escapadas/rio-gallegos",
+    "draftSlug": null,
+    "editorialStatus": "research-inventory",
+    "humanApproved": false,
+    "publicationPermitted": false,
+    "research": {
+      "checkedAt": "2026-10-24",
+      "depth": "official-overview",
+      "sources": [
+        {
+          "url": "https://www.argentina.travel/actividades/rio-gallegos",
+          "title": "INPROTUR — Río Gallegos"
+        }
+      ],
+      "scope": "Costanera, Museo de los Pioneros y entorno costero aparecen como temas; Cabo Vírgenes es una salida diferente.",
+      "pending": [
+        "Separar ciudad y excursiones regionales; verificar museos, accesos y condiciones del entorno costero; no trasladar distancias promocionales a tiempos de viaje.",
+        "Derechos de fotografías, texto final y revisión de equivalencia con la guía original."
+      ]
+    },
+    "replacement": {
+      "scopeReview": null,
+      "backup": null,
+      "retirementApproval": null
+    },
+    "redirect": {
+      "status": 308,
+      "fromPath": "/pdf/gallegos.pdf",
+      "toPath": "/escapadas/rio-gallegos",
+      "enabled": false
+    }
+  },
+  {
+    "legacyGuideId": "esc_02",
+    "title": "Puerto Iguazú",
+    "legacyTitle": "Puerto Iguazú",
+    "provinceSlugs": [
+      "misiones"
+    ],
+    "batch": "B01",
+    "pdf": {
+      "path": "/pdf/iguazu_2.pdf",
+      "bytes": 14457850,
+      "sha256": "7cf128d2f00fe4730b18813b983ae388748eb5a057dc7c44778f8832d23cd0d4"
+    },
+    "usedBy": [
+      "public/data/escapadas.json → EscapadasContent → /escapadas"
+    ],
+    "proposedHtml": "/escapadas/puerto-iguazu",
+    "draftSlug": "puerto-iguazu",
+    "editorialStatus": "draft-prepared",
+    "humanApproved": false,
+    "publicationPermitted": false,
+    "research": {
+      "checkedAt": "2026-10-24",
+      "depth": "official-overview",
+      "sources": [
+        {
+          "url": "https://www.argentina.gob.ar/parquesnacionales/nea/parque-nacional-iguazu",
+          "title": "APN — Iguazú"
+        }
+      ],
+      "scope": "Cataratas y Selva Paranense; ficha redactada con fuentes adicionales de ciudad, recorridos y acceso.",
+      "pending": [
+        "Revisión humana de la ficha y sus límites; selección fotográfica; comparación con la guía completa.",
+        "Derechos de fotografías, texto final y revisión de equivalencia con la guía original."
+      ]
+    },
+    "replacement": {
+      "scopeReview": null,
+      "backup": null,
+      "retirementApproval": null
+    },
+    "redirect": {
+      "status": 308,
+      "fromPath": "/pdf/iguazu_2.pdf",
+      "toPath": "/escapadas/puerto-iguazu",
+      "enabled": false
+    }
+  },
+  {
+    "legacyGuideId": "esc_05",
+    "title": "Jujuy",
+    "legacyTitle": "Jujuy",
+    "provinceSlugs": [
+      "jujuy"
+    ],
+    "batch": "B03",
+    "pdf": {
+      "path": "/pdf/jujuy.pdf",
+      "bytes": 21391638,
+      "sha256": "46f00914b3f5c92e8099ef37c26efeda1750b6944134b8f318f4df9c4872ff0f"
+    },
+    "usedBy": [
+      "public/data/escapadas.json → EscapadasContent → /escapadas"
+    ],
+    "proposedHtml": "/escapadas/jujuy",
+    "draftSlug": null,
+    "editorialStatus": "research-inventory",
+    "humanApproved": false,
+    "publicationPermitted": false,
+    "research": {
+      "checkedAt": "2026-10-24",
+      "depth": "official-overview",
+      "sources": [
+        {
+          "url": "https://www.argentina.travel/provincia/jujuy",
+          "title": "INPROTUR — Jujuy"
+        }
+      ],
+      "scope": "La investigación debe distinguir Puna, Quebrada, Valles y Yungas; una sola excursión no cubre la provincia.",
+      "pending": [
+        "Delimitar localidades y alcance; comprobar accesos, información cultural y condiciones de altura con fuentes específicas; el enlace provincial de Quebrada devolvió contenido insuficiente.",
+        "Derechos de fotografías, texto final y revisión de equivalencia con la guía original."
+      ]
+    },
+    "replacement": {
+      "scopeReview": null,
+      "backup": null,
+      "retirementApproval": null
+    },
+    "redirect": {
+      "status": 308,
+      "fromPath": "/pdf/jujuy.pdf",
+      "toPath": "/escapadas/jujuy",
+      "enabled": false
+    }
+  },
+  {
+    "legacyGuideId": "esc_22",
+    "title": "La Pampa",
+    "legacyTitle": "La Pampa",
+    "provinceSlugs": [
+      "la_pampa"
+    ],
+    "batch": "B06",
+    "pdf": {
+      "path": "/pdf/lapampa.pdf",
+      "bytes": 20932838,
+      "sha256": "c44359d857148c1fe5f5720fa798ac76b583fe2050beaae7bd515b0d420c1eab"
+    },
+    "usedBy": [
+      "public/data/escapadas.json → EscapadasContent → /escapadas"
+    ],
+    "proposedHtml": "/escapadas/la-pampa",
+    "draftSlug": null,
+    "editorialStatus": "research-inventory",
+    "humanApproved": false,
+    "publicationPermitted": false,
+    "research": {
+      "checkedAt": "2026-10-24",
+      "depth": "official-overview",
+      "sources": [
+        {
+          "url": "https://www.argentina.travel/actividades/reserva-provincial-parque-luro",
+          "title": "INPROTUR — Parque Luro"
+        }
+      ],
+      "scope": "Patrimonio del Museo El Castillo y bosque de caldén como caso local, no sustituto de toda La Pampa.",
+      "pending": [
+        "Añadir fuentes de Santa Rosa y del alcance de la guía; verificar visitas y restricciones; no garantizar observación de fauna ni fechas estacionales.",
+        "Derechos de fotografías, texto final y revisión de equivalencia con la guía original."
+      ]
+    },
+    "replacement": {
+      "scopeReview": null,
+      "backup": null,
+      "retirementApproval": null
+    },
+    "redirect": {
+      "status": 308,
+      "fromPath": "/pdf/lapampa.pdf",
+      "toPath": "/escapadas/la-pampa",
+      "enabled": false
+    }
+  },
+  {
+    "legacyGuideId": "esc_15",
+    "title": "Mendoza",
+    "legacyTitle": "Mendoza",
+    "provinceSlugs": [
+      "mendoza"
+    ],
+    "batch": "B04",
+    "pdf": {
+      "path": "/pdf/mendoza.pdf",
+      "bytes": 21326786,
+      "sha256": "194eb1eb3791428024961537fac7f9e1327cf2d3cfa717650ebd48de7d6a920b"
+    },
+    "usedBy": [
+      "public/data/escapadas.json → EscapadasContent → /escapadas"
+    ],
+    "proposedHtml": "/escapadas/mendoza",
+    "draftSlug": null,
+    "editorialStatus": "research-inventory",
+    "humanApproved": false,
+    "publicationPermitted": false,
+    "research": {
+      "checkedAt": "2026-10-24",
+      "depth": "official-overview",
+      "sources": [
+        {
+          "url": "https://www.argentina.travel/provincia/mendoza",
+          "title": "INPROTUR — Mendoza"
+        }
+      ],
+      "scope": "Bodegas, paisaje cordillerano, Aconcagua y destinos del sur provincial requieren bloques separados.",
+      "pending": [
+        "Cruzar con fuentes provinciales de áreas protegidas y operadores habilitados; permisos de montaña y actividades independientes; portal provincial rechazó la consulta automática.",
+        "Derechos de fotografías, texto final y revisión de equivalencia con la guía original."
+      ]
+    },
+    "replacement": {
+      "scopeReview": null,
+      "backup": null,
+      "retirementApproval": null
+    },
+    "redirect": {
+      "status": 308,
+      "fromPath": "/pdf/mendoza.pdf",
+      "toPath": "/escapadas/mendoza",
+      "enabled": false
+    }
+  },
+  {
+    "legacyGuideId": "esc_21",
+    "title": "Misiones",
+    "legacyTitle": "Misiones",
+    "provinceSlugs": [
+      "misiones"
+    ],
+    "batch": "B05",
+    "pdf": {
+      "path": "/pdf/misiones.pdf",
+      "bytes": 23042857,
+      "sha256": "96c659dfb28bb2302cc847a003f8869764451dec7a0105aa4a9e74d2b929d170"
+    },
+    "usedBy": [
+      "public/data/escapadas.json → EscapadasContent → /escapadas"
+    ],
+    "proposedHtml": "/escapadas/misiones",
+    "draftSlug": null,
+    "editorialStatus": "research-inventory",
+    "humanApproved": false,
+    "publicationPermitted": false,
+    "research": {
+      "checkedAt": "2026-10-24",
+      "depth": "official-overview",
+      "sources": [
+        {
+          "url": "https://misiones.tur.ar/",
+          "title": "Ministerio de Turismo de Misiones — Portal provincial"
+        }
+      ],
+      "scope": "Además de Iguazú, el portal identifica Moconá, reducciones jesuíticas, Salto Encantado y Posadas.",
+      "pending": [
+        "Definir un conjunto provincial con fichas relacionadas; no redirigir toda Misiones a Puerto Iguazú; confirmar caudales, habilitación y fuentes culturales específicas.",
+        "Derechos de fotografías, texto final y revisión de equivalencia con la guía original."
+      ]
+    },
+    "replacement": {
+      "scopeReview": null,
+      "backup": null,
+      "retirementApproval": null
+    },
+    "redirect": {
+      "status": 308,
+      "fromPath": "/pdf/misiones.pdf",
+      "toPath": "/escapadas/misiones",
+      "enabled": false
+    }
+  },
+  {
+    "legacyGuideId": "esc_19",
+    "title": "Neuquén",
+    "legacyTitle": "Neuquén",
+    "provinceSlugs": [
+      "neuquen"
+    ],
+    "batch": "B04",
+    "pdf": {
+      "path": "/pdf/neuquen.pdf",
+      "bytes": 45336735,
+      "sha256": "a226f20887dfd52a7d0b8625779eb4fe2f5b4062b73cd500fa7e535f502322d4"
+    },
+    "usedBy": [
+      "public/data/escapadas.json → EscapadasContent → /escapadas"
+    ],
+    "proposedHtml": "/escapadas/neuquen",
+    "draftSlug": null,
+    "editorialStatus": "research-inventory",
+    "humanApproved": false,
+    "publicationPermitted": false,
+    "research": {
+      "checkedAt": "2026-10-24",
+      "depth": "official-overview",
+      "sources": [
+        {
+          "url": "https://www.argentina.travel/province/neuquen",
+          "title": "INPROTUR — Neuquén"
+        }
+      ],
+      "scope": "El portal distingue lagos, San Martín de los Andes, Villa La Angostura y otros destinos; cobertura provincial amplia.",
+      "pending": [
+        "Definir circuitos y localidades, validar accesos con áreas protegidas y fuentes locales; no prometer nieve, navegación o termas disponibles; portal provincial no respondió.",
+        "Derechos de fotografías, texto final y revisión de equivalencia con la guía original."
+      ]
+    },
+    "replacement": {
+      "scopeReview": null,
+      "backup": null,
+      "retirementApproval": null
+    },
+    "redirect": {
+      "status": 308,
+      "fromPath": "/pdf/neuquen.pdf",
+      "toPath": "/escapadas/neuquen",
+      "enabled": false
+    }
+  },
+  {
+    "legacyGuideId": "esc_03",
+    "title": "Pinamar",
+    "legacyTitle": "Pinamar",
+    "provinceSlugs": [
+      "buenos_aires"
+    ],
+    "batch": "B06",
+    "pdf": {
+      "path": "/pdf/pinamar.pdf",
+      "bytes": 19760229,
+      "sha256": "aaaba6460562f60af510c03e91767674fbad8a1994b3558a3ead64f3fce280c4"
+    },
+    "usedBy": [
+      "public/data/escapadas.json → EscapadasContent → /escapadas"
+    ],
+    "proposedHtml": "/escapadas/pinamar",
+    "draftSlug": null,
+    "editorialStatus": "research-inventory",
+    "humanApproved": false,
+    "publicationPermitted": false,
+    "research": {
+      "checkedAt": "2026-10-24",
+      "depth": "official-overview",
+      "sources": [
+        {
+          "url": "https://www.argentina.gob.ar/viaja-por-argentina/que-hacer/disfrutar-la-naturaleza-de-pinamar",
+          "title": "Turismo de Nación — Pinamar"
+        }
+      ],
+      "scope": "Playa, bosque y médanos como tres ejes diferenciados del destino.",
+      "pending": [
+        "Distinguir localidad y partido; verificar accesos a playas y bosques, protección de médanos y condiciones de cada propuesta sin asumir libre circulación.",
+        "Derechos de fotografías, texto final y revisión de equivalencia con la guía original."
+      ]
+    },
+    "replacement": {
+      "scopeReview": null,
+      "backup": null,
+      "retirementApproval": null
+    },
+    "redirect": {
+      "status": 308,
+      "fromPath": "/pdf/pinamar.pdf",
+      "toPath": "/escapadas/pinamar",
+      "enabled": false
+    }
+  },
+  {
+    "legacyGuideId": "esc_04",
+    "title": "Puerto Madryn",
+    "legacyTitle": "Puerti Madryn",
+    "provinceSlugs": [
+      "chubut"
+    ],
+    "batch": "B02",
+    "pdf": {
+      "path": "/pdf/pto_madryn_1.pdf",
+      "bytes": 24274044,
+      "sha256": "b86f199669860e38682385b245b0482c2c7c8fa229e836312c9c2b5f63ed2176"
+    },
+    "usedBy": [
+      "public/data/escapadas.json → EscapadasContent → /escapadas"
+    ],
+    "proposedHtml": "/escapadas/puerto-madryn",
+    "draftSlug": null,
+    "editorialStatus": "research-inventory",
+    "humanApproved": false,
+    "publicationPermitted": false,
+    "research": {
+      "checkedAt": "2026-10-24",
+      "depth": "official-overview",
+      "sources": [
+        {
+          "url": "https://chubutpatagonia.gob.ar/destino/puerto-madryn/",
+          "title": "Turismo de Chubut — Puerto Madryn"
+        }
+      ],
+      "scope": "Ciudad de servicios vinculada con Península Valdés, El Doradillo y Punta Loma.",
+      "pending": [
+        "Corregir en la futura ficha el nombre legado «Puerti Madryn» sin alterar IDs/rutas; verificar temporadas y normas de observación de fauna sin prometer avistajes.",
+        "Derechos de fotografías, texto final y revisión de equivalencia con la guía original."
+      ]
+    },
+    "replacement": {
+      "scopeReview": null,
+      "backup": null,
+      "retirementApproval": null
+    },
+    "redirect": {
+      "status": 308,
+      "fromPath": "/pdf/pto_madryn_1.pdf",
+      "toPath": "/escapadas/puerto-madryn",
+      "enabled": false
+    }
+  },
+  {
+    "legacyGuideId": "esc_09",
+    "title": "Salta",
+    "legacyTitle": "Salta",
+    "provinceSlugs": [
+      "salta"
+    ],
+    "batch": "B03",
+    "pdf": {
+      "path": "/pdf/salta.pdf",
+      "bytes": 31616145,
+      "sha256": "cd29698d10d093ed093dcea3f8633e6d2462573be1ce006e57f0b9c4f0a7a813"
+    },
+    "usedBy": [
+      "public/data/escapadas.json → EscapadasContent → /escapadas"
+    ],
+    "proposedHtml": "/escapadas/salta",
+    "draftSlug": null,
+    "editorialStatus": "research-inventory",
+    "humanApproved": false,
+    "publicationPermitted": false,
+    "research": {
+      "checkedAt": "2026-10-24",
+      "depth": "official-overview",
+      "sources": [
+        {
+          "url": "https://visitsalta.ar/",
+          "title": "Turismo de Salta — Visit Salta"
+        }
+      ],
+      "scope": "El portal distingue ciudad/alrededores, Valle de Lerma y Valles Calchaquíes, además de áreas naturales y cultura.",
+      "pending": [
+        "Elegir alcance revisable, separar destinos y contrastar accesos/condiciones; no convertir el catálogo provincial en un itinerario validado.",
+        "Derechos de fotografías, texto final y revisión de equivalencia con la guía original."
+      ]
+    },
+    "replacement": {
+      "scopeReview": null,
+      "backup": null,
+      "retirementApproval": null
+    },
+    "redirect": {
+      "status": 308,
+      "fromPath": "/pdf/salta.pdf",
+      "toPath": "/escapadas/salta",
+      "enabled": false
+    }
+  },
+  {
+    "legacyGuideId": "esc_16",
+    "title": "San Juan",
+    "legacyTitle": "San Juan",
+    "provinceSlugs": [
+      "san_juan"
+    ],
+    "batch": "B04",
+    "pdf": {
+      "path": "/pdf/sanjuan.pdf",
+      "bytes": 16454455,
+      "sha256": "f1ef2bca6fc0ebbc29f50d82bc789a5d9ff1df6c15dcbe839ffb0eaa13ea5663"
+    },
+    "usedBy": [
+      "public/data/escapadas.json → EscapadasContent → /escapadas"
+    ],
+    "proposedHtml": "/escapadas/san-juan",
+    "draftSlug": null,
+    "editorialStatus": "research-inventory",
+    "humanApproved": false,
+    "publicationPermitted": false,
+    "research": {
+      "checkedAt": "2026-10-24",
+      "depth": "official-overview",
+      "sources": [
+        {
+          "url": "https://sanjuan.tur.ar/destinos/valle-de-tulum",
+          "title": "San Juan Turismo — Valle de Tulum"
+        }
+      ],
+      "scope": "Diques Ullum/Punta Negra, producción local y patrimonio urbano ofrecen un alcance distinto de Ischigualasto.",
+      "pending": [
+        "Definir alcance provincial; investigar museos y producción local; evitar duplicar la ficha conjunta con La Rioja; validar condiciones de acceso por atractivo.",
+        "Derechos de fotografías, texto final y revisión de equivalencia con la guía original."
+      ]
+    },
+    "replacement": {
+      "scopeReview": null,
+      "backup": null,
+      "retirementApproval": null
+    },
+    "redirect": {
+      "status": 308,
+      "fromPath": "/pdf/sanjuan.pdf",
+      "toPath": "/escapadas/san-juan",
+      "enabled": false
+    }
+  },
+  {
+    "legacyGuideId": "esc_17",
+    "title": "San Luis",
+    "legacyTitle": "San Luis",
+    "provinceSlugs": [
+      "san_luis"
+    ],
+    "batch": "B04",
+    "pdf": {
+      "path": "/pdf/sanluis.pdf",
+      "bytes": 33406355,
+      "sha256": "3a1571a56d29d31e1f86e0a2140b3b25a3d8a69a11ba7f79db816c51dc208d17"
+    },
+    "usedBy": [
+      "public/data/escapadas.json → EscapadasContent → /escapadas"
+    ],
+    "proposedHtml": "/escapadas/san-luis",
+    "draftSlug": null,
+    "editorialStatus": "research-inventory",
+    "humanApproved": false,
+    "publicationPermitted": false,
+    "research": {
+      "checkedAt": "2026-10-24",
+      "depth": "official-overview",
+      "sources": [
+        {
+          "url": "https://www.argentina.travel/actividades/villa-de-merlo-san-luis",
+          "title": "INPROTUR — San Luis / Villa de Merlo"
+        }
+      ],
+      "scope": "La fuente mezcla el título Merlo con varios destinos provinciales: útil para identificar temas, no para trasladar todos sus datos a una localidad.",
+      "pending": [
+        "Conciliar ciudad/provincia; consultar fuentes municipales y provinciales específicas de Merlo, Potrero de los Funes y capital; descartar cifras o rutas ambiguas.",
+        "Derechos de fotografías, texto final y revisión de equivalencia con la guía original."
+      ]
+    },
+    "replacement": {
+      "scopeReview": null,
+      "backup": null,
+      "retirementApproval": null
+    },
+    "redirect": {
+      "status": 308,
+      "fromPath": "/pdf/sanluis.pdf",
+      "toPath": "/escapadas/san-luis",
+      "enabled": false
+    }
+  },
+  {
+    "legacyGuideId": "esc_20",
+    "title": "Santiago del Estero",
+    "legacyTitle": "Santiago del Estero",
+    "provinceSlugs": [
+      "santiago_del_estero"
+    ],
+    "batch": "B06",
+    "pdf": {
+      "path": "/pdf/santiago.pdf",
+      "bytes": 28132742,
+      "sha256": "4bd407b099b401e214dbf700668207c0f43aea51e353a95d464ff60424e0adbb"
+    },
+    "usedBy": [
+      "public/data/escapadas.json → EscapadasContent → /escapadas"
+    ],
+    "proposedHtml": "/escapadas/santiago-del-estero",
+    "draftSlug": null,
+    "editorialStatus": "research-inventory",
+    "humanApproved": false,
+    "publicationPermitted": false,
+    "research": {
+      "checkedAt": "2026-10-24",
+      "depth": "official-overview",
+      "sources": [
+        {
+          "url": "https://www.argentina.travel/norte/santiago-del-estero",
+          "title": "INPROTUR — Santiago del Estero"
+        }
+      ],
+      "scope": "Patrimonio urbano, folclore y Termas de Río Hondo requieren enfoques separados.",
+      "pending": [
+        "Evitar reproducir promesas de salud del texto promocional; verificar museos, circuitos culturales y prestadores; confirmar el alcance con el responsable editorial.",
+        "Derechos de fotografías, texto final y revisión de equivalencia con la guía original."
+      ]
+    },
+    "replacement": {
+      "scopeReview": null,
+      "backup": null,
+      "retirementApproval": null
+    },
+    "redirect": {
+      "status": 308,
+      "fromPath": "/pdf/santiago.pdf",
+      "toPath": "/escapadas/santiago-del-estero",
+      "enabled": false
+    }
+  },
+  {
+    "legacyGuideId": "esc_13",
+    "title": "Talampaya e Ischigualasto",
+    "legacyTitle": "Talampaya e Ischigualasto",
+    "provinceSlugs": [
+      "la_rioja",
+      "san_juan"
+    ],
+    "batch": "B01",
+    "pdf": {
+      "path": "/pdf/talampaya.pdf",
+      "bytes": 35463984,
+      "sha256": "378d69540724586f217519589d05fee8a0f268b77664173893f00a37b3fd45f5"
+    },
+    "usedBy": [
+      "public/data/escapadas.json → EscapadasContent → /escapadas"
+    ],
+    "proposedHtml": "/escapadas/talampaya-e-ischigualasto",
+    "draftSlug": "talampaya-e-ischigualasto",
+    "editorialStatus": "draft-prepared",
+    "humanApproved": false,
+    "publicationPermitted": false,
+    "research": {
+      "checkedAt": "2026-10-24",
+      "depth": "official-overview",
+      "sources": [
+        {
+          "url": "https://whc.unesco.org/en/list/966/",
+          "title": "UNESCO — Ischigualasto/Talampaya"
+        }
+      ],
+      "scope": "Inscripción conjunta de dos áreas diferentes; borrador preparado con APN y Turismo San Juan.",
+      "pending": [
+        "Revisión por ambas jurisdicciones, accesos y alcance; no ofrecer circuito único o visita de ambos parques en una jornada sin prueba.",
+        "Derechos de fotografías, texto final y revisión de equivalencia con la guía original."
+      ]
+    },
+    "replacement": {
+      "scopeReview": null,
+      "backup": null,
+      "retirementApproval": null
+    },
+    "redirect": {
+      "status": 308,
+      "fromPath": "/pdf/talampaya.pdf",
+      "toPath": "/escapadas/talampaya-e-ischigualasto",
+      "enabled": false
+    }
+  },
+  {
+    "legacyGuideId": "esc_12",
+    "title": "Ushuaia",
+    "legacyTitle": "Ushuaia",
+    "provinceSlugs": [
+      "tierra_del_fuego"
+    ],
+    "batch": "B02",
+    "pdf": {
+      "path": "/pdf/ushuaia.pdf",
+      "bytes": 34178289,
+      "sha256": "f0ccb3e456defa8d1dcd0fff42293091f631f94d87dbac9fc002cf8b74f91c36"
+    },
+    "usedBy": [
+      "public/data/escapadas.json → EscapadasContent → /escapadas"
+    ],
+    "proposedHtml": "/escapadas/ushuaia",
+    "draftSlug": null,
+    "editorialStatus": "research-inventory",
+    "humanApproved": false,
+    "publicationPermitted": false,
+    "research": {
+      "checkedAt": "2026-10-24",
+      "depth": "official-overview",
+      "sources": [
+        {
+          "url": "https://www.argentina.gob.ar/parquesnacionales/patagonia-austral/parque-nacional-tierra-del-fuego",
+          "title": "APN — Tierra del Fuego"
+        }
+      ],
+      "scope": "Fuente leída para el área protegida y sus bosques junto al Canal de Beagle; no valida toda la ciudad de Ushuaia.",
+      "pending": [
+        "Añadir fuentes municipales de patrimonio urbano y Beagle, separar parque/ciudad y modalidades de navegación; portal turístico municipal vinculado no accesible en esta consulta.",
+        "Derechos de fotografías, texto final y revisión de equivalencia con la guía original."
+      ]
+    },
+    "replacement": {
+      "scopeReview": null,
+      "backup": null,
+      "retirementApproval": null
+    },
+    "redirect": {
+      "status": 308,
+      "fromPath": "/pdf/ushuaia.pdf",
+      "toPath": "/escapadas/ushuaia",
+      "enabled": false
+    }
+  },
+  {
+    "legacyGuideId": "esc_07",
+    "title": "Sierra de la Ventana",
+    "legacyTitle": "Sierra de la Ventana",
+    "provinceSlugs": [
+      "buenos_aires"
+    ],
+    "batch": "B03",
+    "pdf": {
+      "path": "/pdf/ventana.pdf",
+      "bytes": 15874893,
+      "sha256": "ba9891b9a3705cbc9c38fb7d9bcad92ed593d46535c97203e9b947130aaa515f"
+    },
+    "usedBy": [
+      "public/data/escapadas.json → EscapadasContent → /escapadas"
+    ],
+    "proposedHtml": "/escapadas/sierra-de-la-ventana",
+    "draftSlug": null,
+    "editorialStatus": "research-inventory",
+    "humanApproved": false,
+    "publicationPermitted": false,
+    "research": {
+      "checkedAt": "2026-10-24",
+      "depth": "official-overview",
+      "sources": [
+        {
+          "url": "https://buenosaires.tur.ar/secc/notes/4-senderos-fantasticos-en-tornquist/",
+          "title": "Turismo de Buenos Aires — Tornquist"
+        }
+      ],
+      "scope": "Sistema de Ventania y Parque Provincial Ernesto Tornquist; la fuente distingue senderos guiados y autoguiados.",
+      "pending": [
+        "Comprobar condiciones directamente con el parque; no reutilizar horarios y duraciones del artículo como datos vigentes; distinguir Sierra de la Ventana, Villa Ventana y Tornquist.",
+        "Derechos de fotografías, texto final y revisión de equivalencia con la guía original."
+      ]
+    },
+    "replacement": {
+      "scopeReview": null,
+      "backup": null,
+      "retirementApproval": null
+    },
+    "redirect": {
+      "status": 308,
+      "fromPath": "/pdf/ventana.pdf",
+      "toPath": "/escapadas/sierra-de-la-ventana",
+      "enabled": false
+    }
+  }
+]

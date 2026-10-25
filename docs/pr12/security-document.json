@@ -1,0 +1,22 @@
+{
+  "id": "security-archive",
+  "path": "/pdf/seguridad/recomendaciones_para_un_verano_seguro_1.pdf",
+  "bytes": 1368481,
+  "sha256": "1d0637c6aa8ba9b7479340c8833db2c019db5673a85408b2e68db5175ca5be6d",
+  "existingPage": "/seguridad",
+  "replacementApproved": false,
+  "backup": null,
+  "redirect": null,
+  "status": "separate-specialist-review",
+  "source": {
+    "url": "https://www.argentina.gob.ar/sinagir",
+    "checkedAt": "2026-10-24",
+    "scope": "Portal institucional de gestión del riesgo; no prueba equivalencia con recomendaciones estivales."
+  },
+  "pending": [
+    "Delimitar el contenido y la fecha del documento de verano, sin transcribirlo automáticamente.",
+    "Contrastar cada consejo con su organismo competente y revisar derechos.",
+    "Revisión humana independiente; no emitir consejos sanitarios o de emergencias nuevos en este PR.",
+    "Respaldo independiente y prueba de restauración antes de cualquier retirada."
+  ]
+}

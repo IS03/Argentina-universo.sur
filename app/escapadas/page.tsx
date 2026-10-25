@@ -1,3 +1,5 @@
+import { publishedTrips } from "@/content/escapadas";
+import PublishedTrips from "@/components/escapadas/PublishedTrips";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import EscapadasContent from "@/components/EscapadasContent";
@@ -21,7 +23,7 @@ export default async function EscapadasPage() {
               Escapadas en Argentina
             </h1>
             <p className="text-[#6B5D47] text-lg mb-6">
-              Descargá nuestras guías de escapadas en PDF
+              Ideas para descubrir ciudades, paisajes y experiencias de Argentina. Consultá también nuestras guías en PDF.
             </p>
             <nav className="flex flex-wrap justify-center gap-4 text-sm" aria-label="Explorar más contenido">
               <Link href={ROUTES.home} className="text-[#6B5D47] hover:text-[#A68B5B] underline underline-offset-2 transition-colors">
@@ -39,7 +41,8 @@ export default async function EscapadasPage() {
             </nav>
           </div>
 
-          {/* Contenido con filtros */}
+          <PublishedTrips trips={publishedTrips} />
+          {/* Las guías originales siguen accesibles mientras se revisan sus reemplazos. */}
           <EscapadasContent escapadas={escapadas} />
         </div>
       </main>

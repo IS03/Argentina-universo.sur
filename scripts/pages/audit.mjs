@@ -1,3 +1,4 @@
+import { approvedTripUrls } from "../editorial/public-urls.mjs";
 import { assertPublicArtifact, readEditorialTrips } from "./editorial-security.mjs";
 import { readFile, stat, readdir, mkdir, writeFile } from "node:fs/promises";
 import { join, resolve } from "node:path";
@@ -17,10 +18,10 @@ const editorialSecurity = await assertPublicArtifact(base, await readEditorialTr
 await mkdir(".artifacts/pages/reports", {recursive: true});
 await writeFile(".artifacts/pages/reports/editorial-security-" + mode + ".json", JSON.stringify(editorialSecurity, null, 2) + "\n");
 const catalog = await readCatalog();
-const urls = createSitemap(
+const urls = [...createSitemap(
   catalog.provincias.map(normalizarProvincia),
   catalog.actividades.map(normalizarActividad),
-).map((r) => r.url);
+).map((r) => r.url), ...await approvedTripUrls(resolve("."))];
 const records = [];
 for (const url of urls) {
   const path = new URL(url).pathname;

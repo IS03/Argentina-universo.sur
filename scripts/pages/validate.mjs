@@ -1,7 +1,8 @@
 import { readFile, readdir, writeFile } from "node:fs/promises";
 import { createHash } from "node:crypto";
 import {
-  validateTrip,
+  validateTripAsOf,
+  buildDate,
   tripPublishable,
   tripContentHash,
 } from "../../lib/pages/trips.ts";
@@ -10,7 +11,7 @@ const trips = [];
 for (const name of await readdir(dir))
   if (name.endsWith(".json")) {
     const trip = JSON.parse(await readFile(new URL(name, dir), "utf8"));
-    const errors = validateTrip(trip);
+    const errors = validateTripAsOf(trip, buildDate());
     if (errors.length) throw Error(name + ": " + errors.join("; "));
     trips.push(trip);
   }
