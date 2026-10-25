@@ -1,0 +1,195 @@
+{
+  "schemaVersion": 2,
+  "id": "AUS-ESC-LA-PAMPA-EDITORIAL-01",
+  "slug": "la-pampa",
+  "title": "La Pampa: caldenes, sierras y memoria cultural",
+  "destination": "La Pampa",
+  "province": "La Pampa",
+  "description": "La Pampa no se agota en una imagen de llanura. Parque Luro, Lihué Calel y Toay ofrecen acercamientos distintos al paisaje y a la memoria: un bosque de caldén con patrimonio construido, sierras con rastros de ocupación humana y una localidad vinculada con la literatura.",
+  "status": "draft",
+  "publicationAuthorized": false,
+  "review": null,
+  "introductionSourceIds": [
+    "LP-LURO",
+    "LP-CASTILLO"
+  ],
+  "geography": {
+    "provinceSlugs": [
+      "la_pampa"
+    ],
+    "localities": [
+      {
+        "id": "git-locality:la_pampa:toay",
+        "name": "Toay, La Pampa",
+        "provinceSlug": "la_pampa",
+        "sourceIds": [
+          "LP-OROZCO"
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "LP-LURO",
+      "title": "INPROTUR — Reserva Provincial Parque Luro",
+      "url": "https://www.argentina.travel/actividades/reserva-provincial-parque-luro",
+      "checkedAt": "2026-10-24"
+    },
+    {
+      "id": "LP-CASTILLO",
+      "title": "Comisión Nacional de Monumentos — Castillo del Parque Luro",
+      "url": "https://www.argentina.gob.ar/node/416067",
+      "checkedAt": "2026-10-24"
+    },
+    {
+      "id": "LP-LIHUE",
+      "title": "APN — Actividades en Lihué Calel",
+      "url": "https://www.argentina.gob.ar/parquesnacionales/regionpatagonia/parque-nacional-lihue-calel/actividades",
+      "checkedAt": "2026-10-24"
+    },
+    {
+      "id": "LP-OROZCO",
+      "title": "Municipalidad de Toay — Casa Museo Olga Orozco",
+      "url": "https://www.toay.gob.ar/ciudad/descubri-toay/41-casa-museo-olga-orozco",
+      "checkedAt": "2026-10-24",
+      "publishedAt": "2020-11-10"
+    }
+  ],
+  "sections": [
+    {
+      "id": "calden",
+      "kind": "highlights",
+      "title": "Parque Luro: paisaje y huellas del pasado",
+      "sourceIds": [
+        "LP-LURO"
+      ],
+      "paragraphs": [
+        "El bosque de caldén da identidad al área protegida. Los ambientes naturales y el patrimonio construido permiten una visita con dos miradas, sin reducirla al avistaje de ciervos. La presencia de fauna en el catálogo no demuestra que pueda observarse de cerca ni en cualquier fecha."
+      ]
+    },
+    {
+      "id": "castillo",
+      "kind": "culture",
+      "title": "El Castillo y la historia de la estancia",
+      "sourceIds": [
+        "LP-CASTILLO"
+      ],
+      "paragraphs": [
+        "La residencia conocida como San Huberto conserva una referencia de la historia de Pedro Luro y de la propiedad. El conjunto museístico reúne mobiliario, objetos y carruajes. Confirmá los espacios visitables con la administración; la declaratoria patrimonial no acredita apertura diaria de cada dependencia.",
+        "La fuente explica la introducción del ciervo colorado y el jabalí, por lo que no corresponde presentarlos como fauna originaria del caldenal. La observación y cualquier actividad vinculada con la brama requieren organización y condiciones específicas de la reserva."
+      ]
+    },
+    {
+      "id": "sierras",
+      "kind": "nature",
+      "title": "Lihué Calel: otro ambiente pampeano",
+      "sourceIds": [
+        "LP-LIHUE"
+      ],
+      "paragraphs": [
+        "Las sierras permiten observar un paisaje distinto del bosque de Parque Luro. APN describe el sendero Namuncurá y el ascenso a Cerro Alto como recorridos relacionados, pero de exigencias diferentes. Elegí la propuesta con el parque y no presupongas que la descripción de una senda habilita todas sus conexiones."
+      ]
+    },
+    {
+      "id": "memoria",
+      "kind": "activities",
+      "title": "Interpretar las huellas sin intervenirlas",
+      "sourceIds": [
+        "LP-LIHUE"
+      ],
+      "paragraphs": [
+        "El Valle de las Pinturas, los aleros, El Chenque y La Casona reúnen evidencias culturales de momentos diferentes. La interpretación ayuda a comprender el uso del territorio sin tocar ni alterar restos. Algunos recorridos requieren guía; consultá registro, modalidad y estado antes de salir. No se publica una ruta autónoma hacia sitios sensibles."
+      ]
+    },
+    {
+      "id": "toay",
+      "kind": "culture",
+      "title": "Toay y la memoria de Olga Orozco",
+      "sourceIds": [
+        "LP-OROZCO"
+      ],
+      "paragraphs": [
+        "La casa museo conserva la relación de la poeta con su lugar natal y una colección bibliográfica y de objetos personales. Es una propuesta cultural diferente de las reservas naturales. Consultá con el municipio si la casa recibe visitas y qué espacios ofrece en esa fecha; la existencia de la colección no equivale a un horario operativo confirmado."
+      ]
+    },
+    {
+      "id": "plan",
+      "kind": "practical",
+      "title": "Elegir una base y una propuesta concreta",
+      "sourceIds": [
+        "LP-LURO",
+        "LP-LIHUE",
+        "LP-OROZCO"
+      ],
+      "paragraphs": [
+        "Organizá por separado Parque Luro, Lihué Calel y las visitas culturales de Toay. No se fijan tiempos de traslado ni se asegura que todas puedan combinarse en un fin de semana. La experiencia rural necesita elegir un establecimiento y confirmar recepción, actividades y alojamiento con su responsable.",
+        "Las salinas y la colonia menonita de la guía requieren investigación propia y acuerdo sobre la visita. No se anuncian recorridos seguros por extracción de sal ni acceso libre a espacios comunitarios. Quedan como temas pendientes para completar la cobertura provincial."
+      ]
+    }
+  ],
+  "address": "Referencia de la reserva; consultar qué sectores se visitan.",
+  "mapUrl": "https://www.openstreetmap.org/search?query=Reserva%20Provincial%20Parque%20Luro%2C%20La%20Pampa%20Argentina",
+  "locations": [
+    {
+      "id": "parque-luro",
+      "label": "Reserva Provincial Parque Luro, La Pampa",
+      "description": "Referencia de la reserva; consultar qué sectores se visitan.",
+      "sourceIds": [
+        "LP-LURO"
+      ],
+      "mapUrl": "https://www.openstreetmap.org/search?query=Reserva%20Provincial%20Parque%20Luro%2C%20La%20Pampa%20Argentina"
+    },
+    {
+      "id": "lihue-calel",
+      "label": "Parque Nacional Lihué Calel, La Pampa",
+      "description": "Área de sierras, distinta de Parque Luro.",
+      "sourceIds": [
+        "LP-LIHUE"
+      ],
+      "mapUrl": "https://www.openstreetmap.org/search?query=Parque%20Nacional%20Lihu%C3%A9%20Calel%2C%20La%20Pampa%20Argentina"
+    },
+    {
+      "id": "toay",
+      "label": "Toay, La Pampa",
+      "description": "Localidad de la Casa Museo Olga Orozco; confirmar recepción.",
+      "sourceIds": [
+        "LP-OROZCO"
+      ],
+      "mapUrl": "https://www.openstreetmap.org/search?query=Toay%2C%20La%20Pampa%20Argentina"
+    }
+  ],
+  "photos": [],
+  "related": [
+    {
+      "href": "/provincias/la_pampa",
+      "label": "Conocer la pampa"
+    },
+    {
+      "href": "/actividades?provincia=la_pampa",
+      "label": "Actividades en la pampa"
+    },
+    {
+      "href": "/escapadas",
+      "label": "Otras escapadas"
+    }
+  ],
+  "editorial": {
+    "documentaryStatus": "sources-checked",
+    "updatedAt": "2026-10-24",
+    "origin": {
+      "kind": "git-editorial",
+      "legacyGuideIds": [
+        "esc_22"
+      ],
+      "masterRefs": []
+    },
+    "pendingReviews": [
+      "Revisión humana del texto, fuentes y alcance",
+      "Autorización independiente de publicación",
+      "Fotografías: derechos y selección pendientes",
+      "Equivalencia con el PDF y respaldo externo sin aprobar",
+      "Consultar posible cierre por restauración de Casa Museo: noticia secundaria encontrada, sin confirmación oficial actual; no se afirma abierta ni cerrada",
+      "Completar fuentes de estancias, salinas y colonia menonita"
+    ]
+  }
+}

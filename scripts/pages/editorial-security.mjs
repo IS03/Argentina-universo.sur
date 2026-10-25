@@ -64,6 +64,8 @@ function normalize(value) {
   return value.normalize("NFC");
 }
 const privateMarkers = /1fwed8poUbIaLBnMLJta5WkyAnYg_SFc453m-wl3aB1w|spreadsheetId|original_payload|originalPayload|dictamen_publicacion|aprobacion_humana|permiso_publicacion|practica_trazabilidad|practica_campos_permitidos|practica_exclusiones|componentes_condicionados_ids|AUS_PRIVATE_MASTER_CANARY|masterRefs|pendingReviews|documentaryStatus|retirementApproval|scopeReview|restorationVerified/i;
+// Raw research identities can leak without a recognizable field name. Keep the reconciliation private.
+const privateResearchReferences = /\b(?:D|A|C|E)-[A-Z]{2,4}-\d{3}\b|\b(?:EV|F|P|R)-\d{4}\b|docs\.google\.com\/(?:document|spreadsheets)\/d\//;
 const privatePath = /(?:^|\/)(?:\.env(?:\.|$)|master[-_]snapshot|previous[-_]snapshot|import[-_]plan|original_payload|content\/escapadas|\.artifacts\/)|\.(?:xlsx?|csv|tsv)$/i;
 // Scan every non-media file, including extensionless static API responses and unknown auxiliaries.
 const binaryMedia = /\.(?:avif|gif|ico|jpe?g|png|webp|woff2?|ttf|otf|pdf|mp3|mp4|mov|webm)$/i;
@@ -106,7 +108,7 @@ export async function auditPublicArtifact(directory, trips, {include = () => tru
       if (name.endsWith(".gz")) bytes = gunzipSync(bytes);
       if (name.endsWith(".br")) bytes = brotliDecompressSync(bytes);
       const text = normalize(bytes.toString("utf8"));
-      if (privateMarkers.test(text)) errors.push({file: name, rule: "private-master-data"});
+      if (privateMarkers.test(text) || privateResearchReferences.test(text)) errors.push({file: name, rule: "private-master-data"});
       if (text.includes("/prototipo-pr10/escapadas/")) errors.push({file: name, rule: "review-prototype"});
       for (const needle of needles)
         if (text.includes(needle.value)) errors.push({file: name, rule: needle.label});

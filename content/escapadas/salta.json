@@ -1,0 +1,199 @@
+{
+  "schemaVersion": 2,
+  "id": "AUS-ESC-SALTA-EDITORIAL-01",
+  "slug": "salta",
+  "title": "Salta: patrimonio urbano y dos puertas a los Valles Calchaquíes",
+  "destination": "Salta",
+  "province": "Salta",
+  "description": "La ciudad de Salta puede ser un viaje cultural por sí misma. Cafayate y Cachi abren otras lecturas de la provincia, ligadas al paisaje y a las comunidades de los Valles Calchaquíes. Elegirlas como destinos diferentes ayuda a planificar sin comprimir la región en una excursión universal.",
+  "status": "draft",
+  "publicationAuthorized": false,
+  "review": null,
+  "introductionSourceIds": [
+    "SAL-MUSEOS",
+    "SAL-CACHI"
+  ],
+  "geography": {
+    "provinceSlugs": [
+      "salta"
+    ],
+    "localities": [
+      {
+        "id": "git-locality:salta:salta",
+        "name": "Salta, Argentina",
+        "provinceSlug": "salta",
+        "sourceIds": [
+          "SAL-MUSEOS"
+        ]
+      },
+      {
+        "id": "git-locality:salta:cafayate",
+        "name": "Cafayate, Salta",
+        "provinceSlug": "salta",
+        "sourceIds": [
+          "SAL-VID"
+        ]
+      },
+      {
+        "id": "git-locality:salta:cachi",
+        "name": "Cachi, Salta",
+        "provinceSlug": "salta",
+        "sourceIds": [
+          "SAL-CACHI"
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "SAL-MUSEOS",
+      "title": "Ministerio de Turismo de Salta — Museos y centros de interpretación",
+      "url": "https://visit.turismosalta.gov.ar/post/museos-y-centros-de-interpretacion/",
+      "checkedAt": "2026-10-24"
+    },
+    {
+      "id": "SAL-CACHI",
+      "title": "Secretaría de Turismo de la Nación — Cachi",
+      "url": "https://www.argentina.gob.ar/jefatura/turismo-y-ambiente/turismo/best-tourism-villages-argentina/cachi-salta",
+      "checkedAt": "2026-10-24"
+    },
+    {
+      "id": "SAL-VID",
+      "title": "Museo de la Vid y el Vino — Presentación",
+      "url": "https://www.museodelavidyelvino.gob.ar/museo.php",
+      "checkedAt": "2026-10-24"
+    },
+    {
+      "id": "SAL-CARDONES",
+      "title": "APN — Actividades en Los Cardones",
+      "url": "https://www.argentina.gob.ar/parquesnacionales/region-noroeste/parque-nacional-los-cardones/actividades",
+      "checkedAt": "2026-10-24"
+    }
+  ],
+  "sections": [
+    {
+      "id": "ciudad",
+      "kind": "culture",
+      "title": "Museos para elegir una mirada sobre Salta",
+      "sourceIds": [
+        "SAL-MUSEOS"
+      ],
+      "paragraphs": [
+        "El Museo Güemes propone una lectura de su vida y del proceso de independencia en una casa vinculada con su familia. El MAAM aborda el patrimonio arqueológico de alta montaña y la cultura ancestral. Son experiencias distintas: conviene elegir por el tema y consultar las modalidades de cada institución.",
+        "El Cabildo, sede del Museo Histórico del Norte, suma otra escala de historia y arquitectura. No se atribuyen a todos los museos las mismas salas, horarios o condiciones. La ficha institucional es una base de investigación, no una garantía de que cada muestra esté disponible en la fecha elegida."
+      ]
+    },
+    {
+      "id": "cafayate",
+      "kind": "activities",
+      "title": "Cafayate: comprender el paisaje del vino",
+      "sourceIds": [
+        "SAL-VID"
+      ],
+      "paragraphs": [
+        "En Cafayate, el Museo de la Vid y el Vino organiza sus contenidos en dos ejes: la vid y el vino. Los recursos audiovisuales y el recorrido permiten acercarse tanto al ambiente como al trabajo y a las transformaciones de la producción. No hace falta reducir el destino a una sucesión de degustaciones.",
+        "El museo y una bodega son visitas diferentes. Confirmá reservas y condiciones por separado. La institución describe espacios con proyecciones y superposición de sonidos; si necesitás apoyos sensoriales o de movilidad, consultá sus recursos antes de decidir el recorrido."
+      ]
+    },
+    {
+      "id": "cachi",
+      "kind": "highlights",
+      "title": "Cachi: pueblo, iglesia y arqueología",
+      "sourceIds": [
+        "SAL-CACHI"
+      ],
+      "paragraphs": [
+        "El casco histórico de Cachi permite acercarse al paisaje construido de los Valles Calchaquíes. Su iglesia y el Museo Arqueológico Pío Pablo Díaz son referencias de una visita que combina arquitectura y patrimonio regional. El museo aporta contexto a las huellas de la historia prehispánica, más allá de la imagen del pueblo."
+      ]
+    },
+    {
+      "id": "cardones",
+      "kind": "nature",
+      "title": "Los Cardones: detenerse a interpretar",
+      "sourceIds": [
+        "SAL-CARDONES"
+      ],
+      "paragraphs": [
+        "El parque presenta miradores y senderos como Caminos del Pasado y Secretos del Cardonal, relacionados con la Recta del Tin Tin y los ambientes que conservan los cardones. No son equivalentes al ascenso al cerro Malcante, para el que APN señala preparación y exigencias específicas. Elegí una propuesta concreta y comprobá su habilitación."
+      ]
+    },
+    {
+      "id": "plan",
+      "kind": "practical",
+      "title": "Decidir antes de unir localidades",
+      "sourceIds": [
+        "SAL-CACHI",
+        "SAL-CARDONES"
+      ],
+      "paragraphs": [
+        "La RP 33 y la Cuesta del Obispo forman parte de la referencia de acceso a Cachi. No se infiere de ello el estado actual de la ruta ni que una vuelta por Cachi y Cafayate pueda hacerse en cualquier vehículo o jornada. Confirmá los tramos con información vial vigente y dejá margen para conocer las localidades.",
+        "Una elección centrada en museos permite dedicar más tiempo a la ciudad; otra puede orientarse a la producción y al patrimonio de un pueblo de los valles. La prioridad del viaje ayuda a decidir dónde alojarse y qué traslado confirmar antes de contratar otras experiencias."
+      ]
+    }
+  ],
+  "address": "Ciudad capital y museos; no representa toda la provincia.",
+  "mapUrl": "https://www.openstreetmap.org/search?query=Salta%2C%20Argentina%20Argentina",
+  "locations": [
+    {
+      "id": "salta",
+      "label": "Salta, Argentina",
+      "description": "Ciudad capital y museos; no representa toda la provincia.",
+      "sourceIds": [
+        "SAL-MUSEOS"
+      ],
+      "mapUrl": "https://www.openstreetmap.org/search?query=Salta%2C%20Argentina%20Argentina"
+    },
+    {
+      "id": "cafayate",
+      "label": "Cafayate, Salta",
+      "description": "Localidad del Museo de la Vid y el Vino.",
+      "sourceIds": [
+        "SAL-VID"
+      ],
+      "mapUrl": "https://www.openstreetmap.org/search?query=Cafayate%2C%20Salta%20Argentina"
+    },
+    {
+      "id": "cachi",
+      "label": "Cachi, Salta",
+      "description": "Localidad de los Valles Calchaquíes; acceso a confirmar.",
+      "sourceIds": [
+        "SAL-CACHI"
+      ],
+      "mapUrl": "https://www.openstreetmap.org/search?query=Cachi%2C%20Salta%20Argentina"
+    }
+  ],
+  "photos": [],
+  "related": [
+    {
+      "href": "/provincias/salta",
+      "label": "Conocer salta"
+    },
+    {
+      "href": "/actividades?provincia=salta",
+      "label": "Actividades en salta"
+    },
+    {
+      "href": "/escapadas",
+      "label": "Otras escapadas"
+    }
+  ],
+  "editorial": {
+    "documentaryStatus": "sources-checked",
+    "updatedAt": "2026-10-24",
+    "origin": {
+      "kind": "git-editorial",
+      "legacyGuideIds": [
+        "esc_09"
+      ],
+      "masterRefs": []
+    },
+    "pendingReviews": [
+      "Revisión humana del texto, fuentes y alcance",
+      "Autorización independiente de publicación",
+      "Fotografías: derechos y selección pendientes",
+      "Equivalencia con el PDF y respaldo externo sin aprobar",
+      "Investigar fuentes específicas de Tren a las Nubes, San Lorenzo, Quebrada de las Conchas y Cabra Corral",
+      "No usar referencia de jurisdicción Salta del maestro para El Leoncito"
+    ]
+  }
+}

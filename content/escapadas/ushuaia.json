@@ -1,0 +1,191 @@
+{
+  "schemaVersion": 2,
+  "id": "AUS-ESC-USHUAIA-EDITORIAL-01",
+  "slug": "ushuaia",
+  "title": "Ushuaia: ciudad, canal y bosque fueguino",
+  "destination": "Ushuaia",
+  "province": "Tierra del Fuego",
+  "description": "Ushuaia reúne la vida portuaria del Beagle, memoria del antiguo presidio y un entorno de bosques y montañas. Para elegir una escapada conviene separar el paseo urbano, la visita al parque nacional y las navegaciones: comparten paisaje, pero se organizan de maneras distintas.",
+  "status": "draft",
+  "publicationAuthorized": false,
+  "review": null,
+  "introductionSourceIds": [
+    "USH-INFUETUR",
+    "USH-BEAGLE"
+  ],
+  "geography": {
+    "provinceSlugs": [
+      "tierra_del_fuego"
+    ],
+    "localities": [
+      {
+        "id": "git-locality:tierra_del_fuego:ushuaia",
+        "name": "Ushuaia, Tierra del Fuego",
+        "provinceSlug": "tierra_del_fuego",
+        "sourceIds": [
+          "USH-INFUETUR"
+        ]
+      },
+      {
+        "id": "git-locality:tierra_del_fuego:puerto-almanza",
+        "name": "Puerto Almanza, Tierra del Fuego",
+        "provinceSlug": "tierra_del_fuego",
+        "sourceIds": [
+          "USH-BEAGLE"
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "USH-INFUETUR",
+      "title": "INFUETUR — Ushuaia",
+      "url": "https://findelmundo.tur.ar/es/destinos/ushuaia",
+      "checkedAt": "2026-10-24"
+    },
+    {
+      "id": "USH-BEAGLE",
+      "title": "Secretaría de Turismo de Ushuaia — Canal Beagle",
+      "url": "https://turismoushuaia.com/zonas/canal-beagle/?lang=es_AR",
+      "checkedAt": "2026-10-24"
+    },
+    {
+      "id": "USH-APN",
+      "title": "APN — Actividades en Tierra del Fuego",
+      "url": "https://www.argentina.gob.ar/parquesnacionales/patagonia-austral/parque-nacional-tierra-del-fuego/actividades",
+      "checkedAt": "2026-10-24"
+    },
+    {
+      "id": "USH-PRESIDIO",
+      "title": "Museo Marítimo — Museo del Presidio de Ushuaia",
+      "url": "https://museomaritimo.com/es/museo-del-presidio-de-ushuaia",
+      "checkedAt": "2026-10-24"
+    }
+  ],
+  "sections": [
+    {
+      "id": "ciudad",
+      "kind": "highlights",
+      "title": "Mirar la ciudad desde su bahía",
+      "sourceIds": [
+        "USH-INFUETUR"
+      ],
+      "paragraphs": [
+        "La ubicación entre las montañas y el canal ayuda a leer el crecimiento de Ushuaia. La ciudad puede recorrerse como destino urbano y cultural, además de ser base de excursiones. La duración de la luz cambia notablemente con la estación: no conviene trasladar un plan de verano a una jornada invernal sin revisarlo."
+      ]
+    },
+    {
+      "id": "memoria",
+      "kind": "culture",
+      "title": "El presidio y la historia urbana",
+      "sourceIds": [
+        "USH-PRESIDIO"
+      ],
+      "paragraphs": [
+        "El Museo del Presidio permite acercarse a la antigua cárcel a través de sus espacios y objetos. La institución explica la relación entre el trabajo de los presos y la construcción de servicios de la ciudad. Esa lectura aporta contexto al edificio y evita reducir la visita a una colección de anécdotas de detenidos.",
+        "El conjunto museístico incluye otras propuestas vinculadas con la historia marítima y antártica. Antes de organizar la visita, consultá al museo las modalidades disponibles y la accesibilidad del recorrido elegido. La descripción histórica de sus pabellones no acredita horarios ni acceso actual a todos los espacios."
+      ]
+    },
+    {
+      "id": "beagle",
+      "kind": "activities",
+      "title": "Navegar con un objetivo definido",
+      "sourceIds": [
+        "USH-BEAGLE"
+      ],
+      "paragraphs": [
+        "Las navegaciones por el Beagle ofrecen distintas combinaciones de islas, fauna y vistas de la costa. Revisá el itinerario concreto y sus desembarcos: las opciones no son equivalentes. El faro Les Éclaireurs, frecuente en estas propuestas, no es el Faro del Fin del Mundo de la Isla de los Estados.",
+        "Puerto Almanza representa otra forma de acercarse al canal y a su cultura gastronómica. Es una localidad diferente, no una parada implícita de cualquier barco que sale desde Ushuaia. Las salidas, avistajes y experiencias deben confirmarse con sus prestadores y según las condiciones."
+      ]
+    },
+    {
+      "id": "parque",
+      "kind": "nature",
+      "title": "El parque tiene sus propios sectores",
+      "sourceIds": [
+        "USH-APN"
+      ],
+      "paragraphs": [
+        "Bahía Lapataia, el lago Acigami y Ensenada Zaratiegui permiten reconocer ambientes marinos, lacustres y de bosque dentro del Parque Nacional Tierra del Fuego. APN describe senderos con extensiones y exigencias diferentes. No se toma esa descripción como habilitación actual de una senda ni como promesa de accesibilidad universal.",
+        "La Senda Costera y los recorridos de mayor exigencia requieren una elección distinta de los miradores breves. Consultá el estado y los registros exigidos para el itinerario elegido. No extiendas las condiciones de una senda del parque a cualquier excursión regional: cada recorrido tiene su acceso, esfuerzo y organización."
+      ]
+    },
+    {
+      "id": "plan",
+      "kind": "practical",
+      "title": "Organizar por ámbitos, no por una lista cerrada",
+      "sourceIds": [
+        "USH-INFUETUR",
+        "USH-BEAGLE",
+        "USH-APN"
+      ],
+      "paragraphs": [
+        "Separar ciudad y museos, parque y navegación permite ajustar cada jornada al clima y al interés del grupo. No se promete realizar las tres experiencias en una cantidad fija de días. Verificá las condiciones de cada visita antes de reservar, sin asumir que comprar una excursión resuelve el acceso a todas las demás."
+      ]
+    }
+  ],
+  "address": "Referencia de la ciudad y su bahía; no es el acceso al parque nacional.",
+  "mapUrl": "https://www.openstreetmap.org/search?query=Ushuaia%2C%20Tierra%20del%20Fuego%20Argentina",
+  "locations": [
+    {
+      "id": "ushuaia",
+      "label": "Ushuaia, Tierra del Fuego",
+      "description": "Referencia de la ciudad y su bahía; no es el acceso al parque nacional.",
+      "sourceIds": [
+        "USH-INFUETUR"
+      ],
+      "mapUrl": "https://www.openstreetmap.org/search?query=Ushuaia%2C%20Tierra%20del%20Fuego%20Argentina"
+    },
+    {
+      "id": "lapataia",
+      "label": "Bahía Lapataia, Tierra del Fuego",
+      "description": "Sector del parque nacional; consultar accesos con APN.",
+      "sourceIds": [
+        "USH-APN"
+      ],
+      "mapUrl": "https://www.openstreetmap.org/search?query=Bah%C3%ADa%20Lapataia%2C%20Tierra%20del%20Fuego%20Argentina"
+    },
+    {
+      "id": "puerto-almanza",
+      "label": "Puerto Almanza, Tierra del Fuego",
+      "description": "Localidad del canal diferente de Ushuaia.",
+      "sourceIds": [
+        "USH-BEAGLE"
+      ],
+      "mapUrl": "https://www.openstreetmap.org/search?query=Puerto%20Almanza%2C%20Tierra%20del%20Fuego%20Argentina"
+    }
+  ],
+  "photos": [],
+  "related": [
+    {
+      "href": "/provincias/tierra_del_fuego",
+      "label": "Conocer tierra del fuego"
+    },
+    {
+      "href": "/actividades?provincia=tierra_del_fuego",
+      "label": "Actividades en tierra del fuego"
+    },
+    {
+      "href": "/escapadas",
+      "label": "Otras escapadas"
+    }
+  ],
+  "editorial": {
+    "documentaryStatus": "sources-checked",
+    "updatedAt": "2026-10-24",
+    "origin": {
+      "kind": "git-editorial",
+      "legacyGuideIds": [
+        "esc_12"
+      ],
+      "masterRefs": []
+    },
+    "pendingReviews": [
+      "Revisión humana del texto, fuentes y alcance",
+      "Autorización independiente de publicación",
+      "Fotografías: derechos y selección pendientes",
+      "Equivalencia con el PDF y respaldo externo sin aprobar",
+      "Laguna Esmeralda, Martial y tren: investigar condiciones específicas antes de ampliar cobertura"
+    ]
+  }
+}

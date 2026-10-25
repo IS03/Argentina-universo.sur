@@ -1,0 +1,200 @@
+{
+  "schemaVersion": 2,
+  "id": "AUS-ESC-SIERRA-DE-LA-VENTANA-EDITORIAL-01",
+  "slug": "sierra-de-la-ventana",
+  "title": "Sierra de la Ventana: pastizales, pueblos y patrimonio",
+  "destination": "Sierra de la Ventana",
+  "province": "Buenos Aires",
+  "description": "La comarca de Ventania ofrece una escapada que puede combinar paisaje serrano con historia local. Sierra de la Ventana, Villa Ventana y Saldungaray son localidades diferentes; el parque provincial tiene sus propios accesos y reglas. Elegir bien esas escalas evita confundir una caminata con toda la comarca.",
+  "status": "draft",
+  "publicationAuthorized": false,
+  "review": null,
+  "introductionSourceIds": [
+    "VEN-AMBIENTE",
+    "VEN-FICHA"
+  ],
+  "geography": {
+    "provinceSlugs": [
+      "buenos_aires"
+    ],
+    "localities": [
+      {
+        "id": "git-locality:buenos_aires:sierra-ventana",
+        "name": "Sierra de la Ventana, Buenos Aires",
+        "provinceSlug": "buenos_aires",
+        "sourceIds": [
+          "VEN-CULTURA"
+        ]
+      },
+      {
+        "id": "git-locality:buenos_aires:saldungaray",
+        "name": "Saldungaray, Buenos Aires",
+        "provinceSlug": "buenos_aires",
+        "sourceIds": [
+          "VEN-CULTURA"
+        ]
+      },
+      {
+        "id": "git-locality:buenos_aires:villa-ventana",
+        "name": "Villa Ventana, Buenos Aires",
+        "provinceSlug": "buenos_aires",
+        "sourceIds": [
+          "VEN-CULTURA"
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "VEN-AMBIENTE",
+      "title": "Ministerio de Ambiente bonaerense — Parque Provincial Ernesto Tornquist",
+      "url": "https://www.ambiente.gba.gob.ar/anp/parque_provincial_ernesto_tornquist",
+      "checkedAt": "2026-10-24"
+    },
+    {
+      "id": "VEN-FICHA",
+      "title": "Ministerio de Ambiente bonaerense — Ficha del parque",
+      "url": "https://www.ambiente.gba.gob.ar/anp/ficha_TO",
+      "checkedAt": "2026-10-24"
+    },
+    {
+      "id": "VEN-VISITA",
+      "title": "Turismo de Tornquist — Parque Provincial Ernesto Tornquist",
+      "url": "https://sierrasdelaventana.tur.ar/atractivos/parque-provincial-ernesto-tornquist/",
+      "checkedAt": "2026-10-24"
+    },
+    {
+      "id": "VEN-CULTURA",
+      "title": "Turismo de Tornquist — Turismo histórico y museos",
+      "url": "https://sierrasdelaventana.tur.ar/que-hacer/turismo-historico-y-museos/",
+      "checkedAt": "2026-10-24"
+    }
+  ],
+  "sections": [
+    {
+      "id": "parque",
+      "kind": "highlights",
+      "title": "Un pastizal serrano que necesita conservación",
+      "sourceIds": [
+        "VEN-AMBIENTE"
+      ],
+      "paragraphs": [
+        "El parque protege pastizales, cuencas y especies propias de este ambiente serrano. La observación del paisaje puede centrarse en sus formas, su vegetación y su diversidad, sin que sea necesario alcanzar una cumbre. La presencia de fauna en el área no implica que pueda encontrarse o acercarse a ella en cada visita."
+      ]
+    },
+    {
+      "id": "sectores",
+      "kind": "activities",
+      "title": "Elegir acceso y recorrido",
+      "sourceIds": [
+        "VEN-VISITA"
+      ],
+      "paragraphs": [
+        "La información local distingue el sector de base Cerro Ventana del de Cerro Bahía Blanca. Miradores, senderos y ascensos tienen esfuerzos y modalidades diferentes. Consultá con el parque cuál corresponde a tu grupo y cómo se organiza la visita en esa fecha; no se atribuye a todos los recorridos una misma dificultad ni un mismo régimen de guía.",
+        "El cerro que da nombre a la comarca es un monumento natural dentro del parque. Su ascenso no se presenta como paseo urbano ni como actividad apta para cualquier persona. La ficha no fija edades, cupos o horarios porque esos datos necesitan revisión operativa al momento de viajar."
+      ]
+    },
+    {
+      "id": "saldungaray",
+      "kind": "culture",
+      "title": "Saldungaray: arquitectura e historia local",
+      "sourceIds": [
+        "VEN-CULTURA"
+      ],
+      "paragraphs": [
+        "El Centro de Interpretación Salamone ofrece una referencia para acercarse al patrimonio arquitectónico de Saldungaray. Fortín Pavón aporta otra lectura histórica y requiere su propia consulta de visitas. No son dependencias del parque provincial ni se presume que una reserva incluya el acceso a ambos."
+      ]
+    },
+    {
+      "id": "villa",
+      "kind": "culture",
+      "title": "Villa Ventana y la memoria del Club Hotel",
+      "sourceIds": [
+        "VEN-CULTURA"
+      ],
+      "paragraphs": [
+        "Las ruinas del Club Hotel de la Ventana permiten explorar una historia diferente de la serranía. El portal local indica consultar las visitas con guías habilitados en la oficina turística de Villa Ventana. Esa mediación ayuda a comprender el sitio y a evitar ingresar por cuenta propia a sectores no habilitados.",
+        "Sierra de la Ventana también cuenta con propuestas museísticas, como el Museo del Mate y el ferroviario. Elegí según tus intereses y verificá cada institución: un listado turístico no acredita que todos los espacios estén operativos el mismo día."
+      ]
+    },
+    {
+      "id": "plan",
+      "kind": "practical",
+      "title": "Un plan con alternativas a la cumbre",
+      "sourceIds": [
+        "VEN-AMBIENTE",
+        "VEN-VISITA",
+        "VEN-CULTURA"
+      ],
+      "paragraphs": [
+        "La RP 76 sirve de referencia para el parque, pero antes de salir confirmá el ingreso y el recorrido elegidos. Una jornada de patrimonio en las localidades puede complementar otra de naturaleza, sin prometer el baño en arroyos o piletones ni servicios actuales de aventura.",
+        "La interpretación del pastizal y los paseos de historia local ofrecen alternativas al ascenso de una cumbre. Antes de combinar recorridos, consultá las condiciones de cada visita y elegí una propuesta que deje tiempo para observar, descansar y conocer las localidades."
+      ]
+    }
+  ],
+  "address": "Localidad de la comarca; mapa orientativo del pueblo.",
+  "mapUrl": "https://www.openstreetmap.org/search?query=Sierra%20de%20la%20Ventana%2C%20Buenos%20Aires%20Argentina",
+  "locations": [
+    {
+      "id": "sierra-ventana",
+      "label": "Sierra de la Ventana, Buenos Aires",
+      "description": "Localidad de la comarca; mapa orientativo del pueblo.",
+      "sourceIds": [
+        "VEN-CULTURA"
+      ],
+      "mapUrl": "https://www.openstreetmap.org/search?query=Sierra%20de%20la%20Ventana%2C%20Buenos%20Aires%20Argentina"
+    },
+    {
+      "id": "saldungaray",
+      "label": "Saldungaray, Buenos Aires",
+      "description": "Localidad con patrimonio arquitectónico e histórico.",
+      "sourceIds": [
+        "VEN-CULTURA"
+      ],
+      "mapUrl": "https://www.openstreetmap.org/search?query=Saldungaray%2C%20Buenos%20Aires%20Argentina"
+    },
+    {
+      "id": "villa-ventana",
+      "label": "Villa Ventana, Buenos Aires",
+      "description": "Consultar aquí las visitas al Club Hotel.",
+      "sourceIds": [
+        "VEN-CULTURA"
+      ],
+      "mapUrl": "https://www.openstreetmap.org/search?query=Villa%20Ventana%2C%20Buenos%20Aires%20Argentina"
+    }
+  ],
+  "photos": [],
+  "related": [
+    {
+      "href": "/provincias/buenos_aires",
+      "label": "Conocer buenos aires"
+    },
+    {
+      "href": "/actividades?provincia=buenos_aires",
+      "label": "Actividades en buenos aires"
+    },
+    {
+      "href": "/escapadas",
+      "label": "Otras escapadas"
+    }
+  ],
+  "editorial": {
+    "documentaryStatus": "sources-checked",
+    "updatedAt": "2026-10-24",
+    "origin": {
+      "kind": "git-editorial",
+      "legacyGuideIds": [
+        "esc_07"
+      ],
+      "masterRefs": []
+    },
+    "pendingReviews": [
+      "Revisión humana del texto, fuentes y alcance",
+      "Autorización independiente de publicación",
+      "Fotografías: derechos y selección pendientes",
+      "Equivalencia con el PDF y respaldo externo sin aprobar",
+      "Superficie del parque: 6114 ha y más de 6700 ha en fichas oficiales distintas",
+      "Reverificar reglas de senderos antes de cualquier aprobación"
+    ]
+  }
+}

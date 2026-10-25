@@ -1,0 +1,195 @@
+{
+  "schemaVersion": 2,
+  "id": "AUS-ESC-SAN-LUIS-EDITORIAL-01",
+  "slug": "san-luis",
+  "title": "San Luis: pueblos serranos y memoria del paisaje",
+  "destination": "San Luis",
+  "province": "San Luis",
+  "description": "San Luis ofrece escalas diferentes para una escapada: el paisaje del embalse en Potrero de los Funes, la historia de La Carolina y los ambientes protegidos de Sierra de las Quijadas. Se pueden elegir como propuestas independientes, sin convertir la provincia en una única localidad.",
+  "status": "draft",
+  "publicationAuthorized": false,
+  "review": null,
+  "introductionSourceIds": [
+    "SL-POTRERO",
+    "SL-CAROLINA"
+  ],
+  "geography": {
+    "provinceSlugs": [
+      "san_luis"
+    ],
+    "localities": [
+      {
+        "id": "git-locality:san_luis:potrero-funes",
+        "name": "Potrero de los Funes, San Luis",
+        "provinceSlug": "san_luis",
+        "sourceIds": [
+          "SL-POTRERO"
+        ]
+      },
+      {
+        "id": "git-locality:san_luis:la-carolina",
+        "name": "La Carolina, San Luis",
+        "provinceSlug": "san_luis",
+        "sourceIds": [
+          "SL-CAROLINA"
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "SL-POTRERO",
+      "title": "Gobierno de San Luis — Parque Nativo",
+      "url": "https://ambiente.sanluis.gov.ar/parque-nativo/",
+      "checkedAt": "2026-10-24"
+    },
+    {
+      "id": "SL-CAROLINA",
+      "title": "Secretaría de Turismo de la Nación — La Carolina",
+      "url": "https://www.argentina.gob.ar/jefatura/turismo/best-tourism-villages-argentina/la-carolina-san-luis",
+      "checkedAt": "2026-10-24"
+    },
+    {
+      "id": "SL-PEATONAL",
+      "title": "Secretaría de Turismo de la Nación — La Carolina, pueblo peatonal",
+      "url": "https://www.argentina.gob.ar/noticias/la-carolina-un-pueblo-turistico-y-peatonal",
+      "checkedAt": "2026-10-24",
+      "publishedAt": "2025-01-15"
+    },
+    {
+      "id": "SL-QUIJADAS",
+      "title": "APN — Actividades en Sierra de las Quijadas",
+      "url": "https://www.argentina.gob.ar/parquesnacionales/centro/parque-nacional-sierra-de-las-quijadas/actividades",
+      "checkedAt": "2026-10-24"
+    }
+  ],
+  "sections": [
+    {
+      "id": "potrero",
+      "kind": "highlights",
+      "title": "Potrero: observar el embalse desde tierra",
+      "sourceIds": [
+        "SL-POTRERO"
+      ],
+      "paragraphs": [
+        "Parque Nativo se ubica junto al lago de Potrero de los Funes y ofrece una referencia del paisaje de agua y sierras. No se deduce que cualquier orilla permita bañarse: la información del parque indica que no se permite ingresar al agua en ese ámbito. Confirmá las condiciones con la administración antes de elegir una actividad."
+      ]
+    },
+    {
+      "id": "carolina",
+      "kind": "culture",
+      "title": "La Carolina: un pueblo ligado a la minería",
+      "sourceIds": [
+        "SL-CAROLINA",
+        "SL-PEATONAL"
+      ],
+      "paragraphs": [
+        "Las calles y construcciones de La Carolina conservan la memoria de su pasado minero. La propuesta peatonal comunicada en 2025 invita a conocer el pueblo con otra atención, sin trasladar automáticamente a la actualidad su régimen de circulación, excepciones o aranceles. Consultá esas condiciones en la oficina turística local.",
+        "El Museo de la Poesía permite acercarse a Juan Crisóstomo Lafinur. Es una visita cultural distinta de las experiencias relacionadas con la minería. Confirmá las modalidades con cada responsable; una descripción del pueblo no demuestra que una mina esté abierta o que una actividad de búsqueda de oro pueda realizarse sin acompañamiento."
+      ]
+    },
+    {
+      "id": "quijadas",
+      "kind": "nature",
+      "title": "Sierra de las Quijadas: un paisaje protegido propio",
+      "sourceIds": [
+        "SL-QUIJADAS"
+      ],
+      "paragraphs": [
+        "El parque nacional suma otra propuesta provincial, diferente de las Sierras Centrales. Los miradores permiten interpretar los farallones y el Potrero de la Aguada; el sendero Flora se centra en especies del ambiente. La elección puede orientarse a comprender el paisaje, sin necesidad de realizar el recorrido de mayor esfuerzo."
+      ]
+    },
+    {
+      "id": "recorridos",
+      "kind": "activities",
+      "title": "Una caminata no equivale a todas las demás",
+      "sourceIds": [
+        "SL-QUIJADAS"
+      ],
+      "paragraphs": [
+        "Huellas del Pasado introduce contenidos geológicos y paleontológicos; Farallones y Guanacos tienen otras exigencias y modalidades. Consultá al parque qué recorridos están habilitados y cuáles necesitan guía o registro. No se reutilizan las restricciones sanitarias de una noticia de 2021 como si fueran reglas actuales.",
+        "Los Hornillos de Hualtarán ofrecen un vínculo con la ocupación humana y la producción cerámica. La interpretación y el acceso deben coordinarse con el parque; no se los presenta como un sitio de ingreso libre por estar cerca del camino."
+      ]
+    },
+    {
+      "id": "organizar",
+      "kind": "practical",
+      "title": "Qué comprobar antes de ampliar el viaje",
+      "sourceIds": [
+        "SL-POTRERO",
+        "SL-PEATONAL",
+        "SL-QUIJADAS"
+      ],
+      "paragraphs": [
+        "Planificá por separado pueblo, embalse y parque nacional. Verificá accesos, condiciones de visita y el recorrido que se adapte a tu grupo. Esta ficha no publica horarios ni asegura actividades acuáticas, descenso a minas o caminatas disponibles hoy.",
+        "La historia minera y literaria de La Carolina permite diseñar una escapada cultural; Sierra de las Quijadas orienta otra hacia la interpretación de la naturaleza. Elegir el tema antes de unir puntos evita reducir pueblos y áreas protegidas a breves paradas en la ruta."
+      ]
+    }
+  ],
+  "address": "Localidad del embalse; confirmar normas del sector concreto.",
+  "mapUrl": "https://www.openstreetmap.org/search?query=Potrero%20de%20los%20Funes%2C%20San%20Luis%20Argentina",
+  "locations": [
+    {
+      "id": "potrero-funes",
+      "label": "Potrero de los Funes, San Luis",
+      "description": "Localidad del embalse; confirmar normas del sector concreto.",
+      "sourceIds": [
+        "SL-POTRERO"
+      ],
+      "mapUrl": "https://www.openstreetmap.org/search?query=Potrero%20de%20los%20Funes%2C%20San%20Luis%20Argentina"
+    },
+    {
+      "id": "la-carolina",
+      "label": "La Carolina, San Luis",
+      "description": "Pueblo de patrimonio minero y literario.",
+      "sourceIds": [
+        "SL-CAROLINA"
+      ],
+      "mapUrl": "https://www.openstreetmap.org/search?query=La%20Carolina%2C%20San%20Luis%20Argentina"
+    },
+    {
+      "id": "quijadas",
+      "label": "Parque Nacional Sierra de las Quijadas, San Luis",
+      "description": "Área protegida diferente de las Sierras Centrales.",
+      "sourceIds": [
+        "SL-QUIJADAS"
+      ],
+      "mapUrl": "https://www.openstreetmap.org/search?query=Parque%20Nacional%20Sierra%20de%20las%20Quijadas%2C%20San%20Luis%20Argentina"
+    }
+  ],
+  "photos": [],
+  "related": [
+    {
+      "href": "/provincias/san_luis",
+      "label": "Conocer san luis"
+    },
+    {
+      "href": "/actividades?provincia=san_luis",
+      "label": "Actividades en san luis"
+    },
+    {
+      "href": "/escapadas",
+      "label": "Otras escapadas"
+    }
+  ],
+  "editorial": {
+    "documentaryStatus": "sources-checked",
+    "updatedAt": "2026-10-24",
+    "origin": {
+      "kind": "git-editorial",
+      "legacyGuideIds": [
+        "esc_17"
+      ],
+      "masterRefs": []
+    },
+    "pendingReviews": [
+      "Revisión humana del texto, fuentes y alcance",
+      "Autorización independiente de publicación",
+      "Fotografías: derechos y selección pendientes",
+      "Equivalencia con el PDF y respaldo externo sin aprobar",
+      "INCOMPLETA para Sierras Centrales: faltan fuentes específicas de La Punta, El Trapiche y Pancanta",
+      "Resolver contradicción de atribución arqueológica de Inti Huasi antes de ampliar",
+      "Horarios de Parque Nativo diferentes dentro de la misma página: no publicados"
+    ]
+  }
+}

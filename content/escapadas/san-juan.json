@@ -1,0 +1,193 @@
+{
+  "schemaVersion": 2,
+  "id": "AUS-ESC-SAN-JUAN-EDITORIAL-01",
+  "slug": "san-juan",
+  "title": "San Juan: ciudad, cielos y paisajes que se visitan por separado",
+  "destination": "San Juan",
+  "province": "San Juan",
+  "description": "San Juan permite acercarse a su historia urbana, a los ambientes de El Leoncito y al registro geológico de Ischigualasto. Son propuestas con bases y modalidades distintas. La escapada empieza por elegir cuál merece más tiempo, antes de sumar grandes traslados por la provincia.",
+  "status": "draft",
+  "publicationAuthorized": false,
+  "review": null,
+  "introductionSourceIds": [
+    "SJ-CASA",
+    "SJ-LEONCITO"
+  ],
+  "geography": {
+    "provinceSlugs": [
+      "san_juan"
+    ],
+    "localities": [
+      {
+        "id": "git-locality:san_juan:san-juan",
+        "name": "Ciudad de San Juan, Argentina",
+        "provinceSlug": "san_juan",
+        "sourceIds": [
+          "SJ-CASA"
+        ]
+      },
+      {
+        "id": "git-locality:san_juan:valle-fertil",
+        "name": "San Agustín del Valle Fértil, San Juan",
+        "provinceSlug": "san_juan",
+        "sourceIds": [
+          "SJ-ISCHI"
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "SJ-CASA",
+      "title": "Turismo de San Juan — Casa Natal de Sarmiento",
+      "url": "https://sanjuan.tur.ar/atractivos/espacios-culturales/casa-natal-de-sarmiento",
+      "checkedAt": "2026-10-24"
+    },
+    {
+      "id": "SJ-LEONCITO",
+      "title": "APN — Parque Nacional El Leoncito",
+      "url": "https://www.argentina.gob.ar/parquesnacionales/centro/parque-nacional-el-leoncito",
+      "checkedAt": "2026-10-24"
+    },
+    {
+      "id": "SJ-ACTIVIDADES",
+      "title": "APN — Actividades en El Leoncito",
+      "url": "https://www.argentina.gob.ar/parquesnacionales/centro/parque-nacional-el-leoncito/actividades",
+      "checkedAt": "2026-10-24"
+    },
+    {
+      "id": "SJ-ISCHI",
+      "title": "Turismo de San Juan — Ischigualasto",
+      "url": "https://sanjuan.tur.ar/atractivos/paleontologicos/ischigualasto",
+      "checkedAt": "2026-10-24"
+    }
+  ],
+  "sections": [
+    {
+      "id": "ciudad",
+      "kind": "culture",
+      "title": "La Casa Natal como comienzo de la visita",
+      "sourceIds": [
+        "SJ-CASA"
+      ],
+      "paragraphs": [
+        "La Casa Natal de Sarmiento conserva una referencia material de su historia familiar en la ciudad de San Juan. El patio, la higuera y el mobiliario ofrecen una escala doméstica para acercarse al personaje. La biblioteca suma otra dimensión de su legado. Consultá al museo los espacios y modalidades disponibles antes de organizar la visita."
+      ]
+    },
+    {
+      "id": "leoncito",
+      "kind": "highlights",
+      "title": "El Leoncito: paisaje de agua y aridez",
+      "sourceIds": [
+        "SJ-LEONCITO",
+        "SJ-ACTIVIDADES"
+      ],
+      "paragraphs": [
+        "El parque permite observar cómo el agua organiza pequeños ambientes dentro de un territorio árido. Paisajes de Agua y la cascada El Rincón son referencias diferentes de los miradores. No se presenta su existencia como prueba de habilitación actual ni se promete un encuentro con fauna.",
+        "El Mirador del Manzanar aporta una lectura de la cordillera y del interior del área protegida. El ascenso al cerro Leoncito necesita otra evaluación de esfuerzo y registro. Conviene elegir según las condiciones del grupo y las indicaciones de la administración, en lugar de sumar todos los recorridos a una jornada."
+      ]
+    },
+    {
+      "id": "cielo",
+      "kind": "activities",
+      "title": "Parque y observatorios: consultas diferentes",
+      "sourceIds": [
+        "SJ-ACTIVIDADES"
+      ],
+      "paragraphs": [
+        "El catálogo de APN identifica a CESCO y CASLEO como propuestas de astroturismo. Cada observatorio organiza sus visitas; ingresar al parque no equivale a tener una observación nocturna reservada. Confirmá directamente modalidad y condiciones, y no atribuyas al horario de una oficina el de una actividad astronómica."
+      ]
+    },
+    {
+      "id": "triasico",
+      "kind": "nature",
+      "title": "Ischigualasto necesita otra planificación",
+      "sourceIds": [
+        "SJ-ISCHI"
+      ],
+      "paragraphs": [
+        "En el nordeste provincial, Ischigualasto conserva geoformas y un registro paleontológico que se interpreta en sus circuitos y espacios de divulgación. El Hongo y la Cancha de Bochas son algunas referencias del paisaje. El circuito principal tiene modalidad vehicular y acompañamiento autorizado según la información provincial.",
+        "San Agustín del Valle Fértil aparece como base para organizar la visita. No es la misma localidad que Barreal ni una continuación inmediata de El Leoncito. Consultá qué circuito se realiza, los requisitos y sus condiciones, sin asumir que las propuestas nocturnas o las caminatas operan todos los días."
+      ]
+    },
+    {
+      "id": "organizar",
+      "kind": "practical",
+      "title": "Elegir una escapada temática",
+      "sourceIds": [
+        "SJ-CASA",
+        "SJ-ACTIVIDADES",
+        "SJ-ISCHI"
+      ],
+      "paragraphs": [
+        "Una visita urbana, una estancia centrada en los cielos de El Leoncito o un viaje por Valle Fértil pueden funcionar como decisiones separadas. No se fija un tiempo de conducción entre ellas ni se promete completar todas en tres días. Guardá los enlaces institucionales para reconfirmar cada servicio antes de reservar.",
+        "Para una escapada cultural, la Casa Natal ofrece una primera referencia urbana. Si el interés está en el cielo o la geología, elegí la base y el recorrido de esos ámbitos antes de sumar otros destinos. La consulta al responsable de cada actividad permite decidir sin confundir una propuesta paisajística con un servicio ya reservado."
+      ]
+    }
+  ],
+  "address": "Capital provincial y Casa Natal de Sarmiento.",
+  "mapUrl": "https://www.openstreetmap.org/search?query=Ciudad%20de%20San%20Juan%2C%20Argentina%20Argentina",
+  "locations": [
+    {
+      "id": "san-juan",
+      "label": "Ciudad de San Juan, Argentina",
+      "description": "Capital provincial y Casa Natal de Sarmiento.",
+      "sourceIds": [
+        "SJ-CASA"
+      ],
+      "mapUrl": "https://www.openstreetmap.org/search?query=Ciudad%20de%20San%20Juan%2C%20Argentina%20Argentina"
+    },
+    {
+      "id": "leoncito",
+      "label": "Parque Nacional El Leoncito, San Juan",
+      "description": "Área protegida; acceso a observatorios se confirma por separado.",
+      "sourceIds": [
+        "SJ-LEONCITO"
+      ],
+      "mapUrl": "https://www.openstreetmap.org/search?query=Parque%20Nacional%20El%20Leoncito%2C%20San%20Juan%20Argentina"
+    },
+    {
+      "id": "valle-fertil",
+      "label": "San Agustín del Valle Fértil, San Juan",
+      "description": "Base de referencia para Ischigualasto.",
+      "sourceIds": [
+        "SJ-ISCHI"
+      ],
+      "mapUrl": "https://www.openstreetmap.org/search?query=San%20Agust%C3%ADn%20del%20Valle%20F%C3%A9rtil%2C%20San%20Juan%20Argentina"
+    }
+  ],
+  "photos": [],
+  "related": [
+    {
+      "href": "/provincias/san_juan",
+      "label": "Conocer san juan"
+    },
+    {
+      "href": "/actividades?provincia=san_juan",
+      "label": "Actividades en san juan"
+    },
+    {
+      "href": "/escapadas",
+      "label": "Otras escapadas"
+    }
+  ],
+  "editorial": {
+    "documentaryStatus": "sources-checked",
+    "updatedAt": "2026-10-24",
+    "origin": {
+      "kind": "git-editorial",
+      "legacyGuideIds": [
+        "esc_16"
+      ],
+      "masterRefs": []
+    },
+    "pendingReviews": [
+      "Revisión humana del texto, fuentes y alcance",
+      "Autorización independiente de publicación",
+      "Fotografías: derechos y selección pendientes",
+      "Equivalencia con el PDF y respaldo externo sin aprobar",
+      "Completar fuentes de Rodeo, Ullum, Pismanta y oferta urbana",
+      "Horas y salas de Casa Natal divergen entre catálogos oficiales: omitidas"
+    ]
+  }
+}

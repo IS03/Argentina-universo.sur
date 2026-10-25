@@ -1,0 +1,1440 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-10-24",
+  "policy": "Investigación documental original; no aprobación, importación ni equivalencia. No contiene IDs ni textos del maestro privado.",
+  "records": [
+    {
+      "guide": "esc_08",
+      "batch": "B02",
+      "slug": "san-carlos-de-bariloche",
+      "sources": [
+        {
+          "id": "BAR-CENTRO",
+          "title": "Municipalidad de Bariloche — Centro Cívico",
+          "url": "https://barilocheturismo.gob.ar/es/centro-civico",
+          "checkedAt": "2026-10-24",
+          "claims": [
+            "Centro Cívico, calle Mitre, catedral y paisaje urbano"
+          ],
+          "limits": "Sin fecha de publicación visible; describe el recurso, no certifica operación actual.",
+          "publishedAt": null
+        },
+        {
+          "id": "BAR-CHICO",
+          "title": "Municipalidad de Bariloche — Circuito Chico",
+          "url": "https://barilocheturismo.gob.ar/es/circuito-chico",
+          "checkedAt": "2026-10-24",
+          "claims": [
+            "Bustillo, Llao Llao, capilla San Eduardo, Puerto Pañuelo, lago Moreno, Campanario"
+          ],
+          "limits": "Sin fecha de publicación visible; describe el recurso, no certifica operación actual.",
+          "publishedAt": null
+        },
+        {
+          "id": "BAR-LAGOS",
+          "title": "Municipalidad de Bariloche — Excursiones lacustres",
+          "url": "https://barilocheturismo.gob.ar/es/excursiones-lacustres",
+          "checkedAt": "2026-10-24",
+          "claims": [
+            "Opciones diferenciadas a Victoria/Arrayanes y Blest/Cántaros"
+          ],
+          "limits": "Sin fecha de publicación visible; describe el recurso, no certifica operación actual.",
+          "publishedAt": null
+        },
+        {
+          "id": "BAR-APN",
+          "title": "APN — Actividades en Nahuel Huapi",
+          "url": "https://www.argentina.gob.ar/parquesnacionales/regionpatagonia/parque-nacional-nahuel-huapi/actividades",
+          "checkedAt": "2026-10-24",
+          "claims": [
+            "Sectores del parque, senderismo y registro; no habilitación actual"
+          ],
+          "limits": "Sin fecha de publicación visible; describe el recurso, no certifica operación actual.",
+          "publishedAt": null
+        },
+        {
+          "id": "BAR-NIEVE",
+          "title": "Municipalidad de Bariloche — Esquí y nieve",
+          "url": "https://barilocheturismo.gob.ar/es/esqui-y-nieve",
+          "checkedAt": "2026-10-24",
+          "claims": [
+            "Catedral y actividades invernales; calendario contradictorio omitido"
+          ],
+          "limits": "Sin fecha de publicación visible; describe el recurso, no certifica operación actual.",
+          "publishedAt": null
+        }
+      ],
+      "pending": [
+        "Resolver calendario de nieve; no usar meses contradictorios como disponibilidad",
+        "El Bolsón requiere investigación y ficha complementaria"
+      ],
+      "gaps": [
+        "El Bolsón, Bosque Tallado y Cajón del Azul no cubiertos",
+        "No se conserva el itinerario cerrado de tres días"
+      ],
+      "pdfThemes": [
+        "Ciudad y gastronomía",
+        "Navegaciones y Circuito Chico",
+        "El Bolsón y caminatas"
+      ],
+      "photoSubjects": [
+        "Centro Cívico frente al Nahuel Huapi",
+        "Llao Llao y lago Moreno"
+      ],
+      "coverage": "partial-review-required",
+      "sourceMethod": "Lectura del contenido institucional; contraste de alcance; no verificación presencial ni contacto con operadores."
+    },
+    {
+      "guide": "esc_01",
+      "batch": "B02",
+      "slug": "el-calafate-y-el-chalten",
+      "sources": [
+        {
+          "id": "GLA-SC",
+          "title": "Santa Cruz Turismo — Parque Nacional Los Glaciares",
+          "url": "https://turismo.santacruz.gob.ar/parques-nacionales/parque-nacional-los-glaciares",
+          "checkedAt": "2026-10-24",
+          "claims": [
+            "Dos localidades base, sectores sur y norte, glaciares y montañas"
+          ],
+          "limits": "Sin fecha de publicación visible; describe el recurso, no certifica operación actual.",
+          "publishedAt": null
+        },
+        {
+          "id": "GLA-APN",
+          "title": "APN — Actividades en Los Glaciares",
+          "url": "https://www.argentina.gob.ar/parquesnacionales/patagonia-austral/parque-nacional-los-glaciares/actividades",
+          "checkedAt": "2026-10-24",
+          "claims": [
+            "Pasarelas Perito Moreno, navegaciones, sendas del norte; distancias inconsistentes omitidas"
+          ],
+          "limits": "Sin fecha de publicación visible; describe el recurso, no certifica operación actual.",
+          "publishedAt": null
+        },
+        {
+          "id": "CHA-CONSEJOS",
+          "title": "Municipalidad de El Chaltén — Consejos",
+          "url": "https://elchalten.tur.ar/consejos/",
+          "checkedAt": "2026-10-24",
+          "claims": [
+            "Organización según dificultad y clima; desaconseja visita apresurada desde El Calafate"
+          ],
+          "limits": "Sin fecha de publicación visible; describe el recurso, no certifica operación actual.",
+          "publishedAt": null
+        }
+      ],
+      "pending": [
+        "Contrastar longitudes de Capri y pasarelas: inconsistencias en APN",
+        "Revisar cartografía y condiciones antes de cualquier dato operativo"
+      ],
+      "gaps": [
+        "No se valida el itinerario original de tres días ni sus dificultades",
+        "Falta evaluación detallada de excursiones sobre hielo y cobertura de transporte"
+      ],
+      "pdfThemes": [
+        "Caminatas de El Chaltén",
+        "Glaciar Perito Moreno",
+        "Organización en tres días"
+      ],
+      "photoSubjects": [
+        "Perito Moreno desde pasarelas autorizadas",
+        "Paisaje de El Chaltén con identificación del lugar"
+      ],
+      "coverage": "partial-review-required",
+      "sourceMethod": "Lectura del contenido institucional; contraste de alcance; no verificación presencial ni contacto con operadores."
+    },
+    {
+      "guide": "esc_04",
+      "batch": "B02",
+      "slug": "puerto-madryn",
+      "sources": [
+        {
+          "id": "MAD-CIUDAD",
+          "title": "Chubut Turismo — Puerto Madryn",
+          "url": "https://chubutpatagonia.gob.ar/destino/puerto-madryn/",
+          "checkedAt": "2026-10-24",
+          "claims": [
+            "Ciudad en Golfo Nuevo, costanera, servicios y relación con áreas naturales"
+          ],
+          "limits": "Sin fecha de publicación visible; describe el recurso, no certifica operación actual.",
+          "publishedAt": null
+        },
+        {
+          "id": "MAD-BALLENAS",
+          "title": "Chubut Turismo — Ballenas",
+          "url": "https://chubutpatagonia.gob.ar/experiencia/ballenas/",
+          "checkedAt": "2026-10-24",
+          "claims": [
+            "Observación costera y embarcada diferenciadas; calendario orientativo no garantiza fauna"
+          ],
+          "limits": "Sin fecha de publicación visible; describe el recurso, no certifica operación actual.",
+          "publishedAt": null
+        },
+        {
+          "id": "MAD-FAUNA",
+          "title": "Municipalidad de Puerto Madryn — Ballena",
+          "url": "https://madryn.travel/nuestra-fauna/ballena-2/",
+          "checkedAt": "2026-10-24",
+          "claims": [
+            "El Doradillo y Puerto Pirámides; descartado error de clasificación y duración divergente"
+          ],
+          "limits": "Sin fecha de publicación visible; describe el recurso, no certifica operación actual.",
+          "publishedAt": null
+        },
+        {
+          "id": "MAD-PUNTA",
+          "title": "Chubut Turismo — Área Natural Protegida Punta Loma",
+          "url": "https://chubutpatagonia.gob.ar/destino/area-natural-protegida-punta-loma/",
+          "checkedAt": "2026-10-24",
+          "claims": [
+            "Reserva de costa y estepa; conservación y observación desde lugares indicados"
+          ],
+          "limits": "Sin fecha de publicación visible; describe el recurso, no certifica operación actual.",
+          "publishedAt": null
+        }
+      ],
+      "pending": [
+        "Aviso provincial del 21/10 sobre lluvias: cuerpo no accesible; no se certifica cierre ni reapertura actual",
+        "Gaiman, Ecocentro y snorkel requieren investigación adicional",
+        "Normalización de título: el catálogo heredado contiene Puerti Madryn, sin cambiar ID ni PDF"
+      ],
+      "gaps": [
+        "Gaiman, museo paleontológico y patrimonio galés no desarrollados",
+        "No certifica actividades de contacto con fauna ni equivalencia completa"
+      ],
+      "pdfThemes": [
+        "Ciudad y costa",
+        "Valdés y ballenas",
+        "Gaiman y tradición galesa",
+        "Punta Loma, Ecocentro y snorkel"
+      ],
+      "photoSubjects": [
+        "Costanera de Madryn",
+        "Observación de fauna desde punto autorizado, sin prometer temporada"
+      ],
+      "coverage": "partial-review-required",
+      "sourceMethod": "Lectura del contenido institucional; contraste de alcance; no verificación presencial ni contacto con operadores."
+    },
+    {
+      "guide": "esc_12",
+      "batch": "B02",
+      "slug": "ushuaia",
+      "sources": [
+        {
+          "id": "USH-INFUETUR",
+          "title": "INFUETUR — Ushuaia",
+          "url": "https://findelmundo.tur.ar/es/destinos/ushuaia",
+          "checkedAt": "2026-10-24",
+          "claims": [
+            "Ciudad entre cordillera y Beagle; historia y variación de luz estacional"
+          ],
+          "limits": "Sin fecha de publicación visible; describe el recurso, no certifica operación actual.",
+          "publishedAt": null
+        },
+        {
+          "id": "USH-BEAGLE",
+          "title": "Secretaría de Turismo de Ushuaia — Canal Beagle",
+          "url": "https://turismoushuaia.com/zonas/canal-beagle/?lang=es_AR",
+          "checkedAt": "2026-10-24",
+          "claims": [
+            "Navegaciones, Les Éclaireurs distinto del Faro del Fin del Mundo, Puerto Almanza"
+          ],
+          "limits": "Sin fecha de publicación visible; describe el recurso, no certifica operación actual.",
+          "publishedAt": null
+        },
+        {
+          "id": "USH-APN",
+          "title": "APN — Actividades en Tierra del Fuego",
+          "url": "https://www.argentina.gob.ar/parquesnacionales/patagonia-austral/parque-nacional-tierra-del-fuego/actividades",
+          "checkedAt": "2026-10-24",
+          "claims": [
+            "Lapataia, Acigami, Ensenada y senderos de diferente exigencia"
+          ],
+          "limits": "Sin fecha de publicación visible; describe el recurso, no certifica operación actual.",
+          "publishedAt": null
+        },
+        {
+          "id": "USH-PRESIDIO",
+          "title": "Museo Marítimo — Museo del Presidio de Ushuaia",
+          "url": "https://museomaritimo.com/es/museo-del-presidio-de-ushuaia",
+          "checkedAt": "2026-10-24",
+          "claims": [
+            "Antigua cárcel, pabellones y relación del trabajo de los presos con la ciudad"
+          ],
+          "limits": "Sin fecha de publicación visible; describe el recurso, no certifica operación actual.",
+          "publishedAt": null
+        }
+      ],
+      "pending": [
+        "Laguna Esmeralda, Martial y tren: investigar condiciones específicas antes de ampliar cobertura"
+      ],
+      "gaps": [
+        "No desarrolla tren turístico, Martial ni Laguna Esmeralda",
+        "No valida recorridos de tres días ni servicios marítimos actuales"
+      ],
+      "pdfThemes": [
+        "Canal Beagle y faro",
+        "Presidio",
+        "Parque nacional y tren",
+        "Martial y Laguna Esmeralda"
+      ],
+      "photoSubjects": [
+        "Ushuaia y bahía",
+        "Lapataia desde un punto habilitado"
+      ],
+      "coverage": "partial-review-required",
+      "sourceMethod": "Lectura del contenido institucional; contraste de alcance; no verificación presencial ni contacto con operadores."
+    },
+    {
+      "guide": "esc_10",
+      "batch": "B03",
+      "slug": "norte-de-cordoba",
+      "sources": [
+        {
+          "id": "COR-NORTE",
+          "title": "Agencia Córdoba Turismo — Norte",
+          "url": "https://cordobaturismo.gov.ar/norte_/",
+          "checkedAt": "2026-10-24",
+          "claims": [
+            "Camino Real, Santa Catalina, paisajes, artesanías y salinas"
+          ],
+          "limits": "Sin fecha de publicación visible; describe el recurso, no certifica operación actual.",
+          "publishedAt": null
+        },
+        {
+          "id": "COR-COLORADO",
+          "title": "Agencia Córdoba Turismo — Cerro Colorado",
+          "url": "https://cordobaturismo.gov.ar/localidades/cerro-colorado-2/",
+          "checkedAt": "2026-10-24",
+          "claims": [
+            "Reserva, aleros solo visitables con guía habilitado, museo e identidad local"
+          ],
+          "limits": "La fecha de publicación no certifica operación actual; reconfirmar condiciones.",
+          "publishedAt": "2024-09-04",
+          "updatedAt": "2025-09-18"
+        },
+        {
+          "id": "COR-CATALINA",
+          "title": "Agencia Córdoba Turismo — Estancia Santa Catalina",
+          "url": "https://cordobaturismo.gov.ar/experiencias/estancia-santa-catalina/",
+          "checkedAt": "2026-10-24",
+          "claims": [
+            "Conjunto, iglesia y patrimonio jesuítico; excluidos párrafos sobre Jesús María"
+          ],
+          "limits": "Publicación 29/07/2024 y actualización 20/08/2025 visibles. Mezcla información de otra estancia; no se usa para su historia productiva.",
+          "publishedAt": "2024-07-29",
+          "updatedAt": "2025-08-20"
+        },
+        {
+          "id": "COR-YUPANQUI",
+          "title": "Fundación Atahualpa Yupanqui — Casa Museo",
+          "url": "https://www.atahualpayupanqui.org.ar/centro-cultural/casa-museo/",
+          "checkedAt": "2026-10-24",
+          "claims": [
+            "Colección y contexto cultural en Cerro Colorado; consultar reserva"
+          ],
+          "limits": "Sin fecha de publicación visible; describe el recurso, no certifica operación actual.",
+          "publishedAt": null
+        }
+      ],
+      "pending": [
+        "Corroborar con administración de Santa Catalina accesos y contenido histórico ante mezcla de fuentes",
+        "Jesús María y Caroya necesitan fuentes específicas antes de desarrollar visitas"
+      ],
+      "gaps": [
+        "Ansenuza y capital no desarrollados: requieren fichas distintas",
+        "Caroya, Jesús María y postas del Camino Real necesitan mayor detalle"
+      ],
+      "pdfThemes": [
+        "Caroya, Jesús María y Camino Real",
+        "Ansenuza y Miramar",
+        "Córdoba capital",
+        "Cerro Colorado"
+      ],
+      "photoSubjects": [
+        "Aleros desde recorrido habilitado, sin divulgar ubicación sensible",
+        "Fachada de Santa Catalina o exterior de Casa Museo con permiso"
+      ],
+      "coverage": "partial-review-required",
+      "sourceMethod": "Lectura del contenido institucional; contraste de alcance; no verificación presencial ni contacto con operadores."
+    },
+    {
+      "guide": "esc_05",
+      "batch": "B03",
+      "slug": "jujuy",
+      "sources": [
+        {
+          "id": "JUJ-REGIONES",
+          "title": "Ministerio de Cultura y Turismo de Jujuy — Regiones",
+          "url": "https://www.turismo.jujuy.gob.ar/",
+          "checkedAt": "2026-10-24",
+          "claims": [
+            "Cuatro regiones: Puna, Quebrada, Valles y Yungas"
+          ],
+          "limits": "Sin fecha de publicación visible; describe el recurso, no certifica operación actual.",
+          "publishedAt": null
+        },
+        {
+          "id": "JUJ-UNESCO",
+          "title": "UNESCO — Quebrada de Humahuaca",
+          "url": "https://whc.unesco.org/en/list/1116/",
+          "checkedAt": "2026-10-24",
+          "claims": [
+            "Paisaje cultural, continuidad de poblamiento, caminos e intercambio"
+          ],
+          "limits": "Sin fecha de publicación visible; describe el recurso, no certifica operación actual.",
+          "publishedAt": null
+        },
+        {
+          "id": "JUJ-MAIMARA",
+          "title": "Turismo de Jujuy — Maimará",
+          "url": "https://www.turismo.jujuy.gob.ar/maimara/",
+          "checkedAt": "2026-10-24",
+          "claims": [
+            "Paleta del Pintor, cultivos, pueblo y Posta de Hornillos"
+          ],
+          "limits": "Sin fecha de publicación visible; describe el recurso, no certifica operación actual.",
+          "publishedAt": null
+        },
+        {
+          "id": "JUJ-CALILEGUA",
+          "title": "APN — Actividades en Calilegua",
+          "url": "https://www.argentina.gob.ar/parquesnacionales/region-noroeste/parque-nacional-calilegua/actividades",
+          "checkedAt": "2026-10-24",
+          "claims": [
+            "Yungas, observación de aves, senderos y RP83; verificar condiciones"
+          ],
+          "limits": "Sin fecha de publicación visible; describe el recurso, no certifica operación actual.",
+          "publishedAt": null
+        }
+      ],
+      "pending": [
+        "INCOMPLETA: faltan fuentes específicas accesibles para Purmamarca, Tilcara, Humahuaca y Hornocal",
+        "Verificar tren solar, Salinas Grandes y Yala antes de ampliar el itinerario"
+      ],
+      "gaps": [
+        "Cobertura parcial del itinerario PDF: no sustituye las tres jornadas",
+        "Añade Calilegua como alternativa regional separada, no equivalente a Quebrada"
+      ],
+      "pdfThemes": [
+        "Purmamarca",
+        "Tilcara y Maimará",
+        "Humahuaca y Hornocal",
+        "Tren solar, salinas, Yala y Reyes"
+      ],
+      "photoSubjects": [
+        "Paleta del Pintor identificada desde un punto permitido",
+        "Bosque de Calilegua desde una senda habilitada"
+      ],
+      "coverage": "partial-review-required",
+      "sourceMethod": "Lectura del contenido institucional; contraste de alcance; no verificación presencial ni contacto con operadores."
+    },
+    {
+      "guide": "esc_09",
+      "batch": "B03",
+      "slug": "salta",
+      "sources": [
+        {
+          "id": "SAL-MUSEOS",
+          "title": "Ministerio de Turismo de Salta — Museos y centros de interpretación",
+          "url": "https://visit.turismosalta.gov.ar/post/museos-y-centros-de-interpretacion/",
+          "checkedAt": "2026-10-24",
+          "claims": [
+            "Museo Güemes, MAAM y Cabildo; Cachi y Cafayate diferenciados"
+          ],
+          "limits": "Sin fecha de publicación visible; describe el recurso, no certifica operación actual.",
+          "publishedAt": null
+        },
+        {
+          "id": "SAL-CACHI",
+          "title": "Secretaría de Turismo de la Nación — Cachi",
+          "url": "https://www.argentina.gob.ar/jefatura/turismo-y-ambiente/turismo/best-tourism-villages-argentina/cachi-salta",
+          "checkedAt": "2026-10-24",
+          "claims": [
+            "Casco histórico, iglesia, museo y acceso regional por RP33"
+          ],
+          "limits": "Sin fecha de publicación visible; describe el recurso, no certifica operación actual.",
+          "publishedAt": null
+        },
+        {
+          "id": "SAL-VID",
+          "title": "Museo de la Vid y el Vino — Presentación",
+          "url": "https://www.museodelavidyelvino.gob.ar/museo.php",
+          "checkedAt": "2026-10-24",
+          "claims": [
+            "Cafayate, Memoria de la Vid y Memoria del Vino, recursos expositivos"
+          ],
+          "limits": "Sin fecha de publicación visible; describe el recurso, no certifica operación actual.",
+          "publishedAt": null
+        },
+        {
+          "id": "SAL-CARDONES",
+          "title": "APN — Actividades en Los Cardones",
+          "url": "https://www.argentina.gob.ar/parquesnacionales/region-noroeste/parque-nacional-los-cardones/actividades",
+          "checkedAt": "2026-10-24",
+          "claims": [
+            "Recta del Tin Tin, interpretación del cardonal, senderos de diferente exigencia"
+          ],
+          "limits": "Sin fecha de publicación visible; describe el recurso, no certifica operación actual.",
+          "publishedAt": null
+        }
+      ],
+      "pending": [
+        "Investigar fuentes específicas de Tren a las Nubes, San Lorenzo, Quebrada de las Conchas y Cabra Corral",
+        "No usar referencia de jurisdicción Salta del maestro para El Leoncito"
+      ],
+      "gaps": [
+        "Tren, San Lorenzo, Seclantás y Cabra Corral no desarrollados",
+        "No valida vuelta completa por los valles"
+      ],
+      "pdfThemes": [
+        "Capital, museos y San Bernardo",
+        "Tren a las Nubes o San Lorenzo",
+        "Cafayate o Cachi",
+        "Seclantás y Cabra Corral"
+      ],
+      "photoSubjects": [
+        "Patrimonio urbano de Salta con identificación del edificio",
+        "Paisaje construido de Cachi o museo de Cafayate"
+      ],
+      "coverage": "partial-review-required",
+      "sourceMethod": "Lectura del contenido institucional; contraste de alcance; no verificación presencial ni contacto con operadores."
+    },
+    {
+      "guide": "esc_07",
+      "batch": "B03",
+      "slug": "sierra-de-la-ventana",
+      "sources": [
+        {
+          "id": "VEN-AMBIENTE",
+          "title": "Ministerio de Ambiente bonaerense — Parque Provincial Ernesto Tornquist",
+          "url": "https://www.ambiente.gba.gob.ar/anp/parque_provincial_ernesto_tornquist",
+          "checkedAt": "2026-10-24",
+          "claims": [
+            "Pastizal serrano, biodiversidad y protección de cuencas"
+          ],
+          "limits": "Sin fecha de publicación visible; describe el recurso, no certifica operación actual.",
+          "publishedAt": null
+        },
+        {
+          "id": "VEN-FICHA",
+          "title": "Ministerio de Ambiente bonaerense — Ficha del parque",
+          "url": "https://www.ambiente.gba.gob.ar/anp/ficha_TO",
+          "checkedAt": "2026-10-24",
+          "claims": [
+            "Sistema de Ventania y Cerro de la Ventana; superficie difiere de otra ficha"
+          ],
+          "limits": "Sin fecha de publicación visible; describe el recurso, no certifica operación actual.",
+          "publishedAt": null
+        },
+        {
+          "id": "VEN-VISITA",
+          "title": "Turismo de Tornquist — Parque Provincial Ernesto Tornquist",
+          "url": "https://sierrasdelaventana.tur.ar/atractivos/parque-provincial-ernesto-tornquist/",
+          "checkedAt": "2026-10-24",
+          "claims": [
+            "Dos sectores de acceso y recorridos distintos; no se trasladan tarifas ni cupos sin fecha"
+          ],
+          "limits": "Sin fecha de publicación visible; describe el recurso, no certifica operación actual.",
+          "publishedAt": null
+        },
+        {
+          "id": "VEN-CULTURA",
+          "title": "Turismo de Tornquist — Turismo histórico y museos",
+          "url": "https://sierrasdelaventana.tur.ar/que-hacer/turismo-historico-y-museos/",
+          "checkedAt": "2026-10-24",
+          "claims": [
+            "Salamone, Fortín Pavón, Club Hotel y consulta local"
+          ],
+          "limits": "Sin fecha de publicación visible; describe el recurso, no certifica operación actual.",
+          "publishedAt": null
+        }
+      ],
+      "pending": [
+        "Superficie del parque: 6114 ha y más de 6700 ha en fichas oficiales distintas",
+        "Reverificar reglas de senderos antes de cualquier aprobación"
+      ],
+      "gaps": [
+        "No desarrolla bodegas ni baño en arroyos",
+        "Bahía Blanca y destinos costeros requieren fichas separadas"
+      ],
+      "pdfThemes": [
+        "Dos sectores del parque",
+        "Saldungaray y Salamone",
+        "Club Hotel y balnearios",
+        "Bahía Blanca y playas regionales"
+      ],
+      "photoSubjects": [
+        "Pastizal del parque desde senda habilitada",
+        "Patrimonio de Salamone en Saldungaray"
+      ],
+      "coverage": "partial-review-required",
+      "sourceMethod": "Lectura del contenido institucional; contraste de alcance; no verificación presencial ni contacto con operadores."
+    },
+    {
+      "guide": "esc_15",
+      "batch": "B04",
+      "slug": "mendoza",
+      "sources": [
+        {
+          "id": "MZA-PANORAMA",
+          "title": "INPROTUR — Mendoza, la capital del vino argentino",
+          "url": "https://www.argentina.travel/novedades/mendoza-la-capital-del-vino-argentino",
+          "checkedAt": "2026-10-24",
+          "claims": [
+            "Ciudad, Maipú, Luján de Cuyo y Valle de Uco; San Rafael distinto de capital"
+          ],
+          "limits": "Nota del 12/12/2024: no se reutilizan vuelos, agenda 2025 ni promesas de rutas en excelente estado.",
+          "publishedAt": "2024-12-12"
+        },
+        {
+          "id": "MZA-PARQUE",
+          "title": "INPROTUR — Parque General San Martín",
+          "url": "https://www.argentina.travel/actividades/parque-general-san-martin",
+          "checkedAt": "2026-10-24",
+          "claims": [
+            "Portones, lago, rosedal y paisaje urbano; no se usa altitud anómala"
+          ],
+          "limits": "Sin fecha de publicación visible; describe el recurso, no certifica operación actual.",
+          "publishedAt": null
+        },
+        {
+          "id": "MZA-ACONCAGUA",
+          "title": "Secretaría de Turismo de la Nación — Trekking en Aconcagua",
+          "url": "https://www.argentina.gob.ar/node/465038",
+          "checkedAt": "2026-10-24",
+          "claims": [
+            "Horcones y Confluencia como propuestas distintas; no habilitación actual"
+          ],
+          "limits": "Sin fecha de publicación visible; describe el recurso, no certifica operación actual.",
+          "publishedAt": null
+        },
+        {
+          "id": "MZA-SANMARTIN",
+          "title": "Municipalidad de General San Martín — Caminos del Vino",
+          "url": "https://turismo.sanmartinmza.gob.ar/index.php/caminos-del-vino/",
+          "checkedAt": "2026-10-24",
+          "claims": [
+            "Oasis este, Bonarda y diversidad de bodegas; sin trasladar promociones"
+          ],
+          "limits": "Sin fecha de publicación visible; describe el recurso, no certifica operación actual.",
+          "publishedAt": null
+        }
+      ],
+      "pending": [
+        "Ampliar fuentes de Maipú, Luján y Valle de Uco con instituciones locales",
+        "Fuentes provinciales Aconcagua/Parque San Martín devolvieron 403; no usadas como lectura confirmada"
+      ],
+      "gaps": [
+        "Atuel, Cacheuta, Manzano Histórico y Uspallata no desarrollados",
+        "No avala ascensos, cruces de Andes ni actividades aéreas del PDF"
+      ],
+      "pdfThemes": [
+        "Capital y bodegas de Gran Mendoza",
+        "Alta Montaña o Atuel",
+        "Cacheuta o Valle de Uco",
+        "Potrerillos, Manzano Histórico y Uspallata"
+      ],
+      "photoSubjects": [
+        "Parque General San Martín y lago",
+        "Viñedo con autorización de titular y fotógrafo"
+      ],
+      "coverage": "partial-review-required",
+      "sourceMethod": "Lectura del contenido institucional; contraste de alcance; no verificación presencial ni contacto con operadores."
+    },
+    {
+      "guide": "esc_19",
+      "batch": "B04",
+      "slug": "neuquen",
+      "sources": [
+        {
+          "id": "NQN-RUTA",
+          "title": "Secretaría de Turismo de la Nación — Ruta de los Siete Lagos",
+          "url": "https://www.argentina.gob.ar/viaja-por-argentina/que-hacer/conducir-por-la-ruta-de-los-siete-lagos",
+          "checkedAt": "2026-10-24",
+          "claims": [
+            "RN40 y lagos del corredor; no estado actual de rutas"
+          ],
+          "limits": "Sin fecha de publicación visible; describe el recurso, no certifica operación actual.",
+          "publishedAt": null
+        },
+        {
+          "id": "NQN-INVIERNO",
+          "title": "Gobierno del Neuquén — Siete Lagos en invierno",
+          "url": "https://www.neuqueninforma.gob.ar/noticias/2026/08/14/262027-la-ruta-de-los-siete-lagos-en-invierno",
+          "checkedAt": "2026-10-24",
+          "claims": [
+            "Extremos urbanos, paisaje, revisar parte vial y detenerse en lugares habilitados"
+          ],
+          "limits": "La fecha de publicación no certifica operación actual; reconfirmar condiciones.",
+          "publishedAt": "2026-08-14"
+        },
+        {
+          "id": "NQN-ARRAYANES",
+          "title": "APN — Actividades en Los Arrayanes",
+          "url": "https://www.argentina.gob.ar/parquesnacionales/regionpatagonia/parque-nacional-los-arrayanes/actividades",
+          "checkedAt": "2026-10-24",
+          "claims": [
+            "Quetrihué, modalidades a pie/bicicleta/navegación; no todas las sendas equivalentes"
+          ],
+          "limits": "Sin fecha de publicación visible; describe el recurso, no certifica operación actual.",
+          "publishedAt": null
+        },
+        {
+          "id": "NQN-LANIN",
+          "title": "APN — Actividades en Lanín",
+          "url": "https://www.argentina.gob.ar/parquesnacionales/regionpatagonia/parque-nacional-lanin/actividades",
+          "checkedAt": "2026-10-24",
+          "claims": [
+            "Sectores norte, centro y sur; Lácar y otras áreas diferenciadas"
+          ],
+          "limits": "Sin fecha de publicación visible; describe el recurso, no certifica operación actual.",
+          "publishedAt": null
+        }
+      ],
+      "pending": [
+        "Villa Traful, bosque sumergido y Ñivinco requieren fuentes y condiciones específicas",
+        "No usar generalización de baja dificultad del catálogo de Arrayanes para el recorrido terrestre completo"
+      ],
+      "gaps": [
+        "Traful y Ñivinco no desarrollados",
+        "No confirma actividades acuáticas ni navegación disponible"
+      ],
+      "pdfThemes": [
+        "Villa La Angostura y Arrayanes",
+        "Siete Lagos y Villa Traful",
+        "San Martín de los Andes, Lanín y Lácar",
+        "Ñivinco y miradores"
+      ],
+      "photoSubjects": [
+        "Lácar y San Martín de los Andes",
+        "Arrayanes desde recorrido permitido"
+      ],
+      "coverage": "partial-review-required",
+      "sourceMethod": "Lectura del contenido institucional; contraste de alcance; no verificación presencial ni contacto con operadores."
+    },
+    {
+      "guide": "esc_16",
+      "batch": "B04",
+      "slug": "san-juan",
+      "sources": [
+        {
+          "id": "SJ-CASA",
+          "title": "Turismo de San Juan — Casa Natal de Sarmiento",
+          "url": "https://sanjuan.tur.ar/atractivos/espacios-culturales/casa-natal-de-sarmiento",
+          "checkedAt": "2026-10-24",
+          "claims": [
+            "Casa, patio, mobiliario y biblioteca en ciudad de San Juan"
+          ],
+          "limits": "Sin fecha de publicación visible; describe el recurso, no certifica operación actual.",
+          "publishedAt": null
+        },
+        {
+          "id": "SJ-LEONCITO",
+          "title": "APN — Parque Nacional El Leoncito",
+          "url": "https://www.argentina.gob.ar/parquesnacionales/centro/parque-nacional-el-leoncito",
+          "checkedAt": "2026-10-24",
+          "claims": [
+            "Parque de San Juan, conservación del ambiente y calidad del cielo"
+          ],
+          "limits": "Sin fecha de publicación visible; describe el recurso, no certifica operación actual.",
+          "publishedAt": null
+        },
+        {
+          "id": "SJ-ACTIVIDADES",
+          "title": "APN — Actividades en El Leoncito",
+          "url": "https://www.argentina.gob.ar/parquesnacionales/centro/parque-nacional-el-leoncito/actividades",
+          "checkedAt": "2026-10-24",
+          "claims": [
+            "Miradores, agua, aves; observatorios con gestión de visita diferenciada"
+          ],
+          "limits": "Sin fecha de publicación visible; describe el recurso, no certifica operación actual.",
+          "publishedAt": null
+        },
+        {
+          "id": "SJ-ISCHI",
+          "title": "Turismo de San Juan — Ischigualasto",
+          "url": "https://sanjuan.tur.ar/atractivos/paleontologicos/ischigualasto",
+          "checkedAt": "2026-10-24",
+          "claims": [
+            "Parque provincial, geoformas e interpretación, base Valle Fértil"
+          ],
+          "limits": "Sin fecha de publicación visible; describe el recurso, no certifica operación actual.",
+          "publishedAt": null
+        }
+      ],
+      "pending": [
+        "Completar fuentes de Rodeo, Ullum, Pismanta y oferta urbana",
+        "Horas y salas de Casa Natal divergen entre catálogos oficiales: omitidas"
+      ],
+      "gaps": [
+        "Rodeo, Pismanta, Ullum, olivares y Mercedario no desarrollados",
+        "Posible división en fichas de capital, Calingasta y Valle Fértil"
+      ],
+      "pdfThemes": [
+        "Capital o Ullum",
+        "Barreal, El Leoncito y astroturismo",
+        "Rodeo y Pismanta",
+        "Olivares, Ischigualasto y Mercedario"
+      ],
+      "photoSubjects": [
+        "Patio de Casa Natal con permiso fotográfico",
+        "Paisaje de El Leoncito, sin equiparar visita a observatorio"
+      ],
+      "coverage": "partial-review-required",
+      "sourceMethod": "Lectura del contenido institucional; contraste de alcance; no verificación presencial ni contacto con operadores."
+    },
+    {
+      "guide": "esc_17",
+      "batch": "B04",
+      "slug": "san-luis",
+      "sources": [
+        {
+          "id": "SL-POTRERO",
+          "title": "Gobierno de San Luis — Parque Nativo",
+          "url": "https://ambiente.sanluis.gov.ar/parque-nativo/",
+          "checkedAt": "2026-10-24",
+          "claims": [
+            "Ubicación junto al lago Potrero de los Funes, paisaje y prohibición de ingreso al agua; no horarios divergentes"
+          ],
+          "limits": "Sin fecha de publicación visible; describe el recurso, no certifica operación actual.",
+          "publishedAt": null
+        },
+        {
+          "id": "SL-CAROLINA",
+          "title": "Secretaría de Turismo de la Nación — La Carolina",
+          "url": "https://www.argentina.gob.ar/jefatura/turismo/best-tourism-villages-argentina/la-carolina-san-luis",
+          "checkedAt": "2026-10-24",
+          "claims": [
+            "Pueblo minero y Museo de la Poesía; excluidas atribuciones arqueológicas contradictorias"
+          ],
+          "limits": "Sin fecha de publicación visible; describe el recurso, no certifica operación actual.",
+          "publishedAt": null
+        },
+        {
+          "id": "SL-PEATONAL",
+          "title": "Secretaría de Turismo de la Nación — La Carolina, pueblo peatonal",
+          "url": "https://www.argentina.gob.ar/noticias/la-carolina-un-pueblo-turistico-y-peatonal",
+          "checkedAt": "2026-10-24",
+          "claims": [
+            "Calles y propuesta peatonal, Lafinur; no tarifa ni régimen actual"
+          ],
+          "limits": "La fecha de publicación no certifica operación actual; reconfirmar condiciones.",
+          "publishedAt": "2025-01-15"
+        },
+        {
+          "id": "SL-QUIJADAS",
+          "title": "APN — Actividades en Sierra de las Quijadas",
+          "url": "https://www.argentina.gob.ar/parquesnacionales/centro/parque-nacional-sierra-de-las-quijadas/actividades",
+          "checkedAt": "2026-10-24",
+          "claims": [
+            "Miradores, Flora y Huellas del Pasado; modalidades y patrimonio"
+          ],
+          "limits": "Sin fecha de publicación visible; describe el recurso, no certifica operación actual.",
+          "publishedAt": null
+        }
+      ],
+      "pending": [
+        "INCOMPLETA para Sierras Centrales: faltan fuentes específicas de La Punta, El Trapiche y Pancanta",
+        "Resolver contradicción de atribución arqueológica de Inti Huasi antes de ampliar",
+        "Horarios de Parque Nativo diferentes dentro de la misma página: no publicados"
+      ],
+      "gaps": [
+        "La Punta, El Trapiche, Pancanta y senderos de Carolina no desarrollados",
+        "Quijadas es alternativa adicional y no reemplaza esos contenidos"
+      ],
+      "pdfThemes": [
+        "Potrero y Parque Nativo",
+        "La Punta o El Trapiche",
+        "La Carolina y senderos",
+        "Pancanta, Inti Huasi y cascadas"
+      ],
+      "photoSubjects": [
+        "Lago de Potrero desde tierra",
+        "Calles de La Carolina y contexto del museo"
+      ],
+      "coverage": "partial-review-required",
+      "sourceMethod": "Lectura del contenido institucional; contraste de alcance; no verificación presencial ni contacto con operadores."
+    },
+    {
+      "guide": "esc_14",
+      "batch": "B05",
+      "slug": "chaco",
+      "sources": [
+        {
+          "id": "CHA-RESISTENCIA",
+          "title": "Instituto de Turismo del Chaco — Resistencia",
+          "url": "https://turismo.chaco.gob.ar/destinations/resistencia/",
+          "checkedAt": "2026-10-24",
+          "claims": [
+            "Esculturas urbanas, Casa de las Culturas y Museo del Hombre Chaqueño"
+          ],
+          "limits": "Sin fecha de publicación visible; describe el recurso, no certifica operación actual.",
+          "publishedAt": null
+        },
+        {
+          "id": "CHA-ESCULTURAS",
+          "title": "Secretaría de Turismo de la Nación — Capital de las esculturas",
+          "url": "https://www.argentina.gob.ar/jefatura/turismo/viaja-por-argentina/visitar-la-capital-de-las-esculturas",
+          "checkedAt": "2026-10-24",
+          "claims": [
+            "Arte en calles y relación con Bienal; no agenda futura"
+          ],
+          "limits": "Sin fecha de publicación visible; describe el recurso, no certifica operación actual.",
+          "publishedAt": null
+        },
+        {
+          "id": "CHA-PARQUE",
+          "title": "APN — Actividades en Parque Nacional Chaco",
+          "url": "https://www.argentina.gob.ar/parquesnacionales/nea/parque-nacional-chaco/actividades",
+          "checkedAt": "2026-10-24",
+          "claims": [
+            "Río Negro, Abuelo, lagunas y palmares; lluvia afecta tránsito"
+          ],
+          "limits": "Sin fecha de publicación visible; describe el recurso, no certifica operación actual.",
+          "publishedAt": null
+        },
+        {
+          "id": "CHA-IMPENETRABLE",
+          "title": "APN — Actividades en El Impenetrable",
+          "url": "https://www.argentina.gob.ar/node/328043",
+          "checkedAt": "2026-10-24",
+          "claims": [
+            "Senderos distintos, registro y necesidad de consultar accesos de tierra"
+          ],
+          "limits": "Sin fecha de publicación visible; describe el recurso, no certifica operación actual.",
+          "publishedAt": null
+        }
+      ],
+      "pending": [
+        "Completar fuentes específicas de Isla del Cerrito, Campo del Cielo, Ruta Qom y Sáenz Peña"
+      ],
+      "gaps": [
+        "Cuatro propuestas centrales del PDF pendientes; cobertura de equivalencia parcial",
+        "No avala termas terapéuticas ni circuitos comunitarios disponibles"
+      ],
+      "pdfThemes": [
+        "Resistencia y museos",
+        "Isla del Cerrito o Campo del Cielo",
+        "Termas o Ruta Qom",
+        "PN Chaco y El Impenetrable"
+      ],
+      "photoSubjects": [
+        "Escultura identificada con autor y derechos de la obra además de la foto",
+        "Ambiente de cada parque, con ubicación inequívoca"
+      ],
+      "coverage": "partial-review-required",
+      "sourceMethod": "Lectura del contenido institucional; contraste de alcance; no verificación presencial ni contacto con operadores."
+    },
+    {
+      "guide": "esc_11",
+      "batch": "B05",
+      "slug": "entre-rios",
+      "sources": [
+        {
+          "id": "ER-MOLINO",
+          "title": "Secretaría de Cultura de Entre Ríos — Molino Forclaz",
+          "url": "https://www.entrerios.gov.ar/cultura/museo-provincial-molino-forclaz/",
+          "checkedAt": "2026-10-24",
+          "claims": [
+            "Vivienda, galpones y molinos vinculados con colonia San José; ubicación ejido Colón"
+          ],
+          "limits": "Sin fecha de publicación visible; describe el recurso, no certifica operación actual.",
+          "publishedAt": null
+        },
+        {
+          "id": "ER-SANJOSE",
+          "title": "Municipalidad de San José — Qué hacer",
+          "url": "https://sanjose.tur.ar/que-hacer/",
+          "checkedAt": "2026-10-24",
+          "claims": [
+            "Museo Histórico, Ciencias Naturales y Plaza General Urquiza; horarios sin confirmar"
+          ],
+          "limits": "Sin fecha de publicación visible; describe el recurso, no certifica operación actual.",
+          "publishedAt": null
+        },
+        {
+          "id": "ER-LIEBIG",
+          "title": "EMTURER — Pueblo Liebig",
+          "url": "https://www.entrerios.tur.ar/localidades-1/pueblo-liebig",
+          "checkedAt": "2026-10-24",
+          "claims": [
+            "Paisaje industrial, viviendas y centro de interpretación; sin acceso fabril implícito"
+          ],
+          "limits": "Sin fecha de publicación visible; describe el recurso, no certifica operación actual.",
+          "publishedAt": null
+        },
+        {
+          "id": "ER-PALMAR",
+          "title": "APN — Actividades en El Palmar",
+          "url": "https://www.argentina.gob.ar/parquesnacionales/centro/parque-nacional-el-palmar/actividades",
+          "checkedAt": "2026-10-24",
+          "claims": [
+            "Palmares, interpretación natural y cultural; visita independiente de localidades"
+          ],
+          "limits": "Sin fecha de publicación visible; describe el recurso, no certifica operación actual.",
+          "publishedAt": null
+        }
+      ],
+      "pending": [
+        "INCOMPLETA respecto del PDF: fuentes específicas para termas, vino, ruralidad y colonias judías",
+        "Relaciones de localidades y fuentes verificadas del maestro guardadas solo en registro privado; no se importan estados"
+      ],
+      "gaps": [
+        "Termas, colonias judías, bodegas y turismo rural no desarrollados",
+        "Una ficha regional del Uruguay no equivale a toda la provincia"
+      ],
+      "pdfThemes": [
+        "Complejos termales",
+        "El Palmar y naturaleza",
+        "Bodegas o estancias rurales",
+        "Colonias judías y playas del Paraná"
+      ],
+      "photoSubjects": [
+        "Molino Forclaz identificado, con permiso del museo y fotógrafo",
+        "Patrimonio urbano de Pueblo Liebig desde espacio permitido"
+      ],
+      "coverage": "partial-review-required",
+      "sourceMethod": "Lectura del contenido institucional; contraste de alcance; no verificación presencial ni contacto con operadores."
+    },
+    {
+      "guide": "esc_23",
+      "batch": "B05",
+      "slug": "formosa",
+      "sources": [
+        {
+          "id": "FOR-MICRO",
+          "title": "Ministerio de Turismo de Formosa — Microrregión Bañado La Estrella",
+          "url": "https://www.formosahermosa.gob.ar/microrregion-banado-la-estrella/",
+          "checkedAt": "2026-10-24",
+          "claims": [
+            "Las Lomitas como base, Fortín La Soledad y Campo del Cielo, acceso de tierra"
+          ],
+          "limits": "Sin fecha de publicación visible; describe el recurso, no certifica operación actual.",
+          "publishedAt": null
+        },
+        {
+          "id": "FOR-BANADO",
+          "title": "Ministerio de Turismo de Formosa — Bañado La Estrella",
+          "url": "https://www.formosahermosa.gob.ar/banado-la-estrella/",
+          "checkedAt": "2026-10-24",
+          "claims": [
+            "Vertedero y Fortín diferentes, champales y variación del paisaje; confirmar prestadores"
+          ],
+          "limits": "Sin fecha de publicación visible; describe el recurso, no certifica operación actual.",
+          "publishedAt": null
+        },
+        {
+          "id": "FOR-PILCOMAYO",
+          "title": "APN — Actividades en Río Pilcomayo",
+          "url": "https://www.argentina.gob.ar/parquesnacionales/nea/parque-nacional-rio-pilcomayo/actividades",
+          "checkedAt": "2026-10-24",
+          "claims": [
+            "Laguna Blanca y Estero Poí, senderos y observación de aves"
+          ],
+          "limits": "Sin fecha de publicación visible; describe el recurso, no certifica operación actual.",
+          "publishedAt": null
+        },
+        {
+          "id": "FOR-CIUDAD",
+          "title": "Ministerio de Turismo de Formosa — Qué hacer en la ciudad",
+          "url": "https://www.formosahermosa.gob.ar/circuito-formosa-y-herradura/ciudad-de-formosa/que-hacer/",
+          "checkedAt": "2026-10-24",
+          "claims": [
+            "Costanera, Paseo Ferroviario, Casa de la Artesanía y Laguna Oca"
+          ],
+          "limits": "Sin fecha de publicación visible; describe el recurso, no certifica operación actual.",
+          "publishedAt": null
+        }
+      ],
+      "pending": [
+        "Dos páginas provinciales indican 65 y 70 km a Fortín La Soledad: distancia omitida",
+        "Ampliar fuente específica de Herradura y fuentes museísticas propias"
+      ],
+      "gaps": [
+        "Herradura no desarrollada",
+        "No valida baño, kayaks ni disponibilidad de guías del PDF"
+      ],
+      "pdfThemes": [
+        "Las Lomitas y Vertedero",
+        "Fortín Soledad y bañado",
+        "Capital y Laguna Oca",
+        "Herradura y Río Pilcomayo"
+      ],
+      "photoSubjects": [
+        "Champales desde recorrido autorizado",
+        "Costanera de Formosa o ambiente de Río Pilcomayo"
+      ],
+      "coverage": "partial-review-required",
+      "sourceMethod": "Lectura del contenido institucional; contraste de alcance; no verificación presencial ni contacto con operadores."
+    },
+    {
+      "guide": "esc_21",
+      "batch": "B05",
+      "slug": "misiones",
+      "sources": [
+        {
+          "id": "MIS-SANIGNACIO",
+          "title": "Ministerio de Turismo de Misiones — San Ignacio Miní",
+          "url": "https://misiones.tur.ar/sanignaciomini/",
+          "checkedAt": "2026-10-24",
+          "claims": [
+            "Organización espacial e historia del conjunto guaraní jesuítico; encabezado histórico 2024"
+          ],
+          "limits": "Sin fecha de publicación visible; describe el recurso, no certifica operación actual.",
+          "publishedAt": null
+        },
+        {
+          "id": "MIS-UNESCO",
+          "title": "UNESCO — Misiones Jesuíticas de los Guaraníes",
+          "url": "https://whc.unesco.org/en/list/275/",
+          "checkedAt": "2026-10-24",
+          "claims": [
+            "Componentes argentinos: San Ignacio Miní, Santa Ana, Loreto y Santa María Mayor; no Corpus Christi"
+          ],
+          "limits": "Sin fecha de publicación visible; describe el recurso, no certifica operación actual.",
+          "publishedAt": null
+        },
+        {
+          "id": "MIS-CRUZ",
+          "title": "Ministerio de Turismo de Misiones — Parque de la Cruz",
+          "url": "https://misiones.tur.ar/cruz/",
+          "checkedAt": "2026-10-24",
+          "claims": [
+            "Cerro Santa Ana, miradores y senderos interpretativos; distancias y horarios divergentes omitidos"
+          ],
+          "limits": "Sin fecha de publicación visible; describe el recurso, no certifica operación actual.",
+          "publishedAt": null
+        },
+        {
+          "id": "MIS-ENCANTADO",
+          "title": "Ministerio de Turismo de Misiones — Salto Encantado",
+          "url": "https://misiones.tur.ar/encantado/",
+          "checkedAt": "2026-10-24",
+          "claims": [
+            "Parque de selva, mirador y observación de aves"
+          ],
+          "limits": "Sin fecha de publicación visible; describe el recurso, no certifica operación actual.",
+          "publishedAt": null
+        },
+        {
+          "id": "MIS-MOCONA",
+          "title": "Ministerio de Turismo de Misiones — Moconá",
+          "url": "https://misiones.tur.ar/mocona/",
+          "checkedAt": "2026-10-24",
+          "claims": [
+            "Saltos longitudinales, dependencia del agua, acceso desde El Soberbio, tablero 24/10/2026 08:03 cerrado/suspendido"
+          ],
+          "limits": "Sin fecha de publicación visible; describe el recurso, no certifica operación actual.",
+          "publishedAt": null
+        }
+      ],
+      "pending": [
+        "Reverificar Moconá antes de aprobación; observación con caducidad",
+        "Completar fuentes específicas de té, yerba mate y Campo Ramón",
+        "No reproducir superficie de Yabotí como si fuera la del parque Moconá"
+      ],
+      "gaps": [
+        "Producción de té/yerba y Campo Ramón pendientes",
+        "No avala tres días ni navegación garantizada; corrige alcance UNESCO del PDF"
+      ],
+      "pdfThemes": [
+        "Cruz y reducciones",
+        "Salto Encantado",
+        "Moconá y El Soberbio",
+        "Té, yerba y Campo Ramón"
+      ],
+      "photoSubjects": [
+        "Conjunto de San Ignacio Miní desde recorrido permitido",
+        "Moconá con fecha y condiciones identificadas, sin promesa de visibilidad"
+      ],
+      "coverage": "partial-review-required",
+      "sourceMethod": "Lectura del contenido institucional; contraste de alcance; no verificación presencial ni contacto con operadores."
+    },
+    {
+      "guide": "esc_18",
+      "batch": "B06",
+      "slug": "rio-gallegos",
+      "sources": [
+        {
+          "id": "RG-TURISMO",
+          "title": "Secretaría de Turismo de Santa Cruz — Río Gallegos",
+          "url": "https://turismo.santacruz.gob.ar/donde-ir/rio-gallegos",
+          "checkedAt": "2026-10-24",
+          "claims": [
+            "Ría, estepa, museos y referencias de excursiones"
+          ],
+          "limits": "Sin fecha de publicación visible; describe el recurso, no certifica operación actual.",
+          "publishedAt": null
+        },
+        {
+          "id": "RG-PROVINCIA",
+          "title": "Gobierno de Santa Cruz — Río Gallegos",
+          "url": "https://www.santacruz.gob.ar/nuestra-provincia/municipios/rio-gallegos",
+          "checkedAt": "2026-10-24",
+          "claims": [
+            "Cabo Vírgenes y Laguna Azul fuera del radio urbano; temporada no certifica acceso"
+          ],
+          "limits": "Sin fecha de publicación visible; describe el recurso, no certifica operación actual.",
+          "publishedAt": null
+        },
+        {
+          "id": "RG-LOYOLA",
+          "title": "Secretaría de Turismo de la Nación — Naufragio histórico",
+          "url": "https://www.argentina.gob.ar/viaja-por-argentina/que-hacer/visitar-un-naufragio-historico",
+          "checkedAt": "2026-10-24",
+          "claims": [
+            "Punta Loyola y Marjory Glen; no permiso de ingresar al casco o puerto"
+          ],
+          "limits": "Sin fecha de publicación visible; describe el recurso, no certifica operación actual.",
+          "publishedAt": null
+        },
+        {
+          "id": "RG-CONSULTA",
+          "title": "Turismo de Río Gallegos — Guía oficial",
+          "url": "https://turismo.riogallegos.gob.ar/",
+          "checkedAt": "2026-10-24",
+          "claims": [
+            "Canal de información para museos y circuitos; catálogo dinámico no legible en detalle"
+          ],
+          "limits": "Sin fecha de publicación visible; describe el recurso, no certifica operación actual.",
+          "publishedAt": null
+        }
+      ],
+      "pending": [
+        "Completar fuentes de administradores de Cabo Vírgenes y Laguna Azul",
+        "INCOMPLETA para agenda urbana del PDF: falta evidencia específica del planetario y parques temáticos"
+      ],
+      "gaps": [
+        "Planetario y circuitos urbanos temáticos no desarrollados",
+        "Museos y Laguna Azul requieren comprobación más específica para una guía operativa"
+      ],
+      "pdfThemes": [
+        "Cabo Vírgenes y faro",
+        "Laguna Azul o Punta Loyola",
+        "Museos, reservas urbanas y planetario",
+        "Circuitos temáticos y parques"
+      ],
+      "photoSubjects": [
+        "Ría de Río Gallegos",
+        "Marjory Glen fotografiado desde sector permitido"
+      ],
+      "coverage": "partial-review-required",
+      "sourceMethod": "Lectura del contenido institucional; contraste de alcance; no verificación presencial ni contacto con operadores."
+    },
+    {
+      "guide": "esc_22",
+      "batch": "B06",
+      "slug": "la-pampa",
+      "sources": [
+        {
+          "id": "LP-LURO",
+          "title": "INPROTUR — Reserva Provincial Parque Luro",
+          "url": "https://www.argentina.travel/actividades/reserva-provincial-parque-luro",
+          "checkedAt": "2026-10-24",
+          "claims": [
+            "Caldenal, Museo El Castillo y referencia de acceso desde Santa Rosa"
+          ],
+          "limits": "Sin fecha de publicación visible; describe el recurso, no certifica operación actual.",
+          "publishedAt": null
+        },
+        {
+          "id": "LP-CASTILLO",
+          "title": "Comisión Nacional de Monumentos — Castillo del Parque Luro",
+          "url": "https://www.argentina.gob.ar/node/416067",
+          "checkedAt": "2026-10-24",
+          "claims": [
+            "Residencia San Huberto, objetos y patrimonio; no se usa dato de zoológico como servicio vigente"
+          ],
+          "limits": "Sin fecha de publicación visible; describe el recurso, no certifica operación actual.",
+          "publishedAt": null
+        },
+        {
+          "id": "LP-LIHUE",
+          "title": "APN — Actividades en Lihué Calel",
+          "url": "https://www.argentina.gob.ar/parquesnacionales/regionpatagonia/parque-nacional-lihue-calel/actividades",
+          "checkedAt": "2026-10-24",
+          "claims": [
+            "Sierras, patrimonio, registro y recorridos diferenciados"
+          ],
+          "limits": "Sin fecha de publicación visible; describe el recurso, no certifica operación actual.",
+          "publishedAt": null
+        },
+        {
+          "id": "LP-OROZCO",
+          "title": "Municipalidad de Toay — Casa Museo Olga Orozco",
+          "url": "https://www.toay.gob.ar/ciudad/descubri-toay/41-casa-museo-olga-orozco",
+          "checkedAt": "2026-10-24",
+          "claims": [
+            "Casa, colección bibliográfica y memoria de la poeta; consultar apertura antes de viajar"
+          ],
+          "limits": "La fecha de publicación no certifica operación actual; reconfirmar condiciones.",
+          "publishedAt": "2020-11-10"
+        }
+      ],
+      "pending": [
+        "Consultar posible cierre por restauración de Casa Museo: noticia secundaria encontrada, sin confirmación oficial actual; no se afirma abierta ni cerrada",
+        "Completar fuentes de estancias, salinas y colonia menonita"
+      ],
+      "gaps": [
+        "Oferta rural y salinas no desarrolladas; no autoriza visitas comunitarias",
+        "Brama sin calendario operativo ni reserva confirmada"
+      ],
+      "pdfThemes": [
+        "Parque Luro y castillo",
+        "Lihué Calel",
+        "Estancias rurales",
+        "Brama, colonia menonita y salinas"
+      ],
+      "photoSubjects": [
+        "Caldenal identificado",
+        "Sierras de Lihué Calel o exterior de casa museo sin divulgar sitios arqueológicos sensibles"
+      ],
+      "coverage": "partial-review-required",
+      "sourceMethod": "Lectura del contenido institucional; contraste de alcance; no verificación presencial ni contacto con operadores."
+    },
+    {
+      "guide": "esc_03",
+      "batch": "B06",
+      "slug": "pinamar",
+      "sources": [
+        {
+          "id": "PIN-HISTORIA",
+          "title": "Municipalidad de Pinamar — Historia",
+          "url": "https://pinamar.gob.ar/historia/",
+          "checkedAt": "2026-10-24",
+          "claims": [
+            "Forestación, diseño de calles, Pinamar, Ostende, Cariló y Valeria del Mar"
+          ],
+          "limits": "Sin fecha de publicación visible; describe el recurso, no certifica operación actual.",
+          "publishedAt": null
+        },
+        {
+          "id": "PIN-PATRIMONIO",
+          "title": "Municipalidad de Pinamar — Descubriendo Pinamar",
+          "url": "https://pinamar.gob.ar/descubriendopinamar/",
+          "checkedAt": "2026-10-24",
+          "claims": [
+            "Referencias históricas de Ostende, arquitectura y Camino de Pioneros; programa 2024 no vigente"
+          ],
+          "limits": "Sin fecha de publicación visible; describe el recurso, no certifica operación actual.",
+          "publishedAt": null
+        },
+        {
+          "id": "PIN-NORMA",
+          "title": "Boletín Oficial Municipal — Decreto 0104/2026",
+          "url": "https://sibom.slyt.gba.gov.ar/bulletins/14372/contents/2342364",
+          "checkedAt": "2026-10-24",
+          "claims": [
+            "Circulación solo en zonas y corredores habilitados; no catálogo de recorridos permitidos"
+          ],
+          "limits": "La fecha de publicación no certifica operación actual; reconfirmar condiciones.",
+          "publishedAt": "2026-01-16"
+        },
+        {
+          "id": "PIN-REGISTRO",
+          "title": "Municipalidad de Pinamar — Registro municipal 2026",
+          "url": "https://pinamar.gob.ar/registromunicipal26/",
+          "checkedAt": "2026-10-24",
+          "claims": [
+            "Registro y corredores; obligatoriedad anunciada desde 01/12/2026, no inmediata al consultar"
+          ],
+          "limits": "Sin fecha de publicación visible; describe el recurso, no certifica operación actual.",
+          "publishedAt": null
+        }
+      ],
+      "pending": [
+        "Confirmar mapa vigente de corredores y normativa de playas para fecha de visita",
+        "Completar fuentes de PEP, muelle y programas culturales actuales",
+        "No anunciar como actuales las visitas municipales de 2024"
+      ],
+      "gaps": [
+        "No garantiza muelle, pesca embarcada, 4x4 ni sandboard",
+        "PEP, casas de artistas y agendas requieren fuentes específicas"
+      ],
+      "pdfThemes": [
+        "Centro, playa y bosque",
+        "La Frontera o patrimonio arquitectónico",
+        "Cariló y Valeria del Mar",
+        "Arte, PEP, ferias y teatro"
+      ],
+      "photoSubjects": [
+        "Paisaje urbano de forestación desde espacio público",
+        "Patrimonio de Ostende con revisión de derechos arquitectónicos y privacidad"
+      ],
+      "coverage": "partial-review-required",
+      "sourceMethod": "Lectura del contenido institucional; contraste de alcance; no verificación presencial ni contacto con operadores."
+    },
+    {
+      "guide": "esc_20",
+      "batch": "B06",
+      "slug": "santiago-del-estero",
+      "sources": [
+        {
+          "id": "SDE-CCB",
+          "title": "Centro Cultural del Bicentenario — Presentación",
+          "url": "https://ccbsantiago.gob.ar/centro-cultural-del-bicentenario/",
+          "checkedAt": "2026-10-24",
+          "claims": [
+            "Tres museos en antigua Casa de Gobierno; horarios de tarde contradictorios omitidos"
+          ],
+          "limits": "Sin fecha de publicación visible; describe el recurso, no certifica operación actual.",
+          "publishedAt": null
+        },
+        {
+          "id": "SDE-AUTO",
+          "title": "Municipalidad de Las Termas de Río Hondo — Museo del Automóvil",
+          "url": "https://www.termasderiohondo.tur.ar/page/19/museo-automovil",
+          "checkedAt": "2026-10-24",
+          "claims": [
+            "Museo en predio del autódromo y colecciones; no programación deportiva"
+          ],
+          "limits": "Sin fecha de publicación visible; describe el recurso, no certifica operación actual.",
+          "publishedAt": null
+        },
+        {
+          "id": "SDE-TARA",
+          "title": "Municipalidad de Las Termas de Río Hondo — Reserva Isla Tara Inti",
+          "url": "https://www.termasderiohondo.tur.ar/page/23/reserva-isla-tara-inti",
+          "checkedAt": "2026-10-24",
+          "claims": [
+            "Reserva, caminería y ambientes; no apertura actual"
+          ],
+          "limits": "Sin fecha de publicación visible; describe el recurso, no certifica operación actual.",
+          "publishedAt": null
+        },
+        {
+          "id": "SDE-COPO",
+          "title": "APN — Actividades en Copo",
+          "url": "https://www.argentina.gob.ar/parquesnacionales/region-noroeste/parque-nacional-copo/actividades",
+          "checkedAt": "2026-10-24",
+          "claims": [
+            "Bosque chaqueño, Munakuy y propuesta de interpretación con consulta previa"
+          ],
+          "limits": "Sin fecha de publicación visible; describe el recurso, no certifica operación actual.",
+          "publishedAt": null
+        }
+      ],
+      "pending": [
+        "CCB publica dos horarios de tarde dentro de la misma página; no se fija uno",
+        "Completar fuentes de cestería, folklore, Beltrán y establecimientos termales"
+      ],
+      "gaps": [
+        "No valida hoteles, tratamientos, agenda deportiva ni peñas",
+        "Beltrán y experiencias con artesanos pendientes"
+      ],
+      "pdfThemes": [
+        "Capital y CCB",
+        "Termas, hotel y Museo Automóvil",
+        "Tara Inti, dique y cestería",
+        "Copo y Beltrán"
+      ],
+      "photoSubjects": [
+        "Edificio del CCB o colección con permiso",
+        "Ambiente de Tara Inti o Copo con lugar identificado"
+      ],
+      "coverage": "partial-review-required",
+      "sourceMethod": "Lectura del contenido institucional; contraste de alcance; no verificación presencial ni contacto con operadores."
+    }
+  ]
+}

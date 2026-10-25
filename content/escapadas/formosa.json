@@ -1,0 +1,210 @@
+{
+  "schemaVersion": 2,
+  "id": "AUS-ESC-FORMOSA-EDITORIAL-01",
+  "slug": "formosa",
+  "title": "Formosa: ciudad, Bañado La Estrella y Río Pilcomayo",
+  "destination": "Formosa",
+  "province": "Formosa",
+  "description": "Formosa permite acercarse al río desde su capital y conocer humedales en áreas diferentes. Bañado La Estrella y el Parque Nacional Río Pilcomayo no son el mismo destino ni comparten accesos. La visita gana sentido cuando distingue sus paisajes y las comunidades vinculadas con cada lugar.",
+  "status": "draft",
+  "publicationAuthorized": false,
+  "review": null,
+  "introductionSourceIds": [
+    "FOR-MICRO",
+    "FOR-BANADO"
+  ],
+  "geography": {
+    "provinceSlugs": [
+      "formosa"
+    ],
+    "localities": [
+      {
+        "id": "git-locality:formosa:formosa",
+        "name": "Ciudad de Formosa, Argentina",
+        "provinceSlug": "formosa",
+        "sourceIds": [
+          "FOR-CIUDAD"
+        ]
+      },
+      {
+        "id": "git-locality:formosa:las-lomitas",
+        "name": "Las Lomitas, Formosa",
+        "provinceSlug": "formosa",
+        "sourceIds": [
+          "FOR-MICRO"
+        ]
+      },
+      {
+        "id": "git-locality:formosa:fortin-soledad",
+        "name": "Fortín La Soledad, Formosa",
+        "provinceSlug": "formosa",
+        "sourceIds": [
+          "FOR-MICRO"
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "FOR-MICRO",
+      "title": "Ministerio de Turismo de Formosa — Microrregión Bañado La Estrella",
+      "url": "https://www.formosahermosa.gob.ar/microrregion-banado-la-estrella/",
+      "checkedAt": "2026-10-24"
+    },
+    {
+      "id": "FOR-BANADO",
+      "title": "Ministerio de Turismo de Formosa — Bañado La Estrella",
+      "url": "https://www.formosahermosa.gob.ar/banado-la-estrella/",
+      "checkedAt": "2026-10-24"
+    },
+    {
+      "id": "FOR-PILCOMAYO",
+      "title": "APN — Actividades en Río Pilcomayo",
+      "url": "https://www.argentina.gob.ar/parquesnacionales/nea/parque-nacional-rio-pilcomayo/actividades",
+      "checkedAt": "2026-10-24"
+    },
+    {
+      "id": "FOR-CIUDAD",
+      "title": "Ministerio de Turismo de Formosa — Qué hacer en la ciudad",
+      "url": "https://www.formosahermosa.gob.ar/circuito-formosa-y-herradura/ciudad-de-formosa/que-hacer/",
+      "checkedAt": "2026-10-24"
+    }
+  ],
+  "sections": [
+    {
+      "id": "ciudad",
+      "kind": "culture",
+      "title": "La capital junto al Paraguay",
+      "sourceIds": [
+        "FOR-CIUDAD"
+      ],
+      "paragraphs": [
+        "La costanera Vuelta Fermoza y el Paseo Ferroviario vinculan el paseo urbano con el río Paraguay. La antigua estación aporta una lectura del transporte y de la transformación de la ciudad. La Casa de la Artesanía permite acercarse a producciones de pueblos qom, wichí y pilagá, sin reducir sus culturas a un objeto de compra.",
+        "Laguna Oca corresponde a otro ambiente cercano a la capital. Su inclusión en la oferta provincial no demuestra que cualquier actividad, prestador o sector de playa esté habilitado en la fecha elegida. Consultá condiciones concretas antes de planear una salida al agua."
+      ]
+    },
+    {
+      "id": "banado",
+      "kind": "highlights",
+      "title": "La Estrella: un paisaje que cambia",
+      "sourceIds": [
+        "FOR-BANADO"
+      ],
+      "paragraphs": [
+        "Los champales, con árboles secos cubiertos por enredaderas, forman parte de la identidad visual del humedal. El paisaje varía con el agua y la época del año; la observación de aves y la fotografía pueden orientar la visita sin prometer especies o una imagen idéntica a la de una campaña turística."
+      ]
+    },
+    {
+      "id": "portales",
+      "kind": "activities",
+      "title": "El Vertedero y Fortín La Soledad",
+      "sourceIds": [
+        "FOR-BANADO",
+        "FOR-MICRO"
+      ],
+      "paragraphs": [
+        "El Vertedero es un punto del bañado asociado a una obra hidrovial sobre la RP 28. Fortín La Soledad es un poblado con acceso de tierra y propuestas que se coordinan con responsables locales. No son dos nombres del mismo mirador ni se presume que un traslado a uno incluya el otro.",
+        "Las Lomitas aparece como referencia para organizar la región. Consultá caminos y disponibilidad antes de elegir una navegación. Campo del Cielo, en Formosa, es una comunidad vinculada con el bañado y no debe confundirse con la reserva de meteoritos de Chaco. Cualquier acercamiento cultural debe acordarse con la comunidad."
+      ]
+    },
+    {
+      "id": "pilcomayo",
+      "kind": "nature",
+      "title": "Río Pilcomayo tiene otra administración y otros ambientes",
+      "sourceIds": [
+        "FOR-PILCOMAYO"
+      ],
+      "paragraphs": [
+        "APN diferencia los portales de Laguna Blanca y Estero Poí. Las pasarelas, los palmares, los pastizales y las isletas de monte permiten reconocer ambientes del Chaco Húmedo. Los Secretos del Monte y Karaguatá Guatahá son propuestas distintas; verificá qué recorrido está habilitado y qué asistencia puede necesitar el grupo.",
+        "La observación desde Estero Pirity también requiere considerar las barreras del acceso: la descripción oficial menciona una pasarela y una escalera. No se traslada una afirmación general de accesibilidad a una garantía para cualquier persona ni se certifica el funcionamiento de servicios."
+      ]
+    },
+    {
+      "id": "plan",
+      "kind": "practical",
+      "title": "Preparar cada ámbito por separado",
+      "sourceIds": [
+        "FOR-MICRO",
+        "FOR-BANADO",
+        "FOR-PILCOMAYO"
+      ],
+      "paragraphs": [
+        "Consultá con Turismo provincial para el bañado y con APN para Río Pilcomayo. Los caminos de tierra y el nivel del agua pueden modificar la organización. La referencia de una localidad en el mapa no resuelve el estado del tramo rural ni su tiempo de viaje. Elegí base y actividad antes de reservar, sin suponer que capital, bañado y parque puedan recorrerse como una única jornada."
+      ]
+    }
+  ],
+  "address": "Capital junto al Paraguay; mapa del ámbito urbano.",
+  "mapUrl": "https://www.openstreetmap.org/search?query=Ciudad%20de%20Formosa%2C%20Argentina%20Argentina",
+  "locations": [
+    {
+      "id": "formosa",
+      "label": "Ciudad de Formosa, Argentina",
+      "description": "Capital junto al Paraguay; mapa del ámbito urbano.",
+      "sourceIds": [
+        "FOR-CIUDAD"
+      ],
+      "mapUrl": "https://www.openstreetmap.org/search?query=Ciudad%20de%20Formosa%2C%20Argentina%20Argentina"
+    },
+    {
+      "id": "las-lomitas",
+      "label": "Las Lomitas, Formosa",
+      "description": "Localidad base de la microrregión del bañado.",
+      "sourceIds": [
+        "FOR-MICRO"
+      ],
+      "mapUrl": "https://www.openstreetmap.org/search?query=Las%20Lomitas%2C%20Formosa%20Argentina"
+    },
+    {
+      "id": "fortin-soledad",
+      "label": "Fortín La Soledad, Formosa",
+      "description": "Poblado del Bañado La Estrella; acceso a verificar.",
+      "sourceIds": [
+        "FOR-MICRO"
+      ],
+      "mapUrl": "https://www.openstreetmap.org/search?query=Fort%C3%ADn%20La%20Soledad%2C%20Formosa%20Argentina"
+    },
+    {
+      "id": "rio-pilcomayo",
+      "label": "Parque Nacional Río Pilcomayo, Formosa",
+      "description": "Área diferente del Bañado La Estrella.",
+      "sourceIds": [
+        "FOR-PILCOMAYO"
+      ],
+      "mapUrl": "https://www.openstreetmap.org/search?query=Parque%20Nacional%20R%C3%ADo%20Pilcomayo%2C%20Formosa%20Argentina"
+    }
+  ],
+  "photos": [],
+  "related": [
+    {
+      "href": "/provincias/formosa",
+      "label": "Conocer formosa"
+    },
+    {
+      "href": "/actividades?provincia=formosa",
+      "label": "Actividades en formosa"
+    },
+    {
+      "href": "/escapadas",
+      "label": "Otras escapadas"
+    }
+  ],
+  "editorial": {
+    "documentaryStatus": "sources-checked",
+    "updatedAt": "2026-10-24",
+    "origin": {
+      "kind": "git-editorial",
+      "legacyGuideIds": [
+        "esc_23"
+      ],
+      "masterRefs": []
+    },
+    "pendingReviews": [
+      "Revisión humana del texto, fuentes y alcance",
+      "Autorización independiente de publicación",
+      "Fotografías: derechos y selección pendientes",
+      "Equivalencia con el PDF y respaldo externo sin aprobar",
+      "Dos páginas provinciales indican 65 y 70 km a Fortín La Soledad: distancia omitida",
+      "Ampliar fuente específica de Herradura y fuentes museísticas propias"
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "mode": "preview",
+  "editorialSecurity": {
+    "withheldRecords": 24,
+    "errors": 0
+  },
+  "files": 2038,
+  "bytes": 101810268,
+  "mediaBytes": 80004852,
+  "fallbackBytes": 222371,
+  "pdfBytes": 0,
+  "withoutPdfsBytes": 101810268,
+  "oversized": [],
+  "deploymentAuthorized": false,
+  "releaseBlocked": [
+    "PDF replacements pending human approval",
+    "Image rights review",
+    "Cloudflare account and zone rules not authorized/tested",
+    "Privacy provider update pending"
+  ]
+}

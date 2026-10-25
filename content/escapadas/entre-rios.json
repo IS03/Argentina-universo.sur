@@ -1,0 +1,212 @@
+{
+  "schemaVersion": 2,
+  "id": "AUS-ESC-ENTRE-RIOS-EDITORIAL-01",
+  "slug": "entre-rios",
+  "title": "Entre Ríos: patrimonio y naturaleza en localidades diferentes",
+  "destination": "Entre Ríos",
+  "province": "Entre Rios",
+  "description": "Una escapada entrerriana puede empezar por una historia de trabajo, una colección de museo o un paisaje de palmares. Colón, San José y Pueblo Liebig ofrecen relatos distintos junto al Uruguay; El Palmar suma una visita protegida propia. Ninguno representa por sí solo toda la provincia.",
+  "status": "draft",
+  "publicationAuthorized": false,
+  "review": null,
+  "introductionSourceIds": [
+    "ER-MOLINO",
+    "ER-SANJOSE"
+  ],
+  "geography": {
+    "provinceSlugs": [
+      "entre_rios"
+    ],
+    "localities": [
+      {
+        "id": "git-locality:entre_rios:colon",
+        "name": "Colón, Entre Ríos",
+        "provinceSlug": "entre_rios",
+        "sourceIds": [
+          "ER-MOLINO"
+        ]
+      },
+      {
+        "id": "git-locality:entre_rios:san-jose",
+        "name": "San José, Entre Ríos",
+        "provinceSlug": "entre_rios",
+        "sourceIds": [
+          "ER-SANJOSE"
+        ]
+      },
+      {
+        "id": "git-locality:entre_rios:pueblo-liebig",
+        "name": "Pueblo Liebig, Entre Ríos",
+        "provinceSlug": "entre_rios",
+        "sourceIds": [
+          "ER-LIEBIG"
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "ER-MOLINO",
+      "title": "Secretaría de Cultura de Entre Ríos — Molino Forclaz",
+      "url": "https://www.entrerios.gov.ar/cultura/museo-provincial-molino-forclaz/",
+      "checkedAt": "2026-10-24"
+    },
+    {
+      "id": "ER-SANJOSE",
+      "title": "Municipalidad de San José — Qué hacer",
+      "url": "https://sanjose.tur.ar/que-hacer/",
+      "checkedAt": "2026-10-24"
+    },
+    {
+      "id": "ER-LIEBIG",
+      "title": "EMTURER — Pueblo Liebig",
+      "url": "https://www.entrerios.tur.ar/localidades-1/pueblo-liebig",
+      "checkedAt": "2026-10-24"
+    },
+    {
+      "id": "ER-PALMAR",
+      "title": "APN — Actividades en El Palmar",
+      "url": "https://www.argentina.gob.ar/parquesnacionales/centro/parque-nacional-el-palmar/actividades",
+      "checkedAt": "2026-10-24"
+    }
+  ],
+  "sections": [
+    {
+      "id": "molino",
+      "kind": "highlights",
+      "title": "Molino Forclaz: mirar el trabajo y sus construcciones",
+      "sourceIds": [
+        "ER-MOLINO"
+      ],
+      "paragraphs": [
+        "El conjunto conserva vivienda, galpones, un molino de viento y otro de malacate. Permite interpretar la vida productiva de las chacras de inmigrantes de la Colonia San José. Su localización documental en el ejido de Colón no lo convierte en una parada peatonal del centro ni resuelve cómo llegar.",
+        "Las fuentes consultadas difieren sobre reserva y horarios. Acordá la visita directamente con el museo y confirmá su modalidad para la fecha elegida. La orientación patrimonial de esta ficha no garantiza una función teatralizada ni reproduce como vigente una fecha sin año."
+      ]
+    },
+    {
+      "id": "san-jose",
+      "kind": "culture",
+      "title": "San José: memoria de la colonia y del ambiente",
+      "sourceIds": [
+        "ER-SANJOSE"
+      ],
+      "paragraphs": [
+        "El Museo Histórico Regional de la Colonia San José conserva el relato de los colonos y de la comunidad. El Museo de Ciencias Naturales aporta otra perspectiva, vinculada con fósiles de la región. Son instituciones distintas, con consultas de acceso independientes.",
+        "La Plaza General Urquiza permite sumar un espacio cotidiano de encuentro al recorrido urbano. Elegir el museo histórico o el de ciencias según los intereses del grupo ayuda a evitar una sucesión apresurada de salas. La producción regional puede investigarse con sus responsables, sin dar por hecho que cualquier productor reciba visitantes."
+      ]
+    },
+    {
+      "id": "liebig",
+      "kind": "culture",
+      "title": "Pueblo Liebig: leer un paisaje industrial",
+      "sourceIds": [
+        "ER-LIEBIG"
+      ],
+      "paragraphs": [
+        "La relación entre la fábrica, las viviendas obreras y los chalets permite comprender la organización del pueblo alrededor de la industria de la carne. Sus calles conservan esa lectura, distinta de la historia agrícola de San José. El centro de interpretación aparece como apoyo posible, sujeto a confirmar recepción y recorrido.",
+        "El reconocimiento patrimonial no autoriza a entrar a la fábrica ni a otros predios. Coordiná cualquier ingreso con el responsable y respetá los espacios privados. La proximidad del río tampoco acredita playa habilitada ni excursiones náuticas disponibles."
+      ]
+    },
+    {
+      "id": "palmar",
+      "kind": "nature",
+      "title": "El Palmar es otra visita, no toda Entre Ríos",
+      "sourceIds": [
+        "ER-PALMAR"
+      ],
+      "paragraphs": [
+        "Los palmares de yatay y los espacios de interpretación permiten una experiencia de naturaleza y patrimonio dentro del parque nacional. Antes de elegir una senda o una actividad, consultá las condiciones de APN. La visita al parque se organiza por separado de los museos y pueblos; no sustituye las otras regiones de la provincia."
+      ]
+    },
+    {
+      "id": "organizar",
+      "kind": "activities",
+      "title": "Elegir un tema para cada jornada",
+      "sourceIds": [
+        "ER-MOLINO",
+        "ER-SANJOSE",
+        "ER-LIEBIG"
+      ],
+      "paragraphs": [
+        "Una jornada dedicada al patrimonio del trabajo puede combinar investigación sobre molienda y colonia; otra puede centrarse en la historia industrial de Liebig. Son orientaciones editoriales, sin transporte, tiempos ni acceso garantizados. Confirmá las visitas antes de unir puntos en un mapa."
+      ]
+    },
+    {
+      "id": "alcance",
+      "kind": "practical",
+      "title": "Termas y turismo rural necesitan su propia consulta",
+      "sourceIds": [
+        "ER-PALMAR",
+        "ER-SANJOSE"
+      ],
+      "paragraphs": [
+        "Las propuestas termales, bodegas y estancias de la guía requieren confirmar establecimiento, modalidad y condiciones. No se atribuyen propiedades terapéuticas a sus aguas ni se promete acceso a todas las instalaciones. La cobertura provincial debe ampliarse con fuentes propias de cada localidad antes de considerar equivalente este reemplazo."
+      ]
+    }
+  ],
+  "address": "Referencia del ejido del Molino Forclaz; confirmar acceso con el museo.",
+  "mapUrl": "https://www.openstreetmap.org/search?query=Col%C3%B3n%2C%20Entre%20R%C3%ADos%20Argentina",
+  "locations": [
+    {
+      "id": "colon",
+      "label": "Colón, Entre Ríos",
+      "description": "Referencia del ejido del Molino Forclaz; confirmar acceso con el museo.",
+      "sourceIds": [
+        "ER-MOLINO"
+      ],
+      "mapUrl": "https://www.openstreetmap.org/search?query=Col%C3%B3n%2C%20Entre%20R%C3%ADos%20Argentina"
+    },
+    {
+      "id": "san-jose",
+      "label": "San José, Entre Ríos",
+      "description": "Localidad de los museos Histórico y Ciencias Naturales.",
+      "sourceIds": [
+        "ER-SANJOSE"
+      ],
+      "mapUrl": "https://www.openstreetmap.org/search?query=San%20Jos%C3%A9%2C%20Entre%20R%C3%ADos%20Argentina"
+    },
+    {
+      "id": "pueblo-liebig",
+      "label": "Pueblo Liebig, Entre Ríos",
+      "description": "Conjunto urbano industrial; mapa no habilita predios.",
+      "sourceIds": [
+        "ER-LIEBIG"
+      ],
+      "mapUrl": "https://www.openstreetmap.org/search?query=Pueblo%20Liebig%2C%20Entre%20R%C3%ADos%20Argentina"
+    }
+  ],
+  "photos": [],
+  "related": [
+    {
+      "href": "/provincias/entre_rios",
+      "label": "Conocer entre rios"
+    },
+    {
+      "href": "/actividades?provincia=entre_rios",
+      "label": "Actividades en entre rios"
+    },
+    {
+      "href": "/escapadas",
+      "label": "Otras escapadas"
+    }
+  ],
+  "editorial": {
+    "documentaryStatus": "sources-checked",
+    "updatedAt": "2026-10-24",
+    "origin": {
+      "kind": "git-editorial",
+      "legacyGuideIds": [
+        "esc_11"
+      ],
+      "masterRefs": []
+    },
+    "pendingReviews": [
+      "Revisión humana del texto, fuentes y alcance",
+      "Autorización independiente de publicación",
+      "Fotografías: derechos y selección pendientes",
+      "Equivalencia con el PDF y respaldo externo sin aprobar",
+      "INCOMPLETA respecto del PDF: fuentes específicas para termas, vino, ruralidad y colonias judías",
+      "Relaciones de localidades y fuentes verificadas del maestro guardadas solo en registro privado; no se importan estados"
+    ]
+  }
+}
