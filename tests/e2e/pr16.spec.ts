@@ -71,3 +71,19 @@ test("la página 404 responde 404, orienta y no nombra borradores", async ({ pag
   await page.getByRole("main").getByRole("link", { name: "Qué hacer: actividades turísticas por provincia" }).click();
   await expect(page).toHaveURL(/\/actividades$/);
 });
+
+test("Oficinas y Agencias solo enlazan correos válidos; Santa Fe capital muestra el correo oficial", async ({ page }) => {
+  const valido = /^mailto:[A-Za-z0-9](?:[A-Za-z0-9._%+-]*[A-Za-z0-9_%+-])?@(?:[A-Za-z0-9](?:[A-Za-z0-9-]*[A-Za-z0-9])?\.)+[A-Za-z]{2,}$/;
+  for (const ruta of ["/provincias/santa_fe/oficinas", "/provincias/santa_fe/agencias"]) {
+    await page.goto(ruta);
+    const enlaces = await page.locator('a[href^="mailto:"]').evaluateAll(as => as.map(a => a.getAttribute("href")));
+    expect(enlaces.length).toBeGreaterThan(10);
+    for (const href of enlaces) {
+      expect(href, ruta).toMatch(valido);
+      expect(href, ruta).not.toMatch(/lorem|ipsum|example|;|\s/i);
+    }
+  }
+  await page.goto("/provincias/santa_fe/oficinas");
+  const santaFe = page.locator("article", { has: page.getByRole("heading", { name: "Santa Fe", exact: true }) });
+  await expect(santaFe.locator('a[href^="mailto:"]')).toHaveAttribute("href", "mailto:turismo@santafeciudad.gov.ar");
+});

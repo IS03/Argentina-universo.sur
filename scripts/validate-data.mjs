@@ -4,6 +4,7 @@ import { fileURLToPath } from "node:url";
 import ts from "typescript";
 import { createSlug, REGION_POR_PROVINCIA, REGIONES } from "../lib/catalog.ts";
 import { parseEventDate } from "../lib/events.ts";
+import { extraerContactos } from "../lib/contacto.ts";
 
 export const projectRoot = fileURLToPath(new URL("../", import.meta.url));
 const photos = ["FOTO_1", "FOTO_2", "FOTO_3"];
@@ -191,6 +192,15 @@ export async function validateRepository(root = projectRoot) {
       }
       if (name === "oficinas_informes.json" && Array.isArray(rows) && rows.some(row => row && row["Correo/Web"] !== null && typeof row["Correo/Web"] !== "string")) {
         errors.push(`${name}: Correo/Web debe ser texto o null`);
+      }
+      // Ningún correo malformado o de relleno (p. ej. «info@loreipsumcom»): un dato no verificado va
+      // como null («No disponible»), nunca como un enlace mailto: inválido.
+      const campoCorreo = { "oficinas_informes.json": "Correo/Web", "agencias.json": "Correo electrónico" }[name];
+      if (campoCorreo && Array.isArray(rows)) {
+        for (const row of rows) {
+          const { invalidos } = extraerContactos(row?.[campoCorreo]);
+          if (invalidos.length) errors.push(`${name}: correo inválido o de relleno en «${row.Localidad ?? row.Agencia}»: ${invalidos.join(", ")}`);
+        }
       }
     } catch (error) { errors.push(`${name}: ${error.message}`); }
   }

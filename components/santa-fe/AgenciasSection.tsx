@@ -5,6 +5,7 @@ import { Agencia } from "@/lib/data";
 import Icono from "@/components/ui/Icono";
 import { EstadoVacio } from "@/components/ui/Bloques";
 import { boton, chip } from "@/components/ui/estilos";
+import { extraerContactos } from "@/lib/contacto";
 
 interface AgenciasSectionProps {
   agencias: Agencia[];
@@ -69,16 +70,16 @@ export default function AgenciasSection({ agencias }: AgenciasSectionProps) {
                     <dt><Icono nombre="telefono" className="mt-0.5 size-4 text-tinta-500" /><span className="sr-only">Teléfono</span></dt>
                     <dd className="break-words">{agencia["Teléfono/Celular"]}</dd>
                   </div>
-                  {agencia["Correo electrónico"] && (
-                    <div className="flex items-start gap-2">
+                  {extraerContactos(agencia["Correo electrónico"]).correos.map(correo => (
+                    <div key={correo} className="flex items-start gap-2">
                       <dt><Icono nombre="correo" className="mt-0.5 size-4 text-tinta-500" /><span className="sr-only">Correo</span></dt>
                       <dd className="min-w-0">
-                        <a href={`mailto:${agencia["Correo electrónico"]}`} className="inline-block break-words py-1 text-lago-600 underline underline-offset-2">
-                          {agencia["Correo electrónico"]}
+                        <a href={`mailto:${correo}`} className="inline-block break-words py-1 text-lago-600 underline underline-offset-2">
+                          {correo}
                         </a>
                       </dd>
                     </div>
-                  )}
+                  ))}
                   {agencia.Contacto && (
                     <div className="flex items-start gap-2 border-t border-arena-300/70 pt-2.5">
                       <dt><Icono nombre="persona" className="mt-0.5 size-4 text-tinta-500" /><span className="sr-only">Contacto</span></dt>

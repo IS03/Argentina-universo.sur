@@ -82,5 +82,6 @@ Fotos más pesadas de PR15:
 Buscador, páginas por región, filtros por tipo de actividad, fichas del maestro y anuncios
 ([docs/pr15/PROPUESTA.md](../pr15/PROPUESTA.md)).
 
-Observación de datos, no modificada: una oficina de Santa Fe tiene como correo
-`info@loreipsumcom` (`public/santa-fe/json/oficinas_informes.json`), que parece un texto de relleno.
+Contacto de Santa Fe capital: `info@loreipsumcom` se reemplazó por el correo oficial de la Dirección
+de Turismo municipal, y los correos se validan en la interfaz y en `npm run validate`. Detalle,
+fuente y datos que no se tocaron en [CONTACTO-SANTA-FE.md](CONTACTO-SANTA-FE.md).

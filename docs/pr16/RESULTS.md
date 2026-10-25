@@ -9,16 +9,20 @@ Fecha: 25/10/2026. macOS, Node 22.19.0, Chrome del sistema. Base `main` `92d4880
 | `npm run lint` | Sin errores ni advertencias |
 | `npm run typecheck` | OK |
 | `npm run validate` | OK, 0 errores |
-| `npm test` | **112/112** (5 nuevas en `tests/pr16-rediseno.test.mjs`) |
+| `npm test` | **116/116** (5 nuevas en `tests/pr16-rediseno.test.mjs` y 4 en `tests/contacto.test.mjs`) |
 | `npm run build` | OK |
 | `npm run editorial:check` | 24 borradores, 0 publicables, 0 redirects de PDF, 0 errores |
 | `npm run editorial:audit-next` | 24 fichas retenidas; 132 HTML, 1.027 prerenderizados y 24 JS; 0 errores |
 | `npm run audit:seo` | **106 páginas, 0 errores** |
-| `npm run test:e2e` | **119 aprobadas, 9 omitidas** (10 nuevas en `tests/e2e/pr16.spec.ts`; omisiones por perfil, como en `main`) |
+| `npm run test:e2e` | **121 aprobadas, 9 omitidas** (12 nuevas en `tests/e2e/pr16.spec.ts`; omisiones por perfil, como en `main`) |
 | `build:pages` + `audit.mjs` preview / production-audit / consent-test | 106 páginas canónicas, 0 errores en los tres; 24 fichas retenidas |
 | `npm run test:pages` (4401, 4402, 4403 con reglas de zona, 4404, Wrangler 4410) | **70 aprobadas, 2 omitidas** |
 
-La batería completa se corrió cuatro veces: cada corrección posterior a una medición (CLS de Eventos
+Tras la corrección del contacto de Santa Fe ([CONTACTO-SANTA-FE.md](CONTACTO-SANTA-FE.md)) se
+volvió a correr la batería completa y `test:pages`, con estos resultados. Ese cambio solo toca datos y
+las secciones de Oficinas y Agencias, así que la medición de rendimiento de abajo no se repitió.
+
+La batería completa se corrió cinco veces: cada corrección posterior a una medición (CLS de Eventos
 y de la 404, encaje de las filas de chips, peso de la 404) obligó a repetirla entera sobre el código
 nuevo. Los números de esta página son los de la última corrida.
 
@@ -39,6 +43,10 @@ nuevo. Los números de esta página son los de la última corrida.
   - chip activo visible en las cinco subsecciones de Santa Fe;
   - filtro de Agencias con conteo;
   - 404 que responde 404 sin nombrar borradores.
+- **Contacto** (`tests/contacto.test.mjs` y una E2E): rechaza correos malformados o de relleno,
+  separa campos con varios contactos, exige que `npm run validate` pase y verifica el correo oficial
+  de Santa Fe capital con el resto del registro intacto. Todos los `mailto:` de Oficinas y Agencias
+  se revisan en el navegador.
 - Ninguna otra prueba cambió. Las E2E de consentimiento, accesibilidad, mapas, filtros y SEO pasan
   sin modificaciones.
 

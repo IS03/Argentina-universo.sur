@@ -1,6 +1,7 @@
 import { OficinaInforme } from "@/lib/data";
 import Icono from "@/components/ui/Icono";
 import { boton } from "@/components/ui/estilos";
+import { extraerContactos, webLegible } from "@/lib/contacto";
 
 interface OficinasSectionProps {
   oficinas: OficinaInforme[];
@@ -42,18 +43,17 @@ export default function OficinasSection({ oficinas }: OficinasSectionProps) {
   return (
     <section id="oficinas" aria-labelledby="oficinas-titulo">
       <h2 id="oficinas-titulo" className="sr-only">Oficinas de Información Turística</h2>
-      <p className="mb-6 text-sm font-medium text-tinta-700">{oficinas.length} oficinas en la provincia</p>
+      <p className="text-sm font-medium text-tinta-700">{oficinas.length} oficinas en la provincia</p>
+      {/* Los horarios vienen de la planilla de la provincia y no se verifican uno por uno. */}
+      <p className="mt-1 mb-6 text-sm text-tinta-500">Los horarios pueden cambiar: confirmalos por teléfono o en el sitio oficial antes de ir.</p>
       <ul className="grid list-none gap-4 md:grid-cols-2 lg:grid-cols-3 lg:gap-6">
         {oficinas.map((oficina, index) => {
           const telefono = formatTelefono(oficina["Teléfono/WhatsApp"]);
           const whatsappLink = getWhatsAppLink(oficina["Teléfono/WhatsApp"]);
           const telefonoLink = getTelefonoLink(oficina["Teléfono/WhatsApp"]);
-          const email = oficina["Correo/Web"]?.includes('@')
-            ? oficina["Correo/Web"]
-            : null;
-          const web = oficina["Correo/Web"]?.includes('http')
-            ? oficina["Correo/Web"]
-            : null;
+          // Solo correos y webs que pasan la validación: un valor inválido o de relleno no se convierte
+          // en enlace (lib/contacto.ts).
+          const { correos, webs } = extraerContactos(oficina["Correo/Web"]);
 
           return (
             <li key={index}>
@@ -70,19 +70,25 @@ export default function OficinasSection({ oficinas }: OficinasSectionProps) {
                       <dd className="break-words">{telefono}</dd>
                     </div>
                   )}
-                  {email && (
+                  {correos.length > 0 && (
                     <div className="flex items-start gap-2">
                       <dt><Icono nombre="correo" className="mt-0.5 size-4 text-tinta-500" /><span className="sr-only">Correo</span></dt>
-                      <dd className="min-w-0"><a href={`mailto:${email}`} className="inline-block break-words py-1 text-lago-600 underline underline-offset-2">{email}</a></dd>
+                      <dd className="min-w-0">
+                        {correos.map(correo => (
+                          <a key={correo} href={`mailto:${correo}`} className="block break-words py-1 text-lago-600 underline underline-offset-2">{correo}</a>
+                        ))}
+                      </dd>
                     </div>
                   )}
-                  {web && (
+                  {webs.length > 0 && (
                     <div className="flex items-start gap-2">
                       <dt><Icono nombre="globo" className="mt-0.5 size-4 text-tinta-500" /><span className="sr-only">Sitio web</span></dt>
                       <dd className="min-w-0">
-                        <a href={web.startsWith('http') ? web : `https://${web}`} target="_blank" rel="noopener noreferrer" className="inline-block break-words py-1 text-lago-600 underline underline-offset-2">
-                          {web.replace(/^https?:\/\//, '')}
-                        </a>
+                        {webs.map(web => (
+                          <a key={web} href={web} target="_blank" rel="noopener noreferrer" className="block break-words py-1 text-lago-600 underline underline-offset-2">
+                            {webLegible(web)}
+                          </a>
+                        ))}
                       </dd>
                     </div>
                   )}
