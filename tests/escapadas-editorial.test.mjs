@@ -119,7 +119,7 @@ test("tourist article renders semantic HTML, evidence anchors, map links and res
   const compiled = ts.transpileModule(source, {compilerOptions: {jsx: ts.JsxEmit.ReactJSX, module: ts.ModuleKind.ESNext, target: ts.ScriptTarget.ES2022}}).outputText.replace('"react/jsx-runtime"', JSON.stringify(import.meta.resolve("react/jsx-runtime"))).replace('"@/lib/site-links"', JSON.stringify(new URL("../lib/site-links.ts", import.meta.url).href));
   const path = join(dir, "article.mjs"); await writeFile(path, compiled);
   const Article = (await import(pathToFileURL(path).href)).default;
-  const fixture = synthetic(); fixture.photos = [fixturePhoto()];
+  const fixture = withNotice("2026-10-22"); fixture.photos = [fixturePhoto()];
   fixture.related.push({href: "/actividades?provincia=catarmaca&origen=synthetic#lista", label: "Synthetic activities"});
   const html = renderToStaticMarkup(createElement(Article, {trip: publishedTripProjection(approveSynthetic(fixture))}));
   assert.equal((html.match(/<h1\b/g) || []).length, 1);
@@ -128,6 +128,7 @@ test("tourist article renders semantic HTML, evidence anchors, map links and res
   assert.match(html, /width="960" height="640" alt="Synthetic accessible description"/);
   assert.match(html, /href="\/actividades\?provincia=catamarca&amp;origen=synthetic#lista"/);
   assert.match(html, /Synthetic holder/); assert.match(html, /datetime="2026-10-24"/i);
+  assert.match(html, /<aside aria-label="Estado operativo"[^>]*><p[^>]*>Estado verificado el <time dateTime="2026-10-22">2026-10-22<\/time>/i);
   for (const [,id] of html.matchAll(/href="#([^"]+)"/g)) assert.ok(html.includes(`id="${id}"`), id);
   assert.doesNotMatch(html, /<script|<iframe|_next\/image|adsbygoogle|googletagmanager|private-evidence/);
 });
@@ -154,4 +155,41 @@ test("the .next audit scope reports withheld text in served files and ignores pr
   const report = await auditPublicArtifact(dir, trips, {include});
   assert.deepEqual(report.errors.map(e => e.file), ["escapadas.html"]);
   assert.equal(report.javascript, 0);
+});
+
+const withNotice = (verifiedAt = "2026-10-20") => {
+  const t = synthetic();
+  t.operationalNotices = [{id: "synthetic-closure", sectionId: "activities", text: "Synthetic temporary closure notice", sourceIds: ["source"], verifiedAt}];
+  return t;
+};
+test("operational notices are dated, sourced, tied to a section and must be re-verified close to the review", () => {
+  assert.deepEqual(validateTrip(withNotice()), []);
+  for (const mutate of [n => n.sectionId = "missing", n => n.sourceIds = ["missing"], n => n.sourceIds = [], n => n.verifiedAt = "2026-02-30", n => n.text = " ", n => n.id = "Bad Id"]) {
+    const t = withNotice(); mutate(t.operationalNotices[0]); assert.ok(validateTrip(t).includes("Invalid operational notice"));
+  }
+  // Review on 2026-10-24: a notice checked 4 days earlier is current; one from 8 days earlier or after the review is not.
+  assert.equal(publishedTripProjection(approveSynthetic(withNotice("2026-10-20"))).operationalNotices[0].verifiedAt, "2026-10-20");
+  for (const stale of ["2026-10-16", "2026-10-25"]) assert.throws(() => publishedTripProjection(approveSynthetic(withNotice(stale))), /re-verified before publication/);
+});
+
+test("the Garganta del Diablo closure is a dated notice, not part of the permanent description", async () => {
+  const trips = await readEditorialTrips(new URL("../", import.meta.url).pathname);
+  const iguazu = trips.find(t => t.slug === "puerto-iguazu");
+  const [notice] = iguazu.operationalNotices;
+  assert.equal(notice.sectionId, "elegir-los-paseos");
+  assert.equal(notice.verifiedAt, "2026-10-24");
+  assert.deepEqual(notice.sourceIds, ["IGU-ESTADO-APN", "IGU-ESTADO-CONCESION"]);
+  const garganta = iguazu.sections.flatMap(s => s.paragraphs).filter(p => /Garganta del Diablo/.test(p));
+  assert.equal(garganta.length, 1);
+  assert.doesNotMatch(garganta[0], /cerrad|retirad|reapertura|disponible/i);
+  assert.ok(iguazu.editorial.pendingReviews.some(p => /Reverificar.*Garganta del Diablo/.test(p)));
+  assert.equal(tripPublishable(iguazu), false);
+  assert.ok(validateTrip({...iguazu, status: "approved", publicationAuthorized: true, review: {reviewer: "synthetic-test-only", date: "2026-12-01", contentSha256: tripContentHash(iguazu)}}).some(e => /re-verified/.test(e)));
+});
+
+test("withheld operational notice text is caught by the public artifact audit", async t => {
+  const dir = await mkdtemp(join(tmpdir(), "aus-notice-audit-")); t.after(() => rm(dir,{recursive: true, force: true}));
+  const trips = await readEditorialTrips(new URL("../", import.meta.url).pathname);
+  await writeFile(join(dir, "chunk.js"), JSON.stringify({text: trips.find(t => t.slug === "puerto-iguazu").operationalNotices[0].text}));
+  assert.ok((await auditPublicArtifact(dir, trips)).errors.some(e => e.rule.startsWith("withheld-content")));
 });

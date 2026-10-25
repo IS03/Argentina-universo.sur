@@ -72,7 +72,7 @@ export async function auditPublicArtifact(directory, trips, {include = () => tru
   const withheld = trips.filter((trip) => !tripPublishable(trip));
   const needles = withheld.flatMap((trip, index) => [
     { label: `withheld-route-${index + 1}`, value: "/escapadas/" + trip.slug },
-    ...[trip.id, trip.title, trip.description, ...trip.sections.flatMap((s) => s.paragraphs)]
+    ...[trip.id, trip.title, trip.description, ...trip.sections.flatMap((s) => s.paragraphs), ...(trip.operationalNotices ?? []).map((n) => n.text)]
       .filter((value) => typeof value === "string" && value.length >= 20)
       .map((value) => ({label: `withheld-content-${index + 1}`, value: normalize(value)})),
   ]);

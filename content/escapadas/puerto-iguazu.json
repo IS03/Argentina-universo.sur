@@ -64,6 +64,18 @@
       "title": "APN — Recomendaciones para tu visita",
       "url": "https://www.argentina.gob.ar/parquesnacionales/recomendaciones-para-tu-visita",
       "checkedAt": "2026-10-24"
+    },
+    {
+      "id": "IGU-ESTADO-APN",
+      "title": "APN — Parque Nacional Iguazú abierto todo el año (noticia del 17/09/2026)",
+      "url": "https://www.argentina.gob.ar/noticias/parque-nacional-iguazu-abierto-todo-el-ano",
+      "checkedAt": "2026-10-24"
+    },
+    {
+      "id": "IGU-ESTADO-CONCESION",
+      "title": "Iguazú Argentina S.A., concesionaria del Área Cataratas — Circuitos disponibles mientras Garganta del Diablo permanece cerrado (03/08/2026)",
+      "url": "https://iguazuargentina.com/parque-nacional-iguazu-conoce-los-circuitos-disponibles-mientras-garganta-del-diablo-permanece-cerrado/",
+      "checkedAt": "2026-10-24"
     }
   ],
   "sections": [
@@ -87,7 +99,7 @@
         "IGU-ACTIVIDADES"
       ],
       "paragraphs": [
-        "El Paseo Superior y el Paseo Inferior ofrecen perspectivas diferentes de los saltos. La propuesta de Garganta del Diablo utiliza pasarelas sobre el río. El parque también describe el Sendero Macuco y el Tren Ecológico de la Selva, opciones que permiten conocer otros aspectos del área.",
+        "El Paseo Superior y el Paseo Inferior ofrecen perspectivas diferentes de los saltos. La Garganta del Diablo, la caída principal de las cataratas, se recorre habitualmente por una pasarela sobre el lecho superior del río. El parque también describe el Sendero Macuco y el Tren Ecológico de la Selva, opciones que permiten conocer otros aspectos del área.",
         "La elección debe considerar las condiciones de cada recorrido. El Paseo Inferior incluye escaleras; Macuco es un sendero agreste. Revisá las descripciones de APN y consultá el estado de los sectores antes de ingresar. Esta ficha no convierte la existencia de una actividad en una confirmación de apertura ni asigna duraciones o dificultades propias."
       ]
     },
@@ -154,6 +166,18 @@
     }
   ],
   "photos": [],
+  "operationalNotices": [
+    {
+      "id": "garganta-del-diablo-cerrada",
+      "sectionId": "elegir-los-paseos",
+      "text": "El circuito Garganta del Diablo está cerrado. APN informó el 17 de septiembre de 2026 que sus pasarelas se retiraron en agosto como medida preventiva ante crecidas del río, y la concesionaria indicó que no había una fecha establecida para la reapertura. En la consulta del 24 de octubre de 2026 no se encontró un anuncio oficial de reapertura. Según esas fuentes, los demás atractivos del Área Cataratas seguían funcionando. Es una condición transitoria: consultá el estado vigente antes de viajar.",
+      "sourceIds": [
+        "IGU-ESTADO-APN",
+        "IGU-ESTADO-CONCESION"
+      ],
+      "verifiedAt": "2026-10-24"
+    }
+  ],
   "related": [
     {
       "href": "/provincias/misiones",
@@ -181,6 +205,7 @@
     "pendingReviews": [
       "Revisión humana del texto exacto y su alcance",
       "Permiso de publicación independiente",
+      "Reverificar con APN el estado de Garganta del Diablo y del resto de los circuitos en los 7 días previos a la revisión; el aviso del 2026-10-24 no es un dato permanente",
       "Fotografías: selección, derechos y variantes optimizadas pendientes",
       "Comparación temática con la guía PDF y aprobación de equivalencia pendientes"
     ]

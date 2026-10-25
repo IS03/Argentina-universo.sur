@@ -70,6 +70,13 @@ export default function TripArticle({ trip }: { trip: PublishedTrip }) {
         <section key={sectionId(index)} aria-labelledby={sectionId(index)} className="mt-8">
           <h2 id={sectionId(index)} className="text-2xl font-semibold mb-3 scroll-mt-28">{section.title}</h2>
           {section.paragraphs.map((paragraph, n) => <p key={n} className="mb-4 leading-relaxed">{paragraph}</p>)}
+          {trip.operationalNotices?.filter(notice => notice.sectionId === section.id).map(notice => (
+            <aside key={notice.id} aria-label="Estado operativo" className="mb-4 rounded-lg border border-[#C9B99B] p-4">
+              <p className="font-semibold">Estado verificado el <time dateTime={notice.verifiedAt}>{notice.verifiedAt}</time></p>
+              <p className="mt-1">{notice.text}</p>
+              <p className="mt-1 text-sm">{references(notice.sourceIds)}</p>
+            </aside>
+          ))}
           <p className="text-sm">{references(section.sourceIds)}</p>
         </section>
       ))}

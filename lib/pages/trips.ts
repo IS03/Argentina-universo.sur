@@ -35,6 +35,10 @@ export type TripPhoto = {
     reviewedAt: string;
   };
 };
+// Variable operating conditions (closures, works, suspensions): dated and sourced, kept apart from the
+// permanent description and never valid for publication without a fresh verification.
+export type TripOperationalNotice = { id: string; sectionId: string; text: string; sourceIds: string[]; verifiedAt: string };
+export const OPERATIONAL_NOTICE_MAX_AGE_DAYS = 7;
 export type StructuredTrip = Omit<LegacyTrip, "schemaVersion" | "sections"> & {
   schemaVersion: 2;
   introductionSourceIds: string[];
@@ -45,6 +49,7 @@ export type StructuredTrip = Omit<LegacyTrip, "schemaVersion" | "sections"> & {
   sections: { id: string; kind: TripSectionKind; title: string; paragraphs: string[]; sourceIds: string[] }[];
   locations: { id: string; label: string; description: string; mapUrl: string; sourceIds: string[] }[];
   photos: TripPhoto[];
+  operationalNotices?: TripOperationalNotice[];
   editorial: {
     documentaryStatus: "researching" | "sources-checked";
     updatedAt: string;
@@ -143,6 +148,13 @@ function validateStructuredTrip(trip: StructuredTrip): string[] {
   if (!https(trip.mapUrl) || trip.related.some(l => !/^\/(?!\/)/.test(l.href))) errors.push("Unsafe map or related URL");
   const editorial = trip.editorial;
   if (!editorial || !["researching", "sources-checked"].includes(editorial.documentaryStatus) || !validDate(editorial.updatedAt) || editorial.origin?.kind !== "git-editorial" || !Array.isArray(editorial.origin.legacyGuideIds) || !unique(editorial.origin.legacyGuideIds) || !Array.isArray(editorial.origin.masterRefs) || !Array.isArray(editorial.pendingReviews)) errors.push("Invalid editorial provenance");
+  const notices = trip.operationalNotices ?? [];
+  if (!Array.isArray(notices) || !unique(notices.map(n => n?.id)) || notices.some(n => !n || !/^[a-z0-9-]+$/.test(n.id) || !trip.sections.some(s => s.id === n.sectionId) || !n.text?.trim() || !linked(n.sourceIds) || !validDate(n.verifiedAt))) errors.push("Invalid operational notice");
+  else if (trip.status === "approved")
+    for (const notice of notices) {
+      const age = (Date.parse(trip.review?.date ?? "") - Date.parse(notice.verifiedAt)) / 86_400_000;
+      if (!(age >= 0 && age <= OPERATIONAL_NOTICE_MAX_AGE_DAYS)) errors.push("Operational notice must be re-verified before publication: " + notice.id);
+    }
   if (!Array.isArray(trip.photos)) errors.push("Photo inventory missing");
   else for (const photo of trip.photos) {
     const local = (url: string) => /^\/(?:img|media)\/[a-zA-Z0-9_./-]+\.(?:webp|avif)$/.test(url) && !url.includes("..");
@@ -162,6 +174,7 @@ export type PublishedTrip = Pick<LegacyTrip,
   geography?: StructuredTrip["geography"];
   locations?: StructuredTrip["locations"];
   photos?: PublicTripPhoto[];
+  operationalNotices?: TripOperationalNotice[];
 };
 export function publishedTripProjection(trip: Trip): PublishedTrip {
   if (!tripPublishable(trip)) throw new Error("Trip has no valid publication approval");
@@ -183,6 +196,8 @@ export function publishedTripProjection(trip: Trip): PublishedTrip {
       localities: trip.geography.localities.map(({id, name, provinceSlug, sourceIds}) => ({id, name, provinceSlug, sourceIds: [...sourceIds]})),
     };
     projected.locations = trip.locations.map(({id, label, description, mapUrl, sourceIds}) => ({id, label, description, mapUrl, sourceIds: [...sourceIds]}));
+    if (trip.operationalNotices?.length)
+      projected.operationalNotices = trip.operationalNotices.map(({id, sectionId, text, sourceIds, verifiedAt}) => ({id, sectionId, text, sourceIds: [...sourceIds], verifiedAt}));
     projected.photos = trip.photos.map(({src, alt, caption, width, height, variants, rights}) => ({
       src, alt, caption, width, height,
       variants: variants.map(({src, width}) => ({src, width})),
