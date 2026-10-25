@@ -125,13 +125,32 @@ test("PDFs y URLs de fotos heredadas siguen accesibles; ningún optimizer Vercel
   expect(pdf.status()).toBe(200);
   expect(pdf.headers()["content-type"]).toContain("application/pdf");
 });
-test("los borradores no tienen HTML ni datos RSC públicos", async ({ request }) => {
+test("las cuatro fichas pendientes no tienen HTML ni datos RSC públicos", async ({ request }) => {
+  const withheld = ["el-palmar", "caba", "puerto-iguazu", "talampaya-e-ischigualasto"];
   for (const host of [4401, 4402, 4404, 4410]) {
-    for (const route of ["/escapadas/el-palmar", "/escapadas/el-palmar.html", "/escapadas/el-palmar.txt", "/prototipo-pr10/escapadas/el-palmar"]) {
-      const response = await request.get(`http://127.0.0.1:${host}${route}`);
-      expect(response.status(), `${host}${route}`).toBe(404);
-      expect(await response.text()).not.toContain("AUS-ESC-EL-PALMAR-EDITORIAL-01");
+    const index = await (await request.get(`http://127.0.0.1:${host}/escapadas`)).text();
+    const sitemap = await (await request.get(`http://127.0.0.1:${host}/sitemap.xml`)).text();
+    for (const slug of withheld) {
+      for (const suffix of ["", ".html", ".txt"]) {
+        const response = await request.get(`http://127.0.0.1:${host}/escapadas/${slug}${suffix}`);
+        expect(response.status(), `${host}/${slug}${suffix}`).toBe(404);
+        expect(await response.text()).not.toContain("AUS-ESC-");
+      }
+      expect(sitemap).not.toContain(`/escapadas/${slug}`);
+      expect(index).not.toContain(`AUS-ESC-${slug.toUpperCase()}`);
     }
-    expect(await (await request.get(`http://127.0.0.1:${host}/sitemap.xml`)).text()).not.toContain("/escapadas/el-palmar");
+    expect((await request.get(`http://127.0.0.1:${host}/prototipo-pr10/escapadas/el-palmar`)).status()).toBe(404);
   }
+});
+
+test("Preview conserva las 23 guías mediante sus URLs vigentes de producción", async ({ browser }) => {
+  const context = await browser.newContext({javaScriptEnabled: false});
+  const page = await context.newPage();
+  await page.goto("http://127.0.0.1:4404/escapadas");
+  const links = page.getByRole("link", {name: "Ver PDF", exact: true});
+  await expect(links).toHaveCount(23);
+  const hrefs = await links.evaluateAll(nodes => nodes.map(n => n.getAttribute("href")));
+  expect(hrefs.every(href => href?.startsWith("https://www.argentinauniversosur.com/pdf/"))).toBe(true);
+  await expect(page.locator('a[href^="/escapadas/"]')).toHaveCount(0);
+  await context.close();
 });

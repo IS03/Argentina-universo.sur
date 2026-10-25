@@ -1,0 +1,199 @@
+{
+  "schemaVersion": 2,
+  "id": "AUS-ESC-TALAMPAYA-E-ISCHIGUALASTO-EDITORIAL-01",
+  "slug": "talampaya-e-ischigualasto",
+  "title": "Talampaya e Ischigualasto: paisajes para leer el Triásico",
+  "destination": "Parque Nacional Talampaya y Parque Provincial Ischigualasto",
+  "province": "La Rioja y San Juan",
+  "description": "Talampaya e Ischigualasto permiten acercarse a una historia del paisaje que se mide en procesos geológicos. Son dos áreas protegidas diferentes, en La Rioja y San Juan, reunidas en una misma inscripción de Patrimonio Mundial por el valor de su registro del Triásico.",
+  "status": "draft",
+  "publicationAuthorized": false,
+  "review": null,
+  "introductionSourceIds": [
+    "TAL-PARQUE",
+    "UNESCO-966"
+  ],
+  "geography": {
+    "provinceSlugs": [
+      "la_rioja",
+      "san_juan"
+    ],
+    "localities": [
+      {
+        "id": "git-locality:la_rioja:villa-union",
+        "name": "Villa Unión",
+        "provinceSlug": "la_rioja",
+        "sourceIds": [
+          "TAL-PARQUE"
+        ]
+      },
+      {
+        "id": "git-locality:san_juan:san-agustin-del-valle-fertil",
+        "name": "San Agustín del Valle Fértil",
+        "provinceSlug": "san_juan",
+        "sourceIds": [
+          "ISCHI-TURISMO"
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "TAL-PARQUE",
+      "title": "APN — Parque Nacional Talampaya",
+      "url": "https://www.argentina.gob.ar/parquesnacionales/centro/parque-nacional-talampaya",
+      "checkedAt": "2026-10-24"
+    },
+    {
+      "id": "TAL-PANORAMA",
+      "title": "APN — Panorámica de Talampaya",
+      "url": "https://www.argentina.gob.ar/parquesnacionales/centro/parque-nacional-talampaya/panoramica",
+      "checkedAt": "2026-10-24"
+    },
+    {
+      "id": "TAL-ACTIVIDADES",
+      "title": "APN — Actividades en Talampaya",
+      "url": "https://www.argentina.gob.ar/parquesnacionales/centro/parque-nacional-talampaya/actividades",
+      "checkedAt": "2026-10-24"
+    },
+    {
+      "id": "ISCHI-TURISMO",
+      "title": "San Juan Turismo — Valle de la Luna, Ischigualasto",
+      "url": "https://sanjuan.tur.ar/atractivos/paleontologicos/ischigualasto",
+      "checkedAt": "2026-10-24"
+    },
+    {
+      "id": "UNESCO-966",
+      "title": "UNESCO — Ischigualasto / Talampaya Natural Parks",
+      "url": "https://whc.unesco.org/en/list/966/",
+      "checkedAt": "2026-10-24"
+    }
+  ],
+  "sections": [
+    {
+      "id": "dos-parques",
+      "kind": "highlights",
+      "title": "Qué conocer: dos áreas diferentes",
+      "sourceIds": [
+        "TAL-PARQUE",
+        "UNESCO-966"
+      ],
+      "paragraphs": [
+        "Talampaya es un parque nacional ubicado en La Rioja; Ischigualasto es un parque provincial de San Juan. Su inscripción conjunta en la Lista del Patrimonio Mundial destaca la información que conservan sobre los vertebrados, las plantas y los ambientes del Triásico. Esa relación científica permite pensarlos como una escapada temática, aunque sus visitas se organizan por separado.",
+        "El registro fósil y las formaciones geológicas ofrecen una manera de leer el territorio más allá de sus formas llamativas. No es necesario convertir la visita en una lista de fotografías: la interpretación ayuda a vincular lo que se observa con la historia natural que ambos parques conservan."
+      ]
+    },
+    {
+      "id": "talampaya",
+      "kind": "activities",
+      "title": "Talampaya: cañón y recorridos",
+      "sourceIds": [
+        "TAL-ACTIVIDADES"
+      ],
+      "paragraphs": [
+        "El catálogo de APN incluye el Cañón de Talampaya, la Quebrada Don Eduardo y otras propuestas de caminata o excursión vehicular. También describe el Sendero Triásico, con réplicas de dinosaurios que acercan al visitante a la dimensión paleontológica del lugar. Son modalidades diferentes y conviene consultar sus condiciones específicas.",
+        "Las actividades organizadas requieren atender a las indicaciones de los guías y prestadores. APN advierte que el viento zonda y las crecidas por lluvias intensas pueden provocar suspensiones. Elegir una propuesta en una página no asegura su operación: confirmá disponibilidad, modalidad y condiciones antes de reservar o trasladarte."
+      ]
+    },
+    {
+      "id": "ischigualasto",
+      "kind": "activities",
+      "title": "Ischigualasto: geoformas e interpretación",
+      "sourceIds": [
+        "ISCHI-TURISMO"
+      ],
+      "paragraphs": [
+        "En Ischigualasto, conocido como Valle de la Luna, el portal oficial de San Juan destaca geoformas como El Hongo y la Cancha de Bochas. El circuito principal se recorre exclusivamente en vehículo y con un guía autorizado. En el acceso también se presenta una propuesta de interpretación vinculada con los hallazgos paleontológicos.",
+        "La información provincial menciona además otras experiencias, como las noches de luna llena o las caminatas al Cerro Morado, en el ingreso al parque. Consultá cuáles están habilitadas para tu visita y sus requisitos. No se presupone que todas puedan combinarse ni que la movilidad de una persona o vehículo sea adecuada para cualquier modalidad."
+      ]
+    },
+    {
+      "id": "paisaje-y-patrimonio",
+      "kind": "culture",
+      "title": "Paisaje, patrimonio y producción local",
+      "sourceIds": [
+        "TAL-PANORAMA"
+      ],
+      "paragraphs": [
+        "Los paredones rojizos y los petroglifos del Cañón de Talampaya reúnen valores naturales y culturales en un mismo paisaje. La observación de las rocas puede acompañarse de una atención especial a las huellas de ocupación humana, siempre desde los espacios y recorridos habilitados.",
+        "La panorámica de APN describe también un espacio artesanal relacionado con el Valle del Bermejo. Es una referencia para conocer expresiones de producción local sin reducir la región a sus formaciones rocosas. Consultá su funcionamiento antes de incluirlo en la planificación; no se anuncian horarios comerciales ni disponibilidad de piezas."
+      ]
+    },
+    {
+      "id": "organizar-la-escapada",
+      "kind": "practical",
+      "title": "Cómo organizar la escapada",
+      "sourceIds": [
+        "TAL-PANORAMA",
+        "ISCHI-TURISMO",
+        "TAL-PARQUE"
+      ],
+      "paragraphs": [
+        "Villa Unión aparece como referencia de contacto de Talampaya, y San Agustín del Valle Fértil como base de las visitas a Ischigualasto en el portal provincial. Los mapas de esta ficha son búsquedas orientativas: no representan una ruta validada entre los parques ni el acceso preciso a una excursión.",
+        "Organizá cada visita con su administración o prestador y revisá accesos, tarifas y condiciones vigentes por separado. La información de Talampaya recomienda prever abrigo y ropa liviana por la amplitud térmica, agua y protección solar. Esta propuesta no promete visitar los dos parques en un día ni publica tiempos de traslado sin comprobar."
+      ]
+    }
+  ],
+  "address": "Talampaya, La Rioja. Consultar con APN el acceso de la actividad elegida.",
+  "mapUrl": "https://www.openstreetmap.org/search?query=Parque%20Nacional%20Talampaya%20La%20Rioja%20Argentina",
+  "locations": [
+    {
+      "id": "talampaya",
+      "label": "Parque Nacional Talampaya",
+      "description": "Talampaya, La Rioja. Consultar con APN el acceso de la actividad elegida.",
+      "mapUrl": "https://www.openstreetmap.org/search?query=Parque%20Nacional%20Talampaya%20La%20Rioja%20Argentina",
+      "sourceIds": [
+        "TAL-PARQUE"
+      ]
+    },
+    {
+      "id": "ischigualasto",
+      "label": "Parque Provincial Ischigualasto",
+      "description": "Ischigualasto, San Juan. Consultar el acceso y las modalidades con el parque provincial.",
+      "mapUrl": "https://www.openstreetmap.org/search?query=Parque%20Provincial%20Ischigualasto%20San%20Juan%20Argentina",
+      "sourceIds": [
+        "ISCHI-TURISMO"
+      ]
+    }
+  ],
+  "photos": [],
+  "related": [
+    {
+      "href": "/provincias/la_rioja",
+      "label": "Conocer La Rioja"
+    },
+    {
+      "href": "/provincias/san_juan",
+      "label": "Conocer San Juan"
+    },
+    {
+      "href": "/actividades?provincia=la_rioja",
+      "label": "Actividades en La Rioja"
+    },
+    {
+      "href": "/actividades?provincia=san_juan",
+      "label": "Actividades en San Juan"
+    },
+    {
+      "href": "/escapadas",
+      "label": "Otras escapadas"
+    }
+  ],
+  "editorial": {
+    "documentaryStatus": "sources-checked",
+    "updatedAt": "2026-10-24",
+    "origin": {
+      "kind": "git-editorial",
+      "legacyGuideIds": [
+        "esc_13"
+      ],
+      "masterRefs": []
+    },
+    "pendingReviews": [
+      "Revisión humana del texto exacto y su alcance",
+      "Permiso de publicación independiente",
+      "Fotografías: selección, derechos y variantes optimizadas pendientes",
+      "Comparación temática con la guía PDF y aprobación de equivalencia pendientes"
+    ]
+  }
+}

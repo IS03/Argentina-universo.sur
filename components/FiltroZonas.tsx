@@ -4,18 +4,19 @@ import { REGIONES } from "@/lib/catalog";
 
 interface FiltroZonasProps {
   zonaActiva: string;
+  filterLabel?: string;
   onZonaChange: (zona: string) => void;
 }
 
 const ZONAS = ["Todas", ...REGIONES].map(id => ({ id, label: id }));
 
-export default function FiltroZonas({ zonaActiva, onZonaChange }: FiltroZonasProps) {
+export default function FiltroZonas({ zonaActiva, onZonaChange, filterLabel = "Filtrar provincias por región" }: FiltroZonasProps) {
   return (
     <div className="mb-8">
       {/* Menú desplegable para móvil */}
       <div className="md:hidden w-full max-w-xs mx-auto">
         <select
-          aria-label="Filtrar provincias por región"
+          aria-label={filterLabel}
           value={zonaActiva}
           onChange={(e) => onZonaChange(e.target.value)}
           className="w-full px-4 py-3 rounded-lg text-sm font-medium uppercase tracking-wider
