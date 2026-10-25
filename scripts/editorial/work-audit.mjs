@@ -20,10 +20,24 @@ export async function assertWorkIsolation(root = process.cwd()) {
   return { workPublicRoutes: 0, privateTrackedInputs: 0 };
 }
 
+export function privateWorkNeedles(snapshot) {
+  const values = [];
+  const textFields = new Set(['perfil', 'descripcion_original', 'ficha_practica_propuesta', 'practica_trazabilidad', 'practica_exclusiones', 'previsualizacion_privada', 'afirmacion_o_hallazgo', 'texto_practico_propuesto', 'plan_editorial']);
+  for (const [sheet, rows] of Object.entries(snapshot.tables ?? {})) {
+    if (!Array.isArray(rows) || ['Inicio', 'Gobernanza', 'Diccionario'].includes(sheet)) continue;
+    for (const row of rows) {
+      if (typeof row?.id === 'string') values.push(row.id);
+      for (const [key, value] of Object.entries(row ?? {})) if (textFields.has(key) && typeof value === 'string')
+        values.push(...value.split(/\n+/).map(v => v.trim()).filter(v => v.length >= 80));
+    }
+  }
+  return [...new Set(values)];
+}
+
 export async function auditWorkBuilds(snapshotPath) {
   const isolation = await assertWorkIsolation();
   const snapshot = snapshotPath ? await readPrivateJson(snapshotPath) : null;
-  const privateNeedles = snapshot ? Object.entries(snapshot.tables).flatMap(([sheet, rows]) => Array.isArray(rows) && !['Inicio', 'Gobernanza', 'Diccionario', 'Exportacion_piloto'].includes(sheet) ? rows.flatMap(r => typeof r?.id === 'string' ? [r.id] : []) : []) : [];
+  const privateNeedles = snapshot ? privateWorkNeedles(snapshot) : [];
   const reports = [];
   const next = resolve('.next');
   if (await lstat(join(next, 'BUILD_ID')).catch(() => null)) {

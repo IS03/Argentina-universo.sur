@@ -35,7 +35,7 @@ npm run editorial:audit-work -- --private-snapshot=.artifacts/pr17/private/snaps
 
 La demostración rechaza argumentos y no carga un snapshot real. Usa 84 fichas sintéticas, muestra un destino con sus atractivos, fuentes/mapa/datos prácticos de prueba y una ilustración generada por código en WebP a 400/800 px. Los derechos sintéticos no acreditan ninguna fotografía real. El preview local no se incorpora a Pages y no hay un servidor editorial con datos reales.
 
-El build y `validate` bloquean rutas/importaciones públicas de Work en esta fase. Las auditorías Next/Pages rechazan claves editoriales, canarios, referencias originales reconocibles, entradas privadas y borradores de Escapadas. La auditoría local adicional busca los IDs efectivos del snapshot en HTML, RSC, JS, JSON, sitemap y auxiliares, también comprimidos. Los informes de seguridad no incluyen las cadenas buscadas. En CI no se comparte el snapshot; se ejecutan fixtures/mutaciones y reglas genéricas.
+El build y `validate` bloquean rutas/importaciones públicas de Work en esta fase. Las auditorías Next/Pages rechazan claves editoriales, canarios, referencias originales reconocibles, entradas privadas y borradores de Escapadas. La auditoría local adicional busca los IDs efectivos y fragmentos largos de textos retenidos (perfiles, descripciones, hallazgos, propuestas y trazas) en HTML, RSC, JS, JSON, sitemap y auxiliares, también comprimidos. Así también detecta una copia literal que omita los IDs; no pretende identificar todas las paráfrasis posibles. Los informes de seguridad no incluyen las cadenas buscadas. En CI no se comparte el snapshot; se ejecutan fixtures/mutaciones y reglas genéricas.
 
 ## Publicación posterior — requiere otro PR
 

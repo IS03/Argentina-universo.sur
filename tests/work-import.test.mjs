@@ -13,7 +13,7 @@ import { readPrivateJson, writePrivateJson } from '../scripts/editorial/private-
 import { prepareWorkReview } from '../lib/destinos/work-review.ts';
 import { renderWorkDestination } from '../scripts/editorial/render-work.mjs';
 import { auditPublicArtifact } from '../scripts/pages/editorial-security.mjs';
-import { assertWorkIsolation } from '../scripts/editorial/work-audit.mjs';
+import { assertWorkIsolation, privateWorkNeedles } from '../scripts/editorial/work-audit.mjs';
 
 const options = { asOf: '2026-10-25' };
 const plan = (s = syntheticWorkSnapshot(), previous = null) => planWorkImport(s, previous, options);
@@ -205,6 +205,11 @@ test('artifact security rejects withheld Work data in HTML, RSC, JS, JSON, sitem
     for (const marker of ['normalizedPayload', 'numericComponents', 'AUS_PRIVATE_WORK_CANARY', 'aprobacion_humana']) {
       await writeFile(join(dir, 'aux'), marker); assert.ok((await auditPublicArtifact(dir, [])).errors.length);
     }
+    const s = syntheticWorkSnapshot();
+    const privateText = 'Texto privado sintético suficientemente largo para detectar una copia que omite todos los identificadores y las claves editoriales.';
+    s.tables.Destinos[0].perfil = privateText;
+    await writeFile(join(dir, 'aux'), privateText);
+    assert.ok((await auditPublicArtifact(dir, [], { privateNeedles: privateWorkNeedles(s) })).errors.length);
   } finally { await rm(dir, { recursive: true, force: true }); }
 });
 

@@ -18,7 +18,7 @@
 | E2E Pages | **72 aprobadas, 2 omisiones esperadas** de pruebas exclusivas del prototipo Workers descartado |
 | Wrangler local | 4.152.0; sin Functions; redirects, query y headers comprobados localmente |
 | Presentación sintética | Chrome escritorio y Pixel 7 sin JavaScript; fuentes, mapa, hechos prácticos, WebP/créditos visibles; sin overflow ni errores de recursos |
-| Auditoría adicional con IDs reales | Next y tres modos Pages: sin IDs privados ni claves editoriales en archivos públicos, también auxiliares/comprimidos |
+| Auditoría adicional con el snapshot real | Next y tres modos Pages: sin IDs, fragmentos largos de textos retenidos ni claves editoriales en archivos públicos, también auxiliares/comprimidos |
 | `editorial:plan` | Dry-run; 0 retiradas, 0 redirecciones, 0 escrituras |
 
 Evidencias agregadas en [evidence/](evidence/). Logs completos locales en `.artifacts/pr17/reports/`; los snapshots y planes privados no se adjuntan. La captura del maestro se realizó con el conector autorizado en lectura; los builds y auditorías no consultan Drive. No se probaron migraciones/RLS en Supabase remoto porque no se accedió a ninguno.
