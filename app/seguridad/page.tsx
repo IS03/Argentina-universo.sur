@@ -1,5 +1,3 @@
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import Link from "next/link";
 import { ROUTES, INTERNAL_ANCHORS } from "@/lib/site-links";
 import { staticPageMetadata } from "@/lib/seo";
@@ -126,15 +124,14 @@ export default function SeguridadPage() {
 
   return (
     <>
-      <Navbar />
-      <main className="min-h-screen pt-20 sm:pt-24 md:pt-32 pb-12 sm:pb-16 px-3 sm:px-4 md:px-6 lg:px-8 overflow-x-hidden">
+      <div className="min-h-screen pt-20 sm:pt-24 md:pt-10 sm:pt-14 pb-12 sm:pb-16 px-3 sm:px-4 md:px-6 lg:px-8 overflow-x-hidden">
         <div className="max-w-6xl mx-auto w-full">
           {/* Hero Section - Introducción */}
           <header className="mb-10 sm:mb-12 md:mb-16 text-center">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold uppercase tracking-wide sm:tracking-widest mb-4 sm:mb-6 px-2 break-words text-[#5A4E3D]">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold uppercase tracking-wide sm:tracking-widest mb-4 sm:mb-6 px-2 break-words text-tinta-900">
               Verano Seguro en Argentina
             </h1>
-            <div className="max-w-3xl mx-auto space-y-3 sm:space-y-4 text-[#6B5D47] leading-relaxed text-sm sm:text-base md:text-lg px-2">
+            <div className="max-w-3xl mx-auto space-y-3 sm:space-y-4 text-tinta-700 leading-relaxed text-sm sm:text-base md:text-lg px-2">
               <p className="text-base sm:text-lg md:text-xl">
                 Disfrutar el verano también es viajar con responsabilidad.
               </p>
@@ -143,7 +140,7 @@ export default function SeguridadPage() {
                 imprevistos y saber cómo actuar ante distintas situaciones durante tu
                 viaje.
               </p>
-              <p className="pt-3 sm:pt-4 border-t border-[#C9B99B]/50">
+              <p className="pt-3 sm:pt-4 border-t border-arena-300/50">
                 Viajar seguro no depende solo del destino, sino también de cada viajero.
                 Por eso, esta guía está pensada para acompañarte en la ruta, durante tu
                 estadía y en cada actividad que realices, promoviendo experiencias
@@ -154,8 +151,8 @@ export default function SeguridadPage() {
 
           {/* Navegación rápida (solo en desktop) */}
           <nav className="hidden lg:block mb-8 lg:mb-12" aria-label="Navegación rápida">
-            <div className="bg-[#E8DDD0]/80 backdrop-blur-sm border border-[#C9B99B]/50 rounded-lg p-4">
-              <p className="text-xs sm:text-sm text-[#6B5D47] mb-3 uppercase tracking-wider">
+            <div className="bg-arena-200/80 backdrop-blur-sm border border-arena-300/50 rounded-lg p-4">
+              <p className="text-xs sm:text-sm text-tinta-700 mb-3 uppercase tracking-wider">
                 Navegación rápida
               </p>
               <div className="flex flex-wrap gap-2 sm:gap-3">
@@ -163,7 +160,7 @@ export default function SeguridadPage() {
                   <a
                     key={seccion.id}
                     href={`#${seccion.id}`}
-                    className="text-xs text-[#5A4E3D] hover:text-[#A68B5B] transition-colors px-2 sm:px-3 py-1 border border-[#C9B99B]/50 hover:border-[#A68B5B] rounded focus:outline-none focus:ring-2 focus:ring-[#A68B5B]"
+                    className="text-xs text-tinta-900 hover:text-lago-600 transition-colors px-2 sm:px-3 py-1 border border-arena-300/50 hover:border-lago-600 rounded focus:outline-none focus:ring-2 focus:ring-lago-600"
                   >
                     <span aria-hidden="true">{seccion.icono}</span>{" "}
                     <span className="sr-only">{seccion.icono} </span>
@@ -182,10 +179,10 @@ export default function SeguridadPage() {
                 <article
                   key={seccion.id}
                   id={seccion.id}
-                  className={`group bg-[#E8DDD0]/80 backdrop-blur-sm border rounded-lg p-4 sm:p-5 md:p-6 lg:p-8 transition-all duration-300 ${
+                  className={`group bg-arena-200/80 backdrop-blur-sm border rounded-lg p-4 sm:p-5 md:p-6 lg:p-8 transition-all duration-300 ${
                     isEmergencias
                       ? "md:col-span-2 border-2 border-red-700/50 bg-gradient-to-br from-red-900/30 via-red-800/20 to-orange-900/20 hover:border-red-600/70 hover:from-red-900/40 hover:via-red-800/30 hover:to-orange-900/30"
-                      : "border-[#C9B99B]/50 hover:border-[#A68B5B]/70 hover:bg-[#E8DDD0] md:hover:scale-[1.02]"
+                      : "border-arena-300/50 hover:border-lago-600/70 hover:bg-arena-200 md:hover:scale-[1.02]"
                   }`}
                 >
                   <div className="flex items-start gap-3 sm:gap-4 mb-3 sm:mb-4">
@@ -195,7 +192,7 @@ export default function SeguridadPage() {
                     >
                       {seccion.icono}
                     </span>
-                    <h2 className="text-xl sm:text-2xl md:text-3xl font-light uppercase tracking-wide sm:tracking-wider break-words text-[#5A4E3D]">
+                    <h2 className="text-xl sm:text-2xl md:text-3xl font-light uppercase tracking-wide sm:tracking-wider break-words text-tinta-900">
                       {seccion.titulo}
                     </h2>
                   </div>
@@ -204,10 +201,10 @@ export default function SeguridadPage() {
                       {seccion.items.map((item, index) => (
                         <li
                           key={index}
-                          className="flex items-start gap-2 sm:gap-3 text-[#6B5D47] leading-relaxed text-sm sm:text-base"
+                          className="flex items-start gap-2 sm:gap-3 text-tinta-700 leading-relaxed text-sm sm:text-base"
                         >
                           <span
-                            className="mt-0.5 flex-shrink-0 text-[#A68B5B] self-start"
+                            className="mt-0.5 flex-shrink-0 text-lago-600 self-start"
                             aria-hidden="true"
                           >
                             •
@@ -219,35 +216,35 @@ export default function SeguridadPage() {
                   )}
                   {isEmergencias && (
                     <div className="text-center">
-                      <p className="text-[#6B5D47] text-sm sm:text-base mb-6 sm:mb-8">
+                      <p className="text-tinta-700 text-sm sm:text-base mb-6 sm:mb-8">
                         Guardá estos números en tu celular antes de viajar
                       </p>
                       <div className="mt-6 sm:mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-                        <div className="bg-[#F5F1E8] backdrop-blur-sm border border-red-700/40 rounded-lg p-4 sm:p-6 hover:bg-[#FAF8F3] transition-all">
+                        <div className="bg-arena-100 backdrop-blur-sm border border-red-700/40 rounded-lg p-4 sm:p-6 hover:bg-arena-50 transition-all">
                           <p className="text-2xl mb-2" aria-hidden="true">
                             📞
                           </p>
-                          <p className="text-xs sm:text-sm text-[#6B5D47] uppercase tracking-wider mb-2">
+                          <p className="text-xs sm:text-sm text-tinta-700 uppercase tracking-wider mb-2">
                             Emergencias
                           </p>
                           <a
                             href="tel:911"
-                            className="text-2xl sm:text-3xl font-light text-[#5A4E3D] hover:text-red-600 transition-colors focus:outline-none focus:ring-2 focus:ring-red-400 rounded"
+                            className="text-2xl sm:text-3xl font-light text-tinta-900 hover:text-red-600 transition-colors focus:outline-none focus:ring-2 focus:ring-red-400 rounded"
                             aria-label="Llamar a emergencias 911"
                           >
                             911
                           </a>
                         </div>
-                        <div className="bg-[#F5F1E8] backdrop-blur-sm border border-red-700/40 rounded-lg p-4 sm:p-6 hover:bg-[#FAF8F3] transition-all">
+                        <div className="bg-arena-100 backdrop-blur-sm border border-red-700/40 rounded-lg p-4 sm:p-6 hover:bg-arena-50 transition-all">
                           <p className="text-2xl mb-2" aria-hidden="true">
                             📞
                           </p>
-                          <p className="text-xs sm:text-sm text-[#6B5D47] uppercase tracking-wider mb-2">
+                          <p className="text-xs sm:text-sm text-tinta-700 uppercase tracking-wider mb-2">
                             Denuncias
                           </p>
                           <a
                             href="tel:134"
-                            className="text-2xl sm:text-3xl font-light text-[#5A4E3D] hover:text-red-600 transition-colors focus:outline-none focus:ring-2 focus:ring-red-400 rounded"
+                            className="text-2xl sm:text-3xl font-light text-tinta-900 hover:text-red-600 transition-colors focus:outline-none focus:ring-2 focus:ring-red-400 rounded"
                             aria-label="Llamar a denuncias 134"
                           >
                             134
@@ -262,30 +259,29 @@ export default function SeguridadPage() {
           </div>
 
           {/* Enlazado interno (SEO) */}
-          <nav className="mt-10 sm:mt-12 md:mt-16 pt-6 sm:pt-8 border-t border-[#C9B99B]/50 flex flex-wrap justify-center gap-4 text-sm" aria-label="Explorar más contenido">
-            <Link href={ROUTES.home} className="text-[#6B5D47] hover:text-[#A68B5B] underline underline-offset-2 transition-colors">
+          <nav className="mt-10 sm:mt-12 md:mt-16 pt-6 sm:pt-8 border-t border-arena-300/50 flex flex-wrap justify-center gap-4 text-sm" aria-label="Explorar más contenido">
+            <Link href={ROUTES.home} className="text-tinta-700 hover:text-lago-600 underline underline-offset-2 transition-colors">
               Inicio
             </Link>
-            <Link href={ROUTES.provincias} className="text-[#6B5D47] hover:text-[#A68B5B] underline underline-offset-2 transition-colors">
+            <Link href={ROUTES.provincias} className="text-tinta-700 hover:text-lago-600 underline underline-offset-2 transition-colors">
               {INTERNAL_ANCHORS.verTodasLasProvincias}
             </Link>
-            <Link href={ROUTES.actividades} className="text-[#6B5D47] hover:text-[#A68B5B] underline underline-offset-2 transition-colors">
+            <Link href={ROUTES.actividades} className="text-tinta-700 hover:text-lago-600 underline underline-offset-2 transition-colors">
               {INTERNAL_ANCHORS.verActividades}
             </Link>
-            <Link href={ROUTES.escapadas} className="text-[#6B5D47] hover:text-[#A68B5B] underline underline-offset-2 transition-colors">
+            <Link href={ROUTES.escapadas} className="text-tinta-700 hover:text-lago-600 underline underline-offset-2 transition-colors">
               {INTERNAL_ANCHORS.verEscapadas}
             </Link>
           </nav>
 
           {/* Separador visual final */}
-          <footer className="mt-8 pt-6 border-t border-[#C9B99B]/50">
-            <p className="text-center text-[#8B7355] text-xs sm:text-sm uppercase tracking-wide sm:tracking-widest">
+          <footer className="mt-8 pt-6 border-t border-arena-300/50">
+            <p className="text-center text-tinta-500 text-xs sm:text-sm uppercase tracking-wide sm:tracking-widest">
               Viajá seguro, viajá responsable
             </p>
           </footer>
         </div>
-      </main>
-      <Footer />
+      </div>
     </>
   );
 }

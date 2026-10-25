@@ -51,7 +51,7 @@ export default function MapaUbicacion({ lat, lon, titulo, detalle, className = "
     <div
       role="region"
       aria-label={`Mapa de ubicación: ${titulo}`}
-      className={`relative w-full h-96 rounded-lg overflow-hidden border border-[#C9B99B]/40 bg-[#E8DDD0] z-0 ${className}`}
+      className={`relative w-full h-96 rounded-lg overflow-hidden border border-arena-300/40 bg-arena-200 z-0 ${className}`}
     >
       {estado !== "interactivo" && (
         <>
@@ -61,13 +61,13 @@ export default function MapaUbicacion({ lat, lon, titulo, detalle, className = "
             onPointerEnter={precargar}
             onFocus={precargar}
             aria-label={`Explorar mapa interactivo: ${titulo}`}
-            className="group absolute inset-0 w-full h-full cursor-pointer text-left focus-visible:outline-3 focus-visible:outline-offset-[-3px] focus-visible:outline-[#5A4E3D]"
+            className="group absolute inset-0 w-full h-full cursor-pointer text-left focus-visible:outline-3 focus-visible:outline-offset-[-3px] focus-visible:outline-tinta-900"
           >
             {/* Fondo liviano (sin imágenes) visible mientras no hay teselas. */}
             <span
               aria-hidden="true"
-              className="absolute inset-0 bg-[#F2EFE9]"
-              style={{ backgroundImage: "linear-gradient(#E4DCCC 1px, transparent 1px), linear-gradient(90deg, #E4DCCC 1px, transparent 1px)", backgroundSize: "40px 40px", backgroundPosition: "center" }}
+              className="absolute inset-0 bg-arena-100"
+              style={{ backgroundImage: "linear-gradient(var(--color-arena-200) 1px, transparent 1px), linear-gradient(90deg, var(--color-arena-200) 1px, transparent 1px)", backgroundSize: "40px 40px", backgroundPosition: "center" }}
             >
               {/* eslint-disable @next/next/no-img-element -- teselas de OSM y marcador de Leaflet: deben ser las mismas URLs que pide Leaflet, sin optimizar */}
               {teselasVistaPrevia(lat, lon).map(tesela => (
@@ -95,7 +95,7 @@ export default function MapaUbicacion({ lat, lon, titulo, detalle, className = "
               />
               {/* eslint-enable @next/next/no-img-element */}
             </span>
-            <span className={`absolute top-3 right-3 ${teselasEnMovil ? "" : "max-md:top-[calc(50%+1rem)] max-md:right-auto max-md:left-1/2 max-md:-translate-x-1/2"} inline-flex items-center gap-2 rounded-full border border-[#C9B99B]/60 bg-[#FAF8F3]/95 px-4 py-2 text-sm font-medium text-[#5A4E3D] shadow-md transition-colors group-hover:bg-white motion-reduce:transition-none`}>
+            <span className={`absolute top-3 right-3 ${teselasEnMovil ? "" : "max-md:top-[calc(50%+1rem)] max-md:right-auto max-md:left-1/2 max-md:-translate-x-1/2"} inline-flex items-center gap-2 rounded-full border border-arena-300/60 bg-arena-50/95 px-4 py-2 text-sm font-medium text-tinta-900 shadow-md transition-colors group-hover:bg-white motion-reduce:transition-none`}>
               <svg aria-hidden="true" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
               </svg>

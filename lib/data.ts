@@ -6,6 +6,7 @@ import { normalizarProvincia, normalizarActividad } from "./catalog";
 import type { Provincia, Actividad, Escapada, ProvinciaRaw, ActividadRaw, EscapadaRaw } from "./catalog";
 import { connection } from "next/server";
 import { partitionEvents } from "./events";
+import pesosPdf from "./pdf-pesos.json";
 export type { Provincia, Actividad, Escapada } from "./catalog";
 
 // Interfaces para datos de Santa Fe
@@ -103,7 +104,8 @@ export async function getEscapadas(): Promise<Escapada[]> {
     provincias: item.PROVINCIAS,
     duracion: item.DURACION,
     pdf: item.PDF,
-    zona: item.ZONA || ""
+    zona: item.ZONA || "",
+    pesoBytes: (pesosPdf as Record<string, number>)[item.PDF] ?? null,
   }));
 }
 

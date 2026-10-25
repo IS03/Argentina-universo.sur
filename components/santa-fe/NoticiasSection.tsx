@@ -8,7 +8,7 @@ interface NoticiasSectionProps {
 export default function NoticiasSection({ noticias }: NoticiasSectionProps) {
   return (
     <section id="noticias" className="mb-16 scroll-mt-32">
-      <h2 className="text-3xl md:text-4xl font-semibold uppercase tracking-widest mb-8 text-center text-[#5A4E3D]">
+      <h2 className="text-3xl md:text-4xl font-semibold uppercase tracking-widest mb-8 text-center text-tinta-900">
         Noticias
       </h2>
       <div className="space-y-6 max-w-4xl mx-auto">
@@ -26,7 +26,7 @@ export default function NoticiasSection({ noticias }: NoticiasSectionProps) {
           return (
             <article
               key={index}
-              className="group bg-gradient-to-br from-[#E8DDD0] to-[#D4C4B0] hover:from-[#D4C4B0] hover:to-[#C9B99B] border border-[#C9B99B]/50 hover:border-[#A68B5B]/70 rounded-xl p-6 md:p-8 transition-all duration-300 transform hover:scale-[1.01] shadow-lg hover:shadow-xl"
+              className="group bg-gradient-to-br from-arena-200 to-arena-300 hover:from-arena-300 hover:to-arena-300 border border-arena-300/50 hover:border-lago-600/70 rounded-xl p-6 md:p-8 transition-all duration-300 transform hover:scale-[1.01] shadow-lg hover:shadow-xl"
             >
               {/* Badges de categorías */}
               {categorias.length > 0 && (
@@ -34,7 +34,7 @@ export default function NoticiasSection({ noticias }: NoticiasSectionProps) {
                   {categorias.map((cat, i) => (
                     <span
                       key={i}
-                      className="text-xs uppercase tracking-wide px-2 py-1 bg-[#A68B5B]/20 text-[#5A4E3D] rounded-full border border-[#A68B5B]/30"
+                      className="text-xs uppercase tracking-wide px-2 py-1 bg-lago-600/20 text-tinta-900 rounded-full border border-lago-600/30"
                     >
                       {cat}
                     </span>
@@ -43,23 +43,23 @@ export default function NoticiasSection({ noticias }: NoticiasSectionProps) {
               )}
 
               {/* Fecha */}
-              <p className="text-sm text-[#6B5D47] mb-4 font-light">
+              <p className="text-sm text-tinta-700 mb-4 font-light">
                 {fechaFormateada}
               </p>
 
               {/* Título */}
-              <h3 className="text-2xl md:text-3xl font-semibold mb-4 text-[#5A4E3D] group-hover:text-[#8B7355] transition-colors duration-300">
+              <h3 className="text-2xl md:text-3xl font-semibold mb-4 text-tinta-900 group-hover:text-tinta-500 transition-colors duration-300">
                 {noticia.Title}
               </h3>
 
               {/* Resumen */}
-              <p className="text-[#6B5D47] mb-6 leading-relaxed">
+              <p className="text-tinta-700 mb-6 leading-relaxed">
                 {noticia.Summary.replace(/【.*?】/g, '').trim()}
               </p>
 
               {/* Información adicional si existe */}
               {noticia.Additional_Info && (
-                <p className="text-[#6B5D47] mb-6 text-sm italic leading-relaxed">
+                <p className="text-tinta-700 mb-6 text-sm italic leading-relaxed">
                   {noticia.Additional_Info}
                 </p>
               )}
@@ -70,7 +70,7 @@ export default function NoticiasSection({ noticias }: NoticiasSectionProps) {
                   href={noticia.Source}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-[#A68B5B] hover:bg-[#8B7355] text-white font-medium rounded-lg transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg group/link"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-lago-600 hover:bg-tinta-500 text-white font-medium rounded-lg transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg group/link"
                 >
                   Leer más
                   <svg

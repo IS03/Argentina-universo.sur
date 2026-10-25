@@ -15,9 +15,13 @@ const movimientoReducido = () => window.matchMedia(CONSULTA_MOVIMIENTO).matches;
 interface CarruselProps {
   fotos: string[];
   alt: string;
+  // Ancho real del carrusel en la página (por defecto, el ancho completo del contenedor).
+  sizes?: string;
 }
 
-export default function Carrusel({ fotos, alt }: CarruselProps) {
+const SIZES_CONTENEDOR = "(min-width: 1280px) 1152px, (min-width: 1024px) calc(100vw - 64px), (min-width: 640px) calc(100vw - 48px), calc(100vw - 32px)";
+
+export default function Carrusel({ fotos, alt, sizes = SIZES_CONTENEDOR }: CarruselProps) {
   const [indiceActual, setIndiceActual] = useState(0);
   const [pausado, setPausado] = useState(false);
   // También se detiene mientras el puntero o el foco están sobre el carrusel.
@@ -59,7 +63,7 @@ export default function Carrusel({ fotos, alt }: CarruselProps) {
       onFocus={() => setEnUso(true)}
       onBlur={(e) => { if (!e.currentTarget.contains(e.relatedTarget)) setEnUso(false); }}
     >
-      <div className="relative w-full h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden rounded-lg bg-gray-900">
+      <div className="relative aspect-[4/3] w-full overflow-hidden rounded-tarjeta bg-tinta-900 sm:aspect-[16/9]">
         {/* Imagen actual - sin animaciones */}
         <div className="absolute inset-0">
           {/* Sin priority: en los detalles el carrusel queda debajo del pliegue (descripción y mapa)
@@ -68,7 +72,7 @@ export default function Carrusel({ fotos, alt }: CarruselProps) {
             src={fotos[indiceVisible]}
             alt={`${alt} - Imagen ${indiceVisible + 1} de ${fotos.length}`}
             fill
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 1200px"
+            sizes={sizes}
             className="object-cover"
             quality={85}
             onError={() => {
@@ -87,11 +91,12 @@ export default function Carrusel({ fotos, alt }: CarruselProps) {
               e.stopPropagation();
               anterior();
             }}
-            className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full z-20"
+            className="absolute left-3 top-1/2 z-20 flex size-11 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-tinta-900 shadow-tarjeta hover:bg-white"
             aria-label="Imagen anterior"
           >
             <svg
-              className="w-6 h-6"
+              aria-hidden="true"
+              className="size-5"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -111,11 +116,12 @@ export default function Carrusel({ fotos, alt }: CarruselProps) {
               e.stopPropagation();
               siguiente();
             }}
-            className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full z-20"
+            className="absolute right-3 top-1/2 z-20 flex size-11 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-tinta-900 shadow-tarjeta hover:bg-white"
             aria-label="Imagen siguiente"
           >
             <svg
-              className="w-6 h-6"
+              aria-hidden="true"
+              className="size-5"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -132,7 +138,7 @@ export default function Carrusel({ fotos, alt }: CarruselProps) {
       )}
 
       {fotos.length > 1 && (
-        <div className="flex justify-center mt-2">
+        <div className="mt-3 flex justify-center gap-1">
           {fotos.map((_, indice) => (
             // Área táctil de 24 px alrededor del punto visible; colores con contraste sobre el fondo crema.
             <button
@@ -147,8 +153,8 @@ export default function Carrusel({ fotos, alt }: CarruselProps) {
                 aria-hidden="true"
                 className={`h-2 rounded-full ${
                   indice === indiceVisible
-                    ? "w-8 bg-[#8B7355]"
-                    : "w-2 bg-[#C9B99B] group-hover:bg-[#A68B5B]"
+                    ? "w-8 bg-tinta-900"
+                    : "w-2 bg-arena-400 group-hover:bg-lago-600"
                 }`}
               />
             </button>

@@ -65,7 +65,7 @@ export default function EventosSection({ eventos, titulo = "Próximos eventos y 
       return { texto: 'Consultar', clase: 'bg-blue-500/20 text-blue-700 border-blue-500/30' };
     }
     if (precio.includes('$')) {
-      return { texto: precio, clase: 'bg-[#A68B5B]/20 text-[#5A4E3D] border-[#A68B5B]/30' };
+      return { texto: precio, clase: 'bg-lago-600/20 text-tinta-900 border-lago-600/30' };
     }
     return { texto: precio, clase: 'bg-gray-500/20 text-gray-700 border-gray-500/30' };
   };
@@ -73,16 +73,16 @@ export default function EventosSection({ eventos, titulo = "Próximos eventos y 
   return (
     <section id={id} className="mb-16 scroll-mt-32">
       <div className="flex flex-col md:flex-row justify-between items-center mb-8 gap-4">
-        <h2 className="text-3xl md:text-4xl font-semibold uppercase tracking-widest text-center text-[#5A4E3D]">
+        <h2 className="text-3xl md:text-4xl font-semibold uppercase tracking-widest text-center text-tinta-900">
           {titulo}
         </h2>
-        <div className="flex gap-2 bg-[#E8DDD0]/80 backdrop-blur-sm border border-[#C9B99B]/50 rounded-lg p-1">
+        <div className="flex gap-2 bg-arena-200/80 backdrop-blur-sm border border-arena-300/50 rounded-lg p-1">
           <button
             onClick={() => setVista('lista')}
             className={`px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 ${
               vista === 'lista'
-                ? 'bg-[#A68B5B] text-white shadow-md'
-                : 'text-[#5A4E3D] hover:bg-[#E8DDD0]'
+                ? 'bg-lago-600 text-white shadow-md'
+                : 'text-tinta-900 hover:bg-arena-200'
             }`}
           >
             Lista
@@ -91,8 +91,8 @@ export default function EventosSection({ eventos, titulo = "Próximos eventos y 
             onClick={() => setVista('calendario')}
             className={`px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 ${
               vista === 'calendario'
-                ? 'bg-[#A68B5B] text-white shadow-md'
-                : 'text-[#5A4E3D] hover:bg-[#E8DDD0]'
+                ? 'bg-lago-600 text-white shadow-md'
+                : 'text-tinta-900 hover:bg-arena-200'
             }`}
           >
             Calendario
@@ -101,13 +101,13 @@ export default function EventosSection({ eventos, titulo = "Próximos eventos y 
       </div>
 
       {eventos.length === 0 ? (
-        <p className="text-[#6B5D47] py-6">No hay próximos eventos confirmados por el momento.</p>
+        <p className="text-tinta-700 py-6">No hay próximos eventos confirmados por el momento.</p>
       ) : vista === 'lista' ? (
         // Vista de lista
         <div className="space-y-8">
           {meses.map((mes) => (
             <div key={mes}>
-              <h3 className="text-2xl font-semibold mb-4 text-[#5A4E3D] capitalize border-b border-[#C9B99B]/50 pb-2">
+              <h3 className="text-2xl font-semibold mb-4 text-tinta-900 capitalize border-b border-arena-300/50 pb-2">
                 {mes}
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -118,27 +118,27 @@ export default function EventosSection({ eventos, titulo = "Próximos eventos y 
                   return (
                     <div
                       key={index}
-                      className="group bg-gradient-to-br from-[#E8DDD0] to-[#D4C4B0] hover:from-[#D4C4B0] hover:to-[#C9B99B] border border-[#C9B99B]/50 hover:border-[#A68B5B]/70 rounded-xl p-5 transition-all duration-300 transform hover:scale-[1.01] shadow-md hover:shadow-lg"
+                      className="group bg-gradient-to-br from-arena-200 to-arena-300 hover:from-arena-300 hover:to-arena-300 border border-arena-300/50 hover:border-lago-600/70 rounded-xl p-5 transition-all duration-300 transform hover:scale-[1.01] shadow-md hover:shadow-lg"
                     >
                       {/* Fecha destacada */}
                       <div className="flex items-start gap-4 mb-3">
-                        <div className="flex-shrink-0 text-center bg-[#A68B5B]/20 rounded-lg p-2 min-w-[60px] border border-[#A68B5B]/30">
-                          <div className="text-2xl font-bold text-[#5A4E3D]">{fecha.dia}</div>
-                          <div className="text-xs uppercase text-[#6B5D47]">{fecha.mes}</div>
+                        <div className="flex-shrink-0 text-center bg-lago-600/20 rounded-lg p-2 min-w-[60px] border border-lago-600/30">
+                          <div className="text-2xl font-bold text-tinta-900">{fecha.dia}</div>
+                          <div className="text-xs uppercase text-tinta-700">{fecha.mes}</div>
                         </div>
                         <div className="flex-1">
-                          <h4 className="text-lg font-semibold text-[#5A4E3D] mb-1 group-hover:text-[#8B7355] transition-colors duration-300">
+                          <h4 className="text-lg font-semibold text-tinta-900 mb-1 group-hover:text-tinta-500 transition-colors duration-300">
                             {evento.Título}
                           </h4>
-                          <p className="text-xs text-[#6B5D47]">{fecha.fechaCompleta}</p>
+                          <p className="text-xs text-tinta-700">{fecha.fechaCompleta}</p>
                         </div>
                       </div>
 
                       {/* Lugar */}
                       {evento.Lugar && evento.Lugar !== "No especificado" && (
-                        <div className="flex items-start gap-2 mb-3 text-sm text-[#6B5D47]">
+                        <div className="flex items-start gap-2 mb-3 text-sm text-tinta-700">
                           <svg
-                            className="w-4 h-4 text-[#A68B5B] flex-shrink-0 mt-0.5"
+                            className="w-4 h-4 text-lago-600 flex-shrink-0 mt-0.5"
                             fill="none"
                             stroke="currentColor"
                             viewBox="0 0 24 24"
@@ -161,7 +161,7 @@ export default function EventosSection({ eventos, titulo = "Próximos eventos y 
                       )}
 
                       {/* Descripción */}
-                      <p className="text-sm text-[#6B5D47] mb-3 line-clamp-2 leading-relaxed">
+                      <p className="text-sm text-tinta-700 mb-3 line-clamp-2 leading-relaxed">
                         {evento.Descripción}
                       </p>
 
@@ -171,7 +171,7 @@ export default function EventosSection({ eventos, titulo = "Próximos eventos y 
                           {precioBadge.texto}
                         </span>
                         {fecha.hora && (
-                          <span className="text-xs text-[#6B5D47]">
+                          <span className="text-xs text-tinta-700">
                             {fecha.hora}
                           </span>
                         )}
@@ -188,7 +188,7 @@ export default function EventosSection({ eventos, titulo = "Próximos eventos y 
         <div className="space-y-8">
           {meses.map((mes) => (
             <div key={mes}>
-              <h3 className="text-2xl font-semibold mb-4 text-[#5A4E3D] capitalize border-b border-[#C9B99B]/50 pb-2">
+              <h3 className="text-2xl font-semibold mb-4 text-tinta-900 capitalize border-b border-arena-300/50 pb-2">
                 {mes}
               </h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
@@ -199,16 +199,16 @@ export default function EventosSection({ eventos, titulo = "Próximos eventos y 
                   return (
                     <div
                       key={index}
-                      className="group bg-gradient-to-br from-[#E8DDD0] to-[#D4C4B0] hover:from-[#D4C4B0] hover:to-[#C9B99B] border border-[#C9B99B]/50 hover:border-[#A68B5B]/70 rounded-lg p-4 transition-all duration-300 transform hover:scale-[1.02] shadow-md hover:shadow-lg"
+                      className="group bg-gradient-to-br from-arena-200 to-arena-300 hover:from-arena-300 hover:to-arena-300 border border-arena-300/50 hover:border-lago-600/70 rounded-lg p-4 transition-all duration-300 transform hover:scale-[1.02] shadow-md hover:shadow-lg"
                     >
                       <div className="text-center mb-2">
-                        <div className="text-3xl font-bold text-[#5A4E3D]">{fecha.dia}</div>
-                        <div className="text-xs uppercase text-[#6B5D47]">{fecha.mes}</div>
+                        <div className="text-3xl font-bold text-tinta-900">{fecha.dia}</div>
+                        <div className="text-xs uppercase text-tinta-700">{fecha.mes}</div>
                       </div>
-                      <h4 className="text-sm font-semibold text-[#5A4E3D] mb-2 line-clamp-2 group-hover:text-[#8B7355] transition-colors duration-300">
+                      <h4 className="text-sm font-semibold text-tinta-900 mb-2 line-clamp-2 group-hover:text-tinta-500 transition-colors duration-300">
                         {evento.Título}
                       </h4>
-                      <p className="text-xs text-[#6B5D47] mb-2 line-clamp-2">
+                      <p className="text-xs text-tinta-700 mb-2 line-clamp-2">
                         {evento.Lugar && evento.Lugar !== "No especificado" ? evento.Lugar : ''}
                       </p>
                       <span className={`text-xs px-2 py-1 rounded-full border inline-block ${precioBadge.clase}`}>

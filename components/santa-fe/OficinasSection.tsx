@@ -39,7 +39,7 @@ export default function OficinasSection({ oficinas }: OficinasSectionProps) {
 
   return (
     <section id="oficinas" className="mb-16 scroll-mt-32">
-      <h2 className="text-3xl md:text-4xl font-semibold uppercase tracking-widest mb-8 text-center text-[#5A4E3D]">
+      <h2 className="text-3xl md:text-4xl font-semibold uppercase tracking-widest mb-8 text-center text-tinta-900">
         Oficinas de Información Turística
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -57,12 +57,12 @@ export default function OficinasSection({ oficinas }: OficinasSectionProps) {
           return (
             <div
               key={index}
-              className="group bg-gradient-to-br from-[#E8DDD0] to-[#D4C4B0] hover:from-[#D4C4B0] hover:to-[#C9B99B] border border-[#C9B99B]/50 hover:border-[#A68B5B]/70 rounded-xl p-6 transition-all duration-300 transform hover:scale-[1.02] shadow-lg hover:shadow-xl"
+              className="group bg-gradient-to-br from-arena-200 to-arena-300 hover:from-arena-300 hover:to-arena-300 border border-arena-300/50 hover:border-lago-600/70 rounded-xl p-6 transition-all duration-300 transform hover:scale-[1.02] shadow-lg hover:shadow-xl"
             >
               {/* Icono y Localidad */}
               <div className="flex items-start gap-3 mb-4">
                 <svg
-                  className="w-6 h-6 text-[#A68B5B] flex-shrink-0 mt-1"
+                  className="w-6 h-6 text-lago-600 flex-shrink-0 mt-1"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -80,18 +80,18 @@ export default function OficinasSection({ oficinas }: OficinasSectionProps) {
                     d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                   />
                 </svg>
-                <h3 className="text-xl font-semibold text-[#5A4E3D] group-hover:text-[#8B7355] transition-colors duration-300">
+                <h3 className="text-xl font-semibold text-tinta-900 group-hover:text-tinta-500 transition-colors duration-300">
                   {oficina.Localidad}
                 </h3>
               </div>
 
               {/* Información de contacto */}
-              <div className="space-y-3 text-[#6B5D47] text-sm">
+              <div className="space-y-3 text-tinta-700 text-sm">
                 {/* Teléfono */}
                 {telefono && (
                   <div className="flex items-start gap-2">
                     <svg
-                      className="w-5 h-5 text-[#A68B5B] flex-shrink-0 mt-0.5"
+                      className="w-5 h-5 text-lago-600 flex-shrink-0 mt-0.5"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -109,7 +109,7 @@ export default function OficinasSection({ oficinas }: OficinasSectionProps) {
                         {telefonoLink && (
                           <a
                             href={telefonoLink}
-                            className="text-[#A68B5B] hover:text-[#8B7355] text-xs underline"
+                            className="text-lago-600 hover:text-tinta-500 text-xs underline"
                           >
                             Llamar
                           </a>
@@ -119,7 +119,7 @@ export default function OficinasSection({ oficinas }: OficinasSectionProps) {
                             href={whatsappLink}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-[#A68B5B] hover:text-[#8B7355] text-xs underline"
+                            className="text-lago-600 hover:text-tinta-500 text-xs underline"
                           >
                             WhatsApp
                           </a>
@@ -133,7 +133,7 @@ export default function OficinasSection({ oficinas }: OficinasSectionProps) {
                 {email && (
                   <div className="flex items-start gap-2">
                     <svg
-                      className="w-5 h-5 text-[#A68B5B] flex-shrink-0 mt-0.5"
+                      className="w-5 h-5 text-lago-600 flex-shrink-0 mt-0.5"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -147,7 +147,7 @@ export default function OficinasSection({ oficinas }: OficinasSectionProps) {
                     </svg>
                     <a
                       href={`mailto:${email}`}
-                      className="text-[#A68B5B] hover:text-[#8B7355] break-words underline"
+                      className="text-lago-600 hover:text-tinta-500 break-words underline"
                     >
                       {email}
                     </a>
@@ -158,7 +158,7 @@ export default function OficinasSection({ oficinas }: OficinasSectionProps) {
                 {web && (
                   <div className="flex items-start gap-2">
                     <svg
-                      className="w-5 h-5 text-[#A68B5B] flex-shrink-0 mt-0.5"
+                      className="w-5 h-5 text-lago-600 flex-shrink-0 mt-0.5"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -174,7 +174,7 @@ export default function OficinasSection({ oficinas }: OficinasSectionProps) {
                       href={web.startsWith('http') ? web : `https://${web}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-[#A68B5B] hover:text-[#8B7355] break-words underline"
+                      className="text-lago-600 hover:text-tinta-500 break-words underline"
                     >
                       {web.replace(/^https?:\/\//, '')}
                     </a>
@@ -183,9 +183,9 @@ export default function OficinasSection({ oficinas }: OficinasSectionProps) {
 
                 {/* Dirección y horarios */}
                 {oficina["Direcciones y horarios"] && (
-                  <div className="flex items-start gap-2 pt-2 border-t border-[#C9B99B]/30">
+                  <div className="flex items-start gap-2 pt-2 border-t border-arena-300/30">
                     <svg
-                      className="w-5 h-5 text-[#A68B5B] flex-shrink-0 mt-0.5"
+                      className="w-5 h-5 text-lago-600 flex-shrink-0 mt-0.5"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"

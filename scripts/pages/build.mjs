@@ -138,58 +138,8 @@ await edit("app/provincias/santa_fe/eventos/page.tsx", (s) =>
       "<StaticAgenda events={events} />",
     ),
 );
-// sizes reflects each real grid, including the 3-column home versus 4-column history.
-const four =
-  "(max-width: 639px) calc(100vw - 34px), (max-width: 767px) calc((100vw - 76px) / 2), (max-width: 1023px) calc((100vw - 84px) / 2), (max-width: 1343px) calc((100vw - 168px) / 4), 294px";
-const three =
-  "(max-width: 639px) calc(100vw - 34px), (max-width: 767px) calc((100vw - 76px) / 2), (max-width: 1023px) calc((100vw - 84px) / 2), (max-width: 1343px) calc((100vw - 134px) / 3), 404px";
-const home =
-  "(max-width: 639px) calc(100vw - 34px), (max-width: 767px) calc(100vw - 50px), (max-width: 1023px) calc((100vw - 118px) / 3), (max-width: 1343px) calc((100vw - 134px) / 3), 404px";
-await edit("components/ActividadCard.tsx", (s) =>
-  s.replace(
-    'sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"',
-    `sizes="${four}"`,
-  ),
-);
-await edit("components/ProvinciaCard.tsx", (s) =>
-  s
-    .replace(
-      "provincia: ProvinciaResumen;",
-      "provincia: ProvinciaResumen; sizes?:string;",
-    )
-    .replace(
-      "({ provincia }: ProvinciaCardProps)",
-      `({ provincia,sizes=${JSON.stringify(three)} }: ProvinciaCardProps)`,
-    )
-    .replace(
-      'sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"',
-      "sizes={sizes}",
-    ),
-);
-await edit("components/HomeContent.tsx", (s) =>
-  s.replace(
-    "<ProvinciaCard key=",
-    `<ProvinciaCard sizes=${JSON.stringify(home)} key=`,
-  ),
-);
-await edit("components/home/ContinuarExplorando.tsx", (s) =>
-  s.replace(
-    "<ProvinciaCard key=",
-    `<ProvinciaCard sizes=${JSON.stringify(four)} key=`,
-  ),
-);
-await edit("components/Carrusel.tsx", (s) =>
-  s.replace(
-    'sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 1200px"',
-    'sizes="(max-width: 1280px) calc(100vw - 48px), 1200px"',
-  ),
-);
-// Avoid speculative RSC prefetches loading every linked route on the home.
-for (const p of [
-  "components/ProvinciaCard.tsx",
-  "components/ActividadCard.tsx",
-])
-  await edit(p, (s) => s.replace("<Link\n", "<Link prefetch={false}\n"));
+// Image sizes and prefetch={false} on cards live in the source since PR15 (components/ui/grillas.ts),
+// so Vercel and Pages share them; no layout-specific patch is needed here.
 await writeFile(
   join(source, "next.config.ts"),
   `import type {NextConfig} from 'next';const c:NextConfig={output:'export',turbopack:{root:${JSON.stringify(root)}},images:{unoptimized:true}};export default c;`,

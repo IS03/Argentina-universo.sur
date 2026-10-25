@@ -93,7 +93,7 @@ La web consume datos estáticos en **JSON** servidos desde `public/`. Las fuente
 | **Imágenes** | Sharp | Optimización de imágenes en build (Next.js) |
 | **Datos (fuente)** | xlsx | Lectura de Excel para generar JSON (scripts en dev) |
 | **Linting** | ESLint, eslint-config-next | Reglas y consistencia de código |
-| **Fuentes** | Geist Sans, Geist Mono (Next/font) | Tipografía del sitio |
+| **Fuentes** | Geist e Instrument Serif (next/font) | Texto y títulos del sitio |
 
 El proyecto usa **Node.js 22.19+** (versión de CI en `.nvmrc`). No hay base de datos: todo el contenido se sirve desde archivos estáticos (JSON, imágenes, PDF).
 
@@ -101,16 +101,14 @@ El proyecto usa **Node.js 22.19+** (versión de CI en `.nvmrc`). No hay base de 
 
 ## Diseño
 
-La interfaz apuesta por una estética **clara y cálida**, inspirada en tonos tierra y crema, con buena legibilidad y jerarquía visual.
+Sistema visual **Universo Sur** (PR15), documentado en [docs/pr15/DESIGN-SYSTEM.md](docs/pr15/DESIGN-SYSTEM.md):
 
-- **Paleta:** fondo crema/beige (`#FAF8F3`, `#F5F1E8`, `#E8DDD0`), marrones para texto y acentos (`#5A4E3D`, `#6B5D47`, `#A68B5B`, `#C9B99B`, `#D4C4B0`). Variables CSS en `app/globals.css` (`--background`, `--foreground`, `--primary`, `--accent`, etc.) para mantener consistencia.
-- **Tipografía:** **Geist Sans** como fuente principal y **Geist Mono** para código o detalles; cargadas con `next/font` y `display: swap`.
-- **Fondo:** gradiente suave en el `body` (crema a beige) con `background-attachment: fixed`. Scroll suave (`scroll-behavior: smooth`).
-- **Navbar:** barra fija con gradiente horizontal (crema/beige), `backdrop-blur`, borde inferior discreto y sombra. Enlaces en mayúsculas con tracking ancho; hover con subrayado animado (gradiente dorado/marrón). Menú móvil a pantalla completa con el mismo estilo.
-- **Contenido:** contenedores con `max-w-7xl` y padding responsive; títulos en mayúsculas con tracking; tarjetas (provincias, actividades, escapadas) con imágenes, texto y enlaces bien separados.
-- **Mapas (Leaflet):** el HTML trae una vista previa estática (las mismas teselas de OpenStreetMap y el mismo marcador) en un contenedor de alto fijo; Leaflet se descarga al tocar “Explorar mapa” o activarlo con el teclado. Así el mapa no desplaza el contenido ni retrasa el LCP. z-index ajustados en CSS para que no tapen la navbar; controles en español y movimiento reducido respetado. Detalles en [docs/PR-05-ESTABILIDAD.md](docs/PR-05-ESTABILIDAD.md).
-- **Responsive:** breakpoints de Tailwind (sm, md, lg); menú hamburguesa en móvil; grid y flex adaptados según ancho de pantalla.
-- **Accesibilidad y SEO:** textos alternativos en imágenes, `aria-label` en navegación y enlaces, estructura de encabezados y metadata por página (título, descripción, Open Graph, Twitter).
+- **Tokens** en `app/globals.css` (`@theme` de Tailwind 4): fondo arena, tinta azul noche, lago andino para acciones, terracota para acentos y un color por región turística (Norte, Litoral, Centro, Cuyo, Buenos Aires y Patagonia). Todo color de texto supera 4,5:1.
+- **Tipografía:** Instrument Serif para títulos y Geist para el texto, con `next/font` (archivos propios, sin pedidos a terceros) y escala fluida.
+- **Componentes** en `components/ui/` (encabezados, botones, chips, avisos, estados vacíos, íconos, grillas con su `sizes`), `components/destinos/` (fichas futuras: fotos con crédito, fuentes, localidades, ubicaciones, atractivos, información práctica) y `components/publicidad/` (espacios reservados, hoy desactivados).
+- **Navegación:** encabezado fijo con la sección activa, menú móvil accesible, ruta de navegación en las páginas interiores y pie con regiones.
+- **Mapas (Leaflet):** el HTML trae una vista previa estática (las mismas teselas de OpenStreetMap y el mismo marcador) en un contenedor de alto fijo; Leaflet se descarga al tocar “Explorar mapa” o activarlo con el teclado. Así el mapa no desplaza el contenido ni retrasa el LCP. Detalles en [docs/PR-05-ESTABILIDAD.md](docs/PR-05-ESTABILIDAD.md).
+- **Accesibilidad y SEO:** enlace para saltar al contenido, áreas táctiles de 44 px, foco visible, movimiento reducido respetado, textos alternativos y metadata por página.
 
 ---
 

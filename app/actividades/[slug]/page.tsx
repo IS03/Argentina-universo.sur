@@ -1,7 +1,10 @@
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import Carrusel from "@/components/Carrusel";
 import Link from "next/link";
+import EncabezadoPagina from "@/components/ui/EncabezadoPagina";
+import SeguirExplorando from "@/components/ui/SeguirExplorando";
+import Icono from "@/components/ui/Icono";
+import { boton } from "@/components/ui/estilos";
+import { regionDeProvincia } from "@/lib/regiones";
 import { ROUTES, INTERNAL_ANCHORS } from "@/lib/site-links";
 import { getActividadBySlug, getActividades } from "@/lib/data";
 import { notFound } from "next/navigation";
@@ -36,71 +39,72 @@ export default async function ActividadPage({ params }: PageProps) {
   if (!actividad) {
     notFound();
   }
+  const region = regionDeProvincia(actividad.slug);
 
   return (
     <>
-      <Navbar />
       <ActividadVisitTracker slug={slug} />
-      <main className="min-h-screen pt-32 pb-16 px-2 sm:px-6 lg:px-8">
-        <div className="max-w-5xl mx-auto">
-          {/* 1. Nombre */}
-          <h1 className="text-2xl sm:text-4xl md:text-5xl font-semibold uppercase tracking-wide sm:tracking-widest mb-4 text-center">
-            {actividad.actividad}
-          </h1>
-
-          {/* 2. Ubicación de texto */}
-          <p className="text-gray-400 text-center mb-8 text-lg">
+      <EncabezadoPagina
+        migas={[{ href: ROUTES.home, etiqueta: "Inicio" }, { href: ROUTES.actividades, etiqueta: "Qué hacer" }]}
+        antetitulo={actividad.provincia}
+        colorAntetitulo={region?.texto}
+        titulo={actividad.actividad}
+        bajada={
+          <span className="flex items-start gap-2">
+            <Icono nombre="pin" className="mt-1 size-5 text-terracota-600" />
             {actividad.localizacion}
-          </p>
+          </span>
+        }
+      />
 
-          {/* 3. Mapa */}
-          {actividad.lat && actividad.lon && (
-            <MapaUbicacion
-              lat={actividad.lat}
-              lon={actividad.lon}
-              titulo={actividad.actividad}
-              detalle={actividad.localizacion}
-              className="mb-8"
-              teselasEnMovil={false}
-            />
-          )}
+      <div className="contenedor py-10 sm:py-14">
+        {/* Mapa: arriba del pliegue en móvil se muestra sin teselas hasta activarlo. */}
+        {actividad.lat && actividad.lon && (
+          <MapaUbicacion
+            lat={actividad.lat}
+            lon={actividad.lon}
+            titulo={actividad.actividad}
+            detalle={actividad.localizacion}
+            className="mb-10"
+            teselasEnMovil={false}
+          />
+        )}
 
-          {/* 4. Descripción */}
-          <div className="mb-12">
-            {actividad.des_1 && (
-              <p className="text-[#6B5D47] text-lg leading-relaxed mb-4">
-                {actividad.des_1}
-              </p>
-            )}
-            {actividad.des_2 && (
-              <p className="text-[#6B5D47] text-lg leading-relaxed">
-                {actividad.des_2}
-              </p>
-            )}
+        <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_20rem] lg:gap-14">
+          <div className="prosa">
+            {actividad.des_1 && <p>{actividad.des_1}</p>}
+            {actividad.des_2 && <p>{actividad.des_2}</p>}
           </div>
-
-          {/* 5. Imágenes */}
-          {actividad.fotos.length > 0 && (
-            <div className="mb-8">
-              <Carrusel fotos={actividad.fotos} alt={actividad.actividad} />
-            </div>
-          )}
-
-          {/* Enlazado interno (SEO): provincia, actividades, inicio */}
-          <nav className="mt-12 pt-8 border-t border-[#C9B99B]/50 flex flex-wrap justify-center gap-4 text-sm" aria-label="Navegación relacionada">
-            <Link href={ROUTES.provincia(actividad.slug)} className="text-[#6B5D47] hover:text-[#A68B5B] underline underline-offset-2 transition-colors">
+          <aside aria-label={`Más en ${actividad.provincia}`} className="self-start rounded-tarjeta border border-arena-300/80 bg-white p-5 shadow-tarjeta">
+            <p className="text-sm text-tinta-500">Provincia</p>
+            <p className="mt-0.5 font-display text-2xl text-tinta-900">{actividad.provincia}</p>
+            {region && <p className={`mt-1 text-sm font-medium ${region.texto}`}>Región {region.nombre}</p>}
+            <Link href={ROUTES.actividadesPorProvincia(actividad.slug)} prefetch={false} className={boton("primario", "mt-5 w-full")}>
+              {INTERNAL_ANCHORS.verActividadesEnProvincia(actividad.provincia)}
+            </Link>
+            <Link href={ROUTES.provincia(actividad.slug)} className={boton("secundario", "mt-3 w-full")}>
               {INTERNAL_ANCHORS.turismoEnProvincia(actividad.provincia)}
             </Link>
-            <Link href={ROUTES.actividades} className="text-[#6B5D47] hover:text-[#A68B5B] underline underline-offset-2 transition-colors">
-              {INTERNAL_ANCHORS.verActividades}
-            </Link>
-            <Link href={ROUTES.home} className="text-[#6B5D47] hover:text-[#A68B5B] underline underline-offset-2 transition-colors">
-              Inicio
-            </Link>
-          </nav>
+          </aside>
         </div>
-      </main>
-      <Footer />
+
+        {/* Imágenes */}
+        {actividad.fotos.length > 0 && (
+          <div className="mt-12">
+            <Carrusel fotos={actividad.fotos} alt={actividad.actividad} />
+          </div>
+        )}
+
+        {/* Enlazado interno (SEO): provincia, actividades, inicio */}
+        <SeguirExplorando
+          etiqueta="Navegación relacionada"
+          enlaces={[
+            { href: ROUTES.provincia(actividad.slug), etiqueta: INTERNAL_ANCHORS.turismoEnProvincia(actividad.provincia), icono: "mapa" },
+            { href: ROUTES.actividades, etiqueta: INTERNAL_ANCHORS.verActividades, icono: "brujula" },
+            { href: ROUTES.escapadas, etiqueta: INTERNAL_ANCHORS.verEscapadas, icono: "documento" },
+          ]}
+        />
+      </div>
     </>
   );
 }

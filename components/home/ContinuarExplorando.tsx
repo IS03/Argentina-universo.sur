@@ -3,6 +3,8 @@
 import { useEffect, useMemo, useState, useSyncExternalStore } from "react";
 import ProvinciaCard from "@/components/ProvinciaCard";
 import ActividadCard from "@/components/ActividadCard";
+import { EncabezadoSeccion } from "@/components/ui/Bloques";
+import { GRILLA_TARJETAS } from "@/components/ui/grillas";
 import type { ProvinciaResumen, ActividadResumen } from "@/lib/catalog";
 import { resolverVisitasRecientes, CLAVE_PROVINCIAS_VISITADAS, CLAVE_ACTIVIDADES_VISITADAS, URL_CATALOGO_RESUMEN } from "@/lib/recent-visits";
 
@@ -53,21 +55,14 @@ export default function ContinuarExplorando() {
   if (contenidoVisitado.length === 0) return null;
 
   return (
-    <section className="relative bg-[#F5F1E8] py-12 sm:py-16 md:py-24 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
-        <div className="mb-8 sm:mb-12 text-center">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold uppercase tracking-widest mb-4 text-[#5A4E3D]">
-            Continuar explorando
-          </h2>
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-          {contenidoVisitado.map((item, index) => item.tipo === "provincia" ? (
-            <ProvinciaCard key={`provincia-${item.data.slug}-${index}`} provincia={item.data} />
-          ) : (
-            <ActividadCard key={`actividad-${item.data.actividadSlug}-${index}`} actividad={item.data} />
-          ))}
-        </div>
+    <section aria-labelledby="titulo-continuar" className="contenedor pt-14 sm:pt-20">
+      <EncabezadoSeccion id="titulo-continuar" antetitulo="Tu recorrido" titulo="Continuar explorando" bajada="Lo último que miraste en este dispositivo." />
+      <div className={GRILLA_TARJETAS}>
+        {contenidoVisitado.map((item, index) => item.tipo === "provincia" ? (
+          <ProvinciaCard key={`provincia-${item.data.slug}-${index}`} provincia={item.data} />
+        ) : (
+          <ActividadCard key={`actividad-${item.data.actividadSlug}-${index}`} actividad={item.data} variante="tarjeta" />
+        ))}
       </div>
     </section>
   );

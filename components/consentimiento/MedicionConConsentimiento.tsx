@@ -53,11 +53,11 @@ function BannerCookies() {
       aria-label="Aviso de cookies"
       className="fixed inset-x-0 bottom-0 z-30 p-3 sm:p-4 pointer-events-none"
     >
-      <div className="pointer-events-auto mx-auto max-w-3xl rounded-xl border border-[#C9B99B]/70 bg-[#FAF8F3]/95 backdrop-blur-md shadow-lg p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6">
-        <p className="flex-1 text-sm leading-relaxed text-[#5A4E3D]">
+      <div className="pointer-events-auto mx-auto max-w-3xl rounded-xl border border-arena-300/70 bg-arena-50/95 backdrop-blur-md shadow-lg p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6">
+        <p className="flex-1 text-sm leading-relaxed text-tinta-900">
           Con tu permiso usamos cookies de Google Analytics para conocer, de forma agregada, cómo se usa el sitio y
           mejorarlo. Podés cambiar tu decisión cuando quieras en{" "}
-          <Link href={ROUTES.privacidad} className="underline underline-offset-2 hover:text-[#A68B5B]">
+          <Link href={ROUTES.privacidad} className="underline underline-offset-2 hover:text-lago-600">
             Privacidad y cookies
           </Link>
           .

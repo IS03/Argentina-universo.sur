@@ -53,7 +53,7 @@ En el proyecto ya se usa:
 - **Hero (home)**: `app/page.tsx` — array `altImagenesHome`, `sizes="100vw"`, `quality={85}`.
 - **Cards**: `ProvinciaCard.tsx`, `ActividadCard.tsx` — alt descriptivo, `sizes` para grid responsive.
 - **Carrusel**: `Carrusel.tsx` — alt con posición, `sizes` y `quality={85}`.
-- **Logos**: `Navbar.jsx`, `Footer.tsx` — alt descriptivo; Footer usa `next/image` para el logo.
+- **Logos**: `Navbar.tsx`, `Footer.tsx` — alt descriptivo; Footer usa `next/image` para el logo.
 
 Al añadir nuevas imágenes (páginas de provincia, actividades, etc.), seguir estas reglas: nombre descriptivo, alt en todas, tamaño adecuado y sin `unoptimized` innecesario.
 

@@ -84,13 +84,13 @@ export default function SantaFeSectionsGrid({
   ];
 
   return (
-    <section className="py-12 md:py-16 bg-gradient-to-b from-[#FAF8F3] to-[#F5F1E8] -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8 mt-16">
+    <section className="py-12 md:py-16 bg-gradient-to-b from-arena-50 to-arena-100 -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8 mt-16">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-10">
-          <h2 className="text-3xl md:text-4xl font-semibold uppercase tracking-widest mb-4 text-[#5A4E3D]">
+          <h2 className="text-3xl md:text-4xl font-semibold uppercase tracking-widest mb-4 text-tinta-900">
             Descubrí Todo Sobre Santa Fe
           </h2>
-          <p className="text-[#6B5D47] text-lg max-w-2xl mx-auto">
+          <p className="text-tinta-700 text-lg max-w-2xl mx-auto">
             Explora nuestras secciones y encuentra toda la información que necesitás para planificar tu viaje
           </p>
         </div>
@@ -116,10 +116,10 @@ export default function SantaFeSectionsGrid({
                     {seccion.icon}
                   </span>
                   <div>
-                    <h3 className="text-xl font-semibold text-[#5A4E3D] group-hover:text-[#8B7355] transition-colors duration-300">
+                    <h3 className="text-xl font-semibold text-tinta-900 group-hover:text-tinta-500 transition-colors duration-300">
                       {seccion.titulo}
                     </h3>
-                    <p className="text-sm text-[#6B5D47] mt-1">
+                    <p className="text-sm text-tinta-700 mt-1">
                       {seccion.count} {seccion.count === 1 ? 'item' : 'items'} disponibles
                     </p>
                   </div>
@@ -128,31 +128,31 @@ export default function SantaFeSectionsGrid({
                 {/* Preview */}
                 <div className="flex-grow space-y-2 mb-4">
                   {seccion.id === 'eventos' && seccion.count === 0 && (
-                    <p className="text-sm text-[#6B5D47]">No hay próximos eventos confirmados. Consultá el archivo de eventos anteriores.</p>
+                    <p className="text-sm text-tinta-700">No hay próximos eventos confirmados. Consultá el archivo de eventos anteriores.</p>
                   )}
                   {seccion.preview.map((item, index) => (
                     <div
                       key={index}
-                      className="text-sm text-[#6B5D47] line-clamp-1 flex items-start gap-2"
+                      className="text-sm text-tinta-700 line-clamp-1 flex items-start gap-2"
                     >
-                      <span className="text-[#A68B5B] mt-1">•</span>
+                      <span className="text-lago-600 mt-1">•</span>
                       <span className="flex-1">{item}</span>
                     </div>
                   ))}
                   {seccion.count > 3 && (
-                    <p className="text-xs text-[#A68B5B] font-medium mt-2">
+                    <p className="text-xs text-lago-600 font-medium mt-2">
                       + {seccion.count - 3} más...
                     </p>
                   )}
                 </div>
 
                 {/* Botón */}
-                <div className="flex items-center justify-between pt-4 border-t border-[#C9B99B]/30">
-                  <span className="text-sm font-medium text-[#A68B5B] group-hover:text-[#8B7355] transition-colors duration-300">
+                <div className="flex items-center justify-between pt-4 border-t border-arena-300/30">
+                  <span className="text-sm font-medium text-lago-600 group-hover:text-tinta-500 transition-colors duration-300">
                     Ver todos →
                   </span>
                   <svg
-                    className="w-5 h-5 text-[#A68B5B] transform group-hover:translate-x-1 transition-transform duration-300"
+                    className="w-5 h-5 text-lago-600 transform group-hover:translate-x-1 transition-transform duration-300"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"

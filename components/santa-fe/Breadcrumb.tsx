@@ -12,7 +12,7 @@ export default function Breadcrumb({ items }: BreadcrumbProps) {
           <li key={index} className="flex items-center">
             {index > 0 && (
               <svg
-                className="w-4 h-4 text-[#6B5D47] mx-2"
+                className="w-4 h-4 text-tinta-700 mx-2"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -28,12 +28,12 @@ export default function Breadcrumb({ items }: BreadcrumbProps) {
             {item.href ? (
               <Link
                 href={item.href}
-                className="text-[#A68B5B] hover:text-[#8B7355] transition-colors duration-300"
+                className="text-lago-600 hover:text-tinta-500 transition-colors duration-300"
               >
                 {item.label}
               </Link>
             ) : (
-              <span className="text-[#5A4E3D] font-medium">{item.label}</span>
+              <span className="text-tinta-900 font-medium">{item.label}</span>
             )}
           </li>
         ))}
