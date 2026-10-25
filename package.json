@@ -34,7 +34,9 @@
     "prebuild": "node --experimental-strip-types scripts/editorial/work-audit.mjs --check-inputs",
     "editorial:check-work": "node --experimental-strip-types scripts/editorial/work-audit.mjs --check-inputs",
     "editorial:audit-work": "node --experimental-strip-types scripts/editorial/work-audit.mjs",
-    "editorial:preview-work": "node --experimental-strip-types scripts/editorial/preview-work.mjs"
+    "editorial:preview-work": "node --experimental-strip-types scripts/editorial/preview-work.mjs",
+    "editorial:review-batch": "node --experimental-strip-types scripts/editorial/review-batch.mjs",
+    "editorial:serve-review": "node --experimental-strip-types scripts/editorial/review-server.mjs"
   },
   "dependencies": {
     "@next/third-parties": "16.4.3",

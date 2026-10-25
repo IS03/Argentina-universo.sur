@@ -1,4 +1,4 @@
-// Offline SSR; not a route/server and never a private-data exporter. Used with synthetic fixtures only.
+// Offline SSR only. Real PR18 payloads must pass review-batch validation before reaching this renderer.
 import { mkdtemp, readFile, writeFile, mkdir, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { dirname, join } from 'node:path';
@@ -7,7 +7,7 @@ import { createElement } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import ts from 'typescript';
 
-export async function renderWorkDestination(destino) {
+export async function renderWorkDestination(destino, editorialPage = null) {
   const root = new URL('../../', import.meta.url);
   const work = await mkdtemp(join(tmpdir(), 'aus-work-render-'));
   const compiled = new Map();
@@ -27,7 +27,9 @@ export async function renderWorkDestination(destino) {
     return out;
   }
   try {
-    const { default: DestinoArticle } = await import(pathToFileURL(await compile('components/destinos/DestinoArticle.tsx')).href);
+    const entry = editorialPage ? 'components/destinos/DestinoEditorialArticle.tsx' : 'components/destinos/DestinoArticle.tsx';
+    const { default: DestinoArticle } = await import(pathToFileURL(await compile(entry)).href);
+    if (editorialPage) return renderToStaticMarkup(createElement(DestinoArticle, { page: editorialPage }));
     // Deliberate allowlist: private references and unknown payload fields never become props/JSON.
     const { id, slug, nombre, provinciaSlugs, resumen, localidades, atractivos, practicos, ubicaciones, fotos, fuentes } = destino;
     return renderToStaticMarkup(createElement(DestinoArticle, { destino: { id, slug, nombre, provinciaSlugs, resumen, localidades, atractivos, practicos, ubicaciones, fotos, fuentes } }));

@@ -63,7 +63,7 @@ function normalize(value) {
   }
   return value.normalize("NFC");
 }
-const privateMarkers = /1fwed8poUbIaLBnMLJta5WkyAnYg_SFc453m-wl3aB1w|spreadsheetId|original_payload|originalPayload|normalizedPayload|originalIdentity|numericComponents|reviewFindings|jurisdictionSlugs|dictamen_publicacion|aprobacion_humana|permiso_publicacion|practica_trazabilidad|practica_campos_permitidos|practica_exclusiones|componentes_condicionados_ids|previsualizacion_privada|ficha_practica_propuesta|AUS_PRIVATE_MASTER_CANARY|AUS_PRIVATE_WORK_CANARY|masterRefs|pendingReviews|documentaryStatus|retirementApproval|scopeReview|restorationVerified/i;
+const privateMarkers = /1fwed8poUbIaLBnMLJta5WkyAnYg_SFc453m-wl3aB1w|spreadsheetId|original_payload|originalPayload|normalizedPayload|originalIdentity|numericComponents|reviewFindings|jurisdictionSlugs|dictamen_publicacion|aprobacion_humana|permiso_publicacion|practica_trazabilidad|practica_campos_permitidos|practica_exclusiones|componentes_condicionados_ids|previsualizacion_privada|ficha_practica_propuesta|AUS_PRIVATE_MASTER_CANARY|AUS_PRIVATE_WORK_CANARY|AUS_PRIVATE_REVIEW_CANARY|privateReviewBundle|reviewBundleVersion|masterBasisSha256|masterRefs|pendingReviews|documentaryStatus|retirementApproval|scopeReview|restorationVerified/i;
 // Raw research identities can leak without a recognizable field name. Keep the reconciliation private.
 const privateResearchReferences = /\b(?:D|A|C|E|J|S|M|V|AG|X)-[A-Z]{2,5}-\d{3,4}\b|\b(?:EV|F|P|R|V|M)-\d{4}\b|docs\.google\.com\/(?:document|spreadsheets)\/d\//;
 const privatePath = /(?:^|\/)(?:\.env(?:\.|$)|master[-_]snapshot|previous[-_]snapshot|import[-_]plan|work[-_]review|original_payload|content\/escapadas|\.artifacts\/)|\.(?:xlsx?|csv|tsv)$/i;
