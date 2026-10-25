@@ -1,0 +1,194 @@
+{
+  "schemaVersion": 2,
+  "id": "AUS-ESC-RIO-GALLEGOS-EDITORIAL-01",
+  "slug": "rio-gallegos",
+  "title": "Río Gallegos: estuario, memoria urbana y salidas regionales",
+  "destination": "Río Gallegos",
+  "province": "Santa Cruz",
+  "description": "Río Gallegos tiene una relación visible con la ría y la estepa. La ciudad permite alternar paseo costero y patrimonio; Cabo Vírgenes, Laguna Azul y Punta Loyola abren otras escalas del paisaje. Preparar la escapada exige distinguir esas salidas regionales de lo que puede conocerse dentro del ámbito urbano.",
+  "status": "draft",
+  "publicationAuthorized": false,
+  "review": null,
+  "introductionSourceIds": [
+    "RG-TURISMO",
+    "RG-PROVINCIA"
+  ],
+  "geography": {
+    "provinceSlugs": [
+      "santa_cruz"
+    ],
+    "localities": [
+      {
+        "id": "git-locality:santa_cruz:rio-gallegos",
+        "name": "Río Gallegos, Santa Cruz",
+        "provinceSlug": "santa_cruz",
+        "sourceIds": [
+          "RG-TURISMO"
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "RG-TURISMO",
+      "title": "Secretaría de Turismo de Santa Cruz — Río Gallegos",
+      "url": "https://turismo.santacruz.gob.ar/donde-ir/rio-gallegos",
+      "checkedAt": "2026-10-24"
+    },
+    {
+      "id": "RG-PROVINCIA",
+      "title": "Gobierno de Santa Cruz — Río Gallegos",
+      "url": "https://www.santacruz.gob.ar/nuestra-provincia/municipios/rio-gallegos",
+      "checkedAt": "2026-10-24"
+    },
+    {
+      "id": "RG-LOYOLA",
+      "title": "Secretaría de Turismo de la Nación — Naufragio histórico",
+      "url": "https://www.argentina.gob.ar/viaja-por-argentina/que-hacer/visitar-un-naufragio-historico",
+      "checkedAt": "2026-10-24"
+    },
+    {
+      "id": "RG-CONSULTA",
+      "title": "Turismo de Río Gallegos — Guía oficial",
+      "url": "https://turismo.riogallegos.gob.ar/",
+      "checkedAt": "2026-10-24"
+    }
+  ],
+  "sections": [
+    {
+      "id": "ria",
+      "kind": "highlights",
+      "title": "El estuario como primer paisaje",
+      "sourceIds": [
+        "RG-TURISMO"
+      ],
+      "paragraphs": [
+        "El paseo costero permite observar la relación de la ciudad con el estuario del río Gallegos. Las mareas cambian el aspecto del agua y de las costas; la ría es un ambiente vivo, no un decorado fijo para una fotografía. Dedicarle tiempo ayuda a comprender la ubicación de la capital dentro de la estepa austral."
+      ]
+    },
+    {
+      "id": "ciudad",
+      "kind": "culture",
+      "title": "Museos con temas diferentes",
+      "sourceIds": [
+        "RG-TURISMO"
+      ],
+      "paragraphs": [
+        "El Museo de los Pioneros, el Ferroviario Roberto Galián y el Centro de Interpretación del Estuario aparecen entre las referencias del catálogo provincial. Ofrecen temas distintos para investigar: poblamiento, transporte y ambiente. No se atribuye a todos un mismo recorrido ni se traslada el horario de la oficina turística al de sus salas.",
+        "Elegí la institución por el tema que te interesa y confirmá apertura y modalidad. Un listado provincial ayuda a orientar la consulta, pero no demuestra que una muestra específica siga montada. Los circuitos urbanos también requieren confirmar qué propuesta se realiza y en qué condiciones."
+      ]
+    },
+    {
+      "id": "cabo",
+      "kind": "nature",
+      "title": "Cabo Vírgenes es una salida fuera de la ciudad",
+      "sourceIds": [
+        "RG-PROVINCIA",
+        "RG-TURISMO"
+      ],
+      "paragraphs": [
+        "La reserva faunística se relaciona con una importante colonia de pingüinos de Magallanes. La referencia biológica de una temporada no garantiza avistajes ni habilitación actual de senderos. Consultá estado del camino, recepción y pautas de observación antes de planificar la salida, sin reducirla a una parada urbana."
+      ]
+    },
+    {
+      "id": "loyola",
+      "kind": "activities",
+      "title": "Punta Loyola y el Marjory Glen",
+      "sourceIds": [
+        "RG-LOYOLA"
+      ],
+      "paragraphs": [
+        "El barco varado forma parte de la memoria marítima de Punta Loyola. La fuente nacional describe el incendio de 1911 y su uso posterior como blanco de entrenamiento durante el conflicto de Malvinas. El interés histórico permite mirar el paisaje con contexto, sin que ello autorice entrar al casco ni acercarse a estructuras inestables.",
+        "La actividad del puerto cercano no convierte sus instalaciones en un paseo de libre acceso. Confirmá los sectores permitidos y las condiciones costeras; esta propuesta no promete pesca, navegación ni un itinerario sobre el barco."
+      ]
+    },
+    {
+      "id": "volcan",
+      "kind": "nature",
+      "title": "Laguna Azul: otra escala de la estepa",
+      "sourceIds": [
+        "RG-PROVINCIA"
+      ],
+      "paragraphs": [
+        "El paisaje volcánico de Laguna Azul figura como propuesta regional fuera del ámbito urbano. Antes de incluirlo, consultá acceso, recepción y recorrido permitido con la información local. No se publican dimensiones del cráter ni se asegura un sendero disponible a partir de una descripción general del destino."
+      ]
+    },
+    {
+      "id": "plan",
+      "kind": "practical",
+      "title": "Ordenar ciudad y excursiones",
+      "sourceIds": [
+        "RG-CONSULTA",
+        "RG-TURISMO"
+      ],
+      "paragraphs": [
+        "El centro de información ayuda a organizar museos y salidas. Confirmá cada acceso y el traslado antes de combinar destinos; no se fija un programa de tres días ni se garantizan avistajes de aves. Una jornada de museos y una salida de paisaje tienen necesidades diferentes. Elegí qué conocer y confirmá esa propuesta antes de sumar otras actividades al recorrido."
+      ]
+    }
+  ],
+  "address": "Capital provincial y paseo de la ría.",
+  "mapUrl": "https://www.openstreetmap.org/search?query=R%C3%ADo%20Gallegos%2C%20Santa%20Cruz%20Argentina",
+  "locations": [
+    {
+      "id": "rio-gallegos",
+      "label": "Río Gallegos, Santa Cruz",
+      "description": "Capital provincial y paseo de la ría.",
+      "sourceIds": [
+        "RG-TURISMO"
+      ],
+      "mapUrl": "https://www.openstreetmap.org/search?query=R%C3%ADo%20Gallegos%2C%20Santa%20Cruz%20Argentina"
+    },
+    {
+      "id": "punta-loyola",
+      "label": "Punta Loyola, Santa Cruz",
+      "description": "Referencia costera; no habilita acceso al puerto ni al barco.",
+      "sourceIds": [
+        "RG-LOYOLA"
+      ],
+      "mapUrl": "https://www.openstreetmap.org/search?query=Punta%20Loyola%2C%20Santa%20Cruz%20Argentina"
+    },
+    {
+      "id": "cabo-virgenes",
+      "label": "Reserva Provincial Cabo Vírgenes, Santa Cruz",
+      "description": "Área regional distinta de la ciudad; confirmar acceso.",
+      "sourceIds": [
+        "RG-PROVINCIA"
+      ],
+      "mapUrl": "https://www.openstreetmap.org/search?query=Reserva%20Provincial%20Cabo%20V%C3%ADrgenes%2C%20Santa%20Cruz%20Argentina"
+    }
+  ],
+  "photos": [],
+  "related": [
+    {
+      "href": "/provincias/santa_cruz",
+      "label": "Conocer santa cruz"
+    },
+    {
+      "href": "/actividades?provincia=santa_cruz",
+      "label": "Actividades en santa cruz"
+    },
+    {
+      "href": "/escapadas",
+      "label": "Otras escapadas"
+    }
+  ],
+  "editorial": {
+    "documentaryStatus": "sources-checked",
+    "updatedAt": "2026-10-24",
+    "origin": {
+      "kind": "git-editorial",
+      "legacyGuideIds": [
+        "esc_18"
+      ],
+      "masterRefs": []
+    },
+    "pendingReviews": [
+      "Revisión humana del texto, fuentes y alcance",
+      "Autorización independiente de publicación",
+      "Fotografías: derechos y selección pendientes",
+      "Equivalencia con el PDF y respaldo externo sin aprobar",
+      "Completar fuentes de administradores de Cabo Vírgenes y Laguna Azul",
+      "INCOMPLETA para agenda urbana del PDF: falta evidencia específica del planetario y parques temáticos"
+    ]
+  }
+}

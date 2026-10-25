@@ -1,0 +1,195 @@
+{
+  "schemaVersion": 2,
+  "id": "AUS-ESC-PUERTO-MADRYN-EDITORIAL-01",
+  "slug": "puerto-madryn",
+  "title": "Puerto Madryn: ciudad costera y áreas de fauna",
+  "destination": "Puerto Madryn",
+  "province": "Chubut",
+  "description": "Puerto Madryn permite alternar un paseo junto al Golfo Nuevo con salidas a áreas naturales diferentes. El Doradillo, Punta Loma y Península Valdés tienen identidades y condiciones propias. La fauna marca parte del viaje, pero no puede programarse como una atracción de horario fijo.",
+  "status": "draft",
+  "publicationAuthorized": false,
+  "review": null,
+  "introductionSourceIds": [
+    "MAD-CIUDAD",
+    "MAD-BALLENAS"
+  ],
+  "geography": {
+    "provinceSlugs": [
+      "chubut"
+    ],
+    "localities": [
+      {
+        "id": "git-locality:chubut:puerto-madryn",
+        "name": "Puerto Madryn, Chubut",
+        "provinceSlug": "chubut",
+        "sourceIds": [
+          "MAD-CIUDAD"
+        ]
+      },
+      {
+        "id": "git-locality:chubut:puerto-piramides",
+        "name": "Puerto Pirámides, Chubut",
+        "provinceSlug": "chubut",
+        "sourceIds": [
+          "MAD-BALLENAS"
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "MAD-CIUDAD",
+      "title": "Chubut Turismo — Puerto Madryn",
+      "url": "https://chubutpatagonia.gob.ar/destino/puerto-madryn/",
+      "checkedAt": "2026-10-24"
+    },
+    {
+      "id": "MAD-BALLENAS",
+      "title": "Chubut Turismo — Ballenas",
+      "url": "https://chubutpatagonia.gob.ar/experiencia/ballenas/",
+      "checkedAt": "2026-10-24"
+    },
+    {
+      "id": "MAD-FAUNA",
+      "title": "Municipalidad de Puerto Madryn — Ballena",
+      "url": "https://madryn.travel/nuestra-fauna/ballena-2/",
+      "checkedAt": "2026-10-24"
+    },
+    {
+      "id": "MAD-PUNTA",
+      "title": "Chubut Turismo — Área Natural Protegida Punta Loma",
+      "url": "https://chubutpatagonia.gob.ar/destino/area-natural-protegida-punta-loma/",
+      "checkedAt": "2026-10-24"
+    }
+  ],
+  "sections": [
+    {
+      "id": "ciudad",
+      "kind": "culture",
+      "title": "La costa urbana como primer recorrido",
+      "sourceIds": [
+        "MAD-CIUDAD"
+      ],
+      "paragraphs": [
+        "La costanera y el centro permiten tomar contacto con el Golfo Nuevo antes de salir hacia las reservas. La ciudad reúne servicios para organizar excursiones, además de propuestas gastronómicas y espacios de interpretación. Reservar tiempo para caminar por su frente marítimo ayuda a distinguir la vida urbana del territorio de las áreas protegidas."
+      ]
+    },
+    {
+      "id": "doradillo",
+      "kind": "highlights",
+      "title": "El Doradillo: observar desde la costa",
+      "sourceIds": [
+        "MAD-BALLENAS",
+        "MAD-FAUNA"
+      ],
+      "paragraphs": [
+        "El Doradillo es una propuesta de observación costera de ballenas francas australes. El calendario provincial la diferencia del avistaje embarcado de Puerto Pirámides. Consultá el momento de la temporada, las condiciones del camino y las indicaciones locales antes de trasladarte; no se asegura un encuentro ni se extiende el calendario de una modalidad a la otra."
+      ]
+    },
+    {
+      "id": "valdes",
+      "kind": "activities",
+      "title": "Península Valdés y Puerto Pirámides",
+      "sourceIds": [
+        "MAD-CIUDAD",
+        "MAD-BALLENAS"
+      ],
+      "paragraphs": [
+        "Península Valdés es un área regional diferente de la ciudad. Puerto Pirámides aparece como base de la observación embarcada: la salida, el prestador y sus condiciones se verifican por separado. No basta con estar alojado en Madryn para tener una navegación garantizada.",
+        "Las referencias a ballenas, aves y otros mamíferos describen la riqueza del área, no la presencia simultánea de todas las especies en un único punto. Elegí la propuesta por la especie y el ambiente que te interesa, atendiendo a las normas de observación y a las instrucciones del personal habilitado."
+      ]
+    },
+    {
+      "id": "punta-loma",
+      "kind": "nature",
+      "title": "Punta Loma: mirar el apostadero sin intervenir",
+      "sourceIds": [
+        "MAD-PUNTA",
+        "MAD-CIUDAD"
+      ],
+      "paragraphs": [
+        "Punta Loma conserva ambientes de costa y estepa y cuenta con una referencia de observación del apostadero de lobos marinos. Es una visita distinta de una experiencia de buceo o snorkel. La observación desde el área protegida no autoriza acercarse libremente a los animales ni acceder a cualquier tramo de costa."
+      ]
+    },
+    {
+      "id": "organizar",
+      "kind": "practical",
+      "title": "Elegir salidas y comprobar accesos",
+      "sourceIds": [
+        "MAD-CIUDAD",
+        "MAD-BALLENAS",
+        "MAD-PUNTA"
+      ],
+      "paragraphs": [
+        "Una secuencia razonable distingue paseo urbano, salida costera y excursión regional. No se fijan tiempos de viaje ni se afirma que todas las áreas estén abiertas: lluvias, estado de caminos y medidas de conservación pueden cambiar el plan. Verificá accesos con Turismo y la administración del área antes de salir.",
+        "Antes de reservar una navegación, confirmá horario, recorrido y política de cancelación con el prestador elegido. Revisá las fechas de cualquier promoción y separá la contratación del barco de los traslados. Esa consulta permite elegir una experiencia concreta sin depender de un calendario general de fauna."
+      ]
+    }
+  ],
+  "address": "Ciudad sobre el Golfo Nuevo; base urbana de esta ficha.",
+  "mapUrl": "https://www.openstreetmap.org/search?query=Puerto%20Madryn%2C%20Chubut%20Argentina",
+  "locations": [
+    {
+      "id": "puerto-madryn",
+      "label": "Puerto Madryn, Chubut",
+      "description": "Ciudad sobre el Golfo Nuevo; base urbana de esta ficha.",
+      "sourceIds": [
+        "MAD-CIUDAD"
+      ],
+      "mapUrl": "https://www.openstreetmap.org/search?query=Puerto%20Madryn%2C%20Chubut%20Argentina"
+    },
+    {
+      "id": "doradillo",
+      "label": "El Doradillo, Puerto Madryn",
+      "description": "Referencia del área costera; consultar acceso y lugar de observación.",
+      "sourceIds": [
+        "MAD-BALLENAS"
+      ],
+      "mapUrl": "https://www.openstreetmap.org/search?query=El%20Doradillo%2C%20Puerto%20Madryn%20Argentina"
+    },
+    {
+      "id": "puerto-piramides",
+      "label": "Puerto Pirámides, Chubut",
+      "description": "Localidad de Península Valdés, distinta de Puerto Madryn.",
+      "sourceIds": [
+        "MAD-BALLENAS"
+      ],
+      "mapUrl": "https://www.openstreetmap.org/search?query=Puerto%20Pir%C3%A1mides%2C%20Chubut%20Argentina"
+    }
+  ],
+  "photos": [],
+  "related": [
+    {
+      "href": "/provincias/chubut",
+      "label": "Conocer chubut"
+    },
+    {
+      "href": "/actividades?provincia=chubut",
+      "label": "Actividades en chubut"
+    },
+    {
+      "href": "/escapadas",
+      "label": "Otras escapadas"
+    }
+  ],
+  "editorial": {
+    "documentaryStatus": "sources-checked",
+    "updatedAt": "2026-10-24",
+    "origin": {
+      "kind": "git-editorial",
+      "legacyGuideIds": [
+        "esc_04"
+      ],
+      "masterRefs": []
+    },
+    "pendingReviews": [
+      "Revisión humana del texto, fuentes y alcance",
+      "Autorización independiente de publicación",
+      "Fotografías: derechos y selección pendientes",
+      "Equivalencia con el PDF y respaldo externo sin aprobar",
+      "Aviso provincial del 21/10 sobre lluvias: cuerpo no accesible; no se certifica cierre ni reapertura actual",
+      "Gaiman, Ecocentro y snorkel requieren investigación adicional",
+      "Normalización de título: el catálogo heredado contiene Puerti Madryn, sin cambiar ID ni PDF"
+    ]
+  }
+}

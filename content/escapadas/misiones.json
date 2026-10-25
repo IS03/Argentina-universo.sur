@@ -1,0 +1,233 @@
+{
+  "schemaVersion": 2,
+  "id": "AUS-ESC-MISIONES-EDITORIAL-01",
+  "slug": "misiones",
+  "title": "Misiones: patrimonio guaraní jesuítico y selva más allá de Iguazú",
+  "destination": "Misiones",
+  "province": "Misiones",
+  "description": "La tierra colorada ofrece experiencias que no se agotan en las cataratas. San Ignacio, Santa Ana, Salto Encantado y Moconá permiten elegir entre patrimonio, interpretación de la selva y paisajes del Uruguay. Sus visitas requieren decisiones independientes, sin convertir toda la provincia en una excursión garantizada.",
+  "status": "draft",
+  "publicationAuthorized": false,
+  "review": null,
+  "introductionSourceIds": [
+    "MIS-SANIGNACIO",
+    "MIS-UNESCO"
+  ],
+  "geography": {
+    "provinceSlugs": [
+      "misiones"
+    ],
+    "localities": [
+      {
+        "id": "git-locality:misiones:san-ignacio",
+        "name": "San Ignacio, Misiones",
+        "provinceSlug": "misiones",
+        "sourceIds": [
+          "MIS-SANIGNACIO"
+        ]
+      },
+      {
+        "id": "git-locality:misiones:santa-ana",
+        "name": "Santa Ana, Misiones",
+        "provinceSlug": "misiones",
+        "sourceIds": [
+          "MIS-CRUZ"
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "MIS-SANIGNACIO",
+      "title": "Ministerio de Turismo de Misiones — San Ignacio Miní",
+      "url": "https://misiones.tur.ar/sanignaciomini/",
+      "checkedAt": "2026-10-24"
+    },
+    {
+      "id": "MIS-UNESCO",
+      "title": "UNESCO — Misiones Jesuíticas de los Guaraníes",
+      "url": "https://whc.unesco.org/en/list/275/",
+      "checkedAt": "2026-10-24"
+    },
+    {
+      "id": "MIS-CRUZ",
+      "title": "Ministerio de Turismo de Misiones — Parque de la Cruz",
+      "url": "https://misiones.tur.ar/cruz/",
+      "checkedAt": "2026-10-24"
+    },
+    {
+      "id": "MIS-ENCANTADO",
+      "title": "Ministerio de Turismo de Misiones — Salto Encantado",
+      "url": "https://misiones.tur.ar/encantado/",
+      "checkedAt": "2026-10-24"
+    },
+    {
+      "id": "MIS-MOCONA",
+      "title": "Ministerio de Turismo de Misiones — Moconá",
+      "url": "https://misiones.tur.ar/mocona/",
+      "checkedAt": "2026-10-24"
+    }
+  ],
+  "sections": [
+    {
+      "id": "san-ignacio",
+      "kind": "culture",
+      "title": "San Ignacio Miní: comprender el conjunto",
+      "sourceIds": [
+        "MIS-SANIGNACIO"
+      ],
+      "paragraphs": [
+        "El sitio permite leer la organización de una reducción guaraní jesuítica a través de sus espacios y restos arquitectónicos. La interpretación ayuda a relacionar la vida comunitaria, las construcciones y la historia regional, sin reducir el recorrido a una imagen de muros de piedra. Consultá qué visita se ofrece y qué sectores se recorren."
+      ]
+    },
+    {
+      "id": "serie",
+      "kind": "highlights",
+      "title": "No todas las reducciones tienen la misma inscripción",
+      "sourceIds": [
+        "MIS-UNESCO"
+      ],
+      "paragraphs": [
+        "La inscripción de Patrimonio Mundial incluye, en Argentina, San Ignacio Miní, Santa Ana, Nuestra Señora de Loreto y Santa María Mayor. Son componentes diferentes de un bien compartido con Brasil. No se atribuye esa misma condición a Corpus Christi, aunque pueda integrar otra investigación sobre el patrimonio regional."
+      ]
+    },
+    {
+      "id": "cruz",
+      "kind": "activities",
+      "title": "Santa Ana: paisaje e interpretación",
+      "sourceIds": [
+        "MIS-CRUZ"
+      ],
+      "paragraphs": [
+        "El Parque Temático de la Cruz se ubica sobre el cerro Santa Ana. El catálogo provincial combina miradores, espacios culturales y senderos con interpretación natural y religiosa. Elegí qué modalidad te interesa y consultá el funcionamiento concreto de los medios de acceso antes de viajar.",
+        "La existencia de un ascensor o un mariposario en una página descriptiva no asegura su disponibilidad el día elegido. El parque temático y el conjunto jesuítico de Santa Ana tampoco son el mismo atractivo ni comparten necesariamente entrada o visita."
+      ]
+    },
+    {
+      "id": "encantado",
+      "kind": "nature",
+      "title": "Salto Encantado: detenerse a mirar la selva",
+      "sourceIds": [
+        "MIS-ENCANTADO"
+      ],
+      "paragraphs": [
+        "La cascada, la vegetación y la observación de aves permiten una jornada centrada en el ambiente del parque provincial. El mirador principal es una referencia para interpretar el paisaje, no una promesa de encontrar determinada especie. Consultá los senderos habilitados y sus condiciones; no se aconseja el baño ni el descenso libre por una descripción promocional."
+      ]
+    },
+    {
+      "id": "mocona",
+      "kind": "nature",
+      "title": "Moconá: una experiencia dependiente del agua",
+      "sourceIds": [
+        "MIS-MOCONA"
+      ],
+      "paragraphs": [
+        "Los saltos discurren paralelos al río Uruguay y su visibilidad cambia con el nivel del agua. El acceso al parque también depende del arroyo Yabotí. Por eso una reserva de viaje a El Soberbio no garantiza contemplar los saltos ni realizar el paseo fluvial.",
+        "El Soberbio y el parque son referencias distintas de una misma planificación regional. Revisá el tablero oficial antes de trasladarte y confirmá cualquier servicio con el responsable. Las propuestas rurales de la zona necesitan coordinación propia y no se dan por incluidas en una entrada al área protegida."
+      ]
+    },
+    {
+      "id": "plan",
+      "kind": "practical",
+      "title": "Elegir un eje antes de combinar destinos",
+      "sourceIds": [
+        "MIS-SANIGNACIO",
+        "MIS-CRUZ",
+        "MIS-ENCANTADO",
+        "MIS-MOCONA"
+      ],
+      "paragraphs": [
+        "Podés orientar el viaje hacia patrimonio guaraní jesuítico, interpretación de la selva o paisaje fluvial. Son opciones temáticas, sin tiempos de traslado ni cupos garantizados. El cultivo de té y yerba mate y las propuestas de Campo Ramón requieren fuentes y responsables específicos antes de incorporarse como visitas concretas."
+      ]
+    }
+  ],
+  "address": "Localidad del conjunto San Ignacio Miní.",
+  "mapUrl": "https://www.openstreetmap.org/search?query=San%20Ignacio%2C%20Misiones%20Argentina",
+  "locations": [
+    {
+      "id": "san-ignacio",
+      "label": "San Ignacio, Misiones",
+      "description": "Localidad del conjunto San Ignacio Miní.",
+      "sourceIds": [
+        "MIS-SANIGNACIO"
+      ],
+      "mapUrl": "https://www.openstreetmap.org/search?query=San%20Ignacio%2C%20Misiones%20Argentina"
+    },
+    {
+      "id": "santa-ana",
+      "label": "Santa Ana, Misiones",
+      "description": "Localidad del cerro; distinguir parque temático y conjunto jesuítico.",
+      "sourceIds": [
+        "MIS-CRUZ"
+      ],
+      "mapUrl": "https://www.openstreetmap.org/search?query=Santa%20Ana%2C%20Misiones%20Argentina"
+    },
+    {
+      "id": "salto-encantado",
+      "label": "Parque Provincial Salto Encantado, Misiones",
+      "description": "Referencia del área protegida; confirmar senderos.",
+      "sourceIds": [
+        "MIS-ENCANTADO"
+      ],
+      "mapUrl": "https://www.openstreetmap.org/search?query=Parque%20Provincial%20Salto%20Encantado%2C%20Misiones%20Argentina"
+    },
+    {
+      "id": "mocona",
+      "label": "Parque Provincial Moconá, Misiones",
+      "description": "Estado de acceso y navegación sujeto al tablero oficial.",
+      "sourceIds": [
+        "MIS-MOCONA"
+      ],
+      "mapUrl": "https://www.openstreetmap.org/search?query=Parque%20Provincial%20Mocon%C3%A1%2C%20Misiones%20Argentina"
+    }
+  ],
+  "photos": [],
+  "related": [
+    {
+      "href": "/provincias/misiones",
+      "label": "Conocer misiones"
+    },
+    {
+      "href": "/actividades?provincia=misiones",
+      "label": "Actividades en misiones"
+    },
+    {
+      "href": "/escapadas",
+      "label": "Otras escapadas"
+    }
+  ],
+  "editorial": {
+    "documentaryStatus": "sources-checked",
+    "updatedAt": "2026-10-24",
+    "origin": {
+      "kind": "git-editorial",
+      "legacyGuideIds": [
+        "esc_21"
+      ],
+      "masterRefs": []
+    },
+    "pendingReviews": [
+      "Revisión humana del texto, fuentes y alcance",
+      "Autorización independiente de publicación",
+      "Fotografías: derechos y selección pendientes",
+      "Equivalencia con el PDF y respaldo externo sin aprobar",
+      "Reverificar Moconá antes de aprobación; observación con caducidad",
+      "Completar fuentes específicas de té, yerba mate y Campo Ramón",
+      "No reproducir superficie de Yabotí como si fuera la del parque Moconá"
+    ]
+  },
+  "operationalNotices": [
+    {
+      "id": "mocona-estado",
+      "sectionId": "mocona",
+      "guidance": "Consultá el tablero oficial de Moconá antes de viajar: el acceso al parque y el paseo fluvial dependen de las condiciones del agua.",
+      "officialStatusSourceId": "MIS-MOCONA",
+      "observation": "En la consulta del 24 de octubre de 2026, el tablero oficial mostraba Parque cerrado y Paseo suspendido, con actualización indicada a las 08:03. Esa observación no acredita el estado en otra fecha.",
+      "sourceIds": [
+        "MIS-MOCONA"
+      ],
+      "verifiedAt": "2026-10-24",
+      "expiresAt": "2026-11-07"
+    }
+  ]
+}

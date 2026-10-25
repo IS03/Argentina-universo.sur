@@ -1,0 +1,22 @@
+{
+  "static": {
+    "files": 42,
+    "textFiles": 25,
+    "html": 0,
+    "rsc": 0,
+    "javascript": 23,
+    "withheldRecords": 24,
+    "errors": [],
+    "remoteMasterAccessed": false
+  },
+  "prerendered": {
+    "files": 1027,
+    "textFiles": 1027,
+    "html": 132,
+    "rsc": 0,
+    "javascript": 0,
+    "withheldRecords": 24,
+    "errors": [],
+    "remoteMasterAccessed": false
+  }
+}

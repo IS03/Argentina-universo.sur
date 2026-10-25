@@ -1,7 +1,11 @@
 import { test, expect } from "@playwright/test";
-import { readFileSync } from "node:fs";
+import { readFileSync, readdirSync } from "node:fs";
 const legacy = JSON.parse(readFileSync("public/data/escapadas.json", "utf8")) as {ID: string; PDF: string; ZONA: string}[];
-const withheld = ["el-palmar", "caba", "puerto-iguazu", "talampaya-e-ischigualasto"];
+const withheld = readdirSync("content/escapadas").filter(name => name.endsWith(".json")).map(name => {
+    const trip = JSON.parse(readFileSync("content/escapadas/" + name, "utf8"));
+    expect(trip.status).toBe("draft");
+    return trip.slug as string;
+  });
 
 test("Escapadas conserva las 23 guías en el HTML sin JavaScript y no anuncia borradores", async ({ browser, baseURL }) => {
   const context = await browser.newContext({javaScriptEnabled: false});
@@ -16,7 +20,7 @@ test("Escapadas conserva las 23 guías en el HTML sin JavaScript y no anuncia bo
   await context.close();
 });
 
-test("las cuatro fichas pendientes responden 404 y quedan fuera del sitemap y del HTML/RSC", async ({ request }) => {
+test("las 24 fichas pendientes responden 404 y quedan fuera del sitemap y del HTML/RSC", async ({ request }) => {
   const index = await (await request.get("/escapadas")).text();
   const sitemap = await (await request.get("/sitemap.xml")).text();
   for (const slug of withheld) {

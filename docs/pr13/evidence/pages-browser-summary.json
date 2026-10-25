@@ -1,0 +1,12 @@
+{
+  "stats": {
+    "startTime": "2026-10-25T02:29:17.700Z",
+    "duration": 48760.187,
+    "expected": 70,
+    "skipped": 2,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "errors": [],
+  "scope": "Pruebas locales de archivos estáticos, Wrangler y consentimiento simulado; no despliegue remoto de PR13."
+}

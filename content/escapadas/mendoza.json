@@ -1,0 +1,193 @@
+{
+  "schemaVersion": 2,
+  "id": "AUS-ESC-MENDOZA-EDITORIAL-01",
+  "slug": "mendoza",
+  "title": "Mendoza: ciudad, viñedos y montaña con tiempos propios",
+  "destination": "Mendoza",
+  "province": "Mendoza",
+  "description": "Mendoza permite combinar paseos urbanos, cultura del vino y paisajes de cordillera. La clave está en distinguir esas escalas: una bodega, una caminata en Horcones y un recorrido por la capital no tienen los mismos accesos ni necesitan la misma preparación.",
+  "status": "draft",
+  "publicationAuthorized": false,
+  "review": null,
+  "introductionSourceIds": [
+    "MZA-PANORAMA",
+    "MZA-PARQUE"
+  ],
+  "geography": {
+    "provinceSlugs": [
+      "mendoza"
+    ],
+    "localities": [
+      {
+        "id": "git-locality:mendoza:mendoza",
+        "name": "Ciudad de Mendoza, Argentina",
+        "provinceSlug": "mendoza",
+        "sourceIds": [
+          "MZA-PANORAMA"
+        ]
+      },
+      {
+        "id": "git-locality:mendoza:san-martin",
+        "name": "General San Martín, Mendoza",
+        "provinceSlug": "mendoza",
+        "sourceIds": [
+          "MZA-SANMARTIN"
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "MZA-PANORAMA",
+      "title": "INPROTUR — Mendoza, la capital del vino argentino",
+      "url": "https://www.argentina.travel/novedades/mendoza-la-capital-del-vino-argentino",
+      "checkedAt": "2026-10-24",
+      "publishedAt": "2024-12-12"
+    },
+    {
+      "id": "MZA-PARQUE",
+      "title": "INPROTUR — Parque General San Martín",
+      "url": "https://www.argentina.travel/actividades/parque-general-san-martin",
+      "checkedAt": "2026-10-24"
+    },
+    {
+      "id": "MZA-ACONCAGUA",
+      "title": "Secretaría de Turismo de la Nación — Trekking en Aconcagua",
+      "url": "https://www.argentina.gob.ar/node/465038",
+      "checkedAt": "2026-10-24"
+    },
+    {
+      "id": "MZA-SANMARTIN",
+      "title": "Municipalidad de General San Martín — Caminos del Vino",
+      "url": "https://turismo.sanmartinmza.gob.ar/index.php/caminos-del-vino/",
+      "checkedAt": "2026-10-24"
+    }
+  ],
+  "sections": [
+    {
+      "id": "ciudad",
+      "kind": "highlights",
+      "title": "Empezar por la escala urbana",
+      "sourceIds": [
+        "MZA-PANORAMA",
+        "MZA-PARQUE"
+      ],
+      "paragraphs": [
+        "La Plaza Independencia y el Parque General San Martín ofrecen dos referencias para un primer paseo por la capital. Los portones, el lago y el rosedal permiten observar cómo el paisaje cultivado forma parte de la ciudad. Ese recorrido puede tener su propio tiempo, sin funcionar solamente como espera entre excursiones.",
+        "El Cerro de la Gloria aparece entre los atractivos urbanos señalados por INPROTUR. Consultá por separado el acceso que mejor se adapte a tu visita. La mención del parque no implica que todos los museos, instalaciones o espacios escénicos de su entorno estén abiertos."
+      ]
+    },
+    {
+      "id": "vino",
+      "kind": "culture",
+      "title": "Elegir una zona del vino",
+      "sourceIds": [
+        "MZA-PANORAMA"
+      ],
+      "paragraphs": [
+        "Maipú, Luján de Cuyo y Valle de Uco son referencias diferentes de la producción vitivinícola mendocina. Elegir una zona ayuda a dedicar tiempo al paisaje y al trabajo de cada establecimiento. No se propone visitar todas en una jornada ni se presume que todas las bodegas reciban sin reserva."
+      ]
+    },
+    {
+      "id": "este",
+      "kind": "activities",
+      "title": "General San Martín: otra lectura del viñedo",
+      "sourceIds": [
+        "MZA-SANMARTIN"
+      ],
+      "paragraphs": [
+        "El municipio presenta su oferta del oasis este con bodegas de escalas distintas y una especial identificación con el Bonarda. Puede ser una elección para conocer otra dimensión de Mendoza, sin confundir la localidad de General San Martín con el parque del mismo nombre en la capital.",
+        "Confirmá el tipo de recorrido, los cupos y cualquier degustación con el establecimiento. Un catálogo de bodegas no garantiza disponibilidad actual de cada servicio ni permite trasladar promociones pasadas a una reserva nueva."
+      ]
+    },
+    {
+      "id": "montana",
+      "kind": "nature",
+      "title": "Horcones no es un ascenso a la cumbre",
+      "sourceIds": [
+        "MZA-ACONCAGUA"
+      ],
+      "paragraphs": [
+        "La información nacional distingue el circuito de Laguna de los Horcones de la caminata hacia Confluencia. Ambos se ubican en el ámbito del Parque Provincial Aconcagua, pero tienen exigencias y condiciones propias. Ver el cerro desde un punto panorámico y emprender una expedición de alta montaña son decisiones muy diferentes.",
+        "Consultá con la administración del parque los accesos, los permisos y las condiciones vigentes. No se publica un calendario de apertura ni se afirma que un sendero esté habilitado hoy. El clima y las decisiones de conservación deben formar parte de la planificación."
+      ]
+    },
+    {
+      "id": "organizar",
+      "kind": "practical",
+      "title": "Una provincia necesita más de un itinerario",
+      "sourceIds": [
+        "MZA-PANORAMA",
+        "MZA-ACONCAGUA"
+      ],
+      "paragraphs": [
+        "Separá ciudad y zona vitivinícola de las salidas de montaña. San Rafael y el Cañón del Atuel constituyen otra base regional, no una extensión inmediata del paseo urbano. El traslado, el alojamiento y cualquier actividad de aventura requieren comprobación propia. Cacheuta, Uspallata y Manzano Histórico necesitan desarrollo específico antes de integrar una propuesta más amplia."
+      ]
+    }
+  ],
+  "address": "Capital provincial y punto de referencia del paseo urbano.",
+  "mapUrl": "https://www.openstreetmap.org/search?query=Ciudad%20de%20Mendoza%2C%20Argentina%20Argentina",
+  "locations": [
+    {
+      "id": "mendoza",
+      "label": "Ciudad de Mendoza, Argentina",
+      "description": "Capital provincial y punto de referencia del paseo urbano.",
+      "sourceIds": [
+        "MZA-PANORAMA"
+      ],
+      "mapUrl": "https://www.openstreetmap.org/search?query=Ciudad%20de%20Mendoza%2C%20Argentina%20Argentina"
+    },
+    {
+      "id": "san-martin",
+      "label": "General San Martín, Mendoza",
+      "description": "Localidad del oasis este, diferente del parque urbano.",
+      "sourceIds": [
+        "MZA-SANMARTIN"
+      ],
+      "mapUrl": "https://www.openstreetmap.org/search?query=General%20San%20Mart%C3%ADn%2C%20Mendoza%20Argentina"
+    },
+    {
+      "id": "horcones",
+      "label": "Laguna de Horcones, Mendoza",
+      "description": "Referencia del parque Aconcagua; consultar acceso y permisos.",
+      "sourceIds": [
+        "MZA-ACONCAGUA"
+      ],
+      "mapUrl": "https://www.openstreetmap.org/search?query=Laguna%20de%20Horcones%2C%20Mendoza%20Argentina"
+    }
+  ],
+  "photos": [],
+  "related": [
+    {
+      "href": "/provincias/mendoza",
+      "label": "Conocer mendoza"
+    },
+    {
+      "href": "/actividades?provincia=mendoza",
+      "label": "Actividades en mendoza"
+    },
+    {
+      "href": "/escapadas",
+      "label": "Otras escapadas"
+    }
+  ],
+  "editorial": {
+    "documentaryStatus": "sources-checked",
+    "updatedAt": "2026-10-24",
+    "origin": {
+      "kind": "git-editorial",
+      "legacyGuideIds": [
+        "esc_15"
+      ],
+      "masterRefs": []
+    },
+    "pendingReviews": [
+      "Revisión humana del texto, fuentes y alcance",
+      "Autorización independiente de publicación",
+      "Fotografías: derechos y selección pendientes",
+      "Equivalencia con el PDF y respaldo externo sin aprobar",
+      "Ampliar fuentes de Maipú, Luján y Valle de Uco con instituciones locales",
+      "Fuentes provinciales Aconcagua/Parque San Martín devolvieron 403; no usadas como lectura confirmada"
+    ]
+  }
+}

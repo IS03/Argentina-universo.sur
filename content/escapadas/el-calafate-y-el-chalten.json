@@ -1,0 +1,178 @@
+{
+  "schemaVersion": 2,
+  "id": "AUS-ESC-EL-CALAFATE-Y-EL-CHALTEN-EDITORIAL-01",
+  "slug": "el-calafate-y-el-chalten",
+  "title": "El Calafate y El Chaltén: dos bases para Los Glaciares",
+  "destination": "El Calafate y El Chaltén",
+  "province": "Santa Cruz",
+  "description": "El hielo y las montañas comparten parque nacional, pero no la misma base de visita. El Calafate organiza el acercamiento al sector sur de Los Glaciares; El Chaltén abre otro paisaje, donde los senderos y las cumbres ordenan la experiencia. Planificar ambos exige distinguirlos.",
+  "status": "draft",
+  "publicationAuthorized": false,
+  "review": null,
+  "introductionSourceIds": [
+    "GLA-SC",
+    "GLA-APN"
+  ],
+  "geography": {
+    "provinceSlugs": [
+      "santa_cruz"
+    ],
+    "localities": [
+      {
+        "id": "git-locality:santa_cruz:el-calafate",
+        "name": "El Calafate, Santa Cruz",
+        "provinceSlug": "santa_cruz",
+        "sourceIds": [
+          "GLA-SC"
+        ]
+      },
+      {
+        "id": "git-locality:santa_cruz:el-chalten",
+        "name": "El Chaltén, Santa Cruz",
+        "provinceSlug": "santa_cruz",
+        "sourceIds": [
+          "GLA-SC"
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "GLA-SC",
+      "title": "Santa Cruz Turismo — Parque Nacional Los Glaciares",
+      "url": "https://turismo.santacruz.gob.ar/parques-nacionales/parque-nacional-los-glaciares",
+      "checkedAt": "2026-10-24"
+    },
+    {
+      "id": "GLA-APN",
+      "title": "APN — Actividades en Los Glaciares",
+      "url": "https://www.argentina.gob.ar/parquesnacionales/patagonia-austral/parque-nacional-los-glaciares/actividades",
+      "checkedAt": "2026-10-24"
+    },
+    {
+      "id": "CHA-CONSEJOS",
+      "title": "Municipalidad de El Chaltén — Consejos",
+      "url": "https://elchalten.tur.ar/consejos/",
+      "checkedAt": "2026-10-24"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sur",
+      "kind": "highlights",
+      "title": "El Calafate y el sector del glaciar Perito Moreno",
+      "sourceIds": [
+        "GLA-SC",
+        "GLA-APN"
+      ],
+      "paragraphs": [
+        "El Calafate es la referencia para organizar la visita al sector sur. Las pasarelas frente al glaciar Perito Moreno permiten observar el frente de hielo desde distintos puntos. No deben confundirse con las navegaciones ni con las actividades sobre hielo, que tienen modalidades y condiciones propias.",
+        "El catálogo del parque también menciona recorridos lacustres asociados a otros glaciares, como Upsala y Spegazzini. Revisá el puerto, el recorrido y los desembarcos antes de elegir: una excursión por el lago no equivale automáticamente a visitar todos los sectores."
+      ]
+    },
+    {
+      "id": "norte",
+      "kind": "activities",
+      "title": "El Chaltén: elegir una caminata concreta",
+      "sourceIds": [
+        "GLA-APN"
+      ],
+      "paragraphs": [
+        "En el norte, APN identifica propuestas hacia Laguna Capri, Laguna de los Tres, Laguna Torre, Chorrillo del Salto y los miradores de los Cóndores y las Águilas. Son nombres para empezar a investigar, no una lista de senderos certificados como abiertos hoy. Las exigencias son diferentes y no se los presenta como caminatas familiares equivalentes.",
+        "Conviene decidir por objetivo, experiencia y condiciones, en lugar de sumar todos los puntos a una sola jornada. Contrastá la senda elegida con su cartografía y las indicaciones del parque: el nombre de una laguna no describe por sí solo el desnivel, la duración ni las condiciones de regreso."
+      ]
+    },
+    {
+      "id": "paisajes",
+      "kind": "nature",
+      "title": "Qué cambia entre hielo y montaña",
+      "sourceIds": [
+        "GLA-SC"
+      ],
+      "paragraphs": [
+        "La perspectiva del sur se centra en los grandes glaciares y los lagos que los reciben. En el norte, los cerros Fitz Roy y Torre dan identidad al paisaje de El Chaltén. Esa diferencia permite combinar dos formas de observar la Patagonia, sin esperar que una visita sustituya a la otra ni garantizar vistas despejadas."
+      ]
+    },
+    {
+      "id": "organizar",
+      "kind": "practical",
+      "title": "Dos localidades, dos decisiones de alojamiento",
+      "sourceIds": [
+        "CHA-CONSEJOS",
+        "GLA-SC"
+      ],
+      "paragraphs": [
+        "La oficina municipal de El Chaltén desaconseja reducir su visita a una salida apresurada desde El Calafate. Reservá tiempo para estar en cada localidad y revisá los traslados independientemente de las caminatas. La cantidad de noches depende del interés y de las condiciones: dejá margen para cambiar una caminata sin perder el tiempo destinado a conocer cada localidad.",
+        "Antes de caminar, consultá el estado de la senda con el parque y la información local. Ajustá el equipo a la actividad y al pronóstico. Esta propuesta no promete transporte, reservas, servicios de refugio ni agua apta para beber en el recorrido; esas condiciones necesitan comprobación específica."
+      ]
+    },
+    {
+      "id": "elegir",
+      "kind": "practical",
+      "title": "Qué confirmar antes de reservar",
+      "sourceIds": [
+        "GLA-APN",
+        "CHA-CONSEJOS"
+      ],
+      "paragraphs": [
+        "Separá la entrada o modalidad de acceso al parque de los servicios de traslado y de las excursiones contratadas. Una descripción institucional del atractivo no acredita cupo, habilitación ni aptitud personal. Si viajás con personas que necesitan accesibilidad particular, consultá el recorrido concreto antes de elegirlo; el nombre de un mirador no describe por sí solo sus barreras."
+      ]
+    }
+  ],
+  "address": "Base para organizar el sector sur de Los Glaciares; no es el propio glaciar.",
+  "mapUrl": "https://www.openstreetmap.org/search?query=El%20Calafate%2C%20Santa%20Cruz%20Argentina",
+  "locations": [
+    {
+      "id": "el-calafate",
+      "label": "El Calafate, Santa Cruz",
+      "description": "Base para organizar el sector sur de Los Glaciares; no es el propio glaciar.",
+      "sourceIds": [
+        "GLA-SC"
+      ],
+      "mapUrl": "https://www.openstreetmap.org/search?query=El%20Calafate%2C%20Santa%20Cruz%20Argentina"
+    },
+    {
+      "id": "el-chalten",
+      "label": "El Chaltén, Santa Cruz",
+      "description": "Localidad base del sector norte; elegir inicio de sendero con cartografía del parque.",
+      "sourceIds": [
+        "GLA-SC"
+      ],
+      "mapUrl": "https://www.openstreetmap.org/search?query=El%20Chalt%C3%A9n%2C%20Santa%20Cruz%20Argentina"
+    }
+  ],
+  "photos": [],
+  "related": [
+    {
+      "href": "/provincias/santa_cruz",
+      "label": "Conocer santa cruz"
+    },
+    {
+      "href": "/actividades?provincia=santa_cruz",
+      "label": "Actividades en santa cruz"
+    },
+    {
+      "href": "/escapadas",
+      "label": "Otras escapadas"
+    }
+  ],
+  "editorial": {
+    "documentaryStatus": "sources-checked",
+    "updatedAt": "2026-10-24",
+    "origin": {
+      "kind": "git-editorial",
+      "legacyGuideIds": [
+        "esc_01"
+      ],
+      "masterRefs": []
+    },
+    "pendingReviews": [
+      "Revisión humana del texto, fuentes y alcance",
+      "Autorización independiente de publicación",
+      "Fotografías: derechos y selección pendientes",
+      "Equivalencia con el PDF y respaldo externo sin aprobar",
+      "Contrastar longitudes de Capri y pasarelas: inconsistencias en APN",
+      "Revisar cartografía y condiciones antes de cualquier dato operativo"
+    ]
+  }
+}

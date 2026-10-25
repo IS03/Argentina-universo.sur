@@ -1,0 +1,722 @@
+[
+  {
+    "legacyGuideId": "esc_08",
+    "slug": "san-carlos-de-bariloche",
+    "photos": [
+      {
+        "use": "hero",
+        "subject": "Centro Cívico frente al Nahuel Huapi",
+        "pageUrl": "https://barilocheturismo.gob.ar/es/centro-civico",
+        "originalImageUrl": null,
+        "author": null,
+        "holder": null,
+        "license": null,
+        "attribution": null,
+        "rightsEvidenceUrl": null,
+        "reviewStatus": "pending-identification-and-rights",
+        "downloaded": false,
+        "approved": false,
+        "notes": "Página institucional como pista de búsqueda, no imagen seleccionada ni licencia. Solicitar identificación del original, autoría, permiso de reutilización y atribución. No reutilizar fotos del PDF."
+      },
+      {
+        "use": "complementary",
+        "subject": "Llao Llao y lago Moreno",
+        "pageUrl": "https://barilocheturismo.gob.ar/es/circuito-chico",
+        "originalImageUrl": null,
+        "author": null,
+        "holder": null,
+        "license": null,
+        "attribution": null,
+        "rightsEvidenceUrl": null,
+        "reviewStatus": "pending-identification-and-rights",
+        "downloaded": false,
+        "approved": false,
+        "notes": "Página institucional como pista de búsqueda, no imagen seleccionada ni licencia. Solicitar identificación del original, autoría, permiso de reutilización y atribución. No reutilizar fotos del PDF."
+      }
+    ]
+  },
+  {
+    "legacyGuideId": "esc_01",
+    "slug": "el-calafate-y-el-chalten",
+    "photos": [
+      {
+        "use": "hero",
+        "subject": "Perito Moreno desde pasarelas autorizadas",
+        "pageUrl": "https://turismo.santacruz.gob.ar/parques-nacionales/parque-nacional-los-glaciares",
+        "originalImageUrl": null,
+        "author": null,
+        "holder": null,
+        "license": null,
+        "attribution": null,
+        "rightsEvidenceUrl": null,
+        "reviewStatus": "pending-identification-and-rights",
+        "downloaded": false,
+        "approved": false,
+        "notes": "Página institucional como pista de búsqueda, no imagen seleccionada ni licencia. Solicitar identificación del original, autoría, permiso de reutilización y atribución. No reutilizar fotos del PDF."
+      },
+      {
+        "use": "complementary",
+        "subject": "Paisaje de El Chaltén con identificación del lugar",
+        "pageUrl": "https://www.argentina.gob.ar/parquesnacionales/patagonia-austral/parque-nacional-los-glaciares/actividades",
+        "originalImageUrl": null,
+        "author": null,
+        "holder": null,
+        "license": null,
+        "attribution": null,
+        "rightsEvidenceUrl": null,
+        "reviewStatus": "pending-identification-and-rights",
+        "downloaded": false,
+        "approved": false,
+        "notes": "Página institucional como pista de búsqueda, no imagen seleccionada ni licencia. Solicitar identificación del original, autoría, permiso de reutilización y atribución. No reutilizar fotos del PDF."
+      }
+    ]
+  },
+  {
+    "legacyGuideId": "esc_04",
+    "slug": "puerto-madryn",
+    "photos": [
+      {
+        "use": "hero",
+        "subject": "Costanera de Madryn",
+        "pageUrl": "https://chubutpatagonia.gob.ar/destino/puerto-madryn/",
+        "originalImageUrl": null,
+        "author": null,
+        "holder": null,
+        "license": null,
+        "attribution": null,
+        "rightsEvidenceUrl": null,
+        "reviewStatus": "pending-identification-and-rights",
+        "downloaded": false,
+        "approved": false,
+        "notes": "Página institucional como pista de búsqueda, no imagen seleccionada ni licencia. Solicitar identificación del original, autoría, permiso de reutilización y atribución. No reutilizar fotos del PDF."
+      },
+      {
+        "use": "complementary",
+        "subject": "Observación de fauna desde punto autorizado, sin prometer temporada",
+        "pageUrl": "https://chubutpatagonia.gob.ar/experiencia/ballenas/",
+        "originalImageUrl": null,
+        "author": null,
+        "holder": null,
+        "license": null,
+        "attribution": null,
+        "rightsEvidenceUrl": null,
+        "reviewStatus": "pending-identification-and-rights",
+        "downloaded": false,
+        "approved": false,
+        "notes": "Página institucional como pista de búsqueda, no imagen seleccionada ni licencia. Solicitar identificación del original, autoría, permiso de reutilización y atribución. No reutilizar fotos del PDF."
+      }
+    ]
+  },
+  {
+    "legacyGuideId": "esc_12",
+    "slug": "ushuaia",
+    "photos": [
+      {
+        "use": "hero",
+        "subject": "Ushuaia y bahía",
+        "pageUrl": "https://findelmundo.tur.ar/es/destinos/ushuaia",
+        "originalImageUrl": null,
+        "author": null,
+        "holder": null,
+        "license": null,
+        "attribution": null,
+        "rightsEvidenceUrl": null,
+        "reviewStatus": "pending-identification-and-rights",
+        "downloaded": false,
+        "approved": false,
+        "notes": "Página institucional como pista de búsqueda, no imagen seleccionada ni licencia. Solicitar identificación del original, autoría, permiso de reutilización y atribución. No reutilizar fotos del PDF."
+      },
+      {
+        "use": "complementary",
+        "subject": "Lapataia desde un punto habilitado",
+        "pageUrl": "https://turismoushuaia.com/zonas/canal-beagle/?lang=es_AR",
+        "originalImageUrl": null,
+        "author": null,
+        "holder": null,
+        "license": null,
+        "attribution": null,
+        "rightsEvidenceUrl": null,
+        "reviewStatus": "pending-identification-and-rights",
+        "downloaded": false,
+        "approved": false,
+        "notes": "Página institucional como pista de búsqueda, no imagen seleccionada ni licencia. Solicitar identificación del original, autoría, permiso de reutilización y atribución. No reutilizar fotos del PDF."
+      }
+    ]
+  },
+  {
+    "legacyGuideId": "esc_10",
+    "slug": "norte-de-cordoba",
+    "photos": [
+      {
+        "use": "hero",
+        "subject": "Aleros desde recorrido habilitado, sin divulgar ubicación sensible",
+        "pageUrl": "https://cordobaturismo.gov.ar/norte_/",
+        "originalImageUrl": null,
+        "author": null,
+        "holder": null,
+        "license": null,
+        "attribution": null,
+        "rightsEvidenceUrl": null,
+        "reviewStatus": "pending-identification-and-rights",
+        "downloaded": false,
+        "approved": false,
+        "notes": "Página institucional como pista de búsqueda, no imagen seleccionada ni licencia. Solicitar identificación del original, autoría, permiso de reutilización y atribución. No reutilizar fotos del PDF."
+      },
+      {
+        "use": "complementary",
+        "subject": "Fachada de Santa Catalina o exterior de Casa Museo con permiso",
+        "pageUrl": "https://cordobaturismo.gov.ar/localidades/cerro-colorado-2/",
+        "originalImageUrl": null,
+        "author": null,
+        "holder": null,
+        "license": null,
+        "attribution": null,
+        "rightsEvidenceUrl": null,
+        "reviewStatus": "pending-identification-and-rights",
+        "downloaded": false,
+        "approved": false,
+        "notes": "Página institucional como pista de búsqueda, no imagen seleccionada ni licencia. Solicitar identificación del original, autoría, permiso de reutilización y atribución. No reutilizar fotos del PDF."
+      }
+    ]
+  },
+  {
+    "legacyGuideId": "esc_05",
+    "slug": "jujuy",
+    "photos": [
+      {
+        "use": "hero",
+        "subject": "Paleta del Pintor identificada desde un punto permitido",
+        "pageUrl": "https://www.turismo.jujuy.gob.ar/",
+        "originalImageUrl": null,
+        "author": null,
+        "holder": null,
+        "license": null,
+        "attribution": null,
+        "rightsEvidenceUrl": null,
+        "reviewStatus": "pending-identification-and-rights",
+        "downloaded": false,
+        "approved": false,
+        "notes": "Página institucional como pista de búsqueda, no imagen seleccionada ni licencia. Solicitar identificación del original, autoría, permiso de reutilización y atribución. No reutilizar fotos del PDF."
+      },
+      {
+        "use": "complementary",
+        "subject": "Bosque de Calilegua desde una senda habilitada",
+        "pageUrl": "https://whc.unesco.org/en/list/1116/",
+        "originalImageUrl": null,
+        "author": null,
+        "holder": null,
+        "license": null,
+        "attribution": null,
+        "rightsEvidenceUrl": null,
+        "reviewStatus": "pending-identification-and-rights",
+        "downloaded": false,
+        "approved": false,
+        "notes": "Página institucional como pista de búsqueda, no imagen seleccionada ni licencia. Solicitar identificación del original, autoría, permiso de reutilización y atribución. No reutilizar fotos del PDF."
+      }
+    ]
+  },
+  {
+    "legacyGuideId": "esc_09",
+    "slug": "salta",
+    "photos": [
+      {
+        "use": "hero",
+        "subject": "Patrimonio urbano de Salta con identificación del edificio",
+        "pageUrl": "https://visit.turismosalta.gov.ar/post/museos-y-centros-de-interpretacion/",
+        "originalImageUrl": null,
+        "author": null,
+        "holder": null,
+        "license": null,
+        "attribution": null,
+        "rightsEvidenceUrl": null,
+        "reviewStatus": "pending-identification-and-rights",
+        "downloaded": false,
+        "approved": false,
+        "notes": "Página institucional como pista de búsqueda, no imagen seleccionada ni licencia. Solicitar identificación del original, autoría, permiso de reutilización y atribución. No reutilizar fotos del PDF."
+      },
+      {
+        "use": "complementary",
+        "subject": "Paisaje construido de Cachi o museo de Cafayate",
+        "pageUrl": "https://www.argentina.gob.ar/jefatura/turismo-y-ambiente/turismo/best-tourism-villages-argentina/cachi-salta",
+        "originalImageUrl": null,
+        "author": null,
+        "holder": null,
+        "license": null,
+        "attribution": null,
+        "rightsEvidenceUrl": null,
+        "reviewStatus": "pending-identification-and-rights",
+        "downloaded": false,
+        "approved": false,
+        "notes": "Página institucional como pista de búsqueda, no imagen seleccionada ni licencia. Solicitar identificación del original, autoría, permiso de reutilización y atribución. No reutilizar fotos del PDF."
+      }
+    ]
+  },
+  {
+    "legacyGuideId": "esc_07",
+    "slug": "sierra-de-la-ventana",
+    "photos": [
+      {
+        "use": "hero",
+        "subject": "Pastizal del parque desde senda habilitada",
+        "pageUrl": "https://www.ambiente.gba.gob.ar/anp/parque_provincial_ernesto_tornquist",
+        "originalImageUrl": null,
+        "author": null,
+        "holder": null,
+        "license": null,
+        "attribution": null,
+        "rightsEvidenceUrl": null,
+        "reviewStatus": "pending-identification-and-rights",
+        "downloaded": false,
+        "approved": false,
+        "notes": "Página institucional como pista de búsqueda, no imagen seleccionada ni licencia. Solicitar identificación del original, autoría, permiso de reutilización y atribución. No reutilizar fotos del PDF."
+      },
+      {
+        "use": "complementary",
+        "subject": "Patrimonio de Salamone en Saldungaray",
+        "pageUrl": "https://www.ambiente.gba.gob.ar/anp/ficha_TO",
+        "originalImageUrl": null,
+        "author": null,
+        "holder": null,
+        "license": null,
+        "attribution": null,
+        "rightsEvidenceUrl": null,
+        "reviewStatus": "pending-identification-and-rights",
+        "downloaded": false,
+        "approved": false,
+        "notes": "Página institucional como pista de búsqueda, no imagen seleccionada ni licencia. Solicitar identificación del original, autoría, permiso de reutilización y atribución. No reutilizar fotos del PDF."
+      }
+    ]
+  },
+  {
+    "legacyGuideId": "esc_15",
+    "slug": "mendoza",
+    "photos": [
+      {
+        "use": "hero",
+        "subject": "Parque General San Martín y lago",
+        "pageUrl": "https://www.argentina.travel/novedades/mendoza-la-capital-del-vino-argentino",
+        "originalImageUrl": null,
+        "author": null,
+        "holder": null,
+        "license": null,
+        "attribution": null,
+        "rightsEvidenceUrl": null,
+        "reviewStatus": "pending-identification-and-rights",
+        "downloaded": false,
+        "approved": false,
+        "notes": "Página institucional como pista de búsqueda, no imagen seleccionada ni licencia. Solicitar identificación del original, autoría, permiso de reutilización y atribución. No reutilizar fotos del PDF."
+      },
+      {
+        "use": "complementary",
+        "subject": "Viñedo con autorización de titular y fotógrafo",
+        "pageUrl": "https://www.argentina.travel/actividades/parque-general-san-martin",
+        "originalImageUrl": null,
+        "author": null,
+        "holder": null,
+        "license": null,
+        "attribution": null,
+        "rightsEvidenceUrl": null,
+        "reviewStatus": "pending-identification-and-rights",
+        "downloaded": false,
+        "approved": false,
+        "notes": "Página institucional como pista de búsqueda, no imagen seleccionada ni licencia. Solicitar identificación del original, autoría, permiso de reutilización y atribución. No reutilizar fotos del PDF."
+      }
+    ]
+  },
+  {
+    "legacyGuideId": "esc_19",
+    "slug": "neuquen",
+    "photos": [
+      {
+        "use": "hero",
+        "subject": "Lácar y San Martín de los Andes",
+        "pageUrl": "https://www.argentina.gob.ar/viaja-por-argentina/que-hacer/conducir-por-la-ruta-de-los-siete-lagos",
+        "originalImageUrl": null,
+        "author": null,
+        "holder": null,
+        "license": null,
+        "attribution": null,
+        "rightsEvidenceUrl": null,
+        "reviewStatus": "pending-identification-and-rights",
+        "downloaded": false,
+        "approved": false,
+        "notes": "Página institucional como pista de búsqueda, no imagen seleccionada ni licencia. Solicitar identificación del original, autoría, permiso de reutilización y atribución. No reutilizar fotos del PDF."
+      },
+      {
+        "use": "complementary",
+        "subject": "Arrayanes desde recorrido permitido",
+        "pageUrl": "https://www.neuqueninforma.gob.ar/noticias/2026/08/14/262027-la-ruta-de-los-siete-lagos-en-invierno",
+        "originalImageUrl": null,
+        "author": null,
+        "holder": null,
+        "license": null,
+        "attribution": null,
+        "rightsEvidenceUrl": null,
+        "reviewStatus": "pending-identification-and-rights",
+        "downloaded": false,
+        "approved": false,
+        "notes": "Página institucional como pista de búsqueda, no imagen seleccionada ni licencia. Solicitar identificación del original, autoría, permiso de reutilización y atribución. No reutilizar fotos del PDF."
+      }
+    ]
+  },
+  {
+    "legacyGuideId": "esc_16",
+    "slug": "san-juan",
+    "photos": [
+      {
+        "use": "hero",
+        "subject": "Patio de Casa Natal con permiso fotográfico",
+        "pageUrl": "https://sanjuan.tur.ar/atractivos/espacios-culturales/casa-natal-de-sarmiento",
+        "originalImageUrl": null,
+        "author": null,
+        "holder": null,
+        "license": null,
+        "attribution": null,
+        "rightsEvidenceUrl": null,
+        "reviewStatus": "pending-identification-and-rights",
+        "downloaded": false,
+        "approved": false,
+        "notes": "Página institucional como pista de búsqueda, no imagen seleccionada ni licencia. Solicitar identificación del original, autoría, permiso de reutilización y atribución. No reutilizar fotos del PDF."
+      },
+      {
+        "use": "complementary",
+        "subject": "Paisaje de El Leoncito, sin equiparar visita a observatorio",
+        "pageUrl": "https://www.argentina.gob.ar/parquesnacionales/centro/parque-nacional-el-leoncito",
+        "originalImageUrl": null,
+        "author": null,
+        "holder": null,
+        "license": null,
+        "attribution": null,
+        "rightsEvidenceUrl": null,
+        "reviewStatus": "pending-identification-and-rights",
+        "downloaded": false,
+        "approved": false,
+        "notes": "Página institucional como pista de búsqueda, no imagen seleccionada ni licencia. Solicitar identificación del original, autoría, permiso de reutilización y atribución. No reutilizar fotos del PDF."
+      }
+    ]
+  },
+  {
+    "legacyGuideId": "esc_17",
+    "slug": "san-luis",
+    "photos": [
+      {
+        "use": "hero",
+        "subject": "Lago de Potrero desde tierra",
+        "pageUrl": "https://ambiente.sanluis.gov.ar/parque-nativo/",
+        "originalImageUrl": null,
+        "author": null,
+        "holder": null,
+        "license": null,
+        "attribution": null,
+        "rightsEvidenceUrl": null,
+        "reviewStatus": "pending-identification-and-rights",
+        "downloaded": false,
+        "approved": false,
+        "notes": "Página institucional como pista de búsqueda, no imagen seleccionada ni licencia. Solicitar identificación del original, autoría, permiso de reutilización y atribución. No reutilizar fotos del PDF."
+      },
+      {
+        "use": "complementary",
+        "subject": "Calles de La Carolina y contexto del museo",
+        "pageUrl": "https://www.argentina.gob.ar/jefatura/turismo/best-tourism-villages-argentina/la-carolina-san-luis",
+        "originalImageUrl": null,
+        "author": null,
+        "holder": null,
+        "license": null,
+        "attribution": null,
+        "rightsEvidenceUrl": null,
+        "reviewStatus": "pending-identification-and-rights",
+        "downloaded": false,
+        "approved": false,
+        "notes": "Página institucional como pista de búsqueda, no imagen seleccionada ni licencia. Solicitar identificación del original, autoría, permiso de reutilización y atribución. No reutilizar fotos del PDF."
+      }
+    ]
+  },
+  {
+    "legacyGuideId": "esc_14",
+    "slug": "chaco",
+    "photos": [
+      {
+        "use": "hero",
+        "subject": "Escultura identificada con autor y derechos de la obra además de la foto",
+        "pageUrl": "https://turismo.chaco.gob.ar/destinations/resistencia/",
+        "originalImageUrl": null,
+        "author": null,
+        "holder": null,
+        "license": null,
+        "attribution": null,
+        "rightsEvidenceUrl": null,
+        "reviewStatus": "pending-identification-and-rights",
+        "downloaded": false,
+        "approved": false,
+        "notes": "Página institucional como pista de búsqueda, no imagen seleccionada ni licencia. Solicitar identificación del original, autoría, permiso de reutilización y atribución. No reutilizar fotos del PDF."
+      },
+      {
+        "use": "complementary",
+        "subject": "Ambiente de cada parque, con ubicación inequívoca",
+        "pageUrl": "https://www.argentina.gob.ar/jefatura/turismo/viaja-por-argentina/visitar-la-capital-de-las-esculturas",
+        "originalImageUrl": null,
+        "author": null,
+        "holder": null,
+        "license": null,
+        "attribution": null,
+        "rightsEvidenceUrl": null,
+        "reviewStatus": "pending-identification-and-rights",
+        "downloaded": false,
+        "approved": false,
+        "notes": "Página institucional como pista de búsqueda, no imagen seleccionada ni licencia. Solicitar identificación del original, autoría, permiso de reutilización y atribución. No reutilizar fotos del PDF."
+      }
+    ]
+  },
+  {
+    "legacyGuideId": "esc_11",
+    "slug": "entre-rios",
+    "photos": [
+      {
+        "use": "hero",
+        "subject": "Molino Forclaz identificado, con permiso del museo y fotógrafo",
+        "pageUrl": "https://www.entrerios.gov.ar/cultura/museo-provincial-molino-forclaz/",
+        "originalImageUrl": null,
+        "author": null,
+        "holder": null,
+        "license": null,
+        "attribution": null,
+        "rightsEvidenceUrl": null,
+        "reviewStatus": "pending-identification-and-rights",
+        "downloaded": false,
+        "approved": false,
+        "notes": "Página institucional como pista de búsqueda, no imagen seleccionada ni licencia. Solicitar identificación del original, autoría, permiso de reutilización y atribución. No reutilizar fotos del PDF."
+      },
+      {
+        "use": "complementary",
+        "subject": "Patrimonio urbano de Pueblo Liebig desde espacio permitido",
+        "pageUrl": "https://sanjose.tur.ar/que-hacer/",
+        "originalImageUrl": null,
+        "author": null,
+        "holder": null,
+        "license": null,
+        "attribution": null,
+        "rightsEvidenceUrl": null,
+        "reviewStatus": "pending-identification-and-rights",
+        "downloaded": false,
+        "approved": false,
+        "notes": "Página institucional como pista de búsqueda, no imagen seleccionada ni licencia. Solicitar identificación del original, autoría, permiso de reutilización y atribución. No reutilizar fotos del PDF."
+      }
+    ]
+  },
+  {
+    "legacyGuideId": "esc_23",
+    "slug": "formosa",
+    "photos": [
+      {
+        "use": "hero",
+        "subject": "Champales desde recorrido autorizado",
+        "pageUrl": "https://www.formosahermosa.gob.ar/microrregion-banado-la-estrella/",
+        "originalImageUrl": null,
+        "author": null,
+        "holder": null,
+        "license": null,
+        "attribution": null,
+        "rightsEvidenceUrl": null,
+        "reviewStatus": "pending-identification-and-rights",
+        "downloaded": false,
+        "approved": false,
+        "notes": "Página institucional como pista de búsqueda, no imagen seleccionada ni licencia. Solicitar identificación del original, autoría, permiso de reutilización y atribución. No reutilizar fotos del PDF."
+      },
+      {
+        "use": "complementary",
+        "subject": "Costanera de Formosa o ambiente de Río Pilcomayo",
+        "pageUrl": "https://www.formosahermosa.gob.ar/banado-la-estrella/",
+        "originalImageUrl": null,
+        "author": null,
+        "holder": null,
+        "license": null,
+        "attribution": null,
+        "rightsEvidenceUrl": null,
+        "reviewStatus": "pending-identification-and-rights",
+        "downloaded": false,
+        "approved": false,
+        "notes": "Página institucional como pista de búsqueda, no imagen seleccionada ni licencia. Solicitar identificación del original, autoría, permiso de reutilización y atribución. No reutilizar fotos del PDF."
+      }
+    ]
+  },
+  {
+    "legacyGuideId": "esc_21",
+    "slug": "misiones",
+    "photos": [
+      {
+        "use": "hero",
+        "subject": "Conjunto de San Ignacio Miní desde recorrido permitido",
+        "pageUrl": "https://misiones.tur.ar/sanignaciomini/",
+        "originalImageUrl": null,
+        "author": null,
+        "holder": null,
+        "license": null,
+        "attribution": null,
+        "rightsEvidenceUrl": null,
+        "reviewStatus": "pending-identification-and-rights",
+        "downloaded": false,
+        "approved": false,
+        "notes": "Página institucional como pista de búsqueda, no imagen seleccionada ni licencia. Solicitar identificación del original, autoría, permiso de reutilización y atribución. No reutilizar fotos del PDF."
+      },
+      {
+        "use": "complementary",
+        "subject": "Moconá con fecha y condiciones identificadas, sin promesa de visibilidad",
+        "pageUrl": "https://whc.unesco.org/en/list/275/",
+        "originalImageUrl": null,
+        "author": null,
+        "holder": null,
+        "license": null,
+        "attribution": null,
+        "rightsEvidenceUrl": null,
+        "reviewStatus": "pending-identification-and-rights",
+        "downloaded": false,
+        "approved": false,
+        "notes": "Página institucional como pista de búsqueda, no imagen seleccionada ni licencia. Solicitar identificación del original, autoría, permiso de reutilización y atribución. No reutilizar fotos del PDF."
+      }
+    ]
+  },
+  {
+    "legacyGuideId": "esc_18",
+    "slug": "rio-gallegos",
+    "photos": [
+      {
+        "use": "hero",
+        "subject": "Ría de Río Gallegos",
+        "pageUrl": "https://turismo.santacruz.gob.ar/donde-ir/rio-gallegos",
+        "originalImageUrl": null,
+        "author": null,
+        "holder": null,
+        "license": null,
+        "attribution": null,
+        "rightsEvidenceUrl": null,
+        "reviewStatus": "pending-identification-and-rights",
+        "downloaded": false,
+        "approved": false,
+        "notes": "Página institucional como pista de búsqueda, no imagen seleccionada ni licencia. Solicitar identificación del original, autoría, permiso de reutilización y atribución. No reutilizar fotos del PDF."
+      },
+      {
+        "use": "complementary",
+        "subject": "Marjory Glen fotografiado desde sector permitido",
+        "pageUrl": "https://www.santacruz.gob.ar/nuestra-provincia/municipios/rio-gallegos",
+        "originalImageUrl": null,
+        "author": null,
+        "holder": null,
+        "license": null,
+        "attribution": null,
+        "rightsEvidenceUrl": null,
+        "reviewStatus": "pending-identification-and-rights",
+        "downloaded": false,
+        "approved": false,
+        "notes": "Página institucional como pista de búsqueda, no imagen seleccionada ni licencia. Solicitar identificación del original, autoría, permiso de reutilización y atribución. No reutilizar fotos del PDF."
+      }
+    ]
+  },
+  {
+    "legacyGuideId": "esc_22",
+    "slug": "la-pampa",
+    "photos": [
+      {
+        "use": "hero",
+        "subject": "Caldenal identificado",
+        "pageUrl": "https://www.argentina.travel/actividades/reserva-provincial-parque-luro",
+        "originalImageUrl": null,
+        "author": null,
+        "holder": null,
+        "license": null,
+        "attribution": null,
+        "rightsEvidenceUrl": null,
+        "reviewStatus": "pending-identification-and-rights",
+        "downloaded": false,
+        "approved": false,
+        "notes": "Página institucional como pista de búsqueda, no imagen seleccionada ni licencia. Solicitar identificación del original, autoría, permiso de reutilización y atribución. No reutilizar fotos del PDF."
+      },
+      {
+        "use": "complementary",
+        "subject": "Sierras de Lihué Calel o exterior de casa museo sin divulgar sitios arqueológicos sensibles",
+        "pageUrl": "https://www.argentina.gob.ar/node/416067",
+        "originalImageUrl": null,
+        "author": null,
+        "holder": null,
+        "license": null,
+        "attribution": null,
+        "rightsEvidenceUrl": null,
+        "reviewStatus": "pending-identification-and-rights",
+        "downloaded": false,
+        "approved": false,
+        "notes": "Página institucional como pista de búsqueda, no imagen seleccionada ni licencia. Solicitar identificación del original, autoría, permiso de reutilización y atribución. No reutilizar fotos del PDF."
+      }
+    ]
+  },
+  {
+    "legacyGuideId": "esc_03",
+    "slug": "pinamar",
+    "photos": [
+      {
+        "use": "hero",
+        "subject": "Paisaje urbano de forestación desde espacio público",
+        "pageUrl": "https://pinamar.gob.ar/historia/",
+        "originalImageUrl": null,
+        "author": null,
+        "holder": null,
+        "license": null,
+        "attribution": null,
+        "rightsEvidenceUrl": null,
+        "reviewStatus": "pending-identification-and-rights",
+        "downloaded": false,
+        "approved": false,
+        "notes": "Página institucional como pista de búsqueda, no imagen seleccionada ni licencia. Solicitar identificación del original, autoría, permiso de reutilización y atribución. No reutilizar fotos del PDF."
+      },
+      {
+        "use": "complementary",
+        "subject": "Patrimonio de Ostende con revisión de derechos arquitectónicos y privacidad",
+        "pageUrl": "https://pinamar.gob.ar/descubriendopinamar/",
+        "originalImageUrl": null,
+        "author": null,
+        "holder": null,
+        "license": null,
+        "attribution": null,
+        "rightsEvidenceUrl": null,
+        "reviewStatus": "pending-identification-and-rights",
+        "downloaded": false,
+        "approved": false,
+        "notes": "Página institucional como pista de búsqueda, no imagen seleccionada ni licencia. Solicitar identificación del original, autoría, permiso de reutilización y atribución. No reutilizar fotos del PDF."
+      }
+    ]
+  },
+  {
+    "legacyGuideId": "esc_20",
+    "slug": "santiago-del-estero",
+    "photos": [
+      {
+        "use": "hero",
+        "subject": "Edificio del CCB o colección con permiso",
+        "pageUrl": "https://ccbsantiago.gob.ar/centro-cultural-del-bicentenario/",
+        "originalImageUrl": null,
+        "author": null,
+        "holder": null,
+        "license": null,
+        "attribution": null,
+        "rightsEvidenceUrl": null,
+        "reviewStatus": "pending-identification-and-rights",
+        "downloaded": false,
+        "approved": false,
+        "notes": "Página institucional como pista de búsqueda, no imagen seleccionada ni licencia. Solicitar identificación del original, autoría, permiso de reutilización y atribución. No reutilizar fotos del PDF."
+      },
+      {
+        "use": "complementary",
+        "subject": "Ambiente de Tara Inti o Copo con lugar identificado",
+        "pageUrl": "https://www.termasderiohondo.tur.ar/page/19/museo-automovil",
+        "originalImageUrl": null,
+        "author": null,
+        "holder": null,
+        "license": null,
+        "attribution": null,
+        "rightsEvidenceUrl": null,
+        "reviewStatus": "pending-identification-and-rights",
+        "downloaded": false,
+        "approved": false,
+        "notes": "Página institucional como pista de búsqueda, no imagen seleccionada ni licencia. Solicitar identificación del original, autoría, permiso de reutilización y atribución. No reutilizar fotos del PDF."
+      }
+    ]
+  }
+]

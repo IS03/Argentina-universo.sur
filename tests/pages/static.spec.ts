@@ -1,4 +1,5 @@
 import { test, expect } from "@playwright/test";
+import { readFileSync, readdirSync } from "node:fs";
 test("24 páginas filtradas entregan exactamente su provincia sin JavaScript", async ({
   browser,
   baseURL,
@@ -125,8 +126,12 @@ test("PDFs y URLs de fotos heredadas siguen accesibles; ningún optimizer Vercel
   expect(pdf.status()).toBe(200);
   expect(pdf.headers()["content-type"]).toContain("application/pdf");
 });
-test("las cuatro fichas pendientes no tienen HTML ni datos RSC públicos", async ({ request }) => {
-  const withheld = ["el-palmar", "caba", "puerto-iguazu", "talampaya-e-ischigualasto"];
+test("las 24 fichas pendientes no tienen HTML ni datos RSC públicos", async ({ request }) => {
+  const withheld = readdirSync("content/escapadas").filter(name => name.endsWith(".json")).map(name => {
+    const trip = JSON.parse(readFileSync("content/escapadas/" + name, "utf8"));
+    expect(trip.status).toBe("draft");
+    return trip.slug as string;
+  });
   for (const host of [4401, 4402, 4404, 4410]) {
     const index = await (await request.get(`http://127.0.0.1:${host}/escapadas`)).text();
     const sitemap = await (await request.get(`http://127.0.0.1:${host}/sitemap.xml`)).text();

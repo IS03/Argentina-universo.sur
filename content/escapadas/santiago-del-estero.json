@@ -1,0 +1,205 @@
+{
+  "schemaVersion": 2,
+  "id": "AUS-ESC-SANTIAGO-DEL-ESTERO-EDITORIAL-01",
+  "slug": "santiago-del-estero",
+  "title": "Santiago del Estero: cultura, Termas y bosque chaqueño",
+  "destination": "Santiago del Estero",
+  "province": "Santiago del Estero",
+  "description": "Santiago del Estero propone viajes diferentes entre la capital, Las Termas de Río Hondo y el norte provincial. El patrimonio, la historia del automovilismo y los ambientes naturales pueden orientar una escapada, siempre distinguiendo las localidades y las condiciones propias de cada visita.",
+  "status": "draft",
+  "publicationAuthorized": false,
+  "review": null,
+  "introductionSourceIds": [
+    "SDE-CCB",
+    "SDE-AUTO"
+  ],
+  "geography": {
+    "provinceSlugs": [
+      "santiago_del_estero"
+    ],
+    "localities": [
+      {
+        "id": "git-locality:santiago_del_estero:santiago-capital",
+        "name": "Santiago del Estero, Argentina",
+        "provinceSlug": "santiago_del_estero",
+        "sourceIds": [
+          "SDE-CCB"
+        ]
+      },
+      {
+        "id": "git-locality:santiago_del_estero:termas-rio-hondo",
+        "name": "Las Termas de Río Hondo, Santiago del Estero",
+        "provinceSlug": "santiago_del_estero",
+        "sourceIds": [
+          "SDE-AUTO"
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "SDE-CCB",
+      "title": "Centro Cultural del Bicentenario — Presentación",
+      "url": "https://ccbsantiago.gob.ar/centro-cultural-del-bicentenario/",
+      "checkedAt": "2026-10-24"
+    },
+    {
+      "id": "SDE-AUTO",
+      "title": "Municipalidad de Las Termas de Río Hondo — Museo del Automóvil",
+      "url": "https://www.termasderiohondo.tur.ar/page/19/museo-automovil",
+      "checkedAt": "2026-10-24"
+    },
+    {
+      "id": "SDE-TARA",
+      "title": "Municipalidad de Las Termas de Río Hondo — Reserva Isla Tara Inti",
+      "url": "https://www.termasderiohondo.tur.ar/page/23/reserva-isla-tara-inti",
+      "checkedAt": "2026-10-24"
+    },
+    {
+      "id": "SDE-COPO",
+      "title": "APN — Actividades en Copo",
+      "url": "https://www.argentina.gob.ar/parquesnacionales/region-noroeste/parque-nacional-copo/actividades",
+      "checkedAt": "2026-10-24"
+    }
+  ],
+  "sections": [
+    {
+      "id": "capital",
+      "kind": "culture",
+      "title": "La capital desde sus colecciones",
+      "sourceIds": [
+        "SDE-CCB"
+      ],
+      "paragraphs": [
+        "El Centro Cultural del Bicentenario reúne museos de historia, ciencias antropológicas y naturales, y bellas artes. La antigua Casa de Gobierno y su ampliación permiten observar también cómo un edificio histórico se adapta a nuevos usos. Elegí el recorrido por los temas que te interesan, sin asegurar que todas las muestras temporarias estén disponibles.",
+        "La institución vincula su propuesta con el espacio de la Plaza Libertad y el Mercado Armonía. Esa relación urbana invita a mirar tanto las colecciones como el edificio y su entorno. Consultá la programación si buscás una exposición o actividad específica."
+      ]
+    },
+    {
+      "id": "termas",
+      "kind": "highlights",
+      "title": "Las Termas de Río Hondo es otra base",
+      "sourceIds": [
+        "SDE-AUTO",
+        "SDE-TARA"
+      ],
+      "paragraphs": [
+        "La localidad combina propuestas que pueden elegirse independientemente de una estadía termal. El museo del automóvil y Tara Inti muestran dos ámbitos distintos: historia de la técnica deportiva y lectura del ambiente. Confirmá acceso y modalidad con sus responsables; no se presume que el alojamiento incluya esas visitas."
+      ]
+    },
+    {
+      "id": "motores",
+      "kind": "activities",
+      "title": "Museo del Automóvil y autódromo no son la misma actividad",
+      "sourceIds": [
+        "SDE-AUTO"
+      ],
+      "paragraphs": [
+        "El museo se ubica dentro del predio del autódromo y organiza una lectura de autos y motos de colección. Sus espacios abordan, entre otros temas, Turismo Carretera, industria nacional y Fórmula 1. Conocer el museo no implica que haya una carrera, entrenamiento o acceso libre al circuito.",
+        "Consultá qué sectores se visitan y las condiciones para tu fecha. La presencia de vehículos de otras colecciones en el catálogo no permite prometer que cada pieza siga expuesta. La agenda deportiva necesita una fuente y una confirmación diferentes."
+      ]
+    },
+    {
+      "id": "tara",
+      "kind": "nature",
+      "title": "Tara Inti: una propuesta de interpretación del ambiente",
+      "sourceIds": [
+        "SDE-TARA"
+      ],
+      "paragraphs": [
+        "La información municipal describe una reserva con caminería elevada, miradores y ambientes vinculados con el agua. Es una oportunidad para observar vegetación y aves sin garantizar encuentros con fauna. Antes de salir, consultá si el acceso y el recorrido están habilitados; la descripción del puente no certifica su estado actual ni accesibilidad para cualquier persona."
+      ]
+    },
+    {
+      "id": "copo",
+      "kind": "nature",
+      "title": "Copo: otra región, otro paisaje",
+      "sourceIds": [
+        "SDE-COPO"
+      ],
+      "paragraphs": [
+        "El parque nacional conserva bosque del Chaco Semiárido. El sendero Munakuy parte de la Seccional El Aybal y propone una lectura interpretativa del bosque y de un paleocauce. Consultá condiciones con APN antes de elegirlo; no se ofrece como prolongación inmediata de una visita urbana a Termas.",
+        "El parque también presenta una propuesta de educación ambiental vinculada con saberes y alimentos del bosque. La participación se consulta con sus responsables y no se anuncia como actividad cotidiana garantizada. La presencia de fauna emblemática en el área protegida tampoco asegura avistajes."
+      ]
+    },
+    {
+      "id": "plan",
+      "kind": "practical",
+      "title": "Preparar cultura, descanso y naturaleza sin promesas médicas",
+      "sourceIds": [
+        "SDE-CCB",
+        "SDE-AUTO",
+        "SDE-TARA",
+        "SDE-COPO"
+      ],
+      "paragraphs": [
+        "Elegí las localidades y el tiempo disponible antes de combinar las propuestas. Las instalaciones termales se verifican con cada establecimiento: esta ficha no atribuye efectos terapéuticos ni confirma piscinas, spa o tratamientos. Beltrán, cestería y programación de folklore requieren investigación específica antes de anunciar visitas o espectáculos concretos."
+      ]
+    }
+  ],
+  "address": "Capital y Centro Cultural del Bicentenario; confirmar entrada con la institución.",
+  "mapUrl": "https://www.openstreetmap.org/search?query=Santiago%20del%20Estero%2C%20Argentina%20Argentina",
+  "locations": [
+    {
+      "id": "santiago-capital",
+      "label": "Santiago del Estero, Argentina",
+      "description": "Capital y Centro Cultural del Bicentenario; confirmar entrada con la institución.",
+      "sourceIds": [
+        "SDE-CCB"
+      ],
+      "mapUrl": "https://www.openstreetmap.org/search?query=Santiago%20del%20Estero%2C%20Argentina%20Argentina"
+    },
+    {
+      "id": "termas-rio-hondo",
+      "label": "Las Termas de Río Hondo, Santiago del Estero",
+      "description": "Localidad diferente de la capital; museo y reserva con consulta propia.",
+      "sourceIds": [
+        "SDE-AUTO"
+      ],
+      "mapUrl": "https://www.openstreetmap.org/search?query=Las%20Termas%20de%20R%C3%ADo%20Hondo%2C%20Santiago%20del%20Estero%20Argentina"
+    },
+    {
+      "id": "copo",
+      "label": "Parque Nacional Copo, Santiago del Estero",
+      "description": "Área del norte provincial; no es un parque urbano de Termas.",
+      "sourceIds": [
+        "SDE-COPO"
+      ],
+      "mapUrl": "https://www.openstreetmap.org/search?query=Parque%20Nacional%20Copo%2C%20Santiago%20del%20Estero%20Argentina"
+    }
+  ],
+  "photos": [],
+  "related": [
+    {
+      "href": "/provincias/santiago_del_estero",
+      "label": "Conocer santiago del estero"
+    },
+    {
+      "href": "/actividades?provincia=santiago_del_estero",
+      "label": "Actividades en santiago del estero"
+    },
+    {
+      "href": "/escapadas",
+      "label": "Otras escapadas"
+    }
+  ],
+  "editorial": {
+    "documentaryStatus": "sources-checked",
+    "updatedAt": "2026-10-24",
+    "origin": {
+      "kind": "git-editorial",
+      "legacyGuideIds": [
+        "esc_20"
+      ],
+      "masterRefs": []
+    },
+    "pendingReviews": [
+      "Revisión humana del texto, fuentes y alcance",
+      "Autorización independiente de publicación",
+      "Fotografías: derechos y selección pendientes",
+      "Equivalencia con el PDF y respaldo externo sin aprobar",
+      "CCB publica dos horarios de tarde dentro de la misma página; no se fija uno",
+      "Completar fuentes de cestería, folklore, Beltrán y establecimientos termales"
+    ]
+  }
+}

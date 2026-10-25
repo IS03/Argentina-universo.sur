@@ -1,0 +1,649 @@
+{
+  "mode": "preview",
+  "pages": 106,
+  "resources": 103,
+  "errors": [],
+  "canonicalUrls": [
+    {
+      "path": "/",
+      "canonical": [
+        "https://www.argentinauniversosur.com"
+      ]
+    },
+    {
+      "path": "/provincias",
+      "canonical": [
+        "https://www.argentinauniversosur.com/provincias"
+      ]
+    },
+    {
+      "path": "/actividades",
+      "canonical": [
+        "https://www.argentinauniversosur.com/actividades"
+      ]
+    },
+    {
+      "path": "/escapadas",
+      "canonical": [
+        "https://www.argentinauniversosur.com/escapadas"
+      ]
+    },
+    {
+      "path": "/seguridad",
+      "canonical": [
+        "https://www.argentinauniversosur.com/seguridad"
+      ]
+    },
+    {
+      "path": "/provincias/santa_fe/agencias",
+      "canonical": [
+        "https://www.argentinauniversosur.com/provincias/santa_fe/agencias"
+      ]
+    },
+    {
+      "path": "/provincias/santa_fe/eventos",
+      "canonical": [
+        "https://www.argentinauniversosur.com/provincias/santa_fe/eventos"
+      ]
+    },
+    {
+      "path": "/provincias/santa_fe/noticias",
+      "canonical": [
+        "https://www.argentinauniversosur.com/provincias/santa_fe/noticias"
+      ]
+    },
+    {
+      "path": "/provincias/santa_fe/oficinas",
+      "canonical": [
+        "https://www.argentinauniversosur.com/provincias/santa_fe/oficinas"
+      ]
+    },
+    {
+      "path": "/provincias/santa_fe/planes",
+      "canonical": [
+        "https://www.argentinauniversosur.com/provincias/santa_fe/planes"
+      ]
+    },
+    {
+      "path": "/provincias/buenos_aires",
+      "canonical": [
+        "https://www.argentinauniversosur.com/provincias/buenos_aires"
+      ]
+    },
+    {
+      "path": "/provincias/caba",
+      "canonical": [
+        "https://www.argentinauniversosur.com/provincias/caba"
+      ]
+    },
+    {
+      "path": "/provincias/catamarca",
+      "canonical": [
+        "https://www.argentinauniversosur.com/provincias/catamarca"
+      ]
+    },
+    {
+      "path": "/provincias/chaco",
+      "canonical": [
+        "https://www.argentinauniversosur.com/provincias/chaco"
+      ]
+    },
+    {
+      "path": "/provincias/chubut",
+      "canonical": [
+        "https://www.argentinauniversosur.com/provincias/chubut"
+      ]
+    },
+    {
+      "path": "/provincias/cordoba",
+      "canonical": [
+        "https://www.argentinauniversosur.com/provincias/cordoba"
+      ]
+    },
+    {
+      "path": "/provincias/corrientes",
+      "canonical": [
+        "https://www.argentinauniversosur.com/provincias/corrientes"
+      ]
+    },
+    {
+      "path": "/provincias/entre_rios",
+      "canonical": [
+        "https://www.argentinauniversosur.com/provincias/entre_rios"
+      ]
+    },
+    {
+      "path": "/provincias/formosa",
+      "canonical": [
+        "https://www.argentinauniversosur.com/provincias/formosa"
+      ]
+    },
+    {
+      "path": "/provincias/jujuy",
+      "canonical": [
+        "https://www.argentinauniversosur.com/provincias/jujuy"
+      ]
+    },
+    {
+      "path": "/provincias/la_pampa",
+      "canonical": [
+        "https://www.argentinauniversosur.com/provincias/la_pampa"
+      ]
+    },
+    {
+      "path": "/provincias/la_rioja",
+      "canonical": [
+        "https://www.argentinauniversosur.com/provincias/la_rioja"
+      ]
+    },
+    {
+      "path": "/provincias/mendoza",
+      "canonical": [
+        "https://www.argentinauniversosur.com/provincias/mendoza"
+      ]
+    },
+    {
+      "path": "/provincias/misiones",
+      "canonical": [
+        "https://www.argentinauniversosur.com/provincias/misiones"
+      ]
+    },
+    {
+      "path": "/provincias/neuquen",
+      "canonical": [
+        "https://www.argentinauniversosur.com/provincias/neuquen"
+      ]
+    },
+    {
+      "path": "/provincias/rio_negro",
+      "canonical": [
+        "https://www.argentinauniversosur.com/provincias/rio_negro"
+      ]
+    },
+    {
+      "path": "/provincias/salta",
+      "canonical": [
+        "https://www.argentinauniversosur.com/provincias/salta"
+      ]
+    },
+    {
+      "path": "/provincias/san_juan",
+      "canonical": [
+        "https://www.argentinauniversosur.com/provincias/san_juan"
+      ]
+    },
+    {
+      "path": "/provincias/san_luis",
+      "canonical": [
+        "https://www.argentinauniversosur.com/provincias/san_luis"
+      ]
+    },
+    {
+      "path": "/provincias/santa_cruz",
+      "canonical": [
+        "https://www.argentinauniversosur.com/provincias/santa_cruz"
+      ]
+    },
+    {
+      "path": "/provincias/santa_fe",
+      "canonical": [
+        "https://www.argentinauniversosur.com/provincias/santa_fe"
+      ]
+    },
+    {
+      "path": "/provincias/santiago_del_estero",
+      "canonical": [
+        "https://www.argentinauniversosur.com/provincias/santiago_del_estero"
+      ]
+    },
+    {
+      "path": "/provincias/tierra_del_fuego",
+      "canonical": [
+        "https://www.argentinauniversosur.com/provincias/tierra_del_fuego"
+      ]
+    },
+    {
+      "path": "/provincias/tucuman",
+      "canonical": [
+        "https://www.argentinauniversosur.com/provincias/tucuman"
+      ]
+    },
+    {
+      "path": "/actividades/conocer-la-tradicion-gauchesca-y-criolla",
+      "canonical": [
+        "https://www.argentinauniversosur.com/actividades/conocer-la-tradicion-gauchesca-y-criolla"
+      ]
+    },
+    {
+      "path": "/actividades/aprender-sobre-arquitectura-moderna",
+      "canonical": [
+        "https://www.argentinauniversosur.com/actividades/aprender-sobre-arquitectura-moderna"
+      ]
+    },
+    {
+      "path": "/actividades/pasear-en-una-isla-con-historia",
+      "canonical": [
+        "https://www.argentinauniversosur.com/actividades/pasear-en-una-isla-con-historia"
+      ]
+    },
+    {
+      "path": "/actividades/conectarse-con-el-cielo-en-el-planetario-de-la-ciudad",
+      "canonical": [
+        "https://www.argentinauniversosur.com/actividades/conectarse-con-el-cielo-en-el-planetario-de-la-ciudad"
+      ]
+    },
+    {
+      "path": "/actividades/conocer-el-legado-del-general-san-martin",
+      "canonical": [
+        "https://www.argentinauniversosur.com/actividades/conocer-el-legado-del-general-san-martin"
+      ]
+    },
+    {
+      "path": "/actividades/vivir-la-magia-del-teatro-colon",
+      "canonical": [
+        "https://www.argentinauniversosur.com/actividades/vivir-la-magia-del-teatro-colon"
+      ]
+    },
+    {
+      "path": "/actividades/explorar-la-cordillera-de-los-andes",
+      "canonical": [
+        "https://www.argentinauniversosur.com/actividades/explorar-la-cordillera-de-los-andes"
+      ]
+    },
+    {
+      "path": "/actividades/visitar-museos-de-historia-y-arte",
+      "canonical": [
+        "https://www.argentinauniversosur.com/actividades/visitar-museos-de-historia-y-arte"
+      ]
+    },
+    {
+      "path": "/actividades/explorar-el-pueblo-perdido-de-la-quebrada",
+      "canonical": [
+        "https://www.argentinauniversosur.com/actividades/explorar-el-pueblo-perdido-de-la-quebrada"
+      ]
+    },
+    {
+      "path": "/actividades/disfrutar-las-aguas-termales",
+      "canonical": [
+        "https://www.argentinauniversosur.com/actividades/disfrutar-las-aguas-termales"
+      ]
+    },
+    {
+      "path": "/actividades/conocer-los-meteoritos-en-el-campo-del-cielo",
+      "canonical": [
+        "https://www.argentinauniversosur.com/actividades/conocer-los-meteoritos-en-el-campo-del-cielo"
+      ]
+    },
+    {
+      "path": "/actividades/pescar-en-la-isla-del-cerrito",
+      "canonical": [
+        "https://www.argentinauniversosur.com/actividades/pescar-en-la-isla-del-cerrito"
+      ]
+    },
+    {
+      "path": "/actividades/esquiar-fuera-de-pista-en-la-hoya",
+      "canonical": [
+        "https://www.argentinauniversosur.com/actividades/esquiar-fuera-de-pista-en-la-hoya"
+      ]
+    },
+    {
+      "path": "/actividades/viajar-en-el-tren-la-trochita",
+      "canonical": [
+        "https://www.argentinauniversosur.com/actividades/viajar-en-el-tren-la-trochita"
+      ]
+    },
+    {
+      "path": "/actividades/avistar-ballenas-en-peninsula-valdes",
+      "canonical": [
+        "https://www.argentinauniversosur.com/actividades/avistar-ballenas-en-peninsula-valdes"
+      ]
+    },
+    {
+      "path": "/actividades/descubrir-la-cultura-de-la-docta",
+      "canonical": [
+        "https://www.argentinauniversosur.com/actividades/descubrir-la-cultura-de-la-docta"
+      ]
+    },
+    {
+      "path": "/actividades/disfrutar-del-rio-en-el-valle-de-traslasierra",
+      "canonical": [
+        "https://www.argentinauniversosur.com/actividades/disfrutar-del-rio-en-el-valle-de-traslasierra"
+      ]
+    },
+    {
+      "path": "/actividades/visitar-las-estancias-jesuiticas",
+      "canonical": [
+        "https://www.argentinauniversosur.com/actividades/visitar-las-estancias-jesuiticas"
+      ]
+    },
+    {
+      "path": "/actividades/descubrir-la-armonia-entre-naturaleza-y-comunidad",
+      "canonical": [
+        "https://www.argentinauniversosur.com/actividades/descubrir-la-armonia-entre-naturaleza-y-comunidad"
+      ]
+    },
+    {
+      "path": "/actividades/conocer-los-comienzos-del-general-san-martin",
+      "canonical": [
+        "https://www.argentinauniversosur.com/actividades/conocer-los-comienzos-del-general-san-martin"
+      ]
+    },
+    {
+      "path": "/actividades/descubrir-paisajes-y-fosiles-en-el-sur-de-corrientes",
+      "canonical": [
+        "https://www.argentinauniversosur.com/actividades/descubrir-paisajes-y-fosiles-en-el-sur-de-corrientes"
+      ]
+    },
+    {
+      "path": "/actividades/conocer-el-carnaval-y-sus-colores",
+      "canonical": [
+        "https://www.argentinauniversosur.com/actividades/conocer-el-carnaval-y-sus-colores"
+      ]
+    },
+    {
+      "path": "/actividades/disfrutar-los-beneficios-de-las-termas",
+      "canonical": [
+        "https://www.argentinauniversosur.com/actividades/disfrutar-los-beneficios-de-las-termas"
+      ]
+    },
+    {
+      "path": "/actividades/caminar-en-el-parque-nacional-el-palmar",
+      "canonical": [
+        "https://www.argentinauniversosur.com/actividades/caminar-en-el-parque-nacional-el-palmar"
+      ]
+    },
+    {
+      "path": "/actividades/hacer-un-safari-fotografico-en-el-banado-la-estrella",
+      "canonical": [
+        "https://www.argentinauniversosur.com/actividades/hacer-un-safari-fotografico-en-el-banado-la-estrella"
+      ]
+    },
+    {
+      "path": "/actividades/degustar-la-gastronomia-formosena",
+      "canonical": [
+        "https://www.argentinauniversosur.com/actividades/degustar-la-gastronomia-formosena"
+      ]
+    },
+    {
+      "path": "/actividades/caminar-por-las-pasarelas-del-parque-nacional-rio-pilcomayo",
+      "canonical": [
+        "https://www.argentinauniversosur.com/actividades/caminar-por-las-pasarelas-del-parque-nacional-rio-pilcomayo"
+      ]
+    },
+    {
+      "path": "/actividades/recorrer-la-selva-de-montana",
+      "canonical": [
+        "https://www.argentinauniversosur.com/actividades/recorrer-la-selva-de-montana"
+      ]
+    },
+    {
+      "path": "/actividades/viajar-al-valle-de-la-luna-jujeno",
+      "canonical": [
+        "https://www.argentinauniversosur.com/actividades/viajar-al-valle-de-la-luna-jujeno"
+      ]
+    },
+    {
+      "path": "/actividades/caminar-por-un-desierto-de-sal",
+      "canonical": [
+        "https://www.argentinauniversosur.com/actividades/caminar-por-un-desierto-de-sal"
+      ]
+    },
+    {
+      "path": "/actividades/saborear-los-vinos-pampeanos",
+      "canonical": [
+        "https://www.argentinauniversosur.com/actividades/saborear-los-vinos-pampeanos"
+      ]
+    },
+    {
+      "path": "/actividades/conocer-las-salinas-pampeanas",
+      "canonical": [
+        "https://www.argentinauniversosur.com/actividades/conocer-las-salinas-pampeanas"
+      ]
+    },
+    {
+      "path": "/actividades/visitar-el-museo-el-castillo",
+      "canonical": [
+        "https://www.argentinauniversosur.com/actividades/visitar-el-museo-el-castillo"
+      ]
+    },
+    {
+      "path": "/actividades/visitar-los-museos-de-la-ciudad",
+      "canonical": [
+        "https://www.argentinauniversosur.com/actividades/visitar-los-museos-de-la-ciudad"
+      ]
+    },
+    {
+      "path": "/actividades/conducir-por-la-cuesta-de-miranda",
+      "canonical": [
+        "https://www.argentinauniversosur.com/actividades/conducir-por-la-cuesta-de-miranda"
+      ]
+    },
+    {
+      "path": "/actividades/vivir-la-chaya",
+      "canonical": [
+        "https://www.argentinauniversosur.com/actividades/vivir-la-chaya"
+      ]
+    },
+    {
+      "path": "/actividades/seguir-los-pasos-del-general-san-martin",
+      "canonical": [
+        "https://www.argentinauniversosur.com/actividades/seguir-los-pasos-del-general-san-martin"
+      ]
+    },
+    {
+      "path": "/actividades/hacer-rafting-en-el-rio-atuel",
+      "canonical": [
+        "https://www.argentinauniversosur.com/actividades/hacer-rafting-en-el-rio-atuel"
+      ]
+    },
+    {
+      "path": "/actividades/esquiar-en-el-valle-de-las-lenas",
+      "canonical": [
+        "https://www.argentinauniversosur.com/actividades/esquiar-en-el-valle-de-las-lenas"
+      ]
+    },
+    {
+      "path": "/actividades/conocer-las-minas-de-wanda",
+      "canonical": [
+        "https://www.argentinauniversosur.com/actividades/conocer-las-minas-de-wanda"
+      ]
+    },
+    {
+      "path": "/actividades/conocer-las-cataratas-del-iguazu",
+      "canonical": [
+        "https://www.argentinauniversosur.com/actividades/conocer-las-cataratas-del-iguazu"
+      ]
+    },
+    {
+      "path": "/actividades/acampar-en-la-naturaleza",
+      "canonical": [
+        "https://www.argentinauniversosur.com/actividades/acampar-en-la-naturaleza"
+      ]
+    },
+    {
+      "path": "/actividades/bucear-en-el-bosque-sumergido",
+      "canonical": [
+        "https://www.argentinauniversosur.com/actividades/bucear-en-el-bosque-sumergido"
+      ]
+    },
+    {
+      "path": "/actividades/descansar-en-las-termas-de-copahue",
+      "canonical": [
+        "https://www.argentinauniversosur.com/actividades/descansar-en-las-termas-de-copahue"
+      ]
+    },
+    {
+      "path": "/actividades/conocer-el-parque-via-christi",
+      "canonical": [
+        "https://www.argentinauniversosur.com/actividades/conocer-el-parque-via-christi"
+      ]
+    },
+    {
+      "path": "/actividades/realizar-trekking-por-el-rio-azul",
+      "canonical": [
+        "https://www.argentinauniversosur.com/actividades/realizar-trekking-por-el-rio-azul"
+      ]
+    },
+    {
+      "path": "/actividades/esquiar-y-realizar-snowboard-en-el-cerro-catedral",
+      "canonical": [
+        "https://www.argentinauniversosur.com/actividades/esquiar-y-realizar-snowboard-en-el-cerro-catedral"
+      ]
+    },
+    {
+      "path": "/actividades/navegar-por-el-lago-nahuel-huapi",
+      "canonical": [
+        "https://www.argentinauniversosur.com/actividades/navegar-por-el-lago-nahuel-huapi"
+      ]
+    },
+    {
+      "path": "/actividades/remar-en-el-rio-juramento",
+      "canonical": [
+        "https://www.argentinauniversosur.com/actividades/remar-en-el-rio-juramento"
+      ]
+    },
+    {
+      "path": "/actividades/viajar-a-las-nubes-en-tren",
+      "canonical": [
+        "https://www.argentinauniversosur.com/actividades/viajar-a-las-nubes-en-tren"
+      ]
+    },
+    {
+      "path": "/actividades/fotografiar-los-salares-en-la-puna",
+      "canonical": [
+        "https://www.argentinauniversosur.com/actividades/fotografiar-los-salares-en-la-puna"
+      ]
+    },
+    {
+      "path": "/actividades/practicar-kitesurf-y-el-windsurf",
+      "canonical": [
+        "https://www.argentinauniversosur.com/actividades/practicar-kitesurf-y-el-windsurf"
+      ]
+    },
+    {
+      "path": "/actividades/navegar-en-kayak-por-el-rio-san-juan",
+      "canonical": [
+        "https://www.argentinauniversosur.com/actividades/navegar-en-kayak-por-el-rio-san-juan"
+      ]
+    },
+    {
+      "path": "/actividades/caminar-por-el-valle-de-la-luna",
+      "canonical": [
+        "https://www.argentinauniversosur.com/actividades/caminar-por-el-valle-de-la-luna"
+      ]
+    },
+    {
+      "path": "/actividades/realizar-actividades-nauticas",
+      "canonical": [
+        "https://www.argentinauniversosur.com/actividades/realizar-actividades-nauticas"
+      ]
+    },
+    {
+      "path": "/actividades/recorrer-el-circuito-historico-la-punta",
+      "canonical": [
+        "https://www.argentinauniversosur.com/actividades/recorrer-el-circuito-historico-la-punta"
+      ]
+    },
+    {
+      "path": "/actividades/disfrutar-del-dique-lujan",
+      "canonical": [
+        "https://www.argentinauniversosur.com/actividades/disfrutar-del-dique-lujan"
+      ]
+    },
+    {
+      "path": "/actividades/avistar-pinguinos-penacho-amarillo-y-toninas-overas",
+      "canonical": [
+        "https://www.argentinauniversosur.com/actividades/avistar-pinguinos-penacho-amarillo-y-toninas-overas"
+      ]
+    },
+    {
+      "path": "/actividades/caminar-sobre-el-glaciar-perito-moreno",
+      "canonical": [
+        "https://www.argentinauniversosur.com/actividades/caminar-sobre-el-glaciar-perito-moreno"
+      ]
+    },
+    {
+      "path": "/actividades/hacer-trekking-en-el-chalten",
+      "canonical": [
+        "https://www.argentinauniversosur.com/actividades/hacer-trekking-en-el-chalten"
+      ]
+    },
+    {
+      "path": "/actividades/visitar-la-cuna-de-nuestra-bandera",
+      "canonical": [
+        "https://www.argentinauniversosur.com/actividades/visitar-la-cuna-de-nuestra-bandera"
+      ]
+    },
+    {
+      "path": "/actividades/navegar-por-el-rio-parana",
+      "canonical": [
+        "https://www.argentinauniversosur.com/actividades/navegar-por-el-rio-parana"
+      ]
+    },
+    {
+      "path": "/actividades/recorrer-la-historia-de-la-ciudad-de-santa-fe",
+      "canonical": [
+        "https://www.argentinauniversosur.com/actividades/recorrer-la-historia-de-la-ciudad-de-santa-fe"
+      ]
+    },
+    {
+      "path": "/actividades/relajarse-en-termas-de-rio-hondo",
+      "canonical": [
+        "https://www.argentinauniversosur.com/actividades/relajarse-en-termas-de-rio-hondo"
+      ]
+    },
+    {
+      "path": "/actividades/vivir-la-adrenalina-en-el-autodromo",
+      "canonical": [
+        "https://www.argentinauniversosur.com/actividades/vivir-la-adrenalina-en-el-autodromo"
+      ]
+    },
+    {
+      "path": "/actividades/vivir-el-folklore-en-el-patio-del-indio-froilan",
+      "canonical": [
+        "https://www.argentinauniversosur.com/actividades/vivir-el-folklore-en-el-patio-del-indio-froilan"
+      ]
+    },
+    {
+      "path": "/actividades/esquiar-y-realizar-snowboard-en-el-fin-del-mundo",
+      "canonical": [
+        "https://www.argentinauniversosur.com/actividades/esquiar-y-realizar-snowboard-en-el-fin-del-mundo"
+      ]
+    },
+    {
+      "path": "/actividades/navegar-por-el-canal-de-beagle",
+      "canonical": [
+        "https://www.argentinauniversosur.com/actividades/navegar-por-el-canal-de-beagle"
+      ]
+    },
+    {
+      "path": "/actividades/recorrer-el-norte-fueguino",
+      "canonical": [
+        "https://www.argentinauniversosur.com/actividades/recorrer-el-norte-fueguino"
+      ]
+    },
+    {
+      "path": "/actividades/recorrer-la-ruta-del-artesano",
+      "canonical": [
+        "https://www.argentinauniversosur.com/actividades/recorrer-la-ruta-del-artesano"
+      ]
+    },
+    {
+      "path": "/actividades/caminar-por-la-ciudad-sagrada-de-quilmes",
+      "canonical": [
+        "https://www.argentinauniversosur.com/actividades/caminar-por-la-ciudad-sagrada-de-quilmes"
+      ]
+    },
+    {
+      "path": "/actividades/remar-en-el-dique-el-cadillal",
+      "canonical": [
+        "https://www.argentinauniversosur.com/actividades/remar-en-el-dique-el-cadillal"
+      ]
+    }
+  ],
+  "notTested": [
+    "Remote Cloudflare host rules/TLS",
+    "Encoded query parity in Rules engine",
+    "External PDF availability; originals verified by validate:pages"
+  ]
+}

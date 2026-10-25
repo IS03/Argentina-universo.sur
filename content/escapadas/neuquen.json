@@ -1,0 +1,185 @@
+{
+  "schemaVersion": 2,
+  "id": "AUS-ESC-NEUQUEN-EDITORIAL-01",
+  "slug": "neuquen",
+  "title": "Neuquén: escapada por los lagos del sur",
+  "destination": "Neuquén",
+  "province": "Neuquén",
+  "description": "La propuesta de esta guía se concentra en el sur neuquino, entre Villa La Angostura y San Martín de los Andes. El camino escénico, las localidades y los parques tienen ritmos diferentes. El viaje puede combinar miradores y bosque sin confundir toda la provincia con un único circuito.",
+  "status": "draft",
+  "publicationAuthorized": false,
+  "review": null,
+  "introductionSourceIds": [
+    "NQN-RUTA",
+    "NQN-INVIERNO"
+  ],
+  "geography": {
+    "provinceSlugs": [
+      "neuquen"
+    ],
+    "localities": [
+      {
+        "id": "git-locality:neuquen:villa-angostura",
+        "name": "Villa La Angostura, Neuquén",
+        "provinceSlug": "neuquen",
+        "sourceIds": [
+          "NQN-ARRAYANES"
+        ]
+      },
+      {
+        "id": "git-locality:neuquen:san-martin-andes",
+        "name": "San Martín de los Andes, Neuquén",
+        "provinceSlug": "neuquen",
+        "sourceIds": [
+          "NQN-INVIERNO"
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "NQN-RUTA",
+      "title": "Secretaría de Turismo de la Nación — Ruta de los Siete Lagos",
+      "url": "https://www.argentina.gob.ar/viaja-por-argentina/que-hacer/conducir-por-la-ruta-de-los-siete-lagos",
+      "checkedAt": "2026-10-24"
+    },
+    {
+      "id": "NQN-INVIERNO",
+      "title": "Gobierno del Neuquén — Siete Lagos en invierno",
+      "url": "https://www.neuqueninforma.gob.ar/noticias/2026/08/14/262027-la-ruta-de-los-siete-lagos-en-invierno",
+      "checkedAt": "2026-10-24",
+      "publishedAt": "2026-08-14"
+    },
+    {
+      "id": "NQN-ARRAYANES",
+      "title": "APN — Actividades en Los Arrayanes",
+      "url": "https://www.argentina.gob.ar/parquesnacionales/regionpatagonia/parque-nacional-los-arrayanes/actividades",
+      "checkedAt": "2026-10-24"
+    },
+    {
+      "id": "NQN-LANIN",
+      "title": "APN — Actividades en Lanín",
+      "url": "https://www.argentina.gob.ar/parquesnacionales/regionpatagonia/parque-nacional-lanin/actividades",
+      "checkedAt": "2026-10-24"
+    }
+  ],
+  "sections": [
+    {
+      "id": "corredor",
+      "kind": "highlights",
+      "title": "Un camino que también es destino",
+      "sourceIds": [
+        "NQN-RUTA",
+        "NQN-INVIERNO"
+      ],
+      "paragraphs": [
+        "El corredor de los Siete Lagos conecta San Martín de los Andes con Villa La Angostura por la RN 40 y atraviesa ámbitos de Lanín y Nahuel Huapi. Machónico, Falkner, Villarino, Escondido, Correntoso y Espejo aparecen entre sus referencias. Los miradores permiten elegir pausas para observar, sin que todas las costas constituyan accesos de uso público."
+      ]
+    },
+    {
+      "id": "angostura",
+      "kind": "activities",
+      "title": "Villa La Angostura y Quetrihué",
+      "sourceIds": [
+        "NQN-ARRAYANES"
+      ],
+      "paragraphs": [
+        "El Parque Nacional Los Arrayanes ocupa la península de Quetrihué. APN diferencia el recorrido terrestre hacia el bosque de arrayanes, los miradores y el sendero entablonado del bosque. No se los presenta como una caminata única de la misma longitud ni se garantiza que cualquiera pueda completar todas las modalidades.",
+        "También existen propuestas de navegación desde Villa La Angostura y desde Bariloche. Confirmá embarque, desembarco y regreso con el prestador. Una mención en el catálogo no acredita disponibilidad de barco ni permite dar por resuelta la vuelta de un recorrido a pie o en bicicleta."
+      ]
+    },
+    {
+      "id": "sur-lanin",
+      "kind": "nature",
+      "title": "San Martín de los Andes y el área del Lácar",
+      "sourceIds": [
+        "NQN-LANIN",
+        "NQN-INVIERNO"
+      ],
+      "paragraphs": [
+        "San Martín de los Andes ofrece otra base, junto al Lácar. El parque Lanín organiza sus actividades en zonas: las propuestas del sur no son equivalentes a Tromen o Huechulafquen. La elección de un área permite conocer mejor su bosque, sus costas y sus relaciones con las poblaciones locales.",
+        "APN identifica, entre otras referencias del sur, Bandurrias, Quila Quina y Chachín. Consultá las condiciones de cada acceso y el alcance de la actividad antes de decidir. Ascender al volcán Lanín requiere preparación específica y no se incluye como extensión de un paseo junto al lago."
+      ]
+    },
+    {
+      "id": "pueblos",
+      "kind": "culture",
+      "title": "Dar tiempo a las localidades",
+      "sourceIds": [
+        "NQN-INVIERNO"
+      ],
+      "paragraphs": [
+        "La gastronomía y los productos regionales forman parte de la experiencia de las dos localidades. Una pausa en sus centros permite separar la vida del pueblo del recorrido vehicular. No se fijan restaurantes, menús ni temporadas de atención: conviene elegir según la oferta comprobada al organizar la visita."
+      ]
+    },
+    {
+      "id": "organizar",
+      "kind": "practical",
+      "title": "Preparar el camino según la estación",
+      "sourceIds": [
+        "NQN-INVIERNO",
+        "NQN-ARRAYANES"
+      ],
+      "paragraphs": [
+        "La recomendación provincial es consultar el estado actualizado de la ruta, el pronóstico y las indicaciones viales, especialmente con nieve. Organizá los tramos con luz y detenete únicamente en lugares habilitados. La condición de camino asfaltado no demuestra que esté libre de hielo o restricciones.",
+        "Un desvío hacia otro lago necesita su propia comprobación de acceso y recorrido. No atravieses un río ni contrates una navegación basándote solo en el nombre de una excursión o en una fotografía. La escapada puede diseñarse alrededor de uno de los extremos y sumar salidas verificadas, sin un circuito obligatorio de tres días."
+      ]
+    }
+  ],
+  "address": "Localidad base para consultar acceso a Quetrihué.",
+  "mapUrl": "https://www.openstreetmap.org/search?query=Villa%20La%20Angostura%2C%20Neuqu%C3%A9n%20Argentina",
+  "locations": [
+    {
+      "id": "villa-angostura",
+      "label": "Villa La Angostura, Neuquén",
+      "description": "Localidad base para consultar acceso a Quetrihué.",
+      "sourceIds": [
+        "NQN-ARRAYANES"
+      ],
+      "mapUrl": "https://www.openstreetmap.org/search?query=Villa%20La%20Angostura%2C%20Neuqu%C3%A9n%20Argentina"
+    },
+    {
+      "id": "san-martin-andes",
+      "label": "San Martín de los Andes, Neuquén",
+      "description": "Localidad del lago Lácar; no representa todos los sectores del parque Lanín.",
+      "sourceIds": [
+        "NQN-INVIERNO"
+      ],
+      "mapUrl": "https://www.openstreetmap.org/search?query=San%20Mart%C3%ADn%20de%20los%20Andes%2C%20Neuqu%C3%A9n%20Argentina"
+    }
+  ],
+  "photos": [],
+  "related": [
+    {
+      "href": "/provincias/neuquen",
+      "label": "Conocer neuquen"
+    },
+    {
+      "href": "/actividades?provincia=neuquen",
+      "label": "Actividades en neuquen"
+    },
+    {
+      "href": "/escapadas",
+      "label": "Otras escapadas"
+    }
+  ],
+  "editorial": {
+    "documentaryStatus": "sources-checked",
+    "updatedAt": "2026-10-24",
+    "origin": {
+      "kind": "git-editorial",
+      "legacyGuideIds": [
+        "esc_19"
+      ],
+      "masterRefs": []
+    },
+    "pendingReviews": [
+      "Revisión humana del texto, fuentes y alcance",
+      "Autorización independiente de publicación",
+      "Fotografías: derechos y selección pendientes",
+      "Equivalencia con el PDF y respaldo externo sin aprobar",
+      "Villa Traful, bosque sumergido y Ñivinco requieren fuentes y condiciones específicas",
+      "No usar generalización de baja dificultad del catálogo de Arrayanes para el recorrido terrestre completo"
+    ]
+  }
+}

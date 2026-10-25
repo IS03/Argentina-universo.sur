@@ -1,0 +1,1608 @@
+[
+  {
+    "legacyGuideId": "esc_08",
+    "batch": "B02",
+    "pdf": {
+      "path": "/pdf/bariloche.pdf",
+      "bytes": 34489884,
+      "sha256": "b35fae10ae9f4e75b1b242fbead5987622994b3d7fa99db0207df546bf3915cf"
+    },
+    "usedBy": [
+      "public/data/escapadas.json → EscapadasContent → /escapadas"
+    ],
+    "proposedHtml": "/escapadas/san-carlos-de-bariloche",
+    "draftId": "AUS-ESC-SAN-CARLOS-DE-BARILOCHE-EDITORIAL-01",
+    "tripContentSha256": "8ad793e29396c8c31b30d0fa639c747ca100d82ea6de5424c5a1384de5c30adb",
+    "status": "draft",
+    "publicationAuthorized": false,
+    "review": null,
+    "pdfTopics": [
+      "Ciudad y gastronomía",
+      "Navegaciones y Circuito Chico",
+      "El Bolsón y caminatas"
+    ],
+    "htmlTopics": [
+      {
+        "id": "ciudad",
+        "title": "El lago también se mira desde la ciudad"
+      },
+      {
+        "id": "oeste",
+        "title": "Circuito Chico: elegir paradas, no acumularlas"
+      },
+      {
+        "id": "navegar",
+        "title": "Dos maneras de acercarse al lago"
+      },
+      {
+        "id": "bosque",
+        "title": "Caminar dentro de Nahuel Huapi"
+      },
+      {
+        "id": "estacion",
+        "title": "La montaña cambia con la estación"
+      },
+      {
+        "id": "organizacion",
+        "title": "Cómo ordenar la escapada"
+      }
+    ],
+    "differences": [
+      "El Bolsón, Bosque Tallado y Cajón del Azul no cubiertos",
+      "No se conserva el itinerario cerrado de tres días"
+    ],
+    "related": [
+      {
+        "href": "/provincias/rio_negro",
+        "label": "Conocer rio negro"
+      },
+      {
+        "href": "/actividades?provincia=rio_negro",
+        "label": "Actividades en rio negro"
+      },
+      {
+        "href": "/escapadas",
+        "label": "Otras escapadas"
+      }
+    ],
+    "scopeDecision": "pending-human-review",
+    "onePageSufficient": null,
+    "recommendation": "Revisar alcance temático y considerar fichas complementarias; no afirmar equivalencia.",
+    "originalBackup": {
+      "inGit": true,
+      "externalBackupVerified": false,
+      "restorationTested": false,
+      "retirementAuthorized": false
+    },
+    "redirect": {
+      "status": 308,
+      "fromPath": "/pdf/bariloche.pdf",
+      "toPath": "/escapadas/san-carlos-de-bariloche",
+      "enabled": false
+    }
+  },
+  {
+    "legacyGuideId": "esc_01",
+    "batch": "B02",
+    "pdf": {
+      "path": "/pdf/cañafate.pdf",
+      "bytes": 19318193,
+      "sha256": "0b0757d612a70202953f15630cd53991640bac22573158f97f27493c9b4af49e"
+    },
+    "usedBy": [
+      "public/data/escapadas.json → EscapadasContent → /escapadas"
+    ],
+    "proposedHtml": "/escapadas/el-calafate-y-el-chalten",
+    "draftId": "AUS-ESC-EL-CALAFATE-Y-EL-CHALTEN-EDITORIAL-01",
+    "tripContentSha256": "140a1b24f850a32381428f9eea1f8eee50e87e6b508b3f828f6fe6b88592ad69",
+    "status": "draft",
+    "publicationAuthorized": false,
+    "review": null,
+    "pdfTopics": [
+      "Caminatas de El Chaltén",
+      "Glaciar Perito Moreno",
+      "Organización en tres días"
+    ],
+    "htmlTopics": [
+      {
+        "id": "sur",
+        "title": "El Calafate y el sector del glaciar Perito Moreno"
+      },
+      {
+        "id": "norte",
+        "title": "El Chaltén: elegir una caminata concreta"
+      },
+      {
+        "id": "paisajes",
+        "title": "Qué cambia entre hielo y montaña"
+      },
+      {
+        "id": "organizar",
+        "title": "Dos localidades, dos decisiones de alojamiento"
+      },
+      {
+        "id": "elegir",
+        "title": "Qué confirmar antes de reservar"
+      }
+    ],
+    "differences": [
+      "No se valida el itinerario original de tres días ni sus dificultades",
+      "Falta evaluación detallada de excursiones sobre hielo y cobertura de transporte"
+    ],
+    "related": [
+      {
+        "href": "/provincias/santa_cruz",
+        "label": "Conocer santa cruz"
+      },
+      {
+        "href": "/actividades?provincia=santa_cruz",
+        "label": "Actividades en santa cruz"
+      },
+      {
+        "href": "/escapadas",
+        "label": "Otras escapadas"
+      }
+    ],
+    "scopeDecision": "pending-human-review",
+    "onePageSufficient": null,
+    "recommendation": "Revisar alcance temático y considerar fichas complementarias; no afirmar equivalencia.",
+    "originalBackup": {
+      "inGit": true,
+      "externalBackupVerified": false,
+      "restorationTested": false,
+      "retirementAuthorized": false
+    },
+    "redirect": {
+      "status": 308,
+      "fromPath": "/pdf/cañafate.pdf",
+      "toPath": "/escapadas/el-calafate-y-el-chalten",
+      "enabled": false
+    }
+  },
+  {
+    "legacyGuideId": "esc_04",
+    "batch": "B02",
+    "pdf": {
+      "path": "/pdf/pto_madryn_1.pdf",
+      "bytes": 24274044,
+      "sha256": "b86f199669860e38682385b245b0482c2c7c8fa229e836312c9c2b5f63ed2176"
+    },
+    "usedBy": [
+      "public/data/escapadas.json → EscapadasContent → /escapadas"
+    ],
+    "proposedHtml": "/escapadas/puerto-madryn",
+    "draftId": "AUS-ESC-PUERTO-MADRYN-EDITORIAL-01",
+    "tripContentSha256": "33aeff1dca1a4b9d8a3170f7286f0b38283a82af9eccda4701390ce24a8f93fa",
+    "status": "draft",
+    "publicationAuthorized": false,
+    "review": null,
+    "pdfTopics": [
+      "Ciudad y costa",
+      "Valdés y ballenas",
+      "Gaiman y tradición galesa",
+      "Punta Loma, Ecocentro y snorkel"
+    ],
+    "htmlTopics": [
+      {
+        "id": "ciudad",
+        "title": "La costa urbana como primer recorrido"
+      },
+      {
+        "id": "doradillo",
+        "title": "El Doradillo: observar desde la costa"
+      },
+      {
+        "id": "valdes",
+        "title": "Península Valdés y Puerto Pirámides"
+      },
+      {
+        "id": "punta-loma",
+        "title": "Punta Loma: mirar el apostadero sin intervenir"
+      },
+      {
+        "id": "organizar",
+        "title": "Elegir salidas y comprobar accesos"
+      }
+    ],
+    "differences": [
+      "Gaiman, museo paleontológico y patrimonio galés no desarrollados",
+      "No certifica actividades de contacto con fauna ni equivalencia completa"
+    ],
+    "related": [
+      {
+        "href": "/provincias/chubut",
+        "label": "Conocer chubut"
+      },
+      {
+        "href": "/actividades?provincia=chubut",
+        "label": "Actividades en chubut"
+      },
+      {
+        "href": "/escapadas",
+        "label": "Otras escapadas"
+      }
+    ],
+    "scopeDecision": "pending-human-review",
+    "onePageSufficient": null,
+    "recommendation": "Revisar alcance temático y considerar fichas complementarias; no afirmar equivalencia.",
+    "originalBackup": {
+      "inGit": true,
+      "externalBackupVerified": false,
+      "restorationTested": false,
+      "retirementAuthorized": false
+    },
+    "redirect": {
+      "status": 308,
+      "fromPath": "/pdf/pto_madryn_1.pdf",
+      "toPath": "/escapadas/puerto-madryn",
+      "enabled": false
+    }
+  },
+  {
+    "legacyGuideId": "esc_12",
+    "batch": "B02",
+    "pdf": {
+      "path": "/pdf/ushuaia.pdf",
+      "bytes": 34178289,
+      "sha256": "f0ccb3e456defa8d1dcd0fff42293091f631f94d87dbac9fc002cf8b74f91c36"
+    },
+    "usedBy": [
+      "public/data/escapadas.json → EscapadasContent → /escapadas"
+    ],
+    "proposedHtml": "/escapadas/ushuaia",
+    "draftId": "AUS-ESC-USHUAIA-EDITORIAL-01",
+    "tripContentSha256": "2e35762b20db38022515133c6f0e356c1f302cb2b87a23de70bb4e32980c3463",
+    "status": "draft",
+    "publicationAuthorized": false,
+    "review": null,
+    "pdfTopics": [
+      "Canal Beagle y faro",
+      "Presidio",
+      "Parque nacional y tren",
+      "Martial y Laguna Esmeralda"
+    ],
+    "htmlTopics": [
+      {
+        "id": "ciudad",
+        "title": "Mirar la ciudad desde su bahía"
+      },
+      {
+        "id": "memoria",
+        "title": "El presidio y la historia urbana"
+      },
+      {
+        "id": "beagle",
+        "title": "Navegar con un objetivo definido"
+      },
+      {
+        "id": "parque",
+        "title": "El parque tiene sus propios sectores"
+      },
+      {
+        "id": "plan",
+        "title": "Organizar por ámbitos, no por una lista cerrada"
+      }
+    ],
+    "differences": [
+      "No desarrolla tren turístico, Martial ni Laguna Esmeralda",
+      "No valida recorridos de tres días ni servicios marítimos actuales"
+    ],
+    "related": [
+      {
+        "href": "/provincias/tierra_del_fuego",
+        "label": "Conocer tierra del fuego"
+      },
+      {
+        "href": "/actividades?provincia=tierra_del_fuego",
+        "label": "Actividades en tierra del fuego"
+      },
+      {
+        "href": "/escapadas",
+        "label": "Otras escapadas"
+      }
+    ],
+    "scopeDecision": "pending-human-review",
+    "onePageSufficient": null,
+    "recommendation": "Revisar alcance temático y considerar fichas complementarias; no afirmar equivalencia.",
+    "originalBackup": {
+      "inGit": true,
+      "externalBackupVerified": false,
+      "restorationTested": false,
+      "retirementAuthorized": false
+    },
+    "redirect": {
+      "status": 308,
+      "fromPath": "/pdf/ushuaia.pdf",
+      "toPath": "/escapadas/ushuaia",
+      "enabled": false
+    }
+  },
+  {
+    "legacyGuideId": "esc_10",
+    "batch": "B03",
+    "pdf": {
+      "path": "/pdf/cba.pdf",
+      "bytes": 25346217,
+      "sha256": "6e790c0fa6b686caeba8b8575023e9fc9f3aae35ad5434d7953e68a85b382bca"
+    },
+    "usedBy": [
+      "public/data/escapadas.json → EscapadasContent → /escapadas"
+    ],
+    "proposedHtml": "/escapadas/norte-de-cordoba",
+    "draftId": "AUS-ESC-NORTE-DE-CORDOBA-EDITORIAL-01",
+    "tripContentSha256": "de1481a74aaad47674a2fa8cd1ec90af2e8db5c366e90bc3cbbfada43453b661",
+    "status": "draft",
+    "publicationAuthorized": false,
+    "review": null,
+    "pdfTopics": [
+      "Caroya, Jesús María y Camino Real",
+      "Ansenuza y Miramar",
+      "Córdoba capital",
+      "Cerro Colorado"
+    ],
+    "htmlTopics": [
+      {
+        "id": "territorio",
+        "title": "Una región para recorrer por partes"
+      },
+      {
+        "id": "jesuitas",
+        "title": "Santa Catalina: un conjunto con identidad propia"
+      },
+      {
+        "id": "arqueologia",
+        "title": "Cerro Colorado: leer las huellas sin dañarlas"
+      },
+      {
+        "id": "musica",
+        "title": "La casa de Atahualpa Yupanqui"
+      },
+      {
+        "id": "organizacion",
+        "title": "Accesos y alcance de esta propuesta"
+      }
+    ],
+    "differences": [
+      "Ansenuza y capital no desarrollados: requieren fichas distintas",
+      "Caroya, Jesús María y postas del Camino Real necesitan mayor detalle"
+    ],
+    "related": [
+      {
+        "href": "/provincias/cordoba",
+        "label": "Conocer cordoba"
+      },
+      {
+        "href": "/actividades?provincia=cordoba",
+        "label": "Actividades en cordoba"
+      },
+      {
+        "href": "/escapadas",
+        "label": "Otras escapadas"
+      }
+    ],
+    "scopeDecision": "pending-human-review",
+    "onePageSufficient": null,
+    "recommendation": "Revisar alcance temático y considerar fichas complementarias; no afirmar equivalencia.",
+    "originalBackup": {
+      "inGit": true,
+      "externalBackupVerified": false,
+      "restorationTested": false,
+      "retirementAuthorized": false
+    },
+    "redirect": {
+      "status": 308,
+      "fromPath": "/pdf/cba.pdf",
+      "toPath": "/escapadas/norte-de-cordoba",
+      "enabled": false
+    }
+  },
+  {
+    "legacyGuideId": "esc_05",
+    "batch": "B03",
+    "pdf": {
+      "path": "/pdf/jujuy.pdf",
+      "bytes": 21391638,
+      "sha256": "46f00914b3f5c92e8099ef37c26efeda1750b6944134b8f318f4df9c4872ff0f"
+    },
+    "usedBy": [
+      "public/data/escapadas.json → EscapadasContent → /escapadas"
+    ],
+    "proposedHtml": "/escapadas/jujuy",
+    "draftId": "AUS-ESC-JUJUY-EDITORIAL-01",
+    "tripContentSha256": "6cb2df2157a21819fc0a84c667ab368c97e2a247b9cc0f87f16b0b20910553c7",
+    "status": "draft",
+    "publicationAuthorized": false,
+    "review": null,
+    "pdfTopics": [
+      "Purmamarca",
+      "Tilcara y Maimará",
+      "Humahuaca y Hornocal",
+      "Tren solar, salinas, Yala y Reyes"
+    ],
+    "htmlTopics": [
+      {
+        "id": "regiones",
+        "title": "El primer paso es elegir el paisaje"
+      },
+      {
+        "id": "quebrada",
+        "title": "La Quebrada es un paisaje habitado"
+      },
+      {
+        "id": "maimara",
+        "title": "Maimará: paisaje, cultivos y memoria"
+      },
+      {
+        "id": "yungas",
+        "title": "Calilegua: otra experiencia provincial"
+      },
+      {
+        "id": "organizar",
+        "title": "Qué queda fuera de una promesa de circuito"
+      }
+    ],
+    "differences": [
+      "Cobertura parcial del itinerario PDF: no sustituye las tres jornadas",
+      "Añade Calilegua como alternativa regional separada, no equivalente a Quebrada"
+    ],
+    "related": [
+      {
+        "href": "/provincias/jujuy",
+        "label": "Conocer jujuy"
+      },
+      {
+        "href": "/actividades?provincia=jujuy",
+        "label": "Actividades en jujuy"
+      },
+      {
+        "href": "/escapadas",
+        "label": "Otras escapadas"
+      }
+    ],
+    "scopeDecision": "pending-human-review",
+    "onePageSufficient": null,
+    "recommendation": "Revisar alcance temático y considerar fichas complementarias; no afirmar equivalencia.",
+    "originalBackup": {
+      "inGit": true,
+      "externalBackupVerified": false,
+      "restorationTested": false,
+      "retirementAuthorized": false
+    },
+    "redirect": {
+      "status": 308,
+      "fromPath": "/pdf/jujuy.pdf",
+      "toPath": "/escapadas/jujuy",
+      "enabled": false
+    }
+  },
+  {
+    "legacyGuideId": "esc_09",
+    "batch": "B03",
+    "pdf": {
+      "path": "/pdf/salta.pdf",
+      "bytes": 31616145,
+      "sha256": "cd29698d10d093ed093dcea3f8633e6d2462573be1ce006e57f0b9c4f0a7a813"
+    },
+    "usedBy": [
+      "public/data/escapadas.json → EscapadasContent → /escapadas"
+    ],
+    "proposedHtml": "/escapadas/salta",
+    "draftId": "AUS-ESC-SALTA-EDITORIAL-01",
+    "tripContentSha256": "1480813cb3183ce300c059a81c6b99317c133660d49a818925fbd0c3fb0979ca",
+    "status": "draft",
+    "publicationAuthorized": false,
+    "review": null,
+    "pdfTopics": [
+      "Capital, museos y San Bernardo",
+      "Tren a las Nubes o San Lorenzo",
+      "Cafayate o Cachi",
+      "Seclantás y Cabra Corral"
+    ],
+    "htmlTopics": [
+      {
+        "id": "ciudad",
+        "title": "Museos para elegir una mirada sobre Salta"
+      },
+      {
+        "id": "cafayate",
+        "title": "Cafayate: comprender el paisaje del vino"
+      },
+      {
+        "id": "cachi",
+        "title": "Cachi: pueblo, iglesia y arqueología"
+      },
+      {
+        "id": "cardones",
+        "title": "Los Cardones: detenerse a interpretar"
+      },
+      {
+        "id": "plan",
+        "title": "Decidir antes de unir localidades"
+      }
+    ],
+    "differences": [
+      "Tren, San Lorenzo, Seclantás y Cabra Corral no desarrollados",
+      "No valida vuelta completa por los valles"
+    ],
+    "related": [
+      {
+        "href": "/provincias/salta",
+        "label": "Conocer salta"
+      },
+      {
+        "href": "/actividades?provincia=salta",
+        "label": "Actividades en salta"
+      },
+      {
+        "href": "/escapadas",
+        "label": "Otras escapadas"
+      }
+    ],
+    "scopeDecision": "pending-human-review",
+    "onePageSufficient": null,
+    "recommendation": "Revisar alcance temático y considerar fichas complementarias; no afirmar equivalencia.",
+    "originalBackup": {
+      "inGit": true,
+      "externalBackupVerified": false,
+      "restorationTested": false,
+      "retirementAuthorized": false
+    },
+    "redirect": {
+      "status": 308,
+      "fromPath": "/pdf/salta.pdf",
+      "toPath": "/escapadas/salta",
+      "enabled": false
+    }
+  },
+  {
+    "legacyGuideId": "esc_07",
+    "batch": "B03",
+    "pdf": {
+      "path": "/pdf/ventana.pdf",
+      "bytes": 15874893,
+      "sha256": "ba9891b9a3705cbc9c38fb7d9bcad92ed593d46535c97203e9b947130aaa515f"
+    },
+    "usedBy": [
+      "public/data/escapadas.json → EscapadasContent → /escapadas"
+    ],
+    "proposedHtml": "/escapadas/sierra-de-la-ventana",
+    "draftId": "AUS-ESC-SIERRA-DE-LA-VENTANA-EDITORIAL-01",
+    "tripContentSha256": "2b646ff2202e31ac41aad2df37c191d18efdcc4760504f64d9289104e7593ab1",
+    "status": "draft",
+    "publicationAuthorized": false,
+    "review": null,
+    "pdfTopics": [
+      "Dos sectores del parque",
+      "Saldungaray y Salamone",
+      "Club Hotel y balnearios",
+      "Bahía Blanca y playas regionales"
+    ],
+    "htmlTopics": [
+      {
+        "id": "parque",
+        "title": "Un pastizal serrano que necesita conservación"
+      },
+      {
+        "id": "sectores",
+        "title": "Elegir acceso y recorrido"
+      },
+      {
+        "id": "saldungaray",
+        "title": "Saldungaray: arquitectura e historia local"
+      },
+      {
+        "id": "villa",
+        "title": "Villa Ventana y la memoria del Club Hotel"
+      },
+      {
+        "id": "plan",
+        "title": "Un plan con alternativas a la cumbre"
+      }
+    ],
+    "differences": [
+      "No desarrolla bodegas ni baño en arroyos",
+      "Bahía Blanca y destinos costeros requieren fichas separadas"
+    ],
+    "related": [
+      {
+        "href": "/provincias/buenos_aires",
+        "label": "Conocer buenos aires"
+      },
+      {
+        "href": "/actividades?provincia=buenos_aires",
+        "label": "Actividades en buenos aires"
+      },
+      {
+        "href": "/escapadas",
+        "label": "Otras escapadas"
+      }
+    ],
+    "scopeDecision": "pending-human-review",
+    "onePageSufficient": null,
+    "recommendation": "Revisar alcance temático y considerar fichas complementarias; no afirmar equivalencia.",
+    "originalBackup": {
+      "inGit": true,
+      "externalBackupVerified": false,
+      "restorationTested": false,
+      "retirementAuthorized": false
+    },
+    "redirect": {
+      "status": 308,
+      "fromPath": "/pdf/ventana.pdf",
+      "toPath": "/escapadas/sierra-de-la-ventana",
+      "enabled": false
+    }
+  },
+  {
+    "legacyGuideId": "esc_15",
+    "batch": "B04",
+    "pdf": {
+      "path": "/pdf/mendoza.pdf",
+      "bytes": 21326786,
+      "sha256": "194eb1eb3791428024961537fac7f9e1327cf2d3cfa717650ebd48de7d6a920b"
+    },
+    "usedBy": [
+      "public/data/escapadas.json → EscapadasContent → /escapadas"
+    ],
+    "proposedHtml": "/escapadas/mendoza",
+    "draftId": "AUS-ESC-MENDOZA-EDITORIAL-01",
+    "tripContentSha256": "04ed43e1336fb51d3ab53ed37a5e19035eedd04ab91e672522f415b64ce968f9",
+    "status": "draft",
+    "publicationAuthorized": false,
+    "review": null,
+    "pdfTopics": [
+      "Capital y bodegas de Gran Mendoza",
+      "Alta Montaña o Atuel",
+      "Cacheuta o Valle de Uco",
+      "Potrerillos, Manzano Histórico y Uspallata"
+    ],
+    "htmlTopics": [
+      {
+        "id": "ciudad",
+        "title": "Empezar por la escala urbana"
+      },
+      {
+        "id": "vino",
+        "title": "Elegir una zona del vino"
+      },
+      {
+        "id": "este",
+        "title": "General San Martín: otra lectura del viñedo"
+      },
+      {
+        "id": "montana",
+        "title": "Horcones no es un ascenso a la cumbre"
+      },
+      {
+        "id": "organizar",
+        "title": "Una provincia necesita más de un itinerario"
+      }
+    ],
+    "differences": [
+      "Atuel, Cacheuta, Manzano Histórico y Uspallata no desarrollados",
+      "No avala ascensos, cruces de Andes ni actividades aéreas del PDF"
+    ],
+    "related": [
+      {
+        "href": "/provincias/mendoza",
+        "label": "Conocer mendoza"
+      },
+      {
+        "href": "/actividades?provincia=mendoza",
+        "label": "Actividades en mendoza"
+      },
+      {
+        "href": "/escapadas",
+        "label": "Otras escapadas"
+      }
+    ],
+    "scopeDecision": "pending-human-review",
+    "onePageSufficient": null,
+    "recommendation": "Revisar alcance temático y considerar fichas complementarias; no afirmar equivalencia.",
+    "originalBackup": {
+      "inGit": true,
+      "externalBackupVerified": false,
+      "restorationTested": false,
+      "retirementAuthorized": false
+    },
+    "redirect": {
+      "status": 308,
+      "fromPath": "/pdf/mendoza.pdf",
+      "toPath": "/escapadas/mendoza",
+      "enabled": false
+    }
+  },
+  {
+    "legacyGuideId": "esc_19",
+    "batch": "B04",
+    "pdf": {
+      "path": "/pdf/neuquen.pdf",
+      "bytes": 45336735,
+      "sha256": "a226f20887dfd52a7d0b8625779eb4fe2f5b4062b73cd500fa7e535f502322d4"
+    },
+    "usedBy": [
+      "public/data/escapadas.json → EscapadasContent → /escapadas"
+    ],
+    "proposedHtml": "/escapadas/neuquen",
+    "draftId": "AUS-ESC-NEUQUEN-EDITORIAL-01",
+    "tripContentSha256": "85cc83e59bc27a2ba3bb672d0b530da9a8d6f198cc10259a4afcd8c0cfd509c6",
+    "status": "draft",
+    "publicationAuthorized": false,
+    "review": null,
+    "pdfTopics": [
+      "Villa La Angostura y Arrayanes",
+      "Siete Lagos y Villa Traful",
+      "San Martín de los Andes, Lanín y Lácar",
+      "Ñivinco y miradores"
+    ],
+    "htmlTopics": [
+      {
+        "id": "corredor",
+        "title": "Un camino que también es destino"
+      },
+      {
+        "id": "angostura",
+        "title": "Villa La Angostura y Quetrihué"
+      },
+      {
+        "id": "sur-lanin",
+        "title": "San Martín de los Andes y el área del Lácar"
+      },
+      {
+        "id": "pueblos",
+        "title": "Dar tiempo a las localidades"
+      },
+      {
+        "id": "organizar",
+        "title": "Preparar el camino según la estación"
+      }
+    ],
+    "differences": [
+      "Traful y Ñivinco no desarrollados",
+      "No confirma actividades acuáticas ni navegación disponible"
+    ],
+    "related": [
+      {
+        "href": "/provincias/neuquen",
+        "label": "Conocer neuquen"
+      },
+      {
+        "href": "/actividades?provincia=neuquen",
+        "label": "Actividades en neuquen"
+      },
+      {
+        "href": "/escapadas",
+        "label": "Otras escapadas"
+      }
+    ],
+    "scopeDecision": "pending-human-review",
+    "onePageSufficient": null,
+    "recommendation": "Revisar alcance temático y considerar fichas complementarias; no afirmar equivalencia.",
+    "originalBackup": {
+      "inGit": true,
+      "externalBackupVerified": false,
+      "restorationTested": false,
+      "retirementAuthorized": false
+    },
+    "redirect": {
+      "status": 308,
+      "fromPath": "/pdf/neuquen.pdf",
+      "toPath": "/escapadas/neuquen",
+      "enabled": false
+    }
+  },
+  {
+    "legacyGuideId": "esc_16",
+    "batch": "B04",
+    "pdf": {
+      "path": "/pdf/sanjuan.pdf",
+      "bytes": 16454455,
+      "sha256": "f1ef2bca6fc0ebbc29f50d82bc789a5d9ff1df6c15dcbe839ffb0eaa13ea5663"
+    },
+    "usedBy": [
+      "public/data/escapadas.json → EscapadasContent → /escapadas"
+    ],
+    "proposedHtml": "/escapadas/san-juan",
+    "draftId": "AUS-ESC-SAN-JUAN-EDITORIAL-01",
+    "tripContentSha256": "ea24ff87c657125b8a25f1f4fe0a149684ae5709489cdf80b01230e64a00abe1",
+    "status": "draft",
+    "publicationAuthorized": false,
+    "review": null,
+    "pdfTopics": [
+      "Capital o Ullum",
+      "Barreal, El Leoncito y astroturismo",
+      "Rodeo y Pismanta",
+      "Olivares, Ischigualasto y Mercedario"
+    ],
+    "htmlTopics": [
+      {
+        "id": "ciudad",
+        "title": "La Casa Natal como comienzo de la visita"
+      },
+      {
+        "id": "leoncito",
+        "title": "El Leoncito: paisaje de agua y aridez"
+      },
+      {
+        "id": "cielo",
+        "title": "Parque y observatorios: consultas diferentes"
+      },
+      {
+        "id": "triasico",
+        "title": "Ischigualasto necesita otra planificación"
+      },
+      {
+        "id": "organizar",
+        "title": "Elegir una escapada temática"
+      }
+    ],
+    "differences": [
+      "Rodeo, Pismanta, Ullum, olivares y Mercedario no desarrollados",
+      "Posible división en fichas de capital, Calingasta y Valle Fértil"
+    ],
+    "related": [
+      {
+        "href": "/provincias/san_juan",
+        "label": "Conocer san juan"
+      },
+      {
+        "href": "/actividades?provincia=san_juan",
+        "label": "Actividades en san juan"
+      },
+      {
+        "href": "/escapadas",
+        "label": "Otras escapadas"
+      }
+    ],
+    "scopeDecision": "pending-human-review",
+    "onePageSufficient": null,
+    "recommendation": "Revisar alcance temático y considerar fichas complementarias; no afirmar equivalencia.",
+    "originalBackup": {
+      "inGit": true,
+      "externalBackupVerified": false,
+      "restorationTested": false,
+      "retirementAuthorized": false
+    },
+    "redirect": {
+      "status": 308,
+      "fromPath": "/pdf/sanjuan.pdf",
+      "toPath": "/escapadas/san-juan",
+      "enabled": false
+    }
+  },
+  {
+    "legacyGuideId": "esc_17",
+    "batch": "B04",
+    "pdf": {
+      "path": "/pdf/sanluis.pdf",
+      "bytes": 33406355,
+      "sha256": "3a1571a56d29d31e1f86e0a2140b3b25a3d8a69a11ba7f79db816c51dc208d17"
+    },
+    "usedBy": [
+      "public/data/escapadas.json → EscapadasContent → /escapadas"
+    ],
+    "proposedHtml": "/escapadas/san-luis",
+    "draftId": "AUS-ESC-SAN-LUIS-EDITORIAL-01",
+    "tripContentSha256": "73d608e71ed53d75d0e0c0c6c5e7342c1a6ad6c46912367ceed21ef0a936875c",
+    "status": "draft",
+    "publicationAuthorized": false,
+    "review": null,
+    "pdfTopics": [
+      "Potrero y Parque Nativo",
+      "La Punta o El Trapiche",
+      "La Carolina y senderos",
+      "Pancanta, Inti Huasi y cascadas"
+    ],
+    "htmlTopics": [
+      {
+        "id": "potrero",
+        "title": "Potrero: observar el embalse desde tierra"
+      },
+      {
+        "id": "carolina",
+        "title": "La Carolina: un pueblo ligado a la minería"
+      },
+      {
+        "id": "quijadas",
+        "title": "Sierra de las Quijadas: un paisaje protegido propio"
+      },
+      {
+        "id": "recorridos",
+        "title": "Una caminata no equivale a todas las demás"
+      },
+      {
+        "id": "organizar",
+        "title": "Qué comprobar antes de ampliar el viaje"
+      }
+    ],
+    "differences": [
+      "La Punta, El Trapiche, Pancanta y senderos de Carolina no desarrollados",
+      "Quijadas es alternativa adicional y no reemplaza esos contenidos"
+    ],
+    "related": [
+      {
+        "href": "/provincias/san_luis",
+        "label": "Conocer san luis"
+      },
+      {
+        "href": "/actividades?provincia=san_luis",
+        "label": "Actividades en san luis"
+      },
+      {
+        "href": "/escapadas",
+        "label": "Otras escapadas"
+      }
+    ],
+    "scopeDecision": "pending-human-review",
+    "onePageSufficient": null,
+    "recommendation": "Revisar alcance temático y considerar fichas complementarias; no afirmar equivalencia.",
+    "originalBackup": {
+      "inGit": true,
+      "externalBackupVerified": false,
+      "restorationTested": false,
+      "retirementAuthorized": false
+    },
+    "redirect": {
+      "status": 308,
+      "fromPath": "/pdf/sanluis.pdf",
+      "toPath": "/escapadas/san-luis",
+      "enabled": false
+    }
+  },
+  {
+    "legacyGuideId": "esc_14",
+    "batch": "B05",
+    "pdf": {
+      "path": "/pdf/chaco.pdf",
+      "bytes": 23895952,
+      "sha256": "134819694046946cd0a7dd3b69c05304812d064dfd2c24e925046974dcd668a5"
+    },
+    "usedBy": [
+      "public/data/escapadas.json → EscapadasContent → /escapadas"
+    ],
+    "proposedHtml": "/escapadas/chaco",
+    "draftId": "AUS-ESC-CHACO-EDITORIAL-01",
+    "tripContentSha256": "6a12af0d987bbaa959cf71bec891a9017ba9232728dc9076c51b595da72c0e6a",
+    "status": "draft",
+    "publicationAuthorized": false,
+    "review": null,
+    "pdfTopics": [
+      "Resistencia y museos",
+      "Isla del Cerrito o Campo del Cielo",
+      "Termas o Ruta Qom",
+      "PN Chaco y El Impenetrable"
+    ],
+    "htmlTopics": [
+      {
+        "id": "resistencia",
+        "title": "Resistencia: arte en la vida cotidiana"
+      },
+      {
+        "id": "parque-chaco",
+        "title": "Parque Nacional Chaco: bosque, río y lagunas"
+      },
+      {
+        "id": "impenetrable",
+        "title": "El Impenetrable necesita planificación propia"
+      },
+      {
+        "id": "elegir",
+        "title": "Observar sin prometer encuentros con fauna"
+      },
+      {
+        "id": "plan",
+        "title": "Reconfirmar antes del tramo rural"
+      }
+    ],
+    "differences": [
+      "Cuatro propuestas centrales del PDF pendientes; cobertura de equivalencia parcial",
+      "No avala termas terapéuticas ni circuitos comunitarios disponibles"
+    ],
+    "related": [
+      {
+        "href": "/provincias/chaco",
+        "label": "Conocer chaco"
+      },
+      {
+        "href": "/actividades?provincia=chaco",
+        "label": "Actividades en chaco"
+      },
+      {
+        "href": "/escapadas",
+        "label": "Otras escapadas"
+      }
+    ],
+    "scopeDecision": "pending-human-review",
+    "onePageSufficient": null,
+    "recommendation": "Revisar alcance temático y considerar fichas complementarias; no afirmar equivalencia.",
+    "originalBackup": {
+      "inGit": true,
+      "externalBackupVerified": false,
+      "restorationTested": false,
+      "retirementAuthorized": false
+    },
+    "redirect": {
+      "status": 308,
+      "fromPath": "/pdf/chaco.pdf",
+      "toPath": "/escapadas/chaco",
+      "enabled": false
+    }
+  },
+  {
+    "legacyGuideId": "esc_11",
+    "batch": "B05",
+    "pdf": {
+      "path": "/pdf/entrerios.pdf",
+      "bytes": 29060699,
+      "sha256": "6264c1b294a9bcac1920ce94ec985f48e822001ea67c8ddf1e67d55531a9680a"
+    },
+    "usedBy": [
+      "public/data/escapadas.json → EscapadasContent → /escapadas"
+    ],
+    "proposedHtml": "/escapadas/entre-rios",
+    "draftId": "AUS-ESC-ENTRE-RIOS-EDITORIAL-01",
+    "tripContentSha256": "1d37eca02b68a215d3ef4061d5215ab6b7792bbf9b3f7002f205601ba6c66ee9",
+    "status": "draft",
+    "publicationAuthorized": false,
+    "review": null,
+    "pdfTopics": [
+      "Complejos termales",
+      "El Palmar y naturaleza",
+      "Bodegas o estancias rurales",
+      "Colonias judías y playas del Paraná"
+    ],
+    "htmlTopics": [
+      {
+        "id": "molino",
+        "title": "Molino Forclaz: mirar el trabajo y sus construcciones"
+      },
+      {
+        "id": "san-jose",
+        "title": "San José: memoria de la colonia y del ambiente"
+      },
+      {
+        "id": "liebig",
+        "title": "Pueblo Liebig: leer un paisaje industrial"
+      },
+      {
+        "id": "palmar",
+        "title": "El Palmar es otra visita, no toda Entre Ríos"
+      },
+      {
+        "id": "organizar",
+        "title": "Elegir un tema para cada jornada"
+      },
+      {
+        "id": "alcance",
+        "title": "Termas y turismo rural necesitan su propia consulta"
+      }
+    ],
+    "differences": [
+      "Termas, colonias judías, bodegas y turismo rural no desarrollados",
+      "Una ficha regional del Uruguay no equivale a toda la provincia"
+    ],
+    "related": [
+      {
+        "href": "/provincias/entre_rios",
+        "label": "Conocer entre rios"
+      },
+      {
+        "href": "/actividades?provincia=entre_rios",
+        "label": "Actividades en entre rios"
+      },
+      {
+        "href": "/escapadas",
+        "label": "Otras escapadas"
+      }
+    ],
+    "scopeDecision": "pending-human-review",
+    "onePageSufficient": null,
+    "recommendation": "Revisar alcance temático y considerar fichas complementarias; no afirmar equivalencia.",
+    "originalBackup": {
+      "inGit": true,
+      "externalBackupVerified": false,
+      "restorationTested": false,
+      "retirementAuthorized": false
+    },
+    "redirect": {
+      "status": 308,
+      "fromPath": "/pdf/entrerios.pdf",
+      "toPath": "/escapadas/entre-rios",
+      "enabled": false
+    }
+  },
+  {
+    "legacyGuideId": "esc_23",
+    "batch": "B05",
+    "pdf": {
+      "path": "/pdf/formosa.pdf",
+      "bytes": 57013841,
+      "sha256": "7dfb6d4369c98477367c52c8e5a71fbbf1a969b1b7e5f50d88ece7e33f05b658"
+    },
+    "usedBy": [
+      "public/data/escapadas.json → EscapadasContent → /escapadas"
+    ],
+    "proposedHtml": "/escapadas/formosa",
+    "draftId": "AUS-ESC-FORMOSA-EDITORIAL-01",
+    "tripContentSha256": "8aa6a350b57c0d436dc4f38280c9a78c7d1bbe814617d3e5427da652e9f5caa9",
+    "status": "draft",
+    "publicationAuthorized": false,
+    "review": null,
+    "pdfTopics": [
+      "Las Lomitas y Vertedero",
+      "Fortín Soledad y bañado",
+      "Capital y Laguna Oca",
+      "Herradura y Río Pilcomayo"
+    ],
+    "htmlTopics": [
+      {
+        "id": "ciudad",
+        "title": "La capital junto al Paraguay"
+      },
+      {
+        "id": "banado",
+        "title": "La Estrella: un paisaje que cambia"
+      },
+      {
+        "id": "portales",
+        "title": "El Vertedero y Fortín La Soledad"
+      },
+      {
+        "id": "pilcomayo",
+        "title": "Río Pilcomayo tiene otra administración y otros ambientes"
+      },
+      {
+        "id": "plan",
+        "title": "Preparar cada ámbito por separado"
+      }
+    ],
+    "differences": [
+      "Herradura no desarrollada",
+      "No valida baño, kayaks ni disponibilidad de guías del PDF"
+    ],
+    "related": [
+      {
+        "href": "/provincias/formosa",
+        "label": "Conocer formosa"
+      },
+      {
+        "href": "/actividades?provincia=formosa",
+        "label": "Actividades en formosa"
+      },
+      {
+        "href": "/escapadas",
+        "label": "Otras escapadas"
+      }
+    ],
+    "scopeDecision": "pending-human-review",
+    "onePageSufficient": null,
+    "recommendation": "Revisar alcance temático y considerar fichas complementarias; no afirmar equivalencia.",
+    "originalBackup": {
+      "inGit": true,
+      "externalBackupVerified": false,
+      "restorationTested": false,
+      "retirementAuthorized": false
+    },
+    "redirect": {
+      "status": 308,
+      "fromPath": "/pdf/formosa.pdf",
+      "toPath": "/escapadas/formosa",
+      "enabled": false
+    }
+  },
+  {
+    "legacyGuideId": "esc_21",
+    "batch": "B05",
+    "pdf": {
+      "path": "/pdf/misiones.pdf",
+      "bytes": 23042857,
+      "sha256": "96c659dfb28bb2302cc847a003f8869764451dec7a0105aa4a9e74d2b929d170"
+    },
+    "usedBy": [
+      "public/data/escapadas.json → EscapadasContent → /escapadas"
+    ],
+    "proposedHtml": "/escapadas/misiones",
+    "draftId": "AUS-ESC-MISIONES-EDITORIAL-01",
+    "tripContentSha256": "fa5dfcb334e0c26c5f7e0977cdf34ad09ea90558d74c54b94eaf125b97b98685",
+    "status": "draft",
+    "publicationAuthorized": false,
+    "review": null,
+    "pdfTopics": [
+      "Cruz y reducciones",
+      "Salto Encantado",
+      "Moconá y El Soberbio",
+      "Té, yerba y Campo Ramón"
+    ],
+    "htmlTopics": [
+      {
+        "id": "san-ignacio",
+        "title": "San Ignacio Miní: comprender el conjunto"
+      },
+      {
+        "id": "serie",
+        "title": "No todas las reducciones tienen la misma inscripción"
+      },
+      {
+        "id": "cruz",
+        "title": "Santa Ana: paisaje e interpretación"
+      },
+      {
+        "id": "encantado",
+        "title": "Salto Encantado: detenerse a mirar la selva"
+      },
+      {
+        "id": "mocona",
+        "title": "Moconá: una experiencia dependiente del agua"
+      },
+      {
+        "id": "plan",
+        "title": "Elegir un eje antes de combinar destinos"
+      }
+    ],
+    "differences": [
+      "Producción de té/yerba y Campo Ramón pendientes",
+      "No avala tres días ni navegación garantizada; corrige alcance UNESCO del PDF"
+    ],
+    "related": [
+      {
+        "href": "/provincias/misiones",
+        "label": "Conocer misiones"
+      },
+      {
+        "href": "/actividades?provincia=misiones",
+        "label": "Actividades en misiones"
+      },
+      {
+        "href": "/escapadas",
+        "label": "Otras escapadas"
+      }
+    ],
+    "scopeDecision": "pending-human-review",
+    "onePageSufficient": null,
+    "recommendation": "Revisar alcance temático y considerar fichas complementarias; no afirmar equivalencia.",
+    "originalBackup": {
+      "inGit": true,
+      "externalBackupVerified": false,
+      "restorationTested": false,
+      "retirementAuthorized": false
+    },
+    "redirect": {
+      "status": 308,
+      "fromPath": "/pdf/misiones.pdf",
+      "toPath": "/escapadas/misiones",
+      "enabled": false
+    }
+  },
+  {
+    "legacyGuideId": "esc_18",
+    "batch": "B06",
+    "pdf": {
+      "path": "/pdf/gallegos.pdf",
+      "bytes": 19784786,
+      "sha256": "47efb3d922e1545a0ee3fd117ed03381ad8b81408b762843a71a2738dec170ed"
+    },
+    "usedBy": [
+      "public/data/escapadas.json → EscapadasContent → /escapadas"
+    ],
+    "proposedHtml": "/escapadas/rio-gallegos",
+    "draftId": "AUS-ESC-RIO-GALLEGOS-EDITORIAL-01",
+    "tripContentSha256": "7adf32d05228f1a79815c1db75180aba37f46e12c1f8d48cd8221e3ade19ecca",
+    "status": "draft",
+    "publicationAuthorized": false,
+    "review": null,
+    "pdfTopics": [
+      "Cabo Vírgenes y faro",
+      "Laguna Azul o Punta Loyola",
+      "Museos, reservas urbanas y planetario",
+      "Circuitos temáticos y parques"
+    ],
+    "htmlTopics": [
+      {
+        "id": "ria",
+        "title": "El estuario como primer paisaje"
+      },
+      {
+        "id": "ciudad",
+        "title": "Museos con temas diferentes"
+      },
+      {
+        "id": "cabo",
+        "title": "Cabo Vírgenes es una salida fuera de la ciudad"
+      },
+      {
+        "id": "loyola",
+        "title": "Punta Loyola y el Marjory Glen"
+      },
+      {
+        "id": "volcan",
+        "title": "Laguna Azul: otra escala de la estepa"
+      },
+      {
+        "id": "plan",
+        "title": "Ordenar ciudad y excursiones"
+      }
+    ],
+    "differences": [
+      "Planetario y circuitos urbanos temáticos no desarrollados",
+      "Museos y Laguna Azul requieren comprobación más específica para una guía operativa"
+    ],
+    "related": [
+      {
+        "href": "/provincias/santa_cruz",
+        "label": "Conocer santa cruz"
+      },
+      {
+        "href": "/actividades?provincia=santa_cruz",
+        "label": "Actividades en santa cruz"
+      },
+      {
+        "href": "/escapadas",
+        "label": "Otras escapadas"
+      }
+    ],
+    "scopeDecision": "pending-human-review",
+    "onePageSufficient": null,
+    "recommendation": "Revisar alcance temático y considerar fichas complementarias; no afirmar equivalencia.",
+    "originalBackup": {
+      "inGit": true,
+      "externalBackupVerified": false,
+      "restorationTested": false,
+      "retirementAuthorized": false
+    },
+    "redirect": {
+      "status": 308,
+      "fromPath": "/pdf/gallegos.pdf",
+      "toPath": "/escapadas/rio-gallegos",
+      "enabled": false
+    }
+  },
+  {
+    "legacyGuideId": "esc_22",
+    "batch": "B06",
+    "pdf": {
+      "path": "/pdf/lapampa.pdf",
+      "bytes": 20932838,
+      "sha256": "c44359d857148c1fe5f5720fa798ac76b583fe2050beaae7bd515b0d420c1eab"
+    },
+    "usedBy": [
+      "public/data/escapadas.json → EscapadasContent → /escapadas"
+    ],
+    "proposedHtml": "/escapadas/la-pampa",
+    "draftId": "AUS-ESC-LA-PAMPA-EDITORIAL-01",
+    "tripContentSha256": "50bfd97ded752c3f97d54a0ab83581bac615030ebfb13629d7a121e8e8f15a33",
+    "status": "draft",
+    "publicationAuthorized": false,
+    "review": null,
+    "pdfTopics": [
+      "Parque Luro y castillo",
+      "Lihué Calel",
+      "Estancias rurales",
+      "Brama, colonia menonita y salinas"
+    ],
+    "htmlTopics": [
+      {
+        "id": "calden",
+        "title": "Parque Luro: paisaje y huellas del pasado"
+      },
+      {
+        "id": "castillo",
+        "title": "El Castillo y la historia de la estancia"
+      },
+      {
+        "id": "sierras",
+        "title": "Lihué Calel: otro ambiente pampeano"
+      },
+      {
+        "id": "memoria",
+        "title": "Interpretar las huellas sin intervenirlas"
+      },
+      {
+        "id": "toay",
+        "title": "Toay y la memoria de Olga Orozco"
+      },
+      {
+        "id": "plan",
+        "title": "Elegir una base y una propuesta concreta"
+      }
+    ],
+    "differences": [
+      "Oferta rural y salinas no desarrolladas; no autoriza visitas comunitarias",
+      "Brama sin calendario operativo ni reserva confirmada"
+    ],
+    "related": [
+      {
+        "href": "/provincias/la_pampa",
+        "label": "Conocer la pampa"
+      },
+      {
+        "href": "/actividades?provincia=la_pampa",
+        "label": "Actividades en la pampa"
+      },
+      {
+        "href": "/escapadas",
+        "label": "Otras escapadas"
+      }
+    ],
+    "scopeDecision": "pending-human-review",
+    "onePageSufficient": null,
+    "recommendation": "Revisar alcance temático y considerar fichas complementarias; no afirmar equivalencia.",
+    "originalBackup": {
+      "inGit": true,
+      "externalBackupVerified": false,
+      "restorationTested": false,
+      "retirementAuthorized": false
+    },
+    "redirect": {
+      "status": 308,
+      "fromPath": "/pdf/lapampa.pdf",
+      "toPath": "/escapadas/la-pampa",
+      "enabled": false
+    }
+  },
+  {
+    "legacyGuideId": "esc_03",
+    "batch": "B06",
+    "pdf": {
+      "path": "/pdf/pinamar.pdf",
+      "bytes": 19760229,
+      "sha256": "aaaba6460562f60af510c03e91767674fbad8a1994b3558a3ead64f3fce280c4"
+    },
+    "usedBy": [
+      "public/data/escapadas.json → EscapadasContent → /escapadas"
+    ],
+    "proposedHtml": "/escapadas/pinamar",
+    "draftId": "AUS-ESC-PINAMAR-EDITORIAL-01",
+    "tripContentSha256": "c413167a96b41587e0de3c9f0b80d6d9cea60b2b18a66e1ed9d309d1b4173c42",
+    "status": "draft",
+    "publicationAuthorized": false,
+    "review": null,
+    "pdfTopics": [
+      "Centro, playa y bosque",
+      "La Frontera o patrimonio arquitectónico",
+      "Cariló y Valeria del Mar",
+      "Arte, PEP, ferias y teatro"
+    ],
+    "htmlTopics": [
+      {
+        "id": "paisaje",
+        "title": "Una ciudad construida sobre un paisaje de dunas"
+      },
+      {
+        "id": "ostende",
+        "title": "Ostende: buscar las huellas del balneario"
+      },
+      {
+        "id": "bosque",
+        "title": "Pasear con atención al lugar"
+      },
+      {
+        "id": "localidades",
+        "title": "Cariló y Valeria del Mar tienen identidad propia"
+      },
+      {
+        "id": "medanos",
+        "title": "Los médanos requieren cuidado y consulta"
+      },
+      {
+        "id": "playa",
+        "title": "Una jornada junto al mar también se planifica"
+      }
+    ],
+    "differences": [
+      "No garantiza muelle, pesca embarcada, 4x4 ni sandboard",
+      "PEP, casas de artistas y agendas requieren fuentes específicas"
+    ],
+    "related": [
+      {
+        "href": "/provincias/buenos_aires",
+        "label": "Conocer buenos aires"
+      },
+      {
+        "href": "/actividades?provincia=buenos_aires",
+        "label": "Actividades en buenos aires"
+      },
+      {
+        "href": "/escapadas",
+        "label": "Otras escapadas"
+      }
+    ],
+    "scopeDecision": "pending-human-review",
+    "onePageSufficient": null,
+    "recommendation": "Revisar alcance temático y considerar fichas complementarias; no afirmar equivalencia.",
+    "originalBackup": {
+      "inGit": true,
+      "externalBackupVerified": false,
+      "restorationTested": false,
+      "retirementAuthorized": false
+    },
+    "redirect": {
+      "status": 308,
+      "fromPath": "/pdf/pinamar.pdf",
+      "toPath": "/escapadas/pinamar",
+      "enabled": false
+    }
+  },
+  {
+    "legacyGuideId": "esc_20",
+    "batch": "B06",
+    "pdf": {
+      "path": "/pdf/santiago.pdf",
+      "bytes": 28132742,
+      "sha256": "4bd407b099b401e214dbf700668207c0f43aea51e353a95d464ff60424e0adbb"
+    },
+    "usedBy": [
+      "public/data/escapadas.json → EscapadasContent → /escapadas"
+    ],
+    "proposedHtml": "/escapadas/santiago-del-estero",
+    "draftId": "AUS-ESC-SANTIAGO-DEL-ESTERO-EDITORIAL-01",
+    "tripContentSha256": "14c8a81cf71bd933dc4c52d358d7b6b2d6d4a1ba951542f8fc8ccc6f73e6fea8",
+    "status": "draft",
+    "publicationAuthorized": false,
+    "review": null,
+    "pdfTopics": [
+      "Capital y CCB",
+      "Termas, hotel y Museo Automóvil",
+      "Tara Inti, dique y cestería",
+      "Copo y Beltrán"
+    ],
+    "htmlTopics": [
+      {
+        "id": "capital",
+        "title": "La capital desde sus colecciones"
+      },
+      {
+        "id": "termas",
+        "title": "Las Termas de Río Hondo es otra base"
+      },
+      {
+        "id": "motores",
+        "title": "Museo del Automóvil y autódromo no son la misma actividad"
+      },
+      {
+        "id": "tara",
+        "title": "Tara Inti: una propuesta de interpretación del ambiente"
+      },
+      {
+        "id": "copo",
+        "title": "Copo: otra región, otro paisaje"
+      },
+      {
+        "id": "plan",
+        "title": "Preparar cultura, descanso y naturaleza sin promesas médicas"
+      }
+    ],
+    "differences": [
+      "No valida hoteles, tratamientos, agenda deportiva ni peñas",
+      "Beltrán y experiencias con artesanos pendientes"
+    ],
+    "related": [
+      {
+        "href": "/provincias/santiago_del_estero",
+        "label": "Conocer santiago del estero"
+      },
+      {
+        "href": "/actividades?provincia=santiago_del_estero",
+        "label": "Actividades en santiago del estero"
+      },
+      {
+        "href": "/escapadas",
+        "label": "Otras escapadas"
+      }
+    ],
+    "scopeDecision": "pending-human-review",
+    "onePageSufficient": null,
+    "recommendation": "Revisar alcance temático y considerar fichas complementarias; no afirmar equivalencia.",
+    "originalBackup": {
+      "inGit": true,
+      "externalBackupVerified": false,
+      "restorationTested": false,
+      "retirementAuthorized": false
+    },
+    "redirect": {
+      "status": 308,
+      "fromPath": "/pdf/santiago.pdf",
+      "toPath": "/escapadas/santiago-del-estero",
+      "enabled": false
+    }
+  }
+]

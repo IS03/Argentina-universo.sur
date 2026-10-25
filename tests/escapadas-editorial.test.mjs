@@ -64,7 +64,7 @@ test("public projection excludes Work reconciliation, editorial notes and privat
 
 test("source-checked is never approval; every real prepared trip remains withheld", async () => {
   const trips = await readEditorialTrips(new URL("../", import.meta.url).pathname);
-  assert.equal(trips.length, 4);
+  assert.ok(trips.length >= 4); // PR13 adds drafts; exact batch coverage has its own test.
   for (const trip of trips) { assert.equal(trip.status, "draft"); assert.equal(trip.review, null); assert.equal(tripPublishable(trip), false); }
   for (const trip of trips.filter(t => t.slug !== "el-palmar")) { assert.equal(trip.publicationAuthorized, false); assert.deepEqual(trip.editorial.origin.masterRefs, []); }
   const palmar = trips.find(t => t.slug === "el-palmar");
