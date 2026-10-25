@@ -70,13 +70,28 @@ export default function TripArticle({ trip }: { trip: PublishedTrip }) {
         <section key={sectionId(index)} aria-labelledby={sectionId(index)} className="mt-8">
           <h2 id={sectionId(index)} className="text-2xl font-semibold mb-3 scroll-mt-28">{section.title}</h2>
           {section.paragraphs.map((paragraph, n) => <p key={n} className="mb-4 leading-relaxed">{paragraph}</p>)}
-          {trip.operationalNotices?.filter(notice => notice.sectionId === section.id).map(notice => (
-            <aside key={notice.id} aria-label="Estado operativo" className="mb-4 rounded-lg border border-[#C9B99B] p-4">
-              <p className="font-semibold">Estado verificado el <time dateTime={notice.verifiedAt}>{notice.verifiedAt}</time></p>
-              <p className="mt-1">{notice.text}</p>
-              <p className="mt-1 text-sm">{references(notice.sourceIds)}</p>
-            </aside>
-          ))}
+          {trip.operationalNotices?.filter(notice => notice.sectionId === section.id).map(notice => {
+            const official = trip.sources.find(source => source.id === notice.officialStatusSourceId);
+            return (
+              // Static HTML may stay online long after a build: the guidance is timeless and the observation
+              // is past tense with its dates visible, so the page stays truthful without JavaScript.
+              <aside key={notice.id} aria-label="Estado operativo" className="mb-4 rounded-lg border border-[#C9B99B] p-4">
+                <p>{notice.guidance}{" "}{official && <a className="underline" href={official.url} rel="noreferrer">{official.title}</a>}</p>
+                {notice.observation && (
+                  <div className="mt-3 text-sm">
+                    <p className="font-semibold">
+                      Registro verificado el <time dateTime={notice.observation.verifiedAt}>{notice.observation.verifiedAt}</time>,
+                      publicado el <time dateTime={notice.observation.publishedAt}>{notice.observation.publishedAt}</time>.
+                      Vale como referencia hasta el <time dateTime={notice.observation.expiresAt}>{notice.observation.expiresAt}</time>;
+                      después puede no reflejar el estado actual.
+                    </p>
+                    <p className="mt-1">{notice.observation.text}</p>
+                    <p className="mt-1">{references(notice.observation.sourceIds)}</p>
+                  </div>
+                )}
+              </aside>
+            );
+          })}
           <p className="text-sm">{references(section.sourceIds)}</p>
         </section>
       ))}
@@ -98,6 +113,7 @@ export default function TripArticle({ trip }: { trip: PublishedTrip }) {
           {trip.sources.map(source => (
             <li key={source.id} id={`fuente-${source.id}`} className="scroll-mt-28">
               <a className="underline" href={source.url} rel="noreferrer">{source.title}</a>{" "}
+              {source.publishedAt && <>· comunicado del <time dateTime={source.publishedAt}>{source.publishedAt.replace("T", " ")}</time>{" "}</>}
               · consultada el <time dateTime={source.checkedAt}>{source.checkedAt}</time>
             </li>
           ))}

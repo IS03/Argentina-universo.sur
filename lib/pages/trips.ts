@@ -11,7 +11,8 @@ export type LegacyTrip = {
   status: "draft" | "approved";
   publicationAuthorized: boolean;
   review: { reviewer: string; date: string; contentSha256: string } | null;
-  sources: { id: string; title: string; url: string; checkedAt: string }[];
+  // checkedAt: when we consulted it. publishedAt: date (or date-time with offset) of the communiqué itself, if it shows one.
+  sources: { id: string; title: string; url: string; checkedAt: string; publishedAt?: string }[];
   sections: { title: string; paragraphs: string[]; sourceIds: string[] }[];
   address: string;
   mapUrl: string;
@@ -35,10 +36,26 @@ export type TripPhoto = {
     reviewedAt: string;
   };
 };
-// Variable operating conditions (closures, works, suspensions): dated and sourced, kept apart from the
-// permanent description and never valid for publication without a fresh verification.
-export type TripOperationalNotice = { id: string; sectionId: string; text: string; sourceIds: string[]; verifiedAt: string };
-export const OPERATIONAL_NOTICE_MAX_AGE_DAYS = 7;
+// Variable operating conditions (closures, works, suspensions), kept apart from the permanent description.
+// A static deployment can outlive any build, so nothing here may read as a present-tense state:
+// - guidance: timeless pointer to the official status source, always rendered;
+// - observation: past-tense, dated record of what the sources said, rendered only until expiresAt.
+// Dates: verifiedAt = editorial check of the sources; publication = review.date of the approved version
+// that carries it (never stored separately); expiresAt = last build date allowed to include the observation.
+export type TripOperationalNotice = {
+  id: string;
+  sectionId: string;
+  guidance: string;
+  officialStatusSourceId: string;
+  observation: string;
+  sourceIds: string[];
+  verifiedAt: string;
+  expiresAt: string;
+};
+// Approval must happen within this many days after verifiedAt.
+export const OPERATIONAL_NOTICE_REVIEW_WINDOW_DAYS = 7;
+// expiresAt may be at most this many days after verifiedAt.
+export const OPERATIONAL_NOTICE_MAX_VALIDITY_DAYS = 14;
 export type StructuredTrip = Omit<LegacyTrip, "schemaVersion" | "sections"> & {
   schemaVersion: 2;
   introductionSourceIds: string[];
@@ -96,6 +113,26 @@ export function tripPublishable(trip: Trip): boolean {
     trip.review?.contentSha256 === tripContentHash(trip)
   );
 }
+const DAY = 86_400_000;
+const days = (from: string, to: string) => (Date.parse(to) - Date.parse(from)) / DAY;
+// Date of the build, in UTC. AUS_BUILD_DATE pins it for reproducible builds and tests.
+export function buildDate(env: Record<string, string | undefined> = process.env): string {
+  const pinned = env.AUS_BUILD_DATE;
+  if (pinned !== undefined && !validDate(pinned)) throw new Error("AUS_BUILD_DATE must be YYYY-MM-DD");
+  return pinned ?? new Date().toISOString().slice(0, 10);
+}
+// Validation that depends on the build date: no editorial date may lie in the future of the build.
+export function validateTripAsOf(trip: Trip, asOf: string): string[] {
+  const errors = validateTrip(trip);
+  if (errors.length) return errors;
+  const dated = [
+    ...trip.sources.flatMap(s => [s.checkedAt, ...(s.publishedAt ? [s.publishedAt.slice(0, 10)] : [])]),
+    ...(trip.review?.date ? [trip.review.date] : []),
+    ...(trip.schemaVersion === 2 ? [trip.editorial.updatedAt, ...(trip.operationalNotices ?? []).map(n => n.verifiedAt)] : []),
+  ];
+  if (dated.some(date => date > asOf)) errors.push("Editorial date after the build date " + asOf);
+  return errors;
+}
 export function validateTrip(trip: Trip): string[] {
   const errors: string[] = [];
   if (!trip || ![undefined, 1, 2].includes(trip.schemaVersion) || !["draft", "approved"].includes(trip.status) || typeof trip.publicationAuthorized !== "boolean") return ["Invalid editorial state/schema"];
@@ -110,7 +147,8 @@ export function validateTrip(trip: Trip): string[] {
       !source.url.startsWith("https://") ||
       !/^\d{4}-\d{2}-\d{2}$/.test(source.checkedAt) ||
       Number.isNaN(Date.parse(source.checkedAt)) ||
-      new Date(source.checkedAt).toISOString().slice(0, 10) !== source.checkedAt
+      new Date(source.checkedAt).toISOString().slice(0, 10) !== source.checkedAt ||
+      (source.publishedAt !== undefined && (!validPublication(source.publishedAt) || source.publishedAt.slice(0, 10) > source.checkedAt))
     )
       errors.push("Invalid source");
   for (const section of trip.sections)
@@ -127,6 +165,12 @@ export function validateTrip(trip: Trip): string[] {
 
 function validDate(value: string): boolean {
   return /^\d{4}-\d{2}-\d{2}$/.test(value) && !Number.isNaN(Date.parse(value)) && new Date(value).toISOString().slice(0, 10) === value;
+}
+// A communiqué date, or date-time with an explicit offset as shown by the source (e.g. 2026-08-03T19:45-03:00).
+function validPublication(value: string): boolean {
+  if (typeof value !== "string") return false;
+  if (validDate(value)) return true;
+  return /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}(?::\d{2})?(?:Z|[+-]\d{2}:\d{2})$/.test(value) && validDate(value.slice(0, 10)) && !Number.isNaN(Date.parse(value));
 }
 function https(value: string): boolean {
   try { const url = new URL(value); return url.protocol === "https:" && !url.username && !url.password; } catch { return false; }
@@ -149,12 +193,18 @@ function validateStructuredTrip(trip: StructuredTrip): string[] {
   const editorial = trip.editorial;
   if (!editorial || !["researching", "sources-checked"].includes(editorial.documentaryStatus) || !validDate(editorial.updatedAt) || editorial.origin?.kind !== "git-editorial" || !Array.isArray(editorial.origin.legacyGuideIds) || !unique(editorial.origin.legacyGuideIds) || !Array.isArray(editorial.origin.masterRefs) || !Array.isArray(editorial.pendingReviews)) errors.push("Invalid editorial provenance");
   const notices = trip.operationalNotices ?? [];
-  if (!Array.isArray(notices) || !unique(notices.map(n => n?.id)) || notices.some(n => !n || !/^[a-z0-9-]+$/.test(n.id) || !trip.sections.some(s => s.id === n.sectionId) || !n.text?.trim() || !linked(n.sourceIds) || !validDate(n.verifiedAt))) errors.push("Invalid operational notice");
-  else if (trip.status === "approved")
-    for (const notice of notices) {
-      const age = (Date.parse(trip.review?.date ?? "") - Date.parse(notice.verifiedAt)) / 86_400_000;
-      if (!(age >= 0 && age <= OPERATIONAL_NOTICE_MAX_AGE_DAYS)) errors.push("Operational notice must be re-verified before publication: " + notice.id);
+  const sourceById = new Map(trip.sources.map(source => [source.id, source]));
+  if (!Array.isArray(notices) || !unique(notices.map(n => n?.id)) || notices.some(n => !n || !/^[a-z0-9-]+$/.test(n.id) || !trip.sections.some(s => s.id === n.sectionId) || !n.guidance?.trim() || !n.observation?.trim() || !linked(n.sourceIds) || !sources.has(n.officialStatusSourceId) || !validDate(n.verifiedAt) || !validDate(n.expiresAt))) errors.push("Invalid operational notice");
+  else for (const notice of notices) {
+    const validity = days(notice.verifiedAt, notice.expiresAt);
+    if (!(validity > 0 && validity <= OPERATIONAL_NOTICE_MAX_VALIDITY_DAYS)) errors.push("Operational notice validity must end 1-" + OPERATIONAL_NOTICE_MAX_VALIDITY_DAYS + " days after verification: " + notice.id);
+    // The sources must have been consulted no later than the verification they support.
+    if ([...notice.sourceIds, notice.officialStatusSourceId].some(id => sourceById.get(id)!.checkedAt > notice.verifiedAt)) errors.push("Operational notice source consulted after its verification: " + notice.id);
+    if (trip.status === "approved") {
+      const age = days(notice.verifiedAt, trip.review?.date ?? "");
+      if (!(age >= 0 && age <= OPERATIONAL_NOTICE_REVIEW_WINDOW_DAYS) || (trip.review?.date ?? "") > notice.expiresAt) errors.push("Operational notice must be re-verified before publication: " + notice.id);
     }
+  }
   if (!Array.isArray(trip.photos)) errors.push("Photo inventory missing");
   else for (const photo of trip.photos) {
     const local = (url: string) => /^\/(?:img|media)\/[a-zA-Z0-9_./-]+\.(?:webp|avif)$/.test(url) && !url.includes("..");
@@ -174,16 +224,21 @@ export type PublishedTrip = Pick<LegacyTrip,
   geography?: StructuredTrip["geography"];
   locations?: StructuredTrip["locations"];
   photos?: PublicTripPhoto[];
-  operationalNotices?: TripOperationalNotice[];
+  operationalNotices?: PublicOperationalNotice[];
 };
-export function publishedTripProjection(trip: Trip): PublishedTrip {
+// The observation is omitted, never failed on, once expired: a failing build would leave the older deployment
+// (with the older observation) online. guidance stays, so the page keeps pointing to the official status.
+export type PublicOperationalNotice = Pick<TripOperationalNotice, "id" | "sectionId" | "guidance" | "officialStatusSourceId"> & {
+  observation: { text: string; sourceIds: string[]; verifiedAt: string; publishedAt: string; expiresAt: string } | null;
+};
+export function publishedTripProjection(trip: Trip, {asOf = buildDate()}: {asOf?: string} = {}): PublishedTrip {
   if (!tripPublishable(trip)) throw new Error("Trip has no valid publication approval");
-  const errors = validateTrip(trip);
+  const errors = validateTripAsOf(trip, asOf);
   if (errors.length) throw new Error("Invalid approved trip: " + errors.join("; "));
   const projected: PublishedTrip = {
     id: trip.id, slug: trip.slug, title: trip.title,
     destination: trip.destination, province: trip.province, description: trip.description,
-    sources: trip.sources.map(({id, title, url, checkedAt}) => ({id, title, url, checkedAt})),
+    sources: trip.sources.map(({id, title, url, checkedAt, publishedAt}) => ({id, title, url, checkedAt, ...(publishedAt ? {publishedAt} : {})})),
     sections: trip.sections.map(({title, paragraphs, sourceIds}) => ({title, paragraphs: [...paragraphs], sourceIds: [...sourceIds]})),
     address: trip.address, mapUrl: trip.mapUrl,
     related: trip.related.map(({href, label}) => ({href, label})),
@@ -197,7 +252,13 @@ export function publishedTripProjection(trip: Trip): PublishedTrip {
     };
     projected.locations = trip.locations.map(({id, label, description, mapUrl, sourceIds}) => ({id, label, description, mapUrl, sourceIds: [...sourceIds]}));
     if (trip.operationalNotices?.length)
-      projected.operationalNotices = trip.operationalNotices.map(({id, sectionId, text, sourceIds, verifiedAt}) => ({id, sectionId, text, sourceIds: [...sourceIds], verifiedAt}));
+      projected.operationalNotices = trip.operationalNotices.map(notice => ({
+        id: notice.id, sectionId: notice.sectionId, guidance: notice.guidance, officialStatusSourceId: notice.officialStatusSourceId,
+        observation: asOf > notice.expiresAt ? null : {
+          text: notice.observation, sourceIds: [...notice.sourceIds], verifiedAt: notice.verifiedAt,
+          publishedAt: trip.review!.date, expiresAt: notice.expiresAt,
+        },
+      }));
     projected.photos = trip.photos.map(({src, alt, caption, width, height, variants, rights}) => ({
       src, alt, caption, width, height,
       variants: variants.map(({src, width}) => ({src, width})),

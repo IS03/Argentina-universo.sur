@@ -3,7 +3,7 @@ import { readFile, stat } from "node:fs/promises";
 import { createHash } from "node:crypto";
 import { readEditorialTrips } from "../pages/editorial-security.mjs";
 import { planPdfRetirement } from "../../lib/pages/pdf-retirement.ts";
-import { tripPublishable } from "../../lib/pages/trips.ts";
+import { tripPublishable, buildDate } from "../../lib/pages/trips.ts";
 import { REGION_POR_PROVINCIA } from "../../lib/catalog.ts";
 const root = new URL("../../", import.meta.url);
 const read = async path => JSON.parse(await readFile(new URL(path, root), "utf8"));
@@ -61,5 +61,8 @@ for (const row of rows) {
 const security = await read("docs/pr12/security-document.json");
 const originalSecurity = matrix.find(r => r.id === security.id);
 if (security.path !== originalSecurity.path || security.sha256 !== originalSecurity.sha256 || security.replacementApproved || security.redirect || security.backup) errors.push("Security document must remain a separate pending review");
-console.log(JSON.stringify({guides: rows.length, separateSecurityDocument: 1, drafts: trips.length, publishable: trips.filter(tripPublishable).length, tourismPdfBytes: rows.reduce((n,r) => n+r.pdf.bytes,0), publicPdfBytesRetired: 0, activePdfRedirects: 0, errors}, null, 2));
+// Informational: expiry never fails a build (it only drops the observation), it signals a re-verification.
+const asOf = buildDate();
+const operationalNotices = trips.flatMap(trip => (trip.operationalNotices ?? []).map(n => ({trip: trip.slug, id: n.id, verifiedAt: n.verifiedAt, expiresAt: n.expiresAt, observation: asOf > n.expiresAt ? "expired: guidance only" : "within validity"})));
+console.log(JSON.stringify({asOf, operationalNotices, guides: rows.length, separateSecurityDocument: 1, drafts: trips.length, publishable: trips.filter(tripPublishable).length, tourismPdfBytes: rows.reduce((n,r) => n+r.pdf.bytes,0), publicPdfBytesRetired: 0, activePdfRedirects: 0, errors}, null, 2));
 if (errors.length) process.exitCode = 1;

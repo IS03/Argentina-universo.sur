@@ -36,7 +36,7 @@ Los nuevos IDs son del origen editorial de Git. `legacyGuideIds` conserva los ID
 | Ficha | Alcance | Estado / permiso / revisión |
 | --- | --- | --- |
 | Buenos Aires | Barrios, centro, naturaleza urbana, recorridos y planificación; 532 palabras de texto principal | draft / false / null |
-| Puerto Iguazú | Ciudad y parque argentino, recorridos, interpretación y planificación, con aviso operativo fechado sobre Garganta del Diablo | draft / false / null |
+| Puerto Iguazú | Ciudad y parque argentino, recorridos, interpretación y planificación, con indicación permanente de consultar el estado oficial y una observación histórica fechada y con caducidad sobre Garganta del Diablo ([detalle](RESULTS.md#avisos-operativos-garganta-del-diablo)) | draft / false / null |
 | Talampaya e Ischigualasto | Dos parques y dos jurisdicciones, sin prometer un itinerario único; 539 palabras | draft / false / null |
 | El Palmar | Texto existente de 390 palabras; reconsulta de sus cuatro fuentes APN | draft / autorización previa conservada / null |
 

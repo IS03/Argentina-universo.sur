@@ -7,7 +7,7 @@ import { pathToFileURL } from "node:url";
 import { createElement } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import ts from "typescript";
-import { validateTrip, tripContentHash, tripPublishable, publishedTripProjection } from "../lib/pages/trips.ts";
+import { validateTrip, validateTripAsOf, buildDate, tripContentHash, tripPublishable, publishedTripProjection } from "../lib/pages/trips.ts";
 import { planPdfRetirement } from "../lib/pages/pdf-retirement.ts";
 import { readEditorialTrips, auditPublicArtifact } from "../scripts/pages/editorial-security.mjs";
 const synthetic = () => ({
@@ -113,22 +113,33 @@ test("new editorial-only payloads are rejected even without any tourist text", a
   assert.ok((await auditPublicArtifact(dir, [])).errors.some(e => e.rule === "private-master-data"));
 });
 
-test("tourist article renders semantic HTML, evidence anchors, map links and responsive licensed photos without JS", async t => {
+async function loadArticle(t) {
   const dir = await mkdtemp(join(tmpdir(), "aus-trip-render-")); t.after(() => rm(dir,{recursive: true, force: true}));
   const source = await readFile(new URL("../components/escapadas/TripArticle.tsx", import.meta.url), "utf8");
   const compiled = ts.transpileModule(source, {compilerOptions: {jsx: ts.JsxEmit.ReactJSX, module: ts.ModuleKind.ESNext, target: ts.ScriptTarget.ES2022}}).outputText.replace('"react/jsx-runtime"', JSON.stringify(import.meta.resolve("react/jsx-runtime"))).replace('"@/lib/site-links"', JSON.stringify(new URL("../lib/site-links.ts", import.meta.url).href));
   const path = join(dir, "article.mjs"); await writeFile(path, compiled);
-  const Article = (await import(pathToFileURL(path).href)).default;
-  const fixture = withNotice("2026-10-22"); fixture.photos = [fixturePhoto()];
+  return (await import(pathToFileURL(path).href)).default;
+}
+// Synthetic notice: verified on the 22nd, approved (approveSynthetic) on the 24th, observation valid until 2026-11-05.
+const withNotice = (verifiedAt = "2026-10-22", expiresAt = "2026-11-05") => {
+  const t = synthetic();
+  // Base evidence dated on the verification day, so builds simulated on earlier/later dates stay coherent.
+  t.sources[0].checkedAt = verifiedAt; t.editorial.updatedAt = verifiedAt;
+  t.sources.push({id: "status", title: "Synthetic official status", url: "https://example.org/status", checkedAt: verifiedAt, publishedAt: verifiedAt + "T17:00-03:00"});
+  t.operationalNotices = [{id: "synthetic-closure", sectionId: "activities", guidance: "Synthetic permanent guidance to check the official status.", officialStatusSourceId: "status", observation: "Synthetic past-tense observation of a temporary closure.", sourceIds: ["status"], verifiedAt, expiresAt}];
+  return t;
+};
+test("tourist article renders semantic HTML, evidence anchors, map links and responsive licensed photos without JS", async t => {
+  const Article = await loadArticle(t);
+  const fixture = withNotice(); fixture.photos = [fixturePhoto()];
   fixture.related.push({href: "/actividades?provincia=catarmaca&origen=synthetic#lista", label: "Synthetic activities"});
-  const html = renderToStaticMarkup(createElement(Article, {trip: publishedTripProjection(approveSynthetic(fixture))}));
+  const html = renderToStaticMarkup(createElement(Article, {trip: publishedTripProjection(approveSynthetic(fixture), {asOf: "2026-10-25"})}));
   assert.equal((html.match(/<h1\b/g) || []).length, 1);
   assert.match(html, /<article aria-labelledby="escapada-titulo"/);
   assert.match(html, /srcSet="[^"]*320w[^"]*960w"/i);
   assert.match(html, /width="960" height="640" alt="Synthetic accessible description"/);
   assert.match(html, /href="\/actividades\?provincia=catamarca&amp;origen=synthetic#lista"/);
   assert.match(html, /Synthetic holder/); assert.match(html, /datetime="2026-10-24"/i);
-  assert.match(html, /<aside aria-label="Estado operativo"[^>]*><p[^>]*>Estado verificado el <time dateTime="2026-10-22">2026-10-22<\/time>/i);
   for (const [,id] of html.matchAll(/href="#([^"]+)"/g)) assert.ok(html.includes(`id="${id}"`), id);
   assert.doesNotMatch(html, /<script|<iframe|_next\/image|adsbygoogle|googletagmanager|private-evidence/);
 });
@@ -142,7 +153,7 @@ test("an approved status without a review bound to the exact hash is an error, n
     assert.ok(validateTrip(stale).length, trip.slug);
   }
   const gate = await readFile(new URL("../content/escapadas/index.ts", import.meta.url), "utf8");
-  assert.match(gate, /validateTrip\(trip\)[\s\S]*throw new Error/);
+  assert.match(gate, /validateTripAsOf\(trip, asOf\)[\s\S]*throw new Error/);
 });
 
 test("the .next audit scope reports withheld text in served files and ignores private server chunks", async t => {
@@ -157,28 +168,93 @@ test("the .next audit scope reports withheld text in served files and ignores pr
   assert.equal(report.javascript, 0);
 });
 
-const withNotice = (verifiedAt = "2026-10-20") => {
-  const t = synthetic();
-  t.operationalNotices = [{id: "synthetic-closure", sectionId: "activities", text: "Synthetic temporary closure notice", sourceIds: ["source"], verifiedAt}];
-  return t;
-};
-test("operational notices are dated, sourced, tied to a section and must be re-verified close to the review", () => {
+const projectAt = (trip, asOf) => publishedTripProjection(trip, {asOf});
+const approveAt = (record, date) => ({...approveSynthetic(record), review: {reviewer: "synthetic-test-only", date, contentSha256: tripContentHash(record)}});
+
+test("notices separate permanent guidance from a dated observation and validate their date windows", () => {
   assert.deepEqual(validateTrip(withNotice()), []);
-  for (const mutate of [n => n.sectionId = "missing", n => n.sourceIds = ["missing"], n => n.sourceIds = [], n => n.verifiedAt = "2026-02-30", n => n.text = " ", n => n.id = "Bad Id"]) {
+  for (const mutate of [n => n.sectionId = "missing", n => n.sourceIds = ["missing"], n => n.sourceIds = [], n => n.officialStatusSourceId = "missing", n => n.verifiedAt = "2026-02-30", n => n.expiresAt = "", n => n.guidance = " ", n => n.observation = "", n => n.id = "Bad Id"]) {
     const t = withNotice(); mutate(t.operationalNotices[0]); assert.ok(validateTrip(t).includes("Invalid operational notice"));
   }
-  // Review on 2026-10-24: a notice checked 4 days earlier is current; one from 8 days earlier or after the review is not.
-  assert.equal(publishedTripProjection(approveSynthetic(withNotice("2026-10-20"))).operationalNotices[0].verifiedAt, "2026-10-20");
-  for (const stale of ["2026-10-16", "2026-10-25"]) assert.throws(() => publishedTripProjection(approveSynthetic(withNotice(stale))), /re-verified before publication/);
+  // Validity: 1 to 14 days after verification.
+  assert.ok(validateTrip(withNotice("2026-10-22", "2026-10-22")).some(e => /validity/.test(e)));
+  assert.ok(validateTrip(withNotice("2026-10-22", "2026-11-06")).some(e => /validity/.test(e)));
+  assert.deepEqual(validateTrip(withNotice("2026-10-22", "2026-11-05")), []);
+  // A source cannot be consulted after the verification it supports, nor published after it was consulted.
+  const late = withNotice(); late.sources[1].checkedAt = "2026-10-23"; assert.ok(validateTrip(late).some(e => /consulted after/.test(e)));
+  const backdated = withNotice(); backdated.sources[1].publishedAt = "2026-10-23"; assert.ok(validateTrip(backdated).includes("Invalid source"));
+  const badTime = withNotice(); badTime.sources[1].publishedAt = "2026-10-22 17:00"; assert.ok(validateTrip(badTime).includes("Invalid source"));
 });
 
-test("the Garganta del Diablo closure is a dated notice, not part of the permanent description", async () => {
+test("approval must follow a fresh verification and precede expiry", () => {
+  // Reviewed 2 days after verification: valid. 8 days after, before verification, or after expiry: rejected.
+  assert.doesNotThrow(() => projectAt(approveAt(withNotice(), "2026-10-24"), "2026-10-24"));
+  for (const date of ["2026-10-30", "2026-10-21"]) assert.throws(() => projectAt(approveAt(withNotice(), date), "2026-11-01"), /re-verified before publication/);
+  assert.throws(() => projectAt(approveAt(withNotice("2026-10-22", "2026-10-23"), "2026-10-24"), "2026-10-24"), /re-verified before publication/);
+});
+
+test("an old review keeps building after expiry: the observation is dropped, the permanent guidance stays", () => {
+  // Approved in January, rebuilt in June: no failure (a failing build would keep the old deployment online).
+  const old = approveAt(withNotice("2026-01-08", "2026-01-20"), "2026-01-10");
+  const notice = projectAt(old, "2026-06-01").operationalNotices[0];
+  assert.equal(notice.observation, null);
+  assert.equal(notice.guidance, "Synthetic permanent guidance to check the official status.");
+  assert.equal(notice.officialStatusSourceId, "status");
+});
+
+test("builds before, on and after the expiry date", () => {
+  const approved = approveAt(withNotice(), "2026-10-24");
+  const before = projectAt(approved, "2026-10-30").operationalNotices[0].observation;
+  assert.deepEqual(before, {text: "Synthetic past-tense observation of a temporary closure.", sourceIds: ["status"], verifiedAt: "2026-10-22", publishedAt: "2026-10-24", expiresAt: "2026-11-05"});
+  assert.notEqual(projectAt(approved, "2026-11-05").operationalNotices[0].observation, null);
+  assert.equal(projectAt(approved, "2026-11-06").operationalNotices[0].observation, null);
+});
+
+test("dates after the build date fail validation and projection", () => {
+  const approved = approveAt(withNotice(), "2026-10-24");
+  assert.throws(() => projectAt(approved, "2026-10-23"), /after the build date/); // review in the future
+  assert.ok(validateTripAsOf(withNotice(), "2026-10-21").some(e => /after the build date/.test(e))); // verification in the future
+  const futureSource = synthetic(); futureSource.sources[0].checkedAt = "2026-12-01";
+  assert.ok(validateTripAsOf(futureSource, "2026-10-25").some(e => /after the build date/.test(e)));
+  assert.deepEqual(validateTripAsOf(withNotice(), "2026-10-22"), []);
+  assert.throws(() => buildDate({AUS_BUILD_DATE: "25/10/2026"}), /YYYY-MM-DD/);
+  assert.equal(buildDate({AUS_BUILD_DATE: "2026-10-25"}), "2026-10-25");
+  assert.match(buildDate({}), /^\d{4}-\d{2}-\d{2}$/);
+});
+
+test("static HTML stays truthful without JS: guidance always, observation in the past with visible dates only until expiry", async t => {
+  const Article = await loadArticle(t);
+  const approved = approveAt(withNotice(), "2026-10-24");
+  const current = renderToStaticMarkup(createElement(Article, {trip: projectAt(approved, "2026-10-25")}));
+  assert.match(current, /<aside aria-label="Estado operativo"[^>]*><p>Synthetic permanent guidance to check the official status\. <a class="underline" href="https:\/\/example\.org\/status"/);
+  assert.match(current, /verificado el <time dateTime="2026-10-22">2026-10-22<\/time>,\s*publicado el <time dateTime="2026-10-24">2026-10-24<\/time>/);
+  assert.match(current, /referencia hasta el <time dateTime="2026-11-05">2026-11-05<\/time>; después puede no reflejar el estado actual/);
+  assert.match(current, /comunicado del <time dateTime="2026-10-22T17:00-03:00">2026-10-22 17:00-03:00<\/time>/);
+  const expired = renderToStaticMarkup(createElement(Article, {trip: projectAt(approved, "2026-11-06")}));
+  assert.match(expired, /Synthetic permanent guidance/);
+  assert.doesNotMatch(expired, /Synthetic past-tense observation|Registro verificado/);
+  assert.doesNotMatch(current + expired, /<script/);
+});
+
+test("the Garganta del Diablo closure is a dated, past-tense observation, not part of the permanent description", async () => {
   const trips = await readEditorialTrips(new URL("../", import.meta.url).pathname);
   const iguazu = trips.find(t => t.slug === "puerto-iguazu");
   const [notice] = iguazu.operationalNotices;
   assert.equal(notice.sectionId, "elegir-los-paseos");
   assert.equal(notice.verifiedAt, "2026-10-24");
-  assert.deepEqual(notice.sourceIds, ["IGU-ESTADO-APN", "IGU-ESTADO-CONCESION"]);
+  assert.equal(notice.expiresAt, "2026-11-07");
+  assert.equal(notice.officialStatusSourceId, "IGU-ESTADO-CIRCUITO");
+  assert.deepEqual(notice.sourceIds, ["IGU-ESTADO-CIRCUITO", "IGU-ESTADO-APN", "IGU-ESTADO-CONCESION"]);
+  // Communiqué dates are distinct from consultation dates; a page without a visible date records none.
+  const source = id => iguazu.sources.find(s => s.id === id);
+  assert.equal(source("IGU-ESTADO-APN").publishedAt, "2026-09-17");
+  assert.equal(source("IGU-ESTADO-CONCESION").publishedAt, "2026-08-03T19:45-03:00");
+  assert.equal(source("IGU-ESTADO-CIRCUITO").publishedAt, undefined);
+  for (const id of notice.sourceIds) assert.equal(source(id).checkedAt, "2026-10-24");
+  // Guidance is timeless; the observation is written in the past and dated.
+  assert.doesNotMatch(notice.guidance, /cerrad|2026|está/i);
+  assert.match(notice.observation, /^En la consulta del 24 de octubre de 2026, /);
+  assert.doesNotMatch(notice.observation, /\b(está|permanece|no está disponible)\b/i);
   const garganta = iguazu.sections.flatMap(s => s.paragraphs).filter(p => /Garganta del Diablo/.test(p));
   assert.equal(garganta.length, 1);
   assert.doesNotMatch(garganta[0], /cerrad|retirad|reapertura|disponible/i);
@@ -187,9 +263,12 @@ test("the Garganta del Diablo closure is a dated notice, not part of the permane
   assert.ok(validateTrip({...iguazu, status: "approved", publicationAuthorized: true, review: {reviewer: "synthetic-test-only", date: "2026-12-01", contentSha256: tripContentHash(iguazu)}}).some(e => /re-verified/.test(e)));
 });
 
-test("withheld operational notice text is caught by the public artifact audit", async t => {
+test("withheld notice guidance and observation are caught by the public artifact audit", async t => {
   const dir = await mkdtemp(join(tmpdir(), "aus-notice-audit-")); t.after(() => rm(dir,{recursive: true, force: true}));
   const trips = await readEditorialTrips(new URL("../", import.meta.url).pathname);
-  await writeFile(join(dir, "chunk.js"), JSON.stringify({text: trips.find(t => t.slug === "puerto-iguazu").operationalNotices[0].text}));
-  assert.ok((await auditPublicArtifact(dir, trips)).errors.some(e => e.rule.startsWith("withheld-content")));
+  const [notice] = trips.find(t => t.slug === "puerto-iguazu").operationalNotices;
+  await writeFile(join(dir, "a.js"), JSON.stringify({text: notice.observation}));
+  await writeFile(join(dir, "b.html"), "<p>" + notice.guidance + "</p>");
+  const files = (await auditPublicArtifact(dir, trips)).errors.filter(e => e.rule.startsWith("withheld-content")).map(e => e.file).sort();
+  assert.deepEqual(files, ["a.js", "b.html"]);
 });

@@ -67,14 +67,22 @@
     },
     {
       "id": "IGU-ESTADO-APN",
-      "title": "APN — Parque Nacional Iguazú abierto todo el año (noticia del 17/09/2026)",
+      "title": "APN — Parque Nacional Iguazú abierto todo el año",
       "url": "https://www.argentina.gob.ar/noticias/parque-nacional-iguazu-abierto-todo-el-ano",
-      "checkedAt": "2026-10-24"
+      "checkedAt": "2026-10-24",
+      "publishedAt": "2026-09-17"
     },
     {
       "id": "IGU-ESTADO-CONCESION",
-      "title": "Iguazú Argentina S.A., concesionaria del Área Cataratas — Circuitos disponibles mientras Garganta del Diablo permanece cerrado (03/08/2026)",
+      "title": "Iguazú Argentina S.A., concesionaria del Área Cataratas — Circuitos disponibles mientras Garganta del Diablo permanece cerrado",
       "url": "https://iguazuargentina.com/parque-nacional-iguazu-conoce-los-circuitos-disponibles-mientras-garganta-del-diablo-permanece-cerrado/",
+      "checkedAt": "2026-10-24",
+      "publishedAt": "2026-08-03T19:45-03:00"
+    },
+    {
+      "id": "IGU-ESTADO-CIRCUITO",
+      "title": "Iguazú Argentina S.A., concesionaria del Área Cataratas — Circuito Garganta del Diablo: horarios y estado",
+      "url": "https://iguazuargentina.com/area-cataratas/circuito-garganta/",
       "checkedAt": "2026-10-24"
     }
   ],
@@ -168,14 +176,18 @@
   "photos": [],
   "operationalNotices": [
     {
-      "id": "garganta-del-diablo-cerrada",
+      "id": "garganta-del-diablo",
       "sectionId": "elegir-los-paseos",
-      "text": "El circuito Garganta del Diablo está cerrado. APN informó el 17 de septiembre de 2026 que sus pasarelas se retiraron en agosto como medida preventiva ante crecidas del río, y la concesionaria indicó que no había una fecha establecida para la reapertura. En la consulta del 24 de octubre de 2026 no se encontró un anuncio oficial de reapertura. Según esas fuentes, los demás atractivos del Área Cataratas seguían funcionando. Es una condición transitoria: consultá el estado vigente antes de viajar.",
+      "guidance": "La habilitación de los circuitos puede cambiar según el caudal del río Iguazú y otras condiciones. Antes de viajar, consultá el estado que publica la concesionaria del Área Cataratas:",
+      "officialStatusSourceId": "IGU-ESTADO-CIRCUITO",
+      "observation": "En la consulta del 24 de octubre de 2026, la concesionaria del Área Cataratas indicaba el circuito Garganta del Diablo como cerrado, por un cierre preventivo ante el aumento del caudal del río Iguazú. APN había informado el 17 de septiembre de 2026 que las pasarelas del circuito se retiraron en agosto como medida preventiva, y la concesionaria había señalado el 3 de agosto de 2026 que no existía una fecha establecida para la reapertura. Según esas fuentes, los demás atractivos del Área Cataratas seguían funcionando.",
       "sourceIds": [
+        "IGU-ESTADO-CIRCUITO",
         "IGU-ESTADO-APN",
         "IGU-ESTADO-CONCESION"
       ],
-      "verifiedAt": "2026-10-24"
+      "verifiedAt": "2026-10-24",
+      "expiresAt": "2026-11-07"
     }
   ],
   "related": [
@@ -205,7 +217,8 @@
     "pendingReviews": [
       "Revisión humana del texto exacto y su alcance",
       "Permiso de publicación independiente",
-      "Reverificar con APN el estado de Garganta del Diablo y del resto de los circuitos en los 7 días previos a la revisión; el aviso del 2026-10-24 no es un dato permanente",
+      "Reverificar el estado de Garganta del Diablo con la concesionaria y APN antes de aprobar: la revisión debe darse dentro de los 7 días posteriores a la verificación y antes de que caduque la observación (máximo 14 días)",
+      "Ubicar el aviso de la concesionaria sobre Garganta del Diablo actualizado el 11/10/2026 a las 17:00 que indicó el responsable; no se encontró en la consulta del 2026-10-24 y no se cita sin verificarlo",
       "Fotografías: selección, derechos y variantes optimizadas pendientes",
       "Comparación temática con la guía PDF y aprobación de equivalencia pendientes"
     ]

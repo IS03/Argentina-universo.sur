@@ -1,7 +1,7 @@
 import { cp, lstat, mkdir, readdir, readFile, rm, writeFile } from "node:fs/promises";
 import { dirname, join, relative } from "node:path";
 import { brotliDecompressSync, gunzipSync } from "node:zlib";
-import { tripPublishable, publishedTripProjection, validateTrip } from "../../lib/pages/trips.ts";
+import { tripPublishable, publishedTripProjection, validateTripAsOf, buildDate } from "../../lib/pages/trips.ts";
 
 export async function readEditorialTrips(root) {
   const directory = join(root, "content/escapadas");
@@ -10,7 +10,7 @@ export async function readEditorialTrips(root) {
     if (name.endsWith(".json"))
       {
         const trip = JSON.parse(await readFile(join(directory, name), "utf8"));
-        const errors = validateTrip(trip);
+        const errors = validateTripAsOf(trip, buildDate());
         if (errors.length) throw Error("Invalid editorial input " + name + ": " + errors.join("; "));
         trips.push(trip);
       }
@@ -19,7 +19,8 @@ export async function readEditorialTrips(root) {
 
 // Operates only on the isolated build clone, never the repository content or approval records.
 export async function preparePublicTripInputs(source, trips) {
-  const published = trips.filter(tripPublishable).map(publishedTripProjection);
+  const asOf = buildDate();
+  const published = trips.filter(tripPublishable).map(trip => publishedTripProjection(trip, {asOf}));
   const directory = join(source, "content/escapadas");
   await rm(directory, {recursive: true, force: true});
   await mkdir(directory, {recursive: true});
@@ -72,7 +73,7 @@ export async function auditPublicArtifact(directory, trips, {include = () => tru
   const withheld = trips.filter((trip) => !tripPublishable(trip));
   const needles = withheld.flatMap((trip, index) => [
     { label: `withheld-route-${index + 1}`, value: "/escapadas/" + trip.slug },
-    ...[trip.id, trip.title, trip.description, ...trip.sections.flatMap((s) => s.paragraphs), ...(trip.operationalNotices ?? []).map((n) => n.text)]
+    ...[trip.id, trip.title, trip.description, ...trip.sections.flatMap((s) => s.paragraphs), ...(trip.operationalNotices ?? []).flatMap((n) => [n.guidance, n.observation])]
       .filter((value) => typeof value === "string" && value.length >= 20)
       .map((value) => ({label: `withheld-content-${index + 1}`, value: normalize(value)})),
   ]);

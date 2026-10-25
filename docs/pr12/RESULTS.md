@@ -1,14 +1,14 @@
 # Pruebas y evidencias
 
-Ejecutadas localmente el 2026-10-24 (segunda corrida, tras la corrección de Puerto Iguazú) sobre la rama `codex/pr12-escapadas-html` (base `main` `26f7ffb`), Node 22.19.0. Ninguna ficha está aprobada: todas las cifras corresponden a **cero publicaciones**.
+Ejecutadas localmente el 2026-10-24/25 (tercera corrida, tras el rediseño de avisos operativos) sobre la rama `codex/pr12-escapadas-html` (base `main` `26f7ffb`), Node 22.19.0. Ninguna ficha está aprobada: todas las cifras corresponden a **cero publicaciones**.
 
 | Control | Comando | Resultado |
 | --- | --- | --- |
 | Lint | `npm run lint` | 0 errores, 0 advertencias |
 | TypeScript y rutas | `npm run typecheck` | OK |
 | Datos, Supabase, Pages y editorial | `npm run validate` | 23 guías, 1 documento de seguridad aparte, 4 borradores, 0 publicables, 24 PDF intactos, 0 redirects |
-| Unitarias | `npm test` | 88/88 |
-| Build Next (Vercel) | `npm run build` | OK; `/escapadas/[slug]` sin parámetros |
+| Unitarias | `npm test` | 93/93 |
+| Build Next (Vercel) | `npm run build` | OK; `/escapadas/[slug]` sin parámetros. Con `AUS_BUILD_DATE=2026-10-23` (anterior a las fechas editoriales) falla, como se espera |
 | Seguridad editorial del build Next | `npm run editorial:audit-next` | 0 hallazgos; 4 fichas retenidas; 132 HTML prerenderizados y 23 JS de cliente escaneados |
 | SEO | `npm run audit:seo` | 106 URLs, 0 errores |
 | E2E escritorio y móvil | `npm run test:e2e` | 109 aprobadas, 9 omitidas por viewport (`solo móvil`/`solo escritorio`) |
@@ -31,12 +31,49 @@ Ejecutadas localmente el 2026-10-24 (segunda corrida, tras la corrección de Pue
 
 ## Avisos operativos: Garganta del Diablo
 
-La ficha de Puerto Iguazú presentaba Garganta del Diablo como un recorrido disponible. APN informó el [17/09/2026](https://www.argentina.gob.ar/noticias/parque-nacional-iguazu-abierto-todo-el-ano) que las pasarelas de ese circuito se retiraron en agosto como medida preventiva ante crecidas. La concesionaria del Área Cataratas indicó el [03/08/2026](https://iguazuargentina.com/parque-nacional-iguazu-conoce-los-circuitos-disponibles-mientras-garganta-del-diablo-permanece-cerrado/) que no hay una fecha establecida para la reapertura. La nota de la concesionaria es de agosto: en la consulta del 2026-10-24 no se halló un comunicado oficial de octubre. La prensa del 13/10/2026 informó que el circuito seguía cerrado, pero no se usa como fuente de la ficha.
+### Fuentes y fechas
 
-- **Descripción permanente:** el párrafo de actividades describe el atractivo («se recorre habitualmente por una pasarela») sin afirmar que esté abierto ni cerrado.
-- **Condición variable:** el cierre es un `operationalNotice` con sección, fuentes y `verifiedAt: 2026-10-24`. El artículo lo muestra como «Estado verificado el…».
-- **Reverificación obligatoria:** con estado `approved`, la validación exige que cada aviso se haya verificado como máximo 7 días antes de la revisión humana (`OPERATIONAL_NOTICE_MAX_AGE_DAYS`) y nunca después. Si no se cumple, fallan `next build`, `build:pages`, la proyección pública y el planificador de retirada. Además, `pendingReviews` registra la tarea de reverificar con APN antes de publicar.
-- **Hashes:** solo cambió el de Puerto Iguazú (`e5f61dee…` → `eea7fc2b…`). No había revisión que invalidar y no se fabricó ninguna. CABA, El Palmar y Talampaya conservan sus hashes.
+| Fuente | Fecha del comunicado | Consulta | Qué dice |
+| --- | --- | --- | --- |
+| [Concesionaria — página del circuito](https://iguazuargentina.com/area-cataratas/circuito-garganta/) | No muestra fecha (WordPress registra la última modificación de la página el 30/07/2026) | 2026-10-24 | «ESTADO: CERRADO», cierre preventivo por aumento del caudal del río Iguazú |
+| [APN — noticia](https://www.argentina.gob.ar/noticias/parque-nacional-iguazu-abierto-todo-el-ano) | 2026-09-17 | 2026-10-24 | Pasarelas retiradas en agosto como medida preventiva; el resto del parque sigue funcionando |
+| [Concesionaria — novedad](https://iguazuargentina.com/parque-nacional-iguazu-conoce-los-circuitos-disponibles-mientras-garganta-del-diablo-permanece-cerrado/) | 2026-08-03 19:45 (UTC−03:00) | 2026-10-24 | Sin fecha establecida de reapertura |
+
+**Aviso del 11/10/2026 a las 17:00, indicado por el responsable: no se encontró.** Se buscó en la sección de novedades, la portada, horarios, preguntas frecuentes, las páginas de los circuitos y en el listado público de entradas y páginas de WordPress del sitio. No hay contenido de esa fecha sobre Garganta del Diablo, y las novedades de octubre son del 7 y del 15. No se citó ni se fechó sin verificarlo. Queda como pendiente en la ficha hasta tener su URL.
+
+### Modelo
+
+La descripción permanente del atractivo («se recorre habitualmente por una pasarela sobre el lecho superior del río») sigue separada de sus restricciones. Cada `operationalNotice` tiene:
+
+- `guidance`: indicación **permanente** y atemporal para consultar el estado oficial, con enlace a `officialStatusSourceId`. Se muestra siempre.
+- `observation`: registro **histórico** redactado en pasado («En la consulta del 24 de octubre de 2026, la concesionaria indicaba…»). Nunca afirma un estado presente.
+- Fechas separadas:
+  - en cada fuente, `publishedAt` (fecha del comunicado, si la muestra) y `checkedAt` (consulta);
+  - en el aviso, `verifiedAt` (verificación editorial) y `expiresAt` (último día de build que puede incluir la observación, como máximo 14 días después de verificar);
+  - la **fecha de publicación** es la `review.date` de la versión aprobada que contiene el aviso. Se deriva de la revisión y no se guarda aparte, para no fabricarla.
+
+### Por qué es seguro en un sitio estático
+
+- **Sin JavaScript y sin recompilar:** el HTML publicado sigue siendo cierto. La observación es pasada y muestra sus tres fechas («Registro verificado el…, publicado el…; vale como referencia hasta el…; después puede no reflejar el estado actual»). La indicación permanente apunta al estado oficial. No hay lógica en el navegador.
+- **Un build posterior a `expiresAt` no falla: omite la observación** y deja la indicación permanente. Si fallara, Cloudflare seguiría sirviendo el despliegue anterior con la observación vieja. La caducidad nunca rompe la compilación.
+- **Fallan:** las fechas posteriores al día del build (consulta, comunicado, verificación, revisión o actualización editorial); una aprobación más de 7 días después de verificar, antes de verificar o después de la caducidad; y las fuentes consultadas después de la verificación que sostienen o publicadas después de su consulta. Son errores de datos, no paso del tiempo.
+- `AUS_BUILD_DATE=AAAA-MM-DD` fija la fecha para builds reproducibles y pruebas. Por defecto se usa la fecha UTC del build.
+- `editorial:check` informa los avisos vigentes y caducados sin fallar.
+- Límite conocido: si nadie vuelve a compilar, la observación sigue visible después de caducar. Por eso muestra su fecha límite y la frase de advertencia. Una recompilación periódica (por ejemplo, un deploy hook programado) evitaría eso, pero requiere configurar Cloudflare y queda fuera de este PR.
+
+### Pruebas
+
+Las nuevas pruebas cubren:
+- revisión antigua recompilada meses después: no falla, se omite la observación y queda la indicación;
+- builds antes, el mismo día y después de `expiresAt`;
+- fechas futuras de revisión, verificación y consulta;
+- ventanas de vigencia y de aprobación;
+- formato de fecha y hora del comunicado;
+- HTML sin JS antes y después de la caducidad;
+- datos reales de Iguazú;
+- detección de la indicación y la observación retenidas en artefactos públicos.
+
+Solo cambió el hash de Puerto Iguazú, ahora `9432f740…`. No se fabricó ninguna revisión. CABA, El Palmar y Talampaya conservan sus hashes.
 
 ## Integración Cloudflare antigua: check `Workers Builds: argentina-universo-sur`
 
@@ -53,7 +90,7 @@ Se volvieron a consultar las 20 URLs únicas citadas originalmente (17 referenci
 | Ficha | Fuentes | Localidades / jurisdicciones | Mapas | Estado / permiso / revisión |
 | --- | --- | --- | --- | --- |
 | CABA | 6 Travel Buenos Aires, 200 | CABA (`caba`) | 1 búsqueda OSM orientativa | draft / false / null |
-| Puerto Iguazú | 6 APN + 1 Misiones + 1 concesionaria, 200 | Puerto Iguazú (`misiones`) | 2: ciudad y parque | draft / false / null |
+| Puerto Iguazú | 6 APN + 1 Misiones + 2 concesionaria, 200 | Puerto Iguazú (`misiones`) | 2: ciudad y parque | draft / false / null |
 | Talampaya e Ischigualasto | 3 APN + San Juan Turismo, 200; UNESCO verificada desde el navegador | Villa Unión (`la_rioja`), San Agustín del Valle Fértil (`san_juan`) | 2: un parque por jurisdicción | draft / false / null |
 | El Palmar (sin cambios) | 4 APN, 200 | — (esquema v1) | 1 | draft / autorización previa / null |
 
