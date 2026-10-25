@@ -241,8 +241,8 @@ test("the Garganta del Diablo closure is a dated, past-tense observation, not pa
   const iguazu = trips.find(t => t.slug === "puerto-iguazu");
   const [notice] = iguazu.operationalNotices;
   assert.equal(notice.sectionId, "elegir-los-paseos");
-  assert.equal(notice.verifiedAt, "2026-10-24");
-  assert.equal(notice.expiresAt, "2026-11-07");
+  assert.equal(notice.verifiedAt, "2026-10-25");
+  assert.equal(notice.expiresAt, "2026-11-08");
   assert.equal(notice.officialStatusSourceId, "IGU-ESTADO-CIRCUITO");
   assert.deepEqual(notice.sourceIds, ["IGU-ESTADO-CIRCUITO", "IGU-ESTADO-APN", "IGU-ESTADO-CONCESION"]);
   // Communiqué dates are distinct from consultation dates; a page without a visible date records none.
@@ -250,10 +250,10 @@ test("the Garganta del Diablo closure is a dated, past-tense observation, not pa
   assert.equal(source("IGU-ESTADO-APN").publishedAt, "2026-09-17");
   assert.equal(source("IGU-ESTADO-CONCESION").publishedAt, "2026-08-03T19:45-03:00");
   assert.equal(source("IGU-ESTADO-CIRCUITO").publishedAt, undefined);
-  for (const id of notice.sourceIds) assert.equal(source(id).checkedAt, "2026-10-24");
+  for (const id of notice.sourceIds) assert.equal(source(id).checkedAt, "2026-10-25");
   // Guidance is timeless; the observation is written in the past and dated.
   assert.doesNotMatch(notice.guidance, /cerrad|2026|está/i);
-  assert.match(notice.observation, /^En la consulta del 24 de octubre de 2026, /);
+  assert.match(notice.observation, /^En la consulta del 25 de octubre de 2026, /);
   assert.doesNotMatch(notice.observation, /\b(está|permanece|no está disponible)\b/i);
   const garganta = iguazu.sections.flatMap(s => s.paragraphs).filter(p => /Garganta del Diablo/.test(p));
   assert.equal(garganta.length, 1);

@@ -1,0 +1,1601 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-10-25",
+  "method": "Lectura del cuerpo institucional; contraste con PR12/PR13. Sin confirmación presencial, contacto enviado ni aprobación humana.",
+  "records": [
+    {
+      "slug": "caba",
+      "group": "pilot",
+      "sources": [
+        {
+          "id": "BA-PRIMERA",
+          "title": "Travel Buenos Aires — Primera vez en Buenos Aires",
+          "url": "https://turismo.buenosaires.gob.ar/es/article/primera-vez-en-buenos-aires",
+          "checkedAt": "2026-10-25",
+          "readInPr14": true,
+          "evidenceLocator": "Mapa oficial e itinerarios como herramientas; Plaza de Mayo, Puerto Madero, Caminito y Palermo.",
+          "claims": [
+            "Mapa oficial e itinerarios como herramientas",
+            "Plaza de Mayo, Puerto Madero, Caminito y Palermo."
+          ],
+          "limits": "No tomar datos generales de SUBE como única forma de pago de todos los medios; hay cambios en subte.",
+          "result": "body-read"
+        },
+        {
+          "id": "BA-BARRIOS",
+          "title": "Travel Buenos Aires — Barrios emblemáticos",
+          "url": "https://turismo.buenosaires.gob.ar/es/agrupador-noticias/imperdibles-de-los-barrios-mas-emblematicos",
+          "checkedAt": "2026-10-25",
+          "readInPr14": true,
+          "evidenceLocator": "Identidad de San Telmo, La Boca, Palermo y Recoleta; eje Avenida de Mayo.",
+          "claims": [
+            "Identidad de San Telmo, La Boca, Palermo y Recoleta",
+            "eje Avenida de Mayo."
+          ],
+          "limits": "Avenida de Mayo vincula Congreso y Plaza de Mayo; no ubicar todos esos edificios dentro de un único barrio.",
+          "result": "body-read"
+        },
+        {
+          "id": "BA-CIRCUITOS",
+          "title": "Travel Buenos Aires — Recorré por tu cuenta",
+          "url": "https://turismo.buenosaires.gob.ar/es/agrupador-noticias/recorre-por-tu-cuenta",
+          "checkedAt": "2026-10-25",
+          "readInPr14": true,
+          "evidenceLocator": "Catálogo de tango, fileteado y Avenida de Mayo para elegir temas autoguiados.",
+          "claims": [
+            "Catálogo de tango, fileteado y Avenida de Mayo para elegir temas autoguiados."
+          ],
+          "limits": "No es agenda ni confirma interiores, entradas o duración.",
+          "result": "body-read"
+        },
+        {
+          "id": "BA-RESERVA",
+          "title": "Travel Buenos Aires — Reserva Ecológica Costanera Sur",
+          "url": "https://turismo.buenosaires.gob.ar/es/otros-establecimientos/reserva-ecologica-costanera-sur",
+          "checkedAt": "2026-10-25",
+          "readInPr14": true,
+          "evidenceLocator": "Bosques, pastizales, lagunas, bañados y pasarelas interpretativas de Costanera Sur.",
+          "claims": [
+            "Bosques, pastizales, lagunas, bañados y pasarelas interpretativas de Costanera Sur."
+          ],
+          "limits": "Timeout inicial resuelto en segunda lectura. Se excluyen promesas de 50 aves en dos horas y garantías generales de seguridad/accesibilidad.",
+          "result": "body-read"
+        },
+        {
+          "id": "BA-MOVILIDAD",
+          "title": "Travel Buenos Aires — Moverse por la Ciudad",
+          "url": "https://turismo.buenosaires.gob.ar/es/article/moverse-por-la-ciudad",
+          "checkedAt": "2026-10-25",
+          "readInPr14": true,
+          "evidenceLocator": "Alternativas de movilidad y mapas por sistema.",
+          "claims": [
+            "Alternativas de movilidad y mapas por sistema."
+          ],
+          "limits": "Hay información de pruebas piloto y planes futuros; no convertir anuncios en servicios disponibles ni reproducir tarifas o requisitos de alquiler.",
+          "result": "body-read"
+        },
+        {
+          "id": "BA-ACCESIBLE",
+          "title": "Travel Buenos Aires — Turismo accesible",
+          "url": "https://turismo.buenosaires.gob.ar/es/article/turismo-accesible",
+          "checkedAt": "2026-10-25",
+          "readInPr14": true,
+          "evidenceLocator": "Mapas hápticos, tablero de comunicación y visitas específicas.",
+          "claims": [
+            "Mapas hápticos, tablero de comunicación y visitas específicas."
+          ],
+          "limits": "No extender características de una propuesta a toda la ciudad.",
+          "result": "body-read"
+        }
+      ],
+      "humanReview": null,
+      "paragraphChecks": [
+        {
+          "sectionId": "que-conocer",
+          "paragraph": 1,
+          "sourceIds": [
+            "BA-PRIMERA",
+            "BA-BARRIOS"
+          ],
+          "assessment": "Hechos contrastados con las fuentes indicadas y orientación editorial original; no confirma disponibilidad actual."
+        },
+        {
+          "sectionId": "que-conocer",
+          "paragraph": 2,
+          "sourceIds": [
+            "BA-PRIMERA",
+            "BA-BARRIOS"
+          ],
+          "assessment": "Hechos contrastados con las fuentes indicadas y orientación editorial original; no confirma disponibilidad actual."
+        },
+        {
+          "sectionId": "barrios-y-patrimonio",
+          "paragraph": 1,
+          "sourceIds": [
+            "BA-BARRIOS",
+            "BA-CIRCUITOS"
+          ],
+          "assessment": "Hechos contrastados con las fuentes indicadas y orientación editorial original; no confirma disponibilidad actual."
+        },
+        {
+          "sectionId": "barrios-y-patrimonio",
+          "paragraph": 2,
+          "sourceIds": [
+            "BA-BARRIOS",
+            "BA-CIRCUITOS"
+          ],
+          "assessment": "Hechos contrastados con las fuentes indicadas y orientación editorial original; no confirma disponibilidad actual."
+        },
+        {
+          "sectionId": "naturaleza-en-la-ciudad",
+          "paragraph": 1,
+          "sourceIds": [
+            "BA-RESERVA"
+          ],
+          "assessment": "Hechos contrastados con las fuentes indicadas y orientación editorial original; no confirma disponibilidad actual."
+        },
+        {
+          "sectionId": "naturaleza-en-la-ciudad",
+          "paragraph": 2,
+          "sourceIds": [
+            "BA-RESERVA"
+          ],
+          "assessment": "Hechos contrastados con las fuentes indicadas y orientación editorial original; no confirma disponibilidad actual."
+        },
+        {
+          "sectionId": "recorridos-por-intereses",
+          "paragraph": 1,
+          "sourceIds": [
+            "BA-PRIMERA",
+            "BA-CIRCUITOS"
+          ],
+          "assessment": "Hechos contrastados con las fuentes indicadas y orientación editorial original; no confirma disponibilidad actual."
+        },
+        {
+          "sectionId": "recorridos-por-intereses",
+          "paragraph": 2,
+          "sourceIds": [
+            "BA-PRIMERA",
+            "BA-CIRCUITOS"
+          ],
+          "assessment": "Hechos contrastados con las fuentes indicadas y orientación editorial original; no confirma disponibilidad actual."
+        },
+        {
+          "sectionId": "informacion-practica",
+          "paragraph": 1,
+          "sourceIds": [
+            "BA-MOVILIDAD",
+            "BA-ACCESIBLE"
+          ],
+          "assessment": "Hechos contrastados con las fuentes indicadas y orientación editorial original; no confirma disponibilidad actual."
+        },
+        {
+          "sectionId": "informacion-practica",
+          "paragraph": 2,
+          "sourceIds": [
+            "BA-MOVILIDAD",
+            "BA-ACCESIBLE"
+          ],
+          "assessment": "Hechos contrastados con las fuentes indicadas y orientación editorial original; no confirma disponibilidad actual."
+        }
+      ]
+    },
+    {
+      "slug": "puerto-iguazu",
+      "group": "pilot",
+      "sources": [
+        {
+          "id": "IGU-PARQUE",
+          "title": "APN — Parque Nacional Iguazú",
+          "url": "https://www.argentina.gob.ar/parquesnacionales/nea/parque-nacional-iguazu",
+          "checkedAt": "2026-10-25",
+          "readInPr14": true,
+          "evidenceLocator": "Identidad de APN, Selva Paranense, ubicación en Misiones y Patrimonio Mundial.",
+          "claims": [
+            "Identidad de APN, Selva Paranense, ubicación en Misiones y Patrimonio Mundial."
+          ],
+          "limits": "No certifica operación de un circuito.",
+          "result": "body-read"
+        },
+        {
+          "id": "IGU-ACTIVIDADES",
+          "title": "APN — Actividades en Iguazú",
+          "url": "https://www.argentina.gob.ar/parquesnacionales/nea/parque-nacional-iguazu/actividades",
+          "checkedAt": "2026-10-25",
+          "readInPr14": true,
+          "evidenceLocator": "Superior/Inferior, escaleras, pasarela de Garganta, Macuco agreste y Tren Ecológico.",
+          "claims": [
+            "Superior/Inferior, escaleras, pasarela de Garganta, Macuco agreste y Tren Ecológico."
+          ],
+          "limits": "Catálogo general mantiene descripción de Garganta frente al cierre comunicado. Se excluyen tiempos, dificultad garantizada, navegación y calendario de luna llena sin reconfirmar.",
+          "result": "body-read"
+        },
+        {
+          "id": "IGU-PANORAMA",
+          "title": "APN — Panorámica de Iguazú",
+          "url": "https://www.argentina.gob.ar/parquesnacionales/nea/parque-nacional-iguazu/panoramica",
+          "checkedAt": "2026-10-25",
+          "readInPr14": true,
+          "evidenceLocator": "Yvyrá Retá, ferias Yhary y Viejo Hotel, región de triple frontera y equipo básico.",
+          "claims": [
+            "Yvyrá Retá, ferias Yhary y Viejo Hotel, región de triple frontera y equipo básico."
+          ],
+          "limits": "No prometer visitas comunitarias, disponibilidad de ferias o excursiones internacionales.",
+          "result": "body-read"
+        },
+        {
+          "id": "IGU-ACCESO",
+          "title": "APN — Horarios y cómo llegar",
+          "url": "https://www.argentina.gob.ar/parquesnacionales/nea/parque-nacional-iguazu/horarios-como-llegar",
+          "checkedAt": "2026-10-25",
+          "readInPr14": true,
+          "evidenceLocator": "RN 12/RN 101, distinción entre ciudad y parque, transportes a consultar.",
+          "claims": [
+            "RN 12/RN 101, distinción entre ciudad y parque, transportes a consultar."
+          ],
+          "limits": "Página todavía informa tren a Garganta pese al estado cerrado del circuito. No trasladar horarios genéricos a disponibilidad.",
+          "result": "body-read"
+        },
+        {
+          "id": "IGU-CIUDAD",
+          "title": "Ministerio de Turismo de Misiones — Centro de Informes Puerto Iguazú",
+          "url": "https://misiones.tur.ar/infotur_pub/verCentros.php?IdCentros=3",
+          "checkedAt": "2026-10-25",
+          "readInPr14": true,
+          "evidenceLocator": "Sistema provincial lista Hito Tres Fronteras y santuario como referencias urbanas.",
+          "claims": [
+            "Sistema provincial lista Hito Tres Fronteras y santuario como referencias urbanas."
+          ],
+          "limits": "No demuestra recepción en interiores ni programa de visitas; sello de la aplicación no es fecha editorial.",
+          "result": "body-read"
+        },
+        {
+          "id": "APN-RESPONSABLE",
+          "title": "APN — Recomendaciones para tu visita",
+          "url": "https://www.argentina.gob.ar/parquesnacionales/recomendaciones-para-tu-visita",
+          "checkedAt": "2026-10-25",
+          "readInPr14": true,
+          "evidenceLocator": "Recomendaciones generales de visita y riesgos de áreas agrestes.",
+          "claims": [
+            "Recomendaciones generales de visita y riesgos de áreas agrestes."
+          ],
+          "limits": "Orientación de preparación; no nuevos consejos médicos ni garantía de seguridad.",
+          "result": "body-read"
+        },
+        {
+          "id": "IGU-ESTADO-APN",
+          "title": "APN — Parque Nacional Iguazú abierto todo el año",
+          "url": "https://www.argentina.gob.ar/noticias/parque-nacional-iguazu-abierto-todo-el-ano",
+          "checkedAt": "2026-10-25",
+          "publishedAt": "2026-09-17",
+          "readInPr14": true,
+          "evidenceLocator": "Comunicado de 17/09/2026 relata retiro en agosto y funcionamiento de otros sectores en esa fecha.",
+          "claims": [
+            "Comunicado de 17/09/2026 relata retiro en agosto y funcionamiento de otros sectores en esa fecha."
+          ],
+          "limits": "No prueba por sí solo el estado de otros sectores el 25/10; se corrige esa extrapolación.",
+          "result": "body-read"
+        },
+        {
+          "id": "IGU-ESTADO-CONCESION",
+          "title": "Iguazú Argentina S.A., concesionaria del Área Cataratas — Circuitos disponibles mientras Garganta del Diablo permanece cerrado",
+          "url": "https://iguazuargentina.com/parque-nacional-iguazu-conoce-los-circuitos-disponibles-mientras-garganta-del-diablo-permanece-cerrado/",
+          "checkedAt": "2026-10-25",
+          "publishedAt": "2026-08-03T19:45-03:00",
+          "readInPr14": true,
+          "evidenceLocator": "Nota de 03/08/2026 no establecía fecha de reapertura de Garganta.",
+          "claims": [
+            "Nota de 03/08/2026 no establecía fecha de reapertura de Garganta."
+          ],
+          "limits": "Publicado con hora en metadatos ya documentados en PR12; el pronóstico de 40 días no se interpreta como fecha de reapertura.",
+          "result": "body-read"
+        },
+        {
+          "id": "IGU-ESTADO-CIRCUITO",
+          "title": "Iguazú Argentina S.A., concesionaria del Área Cataratas — Circuito Garganta del Diablo: horarios y estado",
+          "url": "https://iguazuargentina.com/area-cataratas/circuito-garganta/",
+          "checkedAt": "2026-10-25",
+          "readInPr14": true,
+          "evidenceLocator": "Bloque ESTADO indicaba cierre preventivo por caudal en la consulta.",
+          "claims": [
+            "Bloque ESTADO indicaba cierre preventivo por caudal en la consulta."
+          ],
+          "limits": "Convive con horarios normales, extensión y duración incoherente de diez minutos. Solo estado fechado; no se publican esos números. Observación 25/10, caducidad 08/11.",
+          "result": "body-read"
+        }
+      ],
+      "humanReview": null,
+      "paragraphChecks": [
+        {
+          "sectionId": "cataratas-y-selva",
+          "paragraph": 1,
+          "sourceIds": [
+            "IGU-PARQUE"
+          ],
+          "assessment": "Hechos contrastados con las fuentes indicadas y orientación editorial original; no confirma disponibilidad actual."
+        },
+        {
+          "sectionId": "cataratas-y-selva",
+          "paragraph": 2,
+          "sourceIds": [
+            "IGU-PARQUE"
+          ],
+          "assessment": "Hechos contrastados con las fuentes indicadas y orientación editorial original; no confirma disponibilidad actual."
+        },
+        {
+          "sectionId": "elegir-los-paseos",
+          "paragraph": 1,
+          "sourceIds": [
+            "IGU-ACTIVIDADES"
+          ],
+          "assessment": "Hechos contrastados con las fuentes indicadas y orientación editorial original; no confirma disponibilidad actual."
+        },
+        {
+          "sectionId": "elegir-los-paseos",
+          "paragraph": 2,
+          "sourceIds": [
+            "IGU-ACTIVIDADES"
+          ],
+          "assessment": "Hechos contrastados con las fuentes indicadas y orientación editorial original; no confirma disponibilidad actual."
+        },
+        {
+          "sectionId": "interpretacion-y-cultura",
+          "paragraph": 1,
+          "sourceIds": [
+            "IGU-PANORAMA"
+          ],
+          "assessment": "Hechos contrastados con las fuentes indicadas y orientación editorial original; no confirma disponibilidad actual."
+        },
+        {
+          "sectionId": "interpretacion-y-cultura",
+          "paragraph": 2,
+          "sourceIds": [
+            "IGU-PANORAMA"
+          ],
+          "assessment": "Hechos contrastados con las fuentes indicadas y orientación editorial original; no confirma disponibilidad actual."
+        },
+        {
+          "sectionId": "puerto-iguazu",
+          "paragraph": 1,
+          "sourceIds": [
+            "IGU-CIUDAD",
+            "IGU-PANORAMA"
+          ],
+          "assessment": "Hechos contrastados con las fuentes indicadas y orientación editorial original; no confirma disponibilidad actual."
+        },
+        {
+          "sectionId": "puerto-iguazu",
+          "paragraph": 2,
+          "sourceIds": [
+            "IGU-CIUDAD",
+            "IGU-PANORAMA"
+          ],
+          "assessment": "Hechos contrastados con las fuentes indicadas y orientación editorial original; no confirma disponibilidad actual."
+        },
+        {
+          "sectionId": "planificar-la-visita",
+          "paragraph": 1,
+          "sourceIds": [
+            "IGU-ACCESO",
+            "IGU-PANORAMA",
+            "APN-RESPONSABLE"
+          ],
+          "assessment": "Hechos contrastados con las fuentes indicadas y orientación editorial original; no confirma disponibilidad actual."
+        },
+        {
+          "sectionId": "planificar-la-visita",
+          "paragraph": 2,
+          "sourceIds": [
+            "IGU-ACCESO",
+            "IGU-PANORAMA",
+            "APN-RESPONSABLE"
+          ],
+          "assessment": "Hechos contrastados con las fuentes indicadas y orientación editorial original; no confirma disponibilidad actual."
+        }
+      ]
+    },
+    {
+      "slug": "talampaya-e-ischigualasto",
+      "group": "pilot",
+      "sources": [
+        {
+          "id": "TAL-PARQUE",
+          "title": "APN — Parque Nacional Talampaya",
+          "url": "https://www.argentina.gob.ar/parquesnacionales/centro/parque-nacional-talampaya",
+          "checkedAt": "2026-10-25",
+          "readInPr14": true,
+          "evidenceLocator": "Talampaya en La Rioja, registro del Triásico y contacto de intendencia en Villa Unión.",
+          "claims": [
+            "Talampaya en La Rioja, registro del Triásico y contacto de intendencia en Villa Unión."
+          ],
+          "limits": "Intendencia no es portal de excursiones; superficie difiere de UNESCO y se omite.",
+          "result": "body-read"
+        },
+        {
+          "id": "TAL-PANORAMA",
+          "title": "APN — Panorámica de Talampaya",
+          "url": "https://www.argentina.gob.ar/parquesnacionales/centro/parque-nacional-talampaya/panoramica",
+          "checkedAt": "2026-10-25",
+          "readInPr14": true,
+          "evidenceLocator": "Amplitud térmica, equipamiento, artesanías del Valle del Bermejo y petroglifos.",
+          "claims": [
+            "Amplitud térmica, equipamiento, artesanías del Valle del Bermejo y petroglifos."
+          ],
+          "limits": "No se reproducen temperaturas extremas ni una promesa de visita a bodegas cercanas.",
+          "result": "body-read"
+        },
+        {
+          "id": "TAL-ACTIVIDADES",
+          "title": "APN — Actividades en Talampaya",
+          "url": "https://www.argentina.gob.ar/parquesnacionales/centro/parque-nacional-talampaya/actividades",
+          "checkedAt": "2026-10-25",
+          "readInPr14": true,
+          "evidenceLocator": "Cañón, Don Eduardo, Sendero Triásico y suspensiones por zonda o crecidas.",
+          "claims": [
+            "Cañón, Don Eduardo, Sendero Triásico y suspensiones por zonda o crecidas."
+          ],
+          "limits": "Cabecera dice siempre con guía, pero Sendero Triásico está descrito autoguiado: se aclara por modalidad. Dificultad y disponibilidad no garantizadas.",
+          "result": "body-read"
+        },
+        {
+          "id": "ISCHI-TURISMO",
+          "title": "San Juan Turismo — Valle de la Luna, Ischigualasto",
+          "url": "https://sanjuan.tur.ar/atractivos/paleontologicos/ischigualasto",
+          "checkedAt": "2026-10-25",
+          "readInPr14": true,
+          "evidenceLocator": "Parque provincial sanjuanino, El Hongo/Cancha de Bochas, circuito vehicular guiado y centro interpretativo.",
+          "claims": [
+            "Parque provincial sanjuanino, El Hongo/Cancha de Bochas, circuito vehicular guiado y centro interpretativo."
+          ],
+          "limits": "La página no fecha modalidades, Cerro Morado o luna llena; consulta con administrador pendiente. No usar 42 km como equivalencia con 40 km del PDF.",
+          "result": "body-read"
+        },
+        {
+          "id": "UNESCO-966",
+          "title": "UNESCO — Ischigualasto / Talampaya Natural Parks",
+          "url": "https://whc.unesco.org/en/list/966/",
+          "checkedAt": "2026-10-25",
+          "readInPr14": true,
+          "evidenceLocator": "Dos áreas, registro de fauna/flora del Triásico y valor científico de inscripción conjunta.",
+          "claims": [
+            "Dos áreas, registro de fauna/flora del Triásico y valor científico de inscripción conjunta."
+          ],
+          "limits": "Fechas geológicas y superficies difieren dentro del propio registro/APN. Se mantiene significado sin números dudosos. Descripción UNESCO no es permiso de visitas.",
+          "result": "body-read"
+        }
+      ],
+      "humanReview": null,
+      "paragraphChecks": [
+        {
+          "sectionId": "dos-parques",
+          "paragraph": 1,
+          "sourceIds": [
+            "TAL-PARQUE",
+            "UNESCO-966"
+          ],
+          "assessment": "Hechos contrastados con las fuentes indicadas y orientación editorial original; no confirma disponibilidad actual."
+        },
+        {
+          "sectionId": "dos-parques",
+          "paragraph": 2,
+          "sourceIds": [
+            "TAL-PARQUE",
+            "UNESCO-966"
+          ],
+          "assessment": "Hechos contrastados con las fuentes indicadas y orientación editorial original; no confirma disponibilidad actual."
+        },
+        {
+          "sectionId": "talampaya",
+          "paragraph": 1,
+          "sourceIds": [
+            "TAL-ACTIVIDADES"
+          ],
+          "assessment": "Hechos contrastados con las fuentes indicadas y orientación editorial original; no confirma disponibilidad actual."
+        },
+        {
+          "sectionId": "talampaya",
+          "paragraph": 2,
+          "sourceIds": [
+            "TAL-ACTIVIDADES"
+          ],
+          "assessment": "Hechos contrastados con las fuentes indicadas y orientación editorial original; no confirma disponibilidad actual."
+        },
+        {
+          "sectionId": "ischigualasto",
+          "paragraph": 1,
+          "sourceIds": [
+            "ISCHI-TURISMO"
+          ],
+          "assessment": "Hechos contrastados con las fuentes indicadas y orientación editorial original; no confirma disponibilidad actual."
+        },
+        {
+          "sectionId": "ischigualasto",
+          "paragraph": 2,
+          "sourceIds": [
+            "ISCHI-TURISMO"
+          ],
+          "assessment": "Hechos contrastados con las fuentes indicadas y orientación editorial original; no confirma disponibilidad actual."
+        },
+        {
+          "sectionId": "paisaje-y-patrimonio",
+          "paragraph": 1,
+          "sourceIds": [
+            "TAL-PANORAMA"
+          ],
+          "assessment": "Hechos contrastados con las fuentes indicadas y orientación editorial original; no confirma disponibilidad actual."
+        },
+        {
+          "sectionId": "paisaje-y-patrimonio",
+          "paragraph": 2,
+          "sourceIds": [
+            "TAL-PANORAMA"
+          ],
+          "assessment": "Hechos contrastados con las fuentes indicadas y orientación editorial original; no confirma disponibilidad actual."
+        },
+        {
+          "sectionId": "organizar-la-escapada",
+          "paragraph": 1,
+          "sourceIds": [
+            "TAL-PANORAMA",
+            "ISCHI-TURISMO",
+            "TAL-PARQUE"
+          ],
+          "assessment": "Hechos contrastados con las fuentes indicadas y orientación editorial original; no confirma disponibilidad actual."
+        },
+        {
+          "sectionId": "organizar-la-escapada",
+          "paragraph": 2,
+          "sourceIds": [
+            "TAL-PANORAMA",
+            "ISCHI-TURISMO",
+            "TAL-PARQUE"
+          ],
+          "assessment": "Hechos contrastados con las fuentes indicadas y orientación editorial original; no confirma disponibilidad actual."
+        }
+      ]
+    },
+    {
+      "slug": "el-palmar",
+      "group": "pilot",
+      "sources": [
+        {
+          "id": "APN-PRESENTACION",
+          "title": "Administración de Parques Nacionales — El Palmar",
+          "url": "https://www.argentina.gob.ar/parquesnacionales/centro/parque-nacional-el-palmar",
+          "checkedAt": "2026-10-25",
+          "readInPr14": true,
+          "evidenceLocator": "Palmares yatay, ambientes, Calera, patrimonio y portada RN14 km198.",
+          "claims": [
+            "Palmares yatay, ambientes, Calera, patrimonio y portada RN14 km198."
+          ],
+          "limits": "Horario de intendencia no es el de senderos; no confundir El Palmar con toda Entre Ríos.",
+          "result": "body-read"
+        },
+        {
+          "id": "APN-FICHA",
+          "title": "Ficha del área protegida",
+          "url": "https://www.argentina.gob.ar/parquesnacionales/centro/parque-nacional-el-palmar/ficha-del-area-protegida",
+          "checkedAt": "2026-10-25",
+          "readInPr14": true,
+          "evidenceLocator": "Espinal/Pampa, Río Uruguay, Ramsar y relaciones ecológicas de yatay.",
+          "claims": [
+            "Espinal/Pampa, Río Uruguay, Ramsar y relaciones ecológicas de yatay."
+          ],
+          "limits": "No prometer fauna; datos biológicos no confirman habilitación de actividades.",
+          "result": "body-read"
+        },
+        {
+          "id": "APN-RECOMENDACIONES",
+          "title": "Recomendaciones para tu visita — APN",
+          "url": "https://www.argentina.gob.ar/parquesnacionales/recomendaciones-para-tu-visita",
+          "checkedAt": "2026-10-25",
+          "readInPr14": true,
+          "evidenceLocator": "Preparación y respeto de indicaciones en áreas agrestes.",
+          "claims": [
+            "Preparación y respeto de indicaciones en áreas agrestes."
+          ],
+          "limits": "Orientación de cuidado, no indicación sanitaria personalizada.",
+          "result": "body-read"
+        },
+        {
+          "id": "PAL-ACTIVIDADES",
+          "title": "APN — El Palmar: actividades",
+          "url": "https://www.argentina.gob.ar/parquesnacionales/centro/parque-nacional-el-palmar/actividades",
+          "checkedAt": "2026-10-25",
+          "readInPr14": true,
+          "evidenceLocator": "La Portada, Yatay, La Glorieta, observatorios, Selva, Calera y Casco de Estancia.",
+          "claims": [
+            "La Portada, Yatay, La Glorieta, observatorios, Selva, Calera y Casco de Estancia."
+          ],
+          "limits": "Se menciona que hay que consultar registros de cada senda, sin trasladar disponibilidad o dificultad a todo el parque.",
+          "result": "body-read"
+        },
+        {
+          "id": "PAL-PANORAMA",
+          "title": "APN — El Palmar: panorámica",
+          "url": "https://www.argentina.gob.ar/parquesnacionales/centro/parque-nacional-el-palmar/panoramica",
+          "checkedAt": "2026-10-25",
+          "readInPr14": true,
+          "evidenceLocator": "Equipo según estación y entorno de Tierra de Palmares con propuestas distintas.",
+          "claims": [
+            "Equipo según estación y entorno de Tierra de Palmares con propuestas distintas."
+          ],
+          "limits": "No se repiten cinco minutos a Ubajay ni disponibilidad de todos los prestadores; instituciones y prestadores no son un complejo único.",
+          "result": "body-read"
+        },
+        {
+          "id": "PAL-ACCESO",
+          "title": "APN — El Palmar: horarios y cómo llegar",
+          "url": "https://www.argentina.gob.ar/parquesnacionales/centro/parque-nacional-el-palmar/horarios-como-llegar",
+          "checkedAt": "2026-10-25",
+          "readInPr14": true,
+          "evidenceLocator": "Portada RN14 km198, diferencia con área de servicios y necesidad de resolver traslado interno.",
+          "claims": [
+            "Portada RN14 km198, diferencia con área de servicios y necesidad de resolver traslado interno."
+          ],
+          "limits": "Horario estival general 7h frente a senderos 8h: no publicar un horario único. No inferir transfer interno.",
+          "result": "body-read"
+        }
+      ],
+      "humanReview": null,
+      "paragraphChecks": [
+        {
+          "sectionId": "palmares-y-ambientes",
+          "paragraph": 1,
+          "sourceIds": [
+            "APN-PRESENTACION",
+            "APN-FICHA"
+          ],
+          "assessment": "Hechos contrastados con las fuentes indicadas y orientación editorial original; no confirma disponibilidad actual."
+        },
+        {
+          "sectionId": "palmares-y-ambientes",
+          "paragraph": 2,
+          "sourceIds": [
+            "APN-PRESENTACION",
+            "APN-FICHA"
+          ],
+          "assessment": "Hechos contrastados con las fuentes indicadas y orientación editorial original; no confirma disponibilidad actual."
+        },
+        {
+          "sectionId": "senderos-y-observacion",
+          "paragraph": 1,
+          "sourceIds": [
+            "PAL-ACTIVIDADES"
+          ],
+          "assessment": "Hechos contrastados con las fuentes indicadas y orientación editorial original; no confirma disponibilidad actual."
+        },
+        {
+          "sectionId": "senderos-y-observacion",
+          "paragraph": 2,
+          "sourceIds": [
+            "PAL-ACTIVIDADES"
+          ],
+          "assessment": "Hechos contrastados con las fuentes indicadas y orientación editorial original; no confirma disponibilidad actual."
+        },
+        {
+          "sectionId": "historia-del-palmar",
+          "paragraph": 1,
+          "sourceIds": [
+            "APN-PRESENTACION",
+            "PAL-ACTIVIDADES"
+          ],
+          "assessment": "Hechos contrastados con las fuentes indicadas y orientación editorial original; no confirma disponibilidad actual."
+        },
+        {
+          "sectionId": "historia-del-palmar",
+          "paragraph": 2,
+          "sourceIds": [
+            "APN-PRESENTACION",
+            "PAL-ACTIVIDADES"
+          ],
+          "assessment": "Hechos contrastados con las fuentes indicadas y orientación editorial original; no confirma disponibilidad actual."
+        },
+        {
+          "sectionId": "organizar-la-visita",
+          "paragraph": 1,
+          "sourceIds": [
+            "PAL-ACCESO",
+            "PAL-PANORAMA",
+            "APN-RECOMENDACIONES"
+          ],
+          "assessment": "Hechos contrastados con las fuentes indicadas y orientación editorial original; no confirma disponibilidad actual."
+        },
+        {
+          "sectionId": "organizar-la-visita",
+          "paragraph": 2,
+          "sourceIds": [
+            "PAL-ACCESO",
+            "PAL-PANORAMA",
+            "APN-RECOMENDACIONES"
+          ],
+          "assessment": "Hechos contrastados con las fuentes indicadas y orientación editorial original; no confirma disponibilidad actual."
+        },
+        {
+          "sectionId": "entorno-regional",
+          "paragraph": 1,
+          "sourceIds": [
+            "PAL-PANORAMA"
+          ],
+          "assessment": "Hechos contrastados con las fuentes indicadas y orientación editorial original; no confirma disponibilidad actual."
+        },
+        {
+          "sectionId": "entorno-regional",
+          "paragraph": 2,
+          "sourceIds": [
+            "PAL-PANORAMA"
+          ],
+          "assessment": "Hechos contrastados con las fuentes indicadas y orientación editorial original; no confirma disponibilidad actual."
+        }
+      ]
+    },
+    {
+      "slug": "jujuy",
+      "group": "priority-gap",
+      "sources": [
+        {
+          "id": "JUJ-REGIONES",
+          "title": "Ministerio de Cultura y Turismo de Jujuy — Regiones",
+          "url": "https://www.turismo.jujuy.gob.ar/",
+          "checkedAt": "2026-10-24",
+          "readInPr14": false,
+          "evidenceLocator": "Investigación PR13 conservada; no se atribuye una nueva consulta.",
+          "claims": [
+            "Antecedente documental conservado de PR13."
+          ],
+          "limits": "Mantiene la fecha y el alcance anteriores; no se revalida operación actual.",
+          "result": "prior-research-retained"
+        },
+        {
+          "id": "JUJ-UNESCO",
+          "title": "UNESCO — Quebrada de Humahuaca",
+          "url": "https://whc.unesco.org/en/list/1116/",
+          "checkedAt": "2026-10-24",
+          "readInPr14": false,
+          "evidenceLocator": "Investigación PR13 conservada; no se atribuye una nueva consulta.",
+          "claims": [
+            "Antecedente documental conservado de PR13."
+          ],
+          "limits": "Mantiene la fecha y el alcance anteriores; no se revalida operación actual.",
+          "result": "prior-research-retained"
+        },
+        {
+          "id": "JUJ-MAIMARA",
+          "title": "Turismo de Jujuy — Maimará",
+          "url": "https://www.turismo.jujuy.gob.ar/maimara/",
+          "checkedAt": "2026-10-24",
+          "readInPr14": false,
+          "evidenceLocator": "Investigación PR13 conservada; no se atribuye una nueva consulta.",
+          "claims": [
+            "Antecedente documental conservado de PR13."
+          ],
+          "limits": "Mantiene la fecha y el alcance anteriores; no se revalida operación actual.",
+          "result": "prior-research-retained"
+        },
+        {
+          "id": "JUJ-CALILEGUA",
+          "title": "APN — Actividades en Calilegua",
+          "url": "https://www.argentina.gob.ar/parquesnacionales/region-noroeste/parque-nacional-calilegua/actividades",
+          "checkedAt": "2026-10-24",
+          "readInPr14": false,
+          "evidenceLocator": "Investigación PR13 conservada; no se atribuye una nueva consulta.",
+          "claims": [
+            "Antecedente documental conservado de PR13."
+          ],
+          "limits": "Mantiene la fecha y el alcance anteriores; no se revalida operación actual.",
+          "result": "prior-research-retained"
+        },
+        {
+          "id": "JUJ-PURMAMARCA",
+          "title": "Comisión Nacional de Monumentos — Poblado de Purmamarca",
+          "url": "https://www.argentina.gob.ar/capital-humano/cultura/monumentos/poblado-de-purmamarca",
+          "checkedAt": "2026-10-25",
+          "readInPr14": true,
+          "evidenceLocator": "Iglesia/atrio/plaza, materiales locales, paisaje y cerros de Purmamarca.",
+          "claims": [
+            "Iglesia/atrio/plaza, materiales locales, paisaje y cerros de Purmamarca."
+          ],
+          "limits": "Fuente patrimonial sin fecha editorial; no acredita apertura de iglesia ni Paseo de los Colorados.",
+          "result": "body-read"
+        },
+        {
+          "id": "JUJ-TILCARA-UBA",
+          "title": "UBA, Centro Universitario Tilcara — Pucará de Tilcara",
+          "url": "https://tilcara.filo.uba.ar/node/12",
+          "checkedAt": "2026-10-25",
+          "readInPr14": true,
+          "evidenceLocator": "Poblado arqueológico, reconstrucciones, valor de antigal; reservas guiadas y calendario semanal.",
+          "claims": [
+            "Poblado arqueológico, reconstrucciones, valor de antigal",
+            "reservas guiadas y calendario semanal."
+          ],
+          "limits": "Agenda visible 20–26/10/2026: domingo25 sin guía y lunes26 cerrado. No se fija esto como estado permanente ni se incorporan tarifas. UBA difiere de Monumentos en cronología; se omiten siglos.",
+          "result": "body-read"
+        },
+        {
+          "id": "JUJ-HUMAHUACA",
+          "title": "Comisión Nacional de Monumentos — Monumento a los Héroes de la Independencia",
+          "url": "https://www.argentina.gob.ar/capital-humano/cultura/monumentos/monumento-los-heroes-de-la-independencia",
+          "checkedAt": "2026-10-25",
+          "readInPr14": true,
+          "evidenceLocator": "Monumento de la Independencia en cerro Santa Bárbara y memoria de participación popular.",
+          "claims": [
+            "Monumento de la Independencia en cerro Santa Bárbara y memoria de participación popular."
+          ],
+          "limits": "No convierte Humahuaca en un acceso urbano al mirador Hornocal; no acredita horarios de interiores.",
+          "result": "body-read"
+        },
+        {
+          "id": "JUJ-HORNOCAL",
+          "title": "Ministerio de Cultura y Turismo de Jujuy — Catálogo turístico comunitario Rutas 73/83, páginas 44–48",
+          "url": "https://www.turismo.jujuy.gob.ar/wp-content/uploads/Catalogo-TRC-Rutas-73-y-83.pdf",
+          "checkedAt": "2026-10-25",
+          "readInPr14": true,
+          "evidenceLocator": "Catálogo provincial, páginas44–48: comunidad y mirador diferentes; RP73, camino de montaña y administración comunitaria.",
+          "claims": [
+            "Catálogo provincial, páginas44–48: comunidad y mirador diferentes",
+            "RP73, camino de montaña y administración comunitaria."
+          ],
+          "limits": "Web no procesa 65MB; leído PDF original completo en las páginas pertinentes con extracción local. Sin fecha editorial identificada. No se publican tarifas, horarios, servicios médicos, tiempos ni consejos sanitarios. Mirador25km y manual27km: se omite distancia.",
+          "result": "body-read"
+        }
+      ],
+      "humanReview": null,
+      "paragraphChecks": [
+        {
+          "sectionId": "regiones",
+          "paragraph": 1,
+          "sourceIds": [
+            "JUJ-REGIONES"
+          ],
+          "assessment": "Hechos contrastados con las fuentes indicadas y orientación editorial original; no confirma disponibilidad actual."
+        },
+        {
+          "sectionId": "quebrada",
+          "paragraph": 1,
+          "sourceIds": [
+            "JUJ-UNESCO"
+          ],
+          "assessment": "Hechos contrastados con las fuentes indicadas y orientación editorial original; no confirma disponibilidad actual."
+        },
+        {
+          "sectionId": "quebrada",
+          "paragraph": 2,
+          "sourceIds": [
+            "JUJ-UNESCO"
+          ],
+          "assessment": "Hechos contrastados con las fuentes indicadas y orientación editorial original; no confirma disponibilidad actual."
+        },
+        {
+          "sectionId": "purmamarca",
+          "paragraph": 1,
+          "sourceIds": [
+            "JUJ-PURMAMARCA"
+          ],
+          "assessment": "Hechos contrastados con las fuentes indicadas y orientación editorial original; no confirma disponibilidad actual."
+        },
+        {
+          "sectionId": "purmamarca",
+          "paragraph": 2,
+          "sourceIds": [
+            "JUJ-PURMAMARCA"
+          ],
+          "assessment": "Hechos contrastados con las fuentes indicadas y orientación editorial original; no confirma disponibilidad actual."
+        },
+        {
+          "sectionId": "tilcara",
+          "paragraph": 1,
+          "sourceIds": [
+            "JUJ-TILCARA-UBA"
+          ],
+          "assessment": "Hechos contrastados con las fuentes indicadas y orientación editorial original; no confirma disponibilidad actual."
+        },
+        {
+          "sectionId": "tilcara",
+          "paragraph": 2,
+          "sourceIds": [
+            "JUJ-TILCARA-UBA"
+          ],
+          "assessment": "Hechos contrastados con las fuentes indicadas y orientación editorial original; no confirma disponibilidad actual."
+        },
+        {
+          "sectionId": "humahuaca-hornocal",
+          "paragraph": 1,
+          "sourceIds": [
+            "JUJ-HUMAHUACA",
+            "JUJ-HORNOCAL"
+          ],
+          "assessment": "Hechos contrastados con las fuentes indicadas y orientación editorial original; no confirma disponibilidad actual."
+        },
+        {
+          "sectionId": "humahuaca-hornocal",
+          "paragraph": 2,
+          "sourceIds": [
+            "JUJ-HUMAHUACA",
+            "JUJ-HORNOCAL"
+          ],
+          "assessment": "Hechos contrastados con las fuentes indicadas y orientación editorial original; no confirma disponibilidad actual."
+        },
+        {
+          "sectionId": "maimara",
+          "paragraph": 1,
+          "sourceIds": [
+            "JUJ-MAIMARA"
+          ],
+          "assessment": "Hechos contrastados con las fuentes indicadas y orientación editorial original; no confirma disponibilidad actual."
+        },
+        {
+          "sectionId": "maimara",
+          "paragraph": 2,
+          "sourceIds": [
+            "JUJ-MAIMARA"
+          ],
+          "assessment": "Hechos contrastados con las fuentes indicadas y orientación editorial original; no confirma disponibilidad actual."
+        },
+        {
+          "sectionId": "yungas",
+          "paragraph": 1,
+          "sourceIds": [
+            "JUJ-CALILEGUA"
+          ],
+          "assessment": "Hechos contrastados con las fuentes indicadas y orientación editorial original; no confirma disponibilidad actual."
+        },
+        {
+          "sectionId": "yungas",
+          "paragraph": 2,
+          "sourceIds": [
+            "JUJ-CALILEGUA"
+          ],
+          "assessment": "Hechos contrastados con las fuentes indicadas y orientación editorial original; no confirma disponibilidad actual."
+        },
+        {
+          "sectionId": "organizar",
+          "paragraph": 1,
+          "sourceIds": [
+            "JUJ-REGIONES",
+            "JUJ-CALILEGUA"
+          ],
+          "assessment": "Hechos contrastados con las fuentes indicadas y orientación editorial original; no confirma disponibilidad actual."
+        }
+      ]
+    },
+    {
+      "slug": "san-luis",
+      "group": "priority-gap",
+      "sources": [
+        {
+          "id": "SL-POTRERO",
+          "title": "Gobierno de San Luis — Parque Nativo",
+          "url": "https://ambiente.sanluis.gov.ar/parque-nativo/",
+          "checkedAt": "2026-10-24",
+          "readInPr14": false,
+          "evidenceLocator": "Investigación PR13 conservada; no se atribuye una nueva consulta.",
+          "claims": [
+            "Antecedente documental conservado de PR13."
+          ],
+          "limits": "Mantiene la fecha y el alcance anteriores; no se revalida operación actual.",
+          "result": "prior-research-retained"
+        },
+        {
+          "id": "SL-CAROLINA",
+          "title": "Secretaría de Turismo de la Nación — La Carolina",
+          "url": "https://www.argentina.gob.ar/jefatura/turismo/best-tourism-villages-argentina/la-carolina-san-luis",
+          "checkedAt": "2026-10-24",
+          "readInPr14": false,
+          "evidenceLocator": "Investigación PR13 conservada; no se atribuye una nueva consulta.",
+          "claims": [
+            "Antecedente documental conservado de PR13."
+          ],
+          "limits": "Mantiene la fecha y el alcance anteriores; no se revalida operación actual.",
+          "result": "prior-research-retained"
+        },
+        {
+          "id": "SL-PEATONAL",
+          "title": "Secretaría de Turismo de la Nación — La Carolina, pueblo peatonal",
+          "url": "https://www.argentina.gob.ar/noticias/la-carolina-un-pueblo-turistico-y-peatonal",
+          "checkedAt": "2026-10-24",
+          "publishedAt": "2025-01-15",
+          "readInPr14": false,
+          "evidenceLocator": "Investigación PR13 conservada; no se atribuye una nueva consulta.",
+          "claims": [
+            "Antecedente documental conservado de PR13."
+          ],
+          "limits": "Mantiene la fecha y el alcance anteriores; no se revalida operación actual.",
+          "result": "prior-research-retained"
+        },
+        {
+          "id": "SL-QUIJADAS",
+          "title": "APN — Actividades en Sierra de las Quijadas",
+          "url": "https://www.argentina.gob.ar/parquesnacionales/centro/parque-nacional-sierra-de-las-quijadas/actividades",
+          "checkedAt": "2026-10-24",
+          "readInPr14": false,
+          "evidenceLocator": "Investigación PR13 conservada; no se atribuye una nueva consulta.",
+          "claims": [
+            "Antecedente documental conservado de PR13."
+          ],
+          "limits": "Mantiene la fecha y el alcance anteriores; no se revalida operación actual.",
+          "result": "prior-research-retained"
+        },
+        {
+          "id": "SL-PUNTA",
+          "title": "Municipalidad de La Punta — Ciudad de La Punta y Paseo Patrio",
+          "url": "https://ciudaddelapunta.gob.ar/01/corredorcentral/",
+          "checkedAt": "2026-10-25",
+          "readInPr14": true,
+          "evidenceLocator": "Réplicas modernas de Cabildo/Casa de Tucumán, Paseo Patrio y Museo Malvinas.",
+          "claims": [
+            "Réplicas modernas de Cabildo/Casa de Tucumán, Paseo Patrio y Museo Malvinas."
+          ],
+          "limits": "No confundir con originales; horarios sin vigencia identificada no se trasladan a la ficha.",
+          "result": "body-read"
+        },
+        {
+          "id": "SL-TRAPICHE",
+          "title": "Turismo de la Nación — El Trapiche, San Luis",
+          "url": "https://www.argentina.gob.ar/jefatura/turismo-y-ambiente/turismo/best-tourism-villages-argentina/el-trapiche-san-luis",
+          "checkedAt": "2026-10-25",
+          "readInPr14": true,
+          "evidenceLocator": "Siete Cajones, morteros del río y relación con embalse La Florida.",
+          "claims": [
+            "Siete Cajones, morteros del río y relación con embalse La Florida."
+          ],
+          "limits": "Descripción promocional no acredita baño habilitado ni acceso a todos los sectores.",
+          "result": "body-read"
+        },
+        {
+          "id": "SL-PANCANTA",
+          "title": "Agencia de Noticias San Luis — Valle de Pancanta, un destino ideal para los amantes de la tranquilidad y la naturaleza",
+          "url": "https://agenciasanluis.com/2025/01/28/1022923-valle-de-pancanta-un-destino-ideal-para-los-amantes-de-la-tranquilidad-y-la-naturaleza/",
+          "checkedAt": "2026-10-25",
+          "publishedAt": "2025-01-28",
+          "readInPr14": true,
+          "evidenceLocator": "Nota del28/01/2025 sitúa Pancanta en RP9 y describe paisaje, actividades y salto.",
+          "claims": [
+            "Nota del28/01/2025 sitúa Pancanta en RP9 y describe paisaje, actividades y salto."
+          ],
+          "limits": "No se reproducen leyenda racializada/especulativa, altura de cascada ni acceso libre a senderos o propiedades; prestadores/recepción pendientes.",
+          "result": "body-read"
+        }
+      ],
+      "humanReview": null,
+      "paragraphChecks": [
+        {
+          "sectionId": "potrero",
+          "paragraph": 1,
+          "sourceIds": [
+            "SL-POTRERO"
+          ],
+          "assessment": "Hechos contrastados con las fuentes indicadas y orientación editorial original; no confirma disponibilidad actual."
+        },
+        {
+          "sectionId": "la-punta",
+          "paragraph": 1,
+          "sourceIds": [
+            "SL-PUNTA"
+          ],
+          "assessment": "Hechos contrastados con las fuentes indicadas y orientación editorial original; no confirma disponibilidad actual."
+        },
+        {
+          "sectionId": "la-punta",
+          "paragraph": 2,
+          "sourceIds": [
+            "SL-PUNTA"
+          ],
+          "assessment": "Hechos contrastados con las fuentes indicadas y orientación editorial original; no confirma disponibilidad actual."
+        },
+        {
+          "sectionId": "trapiche-pancanta",
+          "paragraph": 1,
+          "sourceIds": [
+            "SL-TRAPICHE",
+            "SL-PANCANTA"
+          ],
+          "assessment": "Hechos contrastados con las fuentes indicadas y orientación editorial original; no confirma disponibilidad actual."
+        },
+        {
+          "sectionId": "trapiche-pancanta",
+          "paragraph": 2,
+          "sourceIds": [
+            "SL-TRAPICHE",
+            "SL-PANCANTA"
+          ],
+          "assessment": "Hechos contrastados con las fuentes indicadas y orientación editorial original; no confirma disponibilidad actual."
+        },
+        {
+          "sectionId": "carolina",
+          "paragraph": 1,
+          "sourceIds": [
+            "SL-CAROLINA",
+            "SL-PEATONAL"
+          ],
+          "assessment": "Hechos contrastados con las fuentes indicadas y orientación editorial original; no confirma disponibilidad actual."
+        },
+        {
+          "sectionId": "carolina",
+          "paragraph": 2,
+          "sourceIds": [
+            "SL-CAROLINA",
+            "SL-PEATONAL"
+          ],
+          "assessment": "Hechos contrastados con las fuentes indicadas y orientación editorial original; no confirma disponibilidad actual."
+        },
+        {
+          "sectionId": "quijadas",
+          "paragraph": 1,
+          "sourceIds": [
+            "SL-QUIJADAS"
+          ],
+          "assessment": "Hechos contrastados con las fuentes indicadas y orientación editorial original; no confirma disponibilidad actual."
+        },
+        {
+          "sectionId": "recorridos",
+          "paragraph": 1,
+          "sourceIds": [
+            "SL-QUIJADAS"
+          ],
+          "assessment": "Hechos contrastados con las fuentes indicadas y orientación editorial original; no confirma disponibilidad actual."
+        },
+        {
+          "sectionId": "recorridos",
+          "paragraph": 2,
+          "sourceIds": [
+            "SL-QUIJADAS"
+          ],
+          "assessment": "Hechos contrastados con las fuentes indicadas y orientación editorial original; no confirma disponibilidad actual."
+        },
+        {
+          "sectionId": "organizar",
+          "paragraph": 1,
+          "sourceIds": [
+            "SL-POTRERO",
+            "SL-PEATONAL",
+            "SL-QUIJADAS"
+          ],
+          "assessment": "Hechos contrastados con las fuentes indicadas y orientación editorial original; no confirma disponibilidad actual."
+        },
+        {
+          "sectionId": "organizar",
+          "paragraph": 2,
+          "sourceIds": [
+            "SL-POTRERO",
+            "SL-PEATONAL",
+            "SL-QUIJADAS"
+          ],
+          "assessment": "Hechos contrastados con las fuentes indicadas y orientación editorial original; no confirma disponibilidad actual."
+        }
+      ]
+    },
+    {
+      "slug": "entre-rios",
+      "group": "priority-gap",
+      "sources": [
+        {
+          "id": "ER-MOLINO",
+          "title": "Secretaría de Cultura de Entre Ríos — Molino Forclaz",
+          "url": "https://www.entrerios.gov.ar/cultura/museo-provincial-molino-forclaz/",
+          "checkedAt": "2026-10-24",
+          "readInPr14": false,
+          "evidenceLocator": "Investigación PR13 conservada; no se atribuye una nueva consulta.",
+          "claims": [
+            "Antecedente documental conservado de PR13."
+          ],
+          "limits": "Mantiene la fecha y el alcance anteriores; no se revalida operación actual.",
+          "result": "prior-research-retained"
+        },
+        {
+          "id": "ER-SANJOSE",
+          "title": "Municipalidad de San José — Qué hacer",
+          "url": "https://sanjose.tur.ar/que-hacer/",
+          "checkedAt": "2026-10-24",
+          "readInPr14": false,
+          "evidenceLocator": "Investigación PR13 conservada; no se atribuye una nueva consulta.",
+          "claims": [
+            "Antecedente documental conservado de PR13."
+          ],
+          "limits": "Mantiene la fecha y el alcance anteriores; no se revalida operación actual.",
+          "result": "prior-research-retained"
+        },
+        {
+          "id": "ER-LIEBIG",
+          "title": "EMTURER — Pueblo Liebig",
+          "url": "https://www.entrerios.tur.ar/localidades-1/pueblo-liebig",
+          "checkedAt": "2026-10-24",
+          "readInPr14": false,
+          "evidenceLocator": "Investigación PR13 conservada; no se atribuye una nueva consulta.",
+          "claims": [
+            "Antecedente documental conservado de PR13."
+          ],
+          "limits": "Mantiene la fecha y el alcance anteriores; no se revalida operación actual.",
+          "result": "prior-research-retained"
+        },
+        {
+          "id": "ER-PALMAR",
+          "title": "APN — Actividades en El Palmar",
+          "url": "https://www.argentina.gob.ar/parquesnacionales/centro/parque-nacional-el-palmar/actividades",
+          "checkedAt": "2026-10-24",
+          "readInPr14": false,
+          "evidenceLocator": "Investigación PR13 conservada; no se atribuye una nueva consulta.",
+          "claims": [
+            "Antecedente documental conservado de PR13."
+          ],
+          "limits": "Mantiene la fecha y el alcance anteriores; no se revalida operación actual.",
+          "result": "prior-research-retained"
+        },
+        {
+          "id": "ER-TERMAS-COLON",
+          "title": "Termas Colón — Portal oficial del complejo",
+          "url": "https://termascolon.gov.ar/",
+          "checkedAt": "2026-10-25",
+          "readInPr14": true,
+          "evidenceLocator": "Complejo termal Colón con piscinas, portal y consultas propias.",
+          "claims": [
+            "Complejo termal Colón con piscinas, portal y consultas propias."
+          ],
+          "limits": "Promociones fechadas no garantizan beneficio; no promesas terapéuticas ni disponibilidad anual de parque acuático.",
+          "result": "body-read"
+        },
+        {
+          "id": "ER-ENOTERMAL",
+          "title": "Turismo San José — Experiencia Enotermal",
+          "url": "https://sanjose.tur.ar/experiencia-enotermal/",
+          "checkedAt": "2026-10-25",
+          "readInPr14": true,
+          "evidenceLocator": "Municipio identifica bodegas por localidad y Los Franco Suizos con reserva.",
+          "claims": [
+            "Municipio identifica bodegas por localidad y Los Franco Suizos con reserva."
+          ],
+          "limits": "Se excluyen afirmaciones de salud/estética, historia legal simplificada y descuentos. Caso/Casona de Piedra y Franco/Francos varían en la misma página: se usa identificación del apartado descriptivo; confirmar denominación comercial.",
+          "result": "body-read"
+        },
+        {
+          "id": "ER-COLONIAS-DOMINGUEZ",
+          "title": "Turismo Entre Ríos — Villa Domínguez y San Gregorio",
+          "url": "https://www.entrerios.tur.ar/localidades-1/villa-dom%C3%ADnguez-san-gregorio",
+          "checkedAt": "2026-10-25",
+          "readInPr14": true,
+          "evidenceLocator": "Museo/archivo, Hotel de Inmigrantes y patrimonio de San Gregorio como ámbitos propios.",
+          "claims": [
+            "Museo/archivo, Hotel de Inmigrantes y patrimonio de San Gregorio como ámbitos propios."
+          ],
+          "limits": "No se adopta superlativo de primer hospital o sinagoga provincial; apertura y recepción por institución pendientes.",
+          "result": "body-read"
+        },
+        {
+          "id": "ER-COLONIAS-CLARA",
+          "title": "Turismo Entre Ríos — Villa Clara",
+          "url": "https://www.entrerios.tur.ar/localidades-1/villa-clara",
+          "checkedAt": "2026-10-25",
+          "readInPr14": true,
+          "evidenceLocator": "Museo en estación y Sinagoga Beith Jacob; patrimonio de Villa Clara.",
+          "claims": [
+            "Museo en estación y Sinagoga Beith Jacob",
+            "patrimonio de Villa Clara."
+          ],
+          "limits": "Contradice nota nacional2023 que ubica museo en casa de médico. Se prioriza ficha provincial descriptiva reciente sin inventar fecha de traslado ni horarios.",
+          "result": "body-read"
+        }
+      ],
+      "humanReview": null,
+      "paragraphChecks": [
+        {
+          "sectionId": "molino",
+          "paragraph": 1,
+          "sourceIds": [
+            "ER-MOLINO"
+          ],
+          "assessment": "Hechos contrastados con las fuentes indicadas y orientación editorial original; no confirma disponibilidad actual."
+        },
+        {
+          "sectionId": "molino",
+          "paragraph": 2,
+          "sourceIds": [
+            "ER-MOLINO"
+          ],
+          "assessment": "Hechos contrastados con las fuentes indicadas y orientación editorial original; no confirma disponibilidad actual."
+        },
+        {
+          "sectionId": "san-jose",
+          "paragraph": 1,
+          "sourceIds": [
+            "ER-SANJOSE"
+          ],
+          "assessment": "Hechos contrastados con las fuentes indicadas y orientación editorial original; no confirma disponibilidad actual."
+        },
+        {
+          "sectionId": "san-jose",
+          "paragraph": 2,
+          "sourceIds": [
+            "ER-SANJOSE"
+          ],
+          "assessment": "Hechos contrastados con las fuentes indicadas y orientación editorial original; no confirma disponibilidad actual."
+        },
+        {
+          "sectionId": "liebig",
+          "paragraph": 1,
+          "sourceIds": [
+            "ER-LIEBIG"
+          ],
+          "assessment": "Hechos contrastados con las fuentes indicadas y orientación editorial original; no confirma disponibilidad actual."
+        },
+        {
+          "sectionId": "liebig",
+          "paragraph": 2,
+          "sourceIds": [
+            "ER-LIEBIG"
+          ],
+          "assessment": "Hechos contrastados con las fuentes indicadas y orientación editorial original; no confirma disponibilidad actual."
+        },
+        {
+          "sectionId": "palmar",
+          "paragraph": 1,
+          "sourceIds": [
+            "ER-PALMAR"
+          ],
+          "assessment": "Hechos contrastados con las fuentes indicadas y orientación editorial original; no confirma disponibilidad actual."
+        },
+        {
+          "sectionId": "organizar",
+          "paragraph": 1,
+          "sourceIds": [
+            "ER-MOLINO",
+            "ER-SANJOSE",
+            "ER-LIEBIG"
+          ],
+          "assessment": "Hechos contrastados con las fuentes indicadas y orientación editorial original; no confirma disponibilidad actual."
+        },
+        {
+          "sectionId": "termas",
+          "paragraph": 1,
+          "sourceIds": [
+            "ER-TERMAS-COLON",
+            "ER-ENOTERMAL"
+          ],
+          "assessment": "Hechos contrastados con las fuentes indicadas y orientación editorial original; no confirma disponibilidad actual."
+        },
+        {
+          "sectionId": "termas",
+          "paragraph": 2,
+          "sourceIds": [
+            "ER-TERMAS-COLON",
+            "ER-ENOTERMAL"
+          ],
+          "assessment": "Hechos contrastados con las fuentes indicadas y orientación editorial original; no confirma disponibilidad actual."
+        },
+        {
+          "sectionId": "vino-y-ruralidad",
+          "paragraph": 1,
+          "sourceIds": [
+            "ER-ENOTERMAL"
+          ],
+          "assessment": "Hechos contrastados con las fuentes indicadas y orientación editorial original; no confirma disponibilidad actual."
+        },
+        {
+          "sectionId": "vino-y-ruralidad",
+          "paragraph": 2,
+          "sourceIds": [
+            "ER-ENOTERMAL"
+          ],
+          "assessment": "Hechos contrastados con las fuentes indicadas y orientación editorial original; no confirma disponibilidad actual."
+        },
+        {
+          "sectionId": "colonias-judias",
+          "paragraph": 1,
+          "sourceIds": [
+            "ER-COLONIAS-DOMINGUEZ",
+            "ER-COLONIAS-CLARA"
+          ],
+          "assessment": "Hechos contrastados con las fuentes indicadas y orientación editorial original; no confirma disponibilidad actual."
+        },
+        {
+          "sectionId": "colonias-judias",
+          "paragraph": 2,
+          "sourceIds": [
+            "ER-COLONIAS-DOMINGUEZ",
+            "ER-COLONIAS-CLARA"
+          ],
+          "assessment": "Hechos contrastados con las fuentes indicadas y orientación editorial original; no confirma disponibilidad actual."
+        }
+      ]
+    },
+    {
+      "slug": "rio-gallegos",
+      "group": "priority-gap",
+      "sources": [
+        {
+          "id": "RG-TURISMO",
+          "title": "Secretaría de Turismo de Santa Cruz — Río Gallegos",
+          "url": "https://turismo.santacruz.gob.ar/donde-ir/rio-gallegos",
+          "checkedAt": "2026-10-24",
+          "readInPr14": false,
+          "evidenceLocator": "Investigación PR13 conservada; no se atribuye una nueva consulta.",
+          "claims": [
+            "Antecedente documental conservado de PR13."
+          ],
+          "limits": "Mantiene la fecha y el alcance anteriores; no se revalida operación actual.",
+          "result": "prior-research-retained"
+        },
+        {
+          "id": "RG-PROVINCIA",
+          "title": "Gobierno de Santa Cruz — Río Gallegos",
+          "url": "https://www.santacruz.gob.ar/nuestra-provincia/municipios/rio-gallegos",
+          "checkedAt": "2026-10-24",
+          "readInPr14": false,
+          "evidenceLocator": "Investigación PR13 conservada; no se atribuye una nueva consulta.",
+          "claims": [
+            "Antecedente documental conservado de PR13."
+          ],
+          "limits": "Mantiene la fecha y el alcance anteriores; no se revalida operación actual.",
+          "result": "prior-research-retained"
+        },
+        {
+          "id": "RG-LOYOLA",
+          "title": "Secretaría de Turismo de la Nación — Naufragio histórico",
+          "url": "https://www.argentina.gob.ar/viaja-por-argentina/que-hacer/visitar-un-naufragio-historico",
+          "checkedAt": "2026-10-24",
+          "readInPr14": false,
+          "evidenceLocator": "Investigación PR13 conservada; no se atribuye una nueva consulta.",
+          "claims": [
+            "Antecedente documental conservado de PR13."
+          ],
+          "limits": "Mantiene la fecha y el alcance anteriores; no se revalida operación actual.",
+          "result": "prior-research-retained"
+        },
+        {
+          "id": "RG-CONSULTA",
+          "title": "Turismo de Río Gallegos — Guía oficial",
+          "url": "https://turismo.riogallegos.gob.ar/",
+          "checkedAt": "2026-10-24",
+          "readInPr14": false,
+          "evidenceLocator": "Investigación PR13 conservada; no se atribuye una nueva consulta.",
+          "claims": [
+            "Antecedente documental conservado de PR13."
+          ],
+          "limits": "Mantiene la fecha y el alcance anteriores; no se revalida operación actual.",
+          "result": "prior-research-retained"
+        },
+        {
+          "id": "RG-PIONEROS",
+          "title": "Municipalidad de Río Gallegos — Museo de los Pioneros, Casa Parisi",
+          "url": "https://turismo.riogallegos.gob.ar/#museo-de-los-pioneros-casa-parisi",
+          "checkedAt": "2026-10-25",
+          "readInPr14": true,
+          "evidenceLocator": "Casa Parisi, objetos de familias y documentación local.",
+          "claims": [
+            "Casa Parisi, objetos de familias y documentación local."
+          ],
+          "limits": "Texto municipal leído en assets/js/data.js y relación de hashroute confirmada en app.js; no ejecución de datos ni descarga de imágenes. Sin fecha editorial ni apertura confirmada.",
+          "result": "body-read"
+        },
+        {
+          "id": "RG-FERROVIARIO",
+          "title": "Municipalidad de Río Gallegos — Museo Ferroviario",
+          "url": "https://turismo.riogallegos.gob.ar/#museo-ferroportuario",
+          "checkedAt": "2026-10-25",
+          "readInPr14": true,
+          "evidenceLocator": "Relación carbón/Río Turbio/puerto, herramientas, fotografías y material ferroviario.",
+          "claims": [
+            "Relación carbón/Río Turbio/puerto, herramientas, fotografías y material ferroviario."
+          ],
+          "limits": "Hashroute museo-ferroportuario contiene la ficha; circuito-ferroviario está titulado Página no encontrada y no se reutiliza como recorrido.",
+          "result": "body-read"
+        },
+        {
+          "id": "RG-GOBERNACION",
+          "title": "Municipalidad de Río Gallegos — Circuito de la Gobernación",
+          "url": "https://turismo.riogallegos.gob.ar/#circuito-de-la-gobernacion",
+          "checkedAt": "2026-10-25",
+          "readInPr14": true,
+          "evidenceLocator": "Casa de Gobierno, Balcón de Roca, Casa Gregores y memoria policial/naval.",
+          "claims": [
+            "Casa de Gobierno, Balcón de Roca, Casa Gregores y memoria policial/naval."
+          ],
+          "limits": "Datos públicos municipales, no interiores garantizados ni duración de60min. Su uso institucional sigue exigiendo consulta propia.",
+          "result": "body-read"
+        },
+        {
+          "id": "RG-MOLINA",
+          "title": "Gobierno de Santa Cruz — Museo Padre Molina y preservación de fósiles",
+          "url": "https://noticias.santacruz.gob.ar/organismos/gobierno/cultura/el-museo-padre-molina-fue-seleccionado-para-un-proyecto-de-capacitacion-en-preservacion-de-fosiles",
+          "checkedAt": "2026-10-25",
+          "publishedAt": "2026-05-27",
+          "readInPr14": true,
+          "evidenceLocator": "Noticia institucional27/05/2026 confirma preservación paleontológica y rol científico del museo.",
+          "claims": [
+            "Noticia institucional27/05/2026 confirma preservación paleontológica y rol científico del museo."
+          ],
+          "limits": "No equivale a cartelera, recorrido de laboratorio o apertura vigente.",
+          "result": "body-read"
+        }
+      ],
+      "humanReview": null,
+      "paragraphChecks": [
+        {
+          "sectionId": "ria",
+          "paragraph": 1,
+          "sourceIds": [
+            "RG-TURISMO"
+          ],
+          "assessment": "Hechos contrastados con las fuentes indicadas y orientación editorial original; no confirma disponibilidad actual."
+        },
+        {
+          "sectionId": "ciudad",
+          "paragraph": 1,
+          "sourceIds": [
+            "RG-PIONEROS",
+            "RG-FERROVIARIO",
+            "RG-MOLINA"
+          ],
+          "assessment": "Hechos contrastados con las fuentes indicadas y orientación editorial original; no confirma disponibilidad actual."
+        },
+        {
+          "sectionId": "ciudad",
+          "paragraph": 2,
+          "sourceIds": [
+            "RG-PIONEROS",
+            "RG-FERROVIARIO",
+            "RG-MOLINA"
+          ],
+          "assessment": "Hechos contrastados con las fuentes indicadas y orientación editorial original; no confirma disponibilidad actual."
+        },
+        {
+          "sectionId": "gobernacion",
+          "paragraph": 1,
+          "sourceIds": [
+            "RG-GOBERNACION"
+          ],
+          "assessment": "Hechos contrastados con las fuentes indicadas y orientación editorial original; no confirma disponibilidad actual."
+        },
+        {
+          "sectionId": "gobernacion",
+          "paragraph": 2,
+          "sourceIds": [
+            "RG-GOBERNACION"
+          ],
+          "assessment": "Hechos contrastados con las fuentes indicadas y orientación editorial original; no confirma disponibilidad actual."
+        },
+        {
+          "sectionId": "cabo",
+          "paragraph": 1,
+          "sourceIds": [
+            "RG-PROVINCIA",
+            "RG-TURISMO"
+          ],
+          "assessment": "Hechos contrastados con las fuentes indicadas y orientación editorial original; no confirma disponibilidad actual."
+        },
+        {
+          "sectionId": "loyola",
+          "paragraph": 1,
+          "sourceIds": [
+            "RG-LOYOLA"
+          ],
+          "assessment": "Hechos contrastados con las fuentes indicadas y orientación editorial original; no confirma disponibilidad actual."
+        },
+        {
+          "sectionId": "loyola",
+          "paragraph": 2,
+          "sourceIds": [
+            "RG-LOYOLA"
+          ],
+          "assessment": "Hechos contrastados con las fuentes indicadas y orientación editorial original; no confirma disponibilidad actual."
+        },
+        {
+          "sectionId": "volcan",
+          "paragraph": 1,
+          "sourceIds": [
+            "RG-PROVINCIA"
+          ],
+          "assessment": "Hechos contrastados con las fuentes indicadas y orientación editorial original; no confirma disponibilidad actual."
+        },
+        {
+          "sectionId": "plan",
+          "paragraph": 1,
+          "sourceIds": [
+            "RG-CONSULTA",
+            "RG-TURISMO"
+          ],
+          "assessment": "Hechos contrastados con las fuentes indicadas y orientación editorial original; no confirma disponibilidad actual."
+        }
+      ]
+    }
+  ]
+}

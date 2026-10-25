@@ -5,7 +5,7 @@
   "title": "Entre Ríos: patrimonio y naturaleza en localidades diferentes",
   "destination": "Entre Ríos",
   "province": "Entre Rios",
-  "description": "Una escapada entrerriana puede empezar por una historia de trabajo, una colección de museo o un paisaje de palmares. Colón, San José y Pueblo Liebig ofrecen relatos distintos junto al Uruguay; El Palmar suma una visita protegida propia. Ninguno representa por sí solo toda la provincia.",
+  "description": "Entre Ríos reúne escapadas diferentes: termas junto al Uruguay, historia de inmigración y producción rural, pueblos industriales y palmares protegidos. Elegir una región y un tema permite descubrir esa diversidad sin convertir la provincia en un itinerario apresurado ni confundir Colón con todo su territorio.",
   "status": "draft",
   "publicationAuthorized": false,
   "review": null,
@@ -41,6 +41,30 @@
         "sourceIds": [
           "ER-LIEBIG"
         ]
+      },
+      {
+        "id": "git-locality:entre-rios:villa-dominguez",
+        "name": "Villa Domínguez",
+        "provinceSlug": "entre_rios",
+        "sourceIds": [
+          "ER-COLONIAS-DOMINGUEZ"
+        ]
+      },
+      {
+        "id": "git-locality:entre-rios:villa-clara",
+        "name": "Villa Clara",
+        "provinceSlug": "entre_rios",
+        "sourceIds": [
+          "ER-COLONIAS-CLARA"
+        ]
+      },
+      {
+        "id": "git-locality:entre-rios:san-gregorio",
+        "name": "San Gregorio",
+        "provinceSlug": "entre_rios",
+        "sourceIds": [
+          "ER-COLONIAS-DOMINGUEZ"
+        ]
       }
     ]
   },
@@ -68,6 +92,30 @@
       "title": "APN — Actividades en El Palmar",
       "url": "https://www.argentina.gob.ar/parquesnacionales/centro/parque-nacional-el-palmar/actividades",
       "checkedAt": "2026-10-24"
+    },
+    {
+      "id": "ER-TERMAS-COLON",
+      "title": "Termas Colón — Portal oficial del complejo",
+      "url": "https://termascolon.gov.ar/",
+      "checkedAt": "2026-10-25"
+    },
+    {
+      "id": "ER-ENOTERMAL",
+      "title": "Turismo San José — Experiencia Enotermal",
+      "url": "https://sanjose.tur.ar/experiencia-enotermal/",
+      "checkedAt": "2026-10-25"
+    },
+    {
+      "id": "ER-COLONIAS-DOMINGUEZ",
+      "title": "Turismo Entre Ríos — Villa Domínguez y San Gregorio",
+      "url": "https://www.entrerios.tur.ar/localidades-1/villa-dom%C3%ADnguez-san-gregorio",
+      "checkedAt": "2026-10-25"
+    },
+    {
+      "id": "ER-COLONIAS-CLARA",
+      "title": "Turismo Entre Ríos — Villa Clara",
+      "url": "https://www.entrerios.tur.ar/localidades-1/villa-clara",
+      "checkedAt": "2026-10-25"
     }
   ],
   "sections": [
@@ -120,7 +168,7 @@
     },
     {
       "id": "organizar",
-      "kind": "activities",
+      "kind": "practical",
       "title": "Elegir un tema para cada jornada",
       "sourceIds": [
         "ER-MOLINO",
@@ -132,15 +180,41 @@
       ]
     },
     {
-      "id": "alcance",
-      "kind": "practical",
-      "title": "Termas y turismo rural necesitan su propia consulta",
+      "id": "termas",
+      "kind": "highlights",
+      "title": "Termas: elegir un complejo y consultar sus condiciones",
       "sourceIds": [
-        "ER-PALMAR",
-        "ER-SANJOSE"
+        "ER-TERMAS-COLON",
+        "ER-ENOTERMAL"
       ],
       "paragraphs": [
-        "Las propuestas termales, bodegas y estancias de la guía requieren confirmar establecimiento, modalidad y condiciones. No se atribuyen propiedades terapéuticas a sus aguas ni se promete acceso a todas las instalaciones. La cobertura provincial debe ampliarse con fuentes propias de cada localidad antes de considerar equivalente este reemplazo."
+        "Colón y San José son destinos termales diferentes de Tierra de Palmares. Sus portales distinguen instalaciones y experiencias propias. Elegí el complejo según los intereses del grupo y consultá qué piscinas y servicios están habilitados para la fecha elegida, además de entradas y requisitos de acceso.",
+        "La propuesta se aborda como recreación y descanso, sin atribuir propiedades curativas al agua ni asegurar que un parque acuático opere todo el año. Una promoción o un pase combinado publicado en un portal no se convierte aquí en un beneficio vigente garantizado."
+      ]
+    },
+    {
+      "id": "vino-y-ruralidad",
+      "kind": "activities",
+      "title": "Vino y producción rural: experiencias con reserva propia",
+      "sourceIds": [
+        "ER-ENOTERMAL"
+      ],
+      "paragraphs": [
+        "El portal municipal de San José identifica bodegas y viñedos de la región: Vulliez Sermet en Colón, Casona de Piedra en San José, Alonso Saénz en Arroyo Barú y Altos del Palmar en Ubajay. Son referencias concretas para investigar visitas de producción, no una ruta única con todos sus accesos confirmados.",
+        "Los Franco Suizos combina viñedo, bodega y museo del vino en un establecimiento rural. El municipio indica reserva previa para esa actividad. Confirmá la recepción, la propuesta y el traslado con cada responsable; no se generalizan a todas las estancias las cabalgatas, comidas o actividades mencionadas por un prestador."
+      ]
+    },
+    {
+      "id": "colonias-judias",
+      "kind": "culture",
+      "title": "Colonias judías: patrimonio y comunidades diferentes",
+      "sourceIds": [
+        "ER-COLONIAS-DOMINGUEZ",
+        "ER-COLONIAS-CLARA"
+      ],
+      "paragraphs": [
+        "Villa Domínguez conserva referencias de la colonización judía como el Museo y Archivo Histórico Regional y el Galpón–Hotel de Inmigrantes. San Gregorio suma patrimonio religioso e histórico propio. Esta lectura de la inmigración es distinta de la historia agrícola de la Colonia San José y de la organización industrial de Liebig.",
+        "En Villa Clara, el museo histórico de la antigua estación ferroviaria y la Sinagoga Beith Jacob son otras referencias del patrimonio comunitario. Coordiná con las instituciones y respetá las condiciones de templos y cementerios. Su mención en el catálogo provincial no acredita apertura diaria ni un recorrido guiado disponible."
       ]
     }
   ],
@@ -173,6 +247,33 @@
         "ER-LIEBIG"
       ],
       "mapUrl": "https://www.openstreetmap.org/search?query=Pueblo%20Liebig%2C%20Entre%20R%C3%ADos%20Argentina"
+    },
+    {
+      "id": "villa-dominguez",
+      "label": "Villa Domínguez, Entre Ríos",
+      "description": "Villa Domínguez, Entre Ríos; ubicación orientativa, no ruta ni punto de encuentro confirmado.",
+      "mapUrl": "https://www.openstreetmap.org/search?query=Villa%20Dom%C3%ADnguez%2C%20Entre%20R%C3%ADos%20Argentina",
+      "sourceIds": [
+        "ER-COLONIAS-DOMINGUEZ"
+      ]
+    },
+    {
+      "id": "villa-clara",
+      "label": "Villa Clara, Entre Ríos",
+      "description": "Villa Clara, Entre Ríos; ubicación orientativa, no ruta ni punto de encuentro confirmado.",
+      "mapUrl": "https://www.openstreetmap.org/search?query=Villa%20Clara%2C%20Entre%20R%C3%ADos%20Argentina",
+      "sourceIds": [
+        "ER-COLONIAS-CLARA"
+      ]
+    },
+    {
+      "id": "san-gregorio",
+      "label": "San Gregorio, Entre Ríos",
+      "description": "San Gregorio, Entre Ríos; ubicación orientativa, no ruta ni punto de encuentro confirmado.",
+      "mapUrl": "https://www.openstreetmap.org/search?query=San%20Gregorio%2C%20Entre%20R%C3%ADos%20Argentina",
+      "sourceIds": [
+        "ER-COLONIAS-DOMINGUEZ"
+      ]
     }
   ],
   "photos": [],
@@ -192,7 +293,7 @@
   ],
   "editorial": {
     "documentaryStatus": "sources-checked",
-    "updatedAt": "2026-10-24",
+    "updatedAt": "2026-10-25",
     "origin": {
       "kind": "git-editorial",
       "legacyGuideIds": [
@@ -205,8 +306,10 @@
       "Autorización independiente de publicación",
       "Fotografías: derechos y selección pendientes",
       "Equivalencia con el PDF y respaldo externo sin aprobar",
-      "INCOMPLETA respecto del PDF: fuentes específicas para termas, vino, ruralidad y colonias judías",
-      "Relaciones de localidades y fuentes verificadas del maestro guardadas solo en registro privado; no se importan estados"
+      "Relaciones de localidades y fuentes verificadas del maestro guardadas solo en registro privado; no se importan estados",
+      "Federación, Villa Elisa, Chajarí y Concordia: faltan fichas institucionales específicas de los complejos para cubrir el PDF",
+      "Confirmación directa de reservas y acceso comunitario; cobertura de Basavilbaso y Villaguay pendiente",
+      "Cobertura de ruralidad ampliada, sin dar por probadas actividades ni equivalencia de toda la provincia"
     ]
   }
 }

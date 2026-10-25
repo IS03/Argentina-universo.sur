@@ -33,57 +33,57 @@
       "id": "IGU-PARQUE",
       "title": "APN — Parque Nacional Iguazú",
       "url": "https://www.argentina.gob.ar/parquesnacionales/nea/parque-nacional-iguazu",
-      "checkedAt": "2026-10-24"
+      "checkedAt": "2026-10-25"
     },
     {
       "id": "IGU-ACTIVIDADES",
       "title": "APN — Actividades en Iguazú",
       "url": "https://www.argentina.gob.ar/parquesnacionales/nea/parque-nacional-iguazu/actividades",
-      "checkedAt": "2026-10-24"
+      "checkedAt": "2026-10-25"
     },
     {
       "id": "IGU-PANORAMA",
       "title": "APN — Panorámica de Iguazú",
       "url": "https://www.argentina.gob.ar/parquesnacionales/nea/parque-nacional-iguazu/panoramica",
-      "checkedAt": "2026-10-24"
+      "checkedAt": "2026-10-25"
     },
     {
       "id": "IGU-ACCESO",
       "title": "APN — Horarios y cómo llegar",
       "url": "https://www.argentina.gob.ar/parquesnacionales/nea/parque-nacional-iguazu/horarios-como-llegar",
-      "checkedAt": "2026-10-24"
+      "checkedAt": "2026-10-25"
     },
     {
       "id": "IGU-CIUDAD",
       "title": "Ministerio de Turismo de Misiones — Centro de Informes Puerto Iguazú",
       "url": "https://misiones.tur.ar/infotur_pub/verCentros.php?IdCentros=3",
-      "checkedAt": "2026-10-24"
+      "checkedAt": "2026-10-25"
     },
     {
       "id": "APN-RESPONSABLE",
       "title": "APN — Recomendaciones para tu visita",
       "url": "https://www.argentina.gob.ar/parquesnacionales/recomendaciones-para-tu-visita",
-      "checkedAt": "2026-10-24"
+      "checkedAt": "2026-10-25"
     },
     {
       "id": "IGU-ESTADO-APN",
       "title": "APN — Parque Nacional Iguazú abierto todo el año",
       "url": "https://www.argentina.gob.ar/noticias/parque-nacional-iguazu-abierto-todo-el-ano",
-      "checkedAt": "2026-10-24",
+      "checkedAt": "2026-10-25",
       "publishedAt": "2026-09-17"
     },
     {
       "id": "IGU-ESTADO-CONCESION",
       "title": "Iguazú Argentina S.A., concesionaria del Área Cataratas — Circuitos disponibles mientras Garganta del Diablo permanece cerrado",
       "url": "https://iguazuargentina.com/parque-nacional-iguazu-conoce-los-circuitos-disponibles-mientras-garganta-del-diablo-permanece-cerrado/",
-      "checkedAt": "2026-10-24",
+      "checkedAt": "2026-10-25",
       "publishedAt": "2026-08-03T19:45-03:00"
     },
     {
       "id": "IGU-ESTADO-CIRCUITO",
       "title": "Iguazú Argentina S.A., concesionaria del Área Cataratas — Circuito Garganta del Diablo: horarios y estado",
       "url": "https://iguazuargentina.com/area-cataratas/circuito-garganta/",
-      "checkedAt": "2026-10-24"
+      "checkedAt": "2026-10-25"
     }
   ],
   "sections": [
@@ -107,8 +107,8 @@
         "IGU-ACTIVIDADES"
       ],
       "paragraphs": [
-        "El Paseo Superior y el Paseo Inferior ofrecen perspectivas diferentes de los saltos. La Garganta del Diablo, la caída principal de las cataratas, se recorre habitualmente por una pasarela sobre el lecho superior del río. El parque también describe el Sendero Macuco y el Tren Ecológico de la Selva, opciones que permiten conocer otros aspectos del área.",
-        "La elección debe considerar las condiciones de cada recorrido. El Paseo Inferior incluye escaleras; Macuco es un sendero agreste. Revisá las descripciones de APN y consultá el estado de los sectores antes de ingresar. Esta ficha no convierte la existencia de una actividad en una confirmación de apertura ni asigna duraciones o dificultades propias."
+        "El Paseo Superior y el Paseo Inferior permiten mirar los saltos desde perspectivas diferentes. La descripción habitual de Garganta del Diablo corresponde a una pasarela sobre el río hacia la caída principal. Macuco ofrece una aproximación más agreste a la selva; el Tren Ecológico integra las propuestas del área de cataratas.",
+        "Para elegir, distinguí el tipo de recorrido: el Inferior incluye escaleras y Macuco es exclusivamente peatonal y agreste. Consultá el estado de cada sector antes de ingresar. La descripción de una pasarela o de una estación no confirma que esté habilitada el día de la visita."
       ]
     },
     {
@@ -120,7 +120,7 @@
       ],
       "paragraphs": [
         "El Centro de Visitantes Yvyrá Retá presenta la diversidad de plantas y animales de la Selva Paranense y las culturas vinculadas con la región. La lectura de ese espacio aporta contexto para reconocer que las cataratas pertenecen a un territorio con historia y comunidades, además de valor paisajístico.",
-        "APN también identifica ferias artesanales relacionadas con la presencia guaraní. Si te interesa esta dimensión cultural, consultá las propuestas y sus condiciones con los responsables locales. La visita puede orientarse hacia la interpretación y el intercambio respetuoso, sin dar por disponibles actividades comunitarias que no fueron confirmadas."
+        "La Feria Artesanal Yhary y la Feria del Viejo Hotel aparecen en la información de APN como referencias de la producción artesanal guaraní. Consultá su funcionamiento antes de incluirlas y acercate con respeto a quienes comparten su trabajo. Una visita al parque no incluye por sí sola el acceso a comunidades o actividades culturales fuera de él."
       ]
     },
     {
@@ -132,8 +132,8 @@
         "IGU-PANORAMA"
       ],
       "paragraphs": [
-        "El sistema de información turística de Misiones identifica el Hito Tres Fronteras y el Santuario Nuestra Señora de Iguazú entre los atractivos de la ciudad. Es un punto de partida oficial para investigar una visita urbana que complemente el área de cataratas y permita conocer otras referencias del destino.",
-        "La información del parque sitúa a Puerto Iguazú dentro de una región de triple frontera y señala sus propuestas culturales, gastronómicas y recreativas. Elegí qué sumar a la escapada con información local actualizada. Esta ficha se concentra en el lado argentino y no presupone requisitos migratorios, excursiones internacionales ni un programa cerrado."
+        "El sistema turístico de Misiones identifica el Hito Tres Fronteras y el Santuario Nuestra Señora de Iguazú entre las referencias urbanas. Pueden servir como punto de partida para organizar un paseo por la ciudad con la oficina local; la enumeración institucional no confirma visitas a interiores, espectáculos ni navegación.",
+        "Puerto Iguazú pertenece a una región de triple frontera, pero esta escapada se concentra en el lado argentino. Elegir propuestas urbanas, gastronómicas o culturales permite complementar el parque sin sumar automáticamente cruces internacionales. Si decidís viajar a otro país, prepará esa salida y sus requisitos por separado."
       ]
     },
     {
@@ -146,7 +146,7 @@
         "APN-RESPONSABLE"
       ],
       "paragraphs": [
-        "APN informa accesos terrestres por las rutas nacionales 12 y 101 y distintas opciones de traslado desde Puerto Iguazú. Consultá su página de acceso y los prestadores para elegir la alternativa adecuada. Los horarios, boletos y condiciones operativas deben verificarse para la fecha del viaje.",
+        "Diferenciá la ciudad del portal del parque al organizar alojamiento y traslados. APN identifica los accesos terrestres por las rutas nacionales 12 y 101 y opciones de transporte desde Puerto Iguazú. Confirmá el servicio elegido, las entradas y los horarios para el día de visita, sin deducirlos de los de una oficina o estación.",
         "La panorámica oficial recomienda prever agua, calzado apropiado, protección frente al sol y la lluvia y repelente. Antes de elegir actividades, revisá también las recomendaciones del área protegida. Respetar las indicaciones del personal y los sectores habilitados forma parte de la preparación, incluso en los paseos más conocidos."
       ]
     }
@@ -180,14 +180,14 @@
       "sectionId": "elegir-los-paseos",
       "guidance": "La habilitación de los circuitos puede cambiar según el caudal del río Iguazú y otras condiciones. Antes de viajar, consultá el estado que publica la concesionaria del Área Cataratas:",
       "officialStatusSourceId": "IGU-ESTADO-CIRCUITO",
-      "observation": "En la consulta del 24 de octubre de 2026, la concesionaria del Área Cataratas indicaba el circuito Garganta del Diablo como cerrado, por un cierre preventivo ante el aumento del caudal del río Iguazú. APN había informado el 17 de septiembre de 2026 que las pasarelas del circuito se retiraron en agosto como medida preventiva, y la concesionaria había señalado el 3 de agosto de 2026 que no existía una fecha establecida para la reapertura. Según esas fuentes, los demás atractivos del Área Cataratas seguían funcionando.",
+      "observation": "En la consulta del 25 de octubre de 2026, la página del circuito de la concesionaria indicaba Garganta del Diablo como cerrado por aumento del caudal. El comunicado de APN del 17 de septiembre relataba el retiro preventivo de pasarelas en agosto y el funcionamiento de otros sectores en aquella fecha. La nota de la concesionaria del 3 de agosto no fijaba una fecha de reapertura. Esos antecedentes no certifican el estado de los demás circuitos en la fecha de este texto.",
       "sourceIds": [
         "IGU-ESTADO-CIRCUITO",
         "IGU-ESTADO-APN",
         "IGU-ESTADO-CONCESION"
       ],
-      "verifiedAt": "2026-10-24",
-      "expiresAt": "2026-11-07"
+      "verifiedAt": "2026-10-25",
+      "expiresAt": "2026-11-08"
     }
   ],
   "related": [
@@ -206,7 +206,7 @@
   ],
   "editorial": {
     "documentaryStatus": "sources-checked",
-    "updatedAt": "2026-10-24",
+    "updatedAt": "2026-10-25",
     "origin": {
       "kind": "git-editorial",
       "legacyGuideIds": [

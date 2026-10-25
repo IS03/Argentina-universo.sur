@@ -42,31 +42,31 @@
       "id": "TAL-PARQUE",
       "title": "APN — Parque Nacional Talampaya",
       "url": "https://www.argentina.gob.ar/parquesnacionales/centro/parque-nacional-talampaya",
-      "checkedAt": "2026-10-24"
+      "checkedAt": "2026-10-25"
     },
     {
       "id": "TAL-PANORAMA",
       "title": "APN — Panorámica de Talampaya",
       "url": "https://www.argentina.gob.ar/parquesnacionales/centro/parque-nacional-talampaya/panoramica",
-      "checkedAt": "2026-10-24"
+      "checkedAt": "2026-10-25"
     },
     {
       "id": "TAL-ACTIVIDADES",
       "title": "APN — Actividades en Talampaya",
       "url": "https://www.argentina.gob.ar/parquesnacionales/centro/parque-nacional-talampaya/actividades",
-      "checkedAt": "2026-10-24"
+      "checkedAt": "2026-10-25"
     },
     {
       "id": "ISCHI-TURISMO",
       "title": "San Juan Turismo — Valle de la Luna, Ischigualasto",
       "url": "https://sanjuan.tur.ar/atractivos/paleontologicos/ischigualasto",
-      "checkedAt": "2026-10-24"
+      "checkedAt": "2026-10-25"
     },
     {
       "id": "UNESCO-966",
       "title": "UNESCO — Ischigualasto / Talampaya Natural Parks",
       "url": "https://whc.unesco.org/en/list/966/",
-      "checkedAt": "2026-10-24"
+      "checkedAt": "2026-10-25"
     }
   ],
   "sections": [
@@ -92,7 +92,7 @@
       ],
       "paragraphs": [
         "El catálogo de APN incluye el Cañón de Talampaya, la Quebrada Don Eduardo y otras propuestas de caminata o excursión vehicular. También describe el Sendero Triásico, con réplicas de dinosaurios que acercan al visitante a la dimensión paleontológica del lugar. Son modalidades diferentes y conviene consultar sus condiciones específicas.",
-        "Las actividades organizadas requieren atender a las indicaciones de los guías y prestadores. APN advierte que el viento zonda y las crecidas por lluvias intensas pueden provocar suspensiones. Elegir una propuesta en una página no asegura su operación: confirmá disponibilidad, modalidad y condiciones antes de reservar o trasladarte."
+        "APN distingue actividades guiadas y propuestas como el Sendero Triásico autoguiado. Consultá la modalidad de cada paseo antes de elegir. El parque advierte que el viento zonda y las crecidas pueden motivar suspensiones: la presencia de una excursión en el catálogo no asegura que opere el día del viaje."
       ]
     },
     {
@@ -103,7 +103,7 @@
         "ISCHI-TURISMO"
       ],
       "paragraphs": [
-        "En Ischigualasto, conocido como Valle de la Luna, el portal oficial de San Juan destaca geoformas como El Hongo y la Cancha de Bochas. El circuito principal se recorre exclusivamente en vehículo y con un guía autorizado. En el acceso también se presenta una propuesta de interpretación vinculada con los hallazgos paleontológicos.",
+        "Ischigualasto, conocido como Valle de la Luna, conserva geoformas como El Hongo y la Cancha de Bochas. El portal de Turismo de San Juan describe un circuito principal vehicular con guía autorizado y un centro de interpretación paleontológica en el acceso. Confirmá las modalidades vigentes con el parque; no todos los sectores se recorren de la misma manera.",
         "La información provincial menciona además otras experiencias, como las noches de luna llena o las caminatas al Cerro Morado, en el ingreso al parque. Consultá cuáles están habilitadas para tu visita y sus requisitos. No se presupone que todas puedan combinarse ni que la movilidad de una persona o vehículo sea adecuada para cualquier modalidad."
       ]
     },
@@ -129,7 +129,7 @@
         "TAL-PARQUE"
       ],
       "paragraphs": [
-        "Villa Unión aparece como referencia de contacto de Talampaya, y San Agustín del Valle Fértil como base de las visitas a Ischigualasto en el portal provincial. Los mapas de esta ficha son búsquedas orientativas: no representan una ruta validada entre los parques ni el acceso preciso a una excursión.",
+        "Talampaya e Ischigualasto tienen administraciones y accesos distintos. Villa Unión figura como referencia de contacto de Talampaya; San Agustín del Valle Fértil aparece como base para Ischigualasto en el portal sanjuanino. Ubicar los parques en el mapa ayuda a preparar el viaje, pero no reemplaza la consulta del acceso preciso a la actividad elegida.",
         "Organizá cada visita con su administración o prestador y revisá accesos, tarifas y condiciones vigentes por separado. La información de Talampaya recomienda prever abrigo y ropa liviana por la amplitud térmica, agua y protección solar. Esta propuesta no promete visitar los dos parques en un día ni publica tiempos de traslado sin comprobar."
       ]
     }
@@ -181,7 +181,7 @@
   ],
   "editorial": {
     "documentaryStatus": "sources-checked",
-    "updatedAt": "2026-10-24",
+    "updatedAt": "2026-10-25",
     "origin": {
       "kind": "git-editorial",
       "legacyGuideIds": [

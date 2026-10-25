@@ -1,0 +1,262 @@
+[
+  {
+    "slug": "caba",
+    "legacyGuideId": "esc_06",
+    "pdf": {
+      "path": "/pdf/caba.pdf",
+      "bytes": 37651530,
+      "sha256": "8ddb609288147a3d0da25b24abd45dfbd9c060b83773907ef3d2addbf18e1075"
+    },
+    "comparedPdf": {
+      "path": "/pdf/caba.pdf",
+      "bytes": 37651530,
+      "sha256": "8ddb609288147a3d0da25b24abd45dfbd9c060b83773907ef3d2addbf18e1075"
+    },
+    "comparisonPurpose": "own-legacy-guide",
+    "pdfReading": {
+      "method": "Texto extraído localmente y página completa renderizada e inspeccionada; solo inventario temático original en Git",
+      "pages": 1,
+      "checkedAt": "2026-10-25"
+    },
+    "topics": [
+      {
+        "pdfTopic": "Centro político y arquitectura",
+        "htmlCoverage": "Plaza de Mayo, Avenida de Mayo y Congreso",
+        "assessment": "covered-core",
+        "gapOrDecision": "Sin accesos a interiores garantizados."
+      },
+      {
+        "pdfTopic": "San Telmo: museos, mercado, historieta y tango",
+        "htmlCoverage": "Identidad de barrio y temas autoguiados",
+        "assessment": "partial",
+        "gapOrDecision": "Faltan fuentes propias de museos, mercado, Paseo de la Historieta y propuestas concretas de tango."
+      },
+      {
+        "pdfTopic": "Palermo: jardines, planetario y museos",
+        "htmlCoverage": "Espacios verdes e identidad del barrio",
+        "assessment": "partial",
+        "gapOrDecision": "Investigar Botánico, Rosedal, Japonés, Ecoparque, MALBA y Arte Decorativo; no ofrecer entradas o agendas sin administrador."
+      },
+      {
+        "pdfTopic": "Costanera Sur y Puerto Madero",
+        "htmlCoverage": "Ambientes, observación y distinción de barrio",
+        "assessment": "covered-core",
+        "gapOrDecision": "Fragata Sarmiento y museo infantil requieren fuentes propias."
+      },
+      {
+        "pdfTopic": "Corrientes, gastronomía, compras y miradores",
+        "htmlCoverage": "Recorridos por intereses y movilidad",
+        "assessment": "missing",
+        "gapOrDecision": "Guías temáticas complementarias o ampliar cuidadosamente la página; no equivalente todavía."
+      }
+    ],
+    "editorialRecommendation": "Una página de orientación puede ser el núcleo, pero hoy no alcanza la cobertura del PDF. Completar secciones o guías temáticas sobre museos, espacios verdes, Corrientes y patrimonio antes de decidir retirada.",
+    "equivalence": "not-established",
+    "onePageSufficientHumanDecision": null,
+    "scopeReview": null,
+    "backup": {
+      "inGit": true,
+      "externalBackupVerified": false,
+      "restorationTested": false
+    },
+    "retirementApproval": null,
+    "redirect": {
+      "enabled": false,
+      "fromPath": "/pdf/caba.pdf",
+      "toPath": "/escapadas/caba",
+      "status": 308
+    },
+    "tripContentSha256": "f02a7479c86258e097a478bdbef51b74ef4221b815009d39a7c322aa96637042"
+  },
+  {
+    "slug": "puerto-iguazu",
+    "legacyGuideId": "esc_02",
+    "pdf": {
+      "path": "/pdf/iguazu_2.pdf",
+      "bytes": 14457850,
+      "sha256": "7cf128d2f00fe4730b18813b983ae388748eb5a057dc7c44778f8832d23cd0d4"
+    },
+    "comparedPdf": {
+      "path": "/pdf/iguazu_2.pdf",
+      "bytes": 14457850,
+      "sha256": "7cf128d2f00fe4730b18813b983ae388748eb5a057dc7c44778f8832d23cd0d4"
+    },
+    "comparisonPurpose": "own-legacy-guide",
+    "pdfReading": {
+      "method": "Texto extraído localmente y página completa renderizada e inspeccionada; solo inventario temático original en Git",
+      "pages": 1,
+      "checkedAt": "2026-10-25"
+    },
+    "topics": [
+      {
+        "pdfTopic": "Área Cataratas, Superior/Inferior, Garganta y tren",
+        "htmlCoverage": "Diferenciación de circuitos con aviso operativo fechado",
+        "assessment": "covered-core",
+        "gapOrDecision": "Estado de Garganta a reconfirmar antes de revisión; PDF supone acceso y beneficio segundo día que aquí no se prometen."
+      },
+      {
+        "pdfTopic": "Sendero Macuco y navegación",
+        "htmlCoverage": "Macuco agreste, interpretación y planificación",
+        "assessment": "partial",
+        "gapOrDecision": "Navegación requiere fuente administradora/operador sobre restricciones y modalidades; no promoverla genéricamente."
+      },
+      {
+        "pdfTopic": "Hito y cultura local",
+        "htmlCoverage": "Hito y santuario como referencias, ferias e interpretación APN",
+        "assessment": "partial",
+        "gapOrDecision": "Falta fuente municipal propia del Hito y eventual navegación; no se promete acceso."
+      },
+      {
+        "pdfTopic": "Minas de Wanda y San Ignacio Miní",
+        "htmlCoverage": "Fuera del alcance de esta página de ciudad/parque",
+        "assessment": "missing",
+        "gapOrDecision": "Recomendar fichas regionales separadas con fuentes, distancias y acceso verificados, sin publicar hoy los otros borradores."
+      },
+      {
+        "pdfTopic": "Luna llena, aventura y promoción de reingreso",
+        "htmlCoverage": "No convertidas en ofertas actuales",
+        "assessment": "missing",
+        "gapOrDecision": "Reverificar operación, reglas y derechos antes de ampliar; no copiar descuento del PDF."
+      }
+    ],
+    "editorialRecommendation": "Una página sirve para ciudad y parque. Wanda y San Ignacio requieren tratamiento regional separado; no declarar equivalencia del PDF completo con esta única ficha.",
+    "equivalence": "not-established",
+    "onePageSufficientHumanDecision": null,
+    "scopeReview": null,
+    "backup": {
+      "inGit": true,
+      "externalBackupVerified": false,
+      "restorationTested": false
+    },
+    "retirementApproval": null,
+    "redirect": {
+      "enabled": false,
+      "fromPath": "/pdf/iguazu_2.pdf",
+      "toPath": "/escapadas/puerto-iguazu",
+      "status": 308
+    },
+    "tripContentSha256": "491fbe5b5edaab009943b3f29d03a5c1c105b3512699a6117d3b6da5bd5f4cf2"
+  },
+  {
+    "slug": "talampaya-e-ischigualasto",
+    "legacyGuideId": "esc_13",
+    "pdf": {
+      "path": "/pdf/talampaya.pdf",
+      "bytes": 35463984,
+      "sha256": "378d69540724586f217519589d05fee8a0f268b77664173893f00a37b3fd45f5"
+    },
+    "comparedPdf": {
+      "path": "/pdf/talampaya.pdf",
+      "bytes": 35463984,
+      "sha256": "378d69540724586f217519589d05fee8a0f268b77664173893f00a37b3fd45f5"
+    },
+    "comparisonPurpose": "own-legacy-guide",
+    "pdfReading": {
+      "method": "Texto extraído localmente y página completa renderizada e inspeccionada; solo inventario temático original en Git",
+      "pages": 1,
+      "checkedAt": "2026-10-25"
+    },
+    "topics": [
+      {
+        "pdfTopic": "Ischigualasto: circuito y Cerro Morado",
+        "htmlCoverage": "Circuito guiado, geoformas y referencia a modalidades",
+        "assessment": "partial",
+        "gapOrDecision": "Río Salado y Museo de Sitio William Sill requieren fuente específica y condiciones actuales."
+      },
+      {
+        "pdfTopic": "Talampaya: cañón, patrimonio y modalidades",
+        "htmlCoverage": "Cañón, petroglifos, Sendero Triásico y consulta de modalidades",
+        "assessment": "partial",
+        "gapOrDecision": "Shimpa y Balcones necesitan contraste propio; no heredar dificultad, distancia ni duración del PDF."
+      },
+      {
+        "pdfTopic": "Visitas nocturnas y bicicleta",
+        "htmlCoverage": "Opciones institucionales mencionadas sin calendario garantizado",
+        "assessment": "partial",
+        "gapOrDecision": "Comprobar administrador, cupos, guía y condiciones de cada modalidad."
+      },
+      {
+        "pdfTopic": "La Rioja: Chiflón, Colorados y vino",
+        "htmlCoverage": "No desarrollados como excursiones",
+        "assessment": "missing",
+        "gapOrDecision": "Proponer contenidos regionales propios o una sección complementaria investigada."
+      },
+      {
+        "pdfTopic": "San Juan: Jáchal, Huaco, molinos y patrimonio",
+        "htmlCoverage": "Fuera del núcleo de dos parques",
+        "assessment": "missing",
+        "gapOrDecision": "Requiere páginas complementarias; una ficha de dos parques no reemplaza toda esa cobertura."
+      }
+    ],
+    "editorialRecommendation": "Mantener núcleo conjunto para dos parques con organización separada. Añadir contenidos complementarios de Jáchal/Huaco y La Rioja; el núcleo actual no es equivalente a toda la guía.",
+    "equivalence": "not-established",
+    "onePageSufficientHumanDecision": null,
+    "scopeReview": null,
+    "backup": {
+      "inGit": true,
+      "externalBackupVerified": false,
+      "restorationTested": false
+    },
+    "retirementApproval": null,
+    "redirect": {
+      "enabled": false,
+      "fromPath": "/pdf/talampaya.pdf",
+      "toPath": "/escapadas/talampaya-e-ischigualasto",
+      "status": 308
+    },
+    "tripContentSha256": "08aed22195ff6bb69d1a984fb681bfcefae159353b2302666c3c7b83266609c6"
+  },
+  {
+    "slug": "el-palmar",
+    "legacyGuideId": null,
+    "pdf": null,
+    "comparedPdf": {
+      "path": "/pdf/entrerios.pdf",
+      "bytes": 29060699,
+      "sha256": "6264c1b294a9bcac1920ce94ec985f48e822001ea67c8ddf1e67d55531a9680a"
+    },
+    "comparisonPurpose": "scope-boundary-only-not-a-replacement",
+    "pdfReading": {
+      "method": "Texto extraído localmente y página completa renderizada e inspeccionada; solo inventario temático original en Git",
+      "pages": 1,
+      "checkedAt": "2026-10-25"
+    },
+    "topics": [
+      {
+        "pdfTopic": "Palmares, humedales, observación y senderos de la guía provincial",
+        "htmlCoverage": "Desarrollados con fuentes específicas APN",
+        "assessment": "covered-core",
+        "gapOrDecision": "Contribución parcial a una temática de Entre Ríos, no reemplazo de esc_11."
+      },
+      {
+        "pdfTopic": "Termas provinciales, bodegas, turismo rural y colonias judías",
+        "htmlCoverage": "Fuera del alcance de El Palmar",
+        "assessment": "out-of-scope",
+        "gapOrDecision": "Se mantienen en borrador Entre Ríos y su investigación; no redirigir guía provincial al parque."
+      },
+      {
+        "pdfTopic": "Documento propio de El Palmar entre las23guías",
+        "htmlCoverage": "No existe en el inventario",
+        "assessment": "not-applicable",
+        "gapOrDecision": "No asignar PDF, ID legado ni ahorro a esta ficha adicional."
+      }
+    ],
+    "editorialRecommendation": "Una página específica del parque es suficiente como unidad editorial propuesta, sujeta a revisión. No tiene PDF propio y no sustituye Entre Ríos.",
+    "equivalence": "not-established",
+    "onePageSufficientHumanDecision": null,
+    "scopeReview": null,
+    "backup": {
+      "inGit": true,
+      "externalBackupVerified": false,
+      "restorationTested": false
+    },
+    "retirementApproval": null,
+    "redirect": {
+      "enabled": false,
+      "fromPath": null,
+      "toPath": "/escapadas/el-palmar",
+      "status": null
+    },
+    "tripContentSha256": "bf8456e4e9cb88aac5f590f7e0e75d4d63e22e2be0397ae325a8c7dd7d37b2d0"
+  }
+]

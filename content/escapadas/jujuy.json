@@ -25,6 +25,30 @@
         "sourceIds": [
           "JUJ-MAIMARA"
         ]
+      },
+      {
+        "id": "git-locality:jujuy:purmamarca",
+        "name": "Purmamarca",
+        "provinceSlug": "jujuy",
+        "sourceIds": [
+          "JUJ-PURMAMARCA"
+        ]
+      },
+      {
+        "id": "git-locality:jujuy:tilcara",
+        "name": "Tilcara",
+        "provinceSlug": "jujuy",
+        "sourceIds": [
+          "JUJ-TILCARA-UBA"
+        ]
+      },
+      {
+        "id": "git-locality:jujuy:humahuaca",
+        "name": "Humahuaca",
+        "provinceSlug": "jujuy",
+        "sourceIds": [
+          "JUJ-HUMAHUACA"
+        ]
       }
     ]
   },
@@ -52,6 +76,30 @@
       "title": "APN — Actividades en Calilegua",
       "url": "https://www.argentina.gob.ar/parquesnacionales/region-noroeste/parque-nacional-calilegua/actividades",
       "checkedAt": "2026-10-24"
+    },
+    {
+      "id": "JUJ-PURMAMARCA",
+      "title": "Comisión Nacional de Monumentos — Poblado de Purmamarca",
+      "url": "https://www.argentina.gob.ar/capital-humano/cultura/monumentos/poblado-de-purmamarca",
+      "checkedAt": "2026-10-25"
+    },
+    {
+      "id": "JUJ-TILCARA-UBA",
+      "title": "UBA, Centro Universitario Tilcara — Pucará de Tilcara",
+      "url": "https://tilcara.filo.uba.ar/node/12",
+      "checkedAt": "2026-10-25"
+    },
+    {
+      "id": "JUJ-HUMAHUACA",
+      "title": "Comisión Nacional de Monumentos — Monumento a los Héroes de la Independencia",
+      "url": "https://www.argentina.gob.ar/capital-humano/cultura/monumentos/monumento-los-heroes-de-la-independencia",
+      "checkedAt": "2026-10-25"
+    },
+    {
+      "id": "JUJ-HORNOCAL",
+      "title": "Ministerio de Cultura y Turismo de Jujuy — Catálogo turístico comunitario Rutas 73/83, páginas 44–48",
+      "url": "https://www.turismo.jujuy.gob.ar/wp-content/uploads/Catalogo-TRC-Rutas-73-y-83.pdf",
+      "checkedAt": "2026-10-25"
     }
   ],
   "sections": [
@@ -76,6 +124,43 @@
       "paragraphs": [
         "El valor de la Quebrada de Humahuaca no se reduce a sus colores. UNESCO destaca la continuidad de los caminos, los asentamientos y los intercambios a lo largo del valle del Río Grande. Las construcciones, los espacios de cultivo y las tradiciones forman parte de un paisaje cultural que sigue habitado.",
         "Esta mirada invita a recorrer cada pueblo con atención a su vida cotidiana. El patrimonio no convierte sus calles ni sus ceremonias en un escenario a disposición del visitante. Consultar antes de ingresar a espacios comunitarios y pedir permiso para retratar personas es una forma de acercarse respetuosamente."
+      ]
+    },
+    {
+      "id": "purmamarca",
+      "kind": "highlights",
+      "title": "Purmamarca: pueblo y paisaje",
+      "sourceIds": [
+        "JUJ-PURMAMARCA"
+      ],
+      "paragraphs": [
+        "En Purmamarca, la iglesia y su atrio frente a la plaza ayudan a leer la forma del pueblo. Las construcciones con materiales locales y los cerros que lo rodean componen un paisaje donde arquitectura y relieve se miran juntos. Detenerse en las calles permite descubrir algo más que la postal del Cerro de los Siete Colores.",
+        "El valor patrimonial del conjunto no acredita el acceso a todos sus interiores ni la habilitación de senderos. Consultá las condiciones locales antes de sumar una caminata o una visita religiosa; la vida cotidiana del pueblo continúa más allá de su interés turístico."
+      ]
+    },
+    {
+      "id": "tilcara",
+      "kind": "culture",
+      "title": "Tilcara y la interpretación del Pucará",
+      "sourceIds": [
+        "JUJ-TILCARA-UBA"
+      ],
+      "paragraphs": [
+        "El Pucará conserva estructuras de un poblado prehispánico, con viviendas, talleres y espacios ceremoniales. La interpretación del Centro Universitario Tilcara permite distinguir los restos arqueológicos de las reconstrucciones posteriores. Para las comunidades de la Quebrada también es un antigal, un lugar de memoria y valor sagrado.",
+        "La UBA publica por separado información del recorrido y reservas para visitas guiadas. Revisá su calendario para tu fecha: no todas las jornadas ofrecen la misma modalidad y las condiciones meteorológicas pueden afectar la visita. No se reutilizan aquí tarifas ni un turno semanal como disponibilidad permanente."
+      ]
+    },
+    {
+      "id": "humahuaca-hornocal",
+      "kind": "highlights",
+      "title": "Humahuaca y Hornocal: dos visitas diferentes",
+      "sourceIds": [
+        "JUJ-HUMAHUACA",
+        "JUJ-HORNOCAL"
+      ],
+      "paragraphs": [
+        "En Humahuaca, el Monumento a los Héroes de la Independencia se levanta sobre el cerro Santa Bárbara, orientado hacia la plaza central. Su conjunto escultórico pone el acento en la participación popular en las luchas por la independencia. Es una referencia urbana distinta de la salida a la serranía de Hornocal.",
+        "El catálogo provincial identifica al mirador de Hornocal con la comunidad originaria que lo administra y describe un acceso de montaña por la RP 73. No confundas el mirador con todo el territorio comunitario ni con un paseo urbano de Humahuaca. Confirmá estado del camino, recepción y condiciones del ascenso con sus responsables; no se asegura visibilidad ni se ofrece una excursión contratada."
       ]
     },
     {
@@ -135,6 +220,42 @@
         "JUJ-CALILEGUA"
       ],
       "mapUrl": "https://www.openstreetmap.org/search?query=Parque%20Nacional%20Calilegua%2C%20Jujuy%20Argentina"
+    },
+    {
+      "id": "purmamarca",
+      "label": "Purmamarca, Jujuy",
+      "description": "Purmamarca, Jujuy; ubicación orientativa, no ruta ni punto de encuentro confirmado.",
+      "mapUrl": "https://www.openstreetmap.org/search?query=Purmamarca%2C%20Jujuy%20Argentina",
+      "sourceIds": [
+        "JUJ-PURMAMARCA"
+      ]
+    },
+    {
+      "id": "tilcara",
+      "label": "Tilcara, Jujuy",
+      "description": "Tilcara, Jujuy; ubicación orientativa, no ruta ni punto de encuentro confirmado.",
+      "mapUrl": "https://www.openstreetmap.org/search?query=Tilcara%2C%20Jujuy%20Argentina",
+      "sourceIds": [
+        "JUJ-TILCARA-UBA"
+      ]
+    },
+    {
+      "id": "humahuaca",
+      "label": "Humahuaca, Jujuy",
+      "description": "Humahuaca, Jujuy; ubicación orientativa, no ruta ni punto de encuentro confirmado.",
+      "mapUrl": "https://www.openstreetmap.org/search?query=Humahuaca%2C%20Jujuy%20Argentina",
+      "sourceIds": [
+        "JUJ-HUMAHUACA"
+      ]
+    },
+    {
+      "id": "hornocal",
+      "label": "Mirador de Hornocal, Jujuy",
+      "description": "Mirador de Hornocal, Jujuy; ubicación orientativa, no ruta ni punto de encuentro confirmado.",
+      "mapUrl": "https://www.openstreetmap.org/search?query=Mirador%20de%20Hornocal%2C%20Jujuy%20Argentina",
+      "sourceIds": [
+        "JUJ-HORNOCAL"
+      ]
     }
   ],
   "photos": [],
@@ -154,7 +275,7 @@
   ],
   "editorial": {
     "documentaryStatus": "sources-checked",
-    "updatedAt": "2026-10-24",
+    "updatedAt": "2026-10-25",
     "origin": {
       "kind": "git-editorial",
       "legacyGuideIds": [
@@ -167,8 +288,9 @@
       "Autorización independiente de publicación",
       "Fotografías: derechos y selección pendientes",
       "Equivalencia con el PDF y respaldo externo sin aprobar",
-      "INCOMPLETA: faltan fuentes específicas accesibles para Purmamarca, Tilcara, Humahuaca y Hornocal",
-      "Verificar tren solar, Salinas Grandes y Yala antes de ampliar el itinerario"
+      "Verificar tren solar, Salinas Grandes y Yala antes de ampliar el itinerario",
+      "Hornocal: reconfirmar condiciones operativas con la comunidad; catálogo sin fecha editorial identificada",
+      "Paseo de los Colorados, Yala, salinas y tren requieren revisión propia antes de ampliar"
     ]
   }
 }
