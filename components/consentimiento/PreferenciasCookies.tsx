@@ -16,8 +16,8 @@ export default function PreferenciasCookies() {
   const decision = useSyncExternalStore(suscribirConsentimiento, leerConsentimiento, () => "pendiente" as const);
   const estado = decision === null ? ESTADO.sinDecidir : ESTADO[decision];
   return (
-    <div className="rounded-xl border border-arena-300/70 bg-arena-50 p-4 sm:p-5 mb-4">
-      <p className="text-tinta-900 font-medium mb-4" role="status" aria-live="polite">
+    <div className="mb-4 rounded-tarjeta border border-arena-300/80 bg-white p-4 shadow-tarjeta sm:p-5">
+      <p className="mb-4 font-medium text-tinta-900" role="status" aria-live="polite">
         {estado}
       </p>
       <div className="flex flex-wrap gap-3">

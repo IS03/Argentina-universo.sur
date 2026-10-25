@@ -91,6 +91,8 @@
   overflow-x: auto;
   overscroll-behavior-x: contain;
   scroll-snap-type: x proximity;
+  /* El encaje respeta el margen lateral de la página en lugar de pegar el primer elemento al borde. */
+  scroll-padding-inline: 1rem;
   scrollbar-width: none;
   &::-webkit-scrollbar {
     display: none;

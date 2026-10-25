@@ -89,7 +89,7 @@ una foto de pantalla completa).
 | Avisos | `components/ui/Aviso.tsx` | `info` y `aviso` con ícono y nombre accesible |
 | Estado vacío | `Bloques.tsx` (`EstadoVacio`) | Explica y ofrece una salida |
 | Seguí explorando | `components/ui/SeguirExplorando.tsx` | Enlazado interno al pie del contenido |
-| Íconos | `components/ui/Icono.tsx` | 13 trazos propios, decorativos (`aria-hidden`) |
+| Íconos | `components/ui/Icono.tsx` | Trazos propios, decorativos (`aria-hidden`); desde PR16 reemplazan todos los emojis |
 | Grillas | `components/ui/grillas.ts` | Cada grilla junto a su `sizes`; una prueba verifica que coincidan |
 | Tarjeta de provincia | `components/ProvinciaCard.tsx` | Foto 4:5, región y nombre sobre degradado inferior |
 | Tarjeta de actividad | `components/ActividadCard.tsx` | Lista con miniatura en teléfonos; tarjeta desde 640 px |
@@ -98,8 +98,16 @@ una foto de pantalla completa).
 | Mapa de provincias | `components/MapaArgentina.tsx` | Colores por región, realce por CSS, teclado |
 | Fichas futuras | `components/destinos/*` | Ver [FICHAS-WORK.md](FICHAS-WORK.md) |
 | Publicidad | `components/publicidad/EspacioPublicitario.tsx` | Ver [PUBLICIDAD.md](PUBLICIDAD.md) |
+| Fila de chips con activo visible (PR16) | `components/ui/FilaDesplazable.tsx` | Centra el chip con `aria-current`/`aria-pressed`; sin JS funciona igual |
+| Marco de Santa Fe (PR16) | `components/santa-fe/PaginaSantaFe.tsx`, `NavegacionSantaFe.tsx`, `secciones.ts` | Cabecera, chips de secciones y enlazado interno de las cinco subsecciones |
+| Agenda (PR16) | `components/santa-fe/AgendaSantaFe.tsx` | Lista/calendario con `aria-pressed` y archivo plegable compartido con el export estático |
+| Preguntas frecuentes (PR16) | `components/santa-fe/PreguntasFrecuentesSection.tsx` | `<details>` nativo: sin JS y con respuestas en el HTML |
 
 ## Imágenes
+
+PR16: los carruseles de detalle usan `SIZES_ANCHO_COMPLETO`, con un techo de 320 px de referencia en
+teléfonos (variante de 960 px con densidades de hasta 3×). Las destacadas de la portada pasan a una
+fila desplazable en teléfonos (tarjetas del 78 % del ancho).
 
 Las grillas declaran su `sizes` real (antes lo inyectaba solo el build de Pages). En teléfonos el
 listado de actividades usa miniaturas de 112 px (variante WebP de 320 px) para que la primera

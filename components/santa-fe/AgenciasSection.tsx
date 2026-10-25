@@ -2,6 +2,9 @@
 
 import { useState, useMemo } from 'react';
 import { Agencia } from "@/lib/data";
+import Icono from "@/components/ui/Icono";
+import { EstadoVacio } from "@/components/ui/Bloques";
+import { boton, chip } from "@/components/ui/estilos";
 
 interface AgenciasSectionProps {
   agencias: Agencia[];
@@ -30,150 +33,70 @@ export default function AgenciasSection({ agencias }: AgenciasSectionProps) {
   };
 
   return (
-    <section id="agencias" className="mb-16 scroll-mt-32">
-      <h2 className="text-3xl md:text-4xl font-semibold uppercase tracking-widest mb-8 text-center text-tinta-900">
-        Agencias de Viajes
-      </h2>
+    <section id="agencias" aria-labelledby="agencias-titulo">
+      <h2 id="agencias-titulo" className="sr-only">Agencias de Viajes</h2>
 
-      {/* Filtro por ciudad */}
-      <div className="mb-8 flex justify-center">
-        <div className="bg-arena-200/80 backdrop-blur-sm border border-arena-300/50 rounded-lg p-4 w-full max-w-2xl hover:border-lago-600/70 transition-all duration-300">
-          <div className="flex flex-wrap gap-2 justify-center">
+      {/* Filtro por ciudad: chips en una fila desplazable en teléfonos. */}
+      <div className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+        <div role="group" aria-label="Filtrar agencias por ciudad" className="fila-desplazable -mx-4 px-4 pb-1 sm:mx-0 sm:flex-wrap sm:px-0">
+          {[{ valor: "todas", etiqueta: "Todas" }, ...ciudades.map(c => ({ valor: c, etiqueta: c }))].map(opcion => (
             <button
-              onClick={() => setCiudadFiltro("todas")}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
-                ciudadFiltro === "todas"
-                  ? "bg-lago-600 text-white shadow-md"
-                  : "bg-arena-100 text-tinta-900 hover:bg-arena-200 border border-arena-300/50"
-              }`}
+              key={opcion.valor}
+              type="button"
+              onClick={() => setCiudadFiltro(opcion.valor)}
+              aria-pressed={ciudadFiltro === opcion.valor}
+              className={chip(ciudadFiltro === opcion.valor)}
             >
-              Todas
+              {opcion.etiqueta}
             </button>
-            {ciudades.map((ciudad) => (
-              <button
-                key={ciudad}
-                onClick={() => setCiudadFiltro(ciudad)}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
-                  ciudadFiltro === ciudad
-                    ? "bg-lago-600 text-white shadow-md"
-                    : "bg-arena-100 text-tinta-900 hover:bg-arena-200 border border-arena-300/50"
-                }`}
-              >
-                {ciudad}
-              </button>
-            ))}
-          </div>
+          ))}
         </div>
+        <p aria-live="polite" className="shrink-0 text-sm font-medium text-tinta-700">
+          {agenciasFiltradas.length} {agenciasFiltradas.length === 1 ? "agencia" : "agencias"}
+        </p>
       </div>
 
-      {/* Grid de agencias */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {agenciasFiltradas.map((agencia, index) => {
-          const telefonoLink = getTelefonoLink(agencia["Teléfono/Celular"]);
+      {agenciasFiltradas.length > 0 ? (
+        <ul className="grid list-none gap-4 md:grid-cols-2 lg:grid-cols-3 lg:gap-6">
+          {agenciasFiltradas.map((agencia, index) => (
+            <li key={index}>
+              <article className="flex h-full flex-col rounded-tarjeta border border-arena-300/80 bg-white p-5 shadow-tarjeta">
+                <p className="antetitulo text-region-litoral">{agencia.Ciudad}</p>
+                <h3 className="mt-1 text-lg font-semibold leading-snug text-tinta-900">{agencia.Agencia}</h3>
 
-          return (
-            <div
-              key={index}
-              className="group bg-gradient-to-br from-arena-200 to-arena-300 hover:from-arena-300 hover:to-arena-300 border border-arena-300/50 hover:border-lago-600/70 rounded-xl p-6 transition-all duration-300 transform hover:scale-[1.02] shadow-lg hover:shadow-xl"
-            >
-              {/* Badge de ciudad */}
-              <div className="mb-3">
-                <span className="inline-block text-xs uppercase tracking-wide px-3 py-1 bg-lago-600/20 text-tinta-900 rounded-full border border-lago-600/30">
-                  {agencia.Ciudad}
-                </span>
-              </div>
-
-              {/* Nombre de la agencia */}
-              <h3 className="text-xl font-semibold mb-4 text-tinta-900 group-hover:text-tinta-500 transition-colors duration-300">
-                {agencia.Agencia}
-              </h3>
-
-              {/* Información de contacto */}
-              <div className="space-y-3 text-tinta-700 text-sm">
-                {/* Teléfono */}
-                <div className="flex items-start gap-2">
-                  <svg
-                    className="w-5 h-5 text-lago-600 flex-shrink-0 mt-0.5"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-                    />
-                  </svg>
-                  <div className="flex-1">
-                    <p className="break-words">{agencia["Teléfono/Celular"]}</p>
-                    {telefonoLink && (
-                      <a
-                        href={telefonoLink}
-                        className="text-lago-600 hover:text-tinta-500 text-xs underline mt-1 inline-block"
-                      >
-                        Llamar
-                      </a>
-                    )}
-                  </div>
-                </div>
-
-                {/* Email */}
-                {agencia["Correo electrónico"] && (
+                <dl className="mt-3 flex-1 space-y-2.5 text-sm text-tinta-700">
                   <div className="flex items-start gap-2">
-                    <svg
-                      className="w-5 h-5 text-lago-600 flex-shrink-0 mt-0.5"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                      />
-                    </svg>
-                    <a
-                      href={`mailto:${agencia["Correo electrónico"]}`}
-                      className="text-lago-600 hover:text-tinta-500 break-words underline"
-                    >
-                      {agencia["Correo electrónico"]}
-                    </a>
+                    <dt><Icono nombre="telefono" className="mt-0.5 size-4 text-tinta-500" /><span className="sr-only">Teléfono</span></dt>
+                    <dd className="break-words">{agencia["Teléfono/Celular"]}</dd>
                   </div>
-                )}
+                  {agencia["Correo electrónico"] && (
+                    <div className="flex items-start gap-2">
+                      <dt><Icono nombre="correo" className="mt-0.5 size-4 text-tinta-500" /><span className="sr-only">Correo</span></dt>
+                      <dd className="min-w-0">
+                        <a href={`mailto:${agencia["Correo electrónico"]}`} className="inline-block break-words py-1 text-lago-600 underline underline-offset-2">
+                          {agencia["Correo electrónico"]}
+                        </a>
+                      </dd>
+                    </div>
+                  )}
+                  {agencia.Contacto && (
+                    <div className="flex items-start gap-2 border-t border-arena-300/70 pt-2.5">
+                      <dt><Icono nombre="persona" className="mt-0.5 size-4 text-tinta-500" /><span className="sr-only">Contacto</span></dt>
+                      <dd className="break-words">{agencia.Contacto}</dd>
+                    </div>
+                  )}
+                </dl>
 
-                {/* Contacto */}
-                {agencia.Contacto && (
-                  <div className="flex items-start gap-2 pt-2 border-t border-arena-300/30">
-                    <svg
-                      className="w-5 h-5 text-lago-600 flex-shrink-0 mt-0.5"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-                      />
-                    </svg>
-                    <p className="break-words">
-                      <span className="font-medium">Contacto:</span> {agencia.Contacto}
-                    </p>
-                  </div>
-                )}
-              </div>
-            </div>
-          );
-        })}
-      </div>
-
-      {agenciasFiltradas.length === 0 && (
-        <div className="text-center py-12">
-          <p className="text-tinta-500 text-lg">No se encontraron agencias para la ciudad seleccionada.</p>
-        </div>
+                <a href={getTelefonoLink(agencia["Teléfono/Celular"])} aria-label={`Llamar a ${agencia.Agencia}`} className={boton("secundario", "mt-4 self-start")}>
+                  <Icono nombre="telefono" className="size-4" />
+                  Llamar
+                </a>
+              </article>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <EstadoVacio titulo="No se encontraron agencias para la ciudad seleccionada." />
       )}
     </section>
   );

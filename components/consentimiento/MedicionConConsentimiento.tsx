@@ -8,6 +8,7 @@ import { COMANDOS_CONSENTIMIENTO, COMANDO_REVOCAR, cookiesGA } from "@/lib/analy
 import { ROUTES } from "@/lib/site-links";
 import { gtag, borrarCookies } from "./gtag";
 import { BOTON_DECISION } from "./estilos";
+import Icono from "@/components/ui/Icono";
 
 /**
  * Banner de cookies y carga de GA4 según la decisión guardada (que vive en el navegador). El banner
@@ -53,16 +54,19 @@ function BannerCookies() {
       aria-label="Aviso de cookies"
       className="fixed inset-x-0 bottom-0 z-30 p-3 sm:p-4 pointer-events-none"
     >
-      <div className="pointer-events-auto mx-auto max-w-3xl rounded-xl border border-arena-300/70 bg-arena-50/95 backdrop-blur-md shadow-lg p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6">
-        <p className="flex-1 text-sm leading-relaxed text-tinta-900">
-          Con tu permiso usamos cookies de Google Analytics para conocer, de forma agregada, cómo se usa el sitio y
-          mejorarlo. Podés cambiar tu decisión cuando quieras en{" "}
-          <Link href={ROUTES.privacidad} className="underline underline-offset-2 hover:text-lago-600">
-            Privacidad y cookies
-          </Link>
-          .
+      <div className="pointer-events-auto mx-auto flex max-w-3xl flex-col gap-4 rounded-tarjeta border border-arena-300 bg-white p-4 shadow-elevada sm:flex-row sm:items-center sm:gap-6 sm:p-5">
+        <p className="flex flex-1 gap-3 text-sm leading-relaxed text-tinta-900">
+          <Icono nombre="info" className="mt-0.5 size-5 text-lago-600" />
+          <span>
+            Con tu permiso usamos cookies de Google Analytics para conocer, de forma agregada, cómo se usa el sitio y
+            mejorarlo. Podés cambiar tu decisión cuando quieras en{" "}
+            <Link href={ROUTES.privacidad} className="font-medium text-lago-600 underline underline-offset-2 hover:text-lago-700">
+              Privacidad y cookies
+            </Link>
+            .
+          </span>
         </p>
-        <div className="flex gap-3 justify-end shrink-0">
+        <div className="flex shrink-0 justify-end gap-3">
           <button type="button" className={BOTON_DECISION} onClick={() => guardarConsentimiento("rechazada")}>
             Rechazar
           </button>

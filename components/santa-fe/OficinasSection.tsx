@@ -1,4 +1,6 @@
 import { OficinaInforme } from "@/lib/data";
+import Icono from "@/components/ui/Icono";
+import { boton } from "@/components/ui/estilos";
 
 interface OficinasSectionProps {
   oficinas: OficinaInforme[];
@@ -38,175 +40,81 @@ export default function OficinasSection({ oficinas }: OficinasSectionProps) {
   };
 
   return (
-    <section id="oficinas" className="mb-16 scroll-mt-32">
-      <h2 className="text-3xl md:text-4xl font-semibold uppercase tracking-widest mb-8 text-center text-tinta-900">
-        Oficinas de Información Turística
-      </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <section id="oficinas" aria-labelledby="oficinas-titulo">
+      <h2 id="oficinas-titulo" className="sr-only">Oficinas de Información Turística</h2>
+      <p className="mb-6 text-sm font-medium text-tinta-700">{oficinas.length} oficinas en la provincia</p>
+      <ul className="grid list-none gap-4 md:grid-cols-2 lg:grid-cols-3 lg:gap-6">
         {oficinas.map((oficina, index) => {
           const telefono = formatTelefono(oficina["Teléfono/WhatsApp"]);
           const whatsappLink = getWhatsAppLink(oficina["Teléfono/WhatsApp"]);
           const telefonoLink = getTelefonoLink(oficina["Teléfono/WhatsApp"]);
-          const email = oficina["Correo/Web"]?.includes('@') 
-            ? oficina["Correo/Web"] 
+          const email = oficina["Correo/Web"]?.includes('@')
+            ? oficina["Correo/Web"]
             : null;
-          const web = oficina["Correo/Web"]?.includes('http') 
-            ? oficina["Correo/Web"] 
+          const web = oficina["Correo/Web"]?.includes('http')
+            ? oficina["Correo/Web"]
             : null;
 
           return (
-            <div
-              key={index}
-              className="group bg-gradient-to-br from-arena-200 to-arena-300 hover:from-arena-300 hover:to-arena-300 border border-arena-300/50 hover:border-lago-600/70 rounded-xl p-6 transition-all duration-300 transform hover:scale-[1.02] shadow-lg hover:shadow-xl"
-            >
-              {/* Icono y Localidad */}
-              <div className="flex items-start gap-3 mb-4">
-                <svg
-                  className="w-6 h-6 text-lago-600 flex-shrink-0 mt-1"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                  />
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                  />
-                </svg>
-                <h3 className="text-xl font-semibold text-tinta-900 group-hover:text-tinta-500 transition-colors duration-300">
+            <li key={index}>
+              <article className="flex h-full flex-col rounded-tarjeta border border-arena-300/80 bg-white p-5 shadow-tarjeta">
+                <h3 className="flex items-start gap-2 text-lg font-semibold text-tinta-900">
+                  <Icono nombre="pin" className="mt-1 size-5 text-region-litoral" />
                   {oficina.Localidad}
                 </h3>
-              </div>
 
-              {/* Información de contacto */}
-              <div className="space-y-3 text-tinta-700 text-sm">
-                {/* Teléfono */}
-                {telefono && (
-                  <div className="flex items-start gap-2">
-                    <svg
-                      className="w-5 h-5 text-lago-600 flex-shrink-0 mt-0.5"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-                      />
-                    </svg>
-                    <div className="flex-1">
-                      <p className="break-words">{telefono}</p>
-                      <div className="flex gap-2 mt-1">
-                        {telefonoLink && (
-                          <a
-                            href={telefonoLink}
-                            className="text-lago-600 hover:text-tinta-500 text-xs underline"
-                          >
-                            Llamar
-                          </a>
-                        )}
-                        {whatsappLink && (
-                          <a
-                            href={whatsappLink}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-lago-600 hover:text-tinta-500 text-xs underline"
-                          >
-                            WhatsApp
-                          </a>
-                        )}
-                      </div>
+                <dl className="mt-3 flex-1 space-y-2.5 text-sm text-tinta-700">
+                  {telefono && (
+                    <div className="flex items-start gap-2">
+                      <dt><Icono nombre="telefono" className="mt-0.5 size-4 text-tinta-500" /><span className="sr-only">Teléfono</span></dt>
+                      <dd className="break-words">{telefono}</dd>
                     </div>
-                  </div>
-                )}
+                  )}
+                  {email && (
+                    <div className="flex items-start gap-2">
+                      <dt><Icono nombre="correo" className="mt-0.5 size-4 text-tinta-500" /><span className="sr-only">Correo</span></dt>
+                      <dd className="min-w-0"><a href={`mailto:${email}`} className="inline-block break-words py-1 text-lago-600 underline underline-offset-2">{email}</a></dd>
+                    </div>
+                  )}
+                  {web && (
+                    <div className="flex items-start gap-2">
+                      <dt><Icono nombre="globo" className="mt-0.5 size-4 text-tinta-500" /><span className="sr-only">Sitio web</span></dt>
+                      <dd className="min-w-0">
+                        <a href={web.startsWith('http') ? web : `https://${web}`} target="_blank" rel="noopener noreferrer" className="inline-block break-words py-1 text-lago-600 underline underline-offset-2">
+                          {web.replace(/^https?:\/\//, '')}
+                        </a>
+                      </dd>
+                    </div>
+                  )}
+                  {oficina["Direcciones y horarios"] && (
+                    <div className="flex items-start gap-2 border-t border-arena-300/70 pt-2.5">
+                      <dt><Icono nombre="reloj" className="mt-0.5 size-4 text-tinta-500" /><span className="sr-only">Dirección y horarios</span></dt>
+                      <dd className="break-words leading-relaxed">{oficina["Direcciones y horarios"]}</dd>
+                    </div>
+                  )}
+                </dl>
 
-                {/* Email */}
-                {email && (
-                  <div className="flex items-start gap-2">
-                    <svg
-                      className="w-5 h-5 text-lago-600 flex-shrink-0 mt-0.5"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                      />
-                    </svg>
-                    <a
-                      href={`mailto:${email}`}
-                      className="text-lago-600 hover:text-tinta-500 break-words underline"
-                    >
-                      {email}
-                    </a>
+                {(telefonoLink || whatsappLink) && (
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {telefonoLink && (
+                      <a href={telefonoLink} aria-label={`Llamar a la oficina de ${oficina.Localidad}`} className={boton("secundario")}>
+                        <Icono nombre="telefono" className="size-4" />
+                        Llamar
+                      </a>
+                    )}
+                    {whatsappLink && (
+                      <a href={whatsappLink} target="_blank" rel="noopener noreferrer" aria-label={`WhatsApp de la oficina de ${oficina.Localidad} (abre en otra pestaña)`} className={boton("secundario")}>
+                        WhatsApp
+                        <Icono nombre="externo" className="size-4" />
+                      </a>
+                    )}
                   </div>
                 )}
-
-                {/* Web */}
-                {web && (
-                  <div className="flex items-start gap-2">
-                    <svg
-                      className="w-5 h-5 text-lago-600 flex-shrink-0 mt-0.5"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"
-                      />
-                    </svg>
-                    <a
-                      href={web.startsWith('http') ? web : `https://${web}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-lago-600 hover:text-tinta-500 break-words underline"
-                    >
-                      {web.replace(/^https?:\/\//, '')}
-                    </a>
-                  </div>
-                )}
-
-                {/* Dirección y horarios */}
-                {oficina["Direcciones y horarios"] && (
-                  <div className="flex items-start gap-2 pt-2 border-t border-arena-300/30">
-                    <svg
-                      className="w-5 h-5 text-lago-600 flex-shrink-0 mt-0.5"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                      />
-                    </svg>
-                    <p className="break-words leading-relaxed">
-                      {oficina["Direcciones y horarios"]}
-                    </p>
-                  </div>
-                )}
-              </div>
-            </div>
+              </article>
+            </li>
           );
         })}
-      </div>
+      </ul>
     </section>
   );
 }

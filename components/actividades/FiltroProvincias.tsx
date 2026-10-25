@@ -1,9 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useRef } from "react";
 import { TODAS_LAS_PROVINCIAS, type Provincia } from "@/lib/catalog";
 import { chip } from "@/components/ui/estilos";
+import FilaDesplazable from "@/components/ui/FilaDesplazable";
 
 export type ProvinciaOpcion = Pick<Provincia, "provincia" | "slug">;
 
@@ -24,14 +24,6 @@ interface FiltroProvinciasProps {
 // Presentación compartida por el filtro de Vercel (components/actividades/ActividadesExplorer)
 // y el del export estático (components/pages/ActivitiesExplorer). Conserva #provincia-filtro.
 export default function FiltroProvincias({ provincias, seleccion, cantidad, hrefDe, onElegir, interceptarChips = false, selectRef, hidratado }: FiltroProvinciasProps) {
-  const filaRef = useRef<HTMLUListElement>(null);
-  // En teléfonos la fila de chips se desplaza: el chip elegido se centra para que siempre se vea.
-  useEffect(() => {
-    const fila = filaRef.current;
-    const activo = fila?.querySelector<HTMLElement>('[aria-current="page"]');
-    if (!fila || !activo || fila.scrollWidth <= fila.clientWidth) return;
-    fila.scrollLeft = activo.offsetLeft - (fila.clientWidth - activo.offsetWidth) / 2;
-  }, [seleccion]);
   const nombre = provincias.find(p => p.slug === seleccion)?.provincia;
   const resumen = seleccion === TODAS_LAS_PROVINCIAS
     ? `${cantidad} actividades en todo el país`
@@ -74,7 +66,7 @@ export default function FiltroProvincias({ provincias, seleccion, cantidad, href
       </div>
 
       <nav aria-label="Actividades por provincia" className="mt-5 border-t border-arena-300/70 pt-4">
-        <ul ref={filaRef} className="fila-desplazable relative -mx-4 list-none px-4 pb-1 sm:-mx-6 sm:px-6 lg:mx-0 lg:flex-wrap lg:px-0">
+        <FilaDesplazable activo={seleccion} className="-mx-4 px-4 pb-1 sm:-mx-6 sm:px-6 lg:mx-0 lg:flex-wrap lg:px-0">
           {[{ slug: TODAS_LAS_PROVINCIAS, provincia: "Todas" }, ...provincias].map(p => {
             const actual = p.slug === seleccion;
             return (
@@ -92,7 +84,7 @@ export default function FiltroProvincias({ provincias, seleccion, cantidad, href
               </li>
             );
           })}
-        </ul>
+        </FilaDesplazable>
       </nav>
       <noscript>
         <p className="mt-3 text-sm text-tinta-700">Elegí una provincia mediante los enlaces. Las páginas de cada provincia funcionan sin JavaScript.</p>

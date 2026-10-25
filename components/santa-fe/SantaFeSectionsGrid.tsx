@@ -1,176 +1,89 @@
 import Link from "next/link";
-import { 
-  PlanSantaFe, 
-  PreguntaFrecuente, 
-  NoticiaSantaFe, 
-  OficinaInforme, 
-  Agencia, 
-  Evento 
+import {
+  PlanSantaFe,
+  NoticiaSantaFe,
+  OficinaInforme,
+  Agencia,
+  Evento
 } from "@/lib/data";
+import Icono from "@/components/ui/Icono";
+import { SECCIONES_SANTA_FE } from "./secciones";
 
 interface SantaFeSectionsGridProps {
   planes: PlanSantaFe[];
   eventos: Evento[];
-  preguntasFrecuentes: PreguntaFrecuente[];
   oficinas: OficinaInforme[];
   agencias: Agencia[];
   noticias: NoticiaSantaFe[];
 }
 
+// Vista previa de cada subsección de Santa Fe: hasta tres elementos y el total. Las preguntas
+// frecuentes no van acá: se muestran completas en la misma página.
 export default function SantaFeSectionsGrid({
   planes,
   eventos,
-  preguntasFrecuentes,
   oficinas,
   agencias,
   noticias
 }: SantaFeSectionsGridProps) {
-  const secciones = [
-    {
-      id: 'planes',
-      titulo: 'Planes e Ideas',
-      icon: '📋',
-      href: '/provincias/santa_fe/planes',
-      count: planes.length,
-      preview: planes.slice(0, 3).map(p => p.Title),
-      color: 'from-blue-500/10 to-blue-600/10 border-blue-500/20 hover:from-blue-500/20 hover:to-blue-600/20'
-    },
-    {
-      id: 'eventos',
-      titulo: 'Próximos eventos y en curso',
-      icon: '📅',
-      href: '/provincias/santa_fe/eventos',
-      count: eventos.length,
-      preview: eventos.slice(0, 3).map(e => e.Título),
-      color: 'from-green-500/10 to-green-600/10 border-green-500/20 hover:from-green-500/20 hover:to-green-600/20'
-    },
-    {
-      id: 'oficinas',
-      titulo: 'Oficinas de Información',
-      icon: '📍',
-      href: '/provincias/santa_fe/oficinas',
-      count: oficinas.length,
-      preview: oficinas.slice(0, 3).map(o => o.Localidad),
-      color: 'from-orange-500/10 to-orange-600/10 border-orange-500/20 hover:from-orange-500/20 hover:to-orange-600/20'
-    },
-    {
-      id: 'agencias',
-      titulo: 'Agencias de Viajes',
-      icon: '✈️',
-      href: '/provincias/santa_fe/agencias',
-      count: agencias.length,
-      preview: agencias.slice(0, 3).map(a => a.Agencia),
-      color: 'from-red-500/10 to-red-600/10 border-red-500/20 hover:from-red-500/20 hover:to-red-600/20'
-    },
-    {
-      id: 'preguntas-frecuentes',
-      titulo: 'Preguntas Frecuentes',
-      icon: '❓',
-      href: '/provincias/santa_fe#preguntas-frecuentes',
-      count: preguntasFrecuentes.length,
-      preview: preguntasFrecuentes.slice(0, 3).map(p => p.Pregunta),
-      color: 'from-purple-500/10 to-purple-600/10 border-purple-500/20 hover:from-purple-500/20 hover:to-purple-600/20',
-      isAnchor: true
-    },
-    {
-      id: 'noticias',
-      titulo: 'Noticias',
-      icon: '📰',
-      href: '/provincias/santa_fe/noticias',
-      count: noticias.length,
-      preview: noticias.slice(0, 3).map(n => n.Title),
-      color: 'from-indigo-500/10 to-indigo-600/10 border-indigo-500/20 hover:from-indigo-500/20 hover:to-indigo-600/20'
-    },
-  ];
+  const contenido: Record<string, { titulo: string; items: string[]; vacio?: string }> = {
+    planes: { titulo: "Planes e ideas", items: planes.map(p => p.Title) },
+    eventos: { titulo: "Próximos eventos y en curso", items: eventos.map(e => e.Título), vacio: "No hay próximos eventos confirmados. Consultá el archivo de eventos anteriores." },
+    oficinas: { titulo: "Oficinas de información", items: oficinas.map(o => o.Localidad) },
+    agencias: { titulo: "Agencias de viajes", items: agencias.map(a => a.Agencia) },
+    noticias: { titulo: "Noticias", items: noticias.map(n => n.Title) },
+  };
+  const secciones = SECCIONES_SANTA_FE.filter(s => s.id in contenido);
 
   return (
-    <section className="py-12 md:py-16 bg-gradient-to-b from-arena-50 to-arena-100 -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8 mt-16">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-10">
-          <h2 className="text-3xl md:text-4xl font-semibold uppercase tracking-widest mb-4 text-tinta-900">
-            Descubrí Todo Sobre Santa Fe
-          </h2>
-          <p className="text-tinta-700 text-lg max-w-2xl mx-auto">
-            Explora nuestras secciones y encuentra toda la información que necesitás para planificar tu viaje
-          </p>
-        </div>
+    <section aria-labelledby="santa-fe-secciones-titulo">
+      <p className="antetitulo text-region-litoral">Para planificar</p>
+      <h2 id="santa-fe-secciones-titulo" className="mt-1 font-display text-seccion text-tinta-900">
+        Descubrí todo sobre Santa Fe
+      </h2>
+      <p className="mt-2 max-w-2xl text-tinta-700">
+        Explorá nuestras secciones y encontrá toda la información que necesitás para planificar tu viaje.
+      </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-          {secciones.map((seccion) => {
-            const isAnchor = seccion.href.includes('#');
-            const Component = isAnchor ? 'a' : Link;
-            const props = isAnchor 
-              ? { href: seccion.href }
-              : { href: seccion.href };
-            
-            return (
-              <Component
-                key={seccion.id}
-                {...props}
-                className={`group relative overflow-hidden rounded-xl bg-gradient-to-br ${seccion.color} border-2 transition-all duration-300 transform hover:scale-[1.02] shadow-lg hover:shadow-2xl`}
+      <ul className="mt-6 grid list-none gap-4 md:grid-cols-2 lg:grid-cols-3 lg:gap-6">
+        {secciones.map((seccion) => {
+          const datos = contenido[seccion.id];
+                    return (
+            <li key={seccion.id}>
+              <Link
+                href={seccion.href}
+                aria-label={`${datos.titulo}: ver todos`}
+                className="group flex h-full flex-col rounded-tarjeta border border-arena-300/80 bg-white p-5 shadow-tarjeta transition-[border-color,box-shadow] duration-300 hover:border-lago-600/50 hover:shadow-elevada"
               >
-              <div className="p-6 h-full flex flex-col">
-                {/* Icono y título */}
-                <div className="flex items-center gap-4 mb-4">
-                  <span className="text-4xl transform group-hover:scale-110 transition-transform duration-300">
-                    {seccion.icon}
+                <span className="flex items-center gap-3">
+                  <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-region-litoral/10 text-region-litoral">
+                    <Icono nombre={seccion.icono} className="size-5" />
                   </span>
-                  <div>
-                    <h3 className="text-xl font-semibold text-tinta-900 group-hover:text-tinta-500 transition-colors duration-300">
-                      {seccion.titulo}
-                    </h3>
-                    <p className="text-sm text-tinta-700 mt-1">
-                      {seccion.count} {seccion.count === 1 ? 'item' : 'items'} disponibles
-                    </p>
-                  </div>
-                </div>
-
-                {/* Preview */}
-                <div className="flex-grow space-y-2 mb-4">
-                  {seccion.id === 'eventos' && seccion.count === 0 && (
-                    <p className="text-sm text-tinta-700">No hay próximos eventos confirmados. Consultá el archivo de eventos anteriores.</p>
-                  )}
-                  {seccion.preview.map((item, index) => (
-                    <div
-                      key={index}
-                      className="text-sm text-tinta-700 line-clamp-1 flex items-start gap-2"
-                    >
-                      <span className="text-lago-600 mt-1">•</span>
-                      <span className="flex-1">{item}</span>
-                    </div>
+                  <span>
+                    <span className="block font-semibold text-tinta-900 group-hover:text-lago-700">{datos.titulo}</span>
+                    <span className="block text-sm text-tinta-500">{datos.items.length} {datos.items.length === 1 ? "elemento" : "elementos"}</span>
+                  </span>
+                </span>
+                <span className="mt-4 flex-1 space-y-1.5 text-sm text-tinta-700">
+                  {datos.items.length === 0 && datos.vacio && <span className="block">{datos.vacio}</span>}
+                  {datos.items.slice(0, 3).map((item, index) => (
+                    <span key={index} className="flex items-start gap-2">
+                      <span aria-hidden="true" className="mt-2 size-1.5 shrink-0 rounded-full bg-region-litoral" />
+                      <span className="line-clamp-1">{item}</span>
+                    </span>
                   ))}
-                  {seccion.count > 3 && (
-                    <p className="text-xs text-lago-600 font-medium mt-2">
-                      + {seccion.count - 3} más...
-                    </p>
+                  {datos.items.length > 3 && (
+                    <span className="block text-xs font-medium text-tinta-500">y {datos.items.length - 3} más</span>
                   )}
-                </div>
-
-                {/* Botón */}
-                <div className="flex items-center justify-between pt-4 border-t border-arena-300/30">
-                  <span className="text-sm font-medium text-lago-600 group-hover:text-tinta-500 transition-colors duration-300">
-                    Ver todos →
-                  </span>
-                  <svg
-                    className="w-5 h-5 text-lago-600 transform group-hover:translate-x-1 transition-transform duration-300"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9 5l7 7-7 7"
-                    />
-                  </svg>
-                </div>
-              </div>
-            </Component>
-            );
-          })}
-        </div>
-      </div>
+                </span>
+                <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-lago-600">
+                  Ver todos <Icono nombre="flecha" className="size-4 transition-transform group-hover:translate-x-0.5" />
+                </span>
+              </Link>
+            </li>
+          );
+        })}
+      </ul>
     </section>
   );
 }

@@ -5,6 +5,8 @@ import { pageMetadata } from "@/lib/seo";
 import { ULTIMA_ACTUALIZACION, RESPONSABLE, CONTACTO_PRIVACIDAD, RETENCION_GA, COOKIES, ALMACENAMIENTO_LOCAL } from "@/lib/privacidad";
 import { idMedicionGA } from "@/lib/analytics";
 import PreferenciasCookies from "@/components/consentimiento/PreferenciasCookies";
+import EncabezadoPagina from "@/components/ui/EncabezadoPagina";
+import Icono from "@/components/ui/Icono";
 
 // Igual que el layout: el panel de preferencias solo existe donde GA4 está configurado.
 const isPages = process.env.AUS_STATIC_EXPORT === "1";
@@ -20,23 +22,50 @@ export const metadata: Metadata = {
   robots: { index: false, follow: true },
 };
 
-const enlace = "text-tinta-900 underline underline-offset-2 hover:text-lago-600";
-const titulo = "text-xl md:text-2xl font-semibold text-tinta-900 mb-4";
-const parrafo = "text-tinta-700 leading-relaxed mb-4";
-const lista = "list-disc pl-6 space-y-2 text-tinta-700 leading-relaxed mb-4";
-const celda = "border border-arena-300 px-3 py-2 align-top text-left";
+const enlace = "font-medium text-lago-600 underline decoration-lago-600/40 underline-offset-[3px] hover:decoration-lago-600";
+const titulo = "font-display text-[1.875rem] leading-tight text-tinta-900 mb-4";
+const parrafo = "text-[1.0625rem] text-tinta-700 leading-relaxed mb-4";
+const lista = "list-disc marker:text-terracota-600 pl-6 space-y-2 text-[1.0625rem] text-tinta-700 leading-relaxed mb-4";
+const celda = "border-b border-arena-300 px-3 py-3 align-top text-left";
+const seccion = "mb-12";
+
+// Índice del aviso: mismos ids que los títulos de cada sección.
+const indice = [
+  ["responsable", "Responsable"],
+  ["medicion", "Medición del uso del sitio"],
+  ["preferencias", "Tu decisión sobre las cookies"],
+  ["cookies", "Cookies y almacenamiento local"],
+  ["terceros", "Otros servicios de terceros"],
+  ["control", "Cómo evitar la medición"],
+  ["derechos", "Tus derechos"],
+  ["cambios", "Cambios en este aviso"],
+];
 
 export default function PrivacidadPage() {
   return (
     <>
-      <div className="min-h-screen pt-10 sm:pt-14 pb-16 px-4 sm:px-6 lg:px-8">
-        <article className="max-w-3xl mx-auto">
-          <h1 className="text-3xl md:text-4xl font-semibold uppercase tracking-widest mb-4 text-center text-tinta-900">
-            Privacidad y cookies
-          </h1>
-          <p className="text-center text-sm text-tinta-500 mb-12">Última actualización: {ULTIMA_ACTUALIZACION}</p>
-
-          <section className="mb-10" aria-labelledby="responsable">
+      <EncabezadoPagina
+        migas={[{ href: ROUTES.home, etiqueta: "Inicio" }]}
+        antetitulo="Aviso legal"
+        titulo="Privacidad y cookies"
+        bajada={<>Última actualización: {ULTIMA_ACTUALIZACION}</>}
+      />
+      <div className="contenedor grid gap-10 py-10 sm:py-14 lg:grid-cols-[15rem_minmax(0,1fr)] lg:gap-14">
+        <nav aria-label="Secciones del aviso" className="lg:sticky lg:top-[calc(var(--alto-encabezado)+1.5rem)] lg:self-start">
+          <p className="antetitulo mb-3 text-tinta-500">En este aviso</p>
+          <ol className="grid list-none gap-1 sm:grid-cols-2 lg:grid-cols-1 lg:border-l lg:border-arena-300">
+            {indice.map(([id, texto]) => (
+              <li key={id}>
+                <a href={`#${id}`} className="flex min-h-11 items-center gap-2 rounded-control px-3 text-sm font-medium text-tinta-700 hover:bg-arena-100 hover:text-lago-700 lg:-ml-px lg:rounded-none lg:border-l-2 lg:border-transparent lg:hover:border-lago-600 lg:hover:bg-transparent">
+                  <Icono nombre="flecha" className="size-3.5 text-terracota-600 lg:hidden" />
+                  {texto}
+                </a>
+              </li>
+            ))}
+          </ol>
+        </nav>
+        <article className="max-w-3xl">
+          <section className={seccion} aria-labelledby="responsable">
             <h2 id="responsable" className={titulo}>Responsable</h2>
             <p className={parrafo}>
               Argentina Universo Sur (www.argentinauniversosur.com), de {RESPONSABLE}, es responsable de los datos que
@@ -49,7 +78,7 @@ export default function PrivacidadPage() {
             </p>
           </section>
 
-          <section className="mb-10" aria-labelledby="medicion">
+          <section className={seccion} aria-labelledby="medicion">
             <h2 id="medicion" className={titulo}>Medición del uso del sitio</h2>
             <p className={parrafo}>
               Usamos herramientas de estadística para saber qué páginas se visitan y cómo funciona el sitio, y así
@@ -80,7 +109,7 @@ export default function PrivacidadPage() {
             </ul>
           </section>
 
-          <section className="mb-10" aria-labelledby="preferencias">
+          <section className={seccion} aria-labelledby="preferencias">
             <h2 id="preferencias" className={titulo}>Tu decisión sobre las cookies</h2>
             {medicionActiva ? (
               <>
@@ -101,12 +130,12 @@ export default function PrivacidadPage() {
             )}
           </section>
 
-          <section className="mb-10" aria-labelledby="cookies">
+          <section className={seccion} aria-labelledby="cookies">
             <h2 id="cookies" className={titulo}>Cookies y almacenamiento local</h2>
             <p className={parrafo}>Cookies de Google Analytics, que se crean solo si aceptás:</p>
             <div className="overflow-x-auto mb-6">
-              <table className="w-full border-collapse text-sm text-tinta-700">
-                <thead className="bg-arena-200/60 text-tinta-900">
+              <table className="w-full border-collapse overflow-hidden rounded-control border border-arena-300 bg-white text-sm text-tinta-700">
+                <thead className="bg-arena-100 text-tinta-900">
                   <tr>
                     <th scope="col" className={celda}>Nombre</th>
                     <th scope="col" className={celda}>Proveedor</th>
@@ -138,7 +167,7 @@ export default function PrivacidadPage() {
             </ul>
           </section>
 
-          <section className="mb-10" aria-labelledby="terceros">
+          <section className={seccion} aria-labelledby="terceros">
             <h2 id="terceros" className={titulo}>Otros servicios de terceros</h2>
             <ul className={lista}>
               <li>
@@ -165,7 +194,7 @@ export default function PrivacidadPage() {
             </p>
           </section>
 
-          <section className="mb-10" aria-labelledby="control">
+          <section className={seccion} aria-labelledby="control">
             <h2 id="control" className={titulo}>Cómo evitar la medición</h2>
             <ul className={lista}>
               <li>Rechazar en el aviso de cookies o cambiar tu decisión en esta página.</li>
@@ -182,7 +211,7 @@ export default function PrivacidadPage() {
             <p className={parrafo}>El sitio funciona igual si rechazás las cookies o bloqueás la medición.</p>
           </section>
 
-          <section className="mb-10" aria-labelledby="derechos">
+          <section className={seccion} aria-labelledby="derechos">
             <h2 id="derechos" className={titulo}>Tus derechos</h2>
             <p className={parrafo}>
               Podés solicitar el acceso, la rectificación, la actualización o la supresión de tus datos personales
@@ -201,14 +230,14 @@ export default function PrivacidadPage() {
             </p>
           </section>
 
-          <section className="mb-12" aria-labelledby="cambios">
+          <section className={seccion} aria-labelledby="cambios">
             <h2 id="cambios" className={titulo}>Cambios en este aviso</h2>
             <p className={parrafo}>
               Si cambiamos las herramientas o el uso de los datos, actualizaremos este aviso y su fecha.
             </p>
           </section>
 
-          <nav className="pt-8 border-t border-arena-300/50 flex justify-center text-sm" aria-label="Volver">
+          <nav className="pt-8 border-t border-arena-300/80 text-sm" aria-label="Volver">
             <Link href={ROUTES.home} className={enlace}>Volver al inicio</Link>
           </nav>
         </article>

@@ -19,7 +19,7 @@ import {
 } from "@/lib/data";
 import { notFound } from "next/navigation";
 import ProvinciaVisitTracker from "@/components/ProvinciaVisitTracker";
-import SantaFeQuickNav from "@/components/santa-fe/SantaFeQuickNav";
+import NavegacionSantaFe from "@/components/santa-fe/NavegacionSantaFe";
 import SantaFeSectionsGrid from "@/components/santa-fe/SantaFeSectionsGrid";
 import PreguntasFrecuentesSection from "@/components/santa-fe/PreguntasFrecuentesSection";
 import type { Metadata } from "next";
@@ -77,7 +77,7 @@ export default async function ProvinciaPage({ params }: PageProps) {
 
       <div className="contenedor py-10 sm:py-14">
         {/* Navegación rápida solo para Santa Fe */}
-        {isSantaFe && <div className="mb-10"><SantaFeQuickNav /></div>}
+        {isSantaFe && <div className="mb-10"><NavegacionSantaFe actual="resumen" /></div>}
 
         <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_20rem] lg:gap-14">
           {/* Descripción */}
@@ -142,12 +142,11 @@ export default async function ProvinciaPage({ params }: PageProps) {
         )}
 
         {/* Grid de secciones con previews solo para Santa Fe */}
-        {isSantaFe && planes && eventos && preguntasFrecuentes && oficinas && agencias && noticias && (
+        {isSantaFe && planes && eventos && oficinas && agencias && noticias && (
           <div className="mt-14">
             <SantaFeSectionsGrid
               planes={planes}
               eventos={eventos}
-              preguntasFrecuentes={preguntasFrecuentes}
               oficinas={oficinas}
               agencias={agencias}
               noticias={noticias}

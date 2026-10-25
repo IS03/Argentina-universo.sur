@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import type { Evento } from "@/lib/data";
 import { parseEventDate, partitionEvents } from "@/lib/events";
 import EventosSection from "@/components/santa-fe/EventosSection";
+import { ArchivoEventos } from "@/components/santa-fe/AgendaSantaFe";
 export default function StaticAgenda({ events }: { events: Evento[] }) {
   // Fail closed: the initial HTML never calls an event "upcoming" using a stale build date.
   // Without JS all entries remain in the dated archive. A scheduled build is optional.
@@ -35,22 +36,19 @@ export default function StaticAgenda({ events }: { events: Evento[] }) {
     : { vigentes: [], anteriores: events };
   return (
     <>
-      {clock ? (
-        <EventosSection eventos={vigentes} />
-      ) : (
-        <p>
-          Agenda fechada. La vigencia se comprueba en tu navegador; sin
-          JavaScript no se presentan eventos como próximos.
-        </p>
-      )}
-      <details>
-        <summary>Archivo y fechas documentadas ({anteriores.length})</summary>
-        <EventosSection
-          eventos={anteriores}
-          titulo="Eventos anteriores o sin vigencia calculada"
-          id="eventos-anteriores"
-        />
-      </details>
+      {/* Mismo bloque antes y después de calcular la vigencia: el archivo no se desplaza. */}
+      <EventosSection
+        eventos={vigentes}
+        vacio={clock ? undefined : {
+          titulo: "Agenda fechada.",
+          detalle: "La vigencia se comprueba en tu navegador; sin JavaScript no se presentan eventos como próximos.",
+        }}
+      />
+      <ArchivoEventos
+        eventos={anteriores}
+        resumen={`Archivo y fechas documentadas (${anteriores.length})`}
+        titulo="Eventos anteriores o sin vigencia calculada"
+      />
     </>
   );
 }
