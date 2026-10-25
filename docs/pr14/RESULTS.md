@@ -27,7 +27,7 @@ Los informes reproducibles resumidos están en `evidence/`. No contienen registr
 
 ## Tamaño e impacto
 
-Preview estático local: **101.810.096 bytes** (101,81 MB decimales;2038 archivos), sin archivos sobredimensionados. Medios optimizados preexistentes:80.004.852 bytes; fallback:222.371 bytes. No se añadieron imágenes o transformaciones de red al visitante. La pequeña variación de bytes de build no se presenta como ahorro editorial.
+Preview estático local: **101.810.182 bytes** (101,81 MB decimales;2038 archivos), sin archivos sobredimensionados. Medios optimizados preexistentes:80.004.852 bytes; fallback:222.371 bytes. No se añadieron imágenes o transformaciones de red al visitante. La pequeña variación de bytes de build no se presenta como ahorro editorial.
 
 El artefacto diagnóstico `production-audit` incluye los 24 PDF y no es candidato de carga a Pages por los archivos que superan el límite individual. El Preview no los incluye localmente y conserva sus enlaces a Vercel. Los24originales suman 633.579.423 bytes; **ahorro actual de retirada:0 bytes**. La independencia completa de Vercel continúa pendiente de reemplazos aprobados y respaldados.
 
