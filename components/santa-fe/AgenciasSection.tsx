@@ -6,6 +6,7 @@ import Icono from "@/components/ui/Icono";
 import { EstadoVacio } from "@/components/ui/Bloques";
 import { boton, chip } from "@/components/ui/estilos";
 import { extraerContactos } from "@/lib/contacto";
+import { enlaceTelefono } from "@/lib/telefono";
 
 interface AgenciasSectionProps {
   agencias: Agencia[];
@@ -28,10 +29,8 @@ export default function AgenciasSection({ agencias }: AgenciasSectionProps) {
     return agencias.filter(a => a.Ciudad === ciudadFiltro);
   }, [agencias, ciudadFiltro]);
 
-  const getTelefonoLink = (telefono: string) => {
-    const numero = telefono.replace(/[\s\-]/g, '');
-    return `tel:${numero}`;
-  };
+  // Primer número del campo («341 6500820 / 341 5908198» tiene dos), en formato nacional.
+  const getTelefonoLink = (telefono: string) => enlaceTelefono(telefono.split(/\s*[/;]\s*/)[0]);
 
   return (
     <section id="agencias" aria-labelledby="agencias-titulo">
@@ -59,7 +58,9 @@ export default function AgenciasSection({ agencias }: AgenciasSectionProps) {
 
       {agenciasFiltradas.length > 0 ? (
         <ul className="grid list-none gap-4 md:grid-cols-2 lg:grid-cols-3 lg:gap-6">
-          {agenciasFiltradas.map((agencia, index) => (
+          {agenciasFiltradas.map((agencia, index) => {
+            const llamar = getTelefonoLink(agencia["Teléfono/Celular"]);
+            return (
             <li key={index}>
               <article className="flex h-full flex-col rounded-tarjeta border border-arena-300/80 bg-white p-5 shadow-tarjeta">
                 <p className="antetitulo text-region-litoral">{agencia.Ciudad}</p>
@@ -88,13 +89,16 @@ export default function AgenciasSection({ agencias }: AgenciasSectionProps) {
                   )}
                 </dl>
 
-                <a href={getTelefonoLink(agencia["Teléfono/Celular"])} aria-label={`Llamar a ${agencia.Agencia}`} className={boton("secundario", "mt-4 self-start")}>
-                  <Icono nombre="telefono" className="size-4" />
-                  Llamar
-                </a>
+                {llamar && (
+                  <a href={llamar} aria-label={`Llamar a ${agencia.Agencia}`} className={boton("secundario", "mt-4 self-start")}>
+                    <Icono nombre="telefono" className="size-4" />
+                    Llamar
+                  </a>
+                )}
               </article>
             </li>
-          ))}
+            );
+          })}
         </ul>
       ) : (
         <EstadoVacio titulo="No se encontraron agencias para la ciudad seleccionada." />

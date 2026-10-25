@@ -40,6 +40,9 @@ No se modificaron ni se asume cuáles están vigentes:
 
 ## Barreras para que no vuelva a pasar
 
+- `npm run santa-fe:oficinas`: exportación reproducible desde la planilla, con las correcciones
+  documentadas (ver más abajo).
+
 - `lib/contacto.ts` valida cada correo con reglas estrictas y rechaza marcadores de relleno o de
   prueba (lorem, ipsum, example, ejemplo, test, prueba…). Separa los textos con varios contactos
   («a@x.gob.ar / www.x.gob.ar», «a@x.com; b@y.com») y nunca usa la cadena completa como dirección.
@@ -58,10 +61,65 @@ No se modificaron ni se asume cuáles están vigentes:
   2026-10-25.
 - Bora Bora Viajes muestra sus dos correos por separado.
 
-## Pendiente fuera de este PR
+## Villa Ocampo (commit posterior)
 
-- La planilla fuente `public/santa-fe/oficinas_informes.xlsx` todavía contiene `info@loreipsumcom`.
-  No se modificó: es un archivo fuente inventariado por hash (`docs/supabase/media-inventory.json`).
-  Si se vuelve a exportar a JSON sin corregirla, `npm run validate` lo va a rechazar.
-- Villa Ocampo figura con `turismo@reconquista.gov.ar` (correo de otra localidad). Es válido en
-  forma, pero conviene confirmarlo con la fuente.
+- La planilla atribuía a Villa Ocampo `turismo@reconquista.gov.ar`, que es el correo de Reconquista
+  (también figura en la fila de Reconquista). Ninguna fuente oficial lo atribuye a Villa Ocampo.
+- El sitio oficial de turismo de Villa Ocampo, https://www.turismovillaocampo.gob.ar/contacto.html
+  (consultado el **2026-10-25**), publica **turismovocampo55@gmail.com**.
+  - El sitio protege la dirección con el ocultamiento de Joomla; se reconstruyó desde el HTML.
+  - En la misma página figuran la dirección «Av. San Martin y Ruta Nacional N° 11, 3580 Villa Ocampo»
+    y el teléfono +549 3482 466300.
+- Se publica ese correo. La web `www.turismovillaocampo.gob.ar` se mantiene.
+- El teléfono del registro (`TE: 3482466209`) **no coincide** con el del sitio oficial y no se
+  modificó: queda para revisión del titular.
+
+## Teléfonos y WhatsApp
+
+- `wa.me` exige el número internacional solo con dígitos. Antes el enlace conservaba el «+»
+  (`wa.me/+54341…`).
+- Para celulares argentinos, el formato internacional es 54 + 9 + código de área sin 0 + número sin
+  15. Los números marcados «WA» son celulares:
+  - la Municipalidad de Santa Fe publica el mismo WhatsApp como «0342 - 154063525»;
+  - el Ente Turístico Rosario enlaza el suyo como `wa.me/5493415795884`.
+- Resultado:
+  - `https://wa.me/5493415795884` (Rosario);
+  - `https://wa.me/5493424063525` (Santa Fe).
+- `lib/telefono.ts` también corrige los enlaces `tel:`, que quedan en formato nacional (0 + área +
+  abonado):
+  - Rosario («0341 – 4802230») generaba `tel:0341`;
+  - Helvecia (dos números separados por raya) y una agencia con dos números («341 6500820 / 341
+    5908198») generaban enlaces inválidos.
+- Un número incompleto o ambiguo no genera enlace.
+- El texto del campo se muestra completo, como en los datos: antes la tarjeta ocultaba el teléfono
+  fijo cuando había WhatsApp.
+
+## Sincronización con la planilla XLSX original
+
+La planilla `public/santa-fe/oficinas_informes.xlsx` es una fuente histórica inventariada por hash
+(`docs/supabase/media-inventory.json`, sha256 `c6aaac90…db99`). **No se modificó.** La corrección es
+reproducible durante la exportación:
+
+1. Las correcciones viven en `data/correcciones/oficinas_informes.json`. Cada una tiene:
+   - localidad y campo;
+   - el valor que hoy tiene la planilla (`valorEnPlanilla`);
+   - el valor publicado;
+   - motivo, y fuente oficial con URL y fecha de consulta.
+2. `npm run santa-fe:oficinas` (también corre dentro de `npm run validate`, y por lo tanto en CI):
+   - verifica que la planilla siga coincidiendo con su hash de inventario;
+   - la exporta;
+   - aplica cada corrección **solo si** la planilla todavía tiene `valorEnPlanilla`;
+   - valida los correos;
+   - compara el resultado con `public/santa-fe/json/oficinas_informes.json`.
+   Sin las correcciones, la exportación coincide byte a byte con el JSON publicado (incluidos el
+   `null` y los espacios no separables).
+3. Para regenerar el JSON: `node --experimental-strip-types scripts/santa-fe/exportar-oficinas.mjs --write`.
+
+Cuando el titular quiera corregir también la planilla original:
+
+1. Editar la celda en el XLSX con el valor publicado.
+2. Ejecutar `npm run inventory:media` para registrar el nuevo hash, y revisar el cambio de
+   `docs/supabase/media-inventory.json` en el mismo PR.
+3. Quitar de `data/correcciones/oficinas_informes.json` la entrada que ya no hace falta.
+4. Ejecutar `npm run validate`: si la planilla cambió y la corrección sigue, falla con «La planilla
+   cambió en …», para que nadie pise un dato nuevo sin revisarlo.

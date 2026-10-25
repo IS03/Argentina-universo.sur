@@ -8,18 +8,19 @@ Fecha: 25/10/2026. macOS, Node 22.19.0, Chrome del sistema. Base `main` `92d4880
 | --- | --- |
 | `npm run lint` | Sin errores ni advertencias |
 | `npm run typecheck` | OK |
-| `npm run validate` | OK, 0 errores |
-| `npm test` | **116/116** (5 nuevas en `tests/pr16-rediseno.test.mjs` y 4 en `tests/contacto.test.mjs`) |
+| `npm run validate` | OK, 0 errores; incluye `santa-fe:oficinas` (exportación reproducible de la planilla) |
+| `npm test` | **121/121** (5 nuevas en `tests/pr16-rediseno.test.mjs` y 9 en `tests/contacto.test.mjs`) |
 | `npm run build` | OK |
 | `npm run editorial:check` | 24 borradores, 0 publicables, 0 redirects de PDF, 0 errores |
 | `npm run editorial:audit-next` | 24 fichas retenidas; 132 HTML, 1.027 prerenderizados y 24 JS; 0 errores |
 | `npm run audit:seo` | **106 páginas, 0 errores** |
-| `npm run test:e2e` | **121 aprobadas, 9 omitidas** (12 nuevas en `tests/e2e/pr16.spec.ts`; omisiones por perfil, como en `main`) |
+| `npm run test:e2e` | **123 aprobadas, 9 omitidas** (14 nuevas en `tests/e2e/pr16.spec.ts`; omisiones por perfil, como en `main`) |
 | `build:pages` + `audit.mjs` preview / production-audit / consent-test | 106 páginas canónicas, 0 errores en los tres; 24 fichas retenidas |
 | `npm run test:pages` (4401, 4402, 4403 con reglas de zona, 4404, Wrangler 4410) | **70 aprobadas, 2 omitidas** |
 
-Tras la corrección del contacto de Santa Fe ([CONTACTO-SANTA-FE.md](CONTACTO-SANTA-FE.md)) se
-volvió a correr la batería completa y `test:pages`, con estos resultados. Ese cambio solo toca datos y
+Tras las correcciones de contactos de Santa Fe, Villa Ocampo, WhatsApp y teléfonos
+([CONTACTO-SANTA-FE.md](CONTACTO-SANTA-FE.md)) se volvió a correr la batería completa y `test:pages`,
+con estos resultados. Ese cambio solo toca datos y
 las secciones de Oficinas y Agencias, así que la medición de rendimiento de abajo no se repitió.
 
 La batería completa se corrió cinco veces: cada corrección posterior a una medición (CLS de Eventos

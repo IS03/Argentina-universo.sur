@@ -2,44 +2,13 @@ import { OficinaInforme } from "@/lib/data";
 import Icono from "@/components/ui/Icono";
 import { boton } from "@/components/ui/estilos";
 import { extraerContactos, webLegible } from "@/lib/contacto";
+import { enlaceTelefono, enlaceWhatsapp, primerNumero } from "@/lib/telefono";
 
 interface OficinasSectionProps {
   oficinas: OficinaInforme[];
 }
 
 export default function OficinasSection({ oficinas }: OficinasSectionProps) {
-  const formatTelefono = (telefono: string) => {
-    // Extraer números de WhatsApp
-    const whatsappMatch = telefono.match(/WA:\s*([+\d\s]+)/i);
-    if (whatsappMatch) {
-      return whatsappMatch[1].trim();
-    }
-    // Extraer teléfono normal
-    const telefonoMatch = telefono.match(/TE:\s*([\d\s\-]+)/i);
-    if (telefonoMatch) {
-      return telefonoMatch[1].trim();
-    }
-    return telefono;
-  };
-
-  const getWhatsAppLink = (telefono: string) => {
-    const match = telefono.match(/WA:\s*([+\d\s]+)/i);
-    if (match) {
-      const numero = match[1].replace(/\s+/g, '');
-      return `https://wa.me/${numero}`;
-    }
-    return null;
-  };
-
-  const getTelefonoLink = (telefono: string) => {
-    const match = telefono.match(/TE:\s*([\d\s\-]+)/i);
-    if (match) {
-      const numero = match[1].replace(/[\s\-]/g, '');
-      return `tel:${numero}`;
-    }
-    return null;
-  };
-
   return (
     <section id="oficinas" aria-labelledby="oficinas-titulo">
       <h2 id="oficinas-titulo" className="sr-only">Oficinas de Información Turística</h2>
@@ -48,9 +17,13 @@ export default function OficinasSection({ oficinas }: OficinasSectionProps) {
       <p className="mt-1 mb-6 text-sm text-tinta-500">Los horarios pueden cambiar: confirmalos por teléfono o en el sitio oficial antes de ir.</p>
       <ul className="grid list-none gap-4 md:grid-cols-2 lg:grid-cols-3 lg:gap-6">
         {oficinas.map((oficina, index) => {
-          const telefono = formatTelefono(oficina["Teléfono/WhatsApp"]);
-          const whatsappLink = getWhatsAppLink(oficina["Teléfono/WhatsApp"]);
-          const telefonoLink = getTelefonoLink(oficina["Teléfono/WhatsApp"]);
+          // El texto se muestra completo, como viene en los datos; los enlaces usan números normalizados
+          // (tel: nacional con 0 y wa.me internacional solo con dígitos, lib/telefono.ts).
+          const telefono = oficina["Teléfono/WhatsApp"];
+          const numeroTelefono = primerNumero(telefono, "TE") ?? primerNumero(telefono, "Cel");
+          const numeroWhatsapp = primerNumero(telefono, "WA");
+          const telefonoLink = numeroTelefono ? enlaceTelefono(numeroTelefono) : null;
+          const whatsappLink = numeroWhatsapp ? enlaceWhatsapp(numeroWhatsapp) : null;
           // Solo correos y webs que pasan la validación: un valor inválido o de relleno no se convierte
           // en enlace (lib/contacto.ts).
           const { correos, webs } = extraerContactos(oficina["Correo/Web"]);

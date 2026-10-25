@@ -87,3 +87,20 @@ test("Oficinas y Agencias solo enlazan correos válidos; Santa Fe capital muestr
   const santaFe = page.locator("article", { has: page.getByRole("heading", { name: "Santa Fe", exact: true }) });
   await expect(santaFe.locator('a[href^="mailto:"]')).toHaveAttribute("href", "mailto:turismo@santafeciudad.gov.ar");
 });
+
+test("Oficinas: WhatsApp en formato internacional solo con dígitos y teléfonos completos", async ({ page }) => {
+  await page.goto("/provincias/santa_fe/oficinas");
+  const whatsapp = await page.locator('a[href^="https://wa.me/"]').evaluateAll(as => as.map(a => a.getAttribute("href")));
+  expect(whatsapp.sort()).toEqual(["https://wa.me/5493415795884", "https://wa.me/5493424063525"]);
+  for (const href of whatsapp) expect(href).toMatch(/^https:\/\/wa\.me\/549\d{10}$/);
+  const telefonos = await page.locator('a[href^="tel:"]').evaluateAll(as => as.map(a => a.getAttribute("href")));
+  expect(telefonos.length).toBe(16);
+  for (const href of telefonos) expect(href).toMatch(/^tel:0\d{10}$/);
+  const rosario = page.locator("article", { has: page.getByRole("heading", { name: "Rosario", exact: true }) });
+  await expect(rosario.getByRole("link", { name: /^Llamar/ })).toHaveAttribute("href", "tel:03414802230");
+  // El texto del dato se muestra completo, sin perder los otros números.
+  await expect(rosario).toContainText("TE: 0341 – 4802230 / WA: +54 341 5795884 / +54 341 5820955");
+  const villaOcampo = page.locator("article", { has: page.getByRole("heading", { name: "Villa Ocampo", exact: true }) });
+  await expect(villaOcampo.locator('a[href^="mailto:"]')).toHaveAttribute("href", "mailto:turismovocampo55@gmail.com");
+  await expect(page.locator('a[href="mailto:turismo@reconquista.gov.ar"]')).toHaveCount(1);
+});
