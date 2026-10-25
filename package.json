@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "eslint --max-warnings=0",
     "typecheck": "next typegen && tsc --noEmit",
-    "validate": "node --experimental-strip-types scripts/validate-data.mjs && npm run santa-fe:oficinas && npm run db:check && npm run validate:pages && npm run editorial:check && npm run editorial:check-pr13 && npm run editorial:check-pr14",
+    "validate": "node --experimental-strip-types scripts/validate-data.mjs && npm run santa-fe:oficinas && npm run db:check && npm run validate:pages && npm run editorial:check && npm run editorial:check-pr13 && npm run editorial:check-pr14 && npm run editorial:check-work",
     "test": "node --experimental-strip-types --test tests/*.test.mjs",
     "check": "npm run lint && npm run typecheck && npm run validate && npm test && npm run build && npm run editorial:audit-next && npm run audit:seo && npm run test:e2e",
     "audit:seo": "node --experimental-strip-types scripts/audit-seo.mjs",
@@ -30,7 +30,11 @@
     "editorial:report-pr13": "node --experimental-strip-types scripts/pr13/report.mjs",
     "editorial:check-pr13": "node --experimental-strip-types scripts/pr13/check.mjs",
     "editorial:check-pr14": "node --experimental-strip-types scripts/pr14/check.mjs",
-    "editorial:report-pr14": "node --experimental-strip-types scripts/pr14/manifest.mjs && node --experimental-strip-types scripts/pr14/report.mjs"
+    "editorial:report-pr14": "node --experimental-strip-types scripts/pr14/manifest.mjs && node --experimental-strip-types scripts/pr14/report.mjs",
+    "prebuild": "node --experimental-strip-types scripts/editorial/work-audit.mjs --check-inputs",
+    "editorial:check-work": "node --experimental-strip-types scripts/editorial/work-audit.mjs --check-inputs",
+    "editorial:audit-work": "node --experimental-strip-types scripts/editorial/work-audit.mjs",
+    "editorial:preview-work": "node --experimental-strip-types scripts/editorial/preview-work.mjs"
   },
   "dependencies": {
     "@next/third-parties": "16.4.3",

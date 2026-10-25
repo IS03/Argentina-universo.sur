@@ -1,0 +1,50 @@
+[
+  {
+    "viewport": "desktop",
+    "javascript": false,
+    "title": "Ficha sintética 1",
+    "headings": [
+      "Qué conocer",
+      "Organizar la visita",
+      "Ubicación",
+      "Fuentes"
+    ],
+    "overflow": false,
+    "images": [
+      {
+        "src": "http://127.0.0.1:4420/synthetic-800.webp",
+        "sizes": "(min-width: 832px) 768px, (min-width: 640px) calc(100vw - 48px), calc(100vw - 32px)",
+        "loaded": true,
+        "alt": "Ilustración geométrica sintética para pruebas"
+      }
+    ],
+    "sourceLinks": 5,
+    "privacyLeak": false,
+    "errors": [],
+    "failed": []
+  },
+  {
+    "viewport": "mobile",
+    "javascript": false,
+    "title": "Ficha sintética 1",
+    "headings": [
+      "Qué conocer",
+      "Organizar la visita",
+      "Ubicación",
+      "Fuentes"
+    ],
+    "overflow": false,
+    "images": [
+      {
+        "src": "http://127.0.0.1:4420/synthetic-800.webp",
+        "sizes": "(min-width: 832px) 768px, (min-width: 640px) calc(100vw - 48px), calc(100vw - 32px)",
+        "loaded": true,
+        "alt": "Ilustración geométrica sintética para pruebas"
+      }
+    ],
+    "sourceLinks": 5,
+    "privacyLeak": false,
+    "errors": [],
+    "failed": []
+  }
+]

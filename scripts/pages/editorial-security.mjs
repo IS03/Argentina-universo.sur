@@ -63,15 +63,15 @@ function normalize(value) {
   }
   return value.normalize("NFC");
 }
-const privateMarkers = /1fwed8poUbIaLBnMLJta5WkyAnYg_SFc453m-wl3aB1w|spreadsheetId|original_payload|originalPayload|dictamen_publicacion|aprobacion_humana|permiso_publicacion|practica_trazabilidad|practica_campos_permitidos|practica_exclusiones|componentes_condicionados_ids|AUS_PRIVATE_MASTER_CANARY|masterRefs|pendingReviews|documentaryStatus|retirementApproval|scopeReview|restorationVerified/i;
+const privateMarkers = /1fwed8poUbIaLBnMLJta5WkyAnYg_SFc453m-wl3aB1w|spreadsheetId|original_payload|originalPayload|normalizedPayload|originalIdentity|numericComponents|reviewFindings|jurisdictionSlugs|dictamen_publicacion|aprobacion_humana|permiso_publicacion|practica_trazabilidad|practica_campos_permitidos|practica_exclusiones|componentes_condicionados_ids|previsualizacion_privada|ficha_practica_propuesta|AUS_PRIVATE_MASTER_CANARY|AUS_PRIVATE_WORK_CANARY|masterRefs|pendingReviews|documentaryStatus|retirementApproval|scopeReview|restorationVerified/i;
 // Raw research identities can leak without a recognizable field name. Keep the reconciliation private.
-const privateResearchReferences = /\b(?:D|A|C|E)-[A-Z]{2,4}-\d{3}\b|\b(?:EV|F|P|R)-\d{4}\b|docs\.google\.com\/(?:document|spreadsheets)\/d\//;
-const privatePath = /(?:^|\/)(?:\.env(?:\.|$)|master[-_]snapshot|previous[-_]snapshot|import[-_]plan|original_payload|content\/escapadas|\.artifacts\/)|\.(?:xlsx?|csv|tsv)$/i;
+const privateResearchReferences = /\b(?:D|A|C|E|J|S|M|V|AG|X)-[A-Z]{2,5}-\d{3,4}\b|\b(?:EV|F|P|R|V|M)-\d{4}\b|docs\.google\.com\/(?:document|spreadsheets)\/d\//;
+const privatePath = /(?:^|\/)(?:\.env(?:\.|$)|master[-_]snapshot|previous[-_]snapshot|import[-_]plan|work[-_]review|original_payload|content\/escapadas|\.artifacts\/)|\.(?:xlsx?|csv|tsv)$/i;
 // Scan every non-media file, including extensionless static API responses and unknown auxiliaries.
 const binaryMedia = /\.(?:avif|gif|ico|jpe?g|png|webp|woff2?|ttf|otf|pdf|mp3|mp4|mov|webm)$/i;
 
 // `include` narrows a mixed build directory (Next's .next) to the files it serves publicly.
-export async function auditPublicArtifact(directory, trips, {include = () => true} = {}) {
+export async function auditPublicArtifact(directory, trips, {include = () => true, privateNeedles = []} = {}) {
   const withheld = trips.filter((trip) => !tripPublishable(trip));
   const needles = withheld.flatMap((trip, index) => [
     { label: `withheld-route-${index + 1}`, value: "/escapadas/" + trip.slug },
@@ -79,6 +79,7 @@ export async function auditPublicArtifact(directory, trips, {include = () => tru
       .filter((value) => typeof value === "string" && value.length >= 20)
       .map((value) => ({label: `withheld-content-${index + 1}`, value: normalize(value)})),
   ]);
+  needles.push(...privateNeedles.filter(value => typeof value === 'string' && value.length >= 4).map((value, index) => ({label: `private-work-${index + 1}`, value: normalize(value)})));
   const errors = [];
   const counts = {files: 0, textFiles: 0, html: 0, rsc: 0, javascript: 0};
   async function walk(dir) {

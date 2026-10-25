@@ -1,6 +1,6 @@
 // Contrato visual de las fichas turísticas futuras (destinos, atractivos y localidades).
 //
-// Solo tipos: este PR no importa, publica ni consulta el Google Sheets maestro (84 registros).
+// Solo tipos: no lee ni publica el Google Sheets maestro. PR17 prepara su revisión privada offline.
 // Los componentes de components/destinos/ reciben estas formas, así una ficha del maestro se
 // conecta escribiendo un adaptador, sin rediseñar la página. Reglas:
 // - id es el identificador estable del maestro tal como esté registrado: nunca se deriva del slug

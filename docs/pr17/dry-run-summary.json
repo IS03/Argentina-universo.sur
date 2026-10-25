@@ -1,0 +1,30 @@
+{
+  "mode": "dry-run",
+  "canStage": true,
+  "counts": {
+    "selected": 84,
+    "processed": 84,
+    "real": 84,
+    "synthetic": 0,
+    "classifications": {
+      "candidata_acotada": 55,
+      "decision_numerica_independiente": 3,
+      "borrador_retenido": 26
+    },
+    "numericRecords": 3,
+    "numericComponents": 6,
+    "issues": 0,
+    "publishable": 0
+  },
+  "issueCodes": {},
+  "publicWrites": 0,
+  "remoteWrites": 0,
+  "classificationIsNotApproval": true,
+  "repeat": {
+    "unchanged": 84,
+    "insert": 0,
+    "update": 0
+  },
+  "dateCellsDecoded": 2778,
+  "remoteMasterReadOnly": true
+}

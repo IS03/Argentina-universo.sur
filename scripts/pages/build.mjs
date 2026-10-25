@@ -17,6 +17,8 @@ import sharp from "sharp";
 import { createHash } from "node:crypto";
 import { copyTrackedInputs, readEditorialTrips, preparePublicTripInputs, assertPublicArtifact } from "./editorial-security.mjs";
 import { imageWidths } from "../../lib/pages/image-policy.ts";
+import { assertWorkIsolation } from "../editorial/work-audit.mjs";
+await assertWorkIsolation();
 const root = fileURLToPath(new URL("../../", import.meta.url));
 const base = join(root, ".artifacts/pages");
 const source = join(base, "source");

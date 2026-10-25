@@ -1,0 +1,24 @@
+// Synthetic local preview only. Does not accept a real snapshot/path/Drive URL.
+import { cp, mkdir, readFile, readdir, writeFile } from 'node:fs/promises';
+import { join } from 'node:path';
+import sharp from 'sharp';
+import { planWorkImport } from './work-import.mjs';
+import { syntheticWorkSnapshot, syntheticPresentationMapping } from './work-fixtures.mjs';
+import { prepareWorkReview } from '../../lib/destinos/work-review.ts';
+import { renderWorkDestination } from './render-work.mjs';
+if (process.argv.length > 2) throw Error('SYNTHETIC_PREVIEW_TAKES_NO_INPUT');
+const plan = planWorkImport(syntheticWorkSnapshot(), null, { asOf: '2026-10-25' });
+if (!plan.canStage) throw Error('INVALID_SYNTHETIC_PLAN');
+const review = prepareWorkReview(plan, 'SYNTH-DEST-001', syntheticPresentationMapping());
+if (!review.destino) throw Error(review.issues.join(','));
+const output = '.artifacts/pr17/synthetic-preview';
+await mkdir(output, { recursive: true, mode: 0o700 });
+const svg = Buffer.from('<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450"><rect width="800" height="450" fill="#e9e2d6"/><path d="M0 450L260 80L430 350L600 100L800 450Z" fill="#176d7a"/></svg>');
+for (const width of [400, 800]) await sharp(svg).resize(width).webp({ quality: 80 }).toFile(join(output, `synthetic-${width}.webp`));
+const cssPaths = (await readdir('.next/static', { recursive: true })).filter(p => p.endsWith('.css'));
+if (!cssPaths.length) throw Error('BUILD_CSS_REQUIRED');
+await writeFile(join(output, 'styles.css'), (await Promise.all(cssPaths.map(p => readFile(join('.next/static', p), 'utf8')))).join('\n'));
+await cp('.next/static/media', join(output, 'media'), { recursive: true });
+const article = await renderWorkDestination(review.destino);
+await writeFile(join(output, 'index.html'), '<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Prueba sintética privada de Work</title><link rel="stylesheet" href="/styles.css"></head><body><p class="contenedor py-4 font-semibold">DATOS SINTÉTICOS — NO PUBLICAR. Revisión de componentes, sin datos del maestro.</p>' + article + '</body></html>', { mode: 0o600 });
+console.log(JSON.stringify({ synthetic: true, records: 84, renderedDestinations: 1, publicRoutes: 0 }));

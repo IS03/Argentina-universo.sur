@@ -4,6 +4,8 @@
 import { stat, mkdir, writeFile } from "node:fs/promises";
 import { join } from "node:path";
 import { assertPublicArtifact, readEditorialTrips } from "../pages/editorial-security.mjs";
+import { assertWorkIsolation } from "./work-audit.mjs";
+await assertWorkIsolation();
 const root = process.cwd();
 const trips = await readEditorialTrips(root);
 const next = join(root, ".next");

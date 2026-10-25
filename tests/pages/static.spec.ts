@@ -159,3 +159,12 @@ test("Preview conserva las 23 guías mediante sus URLs vigentes de producción",
   await expect(page.locator('a[href^="/escapadas/"]')).toHaveCount(0);
   await context.close();
 });
+test('Work permanece fuera de las rutas, HTML, JSON y sitemap estáticos', async ({ request }) => {
+  for (const path of ['/destinos', '/destinos/ficha-sintetica-1.html', '/destinos/ficha-sintetica-1.txt'])
+    expect((await request.get(path)).status()).toBe(404);
+  for (const path of ['/', '/escapadas', '/sitemap.xml']) {
+    const response = await request.get(path);
+    expect(response.status()).toBe(200);
+    expect(await response.text()).not.toMatch(/AUS_PRIVATE_WORK_CANARY|SYNTH-DEST-|originalPayload|normalizedPayload|ficha_practica_propuesta/);
+  }
+});
