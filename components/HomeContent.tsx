@@ -9,7 +9,7 @@ import EspacioPublicitario from "@/components/publicidad/EspacioPublicitario";
 import { EncabezadoSeccion } from "@/components/ui/Bloques";
 import Icono, { type NombreIcono } from "@/components/ui/Icono";
 import { boton } from "@/components/ui/estilos";
-import { GRILLA_DESTACADAS, SIZES_DESTACADAS } from "@/components/ui/grillas";
+import { GRILLA_DESTACADAS, ITEM_DESTACADA, SIZES_DESTACADAS } from "@/components/ui/grillas";
 import type { ProvinciaResumen } from "@/lib/catalog";
 
 interface HomeContentProps {
@@ -52,10 +52,10 @@ function Portada() {
   );
 }
 
-const planificar: { href: string; icono: NombreIcono; titulo: string; texto: (n: HomeContentProps) => string; ancla: string }[] = [
-  { href: ROUTES.actividades, icono: "brujula", titulo: "Qué hacer", texto: n => `${n.totalActividades} actividades turísticas para elegir por provincia.`, ancla: INTERNAL_ANCHORS.verActividades },
-  { href: ROUTES.escapadas, icono: "documento", titulo: "Escapadas", texto: n => `${n.totalEscapadas} guías para viajes cortos, organizadas por región.`, ancla: INTERNAL_ANCHORS.verEscapadas },
-  { href: ROUTES.seguridad, icono: "escudo", titulo: "Viajá seguro", texto: () => "Ruta, playas, áreas naturales, altura y emergencias.", ancla: INTERNAL_ANCHORS.guiaSeguridad },
+const planificar: { href: string; icono: NombreIcono; titulo: string; texto: (n: HomeContentProps) => string }[] = [
+  { href: ROUTES.actividades, icono: "brujula", titulo: "Qué hacer", texto: n => `${n.totalActividades} actividades turísticas para elegir por provincia.` },
+  { href: ROUTES.escapadas, icono: "documento", titulo: "Escapadas", texto: n => `${n.totalEscapadas} guías para viajes cortos, organizadas por región.` },
+  { href: ROUTES.seguridad, icono: "escudo", titulo: "Viajá seguro", texto: () => "Ruta, playas, áreas naturales, altura y emergencias." },
 ];
 
 // Server Component: el contenido turístico llega en el HTML inicial. Solo el carrusel y el
@@ -70,7 +70,9 @@ export default function HomeContent(props: HomeContentProps) {
           <EncabezadoSeccion id="titulo-destacadas" antetitulo="Empezá por acá" titulo="Provincias destacadas" bajada="Tres puertas de entrada para conocer el país: río y ciudad, sierras y costa atlántica." />
           <div className={GRILLA_DESTACADAS}>
             {props.provinciasDestacadas.map((provincia) => (
-              <ProvinciaCard key={provincia.slug} provincia={provincia} sizes={SIZES_DESTACADAS} destacada />
+              <div key={provincia.slug} className={ITEM_DESTACADA}>
+                <ProvinciaCard provincia={provincia} sizes={SIZES_DESTACADAS} destacada />
+              </div>
             ))}
           </div>
         </section>
@@ -114,18 +116,15 @@ export default function HomeContent(props: HomeContentProps) {
         <ul className="grid list-none gap-4 md:grid-cols-3 md:gap-6">
           {planificar.map(item => (
             <li key={item.href}>
-              <Link href={item.href} className="group flex h-full gap-4 rounded-tarjeta border border-arena-300/80 bg-white p-5 shadow-tarjeta transition-[border-color,box-shadow] duration-300 hover:border-lago-600/50 hover:shadow-elevada sm:p-6">
+              <Link href={item.href} className="group flex h-full items-center gap-4 rounded-tarjeta border border-arena-300/80 bg-white p-4 shadow-tarjeta transition-[border-color,box-shadow] duration-300 hover:border-lago-600/50 hover:shadow-elevada sm:p-6">
                 <span className="flex size-12 shrink-0 items-center justify-center rounded-full bg-lago-100 text-lago-700">
                   <Icono nombre={item.icono} className="size-6" />
                 </span>
-                <span className="flex flex-col">
-                  <span className="text-lg font-semibold text-tinta-900">{item.titulo}</span>
+                <span className="flex flex-1 flex-col">
+                  <span className="text-lg font-semibold text-tinta-900 group-hover:text-lago-700">{item.titulo}</span>
                   <span className="mt-1 text-tinta-700">{item.texto(props)}</span>
-                  <span className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-lago-600 group-hover:text-lago-700">
-                    {item.ancla}
-                    <Icono nombre="flecha" className="size-4 transition-transform duration-200 group-hover:translate-x-0.5" />
-                  </span>
                 </span>
+                <Icono nombre="flecha" className="size-5 text-lago-600 transition-transform duration-200 group-hover:translate-x-0.5" />
               </Link>
             </li>
           ))}

@@ -1,0 +1,26 @@
+[
+  {
+    "localidad": "Santa Fe",
+    "campo": "Correo/Web",
+    "valorEnPlanilla": "info@loreipsumcom",
+    "valorPublicado": "turismo@santafeciudad.gov.ar",
+    "motivo": "Texto de relleno sin dominio válido. Se usa el correo de la Dirección de Turismo que publica la Municipalidad de Santa Fe.",
+    "fuente": {
+      "titulo": "Municipalidad de Santa Fe — Información para turistas",
+      "url": "https://santafeciudad.gov.ar/santafe_capital/informacion-para-turistas",
+      "consultadaEl": "2026-10-25"
+    }
+  },
+  {
+    "localidad": "Villa Ocampo",
+    "campo": "Correo/Web",
+    "valorEnPlanilla": "turismo@reconquista.gov.ar / www.turismovillaocampo.gob.ar",
+    "valorPublicado": "turismovocampo55@gmail.com / www.turismovillaocampo.gob.ar",
+    "motivo": "El correo de la planilla es el de Reconquista y ninguna fuente oficial lo atribuye a Villa Ocampo. Se usa el que publica el sitio oficial de turismo de Villa Ocampo; la web no cambia.",
+    "fuente": {
+      "titulo": "Turismo Villa Ocampo — Contacto",
+      "url": "https://www.turismovillaocampo.gob.ar/contacto.html",
+      "consultadaEl": "2026-10-25"
+    }
+  }
+]

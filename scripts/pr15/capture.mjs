@@ -1,5 +1,6 @@
 // Capturas comparativas y auditoría visual de PR15. Solo lectura: no envía formularios ni acepta cookies.
 // Uso: node scripts/pr15/capture.mjs <etiqueta> <origen> [--pages-routes]
+// RUTAS="nombre=/ruta,otra=/otra" reemplaza la lista de páginas capturadas.
 //   --pages-routes usa /actividades/por-provincia/<slug> (export estático) en lugar de ?provincia=.
 import { chromium, devices } from "@playwright/test";
 import sharp from "sharp";
@@ -13,7 +14,7 @@ const out = resolve(".artifacts/pr15/screens", label);
 await mkdir(out, { recursive: true });
 
 const filtered = pagesRoutes ? "/actividades/por-provincia/salta" : "/actividades?provincia=salta";
-const routes = [
+const routes = process.env.RUTAS ? process.env.RUTAS.split(",").map(r => r.split("=")) : [
   ["portada", "/"],
   ["provincias", "/provincias"],
   ["provincia", "/provincias/mendoza"],

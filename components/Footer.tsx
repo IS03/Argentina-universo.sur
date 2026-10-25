@@ -34,7 +34,7 @@ const redes = [
   },
 ];
 
-const ENLACE_PIE = "inline-flex min-h-11 items-center text-arena-300 underline-offset-4 hover:text-white hover:underline";
+const ENLACE_PIE = "inline-flex min-h-11 items-center py-1 leading-snug text-arena-300 underline-offset-4 hover:text-white hover:underline";
 
 export default function Footer() {
   return (
@@ -43,8 +43,9 @@ export default function Footer() {
       <div aria-hidden="true" className="flex h-1.5">
         {REGIONES_VISUALES.map(region => <span key={region.nombre} className={`flex-1 ${region.fondo}`} />)}
       </div>
-      <div className="contenedor grid gap-10 py-12 sm:py-14 md:grid-cols-[1.4fr_1fr_1fr]">
-        <div>
+      <div className="contenedor grid grid-cols-2 gap-x-6 gap-y-10 py-12 sm:py-14 md:grid-cols-[1.4fr_1fr_1fr]">
+        {/* En teléfonos la marca ocupa el ancho y los dos bloques de enlaces van lado a lado. */}
+        <div className="col-span-2 md:col-span-1">
           <p className="flex flex-col leading-none">
             <span className="text-[0.625rem] font-semibold uppercase tracking-[0.22em] text-sol-400">Argentina</span>
             <span className="mt-1 font-display text-3xl text-white">Universo Sur</span>

@@ -7,7 +7,7 @@ import { REGIONES, REGION_POR_PROVINCIA } from "../lib/catalog.ts";
 import { REGIONES_VISUALES, agruparPorRegion, regionDeProvincia } from "../lib/regiones.ts";
 import { ESPACIOS, FORMATOS, modoEspacio } from "../lib/publicidad.ts";
 import { NAV_ANCHORS } from "../lib/site-links.ts";
-import { GRILLA_TARJETAS, SIZES_TARJETAS, GRILLA_DESTACADAS, SIZES_DESTACADAS } from "../components/ui/grillas.ts";
+import { GRILLA_TARJETAS, SIZES_TARJETAS, GRILLA_DESTACADAS, ITEM_DESTACADA, SIZES_DESTACADAS, SIZES_ANCHO_COMPLETO } from "../components/ui/grillas.ts";
 
 const source = path => readFile(join(projectRoot, path), "utf8");
 const json = async path => JSON.parse(await source(path));
@@ -44,9 +44,13 @@ test("cada grilla declara un sizes con sus mismas columnas y breakpoints", () =>
   assert.match(SIZES_TARJETAS, /\(min-width: 1024px\) calc\(\(100vw - \d+px\) \/ 4\)/);
   assert.match(SIZES_TARJETAS, /\(min-width: 640px\) calc\(\(100vw - \d+px\) \/ 3\)/);
   assert.match(SIZES_TARJETAS, /, calc\(\(100vw - \d+px\) \/ 2\)$/);
-  assert.match(GRILLA_DESTACADAS, /sm:grid-cols-3/);
+  // PR16: destacadas en fila desplazable en teléfonos (tarjetas del 78 %), tres columnas desde 640 px.
+  assert.match(GRILLA_DESTACADAS, /fila-desplazable .*sm:grid sm:grid-cols-3/);
+  assert.match(ITEM_DESTACADA, /^w-\[78%\] sm:w-auto$/);
   assert.match(SIZES_DESTACADAS, /\(min-width: 640px\) calc\(\(100vw - \d+px\) \/ 3\)/);
-  assert.match(SIZES_DESTACADAS, /, calc\(100vw - 32px\)$/);
+  assert.match(SIZES_DESTACADAS, /, calc\(\(100vw - 32px\) \* 0\.78\)$/);
+  // Carruseles: techo de 320 px de referencia en teléfonos (variante de 960 px con densidad ≤ 3×).
+  assert.match(SIZES_ANCHO_COMPLETO, /, min\(calc\(100vw - 32px\), 320px\)$/);
 });
 
 test("la publicidad está desactivada: sin proveedor, scripts ni IDs, y solo la vista previa local dibuja reservas", async () => {

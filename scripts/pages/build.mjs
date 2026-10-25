@@ -126,7 +126,7 @@ await edit("app/provincias/santa_fe/eventos/page.tsx", (s) =>
   s
     .replaceAll("getAgendaSantaFe", "getEventosSantaFe")
     .replace(
-      'import EventosSection from "@/components/santa-fe/EventosSection";',
+      'import AgendaSantaFe from "@/components/santa-fe/AgendaSantaFe";',
       'import StaticAgenda from "@/components/santa-fe/StaticAgenda";',
     )
     .replace(
@@ -134,7 +134,7 @@ await edit("app/provincias/santa_fe/eventos/page.tsx", (s) =>
       "const events = await getEventosSantaFe();",
     )
     .replace(
-      /<EventosSection eventos=\{vigentes\} \/>[\s\S]*?\n              \)\}/,
+      "<AgendaSantaFe vigentes={vigentes} anteriores={anteriores} />",
       "<StaticAgenda events={events} />",
     ),
 );

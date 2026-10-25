@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef, useSyncExternalStore } from "react";
 import Image from "next/image";
+import { SIZES_ANCHO_COMPLETO } from "@/components/ui/grillas";
 
 // Movimiento reducido: sin rotación automática. En el servidor se asume que no (no cambia el HTML).
 const CONSULTA_MOVIMIENTO = "(prefers-reduced-motion: reduce)";
@@ -19,9 +20,7 @@ interface CarruselProps {
   sizes?: string;
 }
 
-const SIZES_CONTENEDOR = "(min-width: 1280px) 1152px, (min-width: 1024px) calc(100vw - 64px), (min-width: 640px) calc(100vw - 48px), calc(100vw - 32px)";
-
-export default function Carrusel({ fotos, alt, sizes = SIZES_CONTENEDOR }: CarruselProps) {
+export default function Carrusel({ fotos, alt, sizes = SIZES_ANCHO_COMPLETO }: CarruselProps) {
   const [indiceActual, setIndiceActual] = useState(0);
   const [pausado, setPausado] = useState(false);
   // También se detiene mientras el puntero o el foco están sobre el carrusel.

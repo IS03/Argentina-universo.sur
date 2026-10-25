@@ -2,6 +2,7 @@
 // contextos fríos, red y CPU emuladas por CDP, movimiento reducido, teselas simuladas y Google bloqueado.
 // No es CrUX, Lighthouse ni medición del CDN de Cloudflare.
 // Uso: node scripts/pr15/benchmark.mjs <etiqueta> <origen> [repeticiones]
+// RUTAS="/a,/b" reemplaza la lista de rutas medidas.
 import { chromium, devices } from "@playwright/test";
 import { mkdir, writeFile } from "node:fs/promises";
 import { join, resolve } from "node:path";
@@ -9,7 +10,7 @@ import { join, resolve } from "node:path";
 const [label, origin, runsArg] = process.argv.slice(2);
 if (!label || !origin) throw Error("Uso: benchmark.mjs <etiqueta> <origen> [repeticiones]");
 const runs = Number(runsArg || 3);
-const paths = [
+const paths = process.env.RUTAS ? process.env.RUTAS.split(",") : [
   "/",
   "/provincias",
   "/provincias/santa_fe",

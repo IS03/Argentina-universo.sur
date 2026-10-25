@@ -3,14 +3,24 @@
 import { useState, useMemo } from 'react';
 import { Evento } from "@/lib/data";
 import { EVENT_TIME_ZONE, parseEventDate } from "@/lib/events";
+import Icono from "@/components/ui/Icono";
+import { EstadoVacio } from "@/components/ui/Bloques";
 
 interface EventosSectionProps {
   eventos: Evento[];
   titulo?: string;
   id?: string;
+  // Mensaje cuando no hay eventos. El export estático lo usa mientras calcula la vigencia, con el
+  // mismo bloque que el mensaje final para que el contenido no salte (CLS).
+  vacio?: { titulo: string; detalle: string };
 }
 
-export default function EventosSection({ eventos, titulo = "Próximos eventos y en curso", id = "eventos" }: EventosSectionProps) {
+const VACIO = {
+  titulo: "No hay próximos eventos confirmados por el momento.",
+  detalle: "Revisá el archivo de eventos anteriores o volvé a consultar más adelante.",
+};
+
+export default function EventosSection({ eventos, titulo = "Próximos eventos y en curso", id = "eventos", vacio = VACIO }: EventosSectionProps) {
   const [vista, setVista] = useState<'lista' | 'calendario'>('lista');
 
   // Agrupar eventos por mes
@@ -57,167 +67,85 @@ export default function EventosSection({ eventos, titulo = "Próximos eventos y 
     };
   };
 
+  // Etiqueta de precio en texto (no solo color): «Gratis», «Consultar» o el precio publicado.
   const getPrecioBadge = (precio: string) => {
     if (precio.toLowerCase().includes('gratis') || precio.toLowerCase().includes('gratuita')) {
-      return { texto: 'Gratis', clase: 'bg-green-500/20 text-green-700 border-green-500/30' };
+      return { texto: 'Gratis', clase: 'border-region-litoral/40 bg-region-litoral/10 text-region-litoral' };
     }
     if (precio.toLowerCase().includes('consultar')) {
-      return { texto: 'Consultar', clase: 'bg-blue-500/20 text-blue-700 border-blue-500/30' };
+      return { texto: 'Consultar', clase: 'border-lago-600/30 bg-lago-100 text-lago-700' };
     }
-    if (precio.includes('$')) {
-      return { texto: precio, clase: 'bg-lago-600/20 text-tinta-900 border-lago-600/30' };
-    }
-    return { texto: precio, clase: 'bg-gray-500/20 text-gray-700 border-gray-500/30' };
+    return { texto: precio, clase: 'border-arena-400/60 bg-arena-100 text-tinta-900' };
   };
 
+  const VISTAS = [{ id: 'lista', etiqueta: 'Lista' }, { id: 'calendario', etiqueta: 'Calendario' }] as const;
+
   return (
-    <section id={id} className="mb-16 scroll-mt-32">
-      <div className="flex flex-col md:flex-row justify-between items-center mb-8 gap-4">
-        <h2 className="text-3xl md:text-4xl font-semibold uppercase tracking-widest text-center text-tinta-900">
+    <section id={id} aria-labelledby={`${id}-titulo`} className="mb-4">
+      <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+        <h2 id={`${id}-titulo`} className="font-display text-seccion text-tinta-900">
           {titulo}
         </h2>
-        <div className="flex gap-2 bg-arena-200/80 backdrop-blur-sm border border-arena-300/50 rounded-lg p-1">
-          <button
-            onClick={() => setVista('lista')}
-            className={`px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 ${
-              vista === 'lista'
-                ? 'bg-lago-600 text-white shadow-md'
-                : 'text-tinta-900 hover:bg-arena-200'
-            }`}
-          >
-            Lista
-          </button>
-          <button
-            onClick={() => setVista('calendario')}
-            className={`px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 ${
-              vista === 'calendario'
-                ? 'bg-lago-600 text-white shadow-md'
-                : 'text-tinta-900 hover:bg-arena-200'
-            }`}
-          >
-            Calendario
-          </button>
-        </div>
+        {eventos.length > 0 && (
+          <div role="group" aria-label="Vista de los eventos" className="inline-flex self-start rounded-full border border-arena-400 bg-white p-1">
+            {VISTAS.map(v => (
+              <button
+                key={v.id}
+                type="button"
+                onClick={() => setVista(v.id)}
+                aria-pressed={vista === v.id}
+                className={`min-h-10 rounded-full px-4 text-sm font-semibold transition-colors ${vista === v.id ? 'bg-tinta-900 text-white' : 'text-tinta-700 hover:text-lago-700'}`}
+              >
+                {v.etiqueta}
+              </button>
+            ))}
+          </div>
+        )}
       </div>
 
       {eventos.length === 0 ? (
-        <p className="text-tinta-700 py-6">No hay próximos eventos confirmados por el momento.</p>
-      ) : vista === 'lista' ? (
-        // Vista de lista
-        <div className="space-y-8">
+        <EstadoVacio titulo={vacio.titulo}>{vacio.detalle}</EstadoVacio>
+      ) : (
+        <div className="space-y-10">
           {meses.map((mes) => (
             <div key={mes}>
-              <h3 className="text-2xl font-semibold mb-4 text-tinta-900 capitalize border-b border-arena-300/50 pb-2">
+              <h3 className="mb-4 border-b border-arena-300/80 pb-2 text-xl font-semibold capitalize text-tinta-900">
                 {mes}
               </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <ul className={`grid list-none gap-4 ${vista === 'lista' ? 'md:grid-cols-2' : 'sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'}`}>
                 {eventosPorMes[mes].map((evento, index) => {
                   const fecha = formatFecha(evento.Inicio);
                   const precioBadge = getPrecioBadge(evento.Precio);
-
+                  const lugar = evento.Lugar && evento.Lugar !== "No especificado" ? evento.Lugar : null;
                   return (
-                    <div
-                      key={index}
-                      className="group bg-gradient-to-br from-arena-200 to-arena-300 hover:from-arena-300 hover:to-arena-300 border border-arena-300/50 hover:border-lago-600/70 rounded-xl p-5 transition-all duration-300 transform hover:scale-[1.01] shadow-md hover:shadow-lg"
-                    >
+                    <li key={index} className="flex h-full gap-4 rounded-tarjeta border border-arena-300/80 bg-white p-4 shadow-tarjeta">
                       {/* Fecha destacada */}
-                      <div className="flex items-start gap-4 mb-3">
-                        <div className="flex-shrink-0 text-center bg-lago-600/20 rounded-lg p-2 min-w-[60px] border border-lago-600/30">
-                          <div className="text-2xl font-bold text-tinta-900">{fecha.dia}</div>
-                          <div className="text-xs uppercase text-tinta-700">{fecha.mes}</div>
-                        </div>
-                        <div className="flex-1">
-                          <h4 className="text-lg font-semibold text-tinta-900 mb-1 group-hover:text-tinta-500 transition-colors duration-300">
-                            {evento.Título}
-                          </h4>
-                          <p className="text-xs text-tinta-700">{fecha.fechaCompleta}</p>
-                        </div>
+                      <div className="flex w-16 shrink-0 flex-col items-center justify-center self-start rounded-control bg-region-litoral py-2 text-white">
+                        <span className="text-2xl font-semibold leading-none">{fecha.dia}</span>
+                        <span className="mt-1 text-xs uppercase">{fecha.mes}</span>
                       </div>
-
-                      {/* Lugar */}
-                      {evento.Lugar && evento.Lugar !== "No especificado" && (
-                        <div className="flex items-start gap-2 mb-3 text-sm text-tinta-700">
-                          <svg
-                            className="w-4 h-4 text-lago-600 flex-shrink-0 mt-0.5"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                            />
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                            />
-                          </svg>
-                          <span className="line-clamp-1">{evento.Lugar}</span>
-                        </div>
-                      )}
-
-                      {/* Descripción */}
-                      <p className="text-sm text-tinta-700 mb-3 line-clamp-2 leading-relaxed">
-                        {evento.Descripción}
-                      </p>
-
-                      {/* Precio */}
-                      <div className="flex items-center justify-between">
-                        <span className={`text-xs px-2 py-1 rounded-full border ${precioBadge.clase}`}>
+                      <div className="min-w-0 flex-1">
+                        <h4 className="font-semibold leading-snug text-tinta-900">{evento.Título}</h4>
+                        <p className="mt-1 text-xs text-tinta-500">
+                          {fecha.fechaCompleta}{fecha.hora && <> · {fecha.hora}</>}
+                        </p>
+                        {lugar && (
+                          <p className="mt-2 flex items-start gap-1.5 text-sm text-tinta-700">
+                            <Icono nombre="pin" className="mt-0.5 size-4 text-region-litoral" />
+                            <span className={vista === 'lista' ? '' : 'line-clamp-2'}>{lugar}</span>
+                          </p>
+                        )}
+                        {vista === 'lista' && (
+                          <p className="mt-2 line-clamp-3 text-sm leading-relaxed text-tinta-700">{evento.Descripción}</p>
+                        )}
+                        <span className={`mt-3 inline-flex rounded-full border px-2.5 py-0.5 text-xs font-medium ${precioBadge.clase}`}>
                           {precioBadge.texto}
                         </span>
-                        {fecha.hora && (
-                          <span className="text-xs text-tinta-700">
-                            {fecha.hora}
-                          </span>
-                        )}
                       </div>
-                    </div>
+                    </li>
                   );
                 })}
-              </div>
-            </div>
-          ))}
-        </div>
-      ) : (
-        // Vista de calendario (simplificada - grid por días)
-        <div className="space-y-8">
-          {meses.map((mes) => (
-            <div key={mes}>
-              <h3 className="text-2xl font-semibold mb-4 text-tinta-900 capitalize border-b border-arena-300/50 pb-2">
-                {mes}
-              </h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
-                {eventosPorMes[mes].map((evento, index) => {
-                  const fecha = formatFecha(evento.Inicio);
-                  const precioBadge = getPrecioBadge(evento.Precio);
-
-                  return (
-                    <div
-                      key={index}
-                      className="group bg-gradient-to-br from-arena-200 to-arena-300 hover:from-arena-300 hover:to-arena-300 border border-arena-300/50 hover:border-lago-600/70 rounded-lg p-4 transition-all duration-300 transform hover:scale-[1.02] shadow-md hover:shadow-lg"
-                    >
-                      <div className="text-center mb-2">
-                        <div className="text-3xl font-bold text-tinta-900">{fecha.dia}</div>
-                        <div className="text-xs uppercase text-tinta-700">{fecha.mes}</div>
-                      </div>
-                      <h4 className="text-sm font-semibold text-tinta-900 mb-2 line-clamp-2 group-hover:text-tinta-500 transition-colors duration-300">
-                        {evento.Título}
-                      </h4>
-                      <p className="text-xs text-tinta-700 mb-2 line-clamp-2">
-                        {evento.Lugar && evento.Lugar !== "No especificado" ? evento.Lugar : ''}
-                      </p>
-                      <span className={`text-xs px-2 py-1 rounded-full border inline-block ${precioBadge.clase}`}>
-                        {precioBadge.texto}
-                      </span>
-                    </div>
-                  );
-                })}
-              </div>
+              </ul>
             </div>
           ))}
         </div>

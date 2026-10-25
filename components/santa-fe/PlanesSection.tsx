@@ -1,5 +1,6 @@
 import { PlanSantaFe } from "@/lib/data";
-import Link from "next/link";
+import Icono from "@/components/ui/Icono";
+import { fechaSantaFe, limpiarResumen } from "./formato";
 
 interface PlanesSectionProps {
   planes: PlanSantaFe[];
@@ -12,84 +13,44 @@ export default function PlanesSection({ planes }: PlanesSectionProps) {
   };
 
   return (
-    <section id="planes" className="mb-16 scroll-mt-32">
-      <h2 className="text-3xl md:text-4xl font-semibold uppercase tracking-widest mb-8 text-center text-tinta-900">
-        Planes e Ideas
-      </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <section id="planes" aria-labelledby="planes-titulo">
+      <h2 id="planes-titulo" className="sr-only">Planes e Ideas</h2>
+      <p className="mb-6 text-sm font-medium text-tinta-700">{planes.length} propuestas para recorrer la provincia</p>
+      <ul className="grid list-none gap-4 md:grid-cols-2 lg:grid-cols-3 lg:gap-6">
         {planes.map((plan, index) => {
           const categorias = getCategorias(plan.Categories);
-          const fecha = new Date(plan.Date);
-          const fechaFormateada = fecha.toLocaleDateString('es-AR', { 
-            year: 'numeric', 
-            month: 'long', 
-            day: 'numeric' 
-          });
-
           return (
-            <div
-              key={index}
-              className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-arena-200 to-arena-300 hover:from-arena-300 hover:to-arena-300 transition-all duration-300 transform hover:scale-[1.02] shadow-lg hover:shadow-2xl hover:shadow-lago-600/30 border border-arena-300/50 hover:border-lago-600/70"
-            >
-              <div className="p-6 h-full flex flex-col">
-                {/* Badges de categorías */}
+            <li key={index}>
+              <article className="flex h-full flex-col rounded-tarjeta border border-arena-300/80 bg-white p-5 shadow-tarjeta">
                 {categorias.length > 0 && (
-                  <div className="flex flex-wrap gap-2 mb-3">
+                  <ul className="mb-3 flex list-none flex-wrap gap-1.5" aria-label="Categorías">
                     {categorias.map((cat, i) => (
-                      <span
-                        key={i}
-                        className="text-xs uppercase tracking-wide px-2 py-1 bg-lago-600/20 text-tinta-900 rounded-full border border-lago-600/30"
-                      >
-                        {cat}
-                      </span>
+                      <li key={i} className="rounded-full bg-region-litoral/10 px-2.5 py-0.5 text-xs font-medium text-region-litoral">{cat}</li>
                     ))}
-                  </div>
+                  </ul>
                 )}
-
-                {/* Fecha */}
-                <p className="text-xs text-tinta-700 mb-3 font-light">
-                  {fechaFormateada}
+                <h3 className="text-lg font-semibold leading-snug text-tinta-900">{plan.Title}</h3>
+                <p className="mt-1 text-xs text-tinta-500">
+                  <time dateTime={plan.Date}>{fechaSantaFe(plan.Date)}</time>
                 </p>
-
-                {/* Título */}
-                <h3 className="text-xl font-semibold mb-3 text-tinta-900 group-hover:text-tinta-500 transition-colors duration-300 line-clamp-2">
-                  {plan.Title}
-                </h3>
-
-                {/* Resumen */}
-                <p className="text-tinta-700 mb-4 flex-grow line-clamp-3 text-sm leading-relaxed">
-                  {plan.Summary.replace(/【.*?】/g, '').trim()}
-                </p>
-
-                {/* Botón Ver más */}
+                <p className="mt-3 line-clamp-4 flex-1 text-sm leading-relaxed text-tinta-700">{limpiarResumen(plan.Summary)}</p>
                 {plan.Source && (
-                  <Link
+                  <a
                     href={plan.Source}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-lago-600 hover:text-tinta-500 font-medium text-sm transition-colors duration-300 group/link"
+                    className="mt-4 inline-flex min-h-11 items-center gap-1.5 self-start font-semibold text-lago-600 underline decoration-lago-600/40 underline-offset-4 hover:decoration-lago-600"
                   >
                     Ver más
-                    <svg
-                      className="w-4 h-4 transform group-hover/link:translate-x-1 transition-transform duration-300"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M9 5l7 7-7 7"
-                      />
-                    </svg>
-                  </Link>
+                    <Icono nombre="externo" className="size-4" />
+                    <span className="sr-only">(abre en otra pestaña)</span>
+                  </a>
                 )}
-              </div>
-            </div>
+              </article>
+            </li>
           );
         })}
-      </div>
+      </ul>
     </section>
   );
 }

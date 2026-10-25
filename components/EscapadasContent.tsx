@@ -42,18 +42,19 @@ export default function EscapadasContent({ escapadas }: EscapadasContentProps) {
       <FiltroZonas filterLabel="Filtrar escapadas por región" zonaActiva={zonaActiva} onZonaChange={setZonaActiva} />
 
       {escapadasFiltradas.length > 0 ? (
-        <ul className="mt-6 grid list-none gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
+        <ul className="mt-6 grid list-none gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3 lg:gap-6">
           {escapadasFiltradas.map((escapada) => {
             const region = regionVisual(escapada.zona);
             const detalle = `escapada-${escapada.id}-pdf`;
             return (
               <li key={escapada.id}>
-                <article className="flex h-full flex-col overflow-hidden rounded-tarjeta border border-arena-300/80 bg-white shadow-tarjeta">
-                  <div aria-hidden="true" className={`h-1.5 ${region?.fondo ?? "bg-arena-400"}`} />
-                  <div className="flex flex-1 flex-col p-5">
+                {/* Banda de región a la izquierda y PDF en una sola fila: unos 180 px por guía en teléfonos. */}
+                <article className="flex h-full overflow-hidden rounded-tarjeta border border-arena-300/80 bg-white shadow-tarjeta">
+                  <div aria-hidden="true" className={`w-1.5 shrink-0 ${region?.fondo ?? "bg-arena-400"}`} />
+                  <div className="flex flex-1 flex-col p-4 sm:p-5">
                     <p className={`antetitulo ${region?.texto ?? "text-terracota-600"}`}>{escapada.zona}</p>
-                    <h3 className="mt-1 font-display text-[1.75rem] leading-tight text-tinta-900">{escapada.titulo}</h3>
-                    <dl className="mt-3 flex flex-wrap gap-x-5 gap-y-1 text-sm text-tinta-700">
+                    <h3 className="mt-1 font-display text-2xl leading-tight text-tinta-900 sm:text-[1.75rem]">{escapada.titulo}</h3>
+                    <dl className="mt-2 flex flex-wrap gap-x-5 gap-y-1 text-sm text-tinta-700">
                       <div className="flex items-center gap-1.5">
                         <dt><Icono nombre="pin" className="size-4 text-tinta-500" /><span className="sr-only">Provincia</span></dt>
                         <dd>{escapada.provincias}</dd>
@@ -63,7 +64,7 @@ export default function EscapadasContent({ escapadas }: EscapadasContentProps) {
                         <dd>{escapada.duracion}</dd>
                       </div>
                     </dl>
-                    <div className="mt-auto flex flex-wrap items-center gap-x-4 gap-y-2 pt-5">
+                    <div className="mt-auto flex items-center gap-3 pt-4">
                       <a
                         href={escapada.pdf}
                         target="_blank"
@@ -74,8 +75,11 @@ export default function EscapadasContent({ escapadas }: EscapadasContentProps) {
                         <Icono nombre="documento" className="size-4" />
                         Ver PDF
                       </a>
-                      <p id={detalle} className="text-xs text-tinta-500">
-                        {escapada.pesoBytes ? `PDF de ${pesoLegible(escapada.pesoBytes)}` : "Guía en PDF"} · se abre en otra pestaña
+                      <p className="text-xs text-tinta-500">
+                        <span aria-hidden="true">{escapada.pesoBytes ? pesoLegible(escapada.pesoBytes) : "PDF"}</span>
+                        <span id={detalle} className="sr-only">
+                          {escapada.pesoBytes ? `PDF de ${pesoLegible(escapada.pesoBytes)}` : "Guía en PDF"}, se abre en otra pestaña
+                        </span>
                       </p>
                     </div>
                   </div>

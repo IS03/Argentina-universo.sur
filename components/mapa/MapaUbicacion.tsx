@@ -51,7 +51,7 @@ export default function MapaUbicacion({ lat, lon, titulo, detalle, className = "
     <div
       role="region"
       aria-label={`Mapa de ubicación: ${titulo}`}
-      className={`relative w-full h-96 rounded-lg overflow-hidden border border-arena-300/40 bg-arena-200 z-0 ${className}`}
+      className={`relative w-full h-96 rounded-tarjeta overflow-hidden border border-arena-300/80 bg-arena-200 z-0 ${className}`}
     >
       {estado !== "interactivo" && (
         <>
