@@ -1,5 +1,7 @@
 # Contrato de importación y correspondencia
 
+> Continuación en [PR17 — operación privada](../pr17/OPERATIONS.md): se conserva este envelope y la API de validación de PR9, pero la CLI exige además tipo de origen, versión explícita de propuestas y metadatos de captura/fecha. Los snapshots antiguos no reciben esos datos por inferencia. No hay ejecutor remoto ni exportador público.
+
 ## Maestro y alcance verificados
 
 El maestro sigue siendo [Argentina Universo Sur — Maestro de investigación turística — Santa Fe](https://docs.google.com/spreadsheets/d/1fwed8poUbIaLBnMLJta5WkyAnYg_SFc453m-wl3aB1w/edit). Se verificaron sus 18 pestañas por metadatos, encabezados y rangos acotados, en lectura. No se exportaron fichas, evidencias privadas ni contactos al Git público.

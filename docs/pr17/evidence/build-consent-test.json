@@ -1,0 +1,54 @@
+{
+  "mode": "consent-test",
+  "editorialSecurity": {
+    "withheldRecords": 24,
+    "errors": 0
+  },
+  "files": 2059,
+  "bytes": 739617044,
+  "mediaBytes": 80004852,
+  "fallbackBytes": 222371,
+  "pdfBytes": 633579423,
+  "oversized": [
+    {
+      "path": "pdf/bariloche.pdf",
+      "bytes": 34489884
+    },
+    {
+      "path": "pdf/caba.pdf",
+      "bytes": 37651530
+    },
+    {
+      "path": "pdf/entrerios.pdf",
+      "bytes": 29060699
+    },
+    {
+      "path": "pdf/formosa.pdf",
+      "bytes": 57013841
+    },
+    {
+      "path": "pdf/neuquen.pdf",
+      "bytes": 45336735
+    },
+    {
+      "path": "pdf/salta.pdf",
+      "bytes": 31616145
+    },
+    {
+      "path": "pdf/sanluis.pdf",
+      "bytes": 33406355
+    },
+    {
+      "path": "pdf/santiago.pdf",
+      "bytes": 28132742
+    },
+    {
+      "path": "pdf/talampaya.pdf",
+      "bytes": 35463984
+    },
+    {
+      "path": "pdf/ushuaia.pdf",
+      "bytes": 34178289
+    }
+  ]
+}
