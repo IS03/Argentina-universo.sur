@@ -34,13 +34,16 @@ test("las 24 fichas pendientes responden 404 y quedan fuera del sitemap y del HT
   }
 });
 
-test("el filtro regional y los enlaces PDF heredados siguen funcionando", async ({ page, request, isMobile }) => {
+// PR15: los chips de región reemplazan al select también en móvil (una fila desplazable).
+test("el filtro regional y los enlaces PDF heredados siguen funcionando", async ({ page, request }) => {
   await page.goto("/escapadas");
-  if (isMobile) await page.getByRole("combobox", {name: "Filtrar escapadas por región"}).selectOption("Litoral");
-  else await page.getByRole("button", {name: "Litoral", exact: true}).click();
+  const filtro = page.getByRole("group", {name: "Filtrar escapadas por región"});
+  await expect(async () => {
+    await filtro.getByRole("button", {name: "Litoral", exact: true}).click();
+    await expect(filtro.getByRole("button", {name: "Litoral", exact: true})).toHaveAttribute("aria-pressed", "true", {timeout: 1000});
+  }).toPass();
   await expect(page.getByRole("link", {name: "Ver PDF", exact: true})).toHaveCount(legacy.filter(r => r.ZONA === "Litoral").length);
-  if (isMobile) await page.getByRole("combobox", {name: "Filtrar escapadas por región"}).selectOption("Todas");
-  else await page.getByRole("button", {name: "Todas", exact: true}).click();
+  await filtro.getByRole("button", {name: "Todas", exact: true}).click();
   await expect(page.getByRole("link", {name: "Ver PDF", exact: true})).toHaveCount(23);
   for (const row of legacy) {
     const response = await request.head(row.PDF);

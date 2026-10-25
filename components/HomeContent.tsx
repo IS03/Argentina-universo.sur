@@ -1,140 +1,136 @@
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import Link from "next/link";
 import { ROUTES, INTERNAL_ANCHORS } from "@/lib/site-links";
+import { REGION_POR_PROVINCIA } from "@/lib/catalog";
+import { REGIONES_VISUALES } from "@/lib/regiones";
 import ProvinciaCard from "@/components/ProvinciaCard";
 import HeroCarousel from "@/components/home/HeroCarousel";
-import HomeScrollStage from "@/components/home/HomeScrollStage";
-import ExplorarDestinosButton from "@/components/home/ExplorarDestinosButton";
 import ContinuarExplorando from "@/components/home/ContinuarExplorando";
+import EspacioPublicitario from "@/components/publicidad/EspacioPublicitario";
+import { EncabezadoSeccion } from "@/components/ui/Bloques";
+import Icono, { type NombreIcono } from "@/components/ui/Icono";
+import { boton } from "@/components/ui/estilos";
+import { GRILLA_DESTACADAS, SIZES_DESTACADAS } from "@/components/ui/grillas";
 import type { ProvinciaResumen } from "@/lib/catalog";
 
 interface HomeContentProps {
   provinciasDestacadas: ProvinciaResumen[];
+  totalActividades: number;
+  totalEscapadas: number;
 }
 
-// Las variables --hero-* las actualiza HomeScrollStage; sin JavaScript valen el estado inicial.
-const estiloTextoHero: React.CSSProperties = {
-  opacity: "var(--hero-opacity, 1)",
-  filter: "blur(calc(var(--hero-blur, 0px) * 0.3))",
-  transition: "opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1), filter 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
-};
+const provinciasPorRegion = (region: string) => Object.values(REGION_POR_PROVINCIA).filter(r => r === region).length;
 
-function HomeHero() {
+function Portada() {
   return (
-    <>
-      <div className="absolute inset-0 bg-[#5A4E3D]">
-        <div className="absolute inset-0 pointer-events-none" style={{ filter: "blur(var(--hero-blur, 0px))" }}>
-          <HeroCarousel />
-        </div>
-
-        {/* Gradientes sutiles - solo para legibilidad del texto */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#5A4E3D]/20 via-[#6B5D47]/15 to-[#8B7355]/10 pointer-events-none"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-transparent via-transparent to-[#C9B99B]/5 pointer-events-none"></div>
-
-        {/* Overlay progresivo - aparece desde el primer scroll */}
-        <div
-          className="absolute inset-0 transition-opacity duration-300 pointer-events-none"
-          style={{
-            background: `linear-gradient(to bottom,
-              transparent 0%,
-              transparent 30%,
-              rgba(250, 248, 243, calc(var(--hero-overlay, 0) * 0.2)) 50%,
-              rgba(250, 248, 243, calc(var(--hero-overlay, 0) * 0.5)) 70%,
-              rgba(250, 248, 243, var(--hero-overlay, 0)) 100%
-            )`,
-            opacity: "var(--hero-overlay-opacity, 0)",
-          }}
-        />
+    <section aria-labelledby="titulo-portada" className="relative isolate overflow-hidden bg-tinta-900 text-white">
+      <div className="absolute inset-0 -z-10">
+        <HeroCarousel />
+        {/* Velo para que el texto blanco supere 4,5:1 sobre cualquier foto del carrusel. */}
+        <div className="absolute inset-0 z-[3] bg-gradient-to-t from-tinta-900/90 via-tinta-900/45 to-tinta-900/15" />
+        <div className="absolute inset-0 z-[3] hidden bg-gradient-to-r from-tinta-900/60 to-transparent md:block" />
       </div>
-
-      {/* Contenido del hero */}
-      <div className="relative z-10 h-full flex flex-col items-center justify-center px-6 text-center pt-20 pb-20">
-        <div className="mb-8">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-[0.1em] uppercase mb-4 text-transparent bg-clip-text drop-shadow-2xl transition-all duration-300 hover:drop-shadow-[0_0_40px_rgba(108,180,238,0.9)] cursor-default bg-[linear-gradient(to_right,#A68B5B_0%,#F5F1E8_30%,#C9B99B_50%,#F5F1E8_70%,#A68B5B_100%)] hover:bg-[linear-gradient(to_right,#8B7355_0%,#FAF8F3_30%,#D4C4B0_50%,#FAF8F3_70%,#8B7355_100%)]">
-            Turismo en Argentina
-          </h1>
-          <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold tracking-[0.2em] uppercase text-white/90 mb-8 drop-shadow-lg" aria-label="Universo Sur">
-            Universo Sur
-          </p>
-        </div>
-
-        <p
-          className="text-sm sm:text-base md:text-lg text-gray-100 max-w-2xl font-medium tracking-wide leading-relaxed drop-shadow-md mb-8 px-4"
-          style={estiloTextoHero}
-        >
+      <div className="contenedor flex min-h-[min(80svh,46rem)] flex-col justify-end pt-24 pb-10 sm:pb-14 lg:pb-20">
+        <p className="antetitulo text-sol-400">Universo Sur</p>
+        <h1 id="titulo-portada" className="mt-3 max-w-3xl font-display text-display">
+          Turismo en Argentina
+        </h1>
+        <p className="mt-4 max-w-xl text-lg leading-relaxed text-white/90 sm:text-xl">
           Descubrí destinos, paisajes y experiencias únicas en todo el país. Explorá provincias, actividades turísticas y escapadas.
         </p>
-
-        {/* CTA - se difumina progresivamente con el scroll */}
-        <ExplorarDestinosButton style={estiloTextoHero} />
+        <div className="mt-8 flex flex-wrap gap-3">
+          {/* Ancla: funciona sin JavaScript y respeta el movimiento reducido (globals.css). */}
+          <a href="#provincias-destacadas" className={boton("claro")}>
+            Explorar destinos
+            <Icono nombre="flecha" className="size-4 rotate-90" />
+          </a>
+          <Link href={ROUTES.actividades} prefetch={false} className={boton("sobre-imagen")}>
+            Qué hacer en Argentina
+          </Link>
+        </div>
       </div>
-    </>
+    </section>
   );
 }
 
-// Server Component: el contenido turístico llega en el HTML inicial. Solo el carrusel, los
-// efectos de scroll, el botón del hero y el historial de visitas se ejecutan en el navegador.
-export default function HomeContent({ provinciasDestacadas }: HomeContentProps) {
+const planificar: { href: string; icono: NombreIcono; titulo: string; texto: (n: HomeContentProps) => string; ancla: string }[] = [
+  { href: ROUTES.actividades, icono: "brujula", titulo: "Qué hacer", texto: n => `${n.totalActividades} actividades turísticas para elegir por provincia.`, ancla: INTERNAL_ANCHORS.verActividades },
+  { href: ROUTES.escapadas, icono: "documento", titulo: "Escapadas", texto: n => `${n.totalEscapadas} guías para viajes cortos, organizadas por región.`, ancla: INTERNAL_ANCHORS.verEscapadas },
+  { href: ROUTES.seguridad, icono: "escudo", titulo: "Viajá seguro", texto: () => "Ruta, playas, áreas naturales, altura y emergencias.", ancla: INTERNAL_ANCHORS.guiaSeguridad },
+];
+
+// Server Component: el contenido turístico llega en el HTML inicial. Solo el carrusel y el
+// historial de visitas se ejecutan en el navegador.
+export default function HomeContent(props: HomeContentProps) {
   return (
     <>
-      <Navbar />
+      <Portada />
 
-      <HomeScrollStage hero={<HomeHero />}>
-        {/* Contenedor principal con sombra elegante */}
-        <div className="relative bg-[#FAF8F3] shadow-[0_-10px_40px_rgba(90,78,61,0.15)]">
-          {/* SECCIÓN: TOP 3 PROVINCIAS DESTACADAS */}
-          <section
-            id="provincias-destacadas"
-            className="relative py-12 sm:py-16 md:py-24 px-4 sm:px-6 lg:px-8"
-          >
-            <div className="max-w-7xl mx-auto">
-              <div className="mb-12 text-center">
-                <h2 className="text-3xl md:text-4xl font-semibold uppercase tracking-widest mb-4 text-[#5A4E3D]">
-                  Provincias destacadas
-                </h2>
-                <p className="text-[#6B5D47] text-lg">Empezá por acá</p>
-              </div>
+      <div className="contenedor py-14 sm:py-20">
+        <section id="provincias-destacadas" aria-labelledby="titulo-destacadas">
+          <EncabezadoSeccion id="titulo-destacadas" antetitulo="Empezá por acá" titulo="Provincias destacadas" bajada="Tres puertas de entrada para conocer el país: río y ciudad, sierras y costa atlántica." />
+          <div className={GRILLA_DESTACADAS}>
+            {props.provinciasDestacadas.map((provincia) => (
+              <ProvinciaCard key={provincia.slug} provincia={provincia} sizes={SIZES_DESTACADAS} destacada />
+            ))}
+          </div>
+        </section>
+        <p className="mt-6">
+          <Link href={ROUTES.provincias} className={boton("secundario")}>
+            {INTERNAL_ANCHORS.verTodasLasProvincias}
+            <Icono nombre="flecha" className="size-4" />
+          </Link>
+        </p>
+      </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-                {provinciasDestacadas.map((provincia) => (
-                  <ProvinciaCard key={provincia.slug} provincia={provincia} />
-                ))}
-              </div>
-            </div>
-          </section>
-
-          {/* SECCIÓN DINÁMICA: CONTINUAR EXPLORANDO */}
-          <ContinuarExplorando />
-
-          {/* CTA FINAL + Enlazado interno (SEO: jerarquía y texto ancla descriptivo) */}
-          <section className="relative bg-[#FAF8F3] py-12 sm:py-16 md:py-24 px-4 sm:px-6 lg:px-8 pb-20 sm:pb-24">
-            <div className="max-w-4xl mx-auto text-center">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold uppercase tracking-widest mb-6 text-[#5A4E3D]">
-                Descubrí todo el país
-              </h2>
-              <Link
-                href={ROUTES.provincias}
-                className="inline-block px-8 sm:px-10 py-3 sm:py-4 bg-[#6B5D47] hover:bg-[#5A4E3D] text-white uppercase tracking-widest text-xs sm:text-sm font-light transition-all duration-300 rounded-sm"
-              >
-                {INTERNAL_ANCHORS.verTodasLasProvincias}
-              </Link>
-              <nav className="mt-8 flex flex-wrap justify-center gap-4 sm:gap-6 text-sm" aria-label="Explorar más contenido">
-                <Link href={ROUTES.actividades} className="text-[#6B5D47] hover:text-[#A68B5B] underline underline-offset-2 transition-colors">
-                  {INTERNAL_ANCHORS.verActividades}
+      <section aria-labelledby="titulo-regiones" className="border-y border-arena-300/70 bg-arena-100">
+        <div className="contenedor py-14 sm:py-20">
+          <EncabezadoSeccion id="titulo-regiones" antetitulo="Seis regiones" titulo="Explorá por región" bajada="Del altiplano a Tierra del Fuego: elegí un paisaje y encontrá sus provincias." />
+          <ul className="grid list-none grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-6">
+            {REGIONES_VISUALES.map(region => (
+              <li key={region.nombre}>
+                <Link
+                  href={`${ROUTES.provincias}#${region.ancla}`}
+                  className={`group flex h-full min-h-36 flex-col justify-between rounded-tarjeta p-4 text-white shadow-tarjeta transition-transform duration-300 ease-suave hover:-translate-y-0.5 motion-reduce:transform-none ${region.fondo}`}
+                >
+                  <span className="text-xs font-medium text-white/85">{provinciasPorRegion(region.nombre)} {provinciasPorRegion(region.nombre) === 1 ? "provincia" : "provincias"}</span>
+                  <span>
+                    <span className="block font-display text-2xl leading-tight">{region.nombre}</span>
+                    <span className="mt-1 block text-sm leading-snug text-white/90">{region.lema}</span>
+                  </span>
                 </Link>
-                <Link href={ROUTES.escapadas} className="text-[#6B5D47] hover:text-[#A68B5B] underline underline-offset-2 transition-colors">
-                  {INTERNAL_ANCHORS.verEscapadas}
-                </Link>
-                <Link href={ROUTES.seguridad} className="text-[#6B5D47] hover:text-[#A68B5B] underline underline-offset-2 transition-colors">
-                  {INTERNAL_ANCHORS.guiaSeguridad}
-                </Link>
-              </nav>
-            </div>
-          </section>
+              </li>
+            ))}
+          </ul>
         </div>
-      </HomeScrollStage>
-      <Footer />
+      </section>
+
+      <EspacioPublicitario id="portada-entre-secciones" className="contenedor pt-10" />
+
+      {/* SECCIÓN DINÁMICA: CONTINUAR EXPLORANDO */}
+      <ContinuarExplorando />
+
+      <section aria-labelledby="titulo-planificar" className="contenedor py-14 sm:py-20">
+        <EncabezadoSeccion id="titulo-planificar" antetitulo="Antes de salir" titulo="Planificá tu viaje" />
+        <ul className="grid list-none gap-4 md:grid-cols-3 md:gap-6">
+          {planificar.map(item => (
+            <li key={item.href}>
+              <Link href={item.href} className="group flex h-full gap-4 rounded-tarjeta border border-arena-300/80 bg-white p-5 shadow-tarjeta transition-[border-color,box-shadow] duration-300 hover:border-lago-600/50 hover:shadow-elevada sm:p-6">
+                <span className="flex size-12 shrink-0 items-center justify-center rounded-full bg-lago-100 text-lago-700">
+                  <Icono nombre={item.icono} className="size-6" />
+                </span>
+                <span className="flex flex-col">
+                  <span className="text-lg font-semibold text-tinta-900">{item.titulo}</span>
+                  <span className="mt-1 text-tinta-700">{item.texto(props)}</span>
+                  <span className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-lago-600 group-hover:text-lago-700">
+                    {item.ancla}
+                    <Icono nombre="flecha" className="size-4 transition-transform duration-200 group-hover:translate-x-0.5" />
+                  </span>
+                </span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </section>
     </>
   );
 }

@@ -1,5 +1,3 @@
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { ROUTES } from "@/lib/site-links";
@@ -22,22 +20,21 @@ export const metadata: Metadata = {
   robots: { index: false, follow: true },
 };
 
-const enlace = "text-[#5A4E3D] underline underline-offset-2 hover:text-[#A68B5B]";
-const titulo = "text-xl md:text-2xl font-semibold text-[#5A4E3D] mb-4";
-const parrafo = "text-[#6B5D47] leading-relaxed mb-4";
-const lista = "list-disc pl-6 space-y-2 text-[#6B5D47] leading-relaxed mb-4";
-const celda = "border border-[#D4C4B0] px-3 py-2 align-top text-left";
+const enlace = "text-tinta-900 underline underline-offset-2 hover:text-lago-600";
+const titulo = "text-xl md:text-2xl font-semibold text-tinta-900 mb-4";
+const parrafo = "text-tinta-700 leading-relaxed mb-4";
+const lista = "list-disc pl-6 space-y-2 text-tinta-700 leading-relaxed mb-4";
+const celda = "border border-arena-300 px-3 py-2 align-top text-left";
 
 export default function PrivacidadPage() {
   return (
     <>
-      <Navbar />
-      <main className="min-h-screen pt-32 pb-16 px-4 sm:px-6 lg:px-8">
+      <div className="min-h-screen pt-10 sm:pt-14 pb-16 px-4 sm:px-6 lg:px-8">
         <article className="max-w-3xl mx-auto">
-          <h1 className="text-3xl md:text-4xl font-semibold uppercase tracking-widest mb-4 text-center text-[#5A4E3D]">
+          <h1 className="text-3xl md:text-4xl font-semibold uppercase tracking-widest mb-4 text-center text-tinta-900">
             Privacidad y cookies
           </h1>
-          <p className="text-center text-sm text-[#8B7355] mb-12">Última actualización: {ULTIMA_ACTUALIZACION}</p>
+          <p className="text-center text-sm text-tinta-500 mb-12">Última actualización: {ULTIMA_ACTUALIZACION}</p>
 
           <section className="mb-10" aria-labelledby="responsable">
             <h2 id="responsable" className={titulo}>Responsable</h2>
@@ -108,8 +105,8 @@ export default function PrivacidadPage() {
             <h2 id="cookies" className={titulo}>Cookies y almacenamiento local</h2>
             <p className={parrafo}>Cookies de Google Analytics, que se crean solo si aceptás:</p>
             <div className="overflow-x-auto mb-6">
-              <table className="w-full border-collapse text-sm text-[#6B5D47]">
-                <thead className="bg-[#E8DDD0]/60 text-[#5A4E3D]">
+              <table className="w-full border-collapse text-sm text-tinta-700">
+                <thead className="bg-arena-200/60 text-tinta-900">
                   <tr>
                     <th scope="col" className={celda}>Nombre</th>
                     <th scope="col" className={celda}>Proveedor</th>
@@ -211,12 +208,11 @@ export default function PrivacidadPage() {
             </p>
           </section>
 
-          <nav className="pt-8 border-t border-[#C9B99B]/50 flex justify-center text-sm" aria-label="Volver">
+          <nav className="pt-8 border-t border-arena-300/50 flex justify-center text-sm" aria-label="Volver">
             <Link href={ROUTES.home} className={enlace}>Volver al inicio</Link>
           </nav>
         </article>
-      </main>
-      <Footer />
+      </div>
     </>
   );
 }

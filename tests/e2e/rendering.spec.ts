@@ -77,17 +77,18 @@ test.describe("portada", () => {
     expect(resumen, "sin historial no se pide el catálogo").toEqual([]);
   });
 
-  test("el scroll difumina el hero, sube el contenido y el CTA lleva a destacadas", async ({ page, errores }) => {
+  // PR15 retiró el hero fijo con desenfoque por scroll: el CTA pasó a ser un ancla que funciona sin JS.
+  test("el CTA es un ancla a destacadas, también sin JavaScript", async ({ page, errores, request }) => {
     void errores;
+    expect(await (await request.get("/")).text()).toMatch(/<a href="#provincias-destacadas"[^>]*>Explorar destinos/);
     await page.goto("/");
-    const hero = page.locator("section.sticky");
-    await expect(hero).toHaveCSS("opacity", "1");
-    await page.getByRole("button", { name: "Explorar destinos" }).click();
-    await expect.poll(() => page.evaluate(() => window.scrollY)).toBeGreaterThan(300);
-    await expect.poll(async () => Number(await hero.evaluate(el => getComputedStyle(el).opacity))).toBe(0);
+    await page.getByRole("link", { name: "Explorar destinos" }).click();
+    await expect(page).toHaveURL(/#provincias-destacadas$/);
     await expect(page.locator("#provincias-destacadas")).toBeInViewport();
-    await page.evaluate(() => window.scrollTo(0, 0));
-    await expect.poll(async () => Number(await hero.evaluate(el => getComputedStyle(el).opacity))).toBe(1);
+    // El encabezado fijo no tapa el título de la sección (scroll-padding-top).
+    const titulo = await page.locator("#titulo-destacadas").boundingBox();
+    const encabezado = await page.locator("header").first().boundingBox();
+    expect(titulo!.y).toBeGreaterThanOrEqual(encabezado!.y + encabezado!.height);
   });
 
   test("el carrusel avanza solo cuando la siguiente imagen ya cargó", async ({ page, errores }) => {

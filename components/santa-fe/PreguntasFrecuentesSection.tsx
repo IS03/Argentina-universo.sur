@@ -12,7 +12,7 @@ export default function PreguntasFrecuentesSection({ preguntas }: PreguntasFrecu
 
   return (
     <section id="preguntas-frecuentes" className="mb-16 scroll-mt-24">
-      <h2 className="text-3xl md:text-4xl font-semibold uppercase tracking-widest mb-8 text-center text-[#5A4E3D]">
+      <h2 className="text-3xl md:text-4xl font-semibold uppercase tracking-widest mb-8 text-center text-tinta-900">
         Preguntas Frecuentes
       </h2>
       <div className="space-y-4 max-w-4xl mx-auto">
@@ -22,17 +22,17 @@ export default function PreguntasFrecuentesSection({ preguntas }: PreguntasFrecu
           return (
             <div
               key={index}
-              className="border border-[#C9B99B]/50 rounded-lg overflow-hidden bg-[#E8DDD0]/80 backdrop-blur-sm hover:border-[#A68B5B]/70 transition-all duration-300"
+              className="border border-arena-300/50 rounded-lg overflow-hidden bg-arena-200/80 backdrop-blur-sm hover:border-lago-600/70 transition-all duration-300"
             >
               <button
                 onClick={() => setOpenIndex(isOpen ? null : index)}
-                className="w-full px-6 py-4 text-left bg-[#A68B5B]/10 hover:bg-[#A68B5B]/20 transition-colors flex justify-between items-center gap-4"
+                className="w-full px-6 py-4 text-left bg-lago-600/10 hover:bg-lago-600/20 transition-colors flex justify-between items-center gap-4"
                 aria-expanded={isOpen}
               >
-                <span className="font-semibold text-[#5A4E3D] text-lg pr-4 flex-1">
+                <span className="font-semibold text-tinta-900 text-lg pr-4 flex-1">
                   {pregunta.Pregunta}
                 </span>
-                <span className="text-[#A68B5B] flex-shrink-0 flex items-center justify-center w-6 h-6 relative">
+                <span className="text-lago-600 flex-shrink-0 flex items-center justify-center w-6 h-6 relative">
                   <svg 
                     className="w-5 h-5 transition-transform duration-300"
                     style={{ transform: isOpen ? 'rotate(-45deg)' : 'rotate(0deg)' }}
@@ -55,7 +55,7 @@ export default function PreguntasFrecuentesSection({ preguntas }: PreguntasFrecu
                 }`}
               >
                 <div className="px-6 py-4 bg-white/50">
-                  <p className="text-[#6B5D47] leading-relaxed whitespace-pre-line">
+                  <p className="text-tinta-700 leading-relaxed whitespace-pre-line">
                     {pregunta.Respuesta}
                   </p>
                 </div>

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -10,6 +10,8 @@ import { SCRIPT_DECISION_INICIAL } from "@/lib/consentimiento";
 
 import { isPagesPreview } from "@/lib/pages/environment";
 import PagesConsent from "@/components/pages/PagesConsent";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 const isPreview = isPagesPreview(process.env);
 const isPages = process.env.AUS_STATIC_EXPORT === "1";
 // GA4 solo en producción y con NEXT_PUBLIC_GA_ID; en local, CI y Preview queda en null y no hay banner.
@@ -21,8 +23,10 @@ const geistSans = Geist({
   display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+// Serif de títulos: un único archivo (400, latin), con métricas de respaldo ajustadas por next/font.
+const displaySerif = Instrument_Serif({
+  variable: "--font-display-serif",
+  weight: "400",
   subsets: ["latin"],
   display: "swap",
 });
@@ -60,15 +64,18 @@ export default function RootLayout({
           </noscript>
         </head>
       )}
-      <body
-        className={`
-          ${geistSans.variable}
-          ${geistMono.variable}
-          text-white
-          antialiased
-        `}
-      >
-        {children}
+      <body className={`${geistSans.variable} ${displaySerif.variable} flex min-h-dvh flex-col antialiased`}>
+        <a
+          href="#contenido"
+          className="sr-only z-[60] rounded-full bg-tinta-900 px-5 py-3 font-semibold text-white focus:not-sr-only focus:fixed focus:left-4 focus:top-3"
+        >
+          Saltar al contenido
+        </a>
+        <Navbar />
+        <main id="contenido" tabIndex={-1} className="flex-1 outline-none">
+          {children}
+        </main>
+        <Footer />
         {!isPages && <Analytics />}
         {!isPages && <SpeedInsights />}
         {/* GA4 se carga solo después de que la persona acepta en el banner. */}

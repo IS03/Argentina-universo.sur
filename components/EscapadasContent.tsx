@@ -2,12 +2,18 @@
 
 import { useState, useMemo } from "react";
 import { Escapada } from "@/lib/data";
+import { regionVisual } from "@/lib/regiones";
 import FiltroZonas from "./FiltroZonas";
-import Link from "next/link";
+import Icono from "@/components/ui/Icono";
+import { EstadoVacio } from "@/components/ui/Bloques";
+import { boton } from "@/components/ui/estilos";
 
 interface EscapadasContentProps {
   escapadas: Escapada[];
 }
+
+const formatoMB = new Intl.NumberFormat("es-AR", { maximumFractionDigits: 1 });
+const pesoLegible = (bytes: number) => `${formatoMB.format(bytes / 1_000_000)} MB`;
 
 export default function EscapadasContent({ escapadas }: EscapadasContentProps) {
   const [zonaActiva, setZonaActiva] = useState<string>("Todas");
@@ -20,61 +26,69 @@ export default function EscapadasContent({ escapadas }: EscapadasContentProps) {
   }, [escapadas, zonaActiva]);
 
   return (
-    <div className="w-full">
-      {/* Filtros por zona */}
+    <section aria-labelledby="guias-escapadas-heading">
+      <div className="mb-6 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+        <div>
+          <p className="antetitulo text-terracota-600">Catálogo actual</p>
+          <h2 id="guias-escapadas-heading" className="mt-1 font-display text-seccion text-tinta-900">
+            Guías de escapadas en PDF
+          </h2>
+        </div>
+        <p aria-live="polite" className="text-sm font-medium text-tinta-700">
+          {escapadasFiltradas.length} {escapadasFiltradas.length === 1 ? "guía" : "guías"}{zonaActiva === "Todas" ? "" : ` en ${zonaActiva}`}
+        </p>
+      </div>
+
       <FiltroZonas filterLabel="Filtrar escapadas por región" zonaActiva={zonaActiva} onZonaChange={setZonaActiva} />
 
-      {/* Listado de escapadas filtradas */}
-      <section aria-labelledby="guias-escapadas-heading">
-        <h2 id="guias-escapadas-heading" className="text-2xl font-semibold uppercase tracking-widest mb-6 text-[#5A4E3D]">
-          Guías de escapadas en PDF
-        </h2>
-      <div className="space-y-6">
-        {escapadasFiltradas.map((escapada) => (
-          <article
-            key={escapada.id}
-            className="bg-[#E8DDD0] border border-[#C9B99B]/50 rounded-lg p-6 hover:border-[#A68B5B] hover:bg-[#F5F1E8] transition-all duration-300"
-          >
-            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-              <div className="flex-1">
-                <h3 className="text-2xl font-semibold mb-2 text-[#5A4E3D]">
-                  {escapada.titulo}
-                </h3>
-                <div className="flex flex-wrap gap-4 text-sm text-[#6B5D47]">
-                  <span>
-                    <span className="uppercase tracking-wider">Provincia:</span>{" "}
-                    {escapada.provincias}
-                  </span>
-                  <span>
-                    <span className="uppercase tracking-wider">Duración:</span>{" "}
-                    {escapada.duracion}
-                  </span>
-                </div>
-              </div>
-              <div>
-                <Link
-                  href={escapada.pdf}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block px-6 py-3 bg-[#A68B5B]/20 hover:bg-[#A68B5B]/30 backdrop-blur-sm text-[#5A4E3D] uppercase tracking-widest text-sm transition-all duration-300 border border-[#C9B99B]/50 hover:border-[#A68B5B] whitespace-nowrap"
-                >
-                  Ver PDF
-                </Link>
-              </div>
-            </div>
-          </article>
-        ))}
-      </div>
-      </section>
-
-      {/* Mensaje si no hay escapadas */}
-      {escapadasFiltradas.length === 0 && (
-        <div className="text-center py-12">
-          <p className="text-[#6B5D47] text-lg">
-            No se encontraron escapadas para la zona seleccionada.
-          </p>
+      {escapadasFiltradas.length > 0 ? (
+        <ul className="mt-6 grid list-none gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
+          {escapadasFiltradas.map((escapada) => {
+            const region = regionVisual(escapada.zona);
+            const detalle = `escapada-${escapada.id}-pdf`;
+            return (
+              <li key={escapada.id}>
+                <article className="flex h-full flex-col overflow-hidden rounded-tarjeta border border-arena-300/80 bg-white shadow-tarjeta">
+                  <div aria-hidden="true" className={`h-1.5 ${region?.fondo ?? "bg-arena-400"}`} />
+                  <div className="flex flex-1 flex-col p-5">
+                    <p className={`antetitulo ${region?.texto ?? "text-terracota-600"}`}>{escapada.zona}</p>
+                    <h3 className="mt-1 font-display text-[1.75rem] leading-tight text-tinta-900">{escapada.titulo}</h3>
+                    <dl className="mt-3 flex flex-wrap gap-x-5 gap-y-1 text-sm text-tinta-700">
+                      <div className="flex items-center gap-1.5">
+                        <dt><Icono nombre="pin" className="size-4 text-tinta-500" /><span className="sr-only">Provincia</span></dt>
+                        <dd>{escapada.provincias}</dd>
+                      </div>
+                      <div className="flex items-center gap-1.5">
+                        <dt><Icono nombre="reloj" className="size-4 text-tinta-500" /><span className="sr-only">Duración</span></dt>
+                        <dd>{escapada.duracion}</dd>
+                      </div>
+                    </dl>
+                    <div className="mt-auto flex flex-wrap items-center gap-x-4 gap-y-2 pt-5">
+                      <a
+                        href={escapada.pdf}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-describedby={detalle}
+                        className={boton("secundario")}
+                      >
+                        <Icono nombre="documento" className="size-4" />
+                        Ver PDF
+                      </a>
+                      <p id={detalle} className="text-xs text-tinta-500">
+                        {escapada.pesoBytes ? `PDF de ${pesoLegible(escapada.pesoBytes)}` : "Guía en PDF"} · se abre en otra pestaña
+                      </p>
+                    </div>
+                  </div>
+                </article>
+              </li>
+            );
+          })}
+        </ul>
+      ) : (
+        <div className="mt-6">
+          <EstadoVacio titulo="No se encontraron escapadas para la zona seleccionada.">Probá con otra región o volvé a «Todas».</EstadoVacio>
         </div>
       )}
-    </div>
+    </section>
   );
 }

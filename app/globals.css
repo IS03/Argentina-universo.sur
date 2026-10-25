@@ -1,36 +1,164 @@
 @import "tailwindcss";
 
-:root {
-  --background: #FAF8F3;
-  --foreground: #5A4E3D;
-  --primary: #A68B5B;
-  --accent: #C9B99B;
-  --gradient-start: #D4C4B0;
-  --gradient-end: #8B7355;
-  --cream-light: #FAF8F3;
-  --cream: #F5F1E8;
-  --beige: #E8DDD0;
-  --brown-light: #D4C4B0;
-  --brown-medium: #A68B5B;
-  --brown-dark: #6B5D47;
+/*
+ * Sistema visual Universo Sur (PR15). Documentado en docs/pr15/DESIGN-SYSTEM.md.
+ * Contrastes medidos sobre arena-50/arena-100/blanco: los colores de texto superan 4,5:1 y los
+ * bordes de controles 3:1. sol y celeste son decorativos (sobre tinta-900 sí alcanzan 4,5:1).
+ */
+@theme {
+  /* Neutros cálidos: fondo arena y tinta azul noche. */
+  --color-arena-50: #FBF8F2;
+  --color-arena-100: #F4EEE3;
+  --color-arena-200: #E9DFCF;
+  --color-arena-300: #D9CDB8;
+  --color-arena-400: #9C8B70;
+  --color-tinta-900: #1C2629;
+  --color-tinta-800: #26343A;
+  --color-tinta-700: #37454A;
+  --color-tinta-500: #56656A;
+
+  /* Marca: lago andino (acción), terracota (acento de texto), sol de mayo y celeste (decorativos). */
+  --color-lago-700: #14485A;
+  --color-lago-600: #1B5A70;
+  --color-lago-100: #DCEAEE;
+  --color-terracota-600: #A8472A;
+  --color-sol-400: #E3A72F;
+  --color-celeste-300: #74ACDF;
+
+  /* Regiones turísticas: misma escala de contraste, usables como texto o como fondo de texto blanco. */
+  --color-region-norte: #A8472A;
+  --color-region-litoral: #2E6A3E;
+  --color-region-centro: #8A5F17;
+  --color-region-cuyo: #7A2E46;
+  --color-region-buenos-aires: #2B5A88;
+  --color-region-patagonia: #2F6E7E;
+
+  /* Estados. */
+  --color-aviso-50: #FDF3E1;
+  --color-aviso-700: #7A4B06;
+  --color-info-50: #E8F1F4;
+
+  /* Escala tipográfica fluida: de 360 px a 1280 px sin saltos por breakpoint. */
+  --text-display: clamp(2.5rem, 1.6rem + 4.2vw, 4.75rem);
+  --text-display--line-height: 1.02;
+  --text-titulo: clamp(2.125rem, 1.6rem + 2.4vw, 3.5rem);
+  --text-titulo--line-height: 1.08;
+  --text-seccion: clamp(1.75rem, 1.4rem + 1.5vw, 2.5rem);
+  --text-seccion--line-height: 1.12;
+
+  --radius-tarjeta: 1rem;
+  --radius-control: 0.75rem;
+
+  --shadow-tarjeta: 0 1px 2px rgb(28 38 41 / 0.06), 0 6px 20px -8px rgb(28 38 41 / 0.18);
+  --shadow-elevada: 0 2px 4px rgb(28 38 41 / 0.08), 0 18px 40px -16px rgb(28 38 41 / 0.32);
+
+  --ease-suave: cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
+/* inline: next/font define --font-geist-sans y --font-display-serif en <body>, no en :root. */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-display-serif), Georgia, "Times New Roman", serif;
+}
+
+/* Contenedor de página único: 16 px de margen en teléfonos, 24 en tablet y 32 en escritorio. */
+@utility contenedor {
+  width: 100%;
+  max-width: 76rem;
+  margin-inline: auto;
+  padding-inline: 1rem;
+  @media (width >= 40rem) {
+    padding-inline: 1.5rem;
+  }
+  @media (width >= 64rem) {
+    padding-inline: 2rem;
+  }
+}
+
+/* Etiqueta breve sobre títulos: la única tipografía en mayúsculas del sistema. */
+@utility antetitulo {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* Fila de chips que en teléfonos se desplaza en horizontal en lugar de ocupar varias líneas. */
+@utility fila-desplazable {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x proximity;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  & > * {
+    flex: none;
+    scroll-snap-align: start;
+  }
+}
+
+/* Texto largo legible: medida de ~68 caracteres y párrafos separados. */
+@utility prosa {
+  max-width: 68ch;
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: var(--color-tinta-700);
+  & > p + p {
+    margin-top: 1rem;
+  }
+}
+
+:root {
+  color-scheme: light;
+  /* Altura del encabezado fijo: anclas y scroll-margin la descuentan. */
+  --alto-encabezado: 4rem;
+}
+
+@media (width >= 48rem) {
+  :root {
+    --alto-encabezado: 4.5rem;
+  }
 }
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--alto-encabezado) + 1rem);
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
-  background: linear-gradient(135deg, #FAF8F3 0%, #F5F1E8 50%, #FAF8F3 100%);
-  background-attachment: fixed;
-  color: var(--foreground);
-  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  background: var(--color-arena-50);
+  color: var(--color-tinta-900);
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+h1, h2, h3 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+/* Mapa de provincias (/provincias): realce sin JavaScript de estado, por hover y foco. */
+.mapa-provincias path {
+  cursor: pointer;
+  stroke: var(--color-arena-50);
+  stroke-width: 1;
+  opacity: 0.78;
+  transition: opacity 0.2s ease, stroke-width 0.2s ease;
+}
+
+.mapa-provincias path:hover,
+.mapa-provincias path:focus-visible {
+  opacity: 1;
+  stroke: var(--color-tinta-900);
+  stroke-width: 2.5;
+  outline: none;
 }
 
 /* Estilos para evitar que los mapas de Leaflet se superpongan a la navbar */
@@ -63,13 +191,13 @@ body {
 /* Indicador de foco visible y consistente para teclado. :where() no suma especificidad, así que
    los estilos de foco propios de cada componente (ring, outline) siguen teniendo prioridad. */
 :where(a, button, select, input, textarea, summary, [tabindex]):focus-visible {
-  outline: 2px solid #5A4E3D;
+  outline: 3px solid var(--color-lago-600);
   outline-offset: 2px;
 }
 
 /* El contenedor del mapa recorta lo que sobresale: el contorno de foco va hacia adentro. */
 .leaflet-container:focus-visible {
-  outline: 3px solid #5A4E3D;
+  outline: 3px solid var(--color-lago-600);
   outline-offset: -3px;
 }
 

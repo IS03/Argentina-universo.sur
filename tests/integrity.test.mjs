@@ -5,7 +5,7 @@ import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { readCatalog, validateAsset, validateCatalog, validateRepository, sourceAssetReferences } from "../scripts/validate-data.mjs";
 import { partitionEvents, parseEventDate } from "../lib/events.ts";
-import { getHeroOpacity, imagenesHome } from "../lib/home-images.ts";
+import { imagenesHome } from "../lib/home-images.ts";
 import { normalizarActividad, resolveProvinciaSlug } from "../lib/catalog.ts";
 
 const catalog = await readCatalog();
@@ -127,12 +127,4 @@ test("la agenda real vencida se conserva íntegra en el archivo", () => {
   assert.equal(anteriores.length, expired.length);
   assert.ok(expired.every(e => anteriores.includes(e)));
   assert.equal(vigentes.length + anteriores.length, catalog.eventos.length);
-});
-
-test("la opacidad del hero disminuye y permanece entre cero y uno", () => {
-  assert.equal(getHeroOpacity(0), 1);
-  assert.equal(getHeroOpacity(0.5), 0.4);
-  assert.equal(getHeroOpacity(1), 0);
-  assert.equal(getHeroOpacity(-1), 1);
-  assert.equal(getHeroOpacity(2), 0);
 });

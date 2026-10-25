@@ -53,7 +53,8 @@ export const ROUTES = {
 /** Textos ancla descriptivos para navegación principal (Navbar/Footer) */
 export const NAV_ANCHORS = {
   home: "Inicio - Argentina Universo Sur",
-  provincias: "Viajar por provincias de Argentina",
+  // Empieza con la etiqueta visible del menú («Viaja por Argentina»): WCAG 2.5.3, nombre en la etiqueta.
+  provincias: "Viaja por Argentina: provincias y destinos",
   actividades: "Qué hacer: actividades turísticas por provincia",
   escapadas: "Escapadas y guías en PDF",
   seguridad: "Guía de seguridad para viajeros",

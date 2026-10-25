@@ -42,8 +42,8 @@ export default function SidebarNavigation() {
   return (
     <aside className="hidden lg:block w-64 flex-shrink-0">
       <div className="sticky top-32">
-        <div className="bg-gradient-to-br from-[#E8DDD0] to-[#D4C4B0] border border-[#C9B99B]/50 rounded-xl p-6 shadow-lg">
-          <h3 className="text-lg font-semibold uppercase tracking-wide text-[#5A4E3D] mb-4">
+        <div className="bg-gradient-to-br from-arena-200 to-arena-300 border border-arena-300/50 rounded-xl p-6 shadow-lg">
+          <h3 className="text-lg font-semibold uppercase tracking-wide text-tinta-900 mb-4">
             Navegación
           </h3>
           <nav className="space-y-2">
@@ -51,8 +51,8 @@ export default function SidebarNavigation() {
               href="/provincias/santa_fe"
               className={`flex items-center gap-3 px-4 py-2 rounded-lg transition-all duration-300 ${
                 pathname === '/provincias/santa_fe'
-                  ? 'bg-[#A68B5B] text-white shadow-md'
-                  : 'text-[#5A4E3D] hover:bg-[#D4C4B0]/50'
+                  ? 'bg-lago-600 text-white shadow-md'
+                  : 'text-tinta-900 hover:bg-arena-300/50'
               }`}
             >
               <span>🏠</span>
@@ -72,8 +72,8 @@ export default function SidebarNavigation() {
                   {...props}
                   className={`flex items-center gap-3 px-4 py-2 rounded-lg transition-all duration-300 ${
                     isActive && !isAnchor
-                      ? 'bg-[#A68B5B] text-white shadow-md'
-                      : 'text-[#5A4E3D] hover:bg-[#D4C4B0]/50'
+                      ? 'bg-lago-600 text-white shadow-md'
+                      : 'text-tinta-900 hover:bg-arena-300/50'
                   }`}
                 >
                   <span>{seccion.icon}</span>

@@ -31,20 +31,20 @@ export default function AgenciasSection({ agencias }: AgenciasSectionProps) {
 
   return (
     <section id="agencias" className="mb-16 scroll-mt-32">
-      <h2 className="text-3xl md:text-4xl font-semibold uppercase tracking-widest mb-8 text-center text-[#5A4E3D]">
+      <h2 className="text-3xl md:text-4xl font-semibold uppercase tracking-widest mb-8 text-center text-tinta-900">
         Agencias de Viajes
       </h2>
 
       {/* Filtro por ciudad */}
       <div className="mb-8 flex justify-center">
-        <div className="bg-[#E8DDD0]/80 backdrop-blur-sm border border-[#C9B99B]/50 rounded-lg p-4 w-full max-w-2xl hover:border-[#A68B5B]/70 transition-all duration-300">
+        <div className="bg-arena-200/80 backdrop-blur-sm border border-arena-300/50 rounded-lg p-4 w-full max-w-2xl hover:border-lago-600/70 transition-all duration-300">
           <div className="flex flex-wrap gap-2 justify-center">
             <button
               onClick={() => setCiudadFiltro("todas")}
               className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
                 ciudadFiltro === "todas"
-                  ? "bg-[#A68B5B] text-white shadow-md"
-                  : "bg-[#F5F1E8] text-[#5A4E3D] hover:bg-[#E8DDD0] border border-[#C9B99B]/50"
+                  ? "bg-lago-600 text-white shadow-md"
+                  : "bg-arena-100 text-tinta-900 hover:bg-arena-200 border border-arena-300/50"
               }`}
             >
               Todas
@@ -55,8 +55,8 @@ export default function AgenciasSection({ agencias }: AgenciasSectionProps) {
                 onClick={() => setCiudadFiltro(ciudad)}
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
                   ciudadFiltro === ciudad
-                    ? "bg-[#A68B5B] text-white shadow-md"
-                    : "bg-[#F5F1E8] text-[#5A4E3D] hover:bg-[#E8DDD0] border border-[#C9B99B]/50"
+                    ? "bg-lago-600 text-white shadow-md"
+                    : "bg-arena-100 text-tinta-900 hover:bg-arena-200 border border-arena-300/50"
                 }`}
               >
                 {ciudad}
@@ -74,26 +74,26 @@ export default function AgenciasSection({ agencias }: AgenciasSectionProps) {
           return (
             <div
               key={index}
-              className="group bg-gradient-to-br from-[#E8DDD0] to-[#D4C4B0] hover:from-[#D4C4B0] hover:to-[#C9B99B] border border-[#C9B99B]/50 hover:border-[#A68B5B]/70 rounded-xl p-6 transition-all duration-300 transform hover:scale-[1.02] shadow-lg hover:shadow-xl"
+              className="group bg-gradient-to-br from-arena-200 to-arena-300 hover:from-arena-300 hover:to-arena-300 border border-arena-300/50 hover:border-lago-600/70 rounded-xl p-6 transition-all duration-300 transform hover:scale-[1.02] shadow-lg hover:shadow-xl"
             >
               {/* Badge de ciudad */}
               <div className="mb-3">
-                <span className="inline-block text-xs uppercase tracking-wide px-3 py-1 bg-[#A68B5B]/20 text-[#5A4E3D] rounded-full border border-[#A68B5B]/30">
+                <span className="inline-block text-xs uppercase tracking-wide px-3 py-1 bg-lago-600/20 text-tinta-900 rounded-full border border-lago-600/30">
                   {agencia.Ciudad}
                 </span>
               </div>
 
               {/* Nombre de la agencia */}
-              <h3 className="text-xl font-semibold mb-4 text-[#5A4E3D] group-hover:text-[#8B7355] transition-colors duration-300">
+              <h3 className="text-xl font-semibold mb-4 text-tinta-900 group-hover:text-tinta-500 transition-colors duration-300">
                 {agencia.Agencia}
               </h3>
 
               {/* Información de contacto */}
-              <div className="space-y-3 text-[#6B5D47] text-sm">
+              <div className="space-y-3 text-tinta-700 text-sm">
                 {/* Teléfono */}
                 <div className="flex items-start gap-2">
                   <svg
-                    className="w-5 h-5 text-[#A68B5B] flex-shrink-0 mt-0.5"
+                    className="w-5 h-5 text-lago-600 flex-shrink-0 mt-0.5"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -110,7 +110,7 @@ export default function AgenciasSection({ agencias }: AgenciasSectionProps) {
                     {telefonoLink && (
                       <a
                         href={telefonoLink}
-                        className="text-[#A68B5B] hover:text-[#8B7355] text-xs underline mt-1 inline-block"
+                        className="text-lago-600 hover:text-tinta-500 text-xs underline mt-1 inline-block"
                       >
                         Llamar
                       </a>
@@ -122,7 +122,7 @@ export default function AgenciasSection({ agencias }: AgenciasSectionProps) {
                 {agencia["Correo electrónico"] && (
                   <div className="flex items-start gap-2">
                     <svg
-                      className="w-5 h-5 text-[#A68B5B] flex-shrink-0 mt-0.5"
+                      className="w-5 h-5 text-lago-600 flex-shrink-0 mt-0.5"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -136,7 +136,7 @@ export default function AgenciasSection({ agencias }: AgenciasSectionProps) {
                     </svg>
                     <a
                       href={`mailto:${agencia["Correo electrónico"]}`}
-                      className="text-[#A68B5B] hover:text-[#8B7355] break-words underline"
+                      className="text-lago-600 hover:text-tinta-500 break-words underline"
                     >
                       {agencia["Correo electrónico"]}
                     </a>
@@ -145,9 +145,9 @@ export default function AgenciasSection({ agencias }: AgenciasSectionProps) {
 
                 {/* Contacto */}
                 {agencia.Contacto && (
-                  <div className="flex items-start gap-2 pt-2 border-t border-[#C9B99B]/30">
+                  <div className="flex items-start gap-2 pt-2 border-t border-arena-300/30">
                     <svg
-                      className="w-5 h-5 text-[#A68B5B] flex-shrink-0 mt-0.5"
+                      className="w-5 h-5 text-lago-600 flex-shrink-0 mt-0.5"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -172,7 +172,7 @@ export default function AgenciasSection({ agencias }: AgenciasSectionProps) {
 
       {agenciasFiltradas.length === 0 && (
         <div className="text-center py-12">
-          <p className="text-[#8B7355] text-lg">No se encontraron agencias para la ciudad seleccionada.</p>
+          <p className="text-tinta-500 text-lg">No se encontraron agencias para la ciudad seleccionada.</p>
         </div>
       )}
     </section>

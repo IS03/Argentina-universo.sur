@@ -1,12 +1,12 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { Provincia } from "@/lib/data";
-import { useState, useEffect, useRef, useCallback, useEffectEvent } from "react";
+import { useState, useEffect, useRef } from "react";
+import { regionDeProvincia } from "@/lib/regiones";
 
 interface MapaArgentinaProps {
-  provincias: Provincia[];
-  zonaActiva: string;
+  // Solo nombre y slug: el mapa no necesita descripciones ni fotos en el navegador.
+  provincias: { provincia: string; slug: string }[];
 }
 
 // Dimensiones de public/argentina.svg (atributos width y height del archivo).
@@ -41,163 +41,80 @@ const SLUG_TO_SVG_ID: Record<string, string> = {
   tucuman: "AR-T",
 };
 
-export default function MapaArgentina({ provincias, zonaActiva }: MapaArgentinaProps) {
+// Cada provincia se pinta con el color de su región. El realce de hover y foco es CSS
+// (.mapa-provincias en globals.css): mover el puntero no vuelve a renderizar React.
+export default function MapaArgentina({ provincias }: MapaArgentinaProps) {
   const router = useRouter();
-  const [hoveredSlug, setHoveredSlug] = useState<string | null>(null);
+  const [senalada, setSenalada] = useState<string | null>(null);
   const svgRef = useRef<HTMLDivElement>(null);
 
-  const handleProvinciaClick = useCallback((slug: string) => {
-    router.push(`/provincias/${slug}`);
-  }, [router]);
-
-  // Función helper para obtener provincia por SVG ID
-  const getProvinciaBySvgId = useCallback((svgId: string): Provincia | undefined => {
-    return provincias.find((p) => SLUG_TO_SVG_ID[p.slug] === svgId);
-  }, [provincias]);
-
-  // Función para actualizar estilos de los paths
-  const actualizarEstilosPaths = useCallback(() => {
-    if (!svgRef.current) return;
-
-    const svg = svgRef.current.querySelector("svg");
-    if (!svg) return;
-
-    const paths = svg.querySelectorAll("path");
-    paths.forEach((path) => {
-      const svgId = path.getAttribute("id");
-      if (!svgId) return;
-
-      const provincia = getProvinciaBySvgId(svgId);
-      if (!provincia) return;
-
-      const isHovered = hoveredSlug === provincia.slug;
-      const perteneceZona = zonaActiva === "Todas" || provincia.zona === zonaActiva;
-      const opacity = perteneceZona ? 1 : 0.3;
-      const fill = isHovered
-        ? "#A68B5B"
-        : perteneceZona
-        ? "#C9B99B"
-        : "#D4C4B0";
-      const stroke = isHovered
-        ? "#8B7355"
-        : perteneceZona
-        ? "#A68B5B"
-        : "#C9B99B";
-      const strokeWidth = isHovered ? 3 : perteneceZona ? 2 : 1;
-
-      // Actualizar estilos
-      path.setAttribute("fill", fill);
-      path.setAttribute("stroke", stroke);
-      path.setAttribute("stroke-width", String(strokeWidth));
-      path.setAttribute("opacity", String(opacity));
-    });
-  }, [getProvinciaBySvgId, hoveredSlug, zonaActiva]);
-  const aplicarEstilosIniciales = useEffectEvent(actualizarEstilosPaths);
-
-  // Cargar el SVG solo una vez (sin zonaActiva en dependencias)
   useEffect(() => {
     const container = svgRef.current;
-    if (!container) return;
-    
-    // Prevenir carga múltiple
-    if (container.children.length > 0) return;
-
+    if (!container || container.children.length > 0) return;
     let isMounted = true;
+    const porId = new Map(provincias.map(p => [SLUG_TO_SVG_ID[p.slug], p]));
 
     fetch("/argentina.svg")
       .then((res) => res.text())
       .then((text) => {
-        if (!isMounted || !svgRef.current) return;
-        
-        // Verificar nuevamente después de la carga asíncrona
-        if (container.children.length > 0) return;
-
-        const parser = new DOMParser();
-        const svgDoc = parser.parseFromString(text, "image/svg+xml");
-        const svgElement = svgDoc.querySelector("svg");
-
-        if (!svgElement || !svgRef.current) return;
-
-        // Clonar el SVG
+        if (!isMounted || container.children.length > 0) return;
+        const svgElement = new DOMParser().parseFromString(text, "image/svg+xml").querySelector("svg");
+        if (!svgElement) return;
         const clonedSvg = svgElement.cloneNode(true) as SVGElement;
-        
-        // Asegurar que el SVG se ajuste al contenedor
         clonedSvg.removeAttribute("width");
         clonedSvg.removeAttribute("height");
-        if (!clonedSvg.getAttribute("viewBox")) {
-          clonedSvg.setAttribute("viewBox", `0 0 ${ANCHO_SVG} ${ALTO_SVG}`);
-        }
+        if (!clonedSvg.getAttribute("viewBox")) clonedSvg.setAttribute("viewBox", `0 0 ${ANCHO_SVG} ${ALTO_SVG}`);
         clonedSvg.setAttribute("preserveAspectRatio", "xMidYMid meet");
-        clonedSvg.setAttribute("style", "width: 100%; height: auto; max-height: 600px;");
-        
-        // Procesar cada path y agregar event listeners
-        const paths = clonedSvg.querySelectorAll("path");
-        paths.forEach((path) => {
-          const svgId = path.getAttribute("id");
-          if (!svgId) return;
+        clonedSvg.setAttribute("class", "mapa-provincias h-full w-full");
 
-          const provincia = getProvinciaBySvgId(svgId);
+        for (const path of clonedSvg.querySelectorAll("path")) {
+          const provincia = porId.get(path.getAttribute("id") ?? "");
           if (!provincia) {
             path.style.display = "none";
-            return;
+            continue;
           }
-
-          // Estilos base
-          path.setAttribute("style", `cursor: pointer; transition: all 0.3s ease`);
-          path.setAttribute("title", provincia.provincia);
+          path.removeAttribute("title");
+          path.setAttribute("class", regionDeProvincia(provincia.slug)?.relleno ?? "fill-arena-400");
           // Cada provincia es un enlace accesible con teclado (Tab, Enter o Espacio).
           path.setAttribute("tabindex", "0");
           path.setAttribute("role", "link");
           path.setAttribute("aria-label", `Ver turismo en ${provincia.provincia}`);
-
-          // Agregar event listeners una sola vez
-          path.addEventListener("mouseenter", () => setHoveredSlug(provincia.slug));
-          path.addEventListener("mouseleave", () => setHoveredSlug(null));
-          path.addEventListener("focus", () => setHoveredSlug(provincia.slug));
-          path.addEventListener("blur", () => setHoveredSlug(null));
-          path.addEventListener("click", () => handleProvinciaClick(provincia.slug));
+          const ir = () => router.push(`/provincias/${provincia.slug}`);
+          path.addEventListener("mouseenter", () => setSenalada(provincia.provincia));
+          path.addEventListener("focus", () => setSenalada(provincia.provincia));
+          path.addEventListener("mouseleave", () => setSenalada(null));
+          path.addEventListener("blur", () => setSenalada(null));
+          path.addEventListener("click", ir);
           path.addEventListener("keydown", (e) => {
             if (e.key !== "Enter" && e.key !== " ") return;
             e.preventDefault();
-            handleProvinciaClick(provincia.slug);
+            ir();
           });
-        });
+        }
         clonedSvg.setAttribute("role", "group");
         clonedSvg.setAttribute("aria-label", "Mapa de provincias de Argentina");
-
-        // Agregar el SVG al DOM
-        svgRef.current.appendChild(clonedSvg);
-        
-        // Aplicar estilos inmediatamente después de cargar
-        aplicarEstilosIniciales();
+        container.appendChild(clonedSvg);
       })
       .catch((err) => console.error("Error cargando SVG:", err));
 
-    // Función de limpieza
     return () => {
       isMounted = false;
       container.replaceChildren();
     };
-  }, [getProvinciaBySvgId, handleProvinciaClick]);
-
-  // Actualizar estilos cuando cambia el filtro o el hover
-  useEffect(() => {
-    actualizarEstilosPaths();
-  }, [actualizarEstilosPaths]);
+  }, [provincias, router]);
 
   return (
-    <div className="w-full flex justify-center mb-8">
-      <div className="w-full max-w-4xl">
-        <div className="bg-gradient-to-br from-[#F5F1E8] to-[#E8DDD0] rounded-xl p-6 shadow-lg border border-[#C9B99B]/30 overflow-hidden">
-          {/* El SVG llega por fetch después de hidratar: el contenedor ya reserva su alto
-              (misma relación de aspecto y tope de 600 px) y la grilla no se desplaza (CLS). */}
-          <div
-            ref={svgRef}
-            className="w-full flex justify-center items-center"
-            style={{ aspectRatio: `${ANCHO_SVG} / ${ALTO_SVG}`, maxHeight: "600px", overflow: "hidden" }}
-          />
-        </div>
-      </div>
-    </div>
+    <figure className="relative">
+      {/* El SVG llega por fetch después de hidratar: el contenedor ya reserva su alto y el
+          contenido siguiente no se desplaza (CLS). */}
+      <div
+        ref={svgRef}
+        className="mx-auto h-[24rem] w-full sm:h-[32rem] lg:h-[36rem]"
+        style={{ maxWidth: `calc(36rem * ${ANCHO_SVG} / ${ALTO_SVG})` }}
+      />
+      <figcaption className="mt-3 min-h-6 text-center text-sm text-tinta-700" aria-hidden="true">
+        {senalada ?? "Tocá una provincia para ver su ficha"}
+      </figcaption>
+    </figure>
   );
 }

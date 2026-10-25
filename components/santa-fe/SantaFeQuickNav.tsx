@@ -50,9 +50,9 @@ const secciones = [
 
 export default function SantaFeQuickNav() {
   return (
-    <div className="bg-gradient-to-br from-[#A68B5B]/10 via-[#C9B99B]/10 to-[#A68B5B]/10 border-y-2 border-[#A68B5B]/30 py-6 mb-8 -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8">
+    <div className="bg-gradient-to-br from-lago-600/10 via-arena-300/10 to-lago-600/10 border-y-2 border-lago-600/30 py-6 mb-8 -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <p className="text-center text-xs sm:text-sm uppercase tracking-widest text-[#5A4E3D] mb-4 font-semibold">
+        <p className="text-center text-xs sm:text-sm uppercase tracking-widest text-tinta-900 mb-4 font-semibold">
           Explora Santa Fe
         </p>
         <div className="grid grid-cols-3 md:grid-cols-6 gap-3 sm:gap-4">
@@ -67,12 +67,12 @@ export default function SantaFeQuickNav() {
               <Component
                 key={seccion.id}
                 {...props}
-                className="group flex flex-col items-center justify-center p-3 sm:p-4 bg-white/50 hover:bg-white/80 backdrop-blur-sm rounded-lg border border-[#C9B99B]/30 hover:border-[#A68B5B]/50 transition-all duration-300 transform hover:scale-105 hover:shadow-md"
+                className="group flex flex-col items-center justify-center p-3 sm:p-4 bg-white/50 hover:bg-white/80 backdrop-blur-sm rounded-lg border border-arena-300/30 hover:border-lago-600/50 transition-all duration-300 transform hover:scale-105 hover:shadow-md"
               >
                 <span className="text-2xl sm:text-3xl mb-2 transform group-hover:scale-110 transition-transform duration-300">
                   {seccion.icon}
                 </span>
-                <span className="text-xs sm:text-sm font-medium text-[#5A4E3D] text-center group-hover:text-[#8B7355] transition-colors duration-300">
+                <span className="text-xs sm:text-sm font-medium text-tinta-900 text-center group-hover:text-tinta-500 transition-colors duration-300">
                   {seccion.label}
                 </span>
               </Component>

@@ -13,7 +13,7 @@ export default function PlanesSection({ planes }: PlanesSectionProps) {
 
   return (
     <section id="planes" className="mb-16 scroll-mt-32">
-      <h2 className="text-3xl md:text-4xl font-semibold uppercase tracking-widest mb-8 text-center text-[#5A4E3D]">
+      <h2 className="text-3xl md:text-4xl font-semibold uppercase tracking-widest mb-8 text-center text-tinta-900">
         Planes e Ideas
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -29,7 +29,7 @@ export default function PlanesSection({ planes }: PlanesSectionProps) {
           return (
             <div
               key={index}
-              className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-[#E8DDD0] to-[#D4C4B0] hover:from-[#D4C4B0] hover:to-[#C9B99B] transition-all duration-300 transform hover:scale-[1.02] shadow-lg hover:shadow-2xl hover:shadow-[#A68B5B]/30 border border-[#C9B99B]/50 hover:border-[#A68B5B]/70"
+              className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-arena-200 to-arena-300 hover:from-arena-300 hover:to-arena-300 transition-all duration-300 transform hover:scale-[1.02] shadow-lg hover:shadow-2xl hover:shadow-lago-600/30 border border-arena-300/50 hover:border-lago-600/70"
             >
               <div className="p-6 h-full flex flex-col">
                 {/* Badges de categorías */}
@@ -38,7 +38,7 @@ export default function PlanesSection({ planes }: PlanesSectionProps) {
                     {categorias.map((cat, i) => (
                       <span
                         key={i}
-                        className="text-xs uppercase tracking-wide px-2 py-1 bg-[#A68B5B]/20 text-[#5A4E3D] rounded-full border border-[#A68B5B]/30"
+                        className="text-xs uppercase tracking-wide px-2 py-1 bg-lago-600/20 text-tinta-900 rounded-full border border-lago-600/30"
                       >
                         {cat}
                       </span>
@@ -47,17 +47,17 @@ export default function PlanesSection({ planes }: PlanesSectionProps) {
                 )}
 
                 {/* Fecha */}
-                <p className="text-xs text-[#6B5D47] mb-3 font-light">
+                <p className="text-xs text-tinta-700 mb-3 font-light">
                   {fechaFormateada}
                 </p>
 
                 {/* Título */}
-                <h3 className="text-xl font-semibold mb-3 text-[#5A4E3D] group-hover:text-[#8B7355] transition-colors duration-300 line-clamp-2">
+                <h3 className="text-xl font-semibold mb-3 text-tinta-900 group-hover:text-tinta-500 transition-colors duration-300 line-clamp-2">
                   {plan.Title}
                 </h3>
 
                 {/* Resumen */}
-                <p className="text-[#6B5D47] mb-4 flex-grow line-clamp-3 text-sm leading-relaxed">
+                <p className="text-tinta-700 mb-4 flex-grow line-clamp-3 text-sm leading-relaxed">
                   {plan.Summary.replace(/【.*?】/g, '').trim()}
                 </p>
 
@@ -67,7 +67,7 @@ export default function PlanesSection({ planes }: PlanesSectionProps) {
                     href={plan.Source}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-[#A68B5B] hover:text-[#8B7355] font-medium text-sm transition-colors duration-300 group/link"
+                    className="inline-flex items-center gap-2 text-lago-600 hover:text-tinta-500 font-medium text-sm transition-colors duration-300 group/link"
                   >
                     Ver más
                     <svg

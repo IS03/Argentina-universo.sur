@@ -1,8 +1,11 @@
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import Carrusel from "@/components/Carrusel";
 import MapaUbicacion from "@/components/mapa/MapaUbicacion";
 import Link from "next/link";
+import EncabezadoPagina from "@/components/ui/EncabezadoPagina";
+import SeguirExplorando from "@/components/ui/SeguirExplorando";
+import Icono from "@/components/ui/Icono";
+import { boton } from "@/components/ui/estilos";
+import { regionDeProvincia } from "@/lib/regiones";
 import { ROUTES, INTERNAL_ANCHORS } from "@/lib/site-links";
 import { 
   getProvinciaBySlug, 
@@ -58,93 +61,89 @@ export default async function ProvinciaPage({ params }: PageProps) {
   const agencias = isSantaFe ? await getAgenciasSantaFe() : null;
   const agenda = isSantaFe ? await getAgendaSantaFe() : null;
   const eventos = agenda?.vigentes ?? null;
+  const region = regionDeProvincia(provincia.slug);
+  const descripciones = [provincia.des_1, provincia.des_2, provincia.des_3].filter(Boolean);
 
   return (
     <>
-      <Navbar />
       <ProvinciaVisitTracker slug={slug} />
-      <main className={`min-h-screen ${isSantaFe ? 'pt-32' : 'pt-32'} pb-16 px-4 sm:px-6 lg:px-8`}>
-        <div className={`${isSantaFe ? 'max-w-7xl' : 'max-w-5xl'} mx-auto`}>
-          {/* Título */}
-          <h1 className="text-4xl md:text-5xl font-semibold uppercase tracking-widest mb-8 text-center text-[#5A4E3D]">
-            {provincia.provincia}
-          </h1>
+      <EncabezadoPagina
+        migas={[{ href: ROUTES.home, etiqueta: "Inicio" }, { href: ROUTES.provincias, etiqueta: "Provincias" }]}
+        antetitulo={region ? `Región ${region.nombre}` : undefined}
+        colorAntetitulo={region?.texto}
+        titulo={provincia.provincia}
+        bajada={region?.lema}
+      />
 
-          {/* Navegación rápida solo para Santa Fe */}
-          {isSantaFe && <SantaFeQuickNav />}
+      <div className="contenedor py-10 sm:py-14">
+        {/* Navegación rápida solo para Santa Fe */}
+        {isSantaFe && <div className="mb-10"><SantaFeQuickNav /></div>}
 
+        <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_20rem] lg:gap-14">
           {/* Descripción */}
-          <div className="mb-8">
-            {provincia.des_1 && (
-              <p className="text-[#6B5D47] text-lg leading-relaxed mb-4">
-                {provincia.des_1}
-              </p>
-            )}
-            {provincia.des_2 && (
-              <p className="text-[#6B5D47] text-lg leading-relaxed mb-4">
-                {provincia.des_2}
-              </p>
-            )}
-            {provincia.des_3 && (
-              <p className="text-[#6B5D47] text-lg leading-relaxed">
-                {provincia.des_3}
-              </p>
-            )}
+          <div className="prosa">
+            {descripciones.map((texto, i) => <p key={i}>{texto}</p>)}
           </div>
 
-          {/* Carrusel */}
-          {provincia.fotos.length > 0 && (
-            <div className="mb-12">
-              <Carrusel fotos={provincia.fotos} alt={provincia.provincia} />
-            </div>
-          )}
-
-          {/* Sección Capital */}
-          {provincia.nombre_capital && provincia.lat_capital && provincia.lon_capital && (
-            <div className="mb-12">
-              <h2 className="text-2xl md:text-3xl font-semibold uppercase tracking-widest mb-6 text-center text-[#5A4E3D]">
-                Su Capital: {provincia.nombre_capital}
-              </h2>
-              <MapaUbicacion
-                lat={provincia.lat_capital}
-                lon={provincia.lon_capital}
-                titulo={provincia.nombre_capital}
-              />
-            </div>
-          )}
-
-          {/* Sección: Preguntas Frecuentes (solo para Santa Fe, después del mapa) */}
-          {isSantaFe && preguntasFrecuentes && preguntasFrecuentes.length > 0 && (
-            <PreguntasFrecuentesSection preguntas={preguntasFrecuentes} />
-          )}
-
-          {/* CTA: Ver qué hacer + enlazado interno (SEO) */}
-          <div className="text-center mb-16 space-y-4">
+          <aside aria-label={`Datos de viaje: ${provincia.provincia}`} className="self-start rounded-tarjeta border border-arena-300/80 bg-white p-5 shadow-tarjeta lg:sticky lg:top-[calc(var(--alto-encabezado)+1.5rem)]">
+            <dl className="grid grid-cols-2 gap-4 text-sm lg:grid-cols-1">
+              {region && (
+                <div>
+                  <dt className="text-tinta-500">Región</dt>
+                  <dd className="mt-0.5 font-semibold"><a href={`${ROUTES.provincias}#${region.ancla}`} className={`inline-flex min-h-6 items-center underline decoration-current/30 underline-offset-4 ${region.texto}`}>{region.nombre}</a></dd>
+                </div>
+              )}
+              {provincia.nombre_capital && (
+                <div>
+                  <dt className="text-tinta-500">Capital</dt>
+                  <dd className="mt-0.5 font-semibold text-tinta-900">{provincia.nombre_capital}</dd>
+                </div>
+              )}
+            </dl>
             {/* Sin prefetch: /actividades?provincia=… es un rewrite por query y Next 16.3+ predice su
                 segmento a partir de /actividades, lo que da 404 (vercel/next.js#97244). El clic
                 navega igual en el cliente, pidiendo el árbol completo al servidor. */}
             <Link
               href={ROUTES.actividadesPorProvincia(provincia.slug)}
               prefetch={false}
-              className="inline-block px-8 py-3 bg-[#A68B5B]/20 hover:bg-[#A68B5B]/30 backdrop-blur-sm text-[#5A4E3D] uppercase tracking-widest text-sm transition-all duration-300 border border-[#C9B99B]/40 hover:border-[#A68B5B]/60"
+              className={boton("primario", "mt-5 w-full")}
             >
               {INTERNAL_ANCHORS.verActividadesEnProvincia(provincia.provincia)}
+              <Icono nombre="flecha" className="size-4" />
             </Link>
-            <nav className="flex flex-wrap justify-center gap-4 text-sm" aria-label="Navegación relacionada">
-              <Link href={ROUTES.home} className="text-[#6B5D47] hover:text-[#A68B5B] underline underline-offset-2 transition-colors">
-                Inicio
-              </Link>
-              <Link href={ROUTES.provincias} className="text-[#6B5D47] hover:text-[#A68B5B] underline underline-offset-2 transition-colors">
-                {INTERNAL_ANCHORS.verTodasLasProvincias}
-              </Link>
-              <Link href={ROUTES.escapadas} className="text-[#6B5D47] hover:text-[#A68B5B] underline underline-offset-2 transition-colors">
-                {INTERNAL_ANCHORS.verEscapadas}
-              </Link>
-            </nav>
-          </div>
+          </aside>
+        </div>
 
-          {/* Grid de secciones con previews solo para Santa Fe */}
-          {isSantaFe && planes && eventos && preguntasFrecuentes && oficinas && agencias && noticias && (
+        {/* Carrusel */}
+        {provincia.fotos.length > 0 && (
+          <div className="mt-12">
+            <Carrusel fotos={provincia.fotos} alt={provincia.provincia} />
+          </div>
+        )}
+
+        {/* Sección Capital */}
+        {provincia.nombre_capital && provincia.lat_capital && provincia.lon_capital && (
+          <section aria-labelledby="titulo-capital" className="mt-14">
+            <p className="antetitulo text-terracota-600">Dónde queda</p>
+            <h2 id="titulo-capital" className="mt-1 mb-6 font-display text-seccion text-tinta-900">
+              Su capital: {provincia.nombre_capital}
+            </h2>
+            <MapaUbicacion
+              lat={provincia.lat_capital}
+              lon={provincia.lon_capital}
+              titulo={provincia.nombre_capital}
+            />
+          </section>
+        )}
+
+        {/* Sección: Preguntas Frecuentes (solo para Santa Fe, después del mapa) */}
+        {isSantaFe && preguntasFrecuentes && preguntasFrecuentes.length > 0 && (
+          <div className="mt-14"><PreguntasFrecuentesSection preguntas={preguntasFrecuentes} /></div>
+        )}
+
+        {/* Grid de secciones con previews solo para Santa Fe */}
+        {isSantaFe && planes && eventos && preguntasFrecuentes && oficinas && agencias && noticias && (
+          <div className="mt-14">
             <SantaFeSectionsGrid
               planes={planes}
               eventos={eventos}
@@ -153,10 +152,18 @@ export default async function ProvinciaPage({ params }: PageProps) {
               agencias={agencias}
               noticias={noticias}
             />
-          )}
-        </div>
-      </main>
-      <Footer />
+          </div>
+        )}
+
+        <SeguirExplorando
+          etiqueta="Navegación relacionada"
+          enlaces={[
+            { href: ROUTES.actividadesPorProvincia(provincia.slug), etiqueta: INTERNAL_ANCHORS.verActividadesEnProvincia(provincia.provincia), icono: "brujula", prefetch: false },
+            { href: ROUTES.provincias, etiqueta: INTERNAL_ANCHORS.verTodasLasProvincias, icono: "mapa" },
+            { href: ROUTES.escapadas, etiqueta: INTERNAL_ANCHORS.verEscapadas, icono: "documento" },
+          ]}
+        />
+      </div>
     </>
   );
 }

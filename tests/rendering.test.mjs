@@ -4,7 +4,6 @@ import { readFile, readdir } from "node:fs/promises";
 import { join } from "node:path";
 import { readCatalog, projectRoot } from "../scripts/validate-data.mjs";
 import { normalizarProvincia, normalizarActividad, resumirProvincia, resumirActividad, filtrarActividades, resolveProvinciaSlug, TODAS_LAS_PROVINCIAS } from "../lib/catalog.ts";
-import { getHeroScrollState } from "../lib/home-images.ts";
 import { resolverVisitasRecientes, MAX_VISITAS_INICIO } from "../lib/recent-visits.ts";
 import { teselasVistaPrevia, ANCHOS_MINIMOS, TAMANO_TESELA, ALTO_MAPA } from "../lib/mapa-teselas.ts";
 
@@ -27,15 +26,6 @@ test("el filtro de /actividades conserva el listado completo, el máximo por pro
   assert.equal(filtrarActividades(actividades, "inexistente").length, 0);
   const muchas = Array.from({ length: 6 }, (_, i) => ({ slug: "santa_fe", i }));
   assert.equal(filtrarActividades(muchas, "santa_fe").length, 4);
-});
-
-test("el estado del hero parte de los valores del HTML y llega al máximo a media pantalla", () => {
-  assert.deepEqual(getHeroScrollState(0, 1000), { opacity: 1, blur: 0, overlay: 0, overlayOpacity: 0, contenidoY: 50 });
-  const medio = getHeroScrollState(250, 1000);
-  assert.equal(medio.blur, 6);
-  assert.ok(Math.abs(medio.opacity - 0.4) < 1e-9);
-  const final = getHeroScrollState(5000, 1000);
-  assert.deepEqual(final, { opacity: 0, blur: 12, overlay: 0.4, overlayOpacity: 1, contenidoY: 0 });
 });
 
 test("Continuar explorando ordena por fecha, admite el formato antiguo, el alias y JSON inválido", () => {
