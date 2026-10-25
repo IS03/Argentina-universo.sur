@@ -15,7 +15,7 @@ Base: `origin/main` d92af641dd7149f266badc8799edc4ba43fe9ef0 (PR12 fusionado). R
 | SEO Next | 106 URLs canónicas; cero errores |
 | E2E Next.js | 109 aprobadas, 9 omisiones previstas por viewport; escritorio y móvil, filtros, navegación, mapas, consentimiento, enlaces PDF y rutas retenidas |
 | Builds estáticos | production-audit, consent-test y Preview correctos; seguridad editorial reforzada reejecutada sobre los tres artefactos finales |
-| SEO estático | 106 URLs y 126 recursos en cada modalidad; cero errores |
+| SEO estático | 106 URLs por modalidad; 126 recursos en production-audit/consent-test y 103 en Preview; cero errores |
 | Pruebas Pages | 70 aprobadas; 2 omisiones de casos específicos de Workers, que no se implementan en esta arquitectura |
 | Seguridad de Pages | Los tres artefactos retienen 24 fichas; cero coincidencias de textos/rutas de borrador o datos privados en HTML/RSC/JS/JSON/índices/sitemap y auxiliares |
 | Lectura remota | 24/24 PDF de producción: HEAD 200, MIME PDF y tamaño esperado; 24/24 rutas retenidas: HEAD 404 en Preview existente |
