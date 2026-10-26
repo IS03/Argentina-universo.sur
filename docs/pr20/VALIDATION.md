@@ -12,12 +12,18 @@
 | Builds Next y Pages (Preview / production-audit / consent-test) | Correctos |
 | SEO Next y los tres modos Pages | 108 URLs y cero errores; canonicals, OG, sitemap, robots y redirects preservados |
 | Capturas y navegación | Seis vistas por versión: 1440 px, Pixel 7 y 320 px; cero desbordes/anclas rotas |
-| Contraste y foco | Seis vistas, 121/138 muestras de texto por ficha, mínimo 5,05:1; foco visible de 3 px |
+| Contraste y foco | Seis vistas, 118/135 muestras de texto por ficha, mínimo 5,05:1; foco visible de 3 px |
 | Seguridad editorial | 24 Escapadas retenidas, Rosario y datos privados del maestro fuera del artefacto |
 
 La prueba integral compara literalmente cada párrafo y ubicación con los JSON aprobados y conserva títulos/SEO, fotografías, créditos y mapas. Se prueba contenido sin JS, el índice con teclado a 320 px, las cinco acciones del planificador, portapapeles denegado, Web Share ausente/cancelado, impresión y ausencia de escrituras en almacenamiento/cookies o solicitudes externas. Las APIs de compartir/portapapeles/impresión se interceptan durante E2E para no modificar el portapapeles del equipo, abrir diálogos o enviar datos. La disponibilidad real del selector nativo depende del navegador y sistema operativo; existe alternativa manual.
 
 La primera ejecución del test de 320 px detectó una limitación del localizador de texto de Playwright sobre el propio elemento `noscript`. Se comprobó el HTML real y se ajustó el localizador al párrafo hijo, manteniendo JavaScript deshabilitado. No se omitió la prueba ni se alteró el contenido para hacerla pasar. La inspección visual también corrigió el salto de línea del ordinal 03 en el índice.
+
+## Comprobaciones del pulido final
+
+La selección normal muestra nombres y enlaces en una lista semántica; no incluye textarea ni URLs técnicas visibles. Copiar/compartir/vaciar no aparecen mientras la selección está vacía. Los tests verifican que la copia manual aparece solo al fallar el portapapeles, recibe foco y selección de texto, y desaparece al cambiar los lugares para no conservar datos desactualizados. La lista visible se conserva al imprimir y se oculta el campo técnico de copia manual. Todo el texto turístico y la navegación siguen disponibles sin JS.
+
+El footer conserva el SVG original (206 × 26), con dimensiones reservadas correctas y carga diferida. Los E2E esperan la decodificación y comprueban proporción, dimensiones naturales y recurso original. Las capturas completas ahora activan la carga del logo, esperan `decode()` y vuelven al inicio. Los recortes específicos del footer provienen de la captura completa, evitando superponer el encabezado fijo sobre un footer más alto que la pantalla móvil. No se altera el archivo institucional ni su identidad.
 
 ## Rendimiento comparativo local
 
@@ -25,10 +31,10 @@ Mismo servidor estático `scripts/pages/serve.mjs`, Chrome, tres corridas por fi
 
 | Ficha / perfil | LCP antes → después | CLS máximo después | Bytes antes → después | Solicitudes antes → después |
 | --- | ---: | ---: | ---: | ---: |
-| Santa Fe / escritorio | 164 → 160 ms | 0 | 457228 → 461379 | 35 → 36 |
-| Alta Gracia / escritorio | 156 → 172 ms | 0 | 466588 → 470667 | 35 → 36 |
-| Santa Fe / móvil | 1884 → 1888 ms | 0 | 465175 → 469337 | 20 → 21 |
-| Alta Gracia / móvil | 1864 → 1864 ms | 0 | 464171 → 468263 | 20 → 21 |
+| Santa Fe / escritorio | 164 → 160 ms | 0 | 457228 → 461390 | 35 → 36 |
+| Alta Gracia / escritorio | 156 → 168 ms | 0 | 466588 → 470692 | 35 → 36 |
+| Santa Fe / móvil | 1884 → 1888 ms | 0 | 465175 → 469331 | 20 → 21 |
+| Alta Gracia / móvil | 1864 → 1876 ms | 0 | 464171 → 468269 | 20 → 21 |
 
 Las diferencias de unos milisegundos no permiten afirmar una mejora estadística. El costo observado del planificador y CSS es de unos 4 KB transferidos y una solicitud local adicional por ficha. No hay solicitudes a `/_next/image` ni a servicios externos. Mismas variantes: escritorio 960w (49734 / 58010 B), Pixel 7 1280w (87970 / 85882 B); las ocho variantes suman 352332 B, sin cambios.
 
@@ -47,7 +53,7 @@ Los otros seis hashes de alcance/evidencia/medios permanecen fijados, sin cambio
 
 ## Tamaño y límites
 
-Export Preview local: **106375881 B / 2056 archivos**; multimedia existente 80357184 B. `docs/` y sus capturas quedan fuera del despliegue. Los PDF siguen en sus URLs vigentes; que el export no los empaquete no significa que hayan sido retirados.
+Export Preview local: **106396278 B / 2056 archivos**; multimedia existente 80357184 B. `docs/` y sus capturas quedan fuera del despliegue. Los PDF siguen en sus URLs vigentes; que el export no los empaquete no significa que hayan sido retirados.
 
 El muestreo de contraste y las pruebas de teclado no constituyen una certificación WCAG completa. La compatibilidad histórica sin JS de consultas `?provincia=` sigue dependiendo de las reglas de zona documentadas previamente; no se cambia en este PR.
 

@@ -20,6 +20,11 @@ try {
       await page.evaluate(() => document.fonts.ready);
       const reject = page.getByRole('button', { name: 'Rechazar', exact: true });
       if (await reject.isVisible()) await reject.click();
+      // A fullPage screenshot doesn't scroll through the document or load lazy footer images.
+      const institutionalLogo = page.locator('footer img');
+      await institutionalLogo.scrollIntoViewIfNeeded();
+      await institutionalLogo.evaluate(i => i.decode());
+      await page.evaluate(() => window.scrollTo({ top: 0, behavior: 'instant' }));
       await page.screenshot({ path: `${dir}/${slug}-${profile}.png`, fullPage: true, scale: 'css' });
       const metrics = await page.evaluate(() => ({
         width: innerWidth, height: document.documentElement.scrollHeight,

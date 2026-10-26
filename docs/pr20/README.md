@@ -17,15 +17,23 @@ Base: `main` tras el merge de PR19 (`3ad83002be4aca1e13b97e8bed7ed0eac8acac26`).
 
 `VisitPlanner` es la única isla cliente nueva. Recibe únicamente nombre, canonical y los tres nombres/IDs públicos de presentación. El artículo, mapas y fuentes se renderizan en servidor como HTML; no se envía el payload editorial completo como props del planificador.
 
-La persona selecciona lugares con casillas nativas. Se genera texto con sus nombres exactos y enlaces al ancla pública de cada atractivo, más la ficha completa. Es una lista sin orden de visita; no calcula tiempos, rutas, distancias ni disponibilidad. No acepta notas personales.
+La persona selecciona lugares con casillas nativas. Ve una lista visual de nombres enlazados a los atractivos; las URLs técnicas no aparecen en la presentación habitual. Para copiar y compartir se genera texto con sus nombres exactos y enlaces al ancla pública de cada atractivo, más la ficha completa. Es una lista sin orden de visita; no calcula tiempos, rutas, distancias ni disponibilidad. No acepta notas personales.
 
-- **Copiar lista:** usa el portapapeles mediante una acción explícita. Si el navegador lo rechaza, enfoca y selecciona el texto de solo lectura para copiarlo manualmente.
+- **Copiar lista:** usa el portapapeles mediante una acción explícita. Si el navegador lo rechaza, recién entonces muestra un campo de copia manual de solo lectura, lo enfoca y selecciona su texto. Cambiar la selección cierra ese campo para no dejar una copia desactualizada.
 - **Compartir lista:** invoca el selector nativo del sistema cuando está disponible. La cancelación no se trata como éxito ni borra la selección. Si no existe o falla, se ofrece copiar. No hay SDK, URL de un proveedor social, petición al servidor ni servicio contratado. El destino elegido por la persona en el selector nativo queda bajo su control.
 - **Compartir ficha:** comparte o copia su canonical, sin añadir parámetros de seguimiento ni guardar la selección en la URL. No se promete reconstruir automáticamente la selección al abrir el enlace; el mensaje lleva la lista explícita.
 - **Imprimir ficha:** abre el diálogo del navegador; la hoja de impresión conserva contenido, fuentes, créditos y la lista elegida, oculta controles e índice y añade URLs de consulta. No genera ni aloja un PDF nuevo en el servidor.
 - **Vaciar / recargar:** la selección se elimina. No se usa localStorage, sessionStorage, cookies, geolocalización ni red para guardar o compartir datos automáticamente.
 
-Sin JavaScript el contenido completo, imágenes, fuentes e índice funcionan. Los botones de mejora permanecen deshabilitados y un aviso explica que puede imprimirse desde el menú del navegador. No hay botones que prometan una acción de red sin funcionar ni se ocultan atractivos.
+Sin JavaScript el contenido completo, imágenes, fuentes e índice funcionan. Los controles de copiar, compartir y vaciar la selección solo aparecen después de elegir lugares. Sin JavaScript esos botones no aparecen y un aviso explica que puede imprimirse desde el menú del navegador. Compartir e imprimir la ficha están disponibles al hidratar, incluso con la selección vacía. No hay botones inactivos llenando el estado vacío ni se ocultan atractivos.
+
+## Pulido final del mismo PR
+
+La lista seleccionada usa nombres y enlaces legibles; el campo de URLs queda reservado a la alternativa de copia manual. Se conserva el texto exportable y las acciones de copiar, compartir, vaciar e imprimir. La impresión incluye la lista visual y oculta el campo de copia manual.
+
+El SVG del footer es válido y pinta la marca existente. La aparente ausencia en las primeras capturas se debía a su carga diferida: una captura `fullPage` no desplaza la página para activarla. Además, el componente declaraba 200 × 48 aunque el SVG mide 206 × 26. Se corrigieron tamaño y espacio reservado a 206 × 26, manteniendo la carga diferida y todos los bytes del SVG, sin filtros, recoloración o recreación de la identidad institucional. SHA-256 del SVG intacto: `05eb13cc8ce114f71fb269d8d25e76cd7e375a3ca9f89915e903edaa8f89e2e3`.
+
+El capturador ahora desplaza hasta el footer, espera `decode()` del logo y vuelve al inicio antes de tomar la imagen completa. Los E2E verifican la proporción reservada y su decodificación real en escritorio y móvil. Las capturas DESPUÉS y los ejemplos del planificador están actualizados con este pulido.
 
 ## Comparativas
 
@@ -39,6 +47,8 @@ Las capturas ANTES corresponden al árbol de `main`/PR19 sin diferencias de apli
 | Alta Gracia / 1440 × 1000 | [Ver](capturas/alta-gracia-desktop-before.webp) | [Ver](capturas/alta-gracia-desktop-after.webp) |
 | Alta Gracia / Pixel 7 · 412 × 839 · DPR 2,625 | [Ver](capturas/alta-gracia-pixel7-before.webp) | [Ver](capturas/alta-gracia-pixel7-after.webp) |
 | Alta Gracia / 320 × 800 · DPR 1 | [Ver](capturas/alta-gracia-320-before.webp) | [Ver](capturas/alta-gracia-320-after.webp) |
+
+Footer verificado: [escritorio](capturas/footer-desktop.webp) · [Pixel 7](capturas/footer-pixel7.webp) · [320 px](capturas/footer-320.webp).
 
 Ejemplos del planificador con dos lugares seleccionados: [Santa Fe](capturas/santa-fe-capital-plan.webp) · [Alta Gracia](capturas/alta-gracia-plan.webp).
 

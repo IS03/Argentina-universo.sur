@@ -21,6 +21,13 @@ for (const data of [santaFe, altaGracia]) {
     await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', data.seo.proposedCanonical);
     await expect(page).toHaveTitle(data.seo.title);
     expect(await page.locator('a[href^="#"]').evaluateAll(links => links.every(a => !!document.getElementById((a as HTMLAnchorElement).hash.slice(1))))).toBe(true);
+    const institutionalLogo = page.locator('footer img');
+    const reserved = await institutionalLogo.boundingBox();
+    expect(reserved?.width).toBeCloseTo(206, 0); expect(reserved?.height).toBeCloseTo(26, 0);
+    await institutionalLogo.scrollIntoViewIfNeeded();
+    await institutionalLogo.evaluate((image: HTMLImageElement) => image.decode());
+    expect(await institutionalLogo.evaluate((image: HTMLImageElement) => ({ width: image.naturalWidth, height: image.naturalHeight, complete: image.complete }))).toEqual({ width: 206, height: 26, complete: true });
+    await expect(institutionalLogo).toHaveAttribute('src', '/img/logo-santa-fe-turismo-color-1.svg');
   });
   test(`${data.nombre}: HTML completo sin JavaScript y entrada desde su provincia`, async ({ browser }) => {
     const context = await browser.newContext({ javaScriptEnabled: false }); const page = await context.newPage();
@@ -43,13 +50,21 @@ for (const data of [santaFe, altaGracia]) {
     await page.goto('/destinos/' + data.slug);
     const state = () => page.evaluate(() => ({ local: { ...localStorage }, session: { ...sessionStorage }, cookies: document.cookie }));
     const initial = await state();
-    await expect(page.getByRole('button', { name: 'Copiar lista', exact: true })).toBeDisabled();
+    await expect(page.getByRole('button', { name: 'Copiar lista', exact: true })).toHaveCount(0);
+    await expect(page.getByRole('button', { name: 'Compartir lista', exact: true })).toHaveCount(0);
+    await expect(page.getByRole('button', { name: 'Vaciar selección', exact: true })).toHaveCount(0);
     const first = page.getByRole('checkbox', { name: data.attractions[0].nombre, exact: true });
     await first.focus(); await page.keyboard.press('Space');
     await page.getByRole('checkbox', { name: data.attractions[2].nombre, exact: true }).check();
     await expect(page.locator('.destination-plan-count')).toHaveText('2 de 3 lugares seleccionados');
     await page.getByRole('button', { name: 'Copiar lista', exact: true }).click();
-    const list = await page.locator('#lista-de-visita').inputValue();
+    const chosen = [data.attractions[0], data.attractions[2]];
+    const visualList = page.getByRole('list', { name: 'Lugares seleccionados' });
+    await expect(visualList.getByRole('link')).toHaveText(chosen.map(a => a.nombre));
+    for (const attraction of chosen) await expect(visualList.getByRole('link', { name: attraction.nombre, exact: true })).toHaveAttribute('href', '#' + attraction.id);
+    expect(await visualList.textContent()).not.toContain('https://');
+    await expect(page.locator('textarea')).toHaveCount(0);
+    const list = [data.nombre + ' — Mi selección', '', ...chosen.flatMap(a => ['• ' + a.nombre, data.seo.proposedCanonical + '#' + a.id, '']), 'Ficha completa: ' + data.seo.proposedCanonical, '', 'Lista de lugares, sin orden de visita, horarios ni disponibilidad confirmados.'].join('\n');
     expect(await page.evaluate(() => (window as unknown as { copied: string }).copied)).toBe(list);
     expect(list).toContain(data.attractions[0].nombre); expect(list).toContain(data.attractions[2].nombre);
     expect(list).not.toContain(data.attractions[1].nombre);
@@ -59,7 +74,7 @@ for (const data of [santaFe, altaGracia]) {
     expect(external).toEqual([]);
     await page.getByRole('button', { name: 'Vaciar selección', exact: true }).click();
     await expect(first).not.toBeChecked();
-    await expect(page.getByRole('button', { name: 'Copiar lista', exact: true })).toBeDisabled();
+    await expect(page.getByRole('button', { name: 'Copiar lista', exact: true })).toHaveCount(0);
     await first.check(); await page.reload(); await expect(first).not.toBeChecked();
   });
   test(`${data.nombre}: alternativas al portapapeles y compartir, cancelación e impresión legible`, async ({ page, context }) => {
@@ -72,19 +87,23 @@ for (const data of [santaFe, altaGracia]) {
     await page.getByRole('checkbox', { name: data.attractions[1].nombre, exact: true }).check();
     await page.getByRole('button', { name: 'Compartir lista', exact: true }).click();
     await expect(page.locator('.destination-plan-status')).toContainText('El navegador no pudo copiar');
-    await expect(page.locator('#lista-de-visita')).toBeFocused();
-    expect(await page.locator('#lista-de-visita').evaluate((e: HTMLTextAreaElement) => e.selectionEnd - e.selectionStart)).toBeGreaterThan(0);
+    await expect(page.locator('#copia-manual-visita')).toBeFocused();
+    expect(await page.locator('#copia-manual-visita').evaluate((e: HTMLTextAreaElement) => e.selectionEnd - e.selectionStart)).toBeGreaterThan(0);
+    await expect(page.locator('#copia-manual-visita')).toHaveValue(new RegExp(data.attractions[1].nombre.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')));
+    const extra = page.getByRole('checkbox', { name: data.attractions[0].nombre, exact: true });
+    await extra.check(); await expect(page.locator('textarea')).toHaveCount(0); await extra.uncheck();
     await page.evaluate(() => { Object.defineProperty(navigator, 'share', { configurable: true, value: async () => { throw new DOMException('Cancelled', 'AbortError'); } }); });
     await page.getByRole('button', { name: 'Compartir lista', exact: true }).click();
     await expect(page.locator('.destination-plan-status')).toHaveText('Se canceló la acción de compartir.');
     await page.getByRole('button', { name: 'Imprimir ficha', exact: true }).click();
     expect(await page.evaluate(() => (window as unknown as { printed: boolean }).printed)).toBe(true);
     await page.emulateMedia({ media: 'print' });
-    await expect(page.locator('.destination-print-list')).toBeVisible();
-    await expect(page.locator('.destination-print-list')).toContainText(data.attractions[1].nombre);
+    await expect(page.locator('.destination-selected-list')).toBeVisible();
+    await expect(page.locator('.destination-selected-list')).toContainText(data.attractions[1].nombre);
     await expect(page.locator('.destination-index')).not.toBeVisible();
     await expect(page.locator('.destination-plan-choices')).not.toBeVisible();
     await expect(page.locator('figcaption')).toBeVisible();
+    await expect(page.locator('.destination-manual-copy')).not.toBeVisible();
     await expect(page.locator('#fuentes')).toBeVisible();
     expect(await page.locator('[data-editorial-text]').count()).toBeGreaterThan(10);
   });
@@ -109,7 +128,7 @@ for (const data of [santaFe, altaGracia]) {
       await link.focus(); await page.keyboard.press('Enter');
       expect(await page.locator(':target').evaluate(e => e.getBoundingClientRect().top)).toBeGreaterThanOrEqual(64);
     }
-    await expect(page.getByRole('button', { name: 'Copiar lista', exact: true })).toBeDisabled();
+    await expect(page.getByRole('button', { name: 'Copiar lista', exact: true })).toHaveCount(0);
     await expect(page.locator('noscript p')).toContainText('Todo el contenido y sus enlaces están disponibles');
     await context.close();
   });

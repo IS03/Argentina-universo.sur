@@ -53,13 +53,13 @@ export default function Footer() {
           <p className="mt-4 max-w-sm text-sm leading-relaxed">
             Descubrí destinos, paisajes y experiencias únicas en todo el país. Tu guía completa para explorar Argentina.
           </p>
-          <div className="mt-6 inline-flex rounded-xl bg-white px-4 py-3">
+          <div className="mt-6 inline-flex max-w-full rounded-xl bg-white px-4 py-3">
             <Image
               src="/img/logo-santa-fe-turismo-color-1.svg"
               alt="Santa Fe Turismo - Logo oficial"
-              width={200}
-              height={48}
-              className="h-8 w-auto"
+              width={206}
+              height={26}
+              className="block h-auto w-[206px] max-w-full"
             />
           </div>
           <ul className="mt-4 flex list-none items-center gap-1">
