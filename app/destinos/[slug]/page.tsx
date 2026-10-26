@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
+import VisitPlanner from '@/components/destinos/VisitPlanner';
 import DestinoEditorialArticle from '@/components/destinos/DestinoEditorialArticle';
 import { getPublishedDestination, publishedDestinations } from '@/lib/destinos/published';
 import { SITE_NAME, SITE_URL } from '@/lib/seo';
@@ -20,5 +21,5 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function DestinationPage({ params }: Props) {
   const page = getPublishedDestination((await params).slug);
   if (!page) notFound();
-  return <DestinoEditorialArticle page={page} />;
+  return <DestinoEditorialArticle page={page} planningTools={<VisitPlanner destination={{ name: page.nombre, canonical: page.seo.proposedCanonical, attractions: page.attractions.map(a => ({ id: a.id, name: a.nombre })) }} />} />;
 }
