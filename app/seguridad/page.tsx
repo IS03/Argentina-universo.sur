@@ -1,6 +1,7 @@
 import { ROUTES, INTERNAL_ANCHORS } from "@/lib/site-links";
 import { staticPageMetadata } from "@/lib/seo";
 import EncabezadoPagina from "@/components/ui/EncabezadoPagina";
+import EspacioPublicitario from "@/components/publicidad/EspacioPublicitario";
 import SeguirExplorando from "@/components/ui/SeguirExplorando";
 import Icono, { type NombreIcono } from "@/components/ui/Icono";
 import { chip } from "@/components/ui/estilos";
@@ -216,6 +217,8 @@ export default function SeguridadPage() {
         <p className="mt-10 rounded-tarjeta bg-tinta-900 px-6 py-5 text-center font-display text-2xl text-white">
           Viajá seguro, viajá responsable
         </p>
+
+        <EspacioPublicitario id="seguridad-tras-contenido" className="pt-12" />
 
         {/* Enlazado interno (SEO) */}
         <SeguirExplorando

@@ -1,0 +1,300 @@
+{
+  "stats": {
+    "startTime": "2026-10-26T22:44:16.734Z",
+    "duration": 35159.534999999996,
+    "expected": 62,
+    "skipped": 2,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "publicidad": [
+    {
+      "title": "publicidad real: seis campañas, proporciones completas, secuencias y pantallas sin desbordamiento",
+      "project": "static-escritorio",
+      "results": [
+        {
+          "status": "passed",
+          "attachments": [
+            {
+              "name": "campañas-y-pantallas",
+              "body": [
+                {
+                  "ruta": "/",
+                  "ancho": 320,
+                  "ids": [
+                    "juegos-suramericanos"
+                  ]
+                },
+                {
+                  "ruta": "/actividades",
+                  "ancho": 320,
+                  "ids": [
+                    "proteccion-ingresos"
+                  ]
+                },
+                {
+                  "ruta": "/escapadas",
+                  "ancho": 320,
+                  "ids": [
+                    "obras-hidricas",
+                    "mil-aulas"
+                  ]
+                },
+                {
+                  "ruta": "/provincias/santa_fe",
+                  "ancho": 320,
+                  "ids": [
+                    "mamografia"
+                  ]
+                },
+                {
+                  "ruta": "/seguridad",
+                  "ancho": 320,
+                  "ids": [
+                    "seguridad-vial"
+                  ]
+                },
+                {
+                  "ruta": "/",
+                  "ancho": 768,
+                  "ids": [
+                    "juegos-suramericanos"
+                  ]
+                },
+                {
+                  "ruta": "/actividades",
+                  "ancho": 768,
+                  "ids": [
+                    "proteccion-ingresos"
+                  ]
+                },
+                {
+                  "ruta": "/escapadas",
+                  "ancho": 768,
+                  "ids": [
+                    "obras-hidricas",
+                    "mil-aulas"
+                  ]
+                },
+                {
+                  "ruta": "/provincias/santa_fe",
+                  "ancho": 768,
+                  "ids": [
+                    "mamografia"
+                  ]
+                },
+                {
+                  "ruta": "/seguridad",
+                  "ancho": 768,
+                  "ids": [
+                    "seguridad-vial"
+                  ]
+                },
+                {
+                  "ruta": "/",
+                  "ancho": 1440,
+                  "ids": [
+                    "juegos-suramericanos"
+                  ]
+                },
+                {
+                  "ruta": "/actividades",
+                  "ancho": 1440,
+                  "ids": [
+                    "proteccion-ingresos"
+                  ]
+                },
+                {
+                  "ruta": "/escapadas",
+                  "ancho": 1440,
+                  "ids": [
+                    "obras-hidricas",
+                    "mil-aulas"
+                  ]
+                },
+                {
+                  "ruta": "/provincias/santa_fe",
+                  "ancho": 1440,
+                  "ids": [
+                    "mamografia"
+                  ]
+                },
+                {
+                  "ruta": "/seguridad",
+                  "ancho": 1440,
+                  "ids": [
+                    "seguridad-vial"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "con imágenes demoradas se reserva el espacio y la publicidad no produce CLS",
+      "project": "static-escritorio",
+      "results": [
+        {
+          "status": "passed",
+          "attachments": [
+            {
+              "name": "CLS-imágenes-demoradas",
+              "body": [
+                {
+                  "ruta": "/",
+                  "cls": 0,
+                  "clsPublicidad": 0
+                },
+                {
+                  "ruta": "/actividades",
+                  "cls": 0,
+                  "clsPublicidad": 0
+                },
+                {
+                  "ruta": "/escapadas",
+                  "cls": 0,
+                  "clsPublicidad": 0
+                },
+                {
+                  "ruta": "/provincias/santa_fe",
+                  "cls": 0,
+                  "clsPublicidad": 0
+                },
+                {
+                  "ruta": "/seguridad",
+                  "cls": 0,
+                  "clsPublicidad": 0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "las campañas y sus secuencias están disponibles sin JavaScript",
+      "project": "static-escritorio",
+      "results": [
+        {
+          "status": "passed",
+          "attachments": []
+        }
+      ]
+    },
+    {
+      "title": "publicidad real: seis campañas, proporciones completas, secuencias y pantallas sin desbordamiento",
+      "project": "static-movil",
+      "results": [
+        {
+          "status": "passed",
+          "attachments": [
+            {
+              "name": "campañas-y-pantallas",
+              "body": [
+                {
+                  "ruta": "/",
+                  "ancho": 412,
+                  "ids": [
+                    "juegos-suramericanos"
+                  ]
+                },
+                {
+                  "ruta": "/actividades",
+                  "ancho": 412,
+                  "ids": [
+                    "proteccion-ingresos"
+                  ]
+                },
+                {
+                  "ruta": "/escapadas",
+                  "ancho": 412,
+                  "ids": [
+                    "obras-hidricas",
+                    "mil-aulas"
+                  ]
+                },
+                {
+                  "ruta": "/provincias/santa_fe",
+                  "ancho": 412,
+                  "ids": [
+                    "mamografia"
+                  ]
+                },
+                {
+                  "ruta": "/seguridad",
+                  "ancho": 412,
+                  "ids": [
+                    "seguridad-vial"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "con imágenes demoradas se reserva el espacio y la publicidad no produce CLS",
+      "project": "static-movil",
+      "results": [
+        {
+          "status": "passed",
+          "attachments": [
+            {
+              "name": "CLS-imágenes-demoradas",
+              "body": [
+                {
+                  "ruta": "/",
+                  "cls": 0,
+                  "clsPublicidad": 0
+                },
+                {
+                  "ruta": "/actividades",
+                  "cls": 0,
+                  "clsPublicidad": 0
+                },
+                {
+                  "ruta": "/escapadas",
+                  "cls": 0,
+                  "clsPublicidad": 0
+                },
+                {
+                  "ruta": "/provincias/santa_fe",
+                  "cls": 0,
+                  "clsPublicidad": 0
+                },
+                {
+                  "ruta": "/seguridad",
+                  "cls": 0,
+                  "clsPublicidad": 0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "las campañas y sus secuencias están disponibles sin JavaScript",
+      "project": "static-movil",
+      "results": [
+        {
+          "status": "passed",
+          "attachments": []
+        }
+      ]
+    }
+  ],
+  "omisiones": [
+    {
+      "title": "Workers: Suspense y Client Component",
+      "project": "static-escritorio"
+    },
+    {
+      "title": "Workers: Suspense y Client Component",
+      "project": "static-movil"
+    }
+  ]
+}

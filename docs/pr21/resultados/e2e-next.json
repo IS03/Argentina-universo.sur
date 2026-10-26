@@ -1,0 +1,328 @@
+{
+  "stats": {
+    "startTime": "2026-10-26T22:41:06.014Z",
+    "duration": 147934.199,
+    "expected": 155,
+    "skipped": 9,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "publicidad": [
+    {
+      "title": "publicidad real: seis campañas, proporciones completas, secuencias y pantallas sin desbordamiento",
+      "project": "escritorio",
+      "results": [
+        {
+          "status": "passed",
+          "attachments": [
+            {
+              "name": "campañas-y-pantallas",
+              "body": [
+                {
+                  "ruta": "/",
+                  "ancho": 320,
+                  "ids": [
+                    "juegos-suramericanos"
+                  ]
+                },
+                {
+                  "ruta": "/actividades",
+                  "ancho": 320,
+                  "ids": [
+                    "proteccion-ingresos"
+                  ]
+                },
+                {
+                  "ruta": "/escapadas",
+                  "ancho": 320,
+                  "ids": [
+                    "obras-hidricas",
+                    "mil-aulas"
+                  ]
+                },
+                {
+                  "ruta": "/provincias/santa_fe",
+                  "ancho": 320,
+                  "ids": [
+                    "mamografia"
+                  ]
+                },
+                {
+                  "ruta": "/seguridad",
+                  "ancho": 320,
+                  "ids": [
+                    "seguridad-vial"
+                  ]
+                },
+                {
+                  "ruta": "/",
+                  "ancho": 768,
+                  "ids": [
+                    "juegos-suramericanos"
+                  ]
+                },
+                {
+                  "ruta": "/actividades",
+                  "ancho": 768,
+                  "ids": [
+                    "proteccion-ingresos"
+                  ]
+                },
+                {
+                  "ruta": "/escapadas",
+                  "ancho": 768,
+                  "ids": [
+                    "obras-hidricas",
+                    "mil-aulas"
+                  ]
+                },
+                {
+                  "ruta": "/provincias/santa_fe",
+                  "ancho": 768,
+                  "ids": [
+                    "mamografia"
+                  ]
+                },
+                {
+                  "ruta": "/seguridad",
+                  "ancho": 768,
+                  "ids": [
+                    "seguridad-vial"
+                  ]
+                },
+                {
+                  "ruta": "/",
+                  "ancho": 1440,
+                  "ids": [
+                    "juegos-suramericanos"
+                  ]
+                },
+                {
+                  "ruta": "/actividades",
+                  "ancho": 1440,
+                  "ids": [
+                    "proteccion-ingresos"
+                  ]
+                },
+                {
+                  "ruta": "/escapadas",
+                  "ancho": 1440,
+                  "ids": [
+                    "obras-hidricas",
+                    "mil-aulas"
+                  ]
+                },
+                {
+                  "ruta": "/provincias/santa_fe",
+                  "ancho": 1440,
+                  "ids": [
+                    "mamografia"
+                  ]
+                },
+                {
+                  "ruta": "/seguridad",
+                  "ancho": 1440,
+                  "ids": [
+                    "seguridad-vial"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "con imágenes demoradas se reserva el espacio y la publicidad no produce CLS",
+      "project": "escritorio",
+      "results": [
+        {
+          "status": "passed",
+          "attachments": [
+            {
+              "name": "CLS-imágenes-demoradas",
+              "body": [
+                {
+                  "ruta": "/",
+                  "cls": 0,
+                  "clsPublicidad": 0
+                },
+                {
+                  "ruta": "/actividades",
+                  "cls": 0,
+                  "clsPublicidad": 0
+                },
+                {
+                  "ruta": "/escapadas",
+                  "cls": 0,
+                  "clsPublicidad": 0
+                },
+                {
+                  "ruta": "/provincias/santa_fe",
+                  "cls": 0,
+                  "clsPublicidad": 0
+                },
+                {
+                  "ruta": "/seguridad",
+                  "cls": 0,
+                  "clsPublicidad": 0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "las campañas y sus secuencias están disponibles sin JavaScript",
+      "project": "escritorio",
+      "results": [
+        {
+          "status": "passed",
+          "attachments": []
+        }
+      ]
+    },
+    {
+      "title": "publicidad real: seis campañas, proporciones completas, secuencias y pantallas sin desbordamiento",
+      "project": "movil",
+      "results": [
+        {
+          "status": "passed",
+          "attachments": [
+            {
+              "name": "campañas-y-pantallas",
+              "body": [
+                {
+                  "ruta": "/",
+                  "ancho": 412,
+                  "ids": [
+                    "juegos-suramericanos"
+                  ]
+                },
+                {
+                  "ruta": "/actividades",
+                  "ancho": 412,
+                  "ids": [
+                    "proteccion-ingresos"
+                  ]
+                },
+                {
+                  "ruta": "/escapadas",
+                  "ancho": 412,
+                  "ids": [
+                    "obras-hidricas",
+                    "mil-aulas"
+                  ]
+                },
+                {
+                  "ruta": "/provincias/santa_fe",
+                  "ancho": 412,
+                  "ids": [
+                    "mamografia"
+                  ]
+                },
+                {
+                  "ruta": "/seguridad",
+                  "ancho": 412,
+                  "ids": [
+                    "seguridad-vial"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "con imágenes demoradas se reserva el espacio y la publicidad no produce CLS",
+      "project": "movil",
+      "results": [
+        {
+          "status": "passed",
+          "attachments": [
+            {
+              "name": "CLS-imágenes-demoradas",
+              "body": [
+                {
+                  "ruta": "/",
+                  "cls": 0,
+                  "clsPublicidad": 0
+                },
+                {
+                  "ruta": "/actividades",
+                  "cls": 0,
+                  "clsPublicidad": 0
+                },
+                {
+                  "ruta": "/escapadas",
+                  "cls": 0,
+                  "clsPublicidad": 0
+                },
+                {
+                  "ruta": "/provincias/santa_fe",
+                  "cls": 0,
+                  "clsPublicidad": 0
+                },
+                {
+                  "ruta": "/seguridad",
+                  "cls": 0,
+                  "clsPublicidad": 0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "las campañas y sus secuencias están disponibles sin JavaScript",
+      "project": "movil",
+      "results": [
+        {
+          "status": "passed",
+          "attachments": []
+        }
+      ]
+    }
+  ],
+  "omisiones": [
+    {
+      "title": "móvil: abre y cierra con estados accesibles y foco gestionado",
+      "project": "escritorio"
+    },
+    {
+      "title": "móvil: Escape cierra, devuelve el foco y Tab no sale del menú abierto",
+      "project": "escritorio"
+    },
+    {
+      "title": "móvil: cada opción recibe su propio toque y el menú se cierra al navegar",
+      "project": "escritorio"
+    },
+    {
+      "title": "móvil: pasar a escritorio cierra el menú y libera el scroll",
+      "project": "escritorio"
+    },
+    {
+      "title": "móvil: volver atrás con el menú abierto lo cierra",
+      "project": "escritorio"
+    },
+    {
+      "title": "escritorio: los enlaces navegan",
+      "project": "movil"
+    },
+    {
+      "title": "móvil: el mapa del detalle no descarga teselas y el de la capital solo las visibles",
+      "project": "escritorio"
+    },
+    {
+      "title": "escritorio: el detalle muestra las teselas reales en la vista previa",
+      "project": "movil"
+    },
+    {
+      "title": "áreas táctiles mínimas en móvil: menú 44 px, puntos del carrusel 24 px",
+      "project": "escritorio"
+    }
+  ]
+}

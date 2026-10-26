@@ -19,7 +19,7 @@ export default defineConfig({
     {
       name: "static-" + d,
       metadata: { publicExport: true },
-      testMatch: ["legacy.spec.ts", "static.spec.ts", "destinations.spec.ts"],
+      testMatch: ["legacy.spec.ts", "static.spec.ts", "destinations.spec.ts", "publicidad.spec.ts"],
       use: {
         ...(d === "movil" ? devices["Pixel 7"] : devices["Desktop Chrome"]),
         channel: "chrome",

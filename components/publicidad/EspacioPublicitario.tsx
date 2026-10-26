@@ -1,43 +1,61 @@
-import { ESPACIOS, FORMATOS, ANUNCIO_DE_EJEMPLO, modoEspacio, type IdEspacio, type AnuncioDirecto as Anuncio } from "@/lib/publicidad";
+import { anunciosDelEspacio, urlAnuncio, type IdEspacio, type ImagenAnuncio, type AnuncioDirecto as Anuncio } from "@/lib/publicidad";
 
-// Rótulo común: la publicidad nunca se presenta como contenido editorial.
-function Rotulo() {
-  return <p className="antetitulo mb-2 text-[0.625rem] text-tinta-500">Publicidad</p>;
-}
-
-export function AnuncioDirecto({ anuncio }: { anuncio: Anuncio }) {
+function Creatividad({ imagen }: { imagen: ImagenAnuncio }) {
   return (
-    <a
-      href={anuncio.href}
-      target="_blank"
-      rel="sponsored noopener noreferrer"
-      className="flex h-full w-full flex-col justify-center rounded-control border border-sol-400 bg-white p-4 text-left hover:bg-arena-50"
-    >
-      <span className="text-xs font-semibold text-tinta-500">{anuncio.anunciante}</span>
-      <span className="mt-1 font-semibold text-tinta-900">{anuncio.titulo}</span>
-      <span className="mt-1 line-clamp-2 text-sm text-tinta-700">{anuncio.texto}</span>
-    </a>
+    <>
+      {/* WebP local ya optimizado: mismo recurso en Next y Pages, sin servidor de imágenes. */}
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src={imagen.src}
+        alt={imagen.alt}
+        width={imagen.ancho}
+        height={imagen.alto}
+        loading="lazy"
+        decoding="async"
+        className="block h-auto w-full object-contain"
+        style={{ aspectRatio: `${imagen.ancho} / ${imagen.alto}` }}
+      />
+      {/* Las bandas muy panorámicas conservan su proporción. Su texto también es legible en móvil. */}
+      {imagen.ancho / imagen.alto > 5 && <p className="mt-2 text-sm leading-relaxed text-tinta-700">{imagen.alt}</p>}
+    </>
   );
 }
 
-// Servidor: decide en el build. Hoy siempre devuelve null fuera de la vista previa local.
+export function AnuncioDirecto({ anuncio }: { anuncio: Anuncio }) {
+  const url = urlAnuncio(anuncio.url);
+  return (
+    <div data-campana={anuncio.id} className="min-w-0 w-full" style={{ maxWidth: anuncio.anchoMaximo }}>
+      <p className="antetitulo mb-2 text-[0.625rem] text-tinta-500">Publicidad</p>
+      <div className="rounded-control border border-arena-300 bg-white p-2 sm:p-3">
+        {url ? (
+          <a href={url} target="_blank" rel="sponsored noopener noreferrer" className="block rounded-control focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lago-600">
+            <Creatividad imagen={anuncio.imagen} />
+          </a>
+        ) : <Creatividad imagen={anuncio.imagen} />}
+        <p className="mt-3 text-xs leading-relaxed text-tinta-500">{anuncio.anunciante}</p>
+        {anuncio.secuencia && anuncio.secuencia.length > 0 && (
+          <details className="mt-2 border-t border-arena-300">
+            <summary className="min-h-11 cursor-pointer py-3 text-xs font-medium text-tinta-700 hover:text-lago-700">
+              Ver secuencia de la campaña
+            </summary>
+            <ol className="grid list-none gap-4 pb-2" aria-label={`Imágenes de la campaña de ${anuncio.anunciante}`}>
+              {anuncio.secuencia.map(imagen => <li key={imagen.src}><Creatividad imagen={imagen} /></li>)}
+            </ol>
+          </details>
+        )}
+      </div>
+    </div>
+  );
+}
+
+// Servidor: HTML determinista desde la configuración. Sin campañas no hay reserva ni rótulo vacío.
 export default function EspacioPublicitario({ id, className = "" }: { id: IdEspacio; className?: string }) {
-  if (modoEspacio() === "oculto") return null;
-  const espacio = ESPACIOS[id];
-  const formato = FORMATOS[espacio.formato];
+  const anuncios = anunciosDelEspacio(id);
+  if (anuncios.length === 0) return null;
   return (
     <aside aria-label="Publicidad" data-espacio-publicitario={id} className={`mx-auto w-full ${className}`}>
-      <div className={`mx-auto ${formato.claseAncho}`}>
-        <Rotulo />
-        <div className={`mx-auto flex w-full items-center justify-center rounded-control border border-dashed border-arena-400 bg-arena-100 ${formato.claseAlto}`}>
-          {espacio.formato === "rectangulo" ? (
-            <AnuncioDirecto anuncio={ANUNCIO_DE_EJEMPLO} />
-          ) : (
-            <p className="px-4 text-center text-xs text-tinta-500">
-              Espacio reservado {formato.movil.ancho} × {formato.movil.alto} / {formato.escritorio.ancho} × {formato.escritorio.alto} · {espacio.descripcion}
-            </p>
-          )}
-        </div>
+      <div className="flex flex-wrap items-start justify-center gap-8">
+        {anuncios.map(anuncio => <AnuncioDirecto key={anuncio.id} anuncio={anuncio} />)}
       </div>
     </aside>
   );

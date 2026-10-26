@@ -35,6 +35,7 @@ const indice = [
   ["medicion", "Medición del uso del sitio"],
   ["preferencias", "Tu decisión sobre las cookies"],
   ["cookies", "Cookies y almacenamiento local"],
+  ["publicidad", "Publicidad directa"],
   ["terceros", "Otros servicios de terceros"],
   ["control", "Cómo evitar la medición"],
   ["derechos", "Tus derechos"],
@@ -73,7 +74,7 @@ export default function PrivacidadPage() {
               <a href={`mailto:${CONTACTO_PRIVACIDAD}`} className={enlace}>{CONTACTO_PRIVACIDAD}</a>.
             </p>
             <p className={parrafo}>
-              El sitio no tiene formularios, registro de usuarios ni publicidad: no te pedimos nombre, correo ni otros
+              El sitio no tiene formularios ni registro de usuarios: no te pedimos nombre, correo ni otros
               datos para usarlo, y no vendemos ni cedemos información a terceros.
             </p>
           </section>
@@ -165,6 +166,21 @@ export default function PrivacidadPage() {
                 <li key={item.nombre}><code>{item.nombre}</code>: {item.finalidad}</li>
               ))}
             </ul>
+          </section>
+
+          <section className={seccion} aria-labelledby="publicidad">
+            <h2 id="publicidad" className={titulo}>Publicidad directa</h2>
+            <p className={parrafo}>
+              Mostramos banners de anunciantes identificados con el rótulo «Publicidad». Las imágenes se sirven
+              desde los archivos del propio sitio. No usamos redes publicitarias, píxeles ni scripts de anuncios;
+              estos banners no agregan cookies, almacenamiento local ni seguimiento individual de visitantes.
+            </p>
+            <p className={parrafo}>
+              No incorporamos una medición específica de clics publicitarios. Si un anuncio incluye un enlace,
+              al abrirlo visitás un sitio externo, sujeto a su propia política de privacidad. La medición general
+              de enlaces externos de Google Analytics sigue dependiendo de tu consentimiento, como se explica arriba.
+              Los banners se muestran también cuando rechazás las cookies de analítica.
+            </p>
           </section>
 
           <section className={seccion} aria-labelledby="terceros">

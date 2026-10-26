@@ -4,7 +4,7 @@
  * de "Continuar explorando" y las teselas de OpenStreetMap de los mapas.
  */
 
-export const ULTIMA_ACTUALIZACION = "24 de octubre de 2026";
+export const ULTIMA_ACTUALIZACION = "26 de octubre de 2026";
 
 // Titular según el pie de página del sitio.
 export const RESPONSABLE = "Sebastián Miguel Giusti";
