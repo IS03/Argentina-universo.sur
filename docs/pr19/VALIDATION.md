@@ -17,7 +17,7 @@ Los cuatro hashes por ficha y los digests adicionales de variantes están en `li
 | --- | --- |
 | Lint y TypeScript | Correctos, sin advertencias de lint |
 | Validaciones de datos/editoriales, imágenes y PDF | Correctas; 24 Escapadas retenidas y 24 PDF originales intactos |
-| Unitarias | 156 aprobadas, cero fallos; 9 nuevas de publicación/autorización/seguridad |
+| Unitarias | 157 aprobadas, cero fallos; 10 nuevas de publicación/autorización/seguridad |
 | Build Next + auditoría editorial | Correcto; dos destinos autorizados y 24 Escapadas retenidas |
 | Auditoría SEO Next | 108 URLs, cero errores; las 106 anteriores se conservan |
 | E2E Next, escritorio/móvil/consentimiento | 133 aprobadas, 9 omisiones previstas por entorno |
@@ -33,7 +33,7 @@ La auditoría local adicional utiliza el snapshot privado del maestro: no se enc
 
 ## Rendimiento local
 
-Chrome, tres corridas por página y perfil, caché fría. Escritorio: 20 Mbps, latencia añadida 40 ms, CPU 1×. Móvil: Pixel 7 DPR 2,625, 1,6 Mbps, latencia añadida 150 ms y CPU 4×. Medición sobre el export estático local; transferencia sin compresión HTTP de CDN. No son datos de campo ni una estimación de INP de usuarios.
+Medición visual de referencia del commit `ea2da24`; los cambios posteriores ajustan nombres accesibles y saneamiento de errores, sin cambiar contenido, fotografías o composición. Chrome, tres corridas por página y perfil, caché fría. Escritorio: 20 Mbps, latencia añadida 40 ms, CPU 1×. Móvil: Pixel 7 DPR 2,625, 1,6 Mbps, latencia añadida 150 ms y CPU 4×. Medición sobre el export estático local; transferencia sin compresión HTTP de CDN. No son datos de campo ni una estimación de INP de usuarios.
 
 | Ficha / perfil | LCP mediano | FCP mediano | CLS máximo | Transferencia mediana |
 | --- | ---: | ---: | ---: | ---: |
@@ -46,7 +46,7 @@ La foto seleccionada en escritorio es 960w: 49734 B en Santa Fe y 58010 B en Alt
 
 Next efectúa algunas comprobaciones HEAD de enlaces y cancela solicitudes con `net::ERR_ABORTED`; se cuentan como solicitudes, distinguiéndolas de errores reales de recursos o ejecución. No se modificó el Navbar global para ocultarlas. No hubo errores de página ni de recursos en las muestras, excluidas únicamente esas cancelaciones HEAD.
 
-El export Preview mide **106418892 B / 2055 archivos**, incluidos los 352332 B de fotos nuevas. Frente a la referencia PR18 (105382445 B), aumenta 1036447 B entre páginas, RSC, recursos y fotografías. Los JPEG originales, evidencias y capturas de documentación no forman parte del despliegue; los PDF continúan enlazados a sus URLs vigentes.
+La referencia `ea2da24` del export Preview midió **106418892 B / 2055 archivos**, incluidos los 352332 B de fotos nuevas. Frente a la referencia PR18 (105382445 B), aumenta 1036447 B entre páginas, RSC, recursos y fotografías. Los JPEG originales, evidencias y capturas de documentación no forman parte del despliegue; los PDF continúan enlazados a sus URLs vigentes.
 
 ## Capturas de la presentación final
 

@@ -32,7 +32,12 @@ export async function verifyPrivateAuthorization(batchFile, receiptFile, masterF
   return { decisions: 10, hashes: 8, candidates: 2, digitalSignatureClaimed: false };
 }
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
-  const args = process.argv.slice(2);
-  if (args.length !== 4) throw Error('FOUR_PRIVATE_INPUTS_REQUIRED');
-  console.log(JSON.stringify(await verifyPrivateAuthorization(...args)));
+  try {
+    const args = process.argv.slice(2);
+    if (args.length !== 4) throw Error('FOUR_PRIVATE_INPUTS_REQUIRED');
+    console.log(JSON.stringify(await verifyPrivateAuthorization(...args)));
+  } catch {
+    console.error('PRIVATE_AUTHORIZATION_BLOCKED: inspect private inputs and approved versions. No payload logged.');
+    process.exitCode = 1;
+  }
 }

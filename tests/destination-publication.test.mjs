@@ -1,4 +1,5 @@
 import test from 'node:test';
+import { spawnSync } from 'node:child_process';
 import assert from 'node:assert/strict';
 import { readFile, writeFile, mkdir, mkdtemp, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
@@ -70,5 +71,18 @@ test('public artifact audit blocks any unapproved destination path and unknown m
     assert.equal((await auditPublicArtifact(dir, [])).errors.length, 0);
     await mkdir(join(dir, 'media/review'), { recursive: true }); await writeFile(join(dir, 'media/review/renamed.webp'), 'unapproved bytes');
     assert.ok((await auditPublicArtifact(dir, [])).errors.some(e => e.rule === 'unapproved-destination-media'));
+  } finally { await rm(dir, { recursive: true, force: true }); }
+});
+
+test('authorization CLI never logs malformed private input or parser excerpts', async () => {
+  await mkdir('.artifacts/pr19', { recursive: true });
+  const dir = await mkdtemp('.artifacts/pr19/auth-test-');
+  try {
+    const input = join(dir, 'malformed.json');
+    await writeFile(input, 'SYNTHETIC_PRIVATE_AUTHORITY_CANARY', { mode: 0o600 });
+    const result = spawnSync(process.execPath, ['--experimental-strip-types', 'scripts/editorial/authorize-publication.mjs', input, input, input, input], { encoding: 'utf8' });
+    assert.equal(result.status, 1); assert.equal(result.stdout, '');
+    assert.match(result.stderr, /PRIVATE_AUTHORIZATION_BLOCKED/);
+    assert.doesNotMatch(result.stderr, /SYNTHETIC_PRIVATE_AUTHORITY_CANARY|SyntaxError|malformed.json/);
   } finally { await rm(dir, { recursive: true, force: true }); }
 });
