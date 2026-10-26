@@ -12,7 +12,7 @@ for (const data of [santaFe, altaGracia]) {
     await expect(page.getByAltText(data.photos[0].foto.alt)).toBeVisible();
     await expect(page.locator('article figure')).toContainText(data.photos[0].foto.credito.titular);
     await expect(page.locator('article figure')).toContainText(data.photos[0].modifications);
-    await expect(page.getByRole('link', { name: /Buscar .* en OpenStreetMap/ })).toHaveCount(3);
+    await expect(page.getByRole('link', { name: /Ver en el mapa:.*OpenStreetMap/ })).toHaveCount(3);
     const citation = page.locator('a[href^="#fuente-"]').first(); await citation.focus(); await page.keyboard.press('Enter');
     await expect(page).toHaveURL(/#fuente-/);
     await page.locator(':target').getByRole('link', { name: 'Volver a la primera cita' }).click();
