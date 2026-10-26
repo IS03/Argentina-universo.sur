@@ -19,6 +19,7 @@ import { copyTrackedInputs, readEditorialTrips, preparePublicTripInputs, assertP
 import { imageWidths } from "../../lib/pages/image-policy.ts";
 import { assertWorkIsolation } from "../editorial/work-audit.mjs";
 await assertWorkIsolation();
+await (await import("../editorial/publication.mjs")).readPublication();
 const root = fileURLToPath(new URL("../../", import.meta.url));
 const base = join(root, ".artifacts/pages");
 const source = join(base, "source");

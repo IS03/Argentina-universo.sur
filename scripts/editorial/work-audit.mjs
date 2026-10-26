@@ -4,20 +4,24 @@ import { join, resolve } from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { assertPublicArtifact } from '../pages/editorial-security.mjs';
 import { readPrivateJson } from './private-io.mjs';
+import { readPublication } from './publication.mjs';
 
 export async function assertWorkIsolation(root = process.cwd()) {
   const errors = [];
+  const destinationRoute = 'app/destinos/[slug]/page.tsx';
+  let publicationCount = 0;
   const tracked = execFileSync('git', ['ls-files', '-z', '--cached', '--others', '--exclude-standard'], { cwd: root, encoding: 'utf8' }).split('\0').filter(Boolean);
   for (const file of tracked) {
     if (file.startsWith('.artifacts/') || /(?:^|\/)(?:master-snapshot|previous-snapshot|import-plan)\b/i.test(file)) errors.push('PRIVATE_TRACKED_INPUT');
     if (/^(?:app|components)\/.*\.[cm]?[jt]sx?$/.test(file) && /work-review|review-batch|review-server|review-assets|editorial-import|work-import|\.artifacts\//.test(await readFile(join(root, file), 'utf8'))) errors.push('WORK_APP_IMPORT_NOT_ENABLED');
     if (file.startsWith('app/')) {
-      if (/^app\/destinos(?:\/|$)/.test(file)) errors.push('WORK_PUBLIC_ROUTE_NOT_ENABLED');
-      if (/\.[cm]?[jt]sx?$/.test(file) && /work-review|DestinoArticle|DestinoEditorialArticle|review-batch|editorial-import|work-import|\.artifacts\//.test(await readFile(join(root, file), 'utf8'))) errors.push('WORK_APP_IMPORT_NOT_ENABLED');
+      if (/^app\/destinos(?:\/|$)/.test(file) && file !== destinationRoute) errors.push('WORK_PUBLIC_ROUTE_NOT_ENABLED');
+      if (/\.[cm]?[jt]sx?$/.test(file) && /work-review|DestinoArticle|review-batch|editorial-import|work-import|\.artifacts\//.test(await readFile(join(root, file), 'utf8'))) errors.push('WORK_APP_IMPORT_NOT_ENABLED');
     }
   }
+  if (!errors.length && tracked.includes(destinationRoute)) publicationCount = (await readPublication(root)).pages.length;
   if (errors.length) throw Error('Work isolation check failed: ' + [...new Set(errors)].join(','));
-  return { workPublicRoutes: 0, privateTrackedInputs: 0 };
+  return { workPublicRoutes: publicationCount, privateTrackedInputs: 0 };
 }
 
 export function privateWorkNeedles(snapshot) {

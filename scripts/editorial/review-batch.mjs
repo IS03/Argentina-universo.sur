@@ -1,3 +1,4 @@
+import { AUTHORIZED_DESTINATIONS } from "../../lib/destinos/authorized.ts";
 // Private editorial packages, not a publication pipeline. The master is never changed.
 import { mkdir, readFile, writeFile, readdir, chmod } from 'node:fs/promises';
 import { join, resolve } from 'node:path';
@@ -145,9 +146,13 @@ export async function writeHumanReview(batch, output) {
 }
 
 export async function auditReviewExclusion(directory, batch, { include = () => true } = {}) {
-  const privateNeedles = batch.pages.flatMap(page => [...reviewTextFragments(page.payload), '/destinos/' + page.payload.slug]);
+  const withheldPages = batch.pages.filter(page => {
+    const pin = AUTHORIZED_DESTINATIONS[page.payload.slug];
+    return !pin || fingerprint(pageHashes(page)) !== fingerprint(pin.hashes);
+  });
+  const privateNeedles = withheldPages.flatMap(page => [...reviewTextFragments(page.payload), '/destinos/' + page.payload.slug]);
   const report = await auditPublicArtifact(directory, [], { privateNeedles, include });
-  const forbidden = new Set(batch.pages.flatMap(p => p.mediaEvidence.flatMap(m => [m.originalSha256, ...m.derivatives.map(v => v.sha256)])));
+  const forbidden = new Set([...batch.pages.flatMap(p => p.mediaEvidence.map(m => m.originalSha256)), ...withheldPages.flatMap(p => p.mediaEvidence.flatMap(m => m.derivatives.map(v => v.sha256)))]);
   async function walk(dir) { for (const entry of await readdir(dir, { withFileTypes: true })) {
     const path = join(dir, entry.name), name = path.slice(resolve(directory).length + 1);
     if (entry.isDirectory()) await walk(path);

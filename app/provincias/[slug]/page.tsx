@@ -1,3 +1,4 @@
+import DestinosDeProvincia from "@/components/destinos/DestinosDeProvincia";
 import Carrusel from "@/components/Carrusel";
 import MapaUbicacion from "@/components/mapa/MapaUbicacion";
 import Link from "next/link";
@@ -113,6 +114,8 @@ export default async function ProvinciaPage({ params }: PageProps) {
             </Link>
           </aside>
         </div>
+
+        <DestinosDeProvincia slug={provincia.slug} />
 
         {/* Carrusel */}
         {provincia.fotos.length > 0 && (

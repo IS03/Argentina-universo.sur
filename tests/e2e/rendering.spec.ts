@@ -94,10 +94,26 @@ test.describe("portada", () => {
   test("el carrusel avanza solo cuando la siguiente imagen ya cargó", async ({ page, errores }) => {
     void errores;
     await page.clock.install();
+    // Retener la segunda descarga comprueba la condición de carga sin depender de
+    // la velocidad del optimizador. complete puede ser true antes del decode/onLoad
+    // de next/image; adelantar el reloj en ese punto hacía esta prueba intermitente.
+    let liberar: () => void = () => {};
+    const retenida = new Promise<void>(resolve => { liberar = resolve; });
+    await page.route(url => url.pathname === "/_next/image" && url.searchParams.get("url") === "/img/home/2.jpg?v=3", async route => {
+      await retenida;
+      await route.continue();
+    });
     await page.goto("/");
-    await expect.poll(() => page.locator('img[alt$="imagen 2"]').evaluate((img: HTMLImageElement) => img.complete && img.naturalWidth > 0)).toBe(true);
-    await page.clock.runFor(5000);
     const visible = page.locator('div[aria-hidden="false"] > img');
+    const segunda = page.locator('img[alt$="imagen 2"]');
+    await expect(segunda).toBeAttached();
+    await page.clock.runFor(5000);
+    await expect(visible).toHaveAttribute("alt", /imagen 1$/);
+    liberar();
+    await segunda.evaluate((img: HTMLImageElement) => img.decode());
+    // Dejar completar onLoad y el frame pendiente antes del siguiente intervalo.
+    await page.clock.runFor(16);
+    await page.clock.runFor(5000);
     await expect(visible).toHaveAttribute("alt", /imagen 2$/);
     await page.clock.runFor(1600);
     await expect(page.locator('img[alt$="imagen 3"]')).toHaveCount(1);
@@ -648,10 +664,10 @@ test("fuera de producción no se carga Google Analytics ni se envían datos a Go
   expect(pedidos).toEqual([]);
 });
 
-test("la metadata canónica no cambia y el sitemap mantiene 106 URLs", async ({ request }) => {
+test("la metadata canónica no cambia y el sitemap conserva las 106 URLs y suma dos destinos", async ({ request }) => {
   const canonical = async (path: string) => (await (await request.get(path)).text()).match(/<link rel="canonical" href="([^"]+)"/)?.[1];
   expect(await canonical("/")).toBe("https://www.argentinauniversosur.com");
   expect(await canonical("/actividades?provincia=catarmaca")).toBe("https://www.argentinauniversosur.com/actividades");
   const sitemap = await (await request.get("/sitemap.xml")).text();
-  expect(sitemap.match(/<loc>/g)).toHaveLength(106);
+  expect(sitemap.match(/<loc>/g)).toHaveLength(108);
 });

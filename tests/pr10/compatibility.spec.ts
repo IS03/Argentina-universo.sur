@@ -122,7 +122,7 @@ test("redirect permanente Catamarca y metadatos estáticos", async ({
   expect(response.headers().location).toContain("/provincias/catamarca");
   const sitemap = await request.get("/sitemap.xml");
   expect(sitemap.status()).toBe(200);
-  expect((await sitemap.text()).match(/<loc>/g)).toHaveLength(106);
+  expect((await sitemap.text()).match(/<loc>/g)).toHaveLength(108);
   const robots = await request.get("/robots.txt");
   expect(robots.status()).toBe(200);
   expect(await robots.text()).toContain(

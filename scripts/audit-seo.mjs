@@ -1,3 +1,4 @@
+import { approvedDestinationUrls, readPublication } from "./editorial/publication.mjs";
 import { approvedTripUrls } from "./editorial/public-urls.mjs";
 import { spawn } from "node:child_process";
 import { createServer } from "node:net";
@@ -34,7 +35,7 @@ export function readMetadata(html) {
   };
 }
 
-export function auditMetadata(records, preview = false) {
+export function auditMetadata(records, preview = false, destinationImages = new Map()) {
   const errors = [];
   for (const row of records) {
     const label = row.path;
@@ -49,7 +50,7 @@ export function auditMetadata(records, preview = false) {
     };
     if (!matches(row.canonical[0]) || !matches(row.ogUrl[0])) errors.push(`${label}: canonical/OG URL incorrectos`);
     if (row.ogTitle[0] !== row.title[0] || row.ogDescription[0] !== row.description[0]) errors.push(`${label}: OG no coincide con title/description`);
-    if (!row.ogImages.length || row.ogImages.some(url => !url.startsWith(SITE_URL + "/img/"))) errors.push(`${label}: OG image ausente o con origen incorrecto`);
+    if (!row.ogImages.length || row.ogImages.some(url => destinationImages.has(row.path) ? url !== destinationImages.get(row.path) : !url.startsWith(SITE_URL + "/img/"))) errors.push(`${label}: OG image ausente o con origen incorrecto`);
     if (!row.robots.length || row.robots.some(value => /\bnoindex\b/.test(value)) !== preview) errors.push(`${label}: política robots incorrecta`);
     if (row.title[0]?.startsWith("...") || /[\r\n]/.test(row.description[0])) errors.push(`${label}: metadata mal formada`);
   }
@@ -110,7 +111,7 @@ async function localServer() {
 
 export async function auditSite(base, preview = false) {
   const catalog = await readCatalog();
-  const urls = [...createSitemap(catalog.provincias.map(normalizarProvincia), catalog.actividades.map(normalizarActividad)).map(row => row.url), ...await approvedTripUrls(projectRoot)];
+  const urls = [...createSitemap(catalog.provincias.map(normalizarProvincia), catalog.actividades.map(normalizarActividad)).map(row => row.url), ...await approvedTripUrls(projectRoot), ...await approvedDestinationUrls(projectRoot)];
   const paths = urls.map(url => new URL(url).pathname);
   const headers = { "user-agent": "Twitterbot" }; // metadata completa en HTML, incluso sin JavaScript.
   if (process.env.VERCEL_OIDC_TOKEN) headers["x-vercel-trusted-oidc-idp-token"] = process.env.VERCEL_OIDC_TOKEN;
@@ -123,7 +124,8 @@ export async function auditSite(base, preview = false) {
       records.push({ path, status: response.status, ...readMetadata(await response.text()) });
     }));
   }
-  const errors = auditMetadata(records, preview);
+  const destinationImages = new Map((await readPublication()).pages.map(p => ["/destinos/" + p.slug, SITE_URL + p.photos[0].foto.src]));
+  const errors = auditMetadata(records, preview, destinationImages);
   const sitemap = await request("/sitemap.xml");
   if (!sitemap.ok) errors.push(`Sitemap: HTTP ${sitemap.status}`);
   errors.push(...auditSitemap(await sitemap.text(), urls));

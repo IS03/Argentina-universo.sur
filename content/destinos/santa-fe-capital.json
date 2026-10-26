@@ -1,0 +1,264 @@
+{
+  "id": "work-e4961c25767fc106",
+  "slug": "santa-fe-capital",
+  "nombre": "Santa Fe capital",
+  "title": "Santa Fe capital: historia, museos y laguna Setúbal",
+  "provinceLabel": "Santa Fe",
+  "provinceSlugs": [
+    "santa_fe"
+  ],
+  "resumen": "La historia constitucional, el patrimonio jesuita y el paisaje de la laguna ofrecen tres entradas a Santa Fe capital. Esta ficha propone elegir entre esas miradas, con referencias concretas para preparar la visita a cada lugar.",
+  "leadSourceIds": [
+    "src-2ee0d5637e4a3f36",
+    "src-529f8a088ee41faa",
+    "src-b4d5cb6ad14a7326"
+  ],
+  "introduction": [
+    {
+      "text": "Santa Fe tiene una relación decisiva con la historia institucional argentina: aquí se sancionó la Constitución de 1853. El Parque y Museo de la Constitución permite aproximarse a ese legado desde una propuesta interpretativa. La Manzana Jesuítica abre otra perspectiva, centrada en religión, educación y memoria local.",
+      "sourceIds": [
+        "src-2ee0d5637e4a3f36",
+        "src-529f8a088ee41faa"
+      ]
+    },
+    {
+      "text": "El Puente Colgante suma una mirada sobre el vínculo de la ciudad con el agua. Es una referencia del paisaje costero, diferente de las propuestas del Museo de la Constitución y de la Manzana Jesuítica. Los tres lugares permiten acercarse a la capital provincial desde temas y escalas diferentes.",
+      "sourceIds": [
+        "src-b4d5cb6ad14a7326",
+        "src-2ee0d5637e4a3f36",
+        "src-529f8a088ee41faa"
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "id": "miradas",
+      "title": "Tres miradas para preparar tu visita",
+      "paragraphs": [
+        {
+          "text": "Para una aproximación a la historia nacional, elegí el Museo de la Constitución. Si te interesa cómo se relacionan educación, patrimonio y vida religiosa, concentrá la visita en la Manzana Jesuítica. El paisaje del Puente Colgante permite mirar la ciudad desde su dimensión costera. La elección puede responder a tus intereses sin convertir estas propuestas en una secuencia obligatoria.",
+          "sourceIds": [
+            "src-2ee0d5637e4a3f36",
+            "src-529f8a088ee41faa",
+            "src-b4d5cb6ad14a7326"
+          ]
+        },
+        {
+          "text": "Las ubicaciones ayudan a entender esas diferencias: la Manzana Jesuítica reúne un conjunto educativo y religioso; el Museo de la Constitución se integra en un parque; el Puente Colgante forma parte del paisaje de las costaneras. Cada lugar merece una mirada propia, más allá de compartir la misma ciudad.",
+          "sourceIds": [
+            "src-2ee0d5637e4a3f36",
+            "src-529f8a088ee41faa",
+            "src-b4d5cb6ad14a7326"
+          ]
+        }
+      ]
+    }
+  ],
+  "attractions": [
+    {
+      "id": "work-b992b068a58df65b",
+      "nombre": "Puente Colgante Ingeniero Marcial Candioti",
+      "tipo": "patrimonio",
+      "paragraphs": [
+        {
+          "text": "El puente forma parte de la imagen reconocible de Santa Fe. Su origen estuvo ligado al transporte de agua hacia la ciudad; después del derrumbe provocado por la creciente de 1983 fue reconstruido en 2002. La ficha municipal registra su declaración como Monumento Histórico Nacional en 2014.",
+          "sourceIds": [
+            "src-b4d5cb6ad14a7326"
+          ]
+        },
+        {
+          "text": "Observá cómo la estructura se recorta sobre la laguna Setúbal y se relaciona con las costaneras. Su historia combina una función de infraestructura con el valor simbólico que adquirió para la ciudad. Es una mirada al paisaje urbano, distinta de las visitas a edificios museísticos.",
+          "sourceIds": [
+            "src-b4d5cb6ad14a7326"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "work-9a035a95049f5c29",
+      "nombre": "Parque y Museo de la Constitución Nacional",
+      "tipo": "cultura",
+      "paragraphs": [
+        {
+          "text": "El museo interpreta la historia constitucional argentina mediante un planteo interactivo, con recursos de luz y sonido. Forma parte de un parque costero: por eso conviene distinguir la propuesta museística del espacio exterior, aunque ambos compartan el mismo conjunto.",
+          "sourceIds": [
+            "src-2ee0d5637e4a3f36"
+          ]
+        },
+        {
+          "text": "Su tema central permite profundizar en el papel de Santa Fe en la construcción institucional del país. La propuesta del museo se concentra en esa historia; el parque aporta otra escala, vinculada al paisaje y al espacio exterior. Conviene elegir cuál de esas experiencias querés priorizar.",
+          "sourceIds": [
+            "src-2ee0d5637e4a3f36"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "work-62df253b090aec6b",
+      "nombre": "Manzana Jesuítica de Santa Fe",
+      "tipo": "patrimonio",
+      "paragraphs": [
+        {
+          "text": "El conjunto integra el museo, el Colegio y la Iglesia de la Inmaculada Concepción. Su propuesta vincula el patrimonio histórico con la presencia jesuita y con el paso de Jorge Bergoglio por el Colegio como profesor durante la década de 1960.",
+          "sourceIds": [
+            "src-529f8a088ee41faa"
+          ]
+        },
+        {
+          "text": "El recorrido que presenta el Colegio permite relacionar edificios, personas y distintas épocas. Para quien se interesa por la educación o el patrimonio religioso, el conjunto ofrece una lectura de la memoria institucional y local, diferente de la historia constitucional del museo o de la mirada costera del puente.",
+          "sourceIds": [
+            "src-529f8a088ee41faa",
+            "src-f2fa19dbabdc01b3"
+          ]
+        }
+      ]
+    }
+  ],
+  "practical": [
+    {
+      "id": "work-e4961c25767fc106-practical-1",
+      "etiqueta": "Antes de ir",
+      "valor": "Consultá con el Museo de la Constitución o con el Colegio la apertura, modalidad de visita y necesidades de accesibilidad para tu fecha. Sus condiciones se verifican por separado.",
+      "fuenteIds": [
+        "src-2ee0d5637e4a3f36",
+        "src-529f8a088ee41faa"
+      ],
+      "verificadoEl": "2026-10-25"
+    },
+    {
+      "id": "work-e4961c25767fc106-practical-2",
+      "etiqueta": "Conocer la costa",
+      "valor": "Si querés recorrer el entorno del puente, comprobá las condiciones de circulación del sector elegido. Para un paseo organizado, consultá su propuesta específica con Turismo Santa Fe.",
+      "fuenteIds": [
+        "src-b4d5cb6ad14a7326"
+      ],
+      "verificadoEl": "2026-10-25"
+    },
+    {
+      "id": "work-e4961c25767fc106-practical-3",
+      "etiqueta": "Ubicaciones diferentes",
+      "valor": "El Museo de la Constitución está en Avenida Circunvalación y 1° de Mayo; la referencia del Colegio es General San Martín 1540. Los enlaces cartográficos permiten buscar cada lugar por separado.",
+      "fuenteIds": [
+        "src-2ee0d5637e4a3f36",
+        "src-529f8a088ee41faa"
+      ],
+      "verificadoEl": "2026-10-25"
+    }
+  ],
+  "locations": [
+    {
+      "id": "work-e4961c25767fc106-map-1",
+      "etiqueta": "Puente Colgante Ingeniero Marcial Candioti",
+      "descripcion": "Puente Colgante Ingeniero Marcial Candioti, Santa Fe, Argentina.",
+      "mapaUrl": "https://www.openstreetmap.org/search?query=Puente%20Colgante%20Ingeniero%20Marcial%20Candioti%2C%20Santa%20Fe%2C%20Argentina",
+      "fuenteIds": [
+        "src-b4d5cb6ad14a7326"
+      ]
+    },
+    {
+      "id": "work-e4961c25767fc106-map-2",
+      "etiqueta": "Parque y Museo de la Constitución Nacional",
+      "descripcion": "Avenida Circunvalación y 1° de Mayo, Santa Fe, Argentina.",
+      "mapaUrl": "https://www.openstreetmap.org/search?query=Avenida%20Circunvalaci%C3%B3n%20y%201%C2%B0%20de%20Mayo%2C%20Santa%20Fe%2C%20Argentina",
+      "fuenteIds": [
+        "src-2ee0d5637e4a3f36"
+      ]
+    },
+    {
+      "id": "work-e4961c25767fc106-map-3",
+      "etiqueta": "Manzana Jesuítica de Santa Fe",
+      "descripcion": "General San Martín 1540, Santa Fe, Argentina.",
+      "mapaUrl": "https://www.openstreetmap.org/search?query=General%20San%20Mart%C3%ADn%201540%2C%20Santa%20Fe%2C%20Argentina",
+      "fuenteIds": [
+        "src-529f8a088ee41faa"
+      ]
+    }
+  ],
+  "photos": [
+    {
+      "foto": {
+        "src": "/media/review/review-4ac0bf34ef4c268b-1280.webp",
+        "alt": "Puente Colgante de Santa Fe con torres rojizas y cables reflejados en la laguna Setúbal",
+        "ancho": 1280,
+        "alto": 720,
+        "variantes": [
+          {
+            "src": "/media/review/review-4ac0bf34ef4c268b-320.webp",
+            "ancho": 320
+          },
+          {
+            "src": "/media/review/review-4ac0bf34ef4c268b-640.webp",
+            "ancho": 640
+          },
+          {
+            "src": "/media/review/review-4ac0bf34ef4c268b-960.webp",
+            "ancho": 960
+          },
+          {
+            "src": "/media/review/review-4ac0bf34ef4c268b-1280.webp",
+            "ancho": 1280
+          }
+        ],
+        "leyenda": "Puente Colgante sobre la laguna Setúbal, Santa Fe capital. Fotografía de archivo de 2019.",
+        "credito": {
+          "titular": "ElGuruCesar",
+          "licencia": "CC BY-SA 4.0",
+          "urlLicencia": "https://creativecommons.org/licenses/by-sa/4.0"
+        }
+      },
+      "originalTitle": "Puente colgante de Santa Fe 2019.jpg",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File%3APuente_colgante_de_Santa_Fe_2019.jpg",
+      "modifications": "Reducción y compresión WebP; sin recorte ni retoque de escenas."
+    }
+  ],
+  "sources": [
+    {
+      "id": "src-2ee0d5637e4a3f36",
+      "titulo": "Parque y Museo de la Constitución Nacional",
+      "url": "https://turismo.santafeciudad.gov.ar/parque-museo-de-la-constitucion/",
+      "organismo": "Turismo · Municipalidad de Santa Fe",
+      "consultadaEl": "2026-10-25"
+    },
+    {
+      "id": "src-529f8a088ee41faa",
+      "titulo": "Manzana Jesuítica de Santa Fe — Colegio Inmaculada",
+      "url": "https://www.colegioinmaculada.edu.ar/manzana-jesuitica-de-santa-fe/",
+      "organismo": "Colegio de la Inmaculada Concepción",
+      "consultadaEl": "2026-10-25"
+    },
+    {
+      "id": "src-b4d5cb6ad14a7326",
+      "titulo": "Puente Colgante — Turismo Santa Fe",
+      "url": "https://turismo.santafeciudad.gov.ar/puente-colgante/",
+      "organismo": "Turismo · Municipalidad de Santa Fe",
+      "consultadaEl": "2026-10-25"
+    },
+    {
+      "id": "src-f2fa19dbabdc01b3",
+      "titulo": "Manzana Jesuítica — Turismo Santa Fe",
+      "url": "https://turismo.santafeciudad.gov.ar/manzana-jesuitica-de-santa-fe/",
+      "organismo": "Turismo · Municipalidad de Santa Fe",
+      "consultadaEl": "2026-10-25"
+    }
+  ],
+  "related": [
+    {
+      "href": "/provincias/santa_fe",
+      "label": "Explorá la provincia de Santa Fe"
+    },
+    {
+      "href": "/actividades?provincia=santa_fe",
+      "label": "Actividades en Santa Fe"
+    },
+    {
+      "href": "/provincias/santa_fe/oficinas",
+      "label": "Oficinas de información turística"
+    }
+  ],
+  "checkedAt": "2026-10-25",
+  "seo": {
+    "title": "Santa Fe capital: historia, museos y laguna Setúbal",
+    "description": "Descubrí Santa Fe capital: Puente Colgante, Museo de la Constitución y Manzana Jesuítica, con fuentes, ubicaciones y consejos para planificar.",
+    "proposedCanonical": "https://www.argentinauniversosur.com/destinos/santa-fe-capital"
+  }
+}
