@@ -43,3 +43,6 @@ await cp(
   new URL("../../tests/pages/cloudflare-local.spec.ts", import.meta.url),
   new URL("cloudflare-local.spec.ts", dir),
 );
+
+const destinations = (await readFile(new URL("../../tests/e2e/destinations.spec.ts", import.meta.url), "utf8")).replaceAll("../../content/", "../../../content/").replaceAll("127.0.0.1:3200", "127.0.0.1:4401");
+await writeFile(new URL("destinations.spec.ts", dir), destinations);

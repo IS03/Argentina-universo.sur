@@ -1,0 +1,293 @@
+{
+  "id": "work-741e3d86f70405dd",
+  "slug": "alta-gracia",
+  "nombre": "Alta Gracia",
+  "title": "Alta Gracia: patrimonio jesuita y casas museo",
+  "provinceLabel": "Córdoba",
+  "provinceSlugs": [
+    "cordoba"
+  ],
+  "resumen": "En el valle de Paravachasca, Alta Gracia permite cruzar la historia del conjunto jesuítico con las biografías que conservan sus casas museo. Elegí una mirada colonial, una historia de infancia o un acercamiento al universo de Manuel de Falla.",
+  "leadSourceIds": [
+    "src-6fabf15b425ac179",
+    "src-8136979aad5ed958",
+    "src-40b3d1291542f2f2",
+    "src-60952477576e5ec7"
+  ],
+  "introduction": [
+    {
+      "text": "El conjunto de la estancia ocupa un lugar central en la historia de Alta Gracia. Su residencia alberga el Museo Nacional Estancia Jesuítica de Alta Gracia y Casa del Virrey Liniers. La inscripción de la Manzana y las Estancias Jesuíticas de Córdoba en la Lista del Patrimonio Mundial sitúa este legado dentro de una historia regional más amplia.",
+      "sourceIds": [
+        "src-6fabf15b425ac179",
+        "src-8136979aad5ed958",
+        "src-7d842aeab47a562f"
+      ]
+    },
+    {
+      "text": "Las casas del Che y de Manuel de Falla proponen otras formas de conocer la ciudad: una se relaciona con la infancia de Ernesto Guevara; la otra, con los últimos años del compositor en Los Espinillos. Son casas museo con historias propias, diferentes del conjunto jesuítico reconocido por UNESCO.",
+      "sourceIds": [
+        "src-40b3d1291542f2f2",
+        "src-60952477576e5ec7",
+        "src-6fabf15b425ac179",
+        "src-7d842aeab47a562f"
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "id": "elegir",
+      "title": "Elegí la historia que querés seguir",
+      "paragraphs": [
+        {
+          "text": "La estancia acerca a la arquitectura colonial y a la organización productiva que sostuvo a la Compañía de Jesús. La Casa del Che permite una lectura biográfica de la ciudad. Manuel de Falla suma una perspectiva ligada a la música y a una vivienda concreta. Elegí la temática que más te interese para organizar tu salida.",
+          "sourceIds": [
+            "src-8136979aad5ed958",
+            "src-40b3d1291542f2f2",
+            "src-60952477576e5ec7"
+          ]
+        },
+        {
+          "text": "En la estancia, la residencia y la iglesia conforman el núcleo del conjunto, organizado alrededor de un patio rectangular. La escalera y las galerías de la residencia ayudan a reconocer la relación entre los dos niveles del edificio. Esa lectura de la arquitectura complementa la historia de sus usos y de las personas que trabajaron allí.",
+          "sourceIds": [
+            "src-8136979aad5ed958"
+          ]
+        }
+      ]
+    }
+  ],
+  "attractions": [
+    {
+      "id": "work-76abb45b52335bd5",
+      "nombre": "Estancia Jesuítica de Alta Gracia y Museo Casa del Virrey Liniers",
+      "tipo": "patrimonio",
+      "paragraphs": [
+        {
+          "text": "La ficha nacional sitúa el origen de la estancia en una donación de tierras realizada en 1643. La residencia y la iglesia forman el núcleo arquitectónico del conjunto, vinculado a una explotación productiva que abastecía al Colegio Máximo. Esa historia incluye el trabajo de personas esclavizadas y los oficios desarrollados en el obraje; una lectura del lugar no debería reducirla a la fachada.",
+          "sourceIds": [
+            "src-8136979aad5ed958"
+          ]
+        },
+        {
+          "text": "El museo permite acercarse a los usos y transformaciones de la residencia. La relación entre vivienda, iglesia y espacios de trabajo ayuda a comprender la estancia como parte de un sistema productivo y educativo más amplio, además de apreciar su arquitectura.",
+          "sourceIds": [
+            "src-8136979aad5ed958",
+            "src-6fabf15b425ac179",
+            "src-7d842aeab47a562f"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "work-589506104d42e279",
+      "nombre": "Museo Casa del Che — Villa Nydia",
+      "tipo": "cultura",
+      "paragraphs": [
+        {
+          "text": "Villa Nydia fue una de las viviendas de la familia Guevara en Alta Gracia. La casa museo aborda la infancia de Ernesto y su relación con la ciudad mediante imágenes, documentos y un relato biográfico. Es una propuesta diferente de la estancia: el interés está en la vida cotidiana y en la memoria de una figura del siglo XX.",
+          "sourceIds": [
+            "src-40b3d1291542f2f2"
+          ]
+        },
+        {
+          "text": "La escala de una casa ofrece otra manera de acercarse a una biografía: sus espacios sitúan el relato en un ambiente cotidiano. La sede de Avellaneda 501 permite dar un lugar propio a esta historia dentro de una visita a Alta Gracia, junto a las otras miradas que ofrecen sus museos.",
+          "sourceIds": [
+            "src-40b3d1291542f2f2",
+            "src-700bf3ff9a030c5c"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "work-6d5630f555f3bf5b",
+      "nombre": "Museo Manuel de Falla",
+      "tipo": "cultura",
+      "paragraphs": [
+        {
+          "text": "Los Espinillos fue la vivienda de los últimos años de Manuel de Falla en Alta Gracia. La casa museo vincula la biografía del compositor con el edificio y con los objetos y documentos conservados. Puede ser una elección para quienes prefieren una mirada musical y doméstica sobre el patrimonio de la ciudad.",
+          "sourceIds": [
+            "src-60952477576e5ec7"
+          ]
+        },
+        {
+          "text": "La relación entre la vivienda y la trayectoria musical es el eje para leer este lugar. La sede de Bv. Pellegrini 1011 invita a situar la biografía de Falla en una casa concreta, en lugar de confundir esta propuesta con un concierto o una actividad de programación cultural.",
+          "sourceIds": [
+            "src-60952477576e5ec7",
+            "src-700bf3ff9a030c5c"
+          ]
+        }
+      ]
+    }
+  ],
+  "practical": [
+    {
+      "id": "work-741e3d86f70405dd-practical-1",
+      "etiqueta": "Antes de ir",
+      "valor": "La estancia nacional y las casas museo municipales tienen gestión propia. Consultá con cada sede horarios, tarifas, modalidades de visita y accesibilidad, especialmente si viajás en grupo.",
+      "fuenteIds": [
+        "src-8136979aad5ed958",
+        "src-700bf3ff9a030c5c",
+        "src-dc89582ec6de60e1"
+      ],
+      "verificadoEl": "2026-10-25"
+    },
+    {
+      "id": "work-741e3d86f70405dd-practical-2",
+      "etiqueta": "Patrimonio UNESCO",
+      "valor": "La inscripción de la Manzana y las Estancias Jesuíticas de Córdoba comprende la estancia de Alta Gracia. Las casas museo del Che y de Manuel de Falla son propuestas distintas.",
+      "fuenteIds": [
+        "src-7d842aeab47a562f",
+        "src-40b3d1291542f2f2",
+        "src-60952477576e5ec7"
+      ],
+      "verificadoEl": "2026-10-25"
+    },
+    {
+      "id": "work-741e3d86f70405dd-practical-3",
+      "etiqueta": "Ubicar cada museo",
+      "valor": "Buscá cada sede por su dirección específica: Av. Padre Viera 41 para la estancia, Avellaneda 501 para la Casa del Che y Bv. Pellegrini 1011 para Manuel de Falla.",
+      "fuenteIds": [
+        "src-8136979aad5ed958",
+        "src-40b3d1291542f2f2",
+        "src-60952477576e5ec7"
+      ],
+      "verificadoEl": "2026-10-25"
+    }
+  ],
+  "locations": [
+    {
+      "id": "work-741e3d86f70405dd-map-1",
+      "etiqueta": "Estancia Jesuítica de Alta Gracia y Museo Casa del Virrey Liniers",
+      "descripcion": "Av. Padre Viera 41, Alta Gracia, Córdoba, Argentina.",
+      "mapaUrl": "https://www.openstreetmap.org/search?query=Av.%20Padre%20Viera%2041%2C%20Alta%20Gracia%2C%20C%C3%B3rdoba%2C%20Argentina",
+      "fuenteIds": [
+        "src-8136979aad5ed958"
+      ]
+    },
+    {
+      "id": "work-741e3d86f70405dd-map-2",
+      "etiqueta": "Museo Casa del Che — Villa Nydia",
+      "descripcion": "Avellaneda 501, Alta Gracia, Córdoba, Argentina.",
+      "mapaUrl": "https://www.openstreetmap.org/search?query=Avellaneda%20501%2C%20Alta%20Gracia%2C%20C%C3%B3rdoba%2C%20Argentina",
+      "fuenteIds": [
+        "src-40b3d1291542f2f2"
+      ]
+    },
+    {
+      "id": "work-741e3d86f70405dd-map-3",
+      "etiqueta": "Museo Manuel de Falla",
+      "descripcion": "Bv. Pellegrini 1011, Alta Gracia, Córdoba, Argentina.",
+      "mapaUrl": "https://www.openstreetmap.org/search?query=Bv.%20Pellegrini%201011%2C%20Alta%20Gracia%2C%20C%C3%B3rdoba%2C%20Argentina",
+      "fuenteIds": [
+        "src-60952477576e5ec7"
+      ]
+    }
+  ],
+  "photos": [
+    {
+      "foto": {
+        "src": "/media/review/review-3b70515f65669750-1280.webp",
+        "alt": "Patio de la residencia jesuítica de Alta Gracia con césped, árbol, galerías y torre del reloj",
+        "ancho": 1280,
+        "alto": 960,
+        "variantes": [
+          {
+            "src": "/media/review/review-3b70515f65669750-320.webp",
+            "ancho": 320
+          },
+          {
+            "src": "/media/review/review-3b70515f65669750-640.webp",
+            "ancho": 640
+          },
+          {
+            "src": "/media/review/review-3b70515f65669750-960.webp",
+            "ancho": 960
+          },
+          {
+            "src": "/media/review/review-3b70515f65669750-1280.webp",
+            "ancho": 1280
+          }
+        ],
+        "leyenda": "Patio principal de la residencia de la Estancia Jesuítica de Alta Gracia. Fotografía de archivo de 2013.",
+        "credito": {
+          "titular": "Banfield",
+          "licencia": "CC BY-SA 2.5 ar",
+          "urlLicencia": "https://creativecommons.org/licenses/by-sa/2.5/ar/deed.en"
+        }
+      },
+      "originalTitle": "Patio principal - Misiones Jesuiticas de Alta Gracia (2).jpg",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File%3APatio_principal_-_Misiones_Jesuiticas_de_Alta_Gracia_(2).jpg",
+      "modifications": "Recorte, reducción y compresión WebP; sin generación ni retoque de escenas."
+    }
+  ],
+  "sources": [
+    {
+      "id": "src-6fabf15b425ac179",
+      "titulo": "Alta Gracia — Córdoba Turismo",
+      "url": "https://cordobaturismo.gov.ar/localidades/alta-gracia/",
+      "organismo": "Agencia Córdoba Turismo",
+      "consultadaEl": "2026-10-25"
+    },
+    {
+      "id": "src-8136979aad5ed958",
+      "titulo": "Estancia Jesuítica de Alta Gracia — ficha patrimonial nacional",
+      "url": "https://www.argentina.gob.ar/capital-humano/cultura/monumentos/estancia-jesuitica-de-alta-gracia",
+      "organismo": "Comisión Nacional de Monumentos · Argentina.gob.ar",
+      "consultadaEl": "2026-10-25"
+    },
+    {
+      "id": "src-40b3d1291542f2f2",
+      "titulo": "Museo Casa del Che — Alta Gracia Turismo",
+      "url": "https://altagracia.ar/actividades/museo-casa-del-che/",
+      "organismo": "Portal turístico de Alta Gracia, enlazado por el municipio",
+      "consultadaEl": "2026-10-25"
+    },
+    {
+      "id": "src-60952477576e5ec7",
+      "titulo": "Museo Manuel de Falla — Alta Gracia Turismo",
+      "url": "https://altagracia.ar/actividades/museo-manuel-de-falla/",
+      "organismo": "Portal turístico de Alta Gracia, enlazado por el municipio",
+      "consultadaEl": "2026-10-25"
+    },
+    {
+      "id": "src-7d842aeab47a562f",
+      "titulo": "Manzana y Estancias Jesuíticas de Córdoba — UNESCO",
+      "url": "https://whc.unesco.org/en/list/995/",
+      "organismo": "Centro del Patrimonio Mundial · UNESCO",
+      "consultadaEl": "2026-10-25"
+    },
+    {
+      "id": "src-700bf3ff9a030c5c",
+      "titulo": "Museos — Municipalidad de Alta Gracia",
+      "url": "https://altagracia.gob.ar/subareas/museos/",
+      "organismo": "Municipalidad de Alta Gracia",
+      "consultadaEl": "2026-10-25"
+    },
+    {
+      "id": "src-dc89582ec6de60e1",
+      "titulo": "Visita — Museo Nacional Estancia Jesuítica de Alta Gracia",
+      "url": "https://museoliniers.cultura.gob.ar/info/visita/",
+      "organismo": "Museo Nacional Estancia Jesuítica de Alta Gracia y Casa del Virrey Liniers",
+      "consultadaEl": "2026-10-25"
+    }
+  ],
+  "related": [
+    {
+      "href": "/provincias/cordoba",
+      "label": "Descubrí la provincia de Córdoba"
+    },
+    {
+      "href": "/actividades?provincia=cordoba",
+      "label": "Actividades en Córdoba"
+    },
+    {
+      "href": "/escapadas",
+      "label": "Más escapadas de Argentina"
+    }
+  ],
+  "checkedAt": "2026-10-25",
+  "seo": {
+    "title": "Alta Gracia: patrimonio jesuita y casas museo",
+    "description": "Conocé Alta Gracia, su estancia jesuítica y las casas museo del Che y Manuel de Falla, con fuentes oficiales y ubicaciones para preparar tu visita.",
+    "proposedCanonical": "https://www.argentinauniversosur.com/destinos/alta-gracia"
+  }
+}

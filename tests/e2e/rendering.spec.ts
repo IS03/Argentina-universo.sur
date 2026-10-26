@@ -648,10 +648,10 @@ test("fuera de producción no se carga Google Analytics ni se envían datos a Go
   expect(pedidos).toEqual([]);
 });
 
-test("la metadata canónica no cambia y el sitemap mantiene 106 URLs", async ({ request }) => {
+test("la metadata canónica no cambia y el sitemap conserva las 106 URLs y suma dos destinos", async ({ request }) => {
   const canonical = async (path: string) => (await (await request.get(path)).text()).match(/<link rel="canonical" href="([^"]+)"/)?.[1];
   expect(await canonical("/")).toBe("https://www.argentinauniversosur.com");
   expect(await canonical("/actividades?provincia=catarmaca")).toBe("https://www.argentinauniversosur.com/actividades");
   const sitemap = await (await request.get("/sitemap.xml")).text();
-  expect(sitemap.match(/<loc>/g)).toHaveLength(106);
+  expect(sitemap.match(/<loc>/g)).toHaveLength(108);
 });
