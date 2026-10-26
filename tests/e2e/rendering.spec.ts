@@ -94,10 +94,26 @@ test.describe("portada", () => {
   test("el carrusel avanza solo cuando la siguiente imagen ya cargó", async ({ page, errores }) => {
     void errores;
     await page.clock.install();
+    // Retener la segunda descarga comprueba la condición de carga sin depender de
+    // la velocidad del optimizador. complete puede ser true antes del decode/onLoad
+    // de next/image; adelantar el reloj en ese punto hacía esta prueba intermitente.
+    let liberar: () => void = () => {};
+    const retenida = new Promise<void>(resolve => { liberar = resolve; });
+    await page.route(url => url.pathname === "/_next/image" && url.searchParams.get("url") === "/img/home/2.jpg?v=3", async route => {
+      await retenida;
+      await route.continue();
+    });
     await page.goto("/");
-    await expect.poll(() => page.locator('img[alt$="imagen 2"]').evaluate((img: HTMLImageElement) => img.complete && img.naturalWidth > 0)).toBe(true);
-    await page.clock.runFor(5000);
     const visible = page.locator('div[aria-hidden="false"] > img');
+    const segunda = page.locator('img[alt$="imagen 2"]');
+    await expect(segunda).toBeAttached();
+    await page.clock.runFor(5000);
+    await expect(visible).toHaveAttribute("alt", /imagen 1$/);
+    liberar();
+    await segunda.evaluate((img: HTMLImageElement) => img.decode());
+    // Dejar completar onLoad y el frame pendiente antes del siguiente intervalo.
+    await page.clock.runFor(16);
+    await page.clock.runFor(5000);
     await expect(visible).toHaveAttribute("alt", /imagen 2$/);
     await page.clock.runFor(1600);
     await expect(page.locator('img[alt$="imagen 3"]')).toHaveCount(1);

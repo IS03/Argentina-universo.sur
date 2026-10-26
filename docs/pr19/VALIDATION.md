@@ -29,6 +29,8 @@ Los cuatro hashes por ficha y los digests adicionales de variantes están en `li
 
 Las pruebas negativas bloquean decisión ausente o denegada, permiso web independiente ausente, canal incorrecto, declaración/versiones distintas, cambios de texto/mapa/créditos/SEO/fuentes, bytes fotográficos alterados y rutas de Rosario o registros sintéticos. Un manifiesto modificado no puede autorizar una imagen con checksum distinto de los pins.
 
+En GitHub Actions apareció una carrera en la prueba heredada del carrusel de portada: `img.complete` podía anticiparse a `decode/onLoad` de Next Image al adelantar el reloj simulado. Se corrigió únicamente la sincronización de la prueba, reteniendo la segunda descarga para comprobar que no avanza antes de cargar, esperando su decodificación y comprobando después el avance. Diez repeticiones entre escritorio y móvil pasaron; no se modifica el carrusel ni se añaden reintentos que oculten fallos.
+
 La auditoría local adicional utiliza el snapshot privado del maestro: no se encontraron IDs/textos privados en los archivos públicos de Next y los tres builds Pages. La revisión R2 distingue las dos versiones autorizadas del borrador de Rosario por sus cuatro hashes; se mantienen bloqueados sus textos, rutas y variantes. Los originales JPEG de las tres fichas permanecen fuera del despliegue, incluso para las fotos aprobadas. No se incluye ninguna evidencia privada ni la autorización original en GitHub.
 
 ## Rendimiento local
