@@ -1,0 +1,51 @@
+{
+  "fecha": "2026-10-26",
+  "base": "81548345e2c7c34080abe64eb88fb3e3cc354af6",
+  "rama": "codex/pr21-publicidad-directa",
+  "lint": "sin errores ni advertencias",
+  "typecheck": "correcto",
+  "validate": "correcto",
+  "unitarias": {
+    "aprobadas": 166,
+    "fallos": 0
+  },
+  "buildNext": "correcto",
+  "seo": {
+    "canonicals": 108,
+    "errores": 0
+  },
+  "pages": {
+    "preview": {
+      "archivos": 2074,
+      "bytes": 107206976
+    },
+    "productionAudit": {
+      "archivos": 2098,
+      "bytes": 740776867,
+      "pdfHistoricosMayores25MiB": 10
+    },
+    "campanas": 6,
+    "recursosWebp": 18,
+    "bytesWebp": 472444,
+    "erroresPublicidad": 0
+  },
+  "e2eNext": {
+    "startTime": "2026-10-26T22:41:06.014Z",
+    "duration": 147934.199,
+    "expected": 155,
+    "skipped": 9,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "e2ePages": {
+    "startTime": "2026-10-26T22:44:16.734Z",
+    "duration": 35159.534999999996,
+    "expected": 62,
+    "skipped": 2,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "clsPublicidad": "0 en las cinco páginas tanto escritorio como móvil en ambos formatos",
+  "campanasSinUrl": 6,
+  "despliegueManualProduccion": false
+}

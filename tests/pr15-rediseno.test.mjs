@@ -5,7 +5,7 @@ import { join } from "node:path";
 import { projectRoot } from "../scripts/validate-data.mjs";
 import { REGIONES, REGION_POR_PROVINCIA } from "../lib/catalog.ts";
 import { REGIONES_VISUALES, agruparPorRegion, regionDeProvincia } from "../lib/regiones.ts";
-import { ESPACIOS, FORMATOS, modoEspacio } from "../lib/publicidad.ts";
+import { ESPACIOS, anunciosDelEspacio } from "../lib/publicidad.ts";
 import { NAV_ANCHORS } from "../lib/site-links.ts";
 import { GRILLA_TARJETAS, SIZES_TARJETAS, GRILLA_DESTACADAS, ITEM_DESTACADA, SIZES_DESTACADAS, SIZES_ANCHO_COMPLETO } from "../components/ui/grillas.ts";
 
@@ -53,16 +53,10 @@ test("cada grilla declara un sizes con sus mismas columnas y breakpoints", () =>
   assert.match(SIZES_ANCHO_COMPLETO, /, min\(calc\(100vw - 32px\), 320px\)$/);
 });
 
-test("la publicidad está desactivada: sin proveedor, scripts ni IDs, y solo la vista previa local dibuja reservas", async () => {
-  assert.equal(modoEspacio({}), "oculto");
-  assert.equal(modoEspacio({ AUS_PUBLICIDAD_VISTA_PREVIA: "true" }), "oculto");
-  assert.equal(modoEspacio({ AUS_PUBLICIDAD_VISTA_PREVIA: "1" }), "vista-previa");
+test("la publicidad directa sigue sin proveedor, scripts ni IDs y conserva los espacios de PR15", async () => {
   for (const [id, espacio] of Object.entries(ESPACIOS)) {
-    const formato = FORMATOS[espacio.formato];
-    assert.ok(formato, id);
-    // Reserva fija: alto y ancho máximos explícitos, para que un anuncio futuro no desplace el contenido.
-    assert.match(formato.claseAlto, /^h-\[\d+px\]/);
-    assert.match(formato.claseAncho, /^max-w-\[\d+px\]/);
+    assert.ok(espacio.descripcion, id);
+    assert.deepEqual(anunciosDelEspacio(id, []), []);
   }
   for (const dir of ["app", "components", "lib"]) {
     for (const entry of await readdir(join(projectRoot, dir), { recursive: true })) {

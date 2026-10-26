@@ -46,3 +46,5 @@ await cp(
 
 const destinations = (await readFile(new URL("../../tests/e2e/destinations.spec.ts", import.meta.url), "utf8")).replaceAll("../../content/", "../../../content/").replaceAll("127.0.0.1:3200", "127.0.0.1:4401");
 await writeFile(new URL("destinations.spec.ts", dir), destinations);
+const publicidad = (await readFile(new URL("../../tests/e2e/publicidad.spec.ts", import.meta.url), "utf8")).replace('"../../lib/publicidad"', '"../../../lib/publicidad"');
+await writeFile(new URL("publicidad.spec.ts", dir), publicidad);

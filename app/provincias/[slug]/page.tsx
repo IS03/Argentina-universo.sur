@@ -1,4 +1,5 @@
 import DestinosDeProvincia from "@/components/destinos/DestinosDeProvincia";
+import EspacioPublicitario from "@/components/publicidad/EspacioPublicitario";
 import Carrusel from "@/components/Carrusel";
 import MapaUbicacion from "@/components/mapa/MapaUbicacion";
 import Link from "next/link";
@@ -156,6 +157,8 @@ export default async function ProvinciaPage({ params }: PageProps) {
             />
           </div>
         )}
+
+        {isSantaFe && <EspacioPublicitario id="santa-fe-tras-contenido" className="pt-12" />}
 
         <SeguirExplorando
           etiqueta="Navegación relacionada"

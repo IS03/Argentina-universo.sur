@@ -1,4 +1,9 @@
-# Espacios publicitarios (preparados, no activos)
+# Espacios publicitarios de PR15 — registro histórico
+
+> **Actualizado en PR21:** la publicidad directa ya está activa con los seis originales del cliente.
+> La configuración vigente es `lib/publicidad.ts`; el inventario, las ubicaciones, la operación y las
+> pruebas están en [docs/pr21/README.md](../pr21/README.md). La vista previa ficticia y
+> `AUS_PUBLICIDAD_VISTA_PREVIA` se retiraron. Lo que sigue describe exclusivamente el estado de PR15.
 
 ## Estado
 
