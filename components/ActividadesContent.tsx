@@ -19,13 +19,13 @@ export default async function ActividadesContent({ seleccionInicial }: { selecci
         bajada="Descubrí las mejores actividades en cada provincia"
       />
       <div className="contenedor py-8 sm:py-12">
+        <EspacioPublicitario id="actividades-antes-explorador" className="mb-10 sm:mb-12" />
         <ActividadesExplorer
           key={seleccionInicial}
           actividades={actividades.map(resumirActividad)}
           provincias={provincias.map(({ provincia, slug }) => ({ provincia, slug }))}
           seleccionInicial={seleccionInicial}
         />
-        <EspacioPublicitario id="actividades-tras-listado" className="pt-12" />
         <SeguirExplorando
           enlaces={[
             { href: ROUTES.provincias, etiqueta: INTERNAL_ANCHORS.verTodasLasProvincias, icono: "mapa" },

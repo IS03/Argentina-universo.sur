@@ -25,6 +25,7 @@ export default async function EscapadasPage() {
         bajada="Ideas para descubrir ciudades, paisajes y experiencias de Argentina. Consultá también nuestras guías en PDF."
       />
       <div className="contenedor py-10 sm:py-14">
+        <EspacioPublicitario id="escapadas-antes-guias" className="mb-10 sm:mb-12" />
         <PublishedTrips trips={publishedTrips} />
         {pesos.length > 0 && (
           <div className="mb-8 max-w-3xl">
@@ -35,7 +36,6 @@ export default async function EscapadasPage() {
         )}
         {/* Las guías originales siguen accesibles mientras se revisan sus reemplazos. */}
         <EscapadasContent escapadas={escapadas} />
-        <EspacioPublicitario id="escapadas-tras-guias" className="pt-12" />
         <SeguirExplorando
           enlaces={[
             { href: ROUTES.provincias, etiqueta: INTERNAL_ANCHORS.verTodasLasProvincias, icono: "mapa" },

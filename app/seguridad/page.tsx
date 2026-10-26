@@ -135,6 +135,7 @@ export default function SeguridadPage() {
       />
 
       <div className="contenedor py-10 sm:py-14">
+        <EspacioPublicitario id="seguridad-antes-consejos" className="mb-10 sm:mb-12" />
         <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_22rem] lg:gap-14">
           <div className="prosa">
             <p>
@@ -217,8 +218,6 @@ export default function SeguridadPage() {
         <p className="mt-10 rounded-tarjeta bg-tinta-900 px-6 py-5 text-center font-display text-2xl text-white">
           Viajá seguro, viajá responsable
         </p>
-
-        <EspacioPublicitario id="seguridad-tras-contenido" className="pt-12" />
 
         {/* Enlazado interno (SEO) */}
         <SeguirExplorando
