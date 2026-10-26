@@ -171,7 +171,7 @@ export default function PrivacidadPage() {
           <section className={seccion} aria-labelledby="publicidad">
             <h2 id="publicidad" className={titulo}>Publicidad directa</h2>
             <p className={parrafo}>
-              Mostramos banners de anunciantes identificados con el rótulo «Publicidad». Las imágenes se sirven
+              Mostramos banners promocionales de publicidad directa con las creatividades de sus anunciantes. Las imágenes se sirven
               desde los archivos del propio sitio. No usamos redes publicitarias, píxeles ni scripts de anuncios;
               estos banners no agregan cookies, almacenamiento local ni seguimiento individual de visitantes.
             </p>

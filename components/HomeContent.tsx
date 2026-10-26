@@ -29,7 +29,7 @@ function Portada() {
         <div className="absolute inset-0 z-[3] bg-gradient-to-t from-tinta-900/90 via-tinta-900/45 to-tinta-900/15" />
         <div className="absolute inset-0 z-[3] hidden bg-gradient-to-r from-tinta-900/60 to-transparent md:block" />
       </div>
-      <div className="contenedor flex min-h-[min(80svh,46rem)] flex-col justify-end pt-24 pb-10 sm:pb-14 lg:pb-20">
+      <div className="contenedor flex min-h-[min(64svh,38rem)] flex-col justify-end pt-16 pb-10 sm:pb-14 lg:pb-16">
         <p className="antetitulo text-sol-400">Universo Sur</p>
         <h1 id="titulo-portada" className="mt-3 max-w-3xl font-display text-display">
           Turismo en Argentina
@@ -64,6 +64,8 @@ export default function HomeContent(props: HomeContentProps) {
   return (
     <>
       <Portada />
+
+      <EspacioPublicitario id="portada-tras-hero" className="contenedor pt-8 sm:pt-10" />
 
       <div className="contenedor py-14 sm:py-20">
         <section id="provincias-destacadas" aria-labelledby="titulo-destacadas">
@@ -105,8 +107,6 @@ export default function HomeContent(props: HomeContentProps) {
           </ul>
         </div>
       </section>
-
-      <EspacioPublicitario id="portada-entre-secciones" className="contenedor pt-10" />
 
       {/* SECCIÓN DINÁMICA: CONTINUAR EXPLORANDO */}
       <ContinuarExplorando />

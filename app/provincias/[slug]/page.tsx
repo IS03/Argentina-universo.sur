@@ -78,6 +78,7 @@ export default async function ProvinciaPage({ params }: PageProps) {
       />
 
       <div className="contenedor py-10 sm:py-14">
+        {isSantaFe && <EspacioPublicitario id="santa-fe-tras-encabezado" className="mb-10 sm:mb-12" />}
         {/* Navegación rápida solo para Santa Fe */}
         {isSantaFe && <div className="mb-10"><NavegacionSantaFe actual="resumen" /></div>}
 
@@ -157,8 +158,6 @@ export default async function ProvinciaPage({ params }: PageProps) {
             />
           </div>
         )}
-
-        {isSantaFe && <EspacioPublicitario id="santa-fe-tras-contenido" className="pt-12" />}
 
         <SeguirExplorando
           etiqueta="Navegación relacionada"

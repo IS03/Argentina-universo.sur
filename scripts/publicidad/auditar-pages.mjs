@@ -1,4 +1,4 @@
-// Auditar el artefacto exportado, no solo public/: los 18 recursos deben llegar intactos a Pages.
+// Auditar el artefacto exportado: los originales y sus alternativas estáticas llegan intactos a Pages.
 import assert from "node:assert/strict";
 import { readFile, readdir } from "node:fs/promises";
 import { createHash } from "node:crypto";
@@ -9,13 +9,13 @@ const mode = process.argv[2] || "preview";
 assert.ok(["preview", "consent-test", "production-audit"].includes(mode));
 const artifact = resolve(".artifacts/pages", mode);
 const inventory = JSON.parse(await readFile("docs/pr21/inventario.json", "utf8"));
-assert.deepEqual((await readdir(join(artifact, "publicidad"))).sort(), inventory.flatMap(c => c.derivados.map(i => i.src.split("/").at(-1))).sort(), "Solo derivados web: no publicar originales ni archivos auxiliares");
+assert.deepEqual((await readdir(join(artifact, "publicidad"))).sort(), inventory.flatMap(c => c.derivados.map(i => i.src.split("/").at(-1))).sort(), "Solo recursos de campaña declarados, sin archivos auxiliares");
 const routes = {
-  "portada-entre-secciones": "index.html",
-  "actividades-tras-listado": "actividades.html",
-  "escapadas-tras-guias": "escapadas.html",
-  "santa-fe-tras-contenido": "provincias/santa_fe.html",
-  "seguridad-tras-contenido": "seguridad.html",
+  "portada-tras-hero": "index.html",
+  "actividades-antes-explorador": "actividades.html",
+  "escapadas-antes-guias": "escapadas.html",
+  "santa-fe-tras-encabezado": "provincias/santa_fe.html",
+  "seguridad-antes-consejos": "seguridad.html",
 };
 let resources = 0;
 for (const campana of CAMPANAS) {
@@ -27,7 +27,7 @@ for (const campana of CAMPANAS) {
   const html = await readFile(join(artifact, routes[campana.ubicacion]), "utf8");
   assert.equal(html.includes(`data-campana="${campana.id}"`), campana.activa);
   if (campana.activa) {
-    for (const image of [campana.imagen, ...campana.secuencia ?? []]) assert.ok(html.includes(`src="${image.src}"`), image.src);
+    for (const image of [campana.imagen, campana.movimientoReducido].filter(Boolean)) assert.ok(html.includes(image.src), image.src);
   }
 }
-console.log(JSON.stringify({ mode, campanas: CAMPANAS.length, recursos: resources, originalesPublicados: false, errors: 0 }));
+console.log(JSON.stringify({ mode, campanas: CAMPANAS.length, recursos: resources, originalesServidos: CAMPANAS.length, errors: 0 }));

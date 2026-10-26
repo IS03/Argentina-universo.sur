@@ -19,7 +19,7 @@ const code = ts.transpileModule((await read("components/publicidad/EspacioPublic
   .replace('"@/lib/publicidad"', JSON.stringify(new URL("lib/publicidad.ts", root).href));
 const { default: Espacio, AnuncioDirecto } = await import("data:text/javascript;base64," + Buffer.from(code).toString("base64"));
 
-test("seis originales reales, trazables y distintos de los fixtures; todos los WebP son estáticos y completos", async () => {
+test("los seis recursos públicos son idénticos al cliente; los GIF conservan cuadros, tiempos y bucles", async () => {
   assert.equal(CAMPANAS.length, 6);
   assert.equal(new Set(CAMPANAS.map(c => c.id)).size, 6);
   const originals = (await readdir(new URL("publicidad/", root))).filter(n => !n.startsWith(".")).sort();
@@ -28,23 +28,32 @@ test("seis originales reales, trazables y distintos de los fixtures; todos los W
   for (const campana of CAMPANAS) {
     const row = inventory.find(r => r.id === campana.id);
     assert.ok(row, campana.id);
-    assert.equal(hash(await read(campana.original)), row.sha256);
+    const original = await read(campana.original);
+    assert.equal(hash(original), row.sha256);
     assert.equal(row.url, campana.url || null);
-    const images = [campana.imagen, ...campana.secuencia ?? []];
+    assert.deepEqual(await read("public" + campana.imagen.src), original);
+    const originalMetadata = await sharp(original, { animated: true }).metadata();
+    const images = [campana.imagen, campana.movimientoReducido].filter(Boolean);
     assert.equal(row.derivados.length, images.length);
     for (const image of images) {
-      assert.match(image.src, /^\/publicidad\/[a-z0-9-]+\.webp$/);
+      assert.match(image.src, /^\/publicidad\/[a-z0-9-]+\.(gif|jpg|webp)$/);
       assert.ok(image.alt.trim().length > 5);
       const bytes = await read("public" + image.src);
-      const actual = await sharp(bytes).metadata();
-      assert.equal(actual.format, "webp");
-      assert.equal(actual.pages || 1, 1, "Sin reproducción automática");
+      const actual = await sharp(bytes, { animated: true }).metadata();
+      if (image === campana.imagen) {
+        assert.equal(actual.pages || 1, originalMetadata.pages || 1);
+        assert.deepEqual(actual.delay, originalMetadata.delay);
+        assert.equal(actual.loop, originalMetadata.loop);
+      } else {
+        assert.equal(actual.format, "webp");
+        assert.equal(actual.pages || 1, 1, "Movimiento reducido usa solo un cuadro");
+      }
       assert.equal(actual.width, image.ancho);
-      assert.equal(actual.height, image.alto);
-      assert.equal(actual.width / actual.height, row.ancho / row.alto);
+      assert.equal(actual.pageHeight || actual.height, image.alto);
+      assert.equal(actual.width / (actual.pageHeight || actual.height), row.ancho / row.alto);
       assert.equal(hash(bytes), row.derivados.find(d => d.src === image.src).sha256);
-      assert.ok(bytes.length < 150_000, "Peso por imagen limitado");
     }
+    assert.equal(!!campana.movimientoReducido, originalMetadata.format === "gif");
   }
 });
 
@@ -78,26 +87,30 @@ test("URL opcional: ausente o inválida no crea enlace; web válido lleva atribu
   }
 });
 
-test("HTML inicial con rótulo, dimensiones, imágenes locales y secuencia sin JS; sin reserva ficticia", () => {
+test("HTML con banners directos y picture accesible: sin rótulos visibles, tarjetas, párrafos ni desplegables", () => {
   for (const campana of CAMPANAS) {
     if (!campana.activa) continue;
     const html = renderToStaticMarkup(createElement(Espacio, { id: campana.ubicacion }));
     assert.ok(html.includes(`data-campana="${campana.id}"`));
     assert.match(html, /aria-label="Publicidad"/);
-    assert.match(html, />Publicidad<\/p>/);
     assert.ok(html.includes(`width="${campana.imagen.ancho}" height="${campana.imagen.alto}"`));
     assert.match(html, /object-contain/);
-    assert.doesNotMatch(html, /<script|<iframe|Negocio turístico de ejemplo|object-cover|onClick|<details[^>]+open/);
+    assert.doesNotMatch(html, /<script|<iframe|<p[\s>]|<details|<summary|<h[1-6]|bg-white|border-arena|rounded-control|object-cover|onClick/);
+    assert.match(html, /<picture/);
+    if (campana.movimientoReducido) {
+      assert.match(html, /media="\(prefers-reduced-motion: reduce\)"/);
+      assert.ok(html.includes(campana.movimientoReducido.src));
+    }
   }
 });
 
 test("los seis anuncios tienen ranuras en cinco páginas públicas; no requieren fichas en borrador", async () => {
   const placements = {
-    "portada-entre-secciones": "components/HomeContent.tsx",
-    "actividades-tras-listado": "components/ActividadesContent.tsx",
-    "escapadas-tras-guias": "app/escapadas/page.tsx",
-    "santa-fe-tras-contenido": "app/provincias/[slug]/page.tsx",
-    "seguridad-tras-contenido": "app/seguridad/page.tsx",
+    "portada-tras-hero": "components/HomeContent.tsx",
+    "actividades-antes-explorador": "components/ActividadesContent.tsx",
+    "escapadas-antes-guias": "app/escapadas/page.tsx",
+    "santa-fe-tras-encabezado": "app/provincias/[slug]/page.tsx",
+    "seguridad-antes-consejos": "app/seguridad/page.tsx",
   };
   for (const campana of CAMPANAS) {
     assert.ok(placements[campana.ubicacion]);

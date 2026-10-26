@@ -17,7 +17,7 @@ source += `
 import { readFileSync, statSync } from 'node:fs';
 import { resolve, join, extname, sep } from 'node:path';
 const artifact = resolve('.artifacts/pages/consent-test');
-const types: Record<string,string> = {'.html':'text/html; charset=utf-8','.js':'text/javascript','.css':'text/css','.json':'application/json','.txt':'text/plain','.xml':'application/xml','.webp':'image/webp','.svg':'image/svg+xml','.ico':'image/x-icon','.woff2':'font/woff2','.png':'image/png','.jpg':'image/jpeg','.jpeg':'image/jpeg','.pdf':'application/pdf'};
+const types: Record<string,string> = {'.html':'text/html; charset=utf-8','.js':'text/javascript','.css':'text/css','.json':'application/json','.txt':'text/plain','.xml':'application/xml','.webp':'image/webp','.gif':'image/gif','.svg':'image/svg+xml','.ico':'image/x-icon','.woff2':'font/woff2','.png':'image/png','.jpg':'image/jpeg','.jpeg':'image/jpeg','.pdf':'application/pdf'};
 test.beforeEach(async({context})=>{
   await context.route('https://www.argentinauniversosur.com/**', route=>{
     const pathname=decodeURIComponent(new URL(route.request().url()).pathname);

@@ -20,6 +20,7 @@ const mime = {
   ".txt": "text/plain",
   ".xml": "application/xml",
   ".webp": "image/webp",
+  ".gif": "image/gif",
   ".svg": "image/svg+xml",
   ".ico": "image/x-icon",
   ".woff2": "font/woff2",

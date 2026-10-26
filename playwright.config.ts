@@ -25,12 +25,12 @@ export default defineConfig({
   timeout: 30_000,
   use: {
     baseURL: `http://127.0.0.1:${PORT}`,
-    channel: "chrome",
     trace: "retain-on-failure",
   },
   projects: [
     { name: "escritorio", testIgnore: SPEC_CONSENTIMIENTO, use: { ...devices["Desktop Chrome"], channel: "chrome" } },
     { name: "movil", testIgnore: SPEC_CONSENTIMIENTO, use: { ...devices["Pixel 7"], channel: "chrome" } },
+    ...(process.env.AUS_WEBKIT === "1" ? [{ name: "iphone-safari", testMatch: /publicidad\.spec\.ts/, use: { ...devices["iPhone 13"], browserName: "webkit" as const } }] : []),
     {
       name: "consentimiento-escritorio",
       testMatch: SPEC_CONSENTIMIENTO,

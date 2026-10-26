@@ -1,36 +1,42 @@
 {
   "stats": {
-    "startTime": "2026-10-26T22:41:06.014Z",
-    "duration": 147934.199,
-    "expected": 155,
+    "startTime": "2026-10-26T23:41:39.985Z",
+    "duration": 188449.097,
+    "expected": 164,
     "skipped": 9,
     "unexpected": 0,
     "flaky": 0
   },
   "publicidad": [
     {
-      "title": "publicidad real: seis campañas, proporciones completas, secuencias y pantallas sin desbordamiento",
+      "title": "banners originales antes del contenido: sin tarjetas, textos añadidos ni desbordamiento",
       "project": "escritorio",
       "results": [
         {
           "status": "passed",
           "attachments": [
             {
-              "name": "campañas-y-pantallas",
+              "name": "ubicaciones-y-pantallas",
               "body": [
                 {
                   "ruta": "/",
                   "ancho": 320,
                   "ids": [
                     "juegos-suramericanos"
-                  ]
+                  ],
+                  "despuesDelEncabezado": true,
+                  "antesDelContenido": true,
+                  "top": 673
                 },
                 {
                   "ruta": "/actividades",
                   "ancho": 320,
                   "ids": [
                     "proteccion-ingresos"
-                  ]
+                  ],
+                  "despuesDelEncabezado": true,
+                  "antesDelContenido": true,
+                  "top": 353.9375
                 },
                 {
                   "ruta": "/escapadas",
@@ -38,35 +44,50 @@
                   "ids": [
                     "obras-hidricas",
                     "mil-aulas"
-                  ]
+                  ],
+                  "despuesDelEncabezado": true,
+                  "antesDelContenido": true,
+                  "top": 383.71875
                 },
                 {
                   "ruta": "/provincias/santa_fe",
                   "ancho": 320,
                   "ids": [
                     "mamografia"
-                  ]
+                  ],
+                  "despuesDelEncabezado": true,
+                  "antesDelContenido": true,
+                  "top": 295.96875
                 },
                 {
                   "ruta": "/seguridad",
                   "ancho": 320,
                   "ids": [
                     "seguridad-vial"
-                  ]
+                  ],
+                  "despuesDelEncabezado": true,
+                  "antesDelContenido": true,
+                  "top": 361.9375
                 },
                 {
                   "ruta": "/",
                   "ancho": 768,
                   "ids": [
                     "juegos-suramericanos"
-                  ]
+                  ],
+                  "despuesDelEncabezado": true,
+                  "antesDelContenido": true,
+                  "top": 681
                 },
                 {
                   "ruta": "/actividades",
                   "ancho": 768,
                   "ids": [
                     "proteccion-ingresos"
-                  ]
+                  ],
+                  "despuesDelEncabezado": true,
+                  "antesDelContenido": true,
+                  "top": 386.046875
                 },
                 {
                   "ruta": "/escapadas",
@@ -74,35 +95,50 @@
                   "ids": [
                     "obras-hidricas",
                     "mil-aulas"
-                  ]
+                  ],
+                  "despuesDelEncabezado": true,
+                  "antesDelContenido": true,
+                  "top": 426.546875
                 },
                 {
                   "ruta": "/provincias/santa_fe",
                   "ancho": 768,
                   "ids": [
                     "mamografia"
-                  ]
+                  ],
+                  "despuesDelEncabezado": true,
+                  "antesDelContenido": true,
+                  "top": 394.046875
                 },
                 {
                   "ruta": "/seguridad",
                   "ancho": 768,
                   "ids": [
                     "seguridad-vial"
-                  ]
+                  ],
+                  "despuesDelEncabezado": true,
+                  "antesDelContenido": true,
+                  "top": 394.046875
                 },
                 {
                   "ruta": "/",
                   "ancho": 1440,
                   "ids": [
                     "juegos-suramericanos"
-                  ]
+                  ],
+                  "despuesDelEncabezado": true,
+                  "antesDelContenido": true,
+                  "top": 681
                 },
                 {
                   "ruta": "/actividades",
                   "ancho": 1440,
                   "ids": [
                     "proteccion-ingresos"
-                  ]
+                  ],
+                  "despuesDelEncabezado": true,
+                  "antesDelContenido": true,
+                  "top": 398.96875
                 },
                 {
                   "ruta": "/escapadas",
@@ -110,21 +146,30 @@
                   "ids": [
                     "obras-hidricas",
                     "mil-aulas"
-                  ]
+                  ],
+                  "despuesDelEncabezado": true,
+                  "antesDelContenido": true,
+                  "top": 439.46875
                 },
                 {
                   "ruta": "/provincias/santa_fe",
                   "ancho": 1440,
                   "ids": [
                     "mamografia"
-                  ]
+                  ],
+                  "despuesDelEncabezado": true,
+                  "antesDelContenido": true,
+                  "top": 406.96875
                 },
                 {
                   "ruta": "/seguridad",
                   "ancho": 1440,
                   "ids": [
                     "seguridad-vial"
-                  ]
+                  ],
+                  "despuesDelEncabezado": true,
+                  "antesDelContenido": true,
+                  "top": 406.96875
                 }
               ]
             }
@@ -133,48 +178,7 @@
       ]
     },
     {
-      "title": "con imágenes demoradas se reserva el espacio y la publicidad no produce CLS",
-      "project": "escritorio",
-      "results": [
-        {
-          "status": "passed",
-          "attachments": [
-            {
-              "name": "CLS-imágenes-demoradas",
-              "body": [
-                {
-                  "ruta": "/",
-                  "cls": 0,
-                  "clsPublicidad": 0
-                },
-                {
-                  "ruta": "/actividades",
-                  "cls": 0,
-                  "clsPublicidad": 0
-                },
-                {
-                  "ruta": "/escapadas",
-                  "cls": 0,
-                  "clsPublicidad": 0
-                },
-                {
-                  "ruta": "/provincias/santa_fe",
-                  "cls": 0,
-                  "clsPublicidad": 0
-                },
-                {
-                  "ruta": "/seguridad",
-                  "cls": 0,
-                  "clsPublicidad": 0
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "title": "las campañas y sus secuencias están disponibles sin JavaScript",
+      "title": "los cinco GIF se animan automáticamente y el JPEG permanece estático",
       "project": "escritorio",
       "results": [
         {
@@ -184,28 +188,100 @@
       ]
     },
     {
-      "title": "publicidad real: seis campañas, proporciones completas, secuencias y pantallas sin desbordamiento",
+      "title": "movimiento reducido selecciona imágenes estáticas sin cambiar la geometría",
+      "project": "escritorio",
+      "results": [
+        {
+          "status": "passed",
+          "attachments": []
+        }
+      ]
+    },
+    {
+      "title": "imágenes demoradas: reserva de espacio estable y CLS sin desplazamientos de publicidad",
+      "project": "escritorio",
+      "results": [
+        {
+          "status": "passed",
+          "attachments": [
+            {
+              "name": "CLS-y-reserva",
+              "body": [
+                {
+                  "ruta": "/",
+                  "geometriaEstable": true,
+                  "cls": 0,
+                  "clsPublicidad": 0
+                },
+                {
+                  "ruta": "/actividades",
+                  "geometriaEstable": true,
+                  "cls": 0,
+                  "clsPublicidad": 0
+                },
+                {
+                  "ruta": "/escapadas",
+                  "geometriaEstable": true,
+                  "cls": 0,
+                  "clsPublicidad": 0
+                },
+                {
+                  "ruta": "/provincias/santa_fe",
+                  "geometriaEstable": true,
+                  "cls": 0,
+                  "clsPublicidad": 0
+                },
+                {
+                  "ruta": "/seguridad",
+                  "geometriaEstable": true,
+                  "cls": 0,
+                  "clsPublicidad": 0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "picture y la alternativa estática funcionan sin JavaScript a 320 px",
+      "project": "escritorio",
+      "results": [
+        {
+          "status": "passed",
+          "attachments": []
+        }
+      ]
+    },
+    {
+      "title": "banners originales antes del contenido: sin tarjetas, textos añadidos ni desbordamiento",
       "project": "movil",
       "results": [
         {
           "status": "passed",
           "attachments": [
             {
-              "name": "campañas-y-pantallas",
+              "name": "ubicaciones-y-pantallas",
               "body": [
                 {
                   "ruta": "/",
                   "ancho": 412,
                   "ids": [
                     "juegos-suramericanos"
-                  ]
+                  ],
+                  "despuesDelEncabezado": true,
+                  "antesDelContenido": true,
+                  "top": 601.953125
                 },
                 {
                   "ruta": "/actividades",
                   "ancho": 412,
                   "ids": [
                     "proteccion-ingresos"
-                  ]
+                  ],
+                  "despuesDelEncabezado": true,
+                  "antesDelContenido": true,
+                  "top": 357.125
                 },
                 {
                   "ruta": "/escapadas",
@@ -213,21 +289,30 @@
                   "ids": [
                     "obras-hidricas",
                     "mil-aulas"
-                  ]
+                  ],
+                  "despuesDelEncabezado": true,
+                  "antesDelContenido": true,
+                  "top": 356.0625
                 },
                 {
                   "ruta": "/provincias/santa_fe",
                   "ancho": 412,
                   "ids": [
                     "mamografia"
-                  ]
+                  ],
+                  "despuesDelEncabezado": true,
+                  "antesDelContenido": true,
+                  "top": 297.5625
                 },
                 {
                   "ruta": "/seguridad",
                   "ancho": 412,
                   "ids": [
                     "seguridad-vial"
-                  ]
+                  ],
+                  "despuesDelEncabezado": true,
+                  "antesDelContenido": true,
+                  "top": 326.8125
                 }
               ]
             }
@@ -236,37 +321,62 @@
       ]
     },
     {
-      "title": "con imágenes demoradas se reserva el espacio y la publicidad no produce CLS",
+      "title": "los cinco GIF se animan automáticamente y el JPEG permanece estático",
+      "project": "movil",
+      "results": [
+        {
+          "status": "passed",
+          "attachments": []
+        }
+      ]
+    },
+    {
+      "title": "movimiento reducido selecciona imágenes estáticas sin cambiar la geometría",
+      "project": "movil",
+      "results": [
+        {
+          "status": "passed",
+          "attachments": []
+        }
+      ]
+    },
+    {
+      "title": "imágenes demoradas: reserva de espacio estable y CLS sin desplazamientos de publicidad",
       "project": "movil",
       "results": [
         {
           "status": "passed",
           "attachments": [
             {
-              "name": "CLS-imágenes-demoradas",
+              "name": "CLS-y-reserva",
               "body": [
                 {
                   "ruta": "/",
+                  "geometriaEstable": true,
                   "cls": 0,
                   "clsPublicidad": 0
                 },
                 {
                   "ruta": "/actividades",
+                  "geometriaEstable": true,
                   "cls": 0,
                   "clsPublicidad": 0
                 },
                 {
                   "ruta": "/escapadas",
+                  "geometriaEstable": true,
                   "cls": 0,
                   "clsPublicidad": 0
                 },
                 {
                   "ruta": "/provincias/santa_fe",
+                  "geometriaEstable": true,
                   "cls": 0,
                   "clsPublicidad": 0
                 },
                 {
                   "ruta": "/seguridad",
+                  "geometriaEstable": true,
                   "cls": 0,
                   "clsPublicidad": 0
                 }
@@ -277,7 +387,190 @@
       ]
     },
     {
-      "title": "las campañas y sus secuencias están disponibles sin JavaScript",
+      "title": "picture y la alternativa estática funcionan sin JavaScript a 320 px",
+      "project": "movil",
+      "results": [
+        {
+          "status": "passed",
+          "attachments": []
+        }
+      ]
+    },
+    {
+      "title": "banners originales antes del contenido: sin tarjetas, textos añadidos ni desbordamiento",
+      "project": "iphone-safari",
+      "results": [
+        {
+          "status": "passed",
+          "attachments": [
+            {
+              "name": "ubicaciones-y-pantallas",
+              "body": [
+                {
+                  "ruta": "/",
+                  "ancho": 390,
+                  "ids": [
+                    "juegos-suramericanos"
+                  ],
+                  "despuesDelEncabezado": true,
+                  "antesDelContenido": true,
+                  "top": 489.953125
+                },
+                {
+                  "ruta": "/actividades",
+                  "ancho": 390,
+                  "ids": [
+                    "proteccion-ingresos"
+                  ],
+                  "despuesDelEncabezado": true,
+                  "antesDelContenido": true,
+                  "top": 355.96875
+                },
+                {
+                  "ruta": "/escapadas",
+                  "ancho": 390,
+                  "ids": [
+                    "obras-hidricas",
+                    "mil-aulas"
+                  ],
+                  "despuesDelEncabezado": true,
+                  "antesDelContenido": true,
+                  "top": 355.484375
+                },
+                {
+                  "ruta": "/provincias/santa_fe",
+                  "ancho": 390,
+                  "ids": [
+                    "mamografia"
+                  ],
+                  "despuesDelEncabezado": true,
+                  "antesDelContenido": true,
+                  "top": 296.984375
+                },
+                {
+                  "ruta": "/seguridad",
+                  "ancho": 390,
+                  "ids": [
+                    "seguridad-vial"
+                  ],
+                  "despuesDelEncabezado": true,
+                  "antesDelContenido": true,
+                  "top": 326.234375
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "los cinco GIF se animan automáticamente y el JPEG permanece estático",
+      "project": "iphone-safari",
+      "results": [
+        {
+          "status": "passed",
+          "attachments": []
+        }
+      ]
+    },
+    {
+      "title": "movimiento reducido selecciona imágenes estáticas sin cambiar la geometría",
+      "project": "iphone-safari",
+      "results": [
+        {
+          "status": "passed",
+          "attachments": []
+        }
+      ]
+    },
+    {
+      "title": "imágenes demoradas: reserva de espacio estable y CLS sin desplazamientos de publicidad",
+      "project": "iphone-safari",
+      "results": [
+        {
+          "status": "passed",
+          "attachments": [
+            {
+              "name": "CLS-y-reserva",
+              "body": [
+                {
+                  "ruta": "/",
+                  "geometriaEstable": true,
+                  "cls": null,
+                  "clsPublicidad": null
+                },
+                {
+                  "ruta": "/actividades",
+                  "geometriaEstable": true,
+                  "cls": null,
+                  "clsPublicidad": null
+                },
+                {
+                  "ruta": "/escapadas",
+                  "geometriaEstable": true,
+                  "cls": null,
+                  "clsPublicidad": null
+                },
+                {
+                  "ruta": "/provincias/santa_fe",
+                  "geometriaEstable": true,
+                  "cls": null,
+                  "clsPublicidad": null
+                },
+                {
+                  "ruta": "/seguridad",
+                  "geometriaEstable": true,
+                  "cls": null,
+                  "clsPublicidad": null
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "picture y la alternativa estática funcionan sin JavaScript a 320 px",
+      "project": "iphone-safari",
+      "results": [
+        {
+          "status": "passed",
+          "attachments": []
+        }
+      ]
+    },
+    {
+      "title": "con movimiento reducido el carrusel no rota ni precarga",
+      "project": "escritorio",
+      "results": [
+        {
+          "status": "passed",
+          "attachments": []
+        }
+      ]
+    },
+    {
+      "title": "con movimiento reducido el carrusel no rota ni precarga",
+      "project": "movil",
+      "results": [
+        {
+          "status": "passed",
+          "attachments": []
+        }
+      ]
+    },
+    {
+      "title": "el carrusel del detalle rota solo, salvo con movimiento reducido",
+      "project": "escritorio",
+      "results": [
+        {
+          "status": "passed",
+          "attachments": []
+        }
+      ]
+    },
+    {
+      "title": "el carrusel del detalle rota solo, salvo con movimiento reducido",
       "project": "movil",
       "results": [
         {

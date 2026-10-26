@@ -1,51 +1,64 @@
 {
   "fecha": "2026-10-26",
-  "base": "81548345e2c7c34080abe64eb88fb3e3cc354af6",
+  "base": "2cb738cf2793710183998610e82a767222a580f3",
   "rama": "codex/pr21-publicidad-directa",
-  "lint": "sin errores ni advertencias",
+  "pr": {
+    "numero": 21,
+    "estadoAlComenzar": "MERGED",
+    "fusionadoEl": "2026-10-26T23:20:24Z",
+    "nuevoPr": false
+  },
+  "lint": "correcto sin advertencias",
   "typecheck": "correcto",
   "validate": "correcto",
   "unitarias": {
     "aprobadas": 166,
     "fallos": 0
   },
-  "buildNext": "correcto",
+  "builds": [
+    "Next",
+    "Pages Preview",
+    "Pages production-audit local"
+  ],
   "seo": {
     "canonicals": 108,
     "errores": 0
   },
-  "pages": {
-    "preview": {
-      "archivos": 2074,
-      "bytes": 107206976
-    },
-    "productionAudit": {
-      "archivos": 2098,
-      "bytes": 740776867,
-      "pdfHistoricosMayores25MiB": 10
-    },
+  "publicidad": {
     "campanas": 6,
-    "recursosWebp": 18,
-    "bytesWebp": 472444,
-    "erroresPublicidad": 0
+    "gifsOriginales": 5,
+    "jpegOriginal": 1,
+    "alternativasEstaticas": 5,
+    "recursos": 11,
+    "bytesOriginales": 1023560,
+    "bytesAlternativas": 175610,
+    "urlsPendientes": 6,
+    "identidadBinariaConOriginales": true
   },
   "e2eNext": {
-    "startTime": "2026-10-26T22:41:06.014Z",
-    "duration": 147934.199,
-    "expected": 155,
+    "startTime": "2026-10-26T23:41:39.985Z",
+    "duration": 188449.097,
+    "expected": 164,
     "skipped": 9,
     "unexpected": 0,
     "flaky": 0
   },
   "e2ePages": {
-    "startTime": "2026-10-26T22:44:16.734Z",
-    "duration": 35159.534999999996,
-    "expected": 62,
+    "startTime": "2026-10-26T23:43:01.053Z",
+    "duration": 141293.69400000002,
+    "expected": 71,
     "skipped": 2,
     "unexpected": 0,
     "flaky": 0
   },
-  "clsPublicidad": "0 en las cinco páginas tanto escritorio como móvil en ambos formatos",
-  "campanasSinUrl": 6,
+  "plataformas": [
+    "Chrome 1440px",
+    "Chrome 768px",
+    "Chrome 320px",
+    "Pixel 7 (Chrome)",
+    "iPhone 13 emulado (WebKit 27.2)"
+  ],
+  "iphoneFisicoProbado": false,
+  "capturas": 20,
   "despliegueManualProduccion": false
 }
