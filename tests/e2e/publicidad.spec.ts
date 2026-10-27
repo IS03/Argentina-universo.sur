@@ -151,9 +151,15 @@ test("imágenes demoradas: reserva de espacio estable y CLS sin desplazamientos 
     await page.route("**/publicidad/*", async route => { await bloqueado; await route.continue(); });
     try {
       await page.goto(ruta, { waitUntil: "domcontentloaded" });
-      // En WebKit fonts.ready espera también el layout de imágenes pendientes: cargar las
-      // fuentes directamente evita un bloqueo circular con la imagen que demoramos a propósito.
-      await page.evaluate(() => Promise.all([...document.fonts].map(font => font.load())));
+      // WebKit fonts.ready espera también las imágenes bloqueadas. Cargamos las fuentes web,
+      // excluyendo solo los ajustes métricos Fallback de next/font: usan local(Arial/Times),
+      // que puede no existir en Linux y no representa una descarga fallida del sitio.
+      const fuentesWeb = await page.evaluate(async () => {
+        const fonts = [...document.fonts].filter(font => !font.family.includes("Fallback"));
+        await Promise.all(fonts.map(font => font.load()));
+        return fonts.length;
+      });
+      expect(fuentesWeb).toBeGreaterThan(0);
       const imagenes = page.locator("[data-campana] img");
       const geometria = () => imagenes.evaluateAll(imgs => imgs.map(img => ({ ancho: img.getBoundingClientRect().width, alto: img.getBoundingClientRect().height, top: img.getBoundingClientRect().top + scrollY })));
       const antes = await geometria();
