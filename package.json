@@ -31,7 +31,7 @@
     "editorial:check-pr13": "node --experimental-strip-types scripts/pr13/check.mjs",
     "editorial:check-pr14": "node --experimental-strip-types scripts/pr14/check.mjs",
     "editorial:report-pr14": "node --experimental-strip-types scripts/pr14/manifest.mjs && node --experimental-strip-types scripts/pr14/report.mjs",
-    "prebuild": "node --experimental-strip-types scripts/editorial/work-audit.mjs --check-inputs && node --experimental-strip-types scripts/editorial/publication.mjs",
+    "prebuild": "node --experimental-strip-types scripts/editorial/work-audit.mjs --check-inputs && node --experimental-strip-types scripts/editorial/publication.mjs && node --experimental-strip-types scripts/supabase/prepare-web-content.mjs",
     "editorial:check-work": "node --experimental-strip-types scripts/editorial/work-audit.mjs --check-inputs && node --experimental-strip-types scripts/editorial/publication.mjs",
     "editorial:audit-work": "node --experimental-strip-types scripts/editorial/work-audit.mjs",
     "editorial:preview-work": "node --experimental-strip-types scripts/editorial/preview-work.mjs",

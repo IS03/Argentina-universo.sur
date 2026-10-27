@@ -18,6 +18,9 @@ import { createHash } from "node:crypto";
 import { copyTrackedInputs, readEditorialTrips, preparePublicTripInputs, assertPublicArtifact } from "./editorial-security.mjs";
 import { imageWidths } from "../../lib/pages/image-policy.ts";
 import { assertWorkIsolation } from "../editorial/work-audit.mjs";
+import { prepareWebContent } from "../supabase/prepare-web-content.mjs";
+const contentSource = await prepareWebContent();
+console.log(JSON.stringify({approvedContent:contentSource}));
 await assertWorkIsolation();
 await (await import("../editorial/publication.mjs")).readPublication();
 const root = fileURLToPath(new URL("../../", import.meta.url));
@@ -58,6 +61,10 @@ const files = execFileSync("git", ["ls-files", "-z"], {
     ) && !/^public\/.*\.(?:xlsx?|csv|tsv)$/i.test(p),
   );
 await copyTrackedInputs(root, source, files);
+if(contentSource.source === "supabase") {
+  await mkdir(join(source,"content/supabase"),{recursive:true});
+  await cp(join(root,"content/supabase/build-cache.json"),join(source,"content/supabase/build-cache.json"));
+}
 const editorialTrips = await readEditorialTrips(source);
 await preparePublicTripInputs(source, editorialTrips);
 await symlink(join(root, "node_modules"), join(source, "node_modules"), "dir");

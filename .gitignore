@@ -48,3 +48,8 @@ next-env.d.ts
 /supabase/.temp/
 /supabase/.branches/
 !/.env.example
+
+# Approved, generated Supabase build snapshot (never research)
+/content/supabase/build-cache.json
+
+/content/supabase/build-cache.json.tmp

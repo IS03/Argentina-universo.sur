@@ -1,5 +1,7 @@
 # Configuración, validación real y reversión
 
+> Estado institucional actualizado: [infraestructura remota](../pr25/README.md), [importación ejecutada](../pr26/README.md) y [web conectada en build de prueba](../pr27/README.md). El proyecto existente es `vpbonlzixodxvbybkffv` en `mzfanqzfjskgapsulpip`; no crear otro ni utilizar IS03. Lo que sigue conserva el contexto histórico.
+
 > Actualización PR24: ver [infraestructura operativa local, conciliación integral y estado remoto](../pr24/README.md). Este documento conserva el contexto histórico de PR9.
 
 ## Creación del proyecto independiente
