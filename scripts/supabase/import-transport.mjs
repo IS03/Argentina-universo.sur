@@ -1,5 +1,6 @@
 // Trusted Node/CLI only. Never import this module from app/, components/ or lib/.
 import { createClient } from '@supabase/supabase-js';
+import { INSTITUTIONAL_PROJECT_REF, INSTITUTIONAL_ORGANIZATION_ID, INSTITUTIONAL_URL, assertInstitutionalIdentity } from '../../lib/supabase/identity.ts';
 import { lstat } from 'node:fs/promises';
 import { privatePath } from '../editorial/private-io.mjs';
 import { readPrivateJson, writePrivateJson } from '../editorial/private-io.mjs';
@@ -11,13 +12,12 @@ export async function verifiedImportTarget(target,{env=process.env,fetcher=fetch
     if(target.projectName!=='argentina-universo-sur-pr24' || target.url!=='http://127.0.0.1:59421')throw Error('LOCAL_PROJECT_MISMATCH');
     return target;
   }
-  if(target.projectName!=='argentina-universo-sur' || !/^[a-z]{20}$/.test(target.projectRef??'') || !target.organizationId ||
-    target.url!==`https://${target.projectRef}.supabase.co`)throw Error('DEDICATED_PROJECT_REQUIRED');
+  if(target.projectRef!==INSTITUTIONAL_PROJECT_REF || target.organizationId!==INSTITUTIONAL_ORGANIZATION_ID || target.url!==INSTITUTIONAL_URL)throw Error('DEDICATED_PROJECT_REQUIRED');
   if(!target.authorization?.verifiedAt || !env.SUPABASE_ACCESS_TOKEN)throw Error('REMOTE_VERIFICATION_REQUIRED');
   const response=await fetcher(`https://api.supabase.com/v1/projects/${target.projectRef}`,{headers:{Authorization:`Bearer ${env.SUPABASE_ACCESS_TOKEN}`},signal:AbortSignal.timeout(10000)});
   if(!response.ok)throw Error('REMOTE_IDENTITY_CHECK_FAILED');
   const project=await response.json();
-  if(project.id!==target.projectRef || project.name!==target.projectName || project.organization_id!==target.organizationId || project.status!=='ACTIVE_HEALTHY')throw Error('REMOTE_PROJECT_MISMATCH');
+  assertInstitutionalIdentity(project);
   return target;
 }
 export async function importClient(target,options={}) {

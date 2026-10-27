@@ -83,7 +83,7 @@ test('source updates leave an audit trail and import origins are idempotent keys
 });
 test('Storage rejects browser uploads/edits/deletes even with a future broad permissive policy',async()=>{
   const b=(await db.query('select * from storage.buckets order by id')).rows;
-  assert.equal(b.length,3);assert.equal(b.filter(b=>b.public).length,1);
+  assert.equal(b.length,3);assert.equal(b.filter(b=>b.public).length,0);
   await db.exec('create policy fixture_overbroad on storage.objects for all to anon,authenticated using(true) with check(true)');
   for(const bucket of b) {
     await db.query('insert into storage.objects(bucket_id,name) values ($1,$2)',[bucket.id,'fixture']);

@@ -46,8 +46,8 @@ test('legacy mapping preserves 24 provinces, 72 activities, 23 PDFs, canonicals 
   assert.equal(mapping.publicationPermitted,false);
 });
 test('optional Supabase rejects secret keys and mismatched hosts, and works without env or network',()=>{
-  assert.equal(readSupabaseConfig({}),null);assert.equal(readSupabaseConfig({SUPABASE_URL:'invalid'}),null);
-  const env={SUPABASE_PROJECT_REF:'a'.repeat(20),SUPABASE_URL:`https://${'a'.repeat(20)}.supabase.co`,SUPABASE_PUBLISHABLE_KEY:'sb_publishable_fixture'};
+  assert.equal(readSupabaseConfig({}),null);assert.throws(()=>readSupabaseConfig({SUPABASE_URL:'invalid'}));
+  const env={SUPABASE_PROJECT_REF:'vpbonlzixodxvbybkffv',SUPABASE_URL:'https://vpbonlzixodxvbybkffv.supabase.co',SUPABASE_PUBLISHABLE_KEY:'sb_publishable_fixture'};
   assert.ok(readSupabaseConfig(env));
   for(const key of ['sb_secret_fixture','eyJhbGciOiJIUzI1NiJ9.fake.service_role'])assert.throws(()=>readSupabaseConfig({...env,SUPABASE_PUBLISHABLE_KEY:key}),/inválida/);
   assert.throws(()=>readSupabaseConfig({...env,SUPABASE_URL:'https://another-project.supabase.co'}),/inválida/);
