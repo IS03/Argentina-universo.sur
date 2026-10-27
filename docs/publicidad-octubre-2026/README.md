@@ -34,7 +34,7 @@ El pedido indica **octubre** sin fecha de inicio ni de fin. No se inventó un ve
 
 ## Bloqueadores de anuncios
 
-No se intenta evadirlos: las rutas (`/publicidad/…`), el `aside aria-label="Publicidad"` y los nombres de archivo son los mismos. Una prueba E2E simula un bloqueador en dos modos (descargas de `/publicidad/` cortadas, y además bloques ocultos por CSS) y verifica que las páginas cargan sin errores, sin desborde horizontal y con su navegación funcionando (anclas de la portada, guías PDF, leyenda del mapa). Con los bloques ocultos por CSS, la columna lateral de la portada queda como margen vacío: es el comportamiento esperable de un filtro cosmético y no impide usar el sitio.
+Las rutas (`/publicidad/…`), el `aside aria-label="Publicidad"` y los recursos se conservan. Cuando una imagen falla o un filtro oculta el bloque, el navegador retira la ranura y los márgenes de su contenedor. Las columnas laterales del Home y del mapa recuperan el ancho disponible. No se reintenta la descarga ni se usan rutas alternativas. Las imágenes pendientes conservan su reserva hasta que hay un fallo confirmado.
 
 ## Pruebas
 
@@ -73,10 +73,17 @@ La prueba del bloqueador espera a que la red quede ociosa antes de navegar: sin 
 
 - `capturas/antes-*` y `capturas/despues-*`: escritorio 1440 × 900 y Pixel 7, primera pantalla de Inicio, Qué hacer, Escapadas, Viajar por Argentina, Santa Fe y Seguridad, más página completa de Inicio, Escapadas y Viajar por Argentina. Se tomaron con movimiento reducido (cuadro estático de cada GIF).
 - `capturas/pantallas/`: primera pantalla de las cuatro páginas en 320 × 568, 375 × 667, 393 × 852, Android 412 (Pixel 7), tablet 768 × 1024, 1366 × 768 y 1920 × 1080, con animación normal; además, la vista de las columnas laterales de Inicio (APSV fija y Mil Aulas junto a regiones en escritorio; APSV y Mil Aulas en el flujo en móvil) y Economía en el flujo de Viajar por Argentina.
+- `capturas/ajustes/`: tres capturas nuevas inspeccionadas: Home sin columnas bloqueadas a 1366 px, ampliación de Octubre Rosa a 393 px (con movimiento reducido para leer el mensaje) y entrada del Home a 320 × 568.
+
+## Ajustes tras la auditoría visual
+
+- **JJSS a 320 px:** solo por debajo de 361 px se reducen los espacios verticales. El banner empieza en y=504 en lugar de y=560: hay 64 px visibles al entrar, con los mismos textos y botones de al menos 44 px.
+- **Octubre Rosa en móvil:** tocar la creatividad abre un diálogo con el mismo GIF a 1140 × 100, desplazable horizontalmente. Incluye cierre, Escape, foco contenido y retorno al disparador. Un eventual destino comercial se presenta como enlace separado dentro del visor. En escritorio conserva el comportamiento anterior.
+- **Verificación acotada:** pruebas de bloqueo de red y CSS, imágenes demoradas, recuperación de columnas y márgenes, visor a 393/320 px y espaciado a 320 px, en Chrome y WebKit; sin repetir la batería general.
 
 ## Limitaciones
 
-- **320 × 568 (iPhone SE de primera generación):** JJSS empieza justo en el borde inferior de la primera pantalla; el texto y los botones del hero ocupan casi todo el alto. Desde 375 × 667 se ve una parte clara del banner. Achicar más el hero implicaría cambiar su texto o sus botones, fuera de este pedido.
+- **320 × 568:** JJSS sigue necesitando scroll para verse completo; el ajuste de espaciado mejora su presencia inicial sin reducir textos ni botones.
 - **Tablet horizontal y notebooks de 1024–1279 px:** no hay columnas laterales (no entran 200 + 300 px sin comprimir el contenido); los anuncios van en el flujo como en móvil.
-- **Filtros cosméticos:** si un bloqueador oculta el `aside`, en escritorio queda el hueco de su columna en la portada. El sitio sigue usable.
+- **JavaScript deshabilitado o bloqueado:** se conserva el HTML del banner; la recuperación dinámica y el visor requieren JavaScript. Si se retira una ranura, no se vuelve a cargar automáticamente al desactivar el bloqueador: se recupera con una recarga normal.
 - **Vigencia y URLs:** pendientes de confirmación comercial (ver «Vigencia»).

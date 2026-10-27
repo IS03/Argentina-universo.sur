@@ -76,6 +76,60 @@
   }
 }
 
+/* Recuperación de las columnas publicitarias retiradas por error de carga o filtro cosmético.
+   Las campañas demoradas conservan su reserva; solo un fallo u ocultamiento confirmado la libera. */
+@media (width >= 80rem) {
+  [data-publicidad-home][data-sin-izquierda] {
+    grid-template-columns: minmax(0, 1fr) 300px;
+  }
+
+  [data-publicidad-home][data-sin-derecha] {
+    grid-template-columns: 200px minmax(0, 1fr);
+  }
+
+  [data-publicidad-home][data-sin-izquierda] > [data-publicidad-principal],
+  [data-publicidad-home][data-sin-izquierda] > section {
+    grid-column-start: 1;
+  }
+
+  [data-publicidad-home][data-sin-derecha] > section ul {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  [data-publicidad-home][data-sin-izquierda][data-sin-derecha] {
+    display: block;
+    max-width: none;
+    padding: 0;
+  }
+
+  [data-publicidad-home][data-sin-izquierda][data-sin-derecha] > [data-publicidad-principal] {
+    max-width: 76rem;
+    padding: 2.5rem 2rem 5rem;
+  }
+
+  [data-publicidad-home][data-sin-izquierda][data-sin-derecha] > section {
+    border-inline: 0;
+    border-radius: 0;
+  }
+
+  [data-publicidad-home][data-sin-izquierda][data-sin-derecha] > section > .contenedor {
+    max-width: 76rem;
+    padding: 5rem 2rem;
+  }
+
+  [data-publicidad-mapa][data-sin-mapa] {
+    display: block;
+  }
+
+  [data-publicidad-mapa][data-sin-mapa] > #mapa-provincias {
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  }
+
+  [data-publicidad-mapa][data-sin-mapa] nav ul {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 /* Etiqueta breve sobre títulos: la única tipografía en mayúsculas del sistema. */
 @utility antetitulo {
   font-size: 0.75rem;
