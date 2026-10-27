@@ -104,18 +104,61 @@ test("HTML con banners directos y picture accesible: sin rótulos visibles, tarj
   }
 });
 
-test("los seis anuncios tienen ranuras en cinco páginas públicas; no requieren fichas en borrador", async () => {
-  const placements = {
-    "portada-tras-hero": "components/HomeContent.tsx",
-    "actividades-antes-explorador": "components/ActividadesContent.tsx",
-    "escapadas-antes-guias": "app/escapadas/page.tsx",
-    "santa-fe-tras-encabezado": "app/provincias/[slug]/page.tsx",
-    "seguridad-antes-consejos": "app/seguridad/page.tsx",
+test("pauta de octubre de 2026: cada creatividad en su ubicación contratada, una sola vez", async () => {
+  const contratadas = {
+    "juegos-suramericanos": ["portada-central", "components/HomeContent.tsx", 800],
+    "seguridad-vial": ["portada-lateral-izquierda", "components/HomeContent.tsx", 200],
+    "mil-aulas": ["portada-lateral-derecha", "components/HomeContent.tsx", 300],
+    "obras-hidricas": ["actividades-antes-explorador", "components/ActividadesContent.tsx", 600],
+    "mamografia": ["escapadas-antes-guias", "app/escapadas/page.tsx", 1140],
+    "proteccion-ingresos": ["provincias-lateral-mapa", "components/ViajeArgentina.tsx", 250],
   };
+  assert.deepEqual(CAMPANAS.map(c => c.id).sort(), Object.keys(contratadas).sort());
   for (const campana of CAMPANAS) {
-    assert.ok(placements[campana.ubicacion]);
-    assert.ok((await read(placements[campana.ubicacion])).toString().includes(`id="${campana.ubicacion}"`));
+    const [espacio, archivo, ancho] = contratadas[campana.id];
+    assert.equal(campana.ubicacion, espacio, campana.id);
+    // Tamaño natural de la creatividad: se escala hacia abajo en pantallas chicas, nunca se estira.
+    assert.equal(campana.anchoMaximo, ancho, campana.id);
+    assert.equal(campana.imagen.ancho, ancho, campana.id);
+    assert.equal(inventory.find(r => r.id === campana.id).ubicacion, espacio, `inventario de ${campana.id}`);
+    const fuente = (await read(archivo)).toString();
+    assert.equal(fuente.split(`id="${espacio}"`).length - 1, 1, `${archivo} tiene una sola ranura ${espacio}`);
+    assert.doesNotMatch(archivo, /content\/escapadas/);
   }
+  // Una ranura por campaña: sin creatividades duplicadas en el mismo espacio.
+  assert.equal(new Set(CAMPANAS.map(c => c.ubicacion)).size, CAMPANAS.length);
+  // Las ubicaciones anteriores quedan sin campañas (Santa Fe y Seguridad no muestran publicidad).
+  for (const vacio of ["santa-fe-tras-encabezado", "seguridad-antes-consejos", "escapada-lateral", "footer-patrocinio"]) {
+    assert.ok(ESPACIOS[vacio], vacio);
+    assert.deepEqual(anunciosDelEspacio(vacio), [], vacio);
+  }
+  // Sin vencimientos inventados: el pedido solo dice «octubre» y la baja es manual con activa: false.
+  assert.match((await read("lib/publicidad.ts")).toString(), /sin fecha de inicio ni de fin/);
+  for (const campana of CAMPANAS) assert.deepEqual(Object.keys(campana).filter(k => /fecha|vence|desde|hasta/i.test(k)), []);
+});
+
+test("Escapadas ya no muestra el aviso «Antes de descargar» y conserva las guías en PDF", async () => {
+  const pagina = (await read("app/escapadas/page.tsx")).toString();
+  assert.doesNotMatch(pagina, /Antes de descargar|<Aviso\b|datos móviles/);
+  assert.match(pagina, /<EscapadasContent escapadas=\{escapadas\} \/>/);
+  // Octubre Rosa va inmediatamente después del encabezado, antes de las guías.
+  assert.match(pagina, /\/>\n\s*<div className="contenedor[^"]*">\n\s*<EspacioPublicitario id="escapadas-antes-guias"/);
+  assert.ok(pagina.indexOf('id="escapadas-antes-guias"') < pagina.indexOf("<PublishedTrips"));
+});
+
+test("las columnas laterales solo existen con una campaña activa y se fijan únicamente en escritorio", async () => {
+  const portada = (await read("components/HomeContent.tsx")).toString();
+  assert.match(portada, /anunciosDelEspacio\("portada-lateral-izquierda"\)\.length > 0/);
+  assert.match(portada, /anunciosDelEspacio\("portada-lateral-derecha"\)\.length > 0/);
+  assert.match(portada, /\{columnas\.izquierda && \(/);
+  assert.match(portada, /\{columnas\.derecha && \(/);
+  assert.match(portada, /id="portada-lateral-izquierda" className="xl:sticky xl:top-\[calc\(var\(--alto-encabezado\)\+1\.5rem\)\]"/);
+  const mapa = (await read("components/ViajeArgentina.tsx")).toString();
+  assert.match(mapa, /const conAnuncio = anunciosDelEspacio\("provincias-lateral-mapa"\)\.length > 0/);
+  for (const fuente of [portada, mapa]) assert.doesNotMatch(fuente, /(?<![\w-])fixed(?![\w-])/);
+});
+
+test("la privacidad declara publicidad directa sin seguimiento", async () => {
   const privacy = (await read("app/privacidad/page.tsx")).toString();
   assert.doesNotMatch(privacy, /ni publicidad/);
   assert.match(privacy, /Publicidad directa/);

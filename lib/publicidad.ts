@@ -1,23 +1,35 @@
 // Publicidad directa local. Activación, destino y ubicación se administran aquí.
+// Pauta de octubre de 2026: el pedido indica «octubre» sin fecha de inicio ni de fin. No hay
+// vencimiento automático; cada campaña se apaga con «activa: false» cuando el área comercial confirme
+// las fechas (docs/publicidad-octubre-2026/README.md).
 // Los GIF se sirven byte por byte; picture selecciona un cuadro estático con movimiento reducido.
 export const ESPACIOS = {
-  "portada-tras-hero": {
-    "descripcion": "Inicio, inmediatamente después del hero"
+  "portada-central": {
+    "descripcion": "Inicio, columna central: primer bloque después del hero"
+  },
+  "portada-lateral-izquierda": {
+    "descripcion": "Inicio, columna lateral izquierda: fija al desplazar en escritorio, en el flujo en móvil"
+  },
+  "portada-lateral-derecha": {
+    "descripcion": "Inicio, columna lateral derecha junto a «Explorá por región»"
   },
   "actividades-antes-explorador": {
-    "descripcion": "Actividades, después del encabezado y antes del explorador"
+    "descripcion": "Qué hacer, después del encabezado y antes del explorador"
   },
   "escapadas-antes-guias": {
-    "descripcion": "Escapadas, después del encabezado y antes de las guías"
+    "descripcion": "Escapadas, inmediatamente después del encabezado y antes de las guías"
+  },
+  "provincias-lateral-mapa": {
+    "descripcion": "Viajar por Argentina, columna lateral junto al mapa y listado"
   },
   "escapada-lateral": {
     "descripcion": "Ficha de escapada, sin campañas asignadas"
   },
   "santa-fe-tras-encabezado": {
-    "descripcion": "Santa Fe, después del encabezado provincial"
+    "descripcion": "Santa Fe, después del encabezado provincial; sin campañas asignadas desde octubre de 2026"
   },
   "seguridad-antes-consejos": {
-    "descripcion": "Seguridad, después del encabezado y antes de los consejos"
+    "descripcion": "Seguridad, después del encabezado; sin campañas asignadas desde octubre de 2026"
   },
   "footer-patrocinio": {
     "descripcion": "Pie de página, bloque comercial opcional después de la descripción del sitio"
@@ -50,9 +62,9 @@ export const CAMPANAS: readonly AnuncioDirecto[] = [
     "id": "juegos-suramericanos",
     "anunciante": "Santa Fe Provincia",
     "original": "publicidad/JJSS_Banners_800x600.gif",
-    "ubicacion": "portada-tras-hero",
+    "ubicacion": "portada-central",
     "activa": true,
-    "anchoMaximo": 480,
+    "anchoMaximo": 800,
     "imagen": {
       "src": "/publicidad/juegos-suramericanos.gif",
       "alt": "Santa Fe Provincia. 3,5 millones de gracias.",
@@ -71,7 +83,7 @@ export const CAMPANAS: readonly AnuncioDirecto[] = [
     "id": "proteccion-ingresos",
     "anunciante": "Santa Fe Provincia y Banco Santa Fe",
     "original": "publicidad/PROTEC_ING_banners_Junio_2026_250x250.gif",
-    "ubicacion": "actividades-antes-explorador",
+    "ubicacion": "provincias-lateral-mapa",
     "activa": true,
     "anchoMaximo": 250,
     "imagen": {
@@ -92,7 +104,7 @@ export const CAMPANAS: readonly AnuncioDirecto[] = [
     "id": "mamografia",
     "anunciante": "Santa Fe Provincia · Ministerio de Salud · Agencia de Control del Cáncer",
     "original": "publicidad/SF-Provincia_Bnnr-Mamografia_1140x100.gif",
-    "ubicacion": "santa-fe-tras-encabezado",
+    "ubicacion": "escapadas-antes-guias",
     "activa": true,
     "anchoMaximo": 1140,
     "imagen": {
@@ -113,7 +125,7 @@ export const CAMPANAS: readonly AnuncioDirecto[] = [
     "id": "seguridad-vial",
     "anunciante": "APSV · Santa Fe Provincia",
     "original": "publicidad/Suramericanos-APSV_200x200.gif",
-    "ubicacion": "seguridad-antes-consejos",
+    "ubicacion": "portada-lateral-izquierda",
     "activa": true,
     "anchoMaximo": 200,
     "imagen": {
@@ -134,7 +146,7 @@ export const CAMPANAS: readonly AnuncioDirecto[] = [
     "id": "obras-hidricas",
     "anunciante": "Santa Fe Provincia",
     "original": "publicidad/displays_obras hidricas_600x300 jpg.jpg",
-    "ubicacion": "escapadas-antes-guias",
+    "ubicacion": "actividades-antes-explorador",
     "activa": true,
     "anchoMaximo": 600,
     "imagen": {
@@ -148,9 +160,9 @@ export const CAMPANAS: readonly AnuncioDirecto[] = [
     "id": "mil-aulas",
     "anunciante": "Santa Fe Provincia · Programa 1000 aulas",
     "original": "publicidad/displays_rosario_mil-aulas_300x600.gif",
-    "ubicacion": "escapadas-antes-guias",
+    "ubicacion": "portada-lateral-derecha",
     "activa": true,
-    "anchoMaximo": 240,
+    "anchoMaximo": 300,
     "imagen": {
       "src": "/publicidad/mil-aulas.gif",
       "alt": "Santa Fe Provincia · Programa 1000 aulas. 124 aulas nuevas en Rosario. Programa 1000 aulas. Obras que sí. Santa Fe Provincia.",

@@ -6,6 +6,7 @@ import ProvinciaCard from "@/components/ProvinciaCard";
 import HeroCarousel from "@/components/home/HeroCarousel";
 import ContinuarExplorando from "@/components/home/ContinuarExplorando";
 import EspacioPublicitario from "@/components/publicidad/EspacioPublicitario";
+import { anunciosDelEspacio } from "@/lib/publicidad";
 import { EncabezadoSeccion } from "@/components/ui/Bloques";
 import Icono, { type NombreIcono } from "@/components/ui/Icono";
 import { boton } from "@/components/ui/estilos";
@@ -29,7 +30,7 @@ function Portada() {
         <div className="absolute inset-0 z-[3] bg-gradient-to-t from-tinta-900/90 via-tinta-900/45 to-tinta-900/15" />
         <div className="absolute inset-0 z-[3] hidden bg-gradient-to-r from-tinta-900/60 to-transparent md:block" />
       </div>
-      <div className="contenedor flex min-h-[min(64svh,38rem)] flex-col justify-end pt-16 pb-10 sm:pb-14 lg:pb-16">
+      <div className="contenedor flex min-h-[min(56svh,34rem)] flex-col justify-end pt-12 pb-10 sm:pt-16 sm:pb-14 lg:pb-16">
         <p className="antetitulo text-sol-400">Universo Sur</p>
         <h1 id="titulo-portada" className="mt-3 max-w-3xl font-display text-display">
           Turismo en Argentina
@@ -58,55 +59,91 @@ const planificar: { href: string; icono: NombreIcono; titulo: string; texto: (n:
   { href: ROUTES.seguridad, icono: "escudo", titulo: "Viajá seguro", texto: () => "Ruta, playas, áreas naturales, altura y emergencias." },
 ];
 
+// Columnas de la portada según las campañas activas de cada lateral (clases literales para Tailwind).
+function columnasPortada() {
+  const izquierda = anunciosDelEspacio("portada-lateral-izquierda").length > 0;
+  const derecha = anunciosDelEspacio("portada-lateral-derecha").length > 0;
+  const plantilla = izquierda && derecha ? "xl:grid-cols-[200px_minmax(0,1fr)_300px]"
+    : izquierda ? "xl:grid-cols-[200px_minmax(0,1fr)]"
+    : derecha ? "xl:grid-cols-[minmax(0,1fr)_300px]" : "";
+  if (!izquierda && !derecha) return { izquierda, derecha, grilla: "", principal: "", regiones: "", regionesInterior: "" };
+  const columna = izquierda ? "xl:col-start-2" : "xl:col-start-1";
+  return {
+    izquierda,
+    derecha,
+    grilla: `xl:mx-auto xl:grid xl:max-w-[90rem] xl:items-start xl:gap-x-10 xl:gap-y-14 xl:px-8 xl:pt-10 ${plantilla}`,
+    principal: `xl:row-start-1 xl:col-end-[-1] xl:max-w-none xl:p-0 ${columna}`,
+    regiones: `xl:row-start-2 xl:rounded-tarjeta xl:border ${columna}`,
+    regionesInterior: "xl:max-w-none xl:p-8",
+  };
+}
+
 // Server Component: el contenido turístico llega en el HTML inicial. Solo el carrusel y el
 // historial de visitas se ejecutan en el navegador.
 export default function HomeContent(props: HomeContentProps) {
+  const columnas = columnasPortada();
   return (
     <>
       <Portada />
 
-      <EspacioPublicitario id="portada-tras-hero" className="contenedor pt-8 sm:pt-10" />
+      {/* Desde 1280 px, columnas laterales de publicidad a ambos lados del contenido; antes, cada
+          anuncio queda en el flujo en el orden del HTML. Una campaña apagada no deja columna vacía. */}
+      <div className={columnas.grilla}>
+        <div className={`contenedor pt-8 pb-14 sm:pt-10 sm:pb-20 ${columnas.principal}`}>
+          <EspacioPublicitario id="portada-central" className="mb-12 sm:mb-16" />
+          <section id="provincias-destacadas" aria-labelledby="titulo-destacadas">
+            <EncabezadoSeccion id="titulo-destacadas" antetitulo="Empezá por acá" titulo="Provincias destacadas" bajada="Tres puertas de entrada para conocer el país: río y ciudad, sierras y costa atlántica." />
+            <div className={GRILLA_DESTACADAS}>
+              {props.provinciasDestacadas.map((provincia) => (
+                <div key={provincia.slug} className={ITEM_DESTACADA}>
+                  <ProvinciaCard provincia={provincia} sizes={SIZES_DESTACADAS} destacada />
+                </div>
+              ))}
+            </div>
+          </section>
+          <p className="mt-6">
+            <Link href={ROUTES.provincias} className={boton("secundario")}>
+              {INTERNAL_ANCHORS.verTodasLasProvincias}
+              <Icono nombre="flecha" className="size-4" />
+            </Link>
+          </p>
+        </div>
 
-      <div className="contenedor py-14 sm:py-20">
-        <section id="provincias-destacadas" aria-labelledby="titulo-destacadas">
-          <EncabezadoSeccion id="titulo-destacadas" antetitulo="Empezá por acá" titulo="Provincias destacadas" bajada="Tres puertas de entrada para conocer el país: río y ciudad, sierras y costa atlántica." />
-          <div className={GRILLA_DESTACADAS}>
-            {props.provinciasDestacadas.map((provincia) => (
-              <div key={provincia.slug} className={ITEM_DESTACADA}>
-                <ProvinciaCard provincia={provincia} sizes={SIZES_DESTACADAS} destacada />
-              </div>
-            ))}
+        {columnas.izquierda && (
+          <div className="px-4 pb-14 sm:pb-20 xl:col-start-1 xl:row-span-2 xl:row-start-1 xl:self-stretch xl:p-0">
+            {/* Fija al desplazar solo dentro de su columna: se suelta al terminar la grilla, antes del pie. */}
+            <EspacioPublicitario id="portada-lateral-izquierda" className="xl:sticky xl:top-[calc(var(--alto-encabezado)+1.5rem)]" />
+          </div>
+        )}
+
+        <section aria-labelledby="titulo-regiones" className={`border-y border-arena-300/70 bg-arena-100 ${columnas.regiones}`}>
+          <div className={`contenedor py-14 sm:py-20 ${columnas.regionesInterior}`}>
+            <EncabezadoSeccion id="titulo-regiones" antetitulo="Seis regiones" titulo="Explorá por región" bajada="Del altiplano a Tierra del Fuego: elegí un paisaje y encontrá sus provincias." />
+            <ul className={`grid list-none grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-6 ${columnas.derecha ? "xl:grid-cols-3" : ""}`}>
+              {REGIONES_VISUALES.map(region => (
+                <li key={region.nombre}>
+                  <Link
+                    href={`${ROUTES.provincias}#${region.ancla}`}
+                    className={`group flex h-full min-h-36 flex-col justify-between rounded-tarjeta p-4 text-white shadow-tarjeta transition-transform duration-300 ease-suave hover:-translate-y-0.5 motion-reduce:transform-none ${region.fondo}`}
+                  >
+                    <span className="text-xs font-medium text-white/85">{provinciasPorRegion(region.nombre)} {provinciasPorRegion(region.nombre) === 1 ? "provincia" : "provincias"}</span>
+                    <span>
+                      <span className="block font-display text-2xl leading-tight">{region.nombre}</span>
+                      <span className="mt-1 block text-sm leading-snug text-white/90">{region.lema}</span>
+                    </span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
         </section>
-        <p className="mt-6">
-          <Link href={ROUTES.provincias} className={boton("secundario")}>
-            {INTERNAL_ANCHORS.verTodasLasProvincias}
-            <Icono nombre="flecha" className="size-4" />
-          </Link>
-        </p>
-      </div>
 
-      <section aria-labelledby="titulo-regiones" className="border-y border-arena-300/70 bg-arena-100">
-        <div className="contenedor py-14 sm:py-20">
-          <EncabezadoSeccion id="titulo-regiones" antetitulo="Seis regiones" titulo="Explorá por región" bajada="Del altiplano a Tierra del Fuego: elegí un paisaje y encontrá sus provincias." />
-          <ul className="grid list-none grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-6">
-            {REGIONES_VISUALES.map(region => (
-              <li key={region.nombre}>
-                <Link
-                  href={`${ROUTES.provincias}#${region.ancla}`}
-                  className={`group flex h-full min-h-36 flex-col justify-between rounded-tarjeta p-4 text-white shadow-tarjeta transition-transform duration-300 ease-suave hover:-translate-y-0.5 motion-reduce:transform-none ${region.fondo}`}
-                >
-                  <span className="text-xs font-medium text-white/85">{provinciasPorRegion(region.nombre)} {provinciasPorRegion(region.nombre) === 1 ? "provincia" : "provincias"}</span>
-                  <span>
-                    <span className="block font-display text-2xl leading-tight">{region.nombre}</span>
-                    <span className="mt-1 block text-sm leading-snug text-white/90">{region.lema}</span>
-                  </span>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
+        {columnas.derecha && (
+          <div className="px-4 pt-14 sm:pt-20 xl:col-end-[-1] xl:row-start-2 xl:p-0">
+            <EspacioPublicitario id="portada-lateral-derecha" />
+          </div>
+        )}
+      </div>
 
       {/* SECCIÓN DINÁMICA: CONTINUAR EXPLORANDO */}
       <ContinuarExplorando />
