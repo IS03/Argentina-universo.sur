@@ -37,7 +37,7 @@ export async function prepareWebContent({env=process.env,root=process.cwd(),fetc
   if(!row)throw unavailable();
   const payload=validateWebPayload(row.payload);
   if(publicationHash(payload)!==row.payload_sha256)throw Error('PUBLIC_RELEASE_HASH_MISMATCH');
-  const extraDestinations=[];const seen=new Map(payload.destinations.map(p=>[p.slug,publicationHash(p)]));let after;
+  const extraDestinations=[],extraAssets=[];const seen=new Map(payload.destinations.map(p=>[p.slug,publicationHash(p)]));let after;
   for(let page=0;page<100;page++){
    let q=client.from('entries').select('*').eq('kind','destination').eq('publication_permitted',true).eq('document_status','verified').eq('approval_status','approved').order('id').limit(200);
    if(after)q=q.gt('id',after);const entries=await read(q);
@@ -48,13 +48,13 @@ export async function prepareWebContent({env=process.env,root=process.cwd(),fetc
     if(p.slug!==c.slug||c.canonical_path!=='/destinos/'+p.slug)throw Error('PUBLIC_DESTINATION_ROUTE_MISMATCH');
     await verifyAssets(p,body.assets,root);
     if(seen.has(p.slug)){if(seen.get(p.slug)!==publicationHash(p))throw Error('PUBLIC_DESTINATION_COLLISION');continue;}
-    seen.set(p.slug,publicationHash(p));extraDestinations.push(p);
+    seen.set(p.slug,publicationHash(p));extraDestinations.push(p);extraAssets.push(...body.assets);
    }
    if(entries.length<200)break;if(page===99)throw Error('PUBLIC_READ_LIMIT');after=entries.at(-1).id;
   }
   // Historical assets still pass the original PR19 file contract before npm build/Pages.
   for(const entry of payload.release.entries)await verifyAssets(payload.destinations.find(p=>p.slug===entry.slug),entry.assets,root);
-  const cache={schemaVersion:1,projectRef:INSTITUTIONAL_PROJECT_REF,payload,payloadHash:row.payload_sha256,extraDestinations};
+  const cache={schemaVersion:1,projectRef:INSTITUTIONAL_PROJECT_REF,payload,payloadHash:row.payload_sha256,extraDestinations,extraAssets};
   await mkdir(join(root,'content/supabase'),{recursive:true});await writeFile(path+'.tmp',JSON.stringify(cache)+'\n');await rename(path+'.tmp',path);
   return{source:'supabase',projectRef:INSTITUTIONAL_PROJECT_REF,releaseVersion:row.version,catalogs:Object.keys(payload.catalogs).length,destinations:payload.destinations.length+extraDestinations.length,payloadHash:row.payload_sha256};
  }catch(error){

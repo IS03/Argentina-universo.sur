@@ -8,12 +8,14 @@ import { CATALOG_PATHS } from '../lib/supabase/catalog-pins.ts';
 import { publicationHash } from '../lib/destinos/publication-contract.ts';
 import { prepareWebContent } from '../scripts/supabase/prepare-web-content.mjs';
 import { validateRemotePage } from '../lib/destinos/remote-page.ts';
+import { readBuildPublication, approvedDestinationUrls } from '../scripts/editorial/publication.mjs';
+import { auditPublicArtifact } from '../scripts/pages/editorial-security.mjs';
 const{release,pages}=await readPublication();
 const catalogs=Object.fromEntries(await Promise.all(Object.entries(CATALOG_PATHS).map(async([k,p])=>[k,JSON.parse(await readFile(p,'utf8'))])));
 const payload={schemaVersion:1,catalogs,release,destinations:pages};
 const env={AUS_CONTENT_SOURCE:'supabase',SUPABASE_PROJECT_REF:'vpbonlzixodxvbybkffv',SUPABASE_URL:'https://vpbonlzixodxvbybkffv.supabase.co',SUPABASE_PUBLISHABLE_KEY:'sb_publishable_synthetic'};
 const fetcher=(body=payload,extras=[],hash=publicationHash(body))=>async url=>new Response(JSON.stringify(String(url).includes('/web_build_releases')?[{payload:body,payload_sha256:hash,version:1}]:extras),{status:200,headers:{'Content-Type':'application/json'}});
-async function rootFixture(){const root=await mkdtemp(join(tmpdir(),'aus-approved-build-'));await mkdir(join(root,'public/media'),{recursive:true});await cp('public/media/review',join(root,'public/media/review'),{recursive:true});return root;}
+async function rootFixture(){const root=await mkdtemp(join(tmpdir(),'aus-approved-build-'));await mkdir(join(root,'public/media'),{recursive:true});await cp('public/media/review',join(root,'public/media/review'),{recursive:true});await cp('content/destinos',join(root,'content/destinos'),{recursive:true});return root;}
 test('build consumes only a hash-verified public snapshot with the exact historical two permissions',async()=>{
  const root=await rootFixture();try{
   const result=await prepareWebContent({root,env:{...env,AUS_CONTENT_FALLBACK:'deny'},fetcher:fetcher()});assert.equal(result.source,'supabase');assert.equal(result.destinations,2);
@@ -46,6 +48,14 @@ test('future exact approved versions add routes without per-destination code; st
   const entry={id:'synthetic-only',kind:'destination',slug:page.slug,name:page.nombre,canonical_path:'/destinos/'+page.slug,latitude:null,longitude:null,content_version:1,approved_version:1,publication_permitted:true,document_status:'verified',approval_status:'approved',approved_at:'2026-10-27',verified_at:'2026-10-27',body:{page,assets:release.entries.find(e=>e.slug===pages[0].slug).assets}};
   assert.equal((await prepareWebContent({root,env,fetcher:fetcher(payload,[entry])})).destinations,3);
   assert.equal(JSON.parse(await readFile(join(root,'content/supabase/build-cache.json'))).extraDestinations[0].slug,page.slug);
+  assert.equal((await readBuildPublication(root)).pages.length,3);
+  assert.ok((await approvedDestinationUrls(root)).includes(page.seo.proposedCanonical));
+  const artifact=join(root,'export');await mkdir(artifact);await writeFile(join(artifact,'index.html'),`<a href="/destinos/${page.slug}">Synthetic approved link</a>`);
+  assert.deepEqual((await auditPublicArtifact(artifact,[],{projectRoot:root})).errors,[]);
+  const cachePath=join(root,'content/supabase/build-cache.json'),cache=JSON.parse(await readFile(cachePath));cache.extraAssets[0].sha256='0'.repeat(64);await writeFile(cachePath,JSON.stringify(cache));
+  await assert.rejects(readBuildPublication(root),/ASSET_CHANGED/);
+  await rm(cachePath);
+  assert.ok((await auditPublicArtifact(artifact,[],{projectRoot:root})).errors.some(e=>e.rule==='unauthorized-destination-route'));
   await assert.rejects(prepareWebContent({root,env,fetcher:fetcher(payload,[{...entry,approved_version:2}])}),/UNAPPROVED/);
   const leaked=structuredClone(entry);leaked.body.page.originalPayload={private:true};await assert.rejects(prepareWebContent({root,env,fetcher:fetcher(payload,[leaked])}),/UNSAFE/);
   const hidden=structuredClone(entry);hidden.body.page.photos[0].foto.leyenda={private:'not public text'};await assert.rejects(prepareWebContent({root,env,fetcher:fetcher(payload,[hidden])}),/UNSAFE/);

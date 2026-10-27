@@ -1,3 +1,4 @@
+import { readBuildPublication } from '../editorial/publication.mjs';
 import { createHash } from "node:crypto";
 import { cp, lstat, mkdir, readdir, readFile, rm, writeFile } from "node:fs/promises";
 import { dirname, join, relative } from "node:path";
@@ -67,15 +68,15 @@ function normalize(value) {
 const privateMarkers = /1fwed8poUbIaLBnMLJta5WkyAnYg_SFc453m-wl3aB1w|spreadsheetId|original_payload|originalPayload|normalizedPayload|originalIdentity|numericComponents|reviewFindings|jurisdictionSlugs|dictamen_publicacion|aprobacion_humana|permiso_publicacion|practica_trazabilidad|practica_campos_permitidos|practica_exclusiones|componentes_condicionados_ids|previsualizacion_privada|ficha_practica_propuesta|AUS_PRIVATE_MASTER_CANARY|AUS_PRIVATE_WORK_CANARY|AUS_PRIVATE_REVIEW_CANARY|privateReviewBundle|reviewBundleVersion|masterBasisSha256|masterRefs|pendingReviews|documentaryStatus|retirementApproval|scopeReview|restorationVerified/i;
 // Raw research identities can leak without a recognizable field name. Keep the reconciliation private.
 const privateResearchReferences = /\b(?:D|A|C|E|J|S|M|V|AG|X)-[A-Z]{2,5}-\d{3,4}\b|\b(?:EV|F|P|R|V|M)-\d{4}\b|docs\.google\.com\/(?:document|spreadsheets)\/d\//;
-const destinationRelease = JSON.parse(await readFile(new URL("../../content/destinos/release.json", import.meta.url), "utf8"));
-const approvedReviewAssets = new Map(destinationRelease.entries.flatMap(e => e.assets.map(a => [a.path.slice(1), a.sha256])));
-const approvedDestinationPaths = new Set(["/destinos/santa-fe-capital", "/destinos/alta-gracia"]);
 const privatePath = /(?:^|\/)(?:\.env(?:\.|$)|master[-_]snapshot|previous[-_]snapshot|import[-_]plan|work[-_]review|original_payload|content\/escapadas|\.artifacts\/)|\.(?:xlsx?|csv|tsv)$/i;
 // Scan every non-media file, including extensionless static API responses and unknown auxiliaries.
 const binaryMedia = /\.(?:avif|gif|ico|jpe?g|png|webp|woff2?|ttf|otf|pdf|mp3|mp4|mov|webm)$/i;
 
 // `include` narrows a mixed build directory (Next's .next) to the files it serves publicly.
-export async function auditPublicArtifact(directory, trips, {include = () => true, privateNeedles = []} = {}) {
+export async function auditPublicArtifact(directory, trips, {include = () => true, privateNeedles = [], projectRoot = process.cwd()} = {}) {
+  const publication = await readBuildPublication(projectRoot);
+  const approvedReviewAssets = new Map(publication.assets.map(a => [a.path.slice(1),a.sha256]));
+  const approvedDestinationPaths = new Set(publication.pages.map(p => "/destinos/"+p.slug));
   const withheld = trips.filter((trip) => !tripPublishable(trip));
   const needles = withheld.flatMap((trip, index) => [
     { label: `withheld-route-${index + 1}`, value: "/escapadas/" + trip.slug },
@@ -103,7 +104,7 @@ export async function auditPublicArtifact(directory, trips, {include = () => tru
       for (const needle of needles.filter((n) => n.label.startsWith("withheld-route")))
         if (normalizedPath === needle.value || normalizedPath.startsWith(needle.value + ".") || normalizedPath.startsWith(needle.value + "/"))
           errors.push({file: name, rule: needle.label});
-      if (name.startsWith("media/review/") && (!approvedReviewAssets.has(name) || createHash("sha256").update(await readFile(path)).digest("hex") !== approvedReviewAssets.get(name))) errors.push({file: name, rule: "unapproved-destination-media"});
+      if ((name.startsWith("media/review/") || approvedReviewAssets.has(name)) && (!approvedReviewAssets.has(name) || createHash("sha256").update(await readFile(path)).digest("hex") !== approvedReviewAssets.get(name))) errors.push({file: name, rule: "unapproved-destination-media"});
       const plainName = name.replace(/\.(?:gz|br)$/i, "");
       if (binaryMedia.test(plainName)) continue;
       counts.textFiles++;

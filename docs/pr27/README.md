@@ -16,7 +16,7 @@ RLS deja leer solo la versión activa y permitida. No existen escrituras de nave
 
 ## Flujo
 
-1. `prebuild` valida los contratos PR19/archivos aprobados y llama `prepare-web-content.mjs`.
+1. `prebuild` valida los contratos PR19/archivos aprobados, actualiza el artefacto con `prepare-web-content.mjs` y comprueba el aislamiento antes de compilar. Se actualiza antes de consumirlo para no bloquearse por un candidato generado antiguo.
 2. El cliente compartido de PR9 usa solo URL institucional y clave publicable, sin sesión/cookies. Consulta `web_build_releases` activa y futuras `entries` con permiso, revisión y versión vigentes.
 3. Verifica hashes de catálogos, los dos permisos históricos, payload, assets y DTOs. No consulta `editorial`, fuentes privadas ni evidencias.
 4. Genera atómicamente `content/supabase/build-cache.json`, ignorado por Git. Contiene solo publicación aprobada. Los lectores existentes priorizan ese artefacto; las URLs y normalizadores se conservan.
@@ -46,7 +46,7 @@ El build consulta genéricamente `public.entries` de tipo destination. RLS y `pu
 
 El cuerpo público futuro tiene exactamente `{page, assets}`. `page` cumple el DTO turístico y `assets` declara los archivos con SHA-256/tamaño; ambos deben estar incluidos en la aprobación de alcance (`body.page`, `body.assets`, además de los demás campos y `details` que exige PR9). El build valida referencias de fuentes públicas, canonical, slug, campos permitidos, créditos y bytes locales. Ningún dato se proyecta automáticamente desde investigación.
 
-Las fichas que superan esas comprobaciones entran en `generateStaticParams`, sitemap y enlaces provinciales mediante el lector existente, sin añadir imports ni código por slug. Un cambio de versión que invalida la aprobación no se consume. Publicar/despublicar requiere el futuro operador/panel autenticado y una compilación autorizada; este PR no habilita un panel ni permisos generales. Las dos fichas históricas mantienen sus pins exactos.
+Las fichas que superan esas comprobaciones entran en `generateStaticParams`, sitemap y enlaces provinciales mediante el lector existente, sin añadir imports ni código por slug. Las auditorías SEO/editoriales y las expectativas del sitemap también leen ese artefacto aprobado, en lugar de una lista fija de dos rutas. Revalidan los hashes de los assets y rechazan cualquier ruta adicional que no figure allí. Los assets nuevos deben usar una ubicación como `/media/published/`; `/media/review/` conserva el namespace reservado de los dos permisos históricos. Un cambio de versión que invalida la aprobación no se consume. Publicar/despublicar requiere el futuro operador/panel autenticado y una compilación autorizada; este PR no habilita un panel ni permisos generales. Las dos fichas históricas mantienen sus pins exactos.
 
 ## Seguridad y pruebas
 

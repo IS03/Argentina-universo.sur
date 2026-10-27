@@ -1,4 +1,4 @@
-import { approvedDestinationUrls, readPublication } from "../editorial/publication.mjs";
+import { approvedDestinationUrls, readBuildPublication } from "../editorial/publication.mjs";
 import { approvedTripUrls } from "../editorial/public-urls.mjs";
 import { assertPublicArtifact, readEditorialTrips } from "./editorial-security.mjs";
 import { readFile, stat, readdir, mkdir, writeFile } from "node:fs/promises";
@@ -32,7 +32,7 @@ for (const url of urls) {
   );
   records.push({ path, status: 200, ...readMetadata(html) });
 }
-const destinationImages = new Map((await readPublication()).pages.map(p => ["/destinos/" + p.slug, "https://www.argentinauniversosur.com" + p.photos[0].foto.src]));
+const destinationImages = new Map((await readBuildPublication()).pages.map(p => ["/destinos/" + p.slug, "https://www.argentinauniversosur.com" + p.photos[0].foto.src]));
 const errors = auditMetadata(records, preview, destinationImages);
 errors.push(
   ...auditSitemap(await readFile(join(base, "sitemap.xml"), "utf8"), urls),

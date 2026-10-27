@@ -1,4 +1,4 @@
-import { approvedDestinationUrls, readPublication } from "./editorial/publication.mjs";
+import { approvedDestinationUrls, readBuildPublication } from "./editorial/publication.mjs";
 import { approvedTripUrls } from "./editorial/public-urls.mjs";
 import { spawn } from "node:child_process";
 import { createServer } from "node:net";
@@ -124,7 +124,7 @@ export async function auditSite(base, preview = false) {
       records.push({ path, status: response.status, ...readMetadata(await response.text()) });
     }));
   }
-  const destinationImages = new Map((await readPublication()).pages.map(p => ["/destinos/" + p.slug, SITE_URL + p.photos[0].foto.src]));
+  const destinationImages = new Map((await readBuildPublication()).pages.map(p => ["/destinos/" + p.slug, SITE_URL + p.photos[0].foto.src]));
   const errors = auditMetadata(records, preview, destinationImages);
   const sitemap = await request("/sitemap.xml");
   if (!sitemap.ok) errors.push(`Sitemap: HTTP ${sitemap.status}`);
