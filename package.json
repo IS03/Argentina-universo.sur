@@ -22,6 +22,7 @@
     "santa-fe:oficinas": "node --experimental-strip-types scripts/santa-fe/exportar-oficinas.mjs",
     "validate:pages": "node --experimental-strip-types scripts/pages/validate.mjs",
     "test:pages": "node scripts/pages/prepare-tests.mjs && playwright test --config scripts/pages/playwright.config.ts",
+    "test:pages:remote": "playwright test --config scripts/pages/playwright.preview.config.ts",
     "editorial:review": "node --experimental-strip-types scripts/editorial/review.mjs",
     "editorial:plan": "node --experimental-strip-types scripts/editorial/plan.mjs",
     "editorial:check": "node --experimental-strip-types scripts/editorial/check.mjs",

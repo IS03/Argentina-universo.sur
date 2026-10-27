@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-10-27T15:40:33.923Z",
+  "checkedAt": "2026-10-27T15:54:43.956Z",
   "candidateCodeRevision": "8568764f6e5657abdb672a0370db8f0b6988ee4c",
   "main": "e4fd7ec5696b35eca65bb9697422c774e3c22a79",
   "productionAuthorized": false,
@@ -8,10 +8,13 @@
     "wranglerVersion": "4.152.0",
     "loggedIn": false,
     "dashboard": "login-required",
-    "project": null,
+    "project": "argentina-universo-sur-preview",
     "automaticProductionDeployments": "unknown",
-    "remotePreview": "not-run",
-    "cdnTlsZoneRules": "not-tested-remotely"
+    "remotePreview": "public UI/SEO/private-data scan passed; deployed SHA and build source unverified",
+    "cdnTlsZoneRules": "HTTPS public requests passed; zone rules not verified",
+    "targetOrigin": "https://argentina-universo-sur-preview.pages.dev",
+    "identity": "owner-confirmed; API pending authentication",
+    "localBrowserAccess": "Mac locked"
   },
   "github": {
     "prs": [
@@ -90,6 +93,29 @@
     "originalPdfs": {
       "count": 24,
       "hashesVerified": true
+    },
+    "remotePages": {
+      "passed": 30,
+      "skipped": 0,
+      "failed": 0,
+      "flaky": 0,
+      "seo": {
+        "urls": 108,
+        "errors": 0
+      },
+      "privateScan": {
+        "checkedAt": "2026-10-27T15:53:13.867Z",
+        "base": "https://argentina-universo-sur-preview.pages.dev",
+        "html": 108,
+        "rsc": 108,
+        "javascript": 19,
+        "privateSnapshotUsed": true,
+        "privateErrors": 0,
+        "files": 235,
+        "supabaseReferences": [],
+        "deploymentSha": "not-verified-without-dashboard",
+        "connectedBuild": "not-verified-without-dashboard"
+      }
     }
   },
   "reports": {
@@ -596,5 +622,60 @@
       "backupVerified": false,
       "redirectApproved": false
     }
-  ]
+  ],
+  "cloudflarePublic": {
+    "checkedAt": "2026-10-27T15:50:09.663Z",
+    "base": "https://argentina-universo-sur-preview.pages.dev",
+    "rows": [
+      {
+        "path": "/",
+        "status": 200,
+        "url": "https://argentina-universo-sur-preview.pages.dev/",
+        "server": "cloudflare",
+        "robots": "noindex, nofollow",
+        "canonical": "https://www.argentinauniversosur.com",
+        "noindex": true,
+        "privateMarker": false
+      },
+      {
+        "path": "/robots.txt",
+        "status": 200,
+        "url": "https://argentina-universo-sur-preview.pages.dev/robots.txt",
+        "server": "cloudflare",
+        "robots": "noindex, nofollow",
+        "noindex": false,
+        "privateMarker": false
+      },
+      {
+        "path": "/sitemap.xml",
+        "status": 200,
+        "url": "https://argentina-universo-sur-preview.pages.dev/sitemap.xml",
+        "server": "cloudflare",
+        "robots": "noindex, nofollow",
+        "urls": 108,
+        "noindex": false,
+        "privateMarker": false
+      },
+      {
+        "path": "/destinos/santa-fe-capital",
+        "status": 200,
+        "url": "https://argentina-universo-sur-preview.pages.dev/destinos/santa-fe-capital",
+        "server": "cloudflare",
+        "robots": "noindex, nofollow",
+        "canonical": "https://www.argentinauniversosur.com/destinos/santa-fe-capital",
+        "noindex": true,
+        "privateMarker": false
+      },
+      {
+        "path": "/destinos/alta-gracia",
+        "status": 200,
+        "url": "https://argentina-universo-sur-preview.pages.dev/destinos/alta-gracia",
+        "server": "cloudflare",
+        "robots": "noindex, nofollow",
+        "canonical": "https://www.argentinauniversosur.com/destinos/alta-gracia",
+        "noindex": true,
+        "privateMarker": false
+      }
+    ]
+  }
 }

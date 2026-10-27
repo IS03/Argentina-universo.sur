@@ -7,7 +7,7 @@ La revisión actualizada y los pasos desde el celular están en [cierre de produ
 - **Supabase institucional:** ocho migraciones aplicadas, staging privado completo y un snapshot de la web ya pública, comprobados por API/SQL/HTTP.
 - **Prueba local conectada a la DB remota:** variables configuradas en archivo privado y builds Next/Pages ejecutados. Es el entorno no productivo autorizado; no se creó ni desplegó una Preview remota.
 - **Vercel del repositorio:** auditoría de variables sin descifrar valores. Solo `NEXT_PUBLIC_GA_ID` en production y cero variables ocultas; ninguna variable Supabase. No se modificó.
-- **Cloudflare alojado:** no hay conector/configuración de cuenta autorizado disponible para auditar su Dashboard/variables; Wrangler confirmó `loggedIn:false`. Se verifica la exportación local y el transporte Wrangler local; no se afirma haber auditado la cuenta o DNS remotos. No se configuraron variables allí ni se desplegó.
+- **Cloudflare alojado:** el titular identificó `argentina-universo-sur-preview`; su URL pública pasó 30 E2E, SEO y escaneo privado remotos. Sigue sin acceso autenticado para auditar Dashboard/variables/SHA; Wrangler confirmó `loggedIn:false`, el panel pide login y la Mac estaba bloqueada. No se afirma haber auditado la cuenta o DNS ni haber desplegado el candidato conectado allí. No se configuraron variables remotas ni se desplegó.
 - **Supabase Dashboard/Auth:** el acceso API/SQL está autorizado y funciona; el navegador no tiene sesión de Dashboard. Las pruebas authenticated se hicieron con el rol/claims reales en PostgreSQL remoto, no con una sesión de usuario Auth por HTTP. No se crean usuarios editoriales ni se habilita login/panel público.
 
 ## Reproducir el build conectado sin mostrar valores
