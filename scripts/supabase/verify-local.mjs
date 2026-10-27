@@ -23,7 +23,7 @@ try {
   assert.equal(data.find(b=>b.id==='editorial-private').public,false);
   assert.ok(data.find(b=>b.id==='editorial-private').allowed_mime_types.includes('application/json'));
   assert.equal(data.find(b=>b.id==='advertising-private').public,false);
-  assert.equal(data.find(b=>b.id==='tourism-published').public,true);
+  assert.equal(data.find(b=>b.id==='tourism-published').public,false);
  });
  const sessionUser=await service.auth.admin.createUser({email:`pr24-${randomUUID()}@example.invalid`,password:'Synthetic-'+randomUUID()+'A1!',email_confirm:true,user_metadata:{role:'publisher'}});
  assert.equal(sessionUser.error,null);userId=sessionUser.data.user.id;

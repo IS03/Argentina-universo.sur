@@ -105,8 +105,8 @@ test('lost commit response: private journal retains every unit; resume replays e
 
 test('remote target identity and staging authorization fail closed before writes; never reuse other applications',async()=>{
  await assert.rejects(verifiedImportTarget({mode:'remote',projectName:'other-application'},{write:false}),/DEDICATED_PROJECT/);
- const target={mode:'remote',projectName:'argentina-universo-sur',projectRef:'a'.repeat(20),organizationId:'fixture-org',url:'https://'+'a'.repeat(20)+'.supabase.co',authorization:{verifiedAt:'2026-10-26'}};
+ const target={mode:'remote',projectName:'Display name irrelevant',projectRef:'vpbonlzixodxvbybkffv',organizationId:'mzfanqzfjskgapsulpip',url:'https://vpbonlzixodxvbybkffv.supabase.co',authorization:{verifiedAt:'2026-10-26'}};
  await assert.rejects(verifiedImportTarget(target,{write:true}),/AUTHORIZATION/);
  await assert.rejects(verifiedImportTarget(target,{env:{}}),/VERIFICATION/);
- await assert.rejects(verifiedImportTarget(target,{env:{SUPABASE_ACCESS_TOKEN:'synthetic-only'},fetcher:async()=>({ok:true,json:async()=>({id:target.projectRef,name:'other-application',organization_id:'fixture-org',status:'ACTIVE_HEALTHY'})})}),/PROJECT_MISMATCH/);
+ await assert.rejects(verifiedImportTarget(target,{env:{SUPABASE_ACCESS_TOKEN:'synthetic-only'},fetcher:async()=>({ok:true,json:async()=>({id:target.projectRef,name:'other-application',organization_id:'personal-org',region:'us-east-1',status:'ACTIVE_HEALTHY'})})}),/PROJECT_MISMATCH/);
 });
