@@ -129,9 +129,9 @@ test("el footer no muestra el logo fijo ni deja espacio vacío sin campañas, pe
 
   const footer = (await read("components/Footer.tsx")).toString();
   assert.match(footer, /<EspacioPublicitario id="footer-patrocinio" className="mt-6" \/>/);
-  assert.doesNotMatch(footer, /logo-santa-fe-turismo-color-1\\.svg|<Image\\b/);
-  assert.match(footer, /redes\\.map/);
-  assert.match(footer, /enlacesRapidos\\.map/);
+  assert.doesNotMatch(footer, /logo-santa-fe-turismo-color-1\.svg|<Image\b/);
+  assert.match(footer, /redes\.map/);
+  assert.match(footer, /enlacesRapidos\.map/);
 
   const asignada = { ...CAMPANAS[0], id: "fixture-footer", ubicacion: "footer-patrocinio", activa: true };
   const campanas = [...CAMPANAS, asignada];
