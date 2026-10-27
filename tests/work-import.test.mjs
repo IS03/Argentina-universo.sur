@@ -221,7 +221,14 @@ test('build inputs block public Work routes/imports and tracked master snapshots
     execFileSync('git', ['add', '.'], { cwd: root }); assert.equal((await assertWorkIsolation(root)).workPublicRoutes, 0);
     await writeFile(join(root, 'app/page.tsx'), 'import article from "@/lib/destinos/work-review";');
     await assert.rejects(assertWorkIsolation(root), /WORK_APP_IMPORT/);
-    await writeFile(join(root, 'app/page.tsx'), ''); await mkdir(join(root, 'app/destinos'), { recursive: true });
+    await writeFile(join(root, 'app/page.tsx'), '');
+    await mkdir(join(root, 'lib'), { recursive: true });
+    for (const moduleName of ['editorial/integral-import', 'supabase/import-transport', 'supabase/import-state', 'supabase/stage-import']) {
+      await writeFile(join(root, 'lib/data.ts'), `import privateImporter from "../scripts/${moduleName}.mjs";`);
+      await assert.rejects(assertWorkIsolation(root), /WORK_APP_IMPORT/);
+    }
+    await rm(join(root, 'lib'), { recursive: true });
+    await mkdir(join(root, 'app/destinos'), { recursive: true });
     await writeFile(join(root, 'app/destinos/page.tsx'), ''); execFileSync('git', ['add', '.'], { cwd: root });
     await assert.rejects(assertWorkIsolation(root), /WORK_PUBLIC_ROUTE/);
     await rm(join(root, 'app/destinos'), { recursive: true }); execFileSync('git', ['add', '-A'], { cwd: root });

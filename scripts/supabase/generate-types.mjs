@@ -20,7 +20,16 @@ try {
     const relationships=fks.map(f=>`{ foreignKeyName: ${JSON.stringify(f.conname)}; columns: ${JSON.stringify(f.columns)}; isOneToOne: ${f.one_to_one}; referencedRelation: ${JSON.stringify(f.foreign_table)}; referencedColumns: ${JSON.stringify(f.foreign_columns)} }`).join(',\n');
     text+=`${table}: { Row: {${fields('Row')}}; Insert: {${fields('Insert')}}; Update: {${fields('Update')}}; Relationships: [${relationships}] };\n`;
   }
-  text+='}; Views: { [_ in never]: never }; Functions: { [_ in never]: never }; Enums: { [_ in never]: never }; CompositeTypes: { [_ in never]: never }; } };\n';
+  const {rows:functions}=await db.query(`select p.proname,t.typname as returns,p.pronargs,p.pronargdefaults,
+    coalesce((select jsonb_agg(jsonb_build_object('name',p.proargnames[k.i],'type',at.typname,'position',k.i) order by k.i)
+      from unnest(p.proargtypes::oid[]) with ordinality k(oid,i) join pg_type at on at.oid=k.oid),'[]'::jsonb) as args
+    from pg_proc p join pg_namespace n on n.oid=p.pronamespace join pg_type t on t.oid=p.prorettype
+    where n.nspname='public' and p.prokind='f' order by p.proname`);
+  const rpc=functions.map(f=>{
+    if(!types[f.returns] || f.args.some(a=>!types[a.type]||!a.name))throw Error('Unsupported RPC type');
+    return `${f.proname}: { Args: { ${f.args.map(a=>`${a.name}${a.position>f.pronargs-f.pronargdefaults?'?':''}: ${types[a.type]}`).join('; ')} }; Returns: ${types[f.returns]} };`;
+  }).join('\n');
+  text+=`}; Views: { [_ in never]: never }; Functions: { ${rpc||'[_ in never]: never'} }; Enums: { [_ in never]: never }; CompositeTypes: { [_ in never]: never }; } };\n`;
   const path='lib/supabase/database.types.ts';
   if(process.argv.includes('--check')) {if(await readFile(path,'utf8')!==text)throw new Error('Generated DB types are stale. Run npm run db:types');}
   else await writeFile(path,text);

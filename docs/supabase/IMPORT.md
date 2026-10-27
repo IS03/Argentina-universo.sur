@@ -1,5 +1,7 @@
 # Contrato de importación y correspondencia
 
+> Actualización PR24: ver [infraestructura operativa local, conciliación integral y estado remoto](../pr24/README.md). Este documento conserva el contexto histórico de PR9.
+
 > Continuación en [PR17 — operación privada](../pr17/OPERATIONS.md): se conserva este envelope y la API de validación de PR9, pero la CLI exige además tipo de origen, versión explícita de propuestas y metadatos de captura/fecha. Los snapshots antiguos no reciben esos datos por inferencia. No hay ejecutor remoto ni exportador público.
 
 ## Maestro y alcance verificados

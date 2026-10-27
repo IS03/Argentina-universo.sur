@@ -117,7 +117,7 @@ test("movimiento reducido selecciona imágenes estáticas sin cambiar la geometr
     await page.emulateMedia({ reducedMotion: "reduce" });
     for (const id of activas(ids)) {
       const campana = CAMPANAS.find(c => c.id === id)!, image = page.locator(`[data-campana="${id}"] img`);
-      await expect.poll(() => image.evaluate(img => new URL((img as HTMLImageElement).currentSrc).pathname)).toBe(campana.movimientoReducido?.src || campana.imagen.src);
+      await expect.poll(() => image.evaluate(img => (img as HTMLImageElement).currentSrc ? new URL((img as HTMLImageElement).currentSrc).pathname : null)).toBe(campana.movimientoReducido?.src || campana.imagen.src);
       await image.evaluate(img => (img as HTMLImageElement).decode());
       await image.evaluate(img => img.scrollIntoView({ block: "center", behavior: "instant" }));
       await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));

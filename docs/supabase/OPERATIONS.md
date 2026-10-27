@@ -1,5 +1,7 @@
 # Configuración, validación real y reversión
 
+> Actualización PR24: ver [infraestructura operativa local, conciliación integral y estado remoto](../pr24/README.md). Este documento conserva el contexto histórico de PR9.
+
 ## Creación del proyecto independiente
 
 **Pendiente de decisión, sin recursos remotos creados por PR09.** La organización accesible `IS03` está en Free; no se presume que exista cupo ni se elige organización/plan en nombre del titular. Confirmar organización, región (evaluar São Paulo para el público argentino y región de las funciones Vercel), nombre `argentina-universo-sur`, cotización y autorización de cualquier costo. No usar el proyecto de OWNLEVEL ni otra aplicación como entorno de prueba.
