@@ -18,6 +18,9 @@ export const ESPACIOS = {
   },
   "seguridad-antes-consejos": {
     "descripcion": "Seguridad, después del encabezado y antes de los consejos"
+  },
+  "footer-patrocinio": {
+    "descripcion": "Pie de página, bloque comercial opcional después de la descripción del sitio"
   }
 } as const;
 
