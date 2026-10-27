@@ -41,7 +41,7 @@ export function planIntegralImport(snapshot,{states={},repository=null,expectedC
   }
   for(const sheet of SHEETS) snapshot.tables[sheet].forEach((payload,index)=>{
     const key=rowKey(sheet,payload,index),kind=sheet==='Exportacion_piloto'?'proposal-version':payload.id?'original-id':'source-row';
-    const metadata={dateCells:dateIndex.get(sheet+'/'+(payload.id??String(index)))??{}};
+    const metadata={dateCells:dateIndex.get(sheet+'/'+(payload.id??String(index)))??{},...(snapshot.cellMetadata?.[sheet+'/'+key]?{sourceCells:snapshot.cellMetadata[sheet+'/'+key]}:{})};
     rows.push(makeRow(origin,sheet,key,payload,metadata,kind,states[origin]));
     const add=(field,targetId,targetSheet,position)=>{
       const resolved=idIndex.get(targetId);
