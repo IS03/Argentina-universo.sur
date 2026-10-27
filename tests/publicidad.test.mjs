@@ -121,3 +121,20 @@ test("los seis anuncios tienen ranuras en cinco páginas públicas; no requieren
   assert.match(privacy, /Publicidad directa/);
   assert.match(privacy, /sin seguimiento|ni seguimiento individual/);
 });
+
+test("el footer no muestra el logo fijo ni deja espacio vacío sin campañas, pero permite asignarlas", async () => {
+  assert.ok(ESPACIOS["footer-patrocinio"]);
+  assert.deepEqual(anunciosDelEspacio("footer-patrocinio"), []);
+  assert.equal(renderToStaticMarkup(createElement(Espacio, { id: "footer-patrocinio" })), "");
+
+  const footer = (await read("components/Footer.tsx")).toString();
+  assert.match(footer, /<EspacioPublicitario id="footer-patrocinio" className="mt-6" \/>/);
+  assert.doesNotMatch(footer, /logo-santa-fe-turismo-color-1\\.svg|<Image\\b/);
+  assert.match(footer, /redes\\.map/);
+  assert.match(footer, /enlacesRapidos\\.map/);
+
+  const asignada = { ...CAMPANAS[0], id: "fixture-footer", ubicacion: "footer-patrocinio", activa: true };
+  const campanas = [...CAMPANAS, asignada];
+  assert.deepEqual(anunciosDelEspacio("footer-patrocinio", campanas).map(c => c.id), ["fixture-footer"]);
+  assert.deepEqual(anunciosDelEspacio("footer-patrocinio", [...CAMPANAS, { ...asignada, activa: false }]), []);
+});
