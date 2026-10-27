@@ -58,3 +58,5 @@ Las fichas que superan esas comprobaciones entran en `generateStaticParams`, sit
 - El escaneo del snapshot privado se aplica a HTML, RSC, JavaScript y JSON de los artefactos. No se publica la investigación como prueba.
 
 Ver [activación, verificación y rollback](OPERATIONS.md). Resultados: Next 164 aprobadas + 2 específicas de navegador sin DB; nueve omisiones por dispositivo. Pages/WRangler 111 aprobadas, dos omisiones previstas; dos E2E adicionales sobre el artefacto de fallback. Chrome escritorio, Pixel 7 y WebKit iPhone incluidos. La prueba de CLS se repitió en los tres proyectos tras corregir su carga de fuentes locales en Linux.
+
+La revisión posterior de cierre está en [CIERRE-PRODUCCION.md](CIERRE-PRODUCCION.md), con [plantilla Preview sin credenciales](cloudflare-preview.env.example) y [evidencia agregada](evidence/cierre.json). Incluye 113 E2E Pages/WRangler nuevas, los disparadores de Vercel/main, el acceso Cloudflare pendiente, las 24 decisiones PDF y la secuencia de bases/merge/rollback para el titular desde el celular. No se habilitó producción ni se creó un Preview remoto por suposición.

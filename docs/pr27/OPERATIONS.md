@@ -1,5 +1,7 @@
 # Activación de producción, verificación y rollback
 
+La revisión actualizada y los pasos desde el celular están en [cierre de producción](CIERRE-PRODUCCION.md). Incluye los disparadores de Vercel, el estado desconocido de Cloudflare, las condiciones PDF y la [plantilla Preview sin credenciales](cloudflare-preview.env.example). No usar el modo Preview como producción ni retargetear las bases antes de integrar sus prerequisitos.
+
 ## Estado de entornos
 
 - **Supabase institucional:** ocho migraciones aplicadas, staging privado completo y un snapshot de la web ya pública, comprobados por API/SQL/HTTP.
