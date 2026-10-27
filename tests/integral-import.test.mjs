@@ -23,12 +23,13 @@ const refreshManifest=b=>{
 
 test('all 18 tabs are staged losslessly; repeated proposals are versions, not new entities',()=>{
  const s=fixture();s.tables.Destinos[0].unmapped={nested:['kept',123],approved:true};
+ s.cellMetadata={['Destinos/'+s.tables.Destinos[0].id]:{cells:{perfil:{note:'Synthetic private note',formula:'=SYNTHETIC()'}}}};
  s.tables.Exportacion_piloto.push({...s.tables.Exportacion_piloto[0],version_propuesta:'historical-version'});
  const p=planIntegralImport(s);assert.equal(p.canStage,true);assert.equal(p.counts.mainRecords,84);
  assert.equal(p.counts.masterRows,Object.values(s.tables).reduce((n,r)=>n+r.length,0));
  assert.equal(p.bundles[0].rows.filter(r=>r.sheet==='Exportacion_piloto').length,s.tables.Exportacion_piloto.length);
  const row=p.bundles[0].rows.find(r=>r.sheet==='Destinos'&&r.original_id===s.tables.Destinos[0].id);
- assert.deepEqual(row.payload,s.tables.Destinos[0]);assert.equal(p.publicWrites,0);assert.equal(p.publicationAuthorized,false);
+ assert.deepEqual(row.payload,s.tables.Destinos[0]);assert.deepEqual(row.metadata.sourceCells,s.cellMetadata['Destinos/'+s.tables.Destinos[0].id]);assert.equal(p.publicWrites,0);assert.equal(p.publicationAuthorized,false);
  assert.equal(new Set(p.bundles[0].rows.map(r=>r.sheet+'/'+r.original_id)).size,p.counts.masterRows);
 });
 
