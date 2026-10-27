@@ -16,6 +16,7 @@ const inventory = JSON.parse(await read("docs/pr21/inventario.json"));
 const code = ts.transpileModule((await read("components/publicidad/EspacioPublicitario.tsx")).toString(), {
   compilerOptions: { jsx: ts.JsxEmit.ReactJSX, module: ts.ModuleKind.ESNext, target: ts.ScriptTarget.ES2022 },
 }).outputText.replace('"react/jsx-runtime"', JSON.stringify(import.meta.resolve("react/jsx-runtime")))
+  .replace('"react"', JSON.stringify(import.meta.resolve("react")))
   .replace('"@/lib/publicidad"', JSON.stringify(new URL("lib/publicidad.ts", root).href));
 const { default: Espacio, AnuncioDirecto } = await import("data:text/javascript;base64," + Buffer.from(code).toString("base64"));
 

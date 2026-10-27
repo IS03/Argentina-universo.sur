@@ -30,7 +30,7 @@ function Portada() {
         <div className="absolute inset-0 z-[3] bg-gradient-to-t from-tinta-900/90 via-tinta-900/45 to-tinta-900/15" />
         <div className="absolute inset-0 z-[3] hidden bg-gradient-to-r from-tinta-900/60 to-transparent md:block" />
       </div>
-      <div className="contenedor flex min-h-[min(56svh,34rem)] flex-col justify-end pt-12 pb-10 sm:pt-16 sm:pb-14 lg:pb-16">
+      <div className="contenedor flex min-h-[min(56svh,34rem)] flex-col justify-end pt-12 pb-10 max-[360px]:pt-6 max-[360px]:pb-6 sm:pt-16 sm:pb-14 lg:pb-16">
         <p className="antetitulo text-sol-400">Universo Sur</p>
         <h1 id="titulo-portada" className="mt-3 max-w-3xl font-display text-display">
           Turismo en Argentina
@@ -38,7 +38,7 @@ function Portada() {
         <p className="mt-4 max-w-xl text-lg leading-relaxed text-white/90 sm:text-xl">
           Descubrí destinos, paisajes y experiencias únicas en todo el país. Explorá provincias, actividades turísticas y escapadas.
         </p>
-        <div className="mt-8 flex flex-wrap gap-3">
+        <div className="mt-8 flex flex-wrap gap-3 max-[360px]:mt-6">
           {/* Ancla: funciona sin JavaScript y respeta el movimiento reducido (globals.css). */}
           <a href="#provincias-destacadas" className={boton("claro")}>
             Explorar destinos
@@ -78,8 +78,8 @@ function columnasPortada() {
   };
 }
 
-// Server Component: el contenido turístico llega en el HTML inicial. Solo el carrusel y el
-// historial de visitas se ejecutan en el navegador.
+// Server Component: el contenido turístico llega en el HTML inicial. El carrusel, el historial
+// y las mejoras interactivas de publicidad se ejecutan en el navegador.
 export default function HomeContent(props: HomeContentProps) {
   const columnas = columnasPortada();
   return (
@@ -88,8 +88,8 @@ export default function HomeContent(props: HomeContentProps) {
 
       {/* Desde 1280 px, columnas laterales de publicidad a ambos lados del contenido; antes, cada
           anuncio queda en el flujo en el orden del HTML. Una campaña apagada no deja columna vacía. */}
-      <div className={columnas.grilla}>
-        <div className={`contenedor pt-8 pb-14 sm:pt-10 sm:pb-20 ${columnas.principal}`}>
+      <div data-publicidad-home className={columnas.grilla}>
+        <div data-publicidad-principal className={`contenedor pt-8 pb-14 max-[360px]:pt-6 sm:pt-10 sm:pb-20 ${columnas.principal}`}>
           <EspacioPublicitario id="portada-central" className="mb-12 sm:mb-16" />
           <section id="provincias-destacadas" aria-labelledby="titulo-destacadas">
             <EncabezadoSeccion id="titulo-destacadas" antetitulo="Empezá por acá" titulo="Provincias destacadas" bajada="Tres puertas de entrada para conocer el país: río y ciudad, sierras y costa atlántica." />
@@ -110,7 +110,7 @@ export default function HomeContent(props: HomeContentProps) {
         </div>
 
         {columnas.izquierda && (
-          <div className="px-4 pb-14 sm:pb-20 xl:col-start-1 xl:row-span-2 xl:row-start-1 xl:self-stretch xl:p-0">
+          <div data-publicidad-columna="izquierda" className="px-4 pb-14 sm:pb-20 xl:col-start-1 xl:row-span-2 xl:row-start-1 xl:self-stretch xl:p-0">
             {/* Fija al desplazar solo dentro de su columna: se suelta al terminar la grilla, antes del pie. */}
             <EspacioPublicitario id="portada-lateral-izquierda" className="xl:sticky xl:top-[calc(var(--alto-encabezado)+1.5rem)]" />
           </div>
@@ -139,7 +139,7 @@ export default function HomeContent(props: HomeContentProps) {
         </section>
 
         {columnas.derecha && (
-          <div className="px-4 pt-14 sm:pt-20 xl:col-end-[-1] xl:row-start-2 xl:p-0">
+          <div data-publicidad-columna="derecha" className="px-4 pt-14 sm:pt-20 xl:col-end-[-1] xl:row-start-2 xl:p-0">
             <EspacioPublicitario id="portada-lateral-derecha" />
           </div>
         )}

@@ -22,7 +22,7 @@ export default function ViajeArgentina({ provincias }: ViajeArgentinaProps) {
   const conAnuncio = anunciosDelEspacio("provincias-lateral-mapa").length > 0;
   return (
     <>
-      <div className={conAnuncio ? "xl:grid xl:grid-cols-[minmax(0,1fr)_250px] xl:gap-10" : undefined}>
+      <div data-publicidad-mapa className={conAnuncio ? "xl:grid xl:grid-cols-[minmax(0,1fr)_250px] xl:gap-10" : undefined}>
         <div id="mapa-provincias" className={`grid grid-cols-[minmax(0,1fr)] items-center gap-8 rounded-tarjeta border border-arena-300/80 bg-white p-5 shadow-tarjeta sm:p-8 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-12 ${conAnuncio ? "xl:grid-cols-[minmax(0,1fr)_minmax(0,0.8fr)]" : ""}`}>
           <MapaArgentina provincias={provincias.map(({ provincia, slug }) => ({ provincia, slug }))} />
           <nav aria-label="Regiones de Argentina">
@@ -47,7 +47,7 @@ export default function ViajeArgentina({ provincias }: ViajeArgentinaProps) {
           </nav>
         </div>
         {conAnuncio && (
-          <div className="mt-10 xl:mt-0 xl:self-stretch">
+          <div data-publicidad-columna="mapa" className="mt-10 xl:mt-0 xl:self-stretch">
             <EspacioPublicitario id="provincias-lateral-mapa" className="xl:sticky xl:top-[calc(var(--alto-encabezado)+1.5rem)]" />
           </div>
         )}

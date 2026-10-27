@@ -411,9 +411,8 @@ test("con un bloqueador de anuncios el sitio sigue funcionando", async ({ page }
       await expect(page.locator("main h1")).toBeVisible();
       await expect(page.locator(antes)).toBeVisible();
       if (modo === "red") for (const id of activas(ids)) {
-        // La reserva de espacio no colapsa ni se deforma aunque la imagen no llegue.
-        const c = await caja(page, img(id));
-        expect(c.ancho).toBeGreaterThan(0);
+        // Un fallo confirmado libera la reserva; una imagen todavía pendiente la conserva.
+        await expect(page.locator(img(id))).toBeHidden();
       }
       expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), `${modo} ${ruta}`).toBe(true);
       // WebKit informa como error de página el prefetch RSC que una navegación de la prueba cancela.
@@ -429,7 +428,118 @@ test("con un bloqueador de anuncios el sitio sigue funcionando", async ({ page }
     await page.waitForLoadState("networkidle");
     await page.goto("/provincias");
     await expect(page.getByRole("navigation", { name: "Regiones de Argentina" }).getByRole("link")).toHaveCount(6);
+    await page.waitForLoadState("networkidle");
     await page.unrouteAll({ behavior: "wait" });
   }
   expect(errores).toEqual([]);
+});
+
+async function capturaAjuste(page: Page, nombre: string) {
+  if (process.env.AUS_CAPTURAS_AJUSTES !== "1") return;
+  await page.addStyleTag({ content: "nextjs-portal{display:none!important}" });
+  await page.evaluate(() => document.fonts.ready);
+  const carpeta = join(process.cwd(), "docs/publicidad-octubre-2026/capturas/ajustes");
+  await mkdir(carpeta, { recursive: true });
+  await page.screenshot({ path: join(carpeta, `${nombre}.png`), scale: "css" });
+}
+
+test("ajustes visuales: recuperar columnas y márgenes ante bloqueo de red o cosmético", async ({ page, isMobile }) => {
+  await page.setViewportSize(isMobile ? { width: 393, height: 852 } : { width: 1366, height: 768 });
+  const grilla = page.locator("[data-publicidad-home]");
+  for (const ocultar of [
+    '[data-espacio-publicitario="portada-lateral-izquierda"]',
+    '[data-campana="mil-aulas"] img',
+    '[data-espacio-publicitario]',
+  ]) {
+    await page.goto("/");
+    await page.locator('[data-campana="mil-aulas"] img').evaluate(img => (img as HTMLImageElement).decode());
+    const anchoInicial = await page.locator('section[aria-labelledby="titulo-regiones"]').evaluate(e => e.clientWidth);
+    await page.addStyleTag({ content: `${ocultar}{display:none!important}` });
+    if (ocultar.includes("izquierda")) await expect(grilla).toHaveAttribute("data-sin-izquierda", "");
+    else await expect(grilla).toHaveAttribute("data-sin-derecha", "");
+    if (!isMobile) {
+      await expect.poll(() => page.locator('section[aria-labelledby="titulo-regiones"]').evaluate(e => e.clientWidth)).toBeGreaterThan(anchoInicial);
+    }
+    if (ocultar === "[data-espacio-publicitario]") {
+      await expect(grilla).toHaveAttribute("data-sin-izquierda", "");
+      for (const columna of await page.locator("[data-publicidad-columna]").all()) await expect(columna).toBeHidden();
+      if (!isMobile) {
+        await page.locator("#titulo-regiones").evaluate(e => scrollTo({ top: e.getBoundingClientRect().top + scrollY - 112, behavior: "instant" }));
+        await capturaAjuste(page, "home-1366-espacio-recuperado");
+      }
+    }
+    expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+  }
+  await page.route("**/publicidad/**", route => route.abort("blockedbyclient"));
+  await page.goto("/");
+  await expect(grilla).toHaveAttribute("data-sin-izquierda", "");
+  await expect(grilla).toHaveAttribute("data-sin-derecha", "");
+  await expect(page.locator('[data-espacio-publicitario="portada-central"]')).toBeHidden();
+  await page.getByRole("link", { name: "Explorar destinos", exact: true }).click();
+  await expect(page.locator("#provincias-destacadas")).toBeInViewport();
+  await page.goto("/provincias");
+  await expect(page.locator("[data-publicidad-mapa]")).toHaveAttribute("data-sin-mapa", "");
+  if (!isMobile) expect(await page.locator("#mapa-provincias").evaluate(e => e.clientWidth)).toBeGreaterThan(1100);
+});
+
+test("ajustes visuales: ampliación móvil legible, cierre y foco sin enlace comercial", async ({ page, isMobile }) => {
+  for (const width of [393, 320]) {
+    await page.setViewportSize({ width, height: width === 393 ? 852 : 568 });
+    await page.goto("/escapadas");
+    const ampliar = page.getByRole("button", { name: "Ampliar banner de Octubre Rosa" });
+    await expect(ampliar).toBeVisible();
+    const original = ampliar.locator("img");
+    await original.evaluate(img => (img as HTMLImageElement).decode());
+    expect(await original.evaluate(img => new URL((img as HTMLImageElement).currentSrc).pathname)).toBe("/publicidad/mamografia.gif");
+    await ampliar.click();
+    const dialogo = page.getByRole("dialog", { name: "Banner de Octubre Rosa ampliado" });
+    await expect(dialogo).toBeVisible();
+    expect(await dialogo.evaluate(d => (d as HTMLDialogElement).matches(":modal"))).toBe(true);
+    await expect(dialogo.getByRole("button", { name: "Cerrar" })).toBeFocused();
+    const imagen = dialogo.locator("img");
+    expect(await imagen.evaluate(img => [img.clientWidth, img.clientHeight])).toEqual([1140, 100]);
+    await expect(imagen).toHaveAttribute("src", "/publicidad/mamografia.gif");
+    const recorrido = dialogo.getByRole("region");
+    expect(await recorrido.evaluate(e => e.scrollLeft)).toBeGreaterThan(0);
+    // Ambos extremos siguen disponibles: sin recorte ni pérdida de logos.
+    await recorrido.evaluate(e => { e.scrollLeft = 0; });
+    expect(await recorrido.evaluate(e => e.scrollLeft)).toBe(0);
+    await recorrido.evaluate(e => { e.scrollLeft = e.scrollWidth; });
+    expect(await recorrido.evaluate(e => Math.abs(e.scrollWidth - e.clientWidth - e.scrollLeft))).toBeLessThan(2);
+    await recorrido.evaluate(e => { e.scrollLeft = (e.scrollWidth - e.clientWidth) / 2; });
+    await expect(dialogo.locator("a")).toHaveCount(0);
+    expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+    if (width === 393 && isMobile) {
+      await page.emulateMedia({ reducedMotion: "reduce" });
+      await imagen.evaluate(img => (img as HTMLImageElement).decode());
+      await capturaAjuste(page, "octubre-rosa-393-ampliado");
+    }
+    await page.keyboard.press("Escape");
+    await expect(dialogo).toHaveCount(0);
+    await expect(ampliar).toBeFocused();
+    expect(await page.evaluate(() => document.body.style.overflow)).toBe("");
+    await ampliar.click();
+    await dialogo.getByRole("button", { name: "Cerrar" }).click();
+    await expect(dialogo).toHaveCount(0);
+    await expect(page.getByRole("link", { name: "Ver PDF" }).first()).toBeVisible();
+    await page.emulateMedia({ reducedMotion: "no-preference" });
+  }
+});
+
+test("ajustes visuales: JJSS visible al entrar en 320 sin reducir texto ni botones", async ({ page, isMobile }) => {
+  await page.setViewportSize({ width: 320, height: 568 });
+  await page.goto("/");
+  await page.evaluate(() => document.fonts.ready);
+  const anuncio = page.locator('[data-campana="juegos-suramericanos"] img');
+  await anuncio.evaluate(img => (img as HTMLImageElement).decode());
+  const top = await anuncio.evaluate(img => img.getBoundingClientRect().top);
+  expect(top).toBeLessThanOrEqual(505);
+  expect(568 - top).toBeGreaterThanOrEqual(63);
+  for (const nombre of ["Explorar destinos", "Qué hacer en Argentina"]) {
+    const boton = page.getByRole("link", { name: nombre, exact: true });
+    await expect(boton).toBeInViewport();
+    expect(await boton.evaluate(e => e.getBoundingClientRect().height)).toBeGreaterThanOrEqual(44);
+  }
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+  if (isMobile) await capturaAjuste(page, "home-320-jjss");
 });
