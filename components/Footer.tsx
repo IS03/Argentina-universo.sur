@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Image from "next/image";
+import EspacioPublicitario from "@/components/publicidad/EspacioPublicitario";
 import { ROUTES, NAV_ANCHORS } from "@/lib/site-links";
 import { REGIONES_VISUALES } from "@/lib/regiones";
 
@@ -53,15 +53,8 @@ export default function Footer() {
           <p className="mt-4 max-w-sm text-sm leading-relaxed">
             Descubrí destinos, paisajes y experiencias únicas en todo el país. Tu guía completa para explorar Argentina.
           </p>
-          <div className="mt-6 inline-flex max-w-full rounded-xl bg-white px-4 py-3">
-            <Image
-              src="/img/logo-santa-fe-turismo-color-1.svg"
-              alt="Santa Fe Turismo - Logo oficial"
-              width={206}
-              height={26}
-              className="block h-auto w-[206px] max-w-full"
-            />
-          </div>
+          {/* Ranura comercial: si no existe campaña activa asignada, no renderiza HTML ni ocupa espacio. */}
+          <EspacioPublicitario id="footer-patrocinio" className="mt-6" />
           <ul className="mt-4 flex list-none items-center gap-1">
             {redes.map(red => (
               <li key={red.nombre}>
