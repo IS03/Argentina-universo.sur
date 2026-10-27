@@ -3,6 +3,7 @@ import { readFileSync } from "node:fs";
 import http from "node:http";
 import type { AddressInfo } from "node:net";
 import { createSlug } from "../../lib/catalog.ts";
+import { readBuildPublication } from "../../scripts/editorial/publication.mjs";
 
 const actividadesJson: Array<{ SLUG: string; ACTIVIDAD: string }> = JSON.parse(readFileSync("public/data/actividades.json", "utf8"));
 const slugsDe = (provincia: string) => actividadesJson.filter(a => a.SLUG === provincia).map(a => `/actividades/${createSlug(a.ACTIVIDAD)}`).sort();
@@ -664,10 +665,10 @@ test("fuera de producción no se carga Google Analytics ni se envían datos a Go
   expect(pedidos).toEqual([]);
 });
 
-test("la metadata canónica no cambia y el sitemap conserva las 106 URLs y suma dos destinos", async ({ request }) => {
+test("la metadata canónica no cambia y el sitemap suma las versiones autorizadas al catálogo", async ({ request }) => {
   const canonical = async (path: string) => (await (await request.get(path)).text()).match(/<link rel="canonical" href="([^"]+)"/)?.[1];
   expect(await canonical("/")).toBe("https://www.argentinauniversosur.com");
   expect(await canonical("/actividades?provincia=catarmaca")).toBe("https://www.argentinauniversosur.com/actividades");
   const sitemap = await (await request.get("/sitemap.xml")).text();
-  expect(sitemap.match(/<loc>/g)).toHaveLength(108);
+  expect(sitemap.match(/<loc>/g)).toHaveLength(106 + (await readBuildPublication()).pages.length);
 });

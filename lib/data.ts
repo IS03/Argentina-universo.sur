@@ -1,3 +1,4 @@
+import { buildCatalog } from "./supabase/build-cache";
 // Utilidades para leer y normalizar datos JSON
 import { readFile } from "fs/promises";
 import { join } from "path";
@@ -60,8 +61,7 @@ export interface Evento {
 // Provincias en el orden del archivo fuente (el selector de /actividades usa este orden).
 export async function getProvinciasEnOrdenDeCatalogo(): Promise<Provincia[]> {
   const filePath = join(process.cwd(), "public", "data", "provincias.json");
-  const fileContents = await readFile(filePath, "utf8");
-  const data: ProvinciaRaw[] = JSON.parse(fileContents);
+  const data: ProvinciaRaw[] = buildCatalog<ProvinciaRaw>("provincias") ?? JSON.parse(await readFile(filePath, "utf8"));
   return data.map(normalizarProvincia);
 }
 
@@ -87,16 +87,14 @@ export async function getProvincias(): Promise<Provincia[]> {
 // Normalizar datos de actividades
 export async function getActividades(): Promise<Actividad[]> {
   const filePath = join(process.cwd(), "public", "data", "actividades.json");
-  const fileContents = await readFile(filePath, "utf8");
-  const data: ActividadRaw[] = JSON.parse(fileContents);
+  const data: ActividadRaw[] = buildCatalog<ActividadRaw>("actividades") ?? JSON.parse(await readFile(filePath, "utf8"));
   return data.map(normalizarActividad);
 }
 
 // Normalizar datos de escapadas
 export async function getEscapadas(): Promise<Escapada[]> {
   const filePath = join(process.cwd(), "public", "data", "escapadas.json");
-  const fileContents = await readFile(filePath, "utf8");
-  const data: EscapadaRaw[] = JSON.parse(fileContents);
+  const data: EscapadaRaw[] = buildCatalog<EscapadaRaw>("escapadas") ?? JSON.parse(await readFile(filePath, "utf8"));
   
   return data.map((item) => ({
     id: item.ID,
@@ -130,26 +128,22 @@ export async function getActividadBySlug(actividadSlug: string): Promise<Activid
 // Funciones para cargar datos de Santa Fe
 export async function getPlanesSantaFe(): Promise<PlanSantaFe[]> {
   const filePath = join(process.cwd(), "public", "santa-fe", "json", "planes.json");
-  const fileContents = await readFile(filePath, "utf8");
-  return JSON.parse(fileContents);
+  return buildCatalog<PlanSantaFe>("planes") ?? JSON.parse(await readFile(filePath, "utf8"));
 }
 
 export async function getPreguntasFrecuentesSantaFe(): Promise<PreguntaFrecuente[]> {
   const filePath = join(process.cwd(), "public", "santa-fe", "json", "preguntas_frecuentes.json");
-  const fileContents = await readFile(filePath, "utf8");
-  return JSON.parse(fileContents);
+  return buildCatalog<PreguntaFrecuente>("preguntas") ?? JSON.parse(await readFile(filePath, "utf8"));
 }
 
 export async function getNoticiasSantaFe(): Promise<NoticiaSantaFe[]> {
   const filePath = join(process.cwd(), "public", "santa-fe", "json", "noticias.json");
-  const fileContents = await readFile(filePath, "utf8");
-  return JSON.parse(fileContents);
+  return buildCatalog<NoticiaSantaFe>("noticias") ?? JSON.parse(await readFile(filePath, "utf8"));
 }
 
 export async function getOficinasInformesSantaFe(): Promise<OficinaInforme[]> {
   const filePath = join(process.cwd(), "public", "santa-fe", "json", "oficinas_informes.json");
-  const fileContents = await readFile(filePath, "utf8");
-  const data: Array<Omit<OficinaInforme, "Correo/Web"> & { "Correo/Web": string | null }> = JSON.parse(fileContents);
+  const data: Array<Omit<OficinaInforme, "Correo/Web"> & { "Correo/Web": string | null }> = buildCatalog<Omit<OficinaInforme, "Correo/Web"> & { "Correo/Web": string | null }>("oficinas") ?? JSON.parse(await readFile(filePath, "utf8"));
   return data.map((item) => ({
     Localidad: item.Localidad || "",
     "Teléfono/WhatsApp": item["Teléfono/WhatsApp"] || "",
@@ -160,14 +154,12 @@ export async function getOficinasInformesSantaFe(): Promise<OficinaInforme[]> {
 
 export async function getAgenciasSantaFe(): Promise<Agencia[]> {
   const filePath = join(process.cwd(), "public", "santa-fe", "json", "agencias.json");
-  const fileContents = await readFile(filePath, "utf8");
-  return JSON.parse(fileContents);
+  return buildCatalog<Agencia>("agencias") ?? JSON.parse(await readFile(filePath, "utf8"));
 }
 
 export async function getEventosSantaFe(): Promise<Evento[]> {
   const filePath = join(process.cwd(), "public", "santa-fe", "json", "events_enero_febrero.json");
-  const fileContents = await readFile(filePath, "utf8");
-  return JSON.parse(fileContents);
+  return buildCatalog<Evento>("eventos") ?? JSON.parse(await readFile(filePath, "utf8"));
 }
 
 // Evaluar en cada request: una agenda estática conservaría eventos vencidos hasta el próximo deploy.

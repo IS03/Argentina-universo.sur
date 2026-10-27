@@ -65,7 +65,7 @@ test('private fields and master links are absent from all public destination pro
 test('public artifact audit blocks any unapproved destination path and unknown media in the reserved namespace', async () => {
   const dir = await mkdtemp(join(tmpdir(), 'aus-published-audit-'));
   try {
-    await writeFile(join(dir, 'index.html'), '<a href="/destinos/rosario">No autorizado</a>'); assert.ok((await auditPublicArtifact(dir, [])).errors.length);
+    await writeFile(join(dir, 'index.html'), '<a href="/destinos/ficha-sintetica-nunca-aprobada">No autorizado</a>'); assert.ok((await auditPublicArtifact(dir, [])).errors.length);
     await writeFile(join(dir, 'index.html'), '<a href="/destinos/alta-gracia">Autorizado</a>'); assert.equal((await auditPublicArtifact(dir, [])).errors.length, 0);
     await writeFile(join(dir, 'page.meta'), JSON.stringify({ tags: '_N_T_/destinos/layout,_N_T_/destinos/[slug]/page' }));
     assert.equal((await auditPublicArtifact(dir, [])).errors.length, 0);

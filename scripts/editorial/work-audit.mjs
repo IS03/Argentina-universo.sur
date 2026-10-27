@@ -4,7 +4,7 @@ import { join, resolve } from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { assertPublicArtifact } from '../pages/editorial-security.mjs';
 import { readPrivateJson } from './private-io.mjs';
-import { readPublication } from './publication.mjs';
+import { readBuildPublication } from './publication.mjs';
 
 export async function assertWorkIsolation(root = process.cwd()) {
   const errors = [];
@@ -19,7 +19,7 @@ export async function assertWorkIsolation(root = process.cwd()) {
       if (/\.[cm]?[jt]sx?$/.test(file) && /work-review|DestinoArticle|review-batch|editorial-import|work-import|integral-import|supabase\/(?:import-transport|stage-import|import-state|prepare-local|reconcile|verify-local|capture-master|connector-import|migration-bundle|remote-security)|\.artifacts\//.test(await readFile(join(root, file), 'utf8'))) errors.push('WORK_APP_IMPORT_NOT_ENABLED');
     }
   }
-  if (!errors.length && tracked.includes(destinationRoute)) publicationCount = (await readPublication(root)).pages.length;
+  if (!errors.length && tracked.includes(destinationRoute)) publicationCount = (await readBuildPublication(root)).pages.length;
   if (errors.length) throw Error('Work isolation check failed: ' + [...new Set(errors)].join(','));
   return { workPublicRoutes: publicationCount, privateTrackedInputs: 0 };
 }

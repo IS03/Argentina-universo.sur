@@ -1,5 +1,7 @@
 # Estado remoto y activación pendiente
 
+> Estado institucional actualizado: [infraestructura remota](../pr25/README.md), [importación ejecutada](../pr26/README.md) y [web conectada en build de prueba](../pr27/README.md). El proyecto existente es `vpbonlzixodxvbybkffv` en `mzfanqzfjskgapsulpip`; no crear otro ni utilizar IS03. Lo que sigue conserva el contexto histórico.
+
 Auditoría de solo lectura realizada el 26/27 de octubre de 2026 mediante la conexión Supabase disponible:
 
 | Control | Resultado |
