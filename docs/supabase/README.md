@@ -1,5 +1,7 @@
 # PR09 — Infraestructura de Argentina Universo Sur
 
+> Actualización PR24: ver [infraestructura operativa local, conciliación integral y estado remoto](../pr24/README.md). Este documento conserva el contexto histórico de PR9.
+
 Fecha de revisión: 24/10/2026. Base: `944e9cc` (PR #8), verificada contra `origin/main`.
 
 El sitio sigue leyendo `lib/data.ts`, `lib/catalog.ts`, `public/data/` y `public/santa-fe/json/`. No se importa el SDK desde páginas, layouts, componentes ni lectores actuales. No se ha migrado, aprobado ni publicado ninguna ficha, archivo o anuncio. No se modifican GA4, consentimiento, privacidad, sitemap, fotografías ni textos turísticos.

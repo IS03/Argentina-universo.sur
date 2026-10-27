@@ -209,4 +209,5 @@ entry_id: string;
 status_code?: number;}; Update: {legacy_path?: string;
 entry_id?: string;
 status_code?: number;}; Relationships: [{ foreignKeyName: "route_aliases_entry_id_fkey"; columns: ["entry_id"]; isOneToOne: false; referencedRelation: "entries"; referencedColumns: ["id"] }] };
-}; Views: { [_ in never]: never }; Functions: { [_ in never]: never }; Enums: { [_ in never]: never }; CompositeTypes: { [_ in never]: never }; } };
+}; Views: { [_ in never]: never }; Functions: { aus_import_state: { Args: { p_origin: string }; Returns: Json };
+aus_stage_import: { Args: { p_batch: Json; p_dry_run?: boolean }; Returns: Json }; }; Enums: { [_ in never]: never }; CompositeTypes: { [_ in never]: never }; } };

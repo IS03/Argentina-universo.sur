@@ -21,13 +21,11 @@ for (const data of [santaFe, altaGracia]) {
     await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', data.seo.proposedCanonical);
     await expect(page).toHaveTitle(data.seo.title);
     expect(await page.locator('a[href^="#"]').evaluateAll(links => links.every(a => !!document.getElementById((a as HTMLAnchorElement).hash.slice(1))))).toBe(true);
-    const institutionalLogo = page.locator('footer img');
-    const reserved = await institutionalLogo.boundingBox();
-    expect(reserved?.width).toBeCloseTo(206, 0); expect(reserved?.height).toBeCloseTo(26, 0);
-    await institutionalLogo.scrollIntoViewIfNeeded();
-    await institutionalLogo.evaluate((image: HTMLImageElement) => image.decode());
-    expect(await institutionalLogo.evaluate((image: HTMLImageElement) => ({ width: image.naturalWidth, height: image.naturalHeight, complete: image.complete }))).toEqual({ width: 206, height: 26, complete: true });
-    await expect(institutionalLogo).toHaveAttribute('src', '/img/logo-santa-fe-turismo-color-1.svg');
+    // PR23 removed the fixed institutional logo; the configurable commercial slot stays optional.
+    const footer = page.getByRole('contentinfo');
+    await expect(footer).toContainText('Universo Sur');
+    await expect(footer.getByRole('navigation', { name: 'Enlaces rápidos' })).toBeVisible();
+    await expect(footer.locator('img[src="/img/logo-santa-fe-turismo-color-1.svg"]')).toHaveCount(0);
   });
   test(`${data.nombre}: HTML completo sin JavaScript y entrada desde su provincia`, async ({ browser }) => {
     const context = await browser.newContext({ javaScriptEnabled: false }); const page = await context.newPage();

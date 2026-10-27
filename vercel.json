@@ -10,7 +10,8 @@
       "codex/pr17-work-editorial": false,
       "codex/pr18-primer-lote-work": false,
       "codex/pr19-destinos-aprobados": false,
-      "codex/pr20-fichas-destinos": false
+      "codex/pr20-fichas-destinos": false,
+      "codex/pr24-supabase-operativo": false
     }
   }
 }
