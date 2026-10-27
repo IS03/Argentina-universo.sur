@@ -6,6 +6,8 @@ La versión corregida muestra únicamente las creatividades originales, sin tarj
 
 ## Archivos y ubicaciones
 
+> **Octubre de 2026:** las ubicaciones de esta tabla se reemplazaron por la pauta contratada para octubre. Las vigentes están en [docs/publicidad-octubre-2026](../publicidad-octubre-2026/README.md); archivos, pesos, hashes y textos alternativos no cambiaron.
+
 Los originales de `publicidad/` se conservan. Sus copias públicas son **idénticas byte por byte**; no hay conversión ni alteración de cuadros, duración o repeticiones. El JPEG conserva también sus bytes originales. Las marcas se identificaron por lectura visual, sin deducir contratantes comerciales ni URLs de los logotipos.
 
 | Archivo del cliente | Formato y dimensiones | Peso (bytes) | Anunciante visible | Ubicación pública actual | URL |

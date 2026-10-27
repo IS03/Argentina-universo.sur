@@ -17,7 +17,7 @@
     ],
     "repeticiones": 0,
     "url": null,
-    "ubicacion": "portada-tras-hero",
+    "ubicacion": "portada-central",
     "derivados": [
       {
         "src": "/publicidad/juegos-suramericanos.gif",
@@ -57,7 +57,7 @@
     ],
     "repeticiones": 0,
     "url": null,
-    "ubicacion": "actividades-antes-explorador",
+    "ubicacion": "provincias-lateral-mapa",
     "derivados": [
       {
         "src": "/publicidad/proteccion-ingresos.gif",
@@ -109,7 +109,7 @@
     ],
     "repeticiones": 0,
     "url": null,
-    "ubicacion": "santa-fe-tras-encabezado",
+    "ubicacion": "escapadas-antes-guias",
     "derivados": [
       {
         "src": "/publicidad/mamografia.gif",
@@ -164,7 +164,7 @@
     ],
     "repeticiones": 0,
     "url": null,
-    "ubicacion": "seguridad-antes-consejos",
+    "ubicacion": "portada-lateral-izquierda",
     "derivados": [
       {
         "src": "/publicidad/seguridad-vial.gif",
@@ -200,7 +200,7 @@
     "duracionesMs": [],
     "repeticiones": null,
     "url": null,
-    "ubicacion": "escapadas-antes-guias",
+    "ubicacion": "actividades-antes-explorador",
     "derivados": [
       {
         "src": "/publicidad/obras-hidricas.jpg",
@@ -229,7 +229,7 @@
     ],
     "repeticiones": 0,
     "url": null,
-    "ubicacion": "escapadas-antes-guias",
+    "ubicacion": "portada-lateral-derecha",
     "derivados": [
       {
         "src": "/publicidad/mil-aulas.gif",
