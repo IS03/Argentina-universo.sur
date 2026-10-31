@@ -1,0 +1,301 @@
+[
+  {
+    "path": "/pdf/bariloche.pdf",
+    "original": {
+      "bytes": 34489884,
+      "sha256": "b35fae10ae9f4e75b1b242fbead5987622994b3d7fa99db0207df546bf3915cf"
+    },
+    "published": {
+      "bytes": 11436503,
+      "sha256": "07987ef2a2a57f02592506741060b6ecfb19167adc04c792169aaffc594fa096"
+    },
+    "method": "photos-2.0ppt-jpeg-q75-420",
+    "date": "2026-10-31"
+  },
+  {
+    "path": "/pdf/caba.pdf",
+    "original": {
+      "bytes": 37651530,
+      "sha256": "8ddb609288147a3d0da25b24abd45dfbd9c060b83773907ef3d2addbf18e1075"
+    },
+    "published": {
+      "bytes": 9531117,
+      "sha256": "cad09284d63ce1b3546a20858095664e3c71714283250b4c14109eb3aef197a8"
+    },
+    "method": "photos-2.0ppt-jpeg-q75-420",
+    "date": "2026-10-31"
+  },
+  {
+    "path": "/pdf/cañafate.pdf",
+    "original": {
+      "bytes": 19318193,
+      "sha256": "0b0757d612a70202953f15630cd53991640bac22573158f97f27493c9b4af49e"
+    },
+    "published": {
+      "bytes": 7728138,
+      "sha256": "bd31c2bc381e34bb2229b10d74b64597305ff3e8505c55a6b2ee8f946eacbbd1"
+    },
+    "method": "photos-2.0ppt-jpeg-q75-420",
+    "date": "2026-10-31"
+  },
+  {
+    "path": "/pdf/cba.pdf",
+    "original": {
+      "bytes": 25346217,
+      "sha256": "6e790c0fa6b686caeba8b8575023e9fc9f3aae35ad5434d7953e68a85b382bca"
+    },
+    "published": {
+      "bytes": 9029545,
+      "sha256": "14fbad464b3532c631716b6b484c02fd44fbc9e77a936d20ae36fca222147e5d"
+    },
+    "method": "photos-2.0ppt-jpeg-q75-420",
+    "date": "2026-10-31"
+  },
+  {
+    "path": "/pdf/chaco.pdf",
+    "original": {
+      "bytes": 23895952,
+      "sha256": "134819694046946cd0a7dd3b69c05304812d064dfd2c24e925046974dcd668a5"
+    },
+    "published": {
+      "bytes": 11650531,
+      "sha256": "0e079b2c555da795b65ef268a76b23244645287bea431592d4b99bb880c1a0f1"
+    },
+    "method": "photos-2.0ppt-jpeg-q75-420",
+    "date": "2026-10-31"
+  },
+  {
+    "path": "/pdf/entrerios.pdf",
+    "original": {
+      "bytes": 29060699,
+      "sha256": "6264c1b294a9bcac1920ce94ec985f48e822001ea67c8ddf1e67d55531a9680a"
+    },
+    "published": {
+      "bytes": 8133121,
+      "sha256": "7625032adca49ed116b93d7edd2c15683e042f69e1ef01b6d1971535b6bd484f"
+    },
+    "method": "photos-2.0ppt-jpeg-q75-420",
+    "date": "2026-10-31"
+  },
+  {
+    "path": "/pdf/formosa.pdf",
+    "original": {
+      "bytes": 57013841,
+      "sha256": "7dfb6d4369c98477367c52c8e5a71fbbf1a969b1b7e5f50d88ece7e33f05b658"
+    },
+    "published": {
+      "bytes": 9773652,
+      "sha256": "dc6833bc41d94805b3b980b57abd915d2c1772d2e8217010073f857842ad3d34"
+    },
+    "method": "photos-2.0ppt-jpeg-q75-420",
+    "date": "2026-10-31"
+  },
+  {
+    "path": "/pdf/gallegos.pdf",
+    "original": {
+      "bytes": 19784786,
+      "sha256": "47efb3d922e1545a0ee3fd117ed03381ad8b81408b762843a71a2738dec170ed"
+    },
+    "published": {
+      "bytes": 5623079,
+      "sha256": "7d5bd76dc0f3dc480578ef1f726c23731a0f625fa1a8c0fe6248507683f6c93d"
+    },
+    "method": "photos-2.0ppt-jpeg-q75-420",
+    "date": "2026-10-31"
+  },
+  {
+    "path": "/pdf/iguazu_2.pdf",
+    "original": {
+      "bytes": 14457850,
+      "sha256": "7cf128d2f00fe4730b18813b983ae388748eb5a057dc7c44778f8832d23cd0d4"
+    },
+    "published": {
+      "bytes": 4213237,
+      "sha256": "6b36d8b61a54f7f8f07cee68fbb4f2f5da1b3bf02ff98bb2f15e7d173f026994"
+    },
+    "method": "photos-2.0ppt-jpeg-q75-420",
+    "date": "2026-10-31"
+  },
+  {
+    "path": "/pdf/jujuy.pdf",
+    "original": {
+      "bytes": 21391638,
+      "sha256": "46f00914b3f5c92e8099ef37c26efeda1750b6944134b8f318f4df9c4872ff0f"
+    },
+    "published": {
+      "bytes": 8933917,
+      "sha256": "61573e8fc7cd955af7aab798b04e877752bfafcf43f39c076b657ec2c9c41d16"
+    },
+    "method": "photos-2.0ppt-jpeg-q75-420",
+    "date": "2026-10-31"
+  },
+  {
+    "path": "/pdf/lapampa.pdf",
+    "original": {
+      "bytes": 20932838,
+      "sha256": "c44359d857148c1fe5f5720fa798ac76b583fe2050beaae7bd515b0d420c1eab"
+    },
+    "published": {
+      "bytes": 5006848,
+      "sha256": "854fa88fc2fb06c735272d5526581180a8ab3a63fa1be72e1b5bb5596667fbdb"
+    },
+    "method": "photos-2.0ppt-jpeg-q75-420",
+    "date": "2026-10-31"
+  },
+  {
+    "path": "/pdf/mendoza.pdf",
+    "original": {
+      "bytes": 21326786,
+      "sha256": "194eb1eb3791428024961537fac7f9e1327cf2d3cfa717650ebd48de7d6a920b"
+    },
+    "published": {
+      "bytes": 7340247,
+      "sha256": "a6840cf6d8a648c722d107734515c3f7a23ea4526d17bb684c90c2ac243bb0a6"
+    },
+    "method": "photos-2.0ppt-jpeg-q75-420",
+    "date": "2026-10-31"
+  },
+  {
+    "path": "/pdf/misiones.pdf",
+    "original": {
+      "bytes": 23042857,
+      "sha256": "96c659dfb28bb2302cc847a003f8869764451dec7a0105aa4a9e74d2b929d170"
+    },
+    "published": {
+      "bytes": 8012730,
+      "sha256": "ac8ecb9e7dec6176537803205d7098286d83448c58a7a6b559a3bb991c4dca7f"
+    },
+    "method": "photos-2.0ppt-jpeg-q75-420",
+    "date": "2026-10-31"
+  },
+  {
+    "path": "/pdf/neuquen.pdf",
+    "original": {
+      "bytes": 45336735,
+      "sha256": "a226f20887dfd52a7d0b8625779eb4fe2f5b4062b73cd500fa7e535f502322d4"
+    },
+    "published": {
+      "bytes": 12380171,
+      "sha256": "e01b278c5e61dd1648fba52d178a652682fff3f4c89a6c57e374ecc486669cd9"
+    },
+    "method": "photos-2.0ppt-jpeg-q75-420",
+    "date": "2026-10-31"
+  },
+  {
+    "path": "/pdf/pinamar.pdf",
+    "original": {
+      "bytes": 19760229,
+      "sha256": "aaaba6460562f60af510c03e91767674fbad8a1994b3558a3ead64f3fce280c4"
+    },
+    "published": {
+      "bytes": 3789451,
+      "sha256": "6bfc3b2e57dce45fcbebe1555c89066e5d9ba1f20f92d6f6178405e721d4b11d"
+    },
+    "method": "photos-2.0ppt-jpeg-q75-420",
+    "date": "2026-10-31"
+  },
+  {
+    "path": "/pdf/pto_madryn_1.pdf",
+    "original": {
+      "bytes": 24274044,
+      "sha256": "b86f199669860e38682385b245b0482c2c7c8fa229e836312c9c2b5f63ed2176"
+    },
+    "published": {
+      "bytes": 4381372,
+      "sha256": "31b155ae97c9ad7839a992002516ba43553d2b0260eea1fe477615b5cb191023"
+    },
+    "method": "photos-2.0ppt-jpeg-q75-420",
+    "date": "2026-10-31"
+  },
+  {
+    "path": "/pdf/salta.pdf",
+    "original": {
+      "bytes": 31616145,
+      "sha256": "cd29698d10d093ed093dcea3f8633e6d2462573be1ce006e57f0b9c4f0a7a813"
+    },
+    "published": {
+      "bytes": 8676506,
+      "sha256": "fa6c1fb23e69886c1bee937cc4a8e5a17e04cdabcfb82856c30c36cfd39938e2"
+    },
+    "method": "photos-2.0ppt-jpeg-q75-420",
+    "date": "2026-10-31"
+  },
+  {
+    "path": "/pdf/sanjuan.pdf",
+    "original": {
+      "bytes": 16454455,
+      "sha256": "f1ef2bca6fc0ebbc29f50d82bc789a5d9ff1df6c15dcbe839ffb0eaa13ea5663"
+    },
+    "published": {
+      "bytes": 6864966,
+      "sha256": "26bd656760228061a132de5bfd13fa14367aa9fc68c2939fbaabe307ad8751e6"
+    },
+    "method": "photos-2.0ppt-jpeg-q75-420",
+    "date": "2026-10-31"
+  },
+  {
+    "path": "/pdf/sanluis.pdf",
+    "original": {
+      "bytes": 33406355,
+      "sha256": "3a1571a56d29d31e1f86e0a2140b3b25a3d8a69a11ba7f79db816c51dc208d17"
+    },
+    "published": {
+      "bytes": 9118626,
+      "sha256": "6c68ba4332f2fbde5c4029b7879fd62ddd413e21ad0d8c31e968246153852dab"
+    },
+    "method": "photos-2.0ppt-jpeg-q75-420",
+    "date": "2026-10-31"
+  },
+  {
+    "path": "/pdf/santiago.pdf",
+    "original": {
+      "bytes": 28132742,
+      "sha256": "4bd407b099b401e214dbf700668207c0f43aea51e353a95d464ff60424e0adbb"
+    },
+    "published": {
+      "bytes": 8574832,
+      "sha256": "5d188de189db2341a40a67d4527befe53816f56e04657ef5a82d59c48071db86"
+    },
+    "method": "photos-2.0ppt-jpeg-q75-420",
+    "date": "2026-10-31"
+  },
+  {
+    "path": "/pdf/talampaya.pdf",
+    "original": {
+      "bytes": 35463984,
+      "sha256": "378d69540724586f217519589d05fee8a0f268b77664173893f00a37b3fd45f5"
+    },
+    "published": {
+      "bytes": 7930619,
+      "sha256": "f02541a2ee9cb64f0953e2258cca259eb2f3fe2b7b2030aa6dbc7ceea1149aa8"
+    },
+    "method": "photos-2.0ppt-jpeg-q75-420",
+    "date": "2026-10-31"
+  },
+  {
+    "path": "/pdf/ushuaia.pdf",
+    "original": {
+      "bytes": 34178289,
+      "sha256": "f0ccb3e456defa8d1dcd0fff42293091f631f94d87dbac9fc002cf8b74f91c36"
+    },
+    "published": {
+      "bytes": 12780881,
+      "sha256": "edbd67e41efde4cc47a3b3b7eca22fbd6abc9eed067d657231097fa4edd60552"
+    },
+    "method": "photos-2.0ppt-jpeg-q75-420",
+    "date": "2026-10-31"
+  },
+  {
+    "path": "/pdf/ventana.pdf",
+    "original": {
+      "bytes": 15874893,
+      "sha256": "ba9891b9a3705cbc9c38fb7d9bcad92ed593d46535c97203e9b947130aaa515f"
+    },
+    "published": {
+      "bytes": 8017299,
+      "sha256": "83d09bb10dfc05371141910d7b505cc0a61585d6b1b219b788229b2f4f2f544e"
+    },
+    "method": "photos-2.0ppt-jpeg-q75-420",
+    "date": "2026-10-31"
+  }
+]

@@ -3,6 +3,7 @@ import { readFile, stat } from "node:fs/promises";
 import { createHash } from "node:crypto";
 import { readEditorialTrips } from "../pages/editorial-security.mjs";
 import { planPdfRetirement } from "../../lib/pages/pdf-retirement.ts";
+import { publishedPdfStatus } from "../../lib/pages/published-pdf.ts";
 import { tripPublishable, buildDate } from "../../lib/pages/trips.ts";
 import { REGION_POR_PROVINCIA } from "../../lib/catalog.ts";
 const root = new URL("../../", import.meta.url);
@@ -10,6 +11,7 @@ const read = async path => JSON.parse(await readFile(new URL(path, root), "utf8"
 const rows = await read("docs/pr12/pdf-replacements.json");
 const matrix = await read("docs/pr10/pdf-matrix.json");
 const legacy = await read("public/data/escapadas.json");
+const derivatives = await read("docs/pdf-optimizacion/derivados.json");
 const trips = await readEditorialTrips(root.pathname);
 const errors = [];
 // content/escapadas/index.ts lists its imports explicitly; a JSON missing there would skip Next's build gate.
@@ -49,7 +51,8 @@ for (const row of rows) {
   const item = legacy.find(r => r.ID === row.legacyGuideId);
   if (!original || !item || item.PDF !== row.pdf.path || original.path !== row.pdf.path || original.sha256 !== row.pdf.sha256 || original.bytes !== row.pdf.bytes) errors.push("Legacy PDF identity changed: " + row.legacyGuideId);
   const bytes = await readFile(new URL("public" + row.pdf.path, root));
-  if (bytes.length !== row.pdf.bytes || createHash("sha256").update(bytes).digest("hex") !== row.pdf.sha256) errors.push("PDF original changed: " + row.legacyGuideId);
+  const actual = { bytes: bytes.length, sha256: createHash("sha256").update(bytes).digest("hex") };
+  if (publishedPdfStatus(row.pdf.path, row.pdf, actual, derivatives) === "changed") errors.push("PDF original changed: " + row.legacyGuideId);
   if (!row.provinceSlugs.length || row.provinceSlugs.some(p => !Object.hasOwn(REGION_POR_PROVINCIA, p)) || !row.research.sources.length || !row.research.pending.length) errors.push("Incomplete editorial inventory: " + row.legacyGuideId);
   const trip = trips.find(t => "/escapadas/" + t.slug === row.proposedHtml);
   if (row.draftSlug && trip?.slug !== row.draftSlug) errors.push("Draft/target mismatch: " + row.legacyGuideId);
