@@ -6,6 +6,7 @@ import {
   tripPublishable,
   tripContentHash,
 } from "../../lib/pages/trips.ts";
+import { publishedPdfStatus } from "../../lib/pages/published-pdf.ts";
 const dir = new URL("../../content/escapadas/", import.meta.url);
 const trips = [];
 for (const name of await readdir(dir))
@@ -24,13 +25,25 @@ const matrix = JSON.parse(
     "utf8",
   ),
 );
+const derivatives = JSON.parse(
+  await readFile(
+    new URL("../../docs/pdf-optimizacion/derivados.json", import.meta.url),
+    "utf8",
+  ),
+);
 const rows = [];
+let derived = 0;
 for (const row of matrix) {
   const raw = await readFile(
     new URL("../../public" + row.path, import.meta.url),
   );
-  if (createHash("sha256").update(raw).digest("hex") !== row.sha256)
-    throw Error("Original PDF changed: " + row.path);
+  const actual = {
+    bytes: raw.length,
+    sha256: createHash("sha256").update(raw).digest("hex"),
+  };
+  const status = publishedPdfStatus(row.path, row, actual, derivatives);
+  if (status === "changed") throw Error("Original PDF changed: " + row.path);
+  if (status === "derivative") derived++;
   rows.push({
     id: row.id,
     pdf: row.path,
@@ -62,5 +75,5 @@ if (process.argv.includes("--report"))
     JSON.stringify(report, null, 2) + "\n",
   );
 console.log(
-  `Trips valid: ${trips.length}; publishable: ${trips.filter(tripPublishable).length}. Original PDFs intact: ${rows.length}. No retirement or redirect authorized.`,
+  `Trips valid: ${trips.length}; publishable: ${trips.filter(tripPublishable).length}. Original PDFs intact: ${rows.length - derived}; registered derivatives: ${derived}. No retirement or redirect authorized.`,
 );

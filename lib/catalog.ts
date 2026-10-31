@@ -73,7 +73,7 @@ export interface Escapada {
   duracion: string;
   pdf: string;
   zona: string;
-  // Peso del PDF original (lib/pdf-pesos.json): se muestra antes de descargar guías de 14 a 57 MB.
+  // Peso del PDF original (lib/pdf-pesos.json): se muestra antes de descargar guías de 4 a 13 MB.
   pesoBytes: number | null;
 }
 

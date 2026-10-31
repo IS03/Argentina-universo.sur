@@ -69,15 +69,17 @@ test("la publicidad directa sigue sin proveedor, scripts ni IDs y conserva los e
   assert.match(anuncio, /aria-label="Publicidad"/);
 });
 
-test("el peso mostrado de cada guía PDF es el del archivo original y el inventario de PR12", async () => {
+test("el peso mostrado de cada guía PDF es el del archivo publicado: el original de PR12 o su derivado registrado", async () => {
   const pesos = await json("lib/pdf-pesos.json");
   const guias = await json("public/data/escapadas.json");
   const inventario = await json("docs/pr12/pdf-replacements.json");
+  const derivados = await json("docs/pdf-optimizacion/derivados.json");
   assert.deepEqual(Object.keys(pesos).sort(), guias.map(g => g.PDF).sort());
   for (const [ruta, bytes] of Object.entries(pesos)) {
     assert.equal((await stat(join(projectRoot, "public", ruta))).size, bytes, ruta);
     const fila = inventario.find(f => f.pdf.path === ruta);
-    if (fila) assert.equal(fila.pdf.bytes, bytes, ruta);
+    const derivado = derivados.find(d => d.path === ruta);
+    if (fila) assert.equal(derivado ? derivado.published.bytes : fila.pdf.bytes, bytes, ruta);
   }
 });
 
