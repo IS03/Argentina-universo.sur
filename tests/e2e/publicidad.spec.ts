@@ -7,10 +7,10 @@ import { CAMPANAS, urlAnuncio } from "../../lib/publicidad";
 // Pauta de octubre de 2026. La primera campaña de cada página va antes de «antes»; las rutas sin ids
 // tuvieron campañas hasta septiembre y ya no deben mostrar ninguna.
 const PAGINAS = [
-  { ruta: "/", ids: ["juegos-suramericanos", "seguridad-vial", "mil-aulas"], antes: "#provincias-destacadas", primeraPantalla: true },
-  { ruta: "/actividades", ids: ["obras-hidricas"], antes: "#provincia-filtro", primeraPantalla: true },
-  { ruta: "/escapadas", ids: ["mamografia"], antes: "#guias-escapadas-heading", primeraPantalla: true },
-  { ruta: "/provincias", ids: ["proteccion-ingresos"], antes: "#region-norte", primeraPantalla: false },
+  { ruta: "/", ids: ["obras-newbery", "genero-violencia", "obras-hidricas-vertical"], antes: "#provincias-destacadas", primeraPantalla: true },
+  { ruta: "/actividades", ids: ["mil-aulas-rosario"], antes: "#provincia-filtro", primeraPantalla: true },
+  { ruta: "/escapadas", ids: ["tercer-carril"], antes: "#guias-escapadas-heading", primeraPantalla: true },
+  { ruta: "/provincias", ids: ["objetivo-dengue"], antes: "#region-norte", primeraPantalla: false },
   { ruta: "/provincias/santa_fe", ids: [], antes: "", primeraPantalla: false },
   { ruta: "/seguridad", ids: [], antes: "", primeraPantalla: false },
 ];
@@ -80,7 +80,7 @@ test("banners originales antes del contenido: sin tarjetas, textos añadidos ni 
       }
       expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
       if (isMobile || ancho === 1440 || ancho === 320) {
-        if (ids.includes("mamografia") && process.env.AUS_PUBLICIDAD_CAPTURAS === "1") await page.waitForTimeout(7000);
+        if (ids.includes("tercer-carril") && process.env.AUS_PUBLICIDAD_CAPTURAS === "1") await page.waitForTimeout(7000);
         await espacio.evaluate(e => e.scrollIntoView({ block: "center", behavior: "instant" }));
         const dispositivo = testInfo.project.name.includes("iphone") ? "iphone-safari" : isMobile ? "pixel7" : ancho;
         const nombre = `${dispositivo}-${ruta === "/" ? "inicio" : ruta.slice(1).replaceAll("/", "-")}.jpg`;
@@ -270,16 +270,16 @@ test("cada creatividad ocupa su ubicación contratada en todos los tamaños de p
     await page.goto("/");
     const destacadas = await caja(page, "#provincias-destacadas");
     const regiones = await caja(page, 'section[aria-labelledby="titulo-regiones"]');
-    if (activa("juegos-suramericanos")) {
-      const jjss = await caja(page, img("juegos-suramericanos"));
+    if (activa("obras-newbery")) {
+      const jjss = await caja(page, img("obras-newbery"));
       expect(jjss.y, `${etiqueta} JJSS en la primera pantalla`).toBeLessThan(height);
       expect(jjss.ancho).toBeLessThanOrEqual(800);
       expect(jjss.abajo).toBeLessThan(destacadas.y);
       if (!columnas) centrada(jjss, width);
-      evidencias.push({ etiqueta, campana: "juegos-suramericanos", ...jjss });
+      evidencias.push({ etiqueta, campana: "obras-newbery", ...jjss });
     }
-    if (activa("seguridad-vial")) {
-      const apsv = await caja(page, img("seguridad-vial"));
+    if (activa("genero-violencia")) {
+      const apsv = await caja(page, img("genero-violencia"));
       expect(apsv.ancho, "APSV conserva 200 × 200 sin estirarse").toBe(200);
       expect(apsv.alto).toBe(200);
       const posicion = await page.locator('[data-espacio-publicitario="portada-lateral-izquierda"]').evaluate(e => getComputedStyle(e).position);
@@ -289,11 +289,11 @@ test("cada creatividad ocupa su ubicación contratada en todos los tamaños de p
         expect(apsv.y).toBeLessThan(destacadas.y);
         // Al desplazar queda fija debajo del encabezado, sin superponerse con él.
         await page.evaluate(y => scrollTo({ top: y, behavior: "instant" }), destacadas.y);
-        const fija = await page.locator(img("seguridad-vial")).evaluate(e => e.getBoundingClientRect().top);
+        const fija = await page.locator(img("genero-violencia")).evaluate(e => e.getBoundingClientRect().top);
         expect(Math.abs(fija - ((await encabezado()) + 24))).toBeLessThan(2);
         // Al final de la página se suelta dentro de su columna y no invade el pie.
         await page.evaluate(() => scrollTo({ top: document.documentElement.scrollHeight, behavior: "instant" }));
-        const final = await page.evaluate(() => ({ anuncio: document.querySelector('[data-campana="seguridad-vial"]')!.getBoundingClientRect().bottom, pie: document.querySelector("footer")!.getBoundingClientRect().top }));
+        const final = await page.evaluate(() => ({ anuncio: document.querySelector('[data-campana="genero-violencia"]')!.getBoundingClientRect().bottom, pie: document.querySelector("footer")!.getBoundingClientRect().top }));
         expect(final.anuncio).toBeLessThanOrEqual(final.pie);
         await page.evaluate(() => scrollTo({ top: 0, behavior: "instant" }));
       } else {
@@ -302,10 +302,10 @@ test("cada creatividad ocupa su ubicación contratada en todos los tamaños de p
         expect(apsv.abajo).toBeLessThan(regiones.y);
         centrada(apsv, width);
       }
-      evidencias.push({ etiqueta, campana: "seguridad-vial", posicion, ...apsv });
+      evidencias.push({ etiqueta, campana: "genero-violencia", posicion, ...apsv });
     }
-    if (activa("mil-aulas")) {
-      const aulas = await caja(page, img("mil-aulas"));
+    if (activa("obras-hidricas-vertical")) {
+      const aulas = await caja(page, img("obras-hidricas-vertical"));
       expect(aulas.ancho / aulas.alto).toBeCloseTo(0.5, 2);
       if (columnas) {
         expect(aulas.ancho).toBe(300);
@@ -317,21 +317,21 @@ test("cada creatividad ocupa su ubicación contratada en todos los tamaños de p
         expect(aulas.y).toBeGreaterThan(regiones.abajo);
         centrada(aulas, width);
       }
-      evidencias.push({ etiqueta, campana: "mil-aulas", ...aulas });
+      evidencias.push({ etiqueta, campana: "obras-hidricas-vertical", ...aulas });
     }
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), `${etiqueta} / sin desborde`).toBe(true);
     await recorrerYVerificar(page, problemas, `${etiqueta} /`);
 
     // Qué hacer: Obras Hídricas centrada, arriba del explorador.
     await page.goto("/actividades");
-    if (activa("obras-hidricas")) {
-      const obras = await caja(page, img("obras-hidricas"));
+    if (activa("mil-aulas-rosario")) {
+      const obras = await caja(page, img("mil-aulas-rosario"));
       expect(obras.ancho).toBeLessThanOrEqual(600);
       expect(obras.ancho / obras.alto).toBeCloseTo(2, 2);
       expect(obras.abajo).toBeLessThan((await caja(page, "#provincia-filtro")).y);
       expect(obras.y).toBeLessThan(height);
       centrada(obras, width);
-      evidencias.push({ etiqueta, campana: "obras-hidricas", ...obras });
+      evidencias.push({ etiqueta, campana: "mil-aulas-rosario", ...obras });
     }
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), `${etiqueta} /actividades sin desborde`).toBe(true);
     await recorrerYVerificar(page, problemas, `${etiqueta} /actividades`);
@@ -343,23 +343,23 @@ test("cada creatividad ocupa su ubicación contratada en todos los tamaños de p
     const cantidad = Number((await guias.getByText(/^\d+ guías?$/).first().textContent())!.match(/\d+/)![0]);
     expect(cantidad).toBeGreaterThan(0);
     await expect(guias.locator('a[href*=".pdf"]')).toHaveCount(cantidad);
-    if (activa("mamografia")) {
-      const rosa = await caja(page, img("mamografia"));
+    if (activa("tercer-carril")) {
+      const rosa = await caja(page, img("tercer-carril"));
       expect(rosa.ancho).toBeLessThanOrEqual(1140);
       expect(rosa.ancho / rosa.alto).toBeCloseTo(11.4, 1);
       expect(rosa.abajo).toBeLessThan((await caja(page, "#guias-escapadas-heading")).y);
       expect(rosa.y).toBeLessThan(height);
       centrada(rosa, width);
       expect(await page.locator('[data-espacio-publicitario="escapadas-antes-guias"]').evaluate(e => e.previousElementSibling === null)).toBe(true);
-      evidencias.push({ etiqueta, campana: "mamografia", ...rosa });
+      evidencias.push({ etiqueta, campana: "tercer-carril", ...rosa });
     }
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), `${etiqueta} /escapadas sin desborde`).toBe(true);
     await recorrerYVerificar(page, problemas, `${etiqueta} /escapadas`);
 
     // Viajar por Argentina: Economía al costado del mapa en escritorio, después de la tarjeta en móvil.
     await page.goto("/provincias");
-    if (activa("proteccion-ingresos")) {
-      const economia = await caja(page, img("proteccion-ingresos"));
+    if (activa("objetivo-dengue")) {
+      const economia = await caja(page, img("objetivo-dengue"));
       const mapa = await caja(page, "#mapa-provincias");
       const dibujo = await caja(page, "#mapa-provincias figure > div");
       expect(economia.ancho).toBe(250);
@@ -371,7 +371,7 @@ test("cada creatividad ocupa su ubicación contratada en todos los tamaños de p
         const maximo = await page.locator("#mapa-provincias figure > div").evaluate(e => parseFloat(getComputedStyle(e).maxWidth));
         expect(dibujo.ancho, "el mapa conserva su ancho").toBeCloseTo(maximo, 0);
         await page.evaluate(y => scrollTo({ top: y + 300, behavior: "instant" }), mapa.y);
-        const fija = await page.locator(img("proteccion-ingresos")).evaluate(e => e.getBoundingClientRect().top);
+        const fija = await page.locator(img("objetivo-dengue")).evaluate(e => e.getBoundingClientRect().top);
         expect(Math.abs(fija - ((await encabezado()) + 24))).toBeLessThan(2);
         await page.evaluate(() => scrollTo({ top: 0, behavior: "instant" }));
       } else {
@@ -379,7 +379,7 @@ test("cada creatividad ocupa su ubicación contratada en todos los tamaños de p
         expect(economia.abajo).toBeLessThan((await caja(page, "#region-norte")).y);
         centrada(economia, width);
       }
-      evidencias.push({ etiqueta, campana: "proteccion-ingresos", mapa: dibujo.ancho, ...economia });
+      evidencias.push({ etiqueta, campana: "objetivo-dengue", mapa: dibujo.ancho, ...economia });
     }
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), `${etiqueta} /provincias sin desborde`).toBe(true);
     await recorrerYVerificar(page, problemas, `${etiqueta} /provincias`);
@@ -448,11 +448,11 @@ test("ajustes visuales: recuperar columnas y márgenes ante bloqueo de red o cos
   const grilla = page.locator("[data-publicidad-home]");
   for (const ocultar of [
     '[data-espacio-publicitario="portada-lateral-izquierda"]',
-    '[data-campana="mil-aulas"] img',
+    '[data-campana="obras-hidricas-vertical"] img',
     '[data-espacio-publicitario]',
   ]) {
     await page.goto("/");
-    await page.locator('[data-campana="mil-aulas"] img').evaluate(img => (img as HTMLImageElement).decode());
+    await page.locator('[data-campana="obras-hidricas-vertical"] img').evaluate(img => (img as HTMLImageElement).decode());
     const anchoInicial = await page.locator('section[aria-labelledby="titulo-regiones"]').evaluate(e => e.clientWidth);
     await page.addStyleTag({ content: `${ocultar}{display:none!important}` });
     if (ocultar.includes("izquierda")) await expect(grilla).toHaveAttribute("data-sin-izquierda", "");
@@ -486,19 +486,19 @@ test("ajustes visuales: ampliación móvil legible, cierre y foco sin enlace com
   for (const width of [393, 320]) {
     await page.setViewportSize({ width, height: width === 393 ? 852 : 568 });
     await page.goto("/escapadas");
-    const ampliar = page.getByRole("button", { name: "Ampliar banner de Octubre Rosa" });
+    const ampliar = page.getByRole("button", { name: "Ampliar banner panorámico" });
     await expect(ampliar).toBeVisible();
     const original = ampliar.locator("img");
     await original.evaluate(img => (img as HTMLImageElement).decode());
-    expect(await original.evaluate(img => new URL((img as HTMLImageElement).currentSrc).pathname)).toBe("/publicidad/mamografia.gif");
+    expect(await original.evaluate(img => new URL((img as HTMLImageElement).currentSrc).pathname)).toBe("/publicidad/tercer-carril.gif");
     await ampliar.click();
-    const dialogo = page.getByRole("dialog", { name: "Banner de Octubre Rosa ampliado" });
+    const dialogo = page.getByRole("dialog", { name: "Banner panorámico ampliado" });
     await expect(dialogo).toBeVisible();
     expect(await dialogo.evaluate(d => (d as HTMLDialogElement).matches(":modal"))).toBe(true);
     await expect(dialogo.getByRole("button", { name: "Cerrar" })).toBeFocused();
     const imagen = dialogo.locator("img");
     expect(await imagen.evaluate(img => [img.clientWidth, img.clientHeight])).toEqual([1140, 100]);
-    await expect(imagen).toHaveAttribute("src", "/publicidad/mamografia.gif");
+    await expect(imagen).toHaveAttribute("src", "/publicidad/tercer-carril.gif");
     const recorrido = dialogo.getByRole("region");
     expect(await recorrido.evaluate(e => e.scrollLeft)).toBeGreaterThan(0);
     // Ambos extremos siguen disponibles: sin recorte ni pérdida de logos.
@@ -530,7 +530,7 @@ test("ajustes visuales: JJSS visible al entrar en 320 sin reducir texto ni boton
   await page.setViewportSize({ width: 320, height: 568 });
   await page.goto("/");
   await page.evaluate(() => document.fonts.ready);
-  const anuncio = page.locator('[data-campana="juegos-suramericanos"] img');
+  const anuncio = page.locator('[data-campana="obras-newbery"] img');
   await anuncio.evaluate(img => (img as HTMLImageElement).decode());
   const top = await anuncio.evaluate(img => img.getBoundingClientRect().top);
   expect(top).toBeLessThanOrEqual(505);

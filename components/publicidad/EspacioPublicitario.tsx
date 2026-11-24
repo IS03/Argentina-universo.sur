@@ -40,11 +40,11 @@ function CreatividadAmpliable({ anuncio, url }: { anuncio: Anuncio; url: string 
 
   return (
     <>
-      <button ref={disparador} type="button" aria-label="Ampliar banner de Octubre Rosa" aria-haspopup="dialog" onClick={() => setAmpliado(true)} className="block min-h-11 w-full cursor-zoom-in bg-transparent p-0 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lago-600">
+      <button ref={disparador} type="button" aria-label="Ampliar banner panorámico" aria-haspopup="dialog" onClick={() => setAmpliado(true)} className="block min-h-11 w-full cursor-zoom-in bg-transparent p-0 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lago-600">
         <Creatividad anuncio={anuncio} />
       </button>
       {ampliado && (
-        <dialog ref={dialogo} aria-label="Banner de Octubre Rosa ampliado" onClose={() => { setAmpliado(false); disparador.current?.focus({ preventScroll: true }); }} className="fixed inset-0 m-auto max-h-[90dvh] w-[calc(100%-2rem)] max-w-none bg-white p-4 text-tinta-900 backdrop:bg-tinta-900/70">
+        <dialog ref={dialogo} aria-label="Banner panorámico ampliado" onClose={() => { setAmpliado(false); disparador.current?.focus({ preventScroll: true }); }} className="fixed inset-0 m-auto max-h-[90dvh] w-[calc(100%-2rem)] max-w-none bg-white p-4 text-tinta-900 backdrop:bg-tinta-900/70">
           <form method="dialog" className="mb-3 flex justify-end">
             <button autoFocus className="min-h-11 px-3 underline focus-visible:outline-2 focus-visible:outline-lago-600">Cerrar</button>
           </form>
@@ -85,7 +85,7 @@ export function AnuncioDirecto({ anuncio }: { anuncio: Anuncio }) {
   const url = urlAnuncio(anuncio.url);
   return (
     <div data-campana={anuncio.id} className="min-w-0 w-full" style={{ maxWidth: anuncio.anchoMaximo }}>
-      {anuncio.id === "mamografia" ? <CreatividadAmpliable anuncio={anuncio} url={url} /> : url ? (
+      {anuncio.imagen.ancho / anuncio.imagen.alto >= 8 ? <CreatividadAmpliable anuncio={anuncio} url={url} /> : url ? (
           <a href={url} target="_blank" rel="sponsored noopener noreferrer" className="block focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lago-600">
             <Creatividad anuncio={anuncio} />
           </a>

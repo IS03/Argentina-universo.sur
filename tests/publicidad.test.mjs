@@ -105,14 +105,14 @@ test("HTML con banners directos y picture accesible: sin rótulos visibles, tarj
   }
 });
 
-test("pauta de octubre de 2026: cada creatividad en su ubicación contratada, una sola vez", async () => {
+test("pauta de noviembre de 2026: cada creatividad en su ubicación contratada, una sola vez", async () => {
   const contratadas = {
-    "juegos-suramericanos": ["portada-central", "components/HomeContent.tsx", 800],
-    "seguridad-vial": ["portada-lateral-izquierda", "components/HomeContent.tsx", 200],
-    "mil-aulas": ["portada-lateral-derecha", "components/HomeContent.tsx", 300],
-    "obras-hidricas": ["actividades-antes-explorador", "components/ActividadesContent.tsx", 600],
-    "mamografia": ["escapadas-antes-guias", "app/escapadas/page.tsx", 1140],
-    "proteccion-ingresos": ["provincias-lateral-mapa", "components/ViajeArgentina.tsx", 250],
+    "obras-newbery": ["portada-central", "components/HomeContent.tsx", 800],
+    "genero-violencia": ["portada-lateral-izquierda", "components/HomeContent.tsx", 200],
+    "obras-hidricas-vertical": ["portada-lateral-derecha", "components/HomeContent.tsx", 300],
+    "mil-aulas-rosario": ["actividades-antes-explorador", "components/ActividadesContent.tsx", 600],
+    "tercer-carril": ["escapadas-antes-guias", "app/escapadas/page.tsx", 1140],
+    "objetivo-dengue": ["provincias-lateral-mapa", "components/ViajeArgentina.tsx", 250],
   };
   assert.deepEqual(CAMPANAS.map(c => c.id).sort(), Object.keys(contratadas).sort());
   for (const campana of CAMPANAS) {

@@ -1,7 +1,7 @@
 // Publicidad directa local. Activación, destino y ubicación se administran aquí.
-// Pauta de octubre de 2026: el pedido indica «octubre» sin fecha de inicio ni de fin. No hay
+// Pauta de noviembre de 2026: el pedido indica «noviembre» sin fecha de inicio ni de fin. No hay
 // vencimiento automático; cada campaña se apaga con «activa: false» cuando el área comercial confirme
-// las fechas (docs/publicidad-octubre-2026/README.md).
+// las fechas. Mismas ranuras contratadas que en octubre (docs/publicidad-octubre-2026/README.md).
 // Los GIF se sirven byte por byte; picture selecciona un cuadro estático con movimiento reducido.
 export const ESPACIOS = {
   "portada-central": {
@@ -59,122 +59,122 @@ export interface AnuncioDirecto {
 
 export const CAMPANAS: readonly AnuncioDirecto[] = [
   {
-    "id": "juegos-suramericanos",
-    "anunciante": "Santa Fe Provincia",
-    "original": "publicidad/JJSS_Banners_800x600.gif",
+    "id": "obras-newbery",
+    "anunciante": "Santa Fe Provincia · Obras que sí",
+    "original": "publicidad/OBRAS QUE SI -HIDRICAS-newbery_banner-__800x600.gif",
     "ubicacion": "portada-central",
     "activa": true,
     "anchoMaximo": 800,
     "imagen": {
-      "src": "/publicidad/juegos-suramericanos.gif",
-      "alt": "Santa Fe Provincia. 3,5 millones de gracias.",
+      "src": "/publicidad/obras-newbery.gif",
+      "alt": "Santa Fe Provincia · Obras que sí. Av. Jorge Newbery, transformación integral. Mejoramos la conexión al aeropuerto, multiplicamos carriles, sumamos iluminación y bicisenda. Obras que sí.",
       "ancho": 800,
       "alto": 600
     },
     "movimientoReducido": {
-      "src": "/publicidad/juegos-suramericanos-0.webp",
+      "src": "/publicidad/obras-newbery-0.webp",
       "ancho": 800,
       "alto": 600,
       "fotograma": 0,
-      "alt": "3,5 millones de gracias."
+      "alt": "Av. Jorge Newbery, transformación integral. Obras que sí. Santa Fe Provincia."
     }
   },
   {
-    "id": "proteccion-ingresos",
-    "anunciante": "Santa Fe Provincia y Banco Santa Fe",
-    "original": "publicidad/PROTEC_ING_banners_Junio_2026_250x250.gif",
-    "ubicacion": "provincias-lateral-mapa",
-    "activa": true,
-    "anchoMaximo": 250,
-    "imagen": {
-      "src": "/publicidad/proteccion-ingresos.gif",
-      "alt": "Santa Fe Provincia y Banco Santa Fe. Un plan para que puedas desendeudarte sin comprometer tus ingresos. Santa Fe Provincia y Banco Santa Fe.",
-      "ancho": 250,
-      "alto": 250
-    },
-    "movimientoReducido": {
-      "src": "/publicidad/proteccion-ingresos-0.webp",
-      "ancho": 250,
-      "alto": 250,
-      "fotograma": 0,
-      "alt": "Un plan para que puedas desendeudarte sin comprometer tus ingresos. Santa Fe Provincia y Banco Santa Fe."
-    }
-  },
-  {
-    "id": "mamografia",
-    "anunciante": "Santa Fe Provincia · Ministerio de Salud · Agencia de Control del Cáncer",
-    "original": "publicidad/SF-Provincia_Bnnr-Mamografia_1140x100.gif",
-    "ubicacion": "escapadas-antes-guias",
-    "activa": true,
-    "anchoMaximo": 1140,
-    "imagen": {
-      "src": "/publicidad/mamografia.gif",
-      "alt": "Santa Fe Provincia · Ministerio de Salud · Agencia de Control del Cáncer. Si tenés más de 40, hacete una mamografía hoy.",
-      "ancho": 1140,
-      "alto": 100
-    },
-    "movimientoReducido": {
-      "src": "/publicidad/mamografia-9.webp",
-      "ancho": 1140,
-      "alto": 100,
-      "fotograma": 9,
-      "alt": "Si tenés más de 40, hacete una mamografía hoy."
-    }
-  },
-  {
-    "id": "seguridad-vial",
-    "anunciante": "APSV · Santa Fe Provincia",
-    "original": "publicidad/Suramericanos-APSV_200x200.gif",
+    "id": "genero-violencia",
+    "anunciante": "Santa Fe Provincia",
+    "original": "publicidad/GENERO 4_200X200.gif",
     "ubicacion": "portada-lateral-izquierda",
     "activa": true,
     "anchoMaximo": 200,
     "imagen": {
-      "src": "/publicidad/seguridad-vial.gif",
-      "alt": "APSV · Santa Fe Provincia. APSV. XIII Juegos Suramericanos Santa Fe 2026. ODESUR. Santa Fe Provincia. Usá el casco.",
+      "src": "/publicidad/genero-violencia.gif",
+      "alt": "Santa Fe Provincia. No es un ex intenso. Es violento. Y puede terminar mal. Metete, ella te necesita: llamá al 911.",
       "ancho": 200,
       "alto": 200
     },
     "movimientoReducido": {
-      "src": "/publicidad/seguridad-vial-17.webp",
+      "src": "/publicidad/genero-violencia-1.webp",
       "ancho": 200,
       "alto": 200,
-      "fotograma": 17,
-      "alt": "APSV. XIII Juegos Suramericanos Santa Fe 2026. ODESUR. Santa Fe Provincia. Usá el casco."
+      "fotograma": 1,
+      "alt": "Metete, ella te necesita. Llamá al 911. Santa Fe Provincia."
     }
   },
   {
-    "id": "obras-hidricas",
-    "anunciante": "Santa Fe Provincia",
-    "original": "publicidad/displays_obras hidricas_600x300 jpg.jpg",
-    "ubicacion": "actividades-antes-explorador",
-    "activa": true,
-    "anchoMaximo": 600,
-    "imagen": {
-      "src": "/publicidad/obras-hidricas.jpg",
-      "alt": "Santa Fe Provincia. En Santa Fe nos adelantamos haciendo. 300 obras hídricas en marcha. Obras que sí. Santa Fe Provincia.",
-      "ancho": 600,
-      "alto": 300
-    }
-  },
-  {
-    "id": "mil-aulas",
-    "anunciante": "Santa Fe Provincia · Programa 1000 aulas",
-    "original": "publicidad/displays_rosario_mil-aulas_300x600.gif",
+    "id": "obras-hidricas-vertical",
+    "anunciante": "Santa Fe Provincia · Obras que sí",
+    "original": "publicidad/obras hidricas_300x600 jpg.jpg",
     "ubicacion": "portada-lateral-derecha",
     "activa": true,
     "anchoMaximo": 300,
     "imagen": {
-      "src": "/publicidad/mil-aulas.gif",
-      "alt": "Santa Fe Provincia · Programa 1000 aulas. 124 aulas nuevas en Rosario. Programa 1000 aulas. Obras que sí. Santa Fe Provincia.",
+      "src": "/publicidad/obras-hidricas-vertical.jpg",
+      "alt": "Santa Fe Provincia · Obras que sí. En Santa Fe nos adelantamos haciendo. 300 obras hídricas en marcha. Obras que sí.",
       "ancho": 300,
       "alto": 600
+    }
+  },
+  {
+    "id": "mil-aulas-rosario",
+    "anunciante": "Santa Fe Provincia · Programa 1000 aulas",
+    "original": "publicidad/mil-aulas_ROSARIO 600x300.gif",
+    "ubicacion": "actividades-antes-explorador",
+    "activa": true,
+    "anchoMaximo": 600,
+    "imagen": {
+      "src": "/publicidad/mil-aulas-rosario.gif",
+      "alt": "Santa Fe Provincia · Programa 1000 aulas. 124 aulas nuevas en Rosario. Sí a más oportunidades para enseñar y aprender. Programa 1000 aulas. Obras que sí.",
+      "ancho": 600,
+      "alto": 300
     },
     "movimientoReducido": {
-      "src": "/publicidad/mil-aulas-0.webp",
-      "ancho": 300,
-      "alto": 600,
+      "src": "/publicidad/mil-aulas-rosario-0.webp",
+      "ancho": 600,
+      "alto": 300,
       "fotograma": 0,
       "alt": "124 aulas nuevas en Rosario. Programa 1000 aulas. Obras que sí. Santa Fe Provincia."
+    }
+  },
+  {
+    "id": "tercer-carril",
+    "anunciante": "Santa Fe Provincia · Obras que sí",
+    "original": "publicidad/3°CARRIL-nuevo-tramo_banner-web_1140x100.gif",
+    "ubicacion": "escapadas-antes-guias",
+    "activa": true,
+    "anchoMaximo": 1140,
+    "imagen": {
+      "src": "/publicidad/tercer-carril.gif",
+      "alt": "Santa Fe Provincia · Obras que sí. 3er carril: se viene un nuevo tramo. Autopista Rosario · Santa Fe. Espacio para camiones, fluidez para todos. Obras que sí.",
+      "ancho": 1140,
+      "alto": 100
+    },
+    "movimientoReducido": {
+      "src": "/publicidad/tercer-carril-0.webp",
+      "ancho": 1140,
+      "alto": 100,
+      "fotograma": 0,
+      "alt": "3er carril: se viene un nuevo tramo. Autopista Rosario · Santa Fe."
+    }
+  },
+  {
+    "id": "objetivo-dengue",
+    "anunciante": "Santa Fe Provincia · Objetivo Dengue",
+    "original": "publicidad/Dengue_Objetivo_250x250.gif",
+    "ubicacion": "provincias-lateral-mapa",
+    "activa": true,
+    "anchoMaximo": 250,
+    "imagen": {
+      "src": "/publicidad/objetivo-dengue.gif",
+      "alt": "Santa Fe Provincia · Objetivo Dengue. Entrenamiento anti dengue. Vaciá, limpiá, tapá los recipientes que acumulen agua. Objetivo Dengue.",
+      "ancho": 250,
+      "alto": 250
+    },
+    "movimientoReducido": {
+      "src": "/publicidad/objetivo-dengue-1.webp",
+      "ancho": 250,
+      "alto": 250,
+      "fotograma": 1,
+      "alt": "Vaciá, limpiá, tapá los recipientes que acumulen agua. Objetivo Dengue. Santa Fe Provincia."
     }
   }
 ];
