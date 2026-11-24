@@ -109,8 +109,8 @@ test("pauta de noviembre de 2026: cada creatividad en su ubicación contratada, 
   const contratadas = {
     "obras-newbery": ["portada-central", "components/HomeContent.tsx", 800],
     "genero-violencia": ["portada-lateral-izquierda", "components/HomeContent.tsx", 200],
-    "obras-hidricas-vertical": ["portada-lateral-derecha", "components/HomeContent.tsx", 300],
-    "mil-aulas-rosario": ["actividades-antes-explorador", "components/ActividadesContent.tsx", 600],
+    "obras-hidricas-vertical": ["actividades-antes-explorador", "components/ActividadesContent.tsx", 300],
+    "mil-aulas-rosario": ["portada-lateral-derecha", "components/HomeContent.tsx", 300],
     "tercer-carril": ["escapadas-antes-guias", "app/escapadas/page.tsx", 1140],
     "objetivo-dengue": ["provincias-lateral-mapa", "components/ViajeArgentina.tsx", 250],
   };
@@ -118,9 +118,9 @@ test("pauta de noviembre de 2026: cada creatividad en su ubicación contratada, 
   for (const campana of CAMPANAS) {
     const [espacio, archivo, ancho] = contratadas[campana.id];
     assert.equal(campana.ubicacion, espacio, campana.id);
-    // Tamaño natural de la creatividad: se escala hacia abajo en pantallas chicas, nunca se estira.
+    // Ancho de la ranura; la creatividad se escala hacia abajo, nunca se estira.
     assert.equal(campana.anchoMaximo, ancho, campana.id);
-    assert.equal(campana.imagen.ancho, ancho, campana.id);
+    assert.ok(campana.anchoMaximo <= campana.imagen.ancho, campana.id);
     assert.equal(inventory.find(r => r.id === campana.id).ubicacion, espacio, `inventario de ${campana.id}`);
     const fuente = (await read(archivo)).toString();
     assert.equal(fuente.split(`id="${espacio}"`).length - 1, 1, `${archivo} tiene una sola ranura ${espacio}`);

@@ -104,7 +104,7 @@ export const CAMPANAS: readonly AnuncioDirecto[] = [
     "id": "obras-hidricas-vertical",
     "anunciante": "Santa Fe Provincia · Obras que sí",
     "original": "publicidad/obras hidricas_300x600 jpg.jpg",
-    "ubicacion": "portada-lateral-derecha",
+    "ubicacion": "actividades-antes-explorador",
     "activa": true,
     "anchoMaximo": 300,
     "imagen": {
@@ -118,9 +118,9 @@ export const CAMPANAS: readonly AnuncioDirecto[] = [
     "id": "mil-aulas-rosario",
     "anunciante": "Santa Fe Provincia · Programa 1000 aulas",
     "original": "publicidad/mil-aulas_ROSARIO 600x300.gif",
-    "ubicacion": "actividades-antes-explorador",
+    "ubicacion": "portada-lateral-derecha",
     "activa": true,
-    "anchoMaximo": 600,
+    "anchoMaximo": 300,
     "imagen": {
       "src": "/publicidad/mil-aulas-rosario.gif",
       "alt": "Santa Fe Provincia · Programa 1000 aulas. 124 aulas nuevas en Rosario. Sí a más oportunidades para enseñar y aprender. Programa 1000 aulas. Obras que sí.",

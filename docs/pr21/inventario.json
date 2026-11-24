@@ -91,7 +91,7 @@
     "duracionesMs": [],
     "repeticiones": null,
     "url": null,
-    "ubicacion": "portada-lateral-derecha",
+    "ubicacion": "actividades-antes-explorador",
     "derivados": [
       {
         "src": "/publicidad/obras-hidricas-vertical.jpg",
@@ -120,7 +120,7 @@
     ],
     "repeticiones": 0,
     "url": null,
-    "ubicacion": "actividades-antes-explorador",
+    "ubicacion": "portada-lateral-derecha",
     "derivados": [
       {
         "src": "/publicidad/mil-aulas-rosario.gif",

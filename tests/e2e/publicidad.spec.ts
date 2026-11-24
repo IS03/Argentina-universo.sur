@@ -7,8 +7,8 @@ import { CAMPANAS, urlAnuncio } from "../../lib/publicidad";
 // Pauta de octubre de 2026. La primera campaña de cada página va antes de «antes»; las rutas sin ids
 // tuvieron campañas hasta septiembre y ya no deben mostrar ninguna.
 const PAGINAS = [
-  { ruta: "/", ids: ["obras-newbery", "genero-violencia", "obras-hidricas-vertical"], antes: "#provincias-destacadas", primeraPantalla: true },
-  { ruta: "/actividades", ids: ["mil-aulas-rosario"], antes: "#provincia-filtro", primeraPantalla: true },
+  { ruta: "/", ids: ["obras-newbery", "genero-violencia", "mil-aulas-rosario"], antes: "#provincias-destacadas", primeraPantalla: true },
+  { ruta: "/actividades", ids: ["obras-hidricas-vertical"], antes: "#provincia-filtro", primeraPantalla: true },
   { ruta: "/escapadas", ids: ["tercer-carril"], antes: "#guias-escapadas-heading", primeraPantalla: true },
   { ruta: "/provincias", ids: ["objetivo-dengue"], antes: "#region-norte", primeraPantalla: false },
   { ruta: "/provincias/santa_fe", ids: [], antes: "", primeraPantalla: false },
@@ -304,9 +304,9 @@ test("cada creatividad ocupa su ubicación contratada en todos los tamaños de p
       }
       evidencias.push({ etiqueta, campana: "genero-violencia", posicion, ...apsv });
     }
-    if (activa("obras-hidricas-vertical")) {
-      const aulas = await caja(page, img("obras-hidricas-vertical"));
-      expect(aulas.ancho / aulas.alto).toBeCloseTo(0.5, 2);
+    if (activa("mil-aulas-rosario")) {
+      const aulas = await caja(page, img("mil-aulas-rosario"));
+      expect(aulas.ancho / aulas.alto).toBeCloseTo(2, 2);
       if (columnas) {
         expect(aulas.ancho).toBe(300);
         expect(aulas.x, "columna derecha, opuesta a APSV").toBeGreaterThan(regiones.derecha);
@@ -317,21 +317,21 @@ test("cada creatividad ocupa su ubicación contratada en todos los tamaños de p
         expect(aulas.y).toBeGreaterThan(regiones.abajo);
         centrada(aulas, width);
       }
-      evidencias.push({ etiqueta, campana: "obras-hidricas-vertical", ...aulas });
+      evidencias.push({ etiqueta, campana: "mil-aulas-rosario", ...aulas });
     }
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), `${etiqueta} / sin desborde`).toBe(true);
     await recorrerYVerificar(page, problemas, `${etiqueta} /`);
 
     // Qué hacer: Obras Hídricas centrada, arriba del explorador.
     await page.goto("/actividades");
-    if (activa("mil-aulas-rosario")) {
-      const obras = await caja(page, img("mil-aulas-rosario"));
+    if (activa("obras-hidricas-vertical")) {
+      const obras = await caja(page, img("obras-hidricas-vertical"));
       expect(obras.ancho).toBeLessThanOrEqual(600);
-      expect(obras.ancho / obras.alto).toBeCloseTo(2, 2);
+      expect(obras.ancho / obras.alto).toBeCloseTo(0.5, 2);
       expect(obras.abajo).toBeLessThan((await caja(page, "#provincia-filtro")).y);
       expect(obras.y).toBeLessThan(height);
       centrada(obras, width);
-      evidencias.push({ etiqueta, campana: "mil-aulas-rosario", ...obras });
+      evidencias.push({ etiqueta, campana: "obras-hidricas-vertical", ...obras });
     }
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), `${etiqueta} /actividades sin desborde`).toBe(true);
     await recorrerYVerificar(page, problemas, `${etiqueta} /actividades`);
@@ -448,11 +448,11 @@ test("ajustes visuales: recuperar columnas y márgenes ante bloqueo de red o cos
   const grilla = page.locator("[data-publicidad-home]");
   for (const ocultar of [
     '[data-espacio-publicitario="portada-lateral-izquierda"]',
-    '[data-campana="obras-hidricas-vertical"] img',
+    '[data-campana="mil-aulas-rosario"] img',
     '[data-espacio-publicitario]',
   ]) {
     await page.goto("/");
-    await page.locator('[data-campana="obras-hidricas-vertical"] img').evaluate(img => (img as HTMLImageElement).decode());
+    await page.locator('[data-campana="mil-aulas-rosario"] img').evaluate(img => (img as HTMLImageElement).decode());
     const anchoInicial = await page.locator('section[aria-labelledby="titulo-regiones"]').evaluate(e => e.clientWidth);
     await page.addStyleTag({ content: `${ocultar}{display:none!important}` });
     if (ocultar.includes("izquierda")) await expect(grilla).toHaveAttribute("data-sin-izquierda", "");
