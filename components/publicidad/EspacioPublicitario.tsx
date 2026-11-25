@@ -123,7 +123,7 @@ export default function EspacioPublicitario({ id, className = "" }: { id: IdEspa
       elemento.hidden = true;
       if (columna) columna.hidden = true;
       if (grilla) {
-        for (const lado of ["izquierda", "derecha", "mapa"]) {
+        for (const lado of ["izquierda", "derecha", "mapa", "actividades"]) {
           grilla.toggleAttribute(`data-sin-${lado}`, !grilla.querySelector(`:scope > [data-publicidad-columna="${lado}"]:not([hidden])`));
         }
       }

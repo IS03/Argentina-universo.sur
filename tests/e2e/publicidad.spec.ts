@@ -313,7 +313,7 @@ test("cada creatividad ocupa su ubicación contratada en todos los tamaños de p
         expect(Math.abs(aulas.y - regiones.y)).toBeLessThan(2);
         expect(aulas.derecha).toBeLessThanOrEqual(width);
       } else {
-        expect(aulas.ancho).toBeCloseTo(Math.min(300, width - 32), 0);
+        expect(aulas.ancho).toBeCloseTo(Math.min(600, width - 32), 0);
         expect(aulas.y).toBeGreaterThan(regiones.abajo);
         centrada(aulas, width);
       }
@@ -328,9 +328,17 @@ test("cada creatividad ocupa su ubicación contratada en todos los tamaños de p
       const obras = await caja(page, img("obras-hidricas-vertical"));
       expect(obras.ancho).toBeLessThanOrEqual(600);
       expect(obras.ancho / obras.alto).toBeCloseTo(0.5, 2);
-      expect(obras.abajo).toBeLessThan((await caja(page, "#provincia-filtro")).y);
+      const filtro = await caja(page, "#provincia-filtro");
       expect(obras.y).toBeLessThan(height);
-      centrada(obras, width);
+      if (width >= 1280) {
+        // Escritorio: columna derecha junto al explorador, fija debajo del encabezado al desplazar.
+        expect(obras.ancho).toBe(300);
+        expect(obras.x).toBeGreaterThan(filtro.derecha);
+        expect(obras.derecha).toBeLessThanOrEqual(width);
+      } else {
+        expect(obras.abajo).toBeLessThan(filtro.y);
+        centrada(obras, width);
+      }
       evidencias.push({ etiqueta, campana: "obras-hidricas-vertical", ...obras });
     }
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), `${etiqueta} /actividades sin desborde`).toBe(true);

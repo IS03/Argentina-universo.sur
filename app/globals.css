@@ -128,6 +128,10 @@
   [data-publicidad-mapa][data-sin-mapa] nav ul {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  [data-publicidad-actividades][data-sin-actividades] {
+    display: block;
+  }
 }
 
 /* Etiqueta breve sobre títulos: la única tipografía en mayúsculas del sistema. */

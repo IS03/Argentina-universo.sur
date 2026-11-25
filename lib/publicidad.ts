@@ -120,7 +120,7 @@ export const CAMPANAS: readonly AnuncioDirecto[] = [
     "original": "publicidad/mil-aulas_ROSARIO 600x300.gif",
     "ubicacion": "portada-lateral-derecha",
     "activa": true,
-    "anchoMaximo": 300,
+    "anchoMaximo": 600,
     "imagen": {
       "src": "/publicidad/mil-aulas-rosario.gif",
       "alt": "Santa Fe Provincia · Programa 1000 aulas. 124 aulas nuevas en Rosario. Sí a más oportunidades para enseñar y aprender. Programa 1000 aulas. Obras que sí.",

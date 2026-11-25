@@ -110,7 +110,7 @@ test("pauta de noviembre de 2026: cada creatividad en su ubicación contratada, 
     "obras-newbery": ["portada-central", "components/HomeContent.tsx", 800],
     "genero-violencia": ["portada-lateral-izquierda", "components/HomeContent.tsx", 200],
     "obras-hidricas-vertical": ["actividades-antes-explorador", "components/ActividadesContent.tsx", 300],
-    "mil-aulas-rosario": ["portada-lateral-derecha", "components/HomeContent.tsx", 300],
+    "mil-aulas-rosario": ["portada-lateral-derecha", "components/HomeContent.tsx", 600],
     "tercer-carril": ["escapadas-antes-guias", "app/escapadas/page.tsx", 1140],
     "objetivo-dengue": ["provincias-lateral-mapa", "components/ViajeArgentina.tsx", 250],
   };
